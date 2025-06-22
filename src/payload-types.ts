@@ -246,10 +246,8 @@ export interface Reminder {
  */
 export interface News {
   id: number;
-  title: {
-    text_hu: string;
-    text_en: string;
-  };
+  title: string;
+  titleEng: string;
   shortDescription: {
     text_hu: string;
     text_en: string;
@@ -461,12 +459,8 @@ export interface RemindersSelect<T extends boolean = true> {
  * via the `definition` "news_select".
  */
 export interface NewsSelect<T extends boolean = true> {
-  title?:
-    | T
-    | {
-        text_hu?: T;
-        text_en?: T;
-      };
+  title?: T;
+  titleEng?: T;
   shortDescription?:
     | T
     | {

@@ -15,21 +15,13 @@ export const News: CollectionConfig = {
         {
             name: 'title',
             label: 'Cím',
-            type: 'group',
-            fields: [
-                {
-                    name: 'text_hu',
-                    label: 'Magyar',
-                    type: 'text',
-                    required: true,
-                },
-                {
-                    name: 'text_en',
-                    label: 'Angol',
-                    type: 'text',
-                    required: true,
-                },
-            ],
+            type: 'text',
+            required: true,
+        },
+        {
+            name: 'titleEng',
+            label: 'Cím (angol)',
+            type: 'text',
             required: true,
         },
         {
@@ -40,13 +32,13 @@ export const News: CollectionConfig = {
                 {
                     name: 'text_hu',
                     label: 'Magyar',
-                    type: 'textarea',
+                    type: 'text',
                     required: true,
                 },
                 {
                     name: 'text_en',
                     label: 'Angol',
-                    type: 'textarea',
+                    type: 'text',
                     required: true,
                 },
             ],

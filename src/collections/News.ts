@@ -3,6 +3,10 @@ import {FixedToolbarFeature, lexicalEditor} from "@payloadcms/richtext-lexical";
 
 export const News: CollectionConfig = {
     slug: 'news',
+    labels: {
+        singular: 'Hír',
+        plural: 'Hírek',
+    },
     admin: {
         useAsTitle: 'title',
         description: 'Hírek gyűjteménye',

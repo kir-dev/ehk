@@ -12,6 +12,7 @@ import { Media } from './collections/Media'
 import {Representatives} from "@/collections/Representatives";
 import {en} from "@payloadcms/translations/languages/en";
 import {hu} from "@payloadcms/translations/languages/hu";
+import {Reminders} from "@/collections/Reminders";
 import {News} from "@/collections/News";
 
 const filename = fileURLToPath(import.meta.url)
@@ -28,7 +29,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Representatives, News],
+  collections: [Users, Media, Representatives, Reminders, News],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

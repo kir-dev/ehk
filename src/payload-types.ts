@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     representatives: Representative;
+    reminders: Reminder;
     news: News;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +81,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
+    reminders: RemindersSelect<false> | RemindersSelect<true>;
     news: NewsSelect<false> | NewsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -223,6 +225,20 @@ export interface Representative {
   createdAt: string;
 }
 /**
+ * Emlékeztetők kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reminders".
+ */
+export interface Reminder {
+  id: number;
+  date: string;
+  displayText: string;
+  file: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Hírek gyűjteménye
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -307,6 +323,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'representatives';
         value: number | Representative;
+      } | null)
+    | ({
+        relationTo: 'reminders';
+        value: number | Reminder;
       } | null)
     | ({
         relationTo: 'news';
@@ -422,6 +442,17 @@ export interface RepresentativesSelect<T extends boolean = true> {
         title_en?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reminders_select".
+ */
+export interface RemindersSelect<T extends boolean = true> {
+  date?: T;
+  displayText?: T;
+  file?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -16,9 +16,11 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image";
 
+// Update your navigationItems array to include hrefs
 const navigationItems = [
     {
         title: "OKTATÁS",
+        href: "/oktatas",
         items: [
             "Tanulmányi és Vizsga Szabályzat",
             "OHV honlap",
@@ -31,30 +33,37 @@ const navigationItems = [
     },
     {
         title: "JUTTATÁS",
+        href: "/juttatas",
         items: ["Ösztöndíjak", "Szociális támogatások", "Hallgatói kedvezmények", "Pályázatok"],
     },
     {
         title: "KOLLÉGIUM",
+        href: "/kollegium",
         items: ["Kollégiumi elhelyezés", "Kollégiumi szabályzat", "Kollégiumi programok"],
     },
     {
         title: "PÁLYÁZAT",
+        href: "/palyazat",
         items: ["Aktuális pályázatok", "Pályázati eredmények", "Pályázati szabályzat"],
     },
     {
         title: "SPORT",
+        href: "/sport",
         items: ["Sportprogramok", "Sportlétesítmények", "Versenyek"],
     },
     {
         title: "ESÉLYEGYENLŐSÉG",
+        href: "/eselyegyenloseg",
         items: ["Esélyegyenlőségi terv", "Támogatási lehetőségek", "Kapcsolattartás"],
     },
     {
         title: "SZABÁLYZATOK",
+        href: "/szabalyzatok",
         items: ["Hallgatói szabályzatok", "Szervezeti szabályzatok", "Eljárási szabályzatok"],
     },
     {
         title: "SZERVEZET",
+        href: "/szervezet",
         items: ["Szervezeti felépítés", "Tisztségviselők", "Kapcsolat"],
     },
 ]
@@ -66,37 +75,25 @@ export default function Navbar() {
         <header className="w-full bg-white border-b border-gray-200">
             <div className="container mx-auto px-4">
                 <div className="flex items-center h-20">
-                    <Link href="/" className="flex items-center space-x-4 flex-1 -ml-3">
-                        {/* Logo - keep width/height ratio consistent */}
-                        <div className="relative w-16 h-16">
+                    <Link href="/" className="flex items-center h-full">
+                        <div className="relative h-fullF">
                             <Image
-                                src={"/ehk_logo.gif"}
+                                src={"/EHK_svg.svg"}
                                 alt={"EHK Logo"}
-                                width={500}
-                                height={500}
-                                className="object-contain"
-                                priority
-                            />
-                        </div>
-                        {/* Text - increased height to match logo's visual weight */}
-                        <div className="hidden md:block">
-                            <Image
-                                src={"/ehk_text.gif"}
-                                alt={"EHK Text"}
-                                width={500}
-                                height={250}
-                                className="h-12 w-auto"
+                                width={240}
+                                height={240}
+                                className="h-full w-auto object-contain"
                                 priority
                             />
                         </div>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <NavigationMenu className="hidden lg:flex flex-grow-0">
+                    <NavigationMenu className="hidden lg:flex flex-grow-0" viewport={false}>
                         <NavigationMenuList className="space-x-1">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
-                                    <NavigationMenuTrigger className="text-gray-700 hover:text-red-700 font-medium text-sm px-3 py-2">
+                                    <NavigationMenuTrigger className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2">
                                         {item.title}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
@@ -105,7 +102,7 @@ export default function Navbar() {
                                                 {item.items.map((subItem) => (
                                                     <NavigationMenuLink key={subItem} asChild>
                                                         <Link
-                                                            href="#"
+                                                            href={`${item.href}/${subItem.toLowerCase().replace(/\s+/g, '-')}`}
                                                             className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors"
                                                         >
                                                             {subItem}
@@ -120,7 +117,7 @@ export default function Navbar() {
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
                                     <Link
-                                        href="#"
+                                        href="/uvegzseb"
                                         className="text-gray-700 hover:text-red-700 font-medium text-sm px-3 py-2 inline-flex items-center"
                                     >
                                         ÜVEGZSEB

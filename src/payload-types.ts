@@ -286,19 +286,19 @@ export interface News {
   };
   date: string;
   tags: (
-    | 'ehk'
-    | 'education'
-    | 'allowance'
-    | 'dormitory'
-    | 'application'
-    | 'sport'
-    | 'foreign'
-    | 'events'
-    | 'public'
-    | 'announcement'
-    | 'report'
-    | 'information'
-    | 'bignews'
+    | 'EHK'
+    | 'Oktatás'
+    | 'Juttatás'
+    | 'Kollégium'
+    | 'Pályázat'
+    | 'Sport'
+    | 'Külügy'
+    | 'Rendezvények'
+    | 'Közélet'
+    | 'Felhívás'
+    | 'Beszámoló'
+    | 'Tájékoztatás'
+    | 'Kiemelt hír'
   )[];
   updatedAt: string;
   createdAt: string;

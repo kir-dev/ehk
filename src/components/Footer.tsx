@@ -32,8 +32,8 @@ export default function Footer() {
                                     <span className="text-gray-400">E-mail címek:</span>
                                 </p>
 
-                                <div className="ml-4 space-y-1">
-                                    <p>
+                                <ul className="ml-4 space-y-1">
+                                    <li>
                                         <span className="text-gray-500">•</span>{' '}
                                         <Link
                                             href="mailto:info@bmeehk.hu"
@@ -41,8 +41,8 @@ export default function Footer() {
                                         >
                                             info@bmeehk.hu
                                         </Link>
-                                    </p>
-                                    <p>
+                                    </li>
+                                    <li>
                                         <span className="text-gray-500">•</span>{' '}
                                         <Link
                                             href="mailto:palyazat@bmeehk.hu"
@@ -50,8 +50,8 @@ export default function Footer() {
                                         >
                                             palyazat@bmeehk.hu
                                         </Link>
-                                    </p>
-                                    <p>
+                                    </li>
+                                    <li>
                                         <span className="text-gray-500">•</span>{' '}
                                         <Link
                                             href="mailto:kollegium@bmeehk.hu"
@@ -59,8 +59,8 @@ export default function Footer() {
                                         >
                                             kollegium@bmeehk.hu
                                         </Link>
-                                    </p>
-                                    <p>
+                                    </li>
+                                    <li>
                                         <span className="text-gray-500">•</span>{' '}
                                         <Link
                                             href="mailto:oktatas@bmeehk.hu"
@@ -68,8 +68,8 @@ export default function Footer() {
                                         >
                                             oktatas@bmeehk.hu
                                         </Link>
-                                    </p>
-                                    <p>
+                                    </li>
+                                    <li>
                                         <span className="text-gray-500">•</span>{' '}
                                         <Link
                                             href="mailto:szoc@bmeehk.hu"
@@ -77,8 +77,8 @@ export default function Footer() {
                                         >
                                             szoc@bmeehk.hu
                                         </Link>
-                                    </p>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
 
                             <div className="mt-4">
@@ -156,7 +156,7 @@ export default function Footer() {
                 </div>
 
                 {/* University Logo */}
-                <div className="flex justify-center items-center pt-8 border-gray-700">
+                <div className="flex justify-center items-center pt-8">
                     <Image src={"/bmelogo.png"} alt={"BME Logo"} width={100} height={100} className="h-16 w-auto" />
                 </div>
             </div>

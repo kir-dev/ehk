@@ -19,52 +19,90 @@ import Image from "next/image";
 // Update your navigationItems array to include hrefs
 const navigationItems = [
     {
+        title: "SZERVEZET",
+        href: "/szervezet",
+        items: [
+            "Képviselők",
+            "Emlékeztetők",
+            "Határozatok tára",
+            "ESZB honlap",
+            "EDK honlap",
+            "Engedélyek",
+        ],
+    },
+    {
         title: "OKTATÁS",
         href: "/oktatas",
         items: [
-            "Tanulmányi és Vizsga Szabályzat",
-            "OHV honlap",
+            "Szabályzatok",
+            "OMHV",
             "Neptun",
             "Nyelvoktatás",
-            "Tanulmányi Tanácsadás",
-            "Oktatással Kapcsolatos Szabályzatok",
-            "Műegyetem Kiváló Oktatója",
+            "Kisokosok/Segédletek",
         ],
     },
     {
         title: "JUTTATÁS",
         href: "/juttatas",
-        items: ["Ösztöndíjak", "Szociális támogatások", "Hallgatói kedvezmények", "Pályázatok"],
+        items: [
+            "Tanulmányi ösztöndíjak",
+            "Szociális alapú ösztöndíjak",
+            "EHK ösztöndíjak",
+            "Szabályzatok",
+            "MŰEPER",
+            "Esélyegyenlőség",
+        ],
     },
     {
         title: "KOLLÉGIUM",
         href: "/kollegium",
-        items: ["Kollégiumi elhelyezés", "Kollégiumi szabályzat", "Kollégiumi programok"],
-    },
-    {
-        title: "PÁLYÁZAT",
-        href: "/palyazat",
-        items: ["Aktuális pályázatok", "Pályázati eredmények", "Pályázati szabályzat"],
+        items: [
+            "Bemutató",
+            "Szabályzatok",
+            "KEFIR",
+        ],
     },
     {
         title: "SPORT",
         href: "/sport",
-        items: ["Sportprogramok", "Sportlétesítmények", "Versenyek"],
+        items: [
+            "Sportpálya támogatás pályázat",
+            "Sportterem igénylés",
+            "Testnevelési Központ",
+            "Sportközpont"
+        ],
     },
     {
-        title: "ESÉLYEGYENLŐSÉG",
-        href: "/eselyegyenloseg",
-        items: ["Esélyegyenlőségi terv", "Támogatási lehetőségek", "Kapcsolattartás"],
+        title: "KÜLÜGY",
+        href: "/kulugy",
+        items: [
+            "Erasmus",
+            "EELISA",
+            "HKT",
+        ],
     },
     {
-        title: "SZABÁLYZATOK",
-        href: "/szabalyzatok",
-        items: ["Hallgatói szabályzatok", "Szervezeti szabályzatok", "Eljárási szabályzatok"],
+        title: "INTERNATIONAL",
+        href: "/international",
+        items: [
+            ""
+        ],
     },
     {
-        title: "SZERVEZET",
-        href: "/szervezet",
-        items: ["Szervezeti felépítés", "Tisztségviselők", "Kapcsolat"],
+        title: "KÖZÉLET",
+        href: "/kozelet",
+        items: [
+            "Versenycsapatok",
+            "Szakkollégiumok",
+            "Öntevékeny körök",
+            "Rendezvények",
+            "Klubbok",
+        ],
+    },
+    {
+        title: "GÓLYÁKNAK",
+        href: "/golyaknak",
+        items: [],
     },
 ]
 

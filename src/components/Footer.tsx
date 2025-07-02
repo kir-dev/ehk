@@ -92,40 +92,6 @@ export default function Footer() {
                     {/* Divider */}
                     <div className="hidden lg:block w-px bg-gray-600"></div>
 
-                    {/* KARI HALLGATÓI KÉPVISELETEK Section */}
-                    <div className="flex-1 space-y-4">
-                        <h3 className="text-lg font-semibold mb-4">KARI HALLGATÓI KÉPVISELETEK</h3>
-                        <nav className="space-y-2">
-                            <Link href="https://emkhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                ÉMK - KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="https://ghk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                GPK- KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="http://epiteszhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                ÉPK - KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="https://vegyeszhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                VBK- KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="https://vik.hk/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                VIK - KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="http://kozlekhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                KJK - KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="https://ttkhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                TTK- KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                            <Link href="http://gtkhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                GTK- KARI HALLGATÓI KÉPVISELET
-                            </Link>
-                        </nav>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="hidden lg:block w-px bg-gray-600"></div>
-
                     {/* EGYETEMI OLDALAK Section */}
                     <div className="flex-1 space-y-4">
                         <h3 className="text-lg font-semibold mb-4">EGYETEMI OLDALAK</h3>

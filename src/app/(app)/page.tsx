@@ -1,6 +1,7 @@
 import NewsSection from "@/components/NewsSection";
 import ImageViewer from "@/components/ImageViewer";
 import { getHeroImages } from "@/lib/getHeroImages";
+import MUSZAKSection from "@/components/MUSZAKSection";
 
 export default async function Home() {
     const heroImages = await getHeroImages();
@@ -8,7 +9,7 @@ export default async function Home() {
     return (
         <div className="bg-gray-50 min-h-screen flex flex-col">
             <main className="flex-grow">
-                <section className="w-full bg-black">
+                <section className="w-full">
                     <div className="max-w-7xl mx-auto">
                         <ImageViewer images={heroImages} />
                     </div>
@@ -20,7 +21,7 @@ export default async function Home() {
                             <h2 className="text-3xl font-bold mb-8 border-b-2 border-red-500 pb-2 inline-block">Hírek</h2>
                             <NewsSection />
                         </div>
-
+                        <MUSZAKSection/>
                     </div>
                 </section>
             </main>

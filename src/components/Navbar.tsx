@@ -134,14 +134,14 @@ export default function Navbar() {
                                     <NavigationMenuTrigger className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2">
                                         {item.title}
                                     </NavigationMenuTrigger>
-                                    <NavigationMenuContent>
+                                    <NavigationMenuContent className="z-50">
                                         <div className="w-80 p-4">
                                             <div className="grid gap-2">
                                                 {item.items.map((subItem) => (
-                                                    <NavigationMenuLink key={subItem} asChild>
+                                                    <NavigationMenuLink className="" key={subItem} asChild>
                                                         <Link
-                                                            href={`${item.href}/${subItem.toLowerCase().replace(/\s+/g, '-')}`}
-                                                            className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors"
+                                                            href={`${item?.href}/${subItem?.toLowerCase().replace(/\s+/g, '-')}`}
+                                                            className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors "
                                                         >
                                                             {subItem}
                                                         </Link>
@@ -152,16 +152,6 @@ export default function Navbar() {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                             ))}
-                            <NavigationMenuItem>
-                                <NavigationMenuLink asChild>
-                                    <Link
-                                        href="/uvegzseb"
-                                        className="text-gray-700 hover:text-red-700 font-medium text-sm px-3 py-2 inline-flex items-center"
-                                    >
-                                        ÜVEGZSEB
-                                    </Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
 
@@ -221,13 +211,6 @@ export default function Navbar() {
                                             </div>
                                         </div>
                                     ))}
-                                    <Link
-                                        href="#"
-                                        className="block font-medium text-gray-900 text-sm py-2 border-t border-gray-200 pt-4"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        ÜVEGZSEB
-                                    </Link>
                                 </nav>
                             </SheetContent>
                         </Sheet>

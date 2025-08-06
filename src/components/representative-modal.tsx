@@ -1,6 +1,6 @@
 'use client'
 
-import { X, Mail, Download, Building2, User } from 'lucide-react'
+import { Mail, Download, Building2, User } from 'lucide-react'
 import Image from 'next/image'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -30,20 +30,20 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
 
     return (
         <Dialog open={true} onOpenChange={onClose}>
-            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogContent className="w-[85vw] !max-w-none max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-3">
-                        <div className="w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                        <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                             {representative.picture ? (
                                 <Image
-                                    src={representative.picture.url || "/placeholder.svg"}
+                                    src={typeof representative.picture === 'object' ? representative.picture.url || "/placeholder.svg" : "/placeholder.svg"}
                                     alt={representative.name}
-                                    width={80}
-                                    height={80}
+                                    width={128}
+                                    height={128}
                                     className="w-full h-full object-cover"
                                 />
                             ) : (
-                                <User className="w-8 h-8 text-gray-600" />
+                                <User className="w-12 h-12 text-gray-600" />
                             )}
                         </div>
                         <div>
@@ -109,8 +109,7 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
 
                     <div>
                         <h3 className="font-semibold text-lg mb-3">Bemutatkozás</h3>
-                        <div
-                            className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+                        <div className="text-gray-700 leading-relaxed">
                             <RichText data={representative.introduction.text_hu} />
                         </div>
                     </div>
@@ -125,7 +124,7 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                                 </h3>
                                 <div className="grid gap-3">
                                     {representative.files.map((fileObj, index) => {
-                                        const fileUrl = fileObj.file?.url || fileObj.url;
+                                        const fileUrl = typeof fileObj.file === 'object' ? fileObj.file?.url : undefined;
                                         return (
                                             <div key={index} className="flex items-center justify-between bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
                                                 <div>

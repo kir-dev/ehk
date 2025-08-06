@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Mail, FileText, Building2 } from 'lucide-react'
+import { FileText, Building2 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -30,7 +30,7 @@ export function RepresentativeCard({ representative, onClick }: RepresentativeCa
                         <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                             {representative.picture ? (
                                 <Image
-                                    src={representative.picture.url || "/nincs.jpg"}
+                                    src={typeof representative.picture === 'object' ? representative.picture.url || "/nincs.jpg" : "/nincs.jpg"}
                                     alt={representative.name}
                                     width={128}
                                     height={128}

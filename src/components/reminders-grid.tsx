@@ -1,7 +1,5 @@
-import { YearSection } from '@/components/year-section'
 import { groupRemindersByYear } from '@/lib/utils'
 import {getReminders} from "@/lib/payload-cms";
-import {FileText} from "lucide-react";
 import RemindersGridClient from './reminders-grid-client';
 
 // Server component for data fetching

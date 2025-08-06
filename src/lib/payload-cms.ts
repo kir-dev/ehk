@@ -1,4 +1,4 @@
-import {News, Representative} from "@/payload-types";
+import {News, Reminder, Representative} from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
@@ -22,4 +22,15 @@ export async function getRepresentatives() {
   });
 
   return representatives.docs as Representative[];
+}
+
+export async function getReminders() {
+  const payload = await getPayload({ config });
+  const reminders = await payload.find({
+    collection: "reminders",
+    limit: 1000,
+    sort: "-date",
+  });
+
+  return reminders.docs as Reminder[];
 }

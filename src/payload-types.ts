@@ -72,6 +72,8 @@ export interface Config {
     representatives: Representative;
     reminders: Reminder;
     news: News;
+    'hero-images': HeroImage;
+    'muszak-paper': MuszakPaper;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +85,8 @@ export interface Config {
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
     reminders: RemindersSelect<false> | RemindersSelect<true>;
     news: NewsSelect<false> | NewsSelect<true>;
+    'hero-images': HeroImagesSelect<false> | HeroImagesSelect<true>;
+    'muszak-paper': MuszakPaperSelect<false> | MuszakPaperSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -304,6 +308,35 @@ export interface News {
   createdAt: string;
 }
 /**
+ * Hírek gyűjteménye
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-images".
+ */
+export interface HeroImage {
+  id: number;
+  title: string;
+  picture: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * MŰszak hírek, események és információk gyűjteménye.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "muszak-paper".
+ */
+export interface MuszakPaper {
+  id: number;
+  title: string;
+  titleEng: string;
+  date: string;
+  picture: number | Media;
+  link: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -329,6 +362,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'news';
         value: number | News;
+      } | null)
+    | ({
+        relationTo: 'hero-images';
+        value: number | HeroImage;
+      } | null)
+    | ({
+        relationTo: 'muszak-paper';
+        value: number | MuszakPaper;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -475,6 +516,29 @@ export interface NewsSelect<T extends boolean = true> {
       };
   date?: T;
   tags?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-images_select".
+ */
+export interface HeroImagesSelect<T extends boolean = true> {
+  title?: T;
+  picture?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "muszak-paper_select".
+ */
+export interface MuszakPaperSelect<T extends boolean = true> {
+  title?: T;
+  titleEng?: T;
+  date?: T;
+  picture?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -24,13 +24,13 @@ export function RepresentativeCard({ representative, onClick }: RepresentativeCa
 
     return (
         <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" onClick={onClick}>
-            <CardContent className="p-6">
-                <div className="flex flex-col items-center text-center">
+            <CardContent className="p-6 h-full flex flex-col">
+                <div className="flex flex-col items-center text-center flex-1">
                     <div className="relative mb-4">
                         <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                             {representative.picture ? (
                                 <Image
-                                    src={representative.picture.url || "/placeholder.svg"}
+                                    src={representative.picture.url || "/nincs.jpg"}
                                     alt={representative.name}
                                     width={128}
                                     height={128}
@@ -69,7 +69,8 @@ export function RepresentativeCard({ representative, onClick }: RepresentativeCa
                             </div>
                         )}
                     </div>
-
+                </div>
+                <div className="mt-auto w-full">
                     <Button variant="outline" size="sm" className="w-full group-hover:bg-red-200 group-hover:border-[#862633]">
                         Részletek megtekintése
                     </Button>

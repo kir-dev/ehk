@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { Calendar } from "./ui/calendar";
 import { hu } from "react-day-picker/locale";
 import EventCard from "./EventCard";
+import { cn } from "@/lib/utils";
 // Helper function to get all dates between start and end date
 function getDatesBetween(startDate: string, endDate: string): Date[] {
   const start = new Date(startDate);
@@ -21,8 +22,17 @@ function getDatesBetween(startDate: string, endDate: string): Date[] {
   return dates;
 }
 
-export default function EventCalendar({ events }: { events: Event[] }) {
+interface EventCalendarProps {
+  events: Event[];
+  className?: string;
+}
+
+export default function EventCalendar({
+  events,
+  className,
+}: EventCalendarProps) {
   const [selectedEvents, setSelectedEvents] = useState<Event[]>([]);
+  const [selectedEventIndex, setSelectedEventIndex] = useState(0);
 
   const {
     eventsByDay,
@@ -57,28 +67,48 @@ export default function EventCalendar({ events }: { events: Event[] }) {
     return { eventsByDay: eventsByDay, highlightedDays };
   }, [events]);
 
-  return (
-    <div className="flex flex-row gap-4 p-4">
-      <Calendar
-        mode="single"
-        className="rounded-lg border"
-        locale={hu}
-        onSelect={(day) => {
-          if (day) {
-            setSelectedEvents(
-              eventsByDay.get(day.toISOString().split("T")[0])?.events || []
-            );
-          }
-        }}
-        modifiers={{
-          selected: highlightedDays,
-        }}
+  const handleReturn = () => {
+    setSelectedEvents([]);
+  };
+  const handleNextEvent = () => {
+    setSelectedEventIndex((prev) => prev + 1);
+  };
+  const handlePreviousEvent = () => {
+    setSelectedEventIndex((prev) => prev - 1);
+  };
+  const hasNextEvent = useMemo(() => {
+    return selectedEventIndex < selectedEvents.length - 1;
+  }, [selectedEventIndex, selectedEvents]);
+  const hasPreviousEvent = useMemo(() => {
+    return selectedEventIndex > 0;
+  }, [selectedEventIndex]);
+  if (selectedEvents.length > 0) {
+    return (
+      <EventCard
+        event={selectedEvents[selectedEventIndex]}
+        onReturn={handleReturn}
+        className={className}
+        nextEvent={hasNextEvent ? handleNextEvent : undefined}
+        previousEvent={hasPreviousEvent ? handlePreviousEvent : undefined}
       />
-      <div className="flex flex-row gap-4 flex-1 items-stretch">
-        {selectedEvents.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
-      </div>
-    </div>
+    );
+  }
+
+  return (
+    <Calendar
+      mode="single"
+      className={cn("rounded-lg border", className)}
+      locale={hu}
+      onSelect={(day) => {
+        if (day) {
+          setSelectedEvents(
+            eventsByDay.get(day.toISOString().split("T")[0])?.events || []
+          );
+        }
+      }}
+      modifiers={{
+        selected: highlightedDays,
+      }}
+    />
   );
 }

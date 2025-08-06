@@ -72,6 +72,7 @@ export interface Config {
     representatives: Representative;
     reminders: Reminder;
     news: News;
+    events: Event;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +84,7 @@ export interface Config {
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
     reminders: RemindersSelect<false> | RemindersSelect<true>;
     news: NewsSelect<false> | NewsSelect<true>;
+    events: EventsSelect<false> | EventsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -136,6 +138,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -179,7 +188,6 @@ export interface Representative {
         id?: string | null;
       }[]
     | null;
-  picture?: (number | null) | Media;
   introduction: {
     text_hu: {
       root: {
@@ -212,15 +220,6 @@ export interface Representative {
       [k: string]: unknown;
     };
   };
-  faculty?: ('ÉMK' | 'GPK' | 'ÉPK' | 'VBK' | 'VIK' | 'GTK' | 'TTK' | 'KJK') | null;
-  files?:
-    | {
-        file: number | Media;
-        title_hu: string;
-        title_en?: string | null;
-        id?: string | null;
-      }[]
-    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -304,6 +303,30 @@ export interface News {
   createdAt: string;
 }
 /**
+ * Események gyűjteménye - egy napos és többszörös napos eseményekhez
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: number;
+  title_hu: string;
+  title_en: string;
+  shortDescription: {
+    description_hu: string;
+    description_en: string;
+  };
+  date: {
+    startDate: string;
+    /**
+     * Ha egy napos esemény, akkor ugyanaz legyen mint a kezdő dátum
+     */
+    endDate: string;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -329,6 +352,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'news';
         value: number | News;
+      } | null)
+    | ({
+        relationTo: 'events';
+        value: number | Event;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -386,6 +413,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -424,21 +458,11 @@ export interface RepresentativesSelect<T extends boolean = true> {
         email?: T;
         id?: T;
       };
-  picture?: T;
   introduction?:
     | T
     | {
         text_hu?: T;
         text_en?: T;
-      };
-  faculty?: T;
-  files?:
-    | T
-    | {
-        file?: T;
-        title_hu?: T;
-        title_en?: T;
-        id?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -475,6 +499,28 @@ export interface NewsSelect<T extends boolean = true> {
       };
   date?: T;
   tags?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events_select".
+ */
+export interface EventsSelect<T extends boolean = true> {
+  title_hu?: T;
+  title_en?: T;
+  shortDescription?:
+    | T
+    | {
+        description_hu?: T;
+        description_en?: T;
+      };
+  date?:
+    | T
+    | {
+        startDate?: T;
+        endDate?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

@@ -1,9 +1,11 @@
-import NewsSection from "@/components/NewsSection";
+import Calendar from "@/components/Calendar";
+import { getEvents } from "@/lib/payload-cms";
 
-export default function Home() {
+export default async function Home() {
+  const events = await getEvents();
   return (
-      <div className="bg-transparent min-h-screen">
-          <NewsSection />
-      </div>
+    <div className="bg-transparent min-h-screen">
+      <Calendar events={events} />
+    </div>
   );
 }

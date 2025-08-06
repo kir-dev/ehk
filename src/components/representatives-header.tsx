@@ -1,5 +1,3 @@
-import { Users, GraduationCap } from 'lucide-react'
-
 export function RepresentativesHeader() {
     return (
         <div className="text-center mb-12">

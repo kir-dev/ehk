@@ -26,8 +26,6 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
         'KJK': 'bg-yellow-100 text-yellow-800',
     }
 
-    console.log('representative.files:', representative.files);
-
     return (
         <Dialog open={true} onOpenChange={onClose}>
             <DialogContent className="w-[85vw] !max-w-none max-h-[90vh] overflow-y-auto">

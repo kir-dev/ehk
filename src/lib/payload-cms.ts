@@ -1,4 +1,4 @@
-import { News } from "@/payload-types";
+import {News, Representative} from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
@@ -11,4 +11,14 @@ export async function getNews(){
   });
 
   return groups.docs as News[];
+}
+
+export async function getRepresentatives() {
+  const payload = await getPayload({ config });
+  const representatives = await payload.find({
+    collection: "representatives",
+    limit: 1000,
+  });
+
+  return representatives.docs as Representative[];
 }

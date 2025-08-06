@@ -18,6 +18,7 @@ export async function getRepresentatives() {
   const representatives = await payload.find({
     collection: "representatives",
     limit: 1000,
+    sort: "order",
   });
 
   return representatives.docs as Representative[];

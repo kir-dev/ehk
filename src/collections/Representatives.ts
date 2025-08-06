@@ -132,6 +132,12 @@ export const Representatives: CollectionConfig = {
             ],
         },
         {
+            name: "order",
+            type: "number",
+            required: false,
+            label: "Rendezési szám",
+        },
+        {
             name: "files",
             type: "array",
             required: false,

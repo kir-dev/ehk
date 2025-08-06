@@ -217,6 +217,7 @@ export interface Representative {
     };
   };
   faculty?: ('ÉMK' | 'GPK' | 'ÉPK' | 'VBK' | 'VIK' | 'GTK' | 'TTK' | 'KJK') | null;
+  order?: number | null;
   files?:
     | {
         file: number | Media;
@@ -473,6 +474,7 @@ export interface RepresentativesSelect<T extends boolean = true> {
         text_en?: T;
       };
   faculty?: T;
+  order?: T;
   files?:
     | T
     | {

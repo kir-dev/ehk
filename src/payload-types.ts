@@ -240,6 +240,7 @@ export interface Reminder {
   date: string;
   displayText: string;
   file: number | Media;
+  type: 'EHK' | 'EHDK';
   updatedAt: string;
   createdAt: string;
 }
@@ -494,6 +495,7 @@ export interface RemindersSelect<T extends boolean = true> {
   date?: T;
   displayText?: T;
   file?: T;
+  type?: T;
   updatedAt?: T;
   createdAt?: T;
 }

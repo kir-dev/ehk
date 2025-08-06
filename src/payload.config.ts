@@ -15,6 +15,8 @@ import { hu } from "@payloadcms/translations/languages/hu";
 import { Reminders } from "@/collections/Reminders";
 import { News } from "@/collections/News";
 import { Events } from "@/collections/Events";
+import { HeroImages } from "@/collections/HeroImages";
+import { MuszakPaper } from "@/collections/MuszakPaper";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -30,7 +32,16 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Representatives, Reminders, News, Events],
+  collections: [
+    Users,
+    Media,
+    Representatives,
+    Reminders,
+    News,
+    HeroImages,
+    MuszakPaper,
+    Events,
+  ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

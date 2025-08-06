@@ -1,15 +1,14 @@
 import { getNews } from "@/lib/payload-cms";
 import NewsCard from "./NewsCard";
 
-const news = await getNews();
+export default async function NewsSection() {
+  const news = await getNews();
 
-export default function NewsSection() {
-  console.log(news);
   return (
-    <div className="flex flex-wrap gap-4">
-      {news.map((news) => (
-        <NewsCard key={news.id} news={news} />
-      ))}
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {news.map((newsItem) => (
+            <NewsCard key={newsItem.id} news={newsItem} />
+        ))}
+      </div>
   );
 }

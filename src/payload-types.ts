@@ -13,53 +13,53 @@
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+  | "Pacific/Midway"
+  | "Pacific/Niue"
+  | "Pacific/Honolulu"
+  | "Pacific/Rarotonga"
+  | "America/Anchorage"
+  | "Pacific/Gambier"
+  | "America/Los_Angeles"
+  | "America/Tijuana"
+  | "America/Denver"
+  | "America/Phoenix"
+  | "America/Chicago"
+  | "America/Guatemala"
+  | "America/New_York"
+  | "America/Bogota"
+  | "America/Caracas"
+  | "America/Santiago"
+  | "America/Buenos_Aires"
+  | "America/Sao_Paulo"
+  | "Atlantic/South_Georgia"
+  | "Atlantic/Azores"
+  | "Atlantic/Cape_Verde"
+  | "Europe/London"
+  | "Europe/Berlin"
+  | "Africa/Lagos"
+  | "Europe/Athens"
+  | "Africa/Cairo"
+  | "Europe/Moscow"
+  | "Asia/Riyadh"
+  | "Asia/Dubai"
+  | "Asia/Baku"
+  | "Asia/Karachi"
+  | "Asia/Tashkent"
+  | "Asia/Calcutta"
+  | "Asia/Dhaka"
+  | "Asia/Almaty"
+  | "Asia/Jakarta"
+  | "Asia/Bangkok"
+  | "Asia/Shanghai"
+  | "Asia/Singapore"
+  | "Asia/Tokyo"
+  | "Asia/Seoul"
+  | "Australia/Brisbane"
+  | "Australia/Sydney"
+  | "Pacific/Guam"
+  | "Pacific/Noumea"
+  | "Pacific/Auckland"
+  | "Pacific/Fiji";
 
 export interface Config {
   auth: {
@@ -72,10 +72,11 @@ export interface Config {
     representatives: Representative;
     reminders: Reminder;
     news: News;
-    events: Event;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
+    "hero-images": HeroImage;
+    "muszak-paper": MuszakPaper;
+    "payload-locked-documents": PayloadLockedDocument;
+    "payload-preferences": PayloadPreference;
+    "payload-migrations": PayloadMigration;
   };
   collectionsJoins: {};
   collectionsSelect: {
@@ -84,10 +85,17 @@ export interface Config {
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
     reminders: RemindersSelect<false> | RemindersSelect<true>;
     news: NewsSelect<false> | NewsSelect<true>;
-    events: EventsSelect<false> | EventsSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+    "hero-images": HeroImagesSelect<false> | HeroImagesSelect<true>;
+    "muszak-paper": MuszakPaperSelect<false> | MuszakPaperSelect<true>;
+    "payload-locked-documents":
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>;
+    "payload-preferences":
+      | PayloadPreferencesSelect<false>
+      | PayloadPreferencesSelect<true>;
+    "payload-migrations":
+      | PayloadMigrationsSelect<false>
+      | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
@@ -96,7 +104,7 @@ export interface Config {
   globalsSelect: {};
   locale: null;
   user: User & {
-    collection: 'users';
+    collection: "users";
   };
   jobs: {
     tasks: unknown;
@@ -197,8 +205,8 @@ export interface Representative {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
@@ -212,8 +220,8 @@ export interface Representative {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
@@ -260,8 +268,8 @@ export interface News {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
@@ -275,8 +283,8 @@ export interface News {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
@@ -285,44 +293,49 @@ export interface News {
   };
   date: string;
   tags: (
-    | 'EHK'
-    | 'Oktatás'
-    | 'Juttatás'
-    | 'Kollégium'
-    | 'Pályázat'
-    | 'Sport'
-    | 'Külügy'
-    | 'Rendezvények'
-    | 'Közélet'
-    | 'Felhívás'
-    | 'Beszámoló'
-    | 'Tájékoztatás'
-    | 'Kiemelt hír'
+    | "EHK"
+    | "Oktatás"
+    | "Juttatás"
+    | "Kollégium"
+    | "Pályázat"
+    | "Sport"
+    | "Külügy"
+    | "Rendezvények"
+    | "Közélet"
+    | "Felhívás"
+    | "Beszámoló"
+    | "Tájékoztatás"
+    | "Kiemelt hír"
   )[];
   updatedAt: string;
   createdAt: string;
 }
 /**
- * Események gyűjteménye - egy napos és többszörös napos eseményekhez
+ * Hírek gyűjteménye
  *
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "events".
+ * via the `definition` "hero-images".
  */
-export interface Event {
+export interface HeroImage {
   id: number;
-  title_hu: string;
-  title_en: string;
-  shortDescription: {
-    description_hu: string;
-    description_en: string;
-  };
-  date: {
-    startDate: string;
-    /**
-     * Ha egy napos esemény, akkor ugyanaz legyen mint a kezdő dátum
-     */
-    endDate: string;
-  };
+  title: string;
+  picture: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * MŰszak hírek, események és információk gyűjteménye.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "muszak-paper".
+ */
+export interface MuszakPaper {
+  id: number;
+  title: string;
+  titleEng: string;
+  date: string;
+  picture: number | Media;
+  link: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -334,32 +347,36 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'users';
+        relationTo: "users";
         value: number | User;
       } | null)
     | ({
-        relationTo: 'media';
+        relationTo: "media";
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'representatives';
+        relationTo: "representatives";
         value: number | Representative;
       } | null)
     | ({
-        relationTo: 'reminders';
+        relationTo: "reminders";
         value: number | Reminder;
       } | null)
     | ({
-        relationTo: 'news';
+        relationTo: "news";
         value: number | News;
       } | null)
     | ({
-        relationTo: 'events';
-        value: number | Event;
+        relationTo: "hero-images";
+        value: number | HeroImage;
+      } | null)
+    | ({
+        relationTo: "muszak-paper";
+        value: number | MuszakPaper;
       } | null);
   globalSlug?: string | null;
   user: {
-    relationTo: 'users';
+    relationTo: "users";
     value: number | User;
   };
   updatedAt: string;
@@ -372,7 +389,7 @@ export interface PayloadLockedDocument {
 export interface PayloadPreference {
   id: number;
   user: {
-    relationTo: 'users';
+    relationTo: "users";
     value: number | User;
   };
   key?: string | null;
@@ -504,23 +521,24 @@ export interface NewsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "events_select".
+ * via the `definition` "hero-images_select".
  */
-export interface EventsSelect<T extends boolean = true> {
-  title_hu?: T;
-  title_en?: T;
-  shortDescription?:
-    | T
-    | {
-        description_hu?: T;
-        description_en?: T;
-      };
-  date?:
-    | T
-    | {
-        startDate?: T;
-        endDate?: T;
-      };
+export interface HeroImagesSelect<T extends boolean = true> {
+  title?: T;
+  picture?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "muszak-paper_select".
+ */
+export interface MuszakPaperSelect<T extends boolean = true> {
+  title?: T;
+  titleEng?: T;
+  date?: T;
+  picture?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -564,7 +582,6 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-
-declare module 'payload' {
+declare module "payload" {
   export interface GeneratedTypes extends Config {}
 }

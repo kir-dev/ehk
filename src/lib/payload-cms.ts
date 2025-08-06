@@ -2,7 +2,7 @@ import { News, Event } from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
-export async function getNews(): Promise<News[]> {
+export async function getNews(){
   const payload = await getPayload({ config });
   const groups = await payload.find({
     collection: "news",

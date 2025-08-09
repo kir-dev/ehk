@@ -28,7 +28,7 @@ const navigationItems = [
         href: "/szervezet",
         items: [
             { label: "Képviselők", href: "kepviselok" },
-            { label: "Emlékeztetők", href: "#" },
+            { label: "Emlékeztetők", href: "emlekeztetok" },
             { label: "Határozatok tára", href: "#" },
             { label: "ESZB honlap", href: "#" },
             { label: "EDK honlap", href: "#" },

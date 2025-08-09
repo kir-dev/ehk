@@ -20,12 +20,6 @@ import {MuszakPaper} from "@/collections/MuszakPaper";
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-if (!process.env.PAYLOAD_SECRET) {
-    throw new Error('Missing PAYLOAD_SECRET (check .env and deployment env vars)');
-} else if (process.env.PAYLOAD_SECRET == '') {
-    console.warn('PAYLOAD_SECRET is empty, this is not recommended for production!');
-}
-
 export default buildConfig({
   i18n: {
     supportedLanguages: { en, hu },

@@ -7,7 +7,7 @@ export async function getNews(){
   const groups = await payload.find({
     collection: "news",
     limit: 1000,
-    sort: "order",
+    sort: "-date",
   });
 
   return groups.docs as News[];

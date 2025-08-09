@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Suspense } from 'react'
 import RemindersGrid from '@/components/reminders-grid'
 import { RemindersHeader } from '@/components/reminders-header'

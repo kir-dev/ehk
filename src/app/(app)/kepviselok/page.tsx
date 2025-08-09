@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Suspense } from 'react'
 import RepresentativesGrid from '@/components/representatives-grid'
 import { RepresentativesHeader } from '@/components/representatives-header'

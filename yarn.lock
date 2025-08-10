@@ -2198,7 +2198,7 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-2.1.0.tgz#0acf32f470af2ceaf47f095cdecd40d68666efda"
   integrity sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==
 
-"@payloadcms/db-postgres@^3.50.0":
+"@payloadcms/db-postgres@^3.43.0":
   version "3.50.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/db-postgres/-/db-postgres-3.50.0.tgz#836775ea3eb49ae10774eab94d35282779486663"
   integrity sha512-Uvnv1EotdO0eElg3LJgr8nar3yQc4qYh+T0NtaTAz+usbI7gPM4BwX3pAcig3/fHF3WgG7zQbrCuBU+a+ljIZA==
@@ -2242,7 +2242,7 @@
     ts-essentials "10.0.3"
     tsx "4.19.2"
 
-"@payloadcms/next@^3.50.0":
+"@payloadcms/next@^3.43.0":
   version "3.50.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/next/-/next-3.50.0.tgz#456da080a89d61707149c1f191fcd21e7666d0bc"
   integrity sha512-9piyBDLsVW4huCKgas6eorq5PcKM1VoTZ2spWkaLQ9hbWYBspblGVkb3kcMWVGGYSA6Yw4qJlhomAqIY/sVoFA==
@@ -2262,7 +2262,7 @@
     sass "1.77.4"
     uuid "10.0.0"
 
-"@payloadcms/payload-cloud@^3.50.0":
+"@payloadcms/payload-cloud@^3.43.0":
   version "3.50.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/payload-cloud/-/payload-cloud-3.50.0.tgz#886adb20fb0a970d656ee19dfdf6c3b377b70bab"
   integrity sha512-wH8/kOYA/m5zXVJG5PQdxUNao3fb15aVRQUJbNfF8o6VBAZNXXCm9LJghUjcpyo5NGQai5Kjodycx/y+1PqrjA==
@@ -2284,7 +2284,7 @@
     find-node-modules "^2.1.3"
     range-parser "^1.2.1"
 
-"@payloadcms/richtext-lexical@^3.50.0":
+"@payloadcms/richtext-lexical@^3.43.0":
   version "3.50.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/richtext-lexical/-/richtext-lexical-3.50.0.tgz#424526a0ae330f137a509b196440e906d7e07d69"
   integrity sha512-bW3LdTdVvipcaxZL3GxvHky+WEN2x7w+jOkXIHHnYkd+PzgF3aL3mNjHJve9JDdqJF5cHFLq8mFBi9WQfs80FQ==
@@ -2317,7 +2317,7 @@
     ts-essentials "10.0.3"
     uuid "10.0.0"
 
-"@payloadcms/storage-s3@^3.50.0":
+"@payloadcms/storage-s3@^3.43.0":
   version "3.50.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/storage-s3/-/storage-s3-3.50.0.tgz#7183da1f3775507cf4d10481a2fbee7bc6705c47"
   integrity sha512-b37jENtIRG2TWMymthQEGMUeQSTqwqn9T0exnJZuo10D38z4zws72dYO2CLVHSFArtV6DwhpLoWsHQXAJLpX0w==
@@ -2327,7 +2327,7 @@
     "@aws-sdk/s3-request-presigner" "^3.614.0"
     "@payloadcms/plugin-cloud-storage" "3.50.0"
 
-"@payloadcms/translations@3.50.0", "@payloadcms/translations@^3.50.0":
+"@payloadcms/translations@3.50.0", "@payloadcms/translations@^3.43.0":
   version "3.50.0"
   resolved "https://registry.yarnpkg.com/@payloadcms/translations/-/translations-3.50.0.tgz#618436c33df15d66be742abd2e5b54ce9e063d16"
   integrity sha512-Po3dnuY+cchLessSB4+r3Al5MF5joWoh7RFuMnOB/mcpBgkoSCP2bV9Th/U3CTc67CmEBArCnRrDtfSdE7eDrA==

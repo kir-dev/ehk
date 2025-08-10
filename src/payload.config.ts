@@ -48,7 +48,7 @@ export default buildConfig({
   db: postgresAdapter({
     push: false,
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: process.env.DATABASE_URI ?? process.env.DATABASE_URL ?? '',
     },
     migrationDir: './src/migrations',
   }),

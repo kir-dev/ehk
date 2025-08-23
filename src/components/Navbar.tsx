@@ -22,16 +22,11 @@ function getNavigationItems(lang: string) {
     const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
     return [
         {
-            title: "ADMIN",
-            href: "/admin",
-            targetBlank: false,
-            items: [],
-        },
-        {
             title: t("SZERVEZET", "ORGANIZATION"),
             href: "/szervezet",
             targetBlank: false,
             items: [
+                { label: t("ADMIN", "ADMIN"), href: "/admin", targetBlank: false },
                 { label: t("Képviselők", "Representatives"), href: "/kepviselok", targetBlank: false },
                 { label: t("Emlékeztetők", "Reminders"), href: "/emlekeztetok", targetBlank: false },
                 { label: t("Határozatok tára", "Decisions archive"), href: "/hatarozatok-tara", targetBlank: false },
@@ -156,7 +151,7 @@ export default function Navbar() {
                     <div className="flex flex-1 items-center justify-end">
                         {/* Desktop Navigation */}
                         <NavigationMenu className="hidden lg:flex" viewport={false}>
-                            <NavigationMenuList className="space-x-1">
+                            <NavigationMenuList className="">
                                 {navigationItems.map((item) => (
                                     <NavigationMenuItem key={item.title}>
                                         {item.items.length > 0 ? (

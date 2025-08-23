@@ -1,4 +1,5 @@
-import {News, Reminder, Representative} from "@/payload-types";
+import 'server-only';
+import {Decision, News, Reminder, Representative} from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
@@ -33,4 +34,14 @@ export async function getReminders() {
   });
 
   return reminders.docs as Reminder[];
+}
+
+export async function getDecisions() {
+  const payload = await getPayload({ config });
+  const decisions = await payload.find({
+    collection: "decisions",
+    limit: 1000,
+  });
+
+  return decisions.docs as Decision[];
 }

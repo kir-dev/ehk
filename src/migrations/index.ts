@@ -1,5 +1,6 @@
 import * as migration_20250809_182905_init from './20250809_182905_init';
 import * as migration_20250810_113709_create_users_sessions from './20250810_113709_create_users_sessions';
+import * as migration_20250823_150138 from './20250823_150138';
 
 export const migrations = [
   {
@@ -10,6 +11,11 @@ export const migrations = [
   {
     up: migration_20250810_113709_create_users_sessions.up,
     down: migration_20250810_113709_create_users_sessions.down,
-    name: '20250810_113709_create_users_sessions'
+    name: '20250810_113709_create_users_sessions',
+  },
+  {
+    up: migration_20250823_150138.up,
+    down: migration_20250823_150138.down,
+    name: '20250823_150138'
   },
 ];

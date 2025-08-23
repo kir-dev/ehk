@@ -29,7 +29,7 @@ const navigationItems = [
         items: [
             { label: "Képviselők", href: "kepviselok" },
             { label: "Emlékeztetők", href: "emlekeztetok" },
-            { label: "Határozatok tára", href: "#" },
+            { label: "Határozatok tára", href: "hatarozatok-tara" },
             { label: "ESZB honlap", href: "#" },
             { label: "EDK honlap", href: "#" },
             { label: "Engedélyek", href: "#" },

@@ -56,38 +56,6 @@ export const Representatives: CollectionConfig = {
       ],
     },
     {
-      name: "introduction",
-      type: "group",
-      required: true,
-      label: "Bemutatkozás",
-      fields: [
-        {
-          name: "text_hu",
-          type: "richText",
-          required: true,
-          label: "Bemutatkozás (magyar)",
-          editor: lexicalEditor({
-            features: ({ defaultFeatures }) => [
-              ...defaultFeatures,
-              FixedToolbarFeature(),
-            ],
-          }),
-        },
-        {
-          name: "text_en",
-          type: "richText",
-          required: true,
-          label: "Bemutatkozás (angol)",
-          editor: lexicalEditor({
-            features: ({ defaultFeatures }) => [
-              ...defaultFeatures,
-              FixedToolbarFeature(),
-            ],
-          }),
-        },
-      ],
-    },
-    {
       name: "picture",
       type: "upload",
       relationTo: "media",

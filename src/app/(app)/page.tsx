@@ -20,9 +20,9 @@ export default async function Home() {
         </section>
 
         <section className="py-16 px-4">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-y-8 md:gap-x-8 items-center mx-8">
-            <div className="col-span-1 flex justify-between flex-col gap-y-4 h-full">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col relative p-4 flex-1">
+          <div className="flex flex-row items-center mx-8 gap-x-8">
+            <div className="col-span-1 flex justify-between flex-col gap-y-4 h-full min-w-[250px]">
+              <div className="bg-white rounded-lg shadow-md flex flex-col relative p-4 flex-1">
                 Fontos linkek:
                 <ul className="list-disc list-inside">
                   <li>
@@ -42,9 +42,9 @@ export default async function Home() {
                   </li>
                 </ul>
               </div>
-              <Calendar events={events} className="w-full h-2/3" />
+              <Calendar events={events} className="md:w-full h-2/3 mx-auto" />
             </div>
-            <div className="max-w-7xl mx-auto col-span-1 sm:col-span-3">
+            <div className="flex-1">
               <h2 className="text-3xl font-bold mb-8 border-b-2 border-red-500 pb-2 inline-block">
                 Hírek
               </h2>

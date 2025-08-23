@@ -1,6 +1,6 @@
 "use client"
 
-import { Search, Menu, X } from "lucide-react"
+import { Search, Menu } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 

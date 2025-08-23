@@ -87,5 +87,117 @@ export const Representatives: CollectionConfig = {
         },
       ],
     },
+    {
+      name: "picture",
+      type: "upload",
+      relationTo: "media",
+      required: false,
+      label: "Kép",
+    },
+    {
+      name: "introduction",
+      type: "group",
+      required: true,
+      label: "Bemutatkozás",
+      fields: [
+        {
+          name: "text_hu",
+          type: "richText",
+          required: true,
+          label: "Bemutatkozás (magyar)",
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+        {
+          name: "text_en",
+          type: "richText",
+          required: true,
+          label: "Bemutatkozás (angol)",
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+      ],
+    },
+    {
+      name: "faculty",
+      type: "select",
+      required: false,
+      label: "Kar",
+      options: [
+        {
+          label: "ÉMK",
+          value: "ÉMK",
+        },
+        {
+          label: "GPK",
+          value: "GPK",
+        },
+        {
+          label: "ÉPK",
+          value: "ÉPK",
+        },
+        {
+          label: "VBK",
+          value: "VBK",
+        },
+        {
+          label: "VIK",
+          value: "VIK",
+        },
+        {
+          label: "GTK",
+          value: "GTK",
+        },
+        {
+          label: "TTK",
+          value: "TTK",
+        },
+        {
+          label: "KJK",
+          value: "KJK",
+        },
+      ],
+    },
+    {
+      name: "order",
+      type: "number",
+      required: false,
+      label: "Rendezési szám",
+    },
+    {
+      name: "files",
+      type: "array",
+      required: false,
+      label: "Beszámolók",
+      fields: [
+        {
+          name: "file",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+          label: "Fájl",
+        },
+        {
+          name: "title_hu",
+          type: "text",
+          required: true,
+          label: "Cím (magyar)",
+        },
+        {
+          name: "title_en",
+          type: "text",
+          required: false,
+          label: "Cím (angol)",
+        },
+      ],
+    },
   ],
 };

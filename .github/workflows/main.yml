@@ -1,0 +1,44 @@
+name: Migrate DB and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: migrate-and-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  migrate:
+    name: Run Payload migrations
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: Run migrations (non-interactive, prod)
+        env:
+          NODE_ENV: production
+          DATABASE_URI: ${{ secrets.DATABASE_URI }}
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+        run: yarn payload migrate
+
+  deploy:
+    name: Trigger Vercel deploy
+    needs: migrate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fire Vercel Deploy Hook
+        run: curl -sS -X POST "$VERCEL_DEPLOY_HOOK_URL"
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}

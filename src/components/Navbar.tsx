@@ -19,84 +19,89 @@ import Image from "next/image";
 // Update your navigationItems array to include hrefs
 const navigationItems = [
     {
+        title: "ADMIN"
+        , href: "/admin",
+        items: [],
+    },
+    {
         title: "SZERVEZET",
         href: "/szervezet",
         items: [
-            "Képviselők",
-            "Emlékeztetők",
-            "Határozatok tára",
-            "ESZB honlap",
-            "EDK honlap",
-            "Engedélyek",
+            { label: "Képviselők", href: "kepviselok" },
+            { label: "Emlékeztetők", href: "emlekeztetok" },
+            { label: "Határozatok tára", href: "#" },
+            { label: "ESZB honlap", href: "#" },
+            { label: "EDK honlap", href: "#" },
+            { label: "Engedélyek", href: "#" },
         ],
     },
     {
         title: "OKTATÁS",
         href: "/oktatas",
         items: [
-            "Szabályzatok",
-            "OMHV",
-            "Neptun",
-            "Nyelvoktatás",
-            "Kisokosok/Segédletek",
+            { label: "Szabályzatok", href: "#" },
+            { label: "OMHV", href: "#" },
+            { label: "Neptun", href: "#" },
+            { label: "Nyelvoktatás", href: "#" },
+            { label: "Kisokosok/Segédletek", href: "#" },
         ],
     },
     {
         title: "JUTTATÁS",
         href: "/juttatas",
         items: [
-            "Tanulmányi ösztöndíjak",
-            "Szociális alapú ösztöndíjak",
-            "EHK ösztöndíjak",
-            "Szabályzatok",
-            "MŰEPER",
-            "Esélyegyenlőség",
+            { label: "Tanulmányi ösztöndíjak", href: "#" },
+            { label: "Szociális alapú ösztöndíjak", href: "#" },
+            { label: "EHK ösztöndíjak", href: "#" },
+            { label: "Szabályzatok", href: "#" },
+            { label: "MŰEPER", href: "#" },
+            { label: "Esélyegyenlőség", href: "#" },
         ],
     },
     {
         title: "KOLLÉGIUM",
         href: "/kollegium",
         items: [
-            "Bemutató",
-            "Szabályzatok",
-            "KEFIR",
+            { label: "Bemutató", href: "#" },
+            { label: "Szabályzatok", href: "#" },
+            { label: "KEFIR", href: "#" },
         ],
     },
     {
         title: "SPORT",
         href: "/sport",
         items: [
-            "Sportpálya támogatás pályázat",
-            "Sportterem igénylés",
-            "Testnevelési Központ",
-            "Sportközpont"
+            { label: "Sportpálya támogatás pályázat", href: "#" },
+            { label: "Sportterem igénylés", href: "#" },
+            { label: "Testnevelési Központ", href: "#" },
+            { label: "Sportközpont", href: "#" },
         ],
     },
     {
         title: "KÜLÜGY",
         href: "/kulugy",
         items: [
-            "Erasmus",
-            "EELISA",
-            "HKT",
+            { label: "Erasmus", href: "#" },
+            { label: "EELISA", href: "#" },
+            { label: "HKT", href: "#" },
         ],
     },
     {
         title: "INTERNATIONAL",
         href: "/international",
         items: [
-            ""
+            { label: "", href: "" },
         ],
     },
     {
         title: "KÖZÉLET",
         href: "/kozelet",
         items: [
-            "Versenycsapatok",
-            "Szakkollégiumok",
-            "Öntevékeny körök",
-            "Rendezvények",
-            "Klubbok",
+            { label: "Versenycsapatok", href: "#" },
+            { label: "Szakkollégiumok", href: "#" },
+            { label: "Öntevékeny körök", href: "#" },
+            { label: "Rendezvények", href: "#" },
+            { label: "Klubbok", href: "#" },
         ],
     },
     {
@@ -131,25 +136,38 @@ export default function Navbar() {
                             <NavigationMenuList className="space-x-1">
                                 {navigationItems.map((item) => (
                                     <NavigationMenuItem key={item.title}>
-                                        <NavigationMenuTrigger className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2">
-                                            {item.title}
-                                        </NavigationMenuTrigger>
-                                        <NavigationMenuContent className="z-50">
-                                            <div className="w-80 p-4">
-                                                <div className="grid gap-2">
-                                                    {item.items.map((subItem) => (
-                                                        <NavigationMenuLink className="" key={subItem} asChild>
-                                                            <Link
-                                                                href={`${item?.href}/${subItem?.toLowerCase().replace(/\s+/g, '-')}`}
-                                                                className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors "
-                                                            >
-                                                                {subItem}
-                                                            </Link>
-                                                        </NavigationMenuLink>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </NavigationMenuContent>
+                                        {item.items.length > 0 ? (
+                                            <>
+                                                <NavigationMenuTrigger className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2">
+                                                    {item.title}
+                                                </NavigationMenuTrigger>
+                                                <NavigationMenuContent className="z-50">
+                                                    <div className="w-80 p-4">
+                                                        <div className="grid gap-2">
+                                                            {item.items.map((subItem) => (
+                                                                <NavigationMenuLink className="" key={subItem.label} asChild>
+                                                                    <Link
+                                                                        href={subItem.href}
+                                                                        className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors "
+                                                                    >
+                                                                        {subItem.label}
+                                                                    </Link>
+                                                                </NavigationMenuLink>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </NavigationMenuContent>
+                                            </>
+                                        ) : (
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href={item.href}
+                                                    className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2 block"
+                                                >
+                                                    {item.title}
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        )}
                                     </NavigationMenuItem>
                                 ))}
                             </NavigationMenuList>
@@ -199,12 +217,12 @@ export default function Navbar() {
                                                 <div className="space-y-1 pl-4">
                                                     {item.items.map((subItem) => (
                                                         <Link
-                                                            key={subItem}
+                                                            key={subItem.label}
                                                             href="#"
                                                             className="block text-sm text-gray-600 hover:text-red-700 py-1"
                                                             onClick={() => setIsOpen(false)}
                                                         >
-                                                            {subItem}
+                                                            {subItem.label}
                                                         </Link>
                                                     ))}
                                                 </div>

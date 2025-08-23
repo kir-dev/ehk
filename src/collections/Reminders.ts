@@ -30,5 +30,21 @@ export const Reminders: CollectionConfig = {
             required: true,
             label: "Fájl",
         },
+        {
+            name: "type",
+            type: "select",
+            options: [
+                {
+                    label: "EHK Emlékeztető",
+                    value: "EHK",
+                },
+                {
+                    label: "EHDK Emlékeztető",
+                    value: "EHDK",
+                },
+            ],
+            required: true,
+            label: "Típus",
+        },
     ],
 };

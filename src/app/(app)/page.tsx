@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import NewsSection from "@/components/NewsSection";
 import ImageViewer from "@/components/ImageViewer";
 import { getHeroImages } from "@/lib/getHeroImages";

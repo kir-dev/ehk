@@ -1,29 +1,40 @@
+"use client"
+
 import Image from 'next/image'
 import { FileText, Building2 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {Representative} from "@/payload-types";
+import { useLanguage } from '@/components/LanguageProvider'
 
 interface RepresentativeCardProps {
     representative: Representative
-    onClick: () => void
+    onClickAction: () => void
 }
 
-export function RepresentativeCard({ representative, onClick }: RepresentativeCardProps) {
+export function RepresentativeCard({ representative, onClickAction }: RepresentativeCardProps) {
     const facultyColors = {
-        'ÉMK': 'bg-red-100 text-red-800',
+        '\u00C9MK': 'bg-red-100 text-red-800',
         'GPK': 'bg-blue-100 text-blue-800',
-        'ÉPK': 'bg-green-100 text-green-800',
+        '\u00C9PK': 'bg-green-100 text-green-800',
         'VBK': 'bg-purple-100 text-purple-800',
         'VIK': 'bg-orange-100 text-orange-800',
         'GTK': 'bg-pink-100 text-pink-800',
         'TTK': 'bg-indigo-100 text-indigo-800',
         'KJK': 'bg-yellow-100 text-yellow-800',
-    }
+    } as const
+
+    const { lang } = useLanguage()
+    const primaryPos = representative.position?.[0]
+    const positionText = lang === 'EN'
+        ? (primaryPos?.position_en || primaryPos?.position_hu)
+        : (primaryPos?.position_hu || primaryPos?.position_en)
+
+    const detailsLabel = lang === 'EN' ? 'View details' : 'Részletek megtekintése'
 
     return (
-        <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" onClick={onClick}>
+        <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" onClick={onClickAction}>
             <CardContent className="p-6 h-full flex flex-col">
                 <div className="flex flex-col items-center text-center flex-1">
                     <div className="relative mb-4">
@@ -48,14 +59,14 @@ export function RepresentativeCard({ representative, onClick }: RepresentativeCa
                         {representative.name}
                     </h3>
 
-                    {representative.position && representative.position.length > 0 && (
+                    {positionText && (
                         <p className="text-sm text-gray-600 mb-3">
-                            {representative.position[0]?.position_hu}
+                            {positionText}
                         </p>
                     )}
 
                     {representative.faculty && (
-                        <Badge className={`mb-3 ${facultyColors[representative.faculty as keyof typeof facultyColors] || 'bg-gray-100 text-gray-800'}`}>
+                        <Badge className={`${facultyColors[representative.faculty as keyof typeof facultyColors] || 'bg-gray-100 text-gray-800'} mb-3`}>
                             <Building2 className="w-3 h-3 mr-1" />
                             {representative.faculty}
                         </Badge>
@@ -72,7 +83,7 @@ export function RepresentativeCard({ representative, onClick }: RepresentativeCa
                 </div>
                 <div className="mt-auto w-full">
                     <Button variant="outline" size="sm" className="w-full group-hover:bg-red-200 group-hover:border-[#862633]">
-                        Részletek megtekintése
+                        {detailsLabel}
                     </Button>
                 </div>
             </CardContent>

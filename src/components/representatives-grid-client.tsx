@@ -14,14 +14,14 @@ export default function RepresentativesGridClient({ representatives }: { represe
                     <RepresentativeCard
                         key={representative.id}
                         representative={representative}
-                        onClick={() => setSelectedRepresentative(representative)}
+                        onClickAction={() => setSelectedRepresentative(representative)}
                     />
                 ))}
             </div>
             {selectedRepresentative && (
                 <RepresentativeModal
                     representative={selectedRepresentative}
-                    onClose={() => setSelectedRepresentative(null)}
+                    onCloseAction={() => setSelectedRepresentative(null)}
                 />
             )}
         </>

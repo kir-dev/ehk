@@ -189,22 +189,7 @@ export default function Navbar() {
                                 </SheetTrigger>
                                 <SheetContent side="right" className="w-80">
                                     <div className="flex items-center justify-between mb-6">
-                                        <div className="flex items-center space-x-2">
-                                            <div className="w-8 h-8">
-                                                <svg viewBox="0 0 48 48" className="w-full h-full">
-                                                    <path
-                                                        d="M8 8L16 16L8 24L16 32L8 40L24 24L40 40L32 32L40 24L32 16L40 8L24 24L8 8Z"
-                                                        fill="#B91C1C"
-                                                        stroke="#B91C1C"
-                                                        strokeWidth="1"
-                                                    />
-                                                    <circle cx="24" cy="24" r="6" fill="none" stroke="#B91C1C" strokeWidth="2" />
-                                                </svg>
-                                            </div>
-                                            <span className="text-sm font-medium text-gray-700">EHK</span>
-                                        </div>
                                         <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-gray-600">
-                                            <X className="h-5 w-5" />
                                         </Button>
                                     </div>
 
@@ -218,7 +203,7 @@ export default function Navbar() {
                                                     {item.items.map((subItem) => (
                                                         <Link
                                                             key={subItem.label}
-                                                            href="#"
+                                                            href={subItem.href}
                                                             className="block text-sm text-gray-600 hover:text-red-700 py-1"
                                                             onClick={() => setIsOpen(false)}
                                                         >

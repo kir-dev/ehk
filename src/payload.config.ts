@@ -16,6 +16,7 @@ import {Reminders} from "@/collections/Reminders";
 import {News} from "@/collections/News";
 import {HeroImages} from "@/collections/HeroImages";
 import {MuszakPaper} from "@/collections/MuszakPaper";
+import {Decisions} from "@/collections/Decisions";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -38,7 +39,8 @@ export default buildConfig({
       Reminders,
       News,
       HeroImages,
-      MuszakPaper
+      MuszakPaper,
+      Decisions,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

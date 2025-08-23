@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image";
+import { LanguageProvider, useLanguage } from "@/components/LanguageProvider";
 
 // Update your navigationItems array to include hrefs
 const navigationItems = [
@@ -123,6 +124,7 @@ const navigationItems = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const { lang, toggleLang } = useLanguage()
 
     return (
         <header className="w-full bg-white border-b border-gray-200">
@@ -188,6 +190,18 @@ export default function Navbar() {
                         </NavigationMenu>
                         {/* Search and Mobile Menu */}
                         <div className="flex items-center space-x-2 ml-2">
+                            {/* Language toggle - placed to the left of Search */}
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={toggleLang}
+                                className="text-gray-600 hover:text-red-700 px-2 py-1 border border-gray-200 rounded-md"
+                                aria-label="Nyelvváltás"
+                                aria-pressed={lang === 'EN'}
+                            >
+                                {lang}
+                            </Button>
+
                             <Button variant="ghost" size="icon" className="text-gray-600 hover:text-red-700">
                                 <Search className="h-5 w-5" />
                                 <span className="sr-only">Keresés</span>

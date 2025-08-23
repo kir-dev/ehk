@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import type { Decision, Media } from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
+import { useLanguage } from "@/components/LanguageProvider"
 
 interface Props {
   decisions: Decision[]
@@ -22,7 +23,7 @@ function getFileUrl(file: number | Media) {
 }
 
 function getFileIcon(extension: string) {
-  const iconClass = "h-8 w-8"
+  const iconClass = "h-6 w-6" // compact
   switch (extension) {
     case 'pdf':
       return <FileText className={`${iconClass} text-red-500`} />
@@ -41,6 +42,7 @@ function getFileIcon(extension: string) {
 }
 
 export default function DecisionsArchiveClient({ decisions }: Props) {
+  const { lang } = useLanguage()
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-12">
@@ -62,24 +64,26 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
           {decisions.map((decision) => {
             const ext = getFileExtension(decision.file)
             const href = getFileUrl(decision.file)
+            const title = lang === 'EN' ? decision.text_en : decision.text_hu
+            const secondary = decision.displayText
             return (
               <Card key={decision.id} className="group hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="">
+                <CardContent className="p-4">{/* compact */}
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <div className="flex items-start gap-2 mb-1">
-                        <div className="flex-shrink-0 bg-gray-50 p-1 rounded-lg group-hover:bg-gray-100 transition-colors">{/* reduced padding */}
+                      <div className="flex items-start gap-2 mb-1">{/* compact spacing */}
+                        <div className="flex-shrink-0 bg-gray-50 p-1 rounded-lg group-hover:bg-gray-100 transition-colors">{/* compact icon container */}
                           {getFileIcon(ext)}
                         </div>
                         <div>
-                          <h3 className="font-bold text-lg leading-tight text-gray-900 mb-1 group-hover:text-[#862633] transition-colors">{/* reduced size, tighter leading */}
-                            {decision.text_hu}
+                          <h3 className="font-bold text-lg leading-tight text-gray-900 mb-1 group-hover:text-[#862633] transition-colors">
+                            {title}
                           </h3>
-                          {decision.displayText && (
-                            <p className="text-xs text-gray-500 line-clamp-1">{decision.displayText}</p>
+                          {secondary && (
+                            <p className="text-xs text-gray-500 line-clamp-1">{secondary}</p>
                           )}
-                          <div className="flex items-center gap-3 text-xs text-gray-500 mt-1">{/* smaller text and gap */}
-                            <Badge variant="secondary" className="text-[10px] uppercase tracking-wide">{/* smaller badge */}
+                          <div className="flex items-center gap-3 text-xs text-gray-500 mt-1">{/* compact meta */}
+                            <Badge variant="secondary" className="text-[10px] uppercase tracking-wide">
                               {ext}
                             </Badge>
                           </div>

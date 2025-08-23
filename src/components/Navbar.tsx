@@ -15,134 +15,145 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image";
-import { LanguageProvider, useLanguage } from "@/components/LanguageProvider";
+import { useLanguage } from "@/components/LanguageProvider";
 
-// Update your navigationItems array to include hrefs
-const navigationItems = [
-    {
-        title: "ADMIN",
-        href: "/admin",
-        targetBlank: false,
-        items: [],
-    },
-    {
-        title: "SZERVEZET",
-        href: "/szervezet",
-        targetBlank: false,
-        items: [
-            { label: "Képviselők", href: "kepviselok", targetBlank: false },
-            { label: "Emlékeztetők", href: "emlekeztetok", targetBlank: false },
-            { label: "Határozatok tára", href: "hatarozatok-tara", targetBlank: false },
-            { label: "ESZB honlap", href: "#", targetBlank: false },
-            { label: "EDK honlap", href: "https://www.bmeedk.hu/page/1", targetBlank: true },
-            { label: "Engedélyek", href: "#", targetBlank: false },
-        ],
-    },
-    {
-        title: "OKTATÁS",
-        href: "/oktatas",
-        targetBlank: false,
-        items: [
-            { label: "Szabályzatok", href: "#", targetBlank: false },
-            { label: "OMHV", href: "#", targetBlank: false },
-            { label: "Neptun", href: "https://neptun.bme.hu/hallgatoi/login.aspx", targetBlank: true },
-            { label: "Nyelvoktatás", href: "#", targetBlank: false },
-            { label: "Kisokosok/Segédletek", href: "#", targetBlank: false },
-        ],
-    },
-    {
-        title: "JUTTATÁS",
-        href: "/juttatas",
-        targetBlank: false,
-        items: [
-            { label: "Tanulmányi ösztöndíjak", href: "#", targetBlank: false },
-            { label: "Szociális alapú ösztöndíjak", href: "#", targetBlank: false },
-            { label: "EHK ösztöndíjak", href: "#", targetBlank: false },
-            { label: "Szabályzatok", href: "#", targetBlank: false },
-            { label: "MŰEPER", href: "https://mueper.bme.hu", targetBlank: true },
-            { label: "Esélyegyenlőség", href: "#", targetBlank: false },
-        ],
-    },
-    {
-        title: "KOLLÉGIUM",
-        href: "/kollegium",
-        targetBlank: false,
-        items: [
-            { label: "Bemutató", href: "#", targetBlank: false },
-            { label: "Szabályzatok", href: "#", targetBlank: false },
-            { label: "KEFIR", href: "https://kefir.bme.hu/login", targetBlank: true },
-        ],
-    },
-    {
-        title: "SPORT",
-        href: "/sport",
-        targetBlank: false,
-        items: [
-            { label: "Sportpálya támogatás pályázat", href: "#", targetBlank: false },
-            { label: "Sportterem igénylés", href: "#", targetBlank: false },
-            { label: "Testnevelési Központ", href: "https://testneveles.bme.hu", targetBlank: true },
-            { label: "Sportközpont", href: "https://bmesport.hu", targetBlank: true },
-        ],
-    },
-    {
-        title: "KÜLÜGY",
-        href: "/kulugy",
-        targetBlank: false,
-        items: [
-            { label: "Erasmus", href: "#", targetBlank: false },
-            { label: "EELISA", href: "#", targetBlank: false },
-            { label: "HKT", href: "#", targetBlank: false },
-        ],
-    },
-    {
-        title: "INTERNATIONAL",
-        href: "/international",
-        targetBlank: false,
-        items: [
-            { label: "", href: "", targetBlank: false },
-        ],
-    },
-    {
-        title: "KÖZÉLET",
-        href: "/kozelet",
-        targetBlank: false,
-        items: [
-            { label: "Versenycsapatok", href: "#", targetBlank: false },
-            { label: "Szakkollégiumok", href: "#", targetBlank: false },
-            { label: "Öntevékeny körök", href: "#", targetBlank: false },
-            { label: "Rendezvények", href: "#", targetBlank: false },
-            { label: "Klubbok", href: "#", targetBlank: false },
-        ],
-    },
-    {
-        title: "GÓLYÁKNAK",
-        href: "/golyaknak",
-        targetBlank: false,
-        items: [],
-    },
-]
+// Build navigation items based on current language
+function getNavigationItems(lang: string) {
+    const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+    return [
+        {
+            title: "ADMIN",
+            href: "/admin",
+            targetBlank: false,
+            items: [],
+        },
+        {
+            title: t("SZERVEZET", "ORGANIZATION"),
+            href: "/szervezet",
+            targetBlank: false,
+            items: [
+                { label: t("Képviselők", "Representatives"), href: "/kepviselok", targetBlank: false },
+                { label: t("Emlékeztetők", "Reminders"), href: "/emlekeztetok", targetBlank: false },
+                { label: t("Határozatok tára", "Decisions archive"), href: "/hatarozatok-tara", targetBlank: false },
+                { label: t("ESZB honlap", "ESZB website"), href: "#", targetBlank: false },
+                { label: t("EDK honlap", "EDK website"), href: "https://www.bmeedk.hu/page/1", targetBlank: true },
+                { label: t("Engedélyek", "Permissions"), href: "#", targetBlank: false },
+            ],
+        },
+        {
+            title: t("OKTATÁS", "EDUCATION"),
+            href: "/oktatas",
+            targetBlank: false,
+            items: [
+                { label: t("Szabályzatok", "Regulations"), href: "#", targetBlank: false },
+                { label: "OMHV", href: "#", targetBlank: false },
+                { label: "Neptun", href: "https://neptun.bme.hu/hallgatoi/login.aspx", targetBlank: true },
+                { label: t("Nyelvoktatás", "Language courses"), href: "#", targetBlank: false },
+                { label: t("Kisokosok/Segédletek", "Guides"), href: "#", targetBlank: false },
+            ],
+        },
+        {
+            title: t("JUTTATÁS", "GRANTS"),
+            href: "/juttatas",
+            targetBlank: false,
+            items: [
+                { label: t("Tanulmányi ösztöndíjak", "Academic scholarships"), href: "#", targetBlank: false },
+                { label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"), href: "#", targetBlank: false },
+                { label: t("EHK ösztöndíjak", "EHK scholarships"), href: "#", targetBlank: false },
+                { label: t("Szabályzatok", "Regulations"), href: "#", targetBlank: false },
+                { label: "MŰEPER", href: "https://mueper.bme.hu", targetBlank: true },
+                { label: t("Esélyegyenlőség", "Equal opportunities"), href: "#", targetBlank: false },
+            ],
+        },
+        {
+            title: t("KOLLÉGIUM", "DORMITORY"),
+            href: "/kollegium",
+            targetBlank: false,
+            items: [
+                { label: t("Bemutató", "Overview"), href: "#", targetBlank: false },
+                { label: t("Szabályzatok", "Regulations"), href: "#", targetBlank: false },
+                { label: "KEFIR", href: "https://kefir.bme.hu/login", targetBlank: true },
+            ],
+        },
+        {
+            title: t("SPORT", "SPORTS"),
+            href: "/sport",
+            targetBlank: false,
+            items: [
+                { label: t("Sportpálya támogatás pályázat", "Sports field subsidy application"), href: "#", targetBlank: false },
+                { label: t("Sportterem igénylés", "Gym booking request"), href: "#", targetBlank: false },
+                { label: t("Testnevelési Központ", "Department of Physical Education"), href: "https://testneveles.bme.hu", targetBlank: true },
+                { label: t("Sportközpont", "Sports Center"), href: "https://bmesport.hu", targetBlank: true },
+            ],
+        },
+        {
+            title: t("KÜLÜGY", "INTERNATIONAL AFFAIRS"),
+            href: "/kulugy",
+            targetBlank: false,
+            items: [
+                { label: "Erasmus", href: "#", targetBlank: false },
+                { label: "EELISA", href: "#", targetBlank: false },
+                { label: "HKT", href: "#", targetBlank: false },
+            ],
+        },
+        {
+            title: "INTERNATIONAL",
+            href: "/international",
+            targetBlank: false,
+            items: [
+                { label: "", href: "", targetBlank: false },
+            ],
+        },
+        {
+            title: t("KÖZÉLET", "COMMUNITY LIFE"),
+            href: "/kozelet",
+            targetBlank: false,
+            items: [
+                { label: t("Versenycsapatok", "Competition teams"), href: "#", targetBlank: false },
+                { label: t("Szakkollégiumok", "Specialized colleges"), href: "#", targetBlank: false },
+                { label: t("Öntevékeny körök", "Student clubs"), href: "#", targetBlank: false },
+                { label: t("Rendezvények", "Events"), href: "#", targetBlank: false },
+                { label: t("Klubbok", "Clubs"), href: "#", targetBlank: false },
+            ],
+        },
+        {
+            title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
+            href: "/golyaknak",
+            targetBlank: false,
+            items: [],
+        },
+    ]
+}
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const { lang, toggleLang } = useLanguage()
+    const navigationItems = getNavigationItems(lang)
+
+    // Localized UI labels
+    const ui = {
+        langToggle: lang === 'EN' ? 'Language' : 'Nyelvváltás',
+        search: lang === 'EN' ? 'Search' : 'Keresés',
+        openMenu: lang === 'EN' ? 'Open menu' : 'Menü megnyitása',
+    } as const
 
     return (
         <header className="w-full bg-white border-b border-gray-200">
-            <div className="px-4 w-full"> {/* Removed 'container mx-auto' to allow full width */}
-                <div className="flex items-center h-20 w-full"> {/* Added w-full */}
-                    <Link href="/" className="flex items-center h-full mr-4"> {/* Added mr-4 for spacing after logo */}
-                        <div className="relative h-full flex items-center">
+            <div className="px-4 w-full">
+                <div className="flex items-center h-20 w-full">
+                    <Link href="/" className="flex items-center h-full mr-4 shrink-0">
+                        <div className="relative h-full flex items-center shrink-0">
                             <Image
                                 src={"/EHK_svg.svg"}
                                 alt={"EHK Logo"}
                                 width={240}
                                 height={240}
-                                className="object-contain h-16 w-auto max-h-20"
+                                className="object-contain h-16 w-auto max-h-20 shrink-0"
                                 priority
                             />
                         </div>
                     </Link>
-                    <div className="flex flex-1 items-center justify-end"> {/* Menus and search aligned to the right */}
+                    <div className="flex flex-1 items-center justify-end">
                         {/* Desktop Navigation */}
                         <NavigationMenu className="hidden lg:flex" viewport={false}>
                             <NavigationMenuList className="space-x-1">
@@ -196,7 +207,7 @@ export default function Navbar() {
                                 size="sm"
                                 onClick={toggleLang}
                                 className="text-gray-600 hover:text-red-700 px-2 py-1 border border-gray-200 rounded-md"
-                                aria-label="Nyelvváltás"
+                                aria-label={ui.langToggle}
                                 aria-pressed={lang === 'EN'}
                             >
                                 {lang}
@@ -204,7 +215,7 @@ export default function Navbar() {
 
                             <Button variant="ghost" size="icon" className="text-gray-600 hover:text-red-700">
                                 <Search className="h-5 w-5" />
-                                <span className="sr-only">Keresés</span>
+                                <span className="sr-only">{ui.search}</span>
                             </Button>
 
                             {/* Mobile Menu */}
@@ -212,7 +223,7 @@ export default function Navbar() {
                                 <SheetTrigger asChild>
                                     <Button variant="ghost" size="icon" className="lg:hidden text-gray-600">
                                         <Menu className="h-5 w-5" />
-                                        <span className="sr-only">Menü megnyitása</span>
+                                        <span className="sr-only">{ui.openMenu}</span>
                                     </Button>
                                 </SheetTrigger>
                                 <SheetContent side="right" className="w-80">

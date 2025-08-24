@@ -4,12 +4,16 @@ import { FileText } from 'lucide-react'
 import { YearSection } from '@/components/year-section'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Reminder } from "@/payload-types";
+import { useLanguage } from "@/components/LanguageProvider";
 
 interface RemindersGridClientProps {
     remindersByYear: Record<string, Reminder[]>
 }
 
 export default function RemindersGridClient({ remindersByYear }: RemindersGridClientProps) {
+    const { lang } = useLanguage()
+    const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+
     // Filter reminders by type
     const filterRemindersByType = (type: 'EHK' | 'EHDK') => {
         const filtered: Record<string, Reminder[]> = {}
@@ -33,8 +37,8 @@ export default function RemindersGridClient({ remindersByYear }: RemindersGridCl
             <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <FileText className="h-8 w-8 text-gray-400" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Nincsenek {type} emlékeztetők</h3>
-            <p className="text-gray-600">Jelenleg nincsenek elérhető {type} emlékeztetők.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t(`Nincsenek ${type} emlékeztetők`, `No ${type} reminders`)}</h3>
+            <p className="text-gray-600">{t(`Jelenleg nincsenek elérhető ${type} emlékeztetők.`, `There are currently no available ${type} reminders.`)}</p>
         </div>
     )
 
@@ -45,13 +49,13 @@ export default function RemindersGridClient({ remindersByYear }: RemindersGridCl
                     value="ehk"
                     className="px-4 py-2 text-sm font-medium data-[state=active]:bg-[#862633] data-[state=active]:text-white data-[state=inactive]:text-gray-700 data-[state=inactive]:hover:text-[#862633] transition-colors"
                 >
-                    EHK Emlékeztetők
+                    {t('EHK Emlékeztetők', 'EHK Reminders')}
                 </TabsTrigger>
                 <TabsTrigger
                     value="ehdk"
                     className="px-4 py-2 text-sm font-medium data-[state=active]:bg-[#862633] data-[state=active]:text-white data-[state=inactive]:text-gray-700 data-[state=inactive]:hover:text-[#862633] transition-colors"
                 >
-                    EHDK Emlékeztetők
+                    {t('EHDK Emlékeztetők', 'EHDK Reminders')}
                 </TabsTrigger>
             </TabsList>
 

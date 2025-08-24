@@ -8,15 +8,16 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import {Representative, Media} from "@/payload-types";
 import {RichText} from "@payloadcms/richtext-lexical/react";
+import { useLanguage } from '@/components/LanguageProvider'
 
 interface RepresentativeModalProps {
     representative: Representative
-    onClose: () => void
+    onCloseAction: () => void
 }
 
 type RepWithPic = Representative & { picture?: number | Media | null }
 
-export function RepresentativeModal({ representative, onClose }: RepresentativeModalProps) {
+export function RepresentativeModal({ representative, onCloseAction }: RepresentativeModalProps) {
     const facultyColors = {
         'ÉMK': 'bg-red-100 text-red-800',
         'GPK': 'bg-blue-100 text-blue-800',
@@ -28,12 +29,33 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
         'KJK': 'bg-yellow-100 text-yellow-800',
     }
 
+    const { lang } = useLanguage()
+    const firstPos = representative.position?.[0]
+    const headerPosition = lang === 'EN'
+        ? (firstPos?.position_en || firstPos?.position_hu)
+        : (firstPos?.position_hu || firstPos?.position_en)
+
+    const getPosText = (pos: NonNullable<Representative['position']>[number]) =>
+        lang === 'EN' ? (pos.position_en || pos.position_hu) : (pos.position_hu || pos.position_en)
+
+    // Localized labels
+    const labels = {
+        positions: lang === 'EN' ? 'Positions' : 'Pozíciók',
+        contacts: lang === 'EN' ? 'Contacts' : 'Elérhetőségek',
+        intro: lang === 'EN' ? 'Introduction' : 'Bemutatkozás',
+        reports: lang === 'EN' ? 'Reports and documents' : 'Beszámolók és dokumentumok',
+        open: lang === 'EN' ? 'Open' : 'Megnyitás',
+        unavailable: lang === 'EN' ? 'Unavailable' : 'Nem elérhető',
+    } as const
+
+    const introData = lang === 'EN' ? representative.introduction.text_en : representative.introduction.text_hu
+
     const rep = representative as RepWithPic
     const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
     const pictureUrl = media?.url || undefined
 
     return (
-        <Dialog open={true} onOpenChange={onClose}>
+        <Dialog open={true} onOpenChange={onCloseAction}>
             <DialogContent className="w-[85vw] !max-w-none max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-3">
@@ -52,9 +74,9 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                         </div>
                         <div>
                             <h2 className="text-2xl font-bold">{representative.name}</h2>
-                            {representative.position && representative.position.length > 0 && (
+                            {headerPosition && (
                                 <p className="text-sm text-gray-600 font-normal">
-                                    {representative.position[0].position_hu}
+                                    {headerPosition}
                                 </p>
                             )}
                         </div>
@@ -73,14 +95,11 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
 
                     {representative.position && representative.position.length > 1 && (
                         <div>
-                            <h3 className="font-semibold text-lg mb-3">Pozíciók</h3>
+                            <h3 className="font-semibold text-lg mb-3">{labels.positions}</h3>
                             <div className="space-y-2">
                                 {representative.position.map((pos, index) => (
                                     <div key={index} className="bg-gray-50 p-3 rounded-lg">
-                                        <p className="font-medium">{pos.position_hu}</p>
-                                        {pos.position_en && (
-                                            <p className="text-sm text-gray-600">{pos.position_en}</p>
-                                        )}
+                                        <p className="font-medium">{getPosText(pos)}</p>
                                     </div>
                                 ))}
                             </div>
@@ -91,7 +110,7 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                         <div>
                             <h3 className="font-semibold text-lg mb-3 flex items-center">
                                 <Mail className="w-5 h-5 mr-2" />
-                                Elérhetőségek
+                                {labels.contacts}
                             </h3>
                             <div className="space-y-2">
                                 {representative.emails.map((emailObj, index) => (
@@ -100,9 +119,9 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                                         href={`mailto:${emailObj.email}`}
                                         className="block bg-blue-50 hover:bg-blue-100 p-3 rounded-lg transition-colors"
                                     >
-                    <span className="text-blue-600 hover:text-blue-800">
-                      {emailObj.email}
-                    </span>
+                                        <span className="text-blue-600 hover:text-blue-800">
+                                            {emailObj.email}
+                                        </span>
                                     </a>
                                 ))}
                             </div>
@@ -112,9 +131,9 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                     <Separator />
 
                     <div>
-                        <h3 className="font-semibold text-lg mb-3">Bemutatkozás</h3>
+                        <h3 className="font-semibold text-lg mb-3">{labels.intro}</h3>
                         <div className="text-gray-700 leading-relaxed">
-                            <RichText data={representative.introduction.text_hu} />
+                            <RichText data={introData} />
                         </div>
                     </div>
 
@@ -124,15 +143,16 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                             <div>
                                 <h3 className="font-semibold text-lg mb-3 flex items-center">
                                     <Download className="w-5 h-5 mr-2" />
-                                    Beszámolók és dokumentumok
+                                    {labels.reports}
                                 </h3>
                                 <div className="grid gap-3">
                                     {representative.files.map((fileObj, index) => {
                                         const fileUrl = typeof fileObj.file === 'object' ? fileObj.file?.url : undefined;
+                                        const fileTitle = lang === 'EN' ? (fileObj.title_en || fileObj.title_hu) : (fileObj.title_hu || fileObj.title_en)
                                         return (
                                             <div key={index} className="flex items-center justify-between bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
                                                 <div>
-                                                    <h4 className="font-medium">{fileObj.title_hu}</h4>
+                                                    <h4 className="font-medium">{fileTitle}</h4>
                                                 </div>
                                                 {fileUrl ? (
                                                     <a
@@ -143,13 +163,13 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
                                                     >
                                                         <Button variant="outline" size="sm">
                                                             <Download className="w-4 h-4 mr-2" />
-                                                            Megnyitás
+                                                            {labels.open}
                                                         </Button>
                                                     </a>
                                                 ) : (
                                                     <Button variant="outline" size="sm" disabled>
                                                         <Download className="w-4 h-4 mr-2" />
-                                                        Nem elérhető
+                                                        {labels.unavailable}
                                                     </Button>
                                                 )}
                                             </div>

@@ -1,8 +1,11 @@
+"use client"
+
 import { Calendar, ChevronDown, ChevronUp } from 'lucide-react'
 import { useState } from 'react'
 import { ReminderCard } from '@/components/reminder-card'
 import { Button } from '@/components/ui/button'
 import {Reminder} from "@/payload-types";
+import { useLanguage } from "@/components/LanguageProvider";
 
 interface YearSectionProps {
     year: string
@@ -11,6 +14,11 @@ interface YearSectionProps {
 
 export function YearSection({ year, reminders }: YearSectionProps) {
     const [isExpanded, setIsExpanded] = useState(false)
+    const { lang } = useLanguage()
+
+    const countLabel = lang === 'EN'
+        ? `${reminders.length} ${reminders.length === 1 ? 'reminder' : 'reminders'}`
+        : `${reminders.length} emlékeztető`
 
     return (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
@@ -27,7 +35,7 @@ export function YearSection({ year, reminders }: YearSectionProps) {
                         <div className="text-left">
                             <h2 className="text-2xl font-bold text-gray-900">{year}</h2>
                             <p className="text-sm text-gray-600">
-                                {reminders.length} emlékeztető
+                                {countLabel}
                             </p>
                         </div>
                     </div>

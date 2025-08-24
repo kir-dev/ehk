@@ -1,16 +1,22 @@
+"use client"
+
 import { Eye, FileText, Calendar } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import {Reminder} from "@/payload-types";
+import { useLanguage } from "@/components/LanguageProvider";
 
 interface ReminderCardProps {
     reminder: Reminder
 }
 
 export function ReminderCard({ reminder }: ReminderCardProps) {
+    const { lang } = useLanguage()
+
     const formatDate = (dateString: string) => {
         const date = new Date(dateString)
-        return date.toLocaleDateString('hu-HU', {
+        const locale = lang === 'EN' ? 'en-US' : 'hu-HU'
+        return date.toLocaleDateString(locale, {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -53,6 +59,8 @@ export function ReminderCard({ reminder }: ReminderCardProps) {
         }
     }
 
+    const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+
     return (
         <Card className="group hover:shadow-md transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-4">
@@ -84,7 +92,7 @@ export function ReminderCard({ reminder }: ReminderCardProps) {
                                 disabled={!fileUrl}
                             >
                                 <Eye className="h-4 w-4 mr-1" />
-                                Megtekintés
+                                {t('Megtekintés', 'View')}
                             </Button>
                         </div>
                     </div>

@@ -19,94 +19,104 @@ import Image from "next/image";
 // Update your navigationItems array to include hrefs
 const navigationItems = [
     {
-        title: "ADMIN"
-        , href: "/admin",
+        title: "ADMIN",
+        href: "/admin",
+        targetBlank: false,
         items: [],
     },
     {
         title: "SZERVEZET",
         href: "/szervezet",
+        targetBlank: false,
         items: [
-            { label: "Képviselők", href: "kepviselok" },
-            { label: "Emlékeztetők", href: "emlekeztetok" },
-            { label: "Határozatok tára", href: "#" },
-            { label: "ESZB honlap", href: "#" },
-            { label: "EDK honlap", href: "#" },
-            { label: "Engedélyek", href: "#" },
+            { label: "Képviselők", href: "kepviselok", targetBlank: false },
+            { label: "Emlékeztetők", href: "emlekeztetok", targetBlank: false },
+            { label: "Határozatok tára", href: "hatarozatok-tara", targetBlank: false },
+            { label: "ESZB honlap", href: "#", targetBlank: false },
+            { label: "EDK honlap", href: "https://www.bmeedk.hu/page/1", targetBlank: true },
+            { label: "Engedélyek", href: "#", targetBlank: false },
         ],
     },
     {
         title: "OKTATÁS",
         href: "/oktatas",
+        targetBlank: false,
         items: [
-            { label: "Szabályzatok", href: "#" },
-            { label: "OMHV", href: "#" },
-            { label: "Neptun", href: "#" },
-            { label: "Nyelvoktatás", href: "#" },
-            { label: "Kisokosok/Segédletek", href: "#" },
+            { label: "Szabályzatok", href: "#", targetBlank: false },
+            { label: "OMHV", href: "#", targetBlank: false },
+            { label: "Neptun", href: "https://neptun.bme.hu/hallgatoi/login.aspx", targetBlank: true },
+            { label: "Nyelvoktatás", href: "#", targetBlank: false },
+            { label: "Kisokosok/Segédletek", href: "#", targetBlank: false },
         ],
     },
     {
         title: "JUTTATÁS",
         href: "/juttatas",
+        targetBlank: false,
         items: [
-            { label: "Tanulmányi ösztöndíjak", href: "#" },
-            { label: "Szociális alapú ösztöndíjak", href: "#" },
-            { label: "EHK ösztöndíjak", href: "#" },
-            { label: "Szabályzatok", href: "#" },
-            { label: "MŰEPER", href: "#" },
-            { label: "Esélyegyenlőség", href: "#" },
+            { label: "Tanulmányi ösztöndíjak", href: "#", targetBlank: false },
+            { label: "Szociális alapú ösztöndíjak", href: "#", targetBlank: false },
+            { label: "EHK ösztöndíjak", href: "#", targetBlank: false },
+            { label: "Szabályzatok", href: "#", targetBlank: false },
+            { label: "MŰEPER", href: "https://mueper.bme.hu", targetBlank: true },
+            { label: "Esélyegyenlőség", href: "#", targetBlank: false },
         ],
     },
     {
         title: "KOLLÉGIUM",
         href: "/kollegium",
+        targetBlank: false,
         items: [
-            { label: "Bemutató", href: "#" },
-            { label: "Szabályzatok", href: "#" },
-            { label: "KEFIR", href: "#" },
+            { label: "Bemutató", href: "#", targetBlank: false },
+            { label: "Szabályzatok", href: "#", targetBlank: false },
+            { label: "KEFIR", href: "https://kefir.bme.hu/login", targetBlank: true },
         ],
     },
     {
         title: "SPORT",
         href: "/sport",
+        targetBlank: false,
         items: [
-            { label: "Sportpálya támogatás pályázat", href: "#" },
-            { label: "Sportterem igénylés", href: "#" },
-            { label: "Testnevelési Központ", href: "#" },
-            { label: "Sportközpont", href: "#" },
+            { label: "Sportpálya támogatás pályázat", href: "#", targetBlank: false },
+            { label: "Sportterem igénylés", href: "#", targetBlank: false },
+            { label: "Testnevelési Központ", href: "https://testneveles.bme.hu", targetBlank: true },
+            { label: "Sportközpont", href: "https://bmesport.hu", targetBlank: true },
         ],
     },
     {
         title: "KÜLÜGY",
         href: "/kulugy",
+        targetBlank: false,
         items: [
-            { label: "Erasmus", href: "#" },
-            { label: "EELISA", href: "#" },
-            { label: "HKT", href: "#" },
+            { label: "Erasmus", href: "#", targetBlank: false },
+            { label: "EELISA", href: "#", targetBlank: false },
+            { label: "HKT", href: "#", targetBlank: false },
         ],
     },
     {
         title: "INTERNATIONAL",
         href: "/international",
+        targetBlank: false,
         items: [
-            { label: "", href: "" },
+            { label: "", href: "", targetBlank: false },
         ],
     },
     {
         title: "KÖZÉLET",
         href: "/kozelet",
+        targetBlank: false,
         items: [
-            { label: "Versenycsapatok", href: "#" },
-            { label: "Szakkollégiumok", href: "#" },
-            { label: "Öntevékeny körök", href: "#" },
-            { label: "Rendezvények", href: "#" },
-            { label: "Klubbok", href: "#" },
+            { label: "Versenycsapatok", href: "#", targetBlank: false },
+            { label: "Szakkollégiumok", href: "#", targetBlank: false },
+            { label: "Öntevékeny körök", href: "#", targetBlank: false },
+            { label: "Rendezvények", href: "#", targetBlank: false },
+            { label: "Klubbok", href: "#", targetBlank: false },
         ],
     },
     {
         title: "GÓLYÁKNAK",
         href: "/golyaknak",
+        targetBlank: false,
         items: [],
     },
 ]
@@ -148,6 +158,8 @@ export default function Navbar() {
                                                                 <NavigationMenuLink className="" key={subItem.label} asChild>
                                                                     <Link
                                                                         href={subItem.href}
+                                                                        target={subItem.targetBlank ? "_blank" : undefined}
+                                                                        rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
                                                                         className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors "
                                                                     >
                                                                         {subItem.label}
@@ -162,6 +174,8 @@ export default function Navbar() {
                                             <NavigationMenuLink asChild>
                                                 <Link
                                                     href={item.href}
+                                                    target={item.targetBlank ? "_blank" : undefined}
+                                                    rel={item.targetBlank ? "noopener noreferrer" : undefined}
                                                     className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2 block"
                                                 >
                                                     {item.title}
@@ -204,6 +218,8 @@ export default function Navbar() {
                                                         <Link
                                                             key={subItem.label}
                                                             href={subItem.href}
+                                                            target={subItem.targetBlank ? "_blank" : undefined}
+                                                            rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
                                                             className="block text-sm text-gray-600 hover:text-red-700 py-1"
                                                             onClick={() => setIsOpen(false)}
                                                         >

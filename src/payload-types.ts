@@ -74,6 +74,7 @@ export interface Config {
     news: News;
     'hero-images': HeroImage;
     'muszak-paper': MuszakPaper;
+    decisions: Decision;
     events: Event;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -88,6 +89,7 @@ export interface Config {
     news: NewsSelect<false> | NewsSelect<true>;
     'hero-images': HeroImagesSelect<false> | HeroImagesSelect<true>;
     'muszak-paper': MuszakPaperSelect<false> | MuszakPaperSelect<true>;
+    decisions: DecisionsSelect<false> | DecisionsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -348,6 +350,21 @@ export interface MuszakPaper {
   createdAt: string;
 }
 /**
+ * Határozatok kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "decisions".
+ */
+export interface Decision {
+  id: number;
+  text_hu: string;
+  text_en: string;
+  displayText: string;
+  file: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Események gyűjteménye - egy napos és többszörös napos eseményekhez
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -405,6 +422,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'muszak-paper';
         value: number | MuszakPaper;
+      } | null)
+    | ({
+        relationTo: 'decisions';
+        value: number | Decision;
       } | null)
     | ({
         relationTo: 'events';
@@ -587,6 +608,18 @@ export interface MuszakPaperSelect<T extends boolean = true> {
   date?: T;
   picture?: T;
   link?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "decisions_select".
+ */
+export interface DecisionsSelect<T extends boolean = true> {
+  text_hu?: T;
+  text_en?: T;
+  displayText?: T;
+  file?: T;
   updatedAt?: T;
   createdAt?: T;
 }

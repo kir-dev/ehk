@@ -6,13 +6,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import {Representative} from "@/payload-types";
+import {Representative, Media} from "@/payload-types";
 import {RichText} from "@payloadcms/richtext-lexical/react";
 
 interface RepresentativeModalProps {
     representative: Representative
     onClose: () => void
 }
+
+type RepWithPic = Representative & { picture?: number | Media | null }
 
 export function RepresentativeModal({ representative, onClose }: RepresentativeModalProps) {
     const facultyColors = {
@@ -26,15 +28,19 @@ export function RepresentativeModal({ representative, onClose }: RepresentativeM
         'KJK': 'bg-yellow-100 text-yellow-800',
     }
 
+    const rep = representative as RepWithPic
+    const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
+    const pictureUrl = media?.url || undefined
+
     return (
         <Dialog open={true} onOpenChange={onClose}>
             <DialogContent className="w-[85vw] !max-w-none max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-3">
                         <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                            {representative.picture ? (
+                            {pictureUrl ? (
                                 <Image
-                                    src={typeof representative.picture === 'object' ? representative.picture.url || "/placeholder.svg" : "/placeholder.svg"}
+                                    src={pictureUrl}
                                     alt={representative.name}
                                     width={128}
                                     height={128}

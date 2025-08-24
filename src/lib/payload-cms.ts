@@ -28,6 +28,7 @@ export async function getRepresentatives() {
   const payload = await getPayload({ config });
   const representatives = await payload.find({
     collection: "representatives",
+    depth: 1,
     limit: 1000,
     sort: "order",
   });

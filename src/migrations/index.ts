@@ -17,7 +17,6 @@ export const migrations = [
   {
     up: migration_20250824_190720.up,
     down: migration_20250824_190720.down,
-    name: '20250824_190720'
     name: '20250810_113709_create_users_sessions',
   },
   {

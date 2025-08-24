@@ -1,5 +1,5 @@
 import 'server-only';
-import {Decision, News, Reminder, Representative, Events } from "@/payload-types";
+import {Decision, News, Reminder, Representative, Event } from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 

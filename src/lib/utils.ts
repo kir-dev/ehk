@@ -22,3 +22,29 @@ export function groupRemindersByYear(reminders: Reminder[]): Record<string, Remi
     return acc
   }, {} as Record<string, Reminder[]>)
 }
+
+// Tag translation mapping HU -> EN
+export const TAG_TRANSLATIONS: Record<string, string> = {
+  'EHK': 'EHK',
+  'Oktatás': 'Education',
+  'Juttatás': 'Grants',
+  'Kollégium': 'Dormitory',
+  'Pályázat': 'Application',
+  'Sport': 'Sports',
+  'Külügy': 'International Affairs',
+  'Rendezvények': 'Events',
+  'Közélet': 'Community Life',
+  'Felhívás': 'Announcement',
+  'Beszámoló': 'Report',
+  'Tájékoztatás': 'Information',
+  'Kiemelt hír': 'Featured',
+}
+
+export function translateTag(tag: string, lang: 'HU' | 'EN'): string {
+  if (lang === 'EN') return TAG_TRANSLATIONS[tag] ?? tag
+  return tag
+}
+
+export function translateTags(tags: string[] = [], lang: 'HU' | 'EN'): string[] {
+  return tags.map((t) => translateTag(t, lang))
+}

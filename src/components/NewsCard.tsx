@@ -3,25 +3,10 @@
 import { News } from "@/payload-types";
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
+import { translateTags } from "@/lib/utils";
 
 interface NewsCardProps {
   news: News;
-}
-
-const TAG_TRANSLATIONS: Record<string, string> = {
-    'EHK': 'EHK',
-    'Oktatás': 'Education',
-    'Juttatás': 'Grants',
-    'Kollégium': 'Dormitory',
-    'Pályázat': 'Application',
-    'Sport': 'Sports',
-    'Külügy': 'International Affairs',
-    'Rendezvények': 'Events',
-    'Közélet': 'Community Life',
-    'Felhívás': 'Announcement',
-    'Beszámoló': 'Report',
-    'Tájékoztatás': 'Information',
-    'Kiemelt hír': 'Featured',
 }
 
 export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags } }: NewsCardProps) {
@@ -31,7 +16,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
 
     const displayTitle = lang === 'EN' && titleEng ? titleEng : title
     const shortText = lang === 'EN' ? (shortDescription.text_en || shortDescription.text_hu) : shortDescription.text_hu
-    const displayTags = (tags || []).map(tag => (lang === 'EN' ? (TAG_TRANSLATIONS[tag] || tag) : tag))
+    const displayTags = translateTags((tags as unknown) as string[], lang)
 
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group relative">
@@ -67,8 +52,8 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
 
             <div className="px-6 pb-6 relative z-10">
                 <Link
-                    href={`/news/${id}`}
-                    className="inline-block bg-ehk-dark-red hover:bg-white hover:text-red-600 text-white py-2 px-4 rounded transition-colors duration-200 text-center w-full border border-transparent hover:border-red-600"
+                    href={`/hirek/${id}`}
+                    className="inline-block bg-ehk-dark-red hover:bg-white hover:text-ehk-dark-red text-white py-2 px-4 rounded transition-colors duration-200 text-center w-full border border-transparent hover:border-ehk-dark-red"
                 >
                     {t('Tovább', 'Read more')}
                 </Link>

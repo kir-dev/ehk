@@ -3,12 +3,14 @@ import { FileText, Building2 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {Representative} from "@/payload-types";
+import {Representative, Media} from "@/payload-types";
 
 interface RepresentativeCardProps {
     representative: Representative
     onClick: () => void
 }
+
+type RepWithPic = Representative & { picture?: number | Media | null }
 
 export function RepresentativeCard({ representative, onClick }: RepresentativeCardProps) {
     const facultyColors = {
@@ -22,15 +24,19 @@ export function RepresentativeCard({ representative, onClick }: RepresentativeCa
         'KJK': 'bg-yellow-100 text-yellow-800',
     }
 
+    const rep = representative as RepWithPic
+    const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
+    const pictureUrl = media?.url || null
+
     return (
         <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" onClick={onClick}>
             <CardContent className="p-6 h-full flex flex-col">
                 <div className="flex flex-col items-center text-center flex-1">
                     <div className="relative mb-4">
                         <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                            {representative.picture ? (
+                            {pictureUrl ? (
                                 <Image
-                                    src={typeof representative.picture === 'object' ? representative.picture.url || "/nincs.jpg" : "/nincs.jpg"}
+                                    src={pictureUrl}
                                     alt={representative.name}
                                     width={128}
                                     height={128}

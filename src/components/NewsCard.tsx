@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
 
 interface NewsCardProps {
-    news: News;
+  news: News;
 }
 
 const TAG_TRANSLATIONS: Record<string, string> = {

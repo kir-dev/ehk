@@ -1,9 +1,9 @@
 import 'server-only';
-import {Decision, News, Reminder, Representative} from "@/payload-types";
+import {Decision, News, Reminder, Representative, Event } from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
-export async function getNews(){
+export async function getNews() {
   const payload = await getPayload({ config });
   const groups = await payload.find({
     collection: "news",
@@ -14,10 +14,22 @@ export async function getNews(){
   return groups.docs as News[];
 }
 
+export async function getEvents(): Promise<Event[]> {
+  const payload = await getPayload({ config });
+  const events = await payload.find({
+    collection: "events",
+    limit: 1000,
+    sort: "date.startDate",
+  });
+
+  return events.docs as Event[];
+}
+
 export async function getRepresentatives() {
   const payload = await getPayload({ config });
   const representatives = await payload.find({
     collection: "representatives",
+    depth: 1,
     limit: 1000,
     sort: "order",
   });

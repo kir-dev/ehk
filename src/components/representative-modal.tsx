@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import {Representative} from "@/payload-types";
+import {Representative, Media} from "@/payload-types";
 import {RichText} from "@payloadcms/richtext-lexical/react";
 import { useLanguage } from '@/components/LanguageProvider'
 
@@ -15,7 +15,9 @@ interface RepresentativeModalProps {
     onCloseAction: () => void
 }
 
-export function RepresentativeModal({ representative, onCloseAction }: RepresentativeModalProps) {
+type RepWithPic = Representative & { picture?: number | Media | null }
+
+export function RepresentativeModal({ representative, onClose }: RepresentativeModalProps) {
     const facultyColors = {
         'ÉMK': 'bg-red-100 text-red-800',
         'GPK': 'bg-blue-100 text-blue-800',
@@ -48,15 +50,19 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
 
     const introData = lang === 'EN' ? representative.introduction.text_en : representative.introduction.text_hu
 
+    const rep = representative as RepWithPic
+    const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
+    const pictureUrl = media?.url || undefined
+
     return (
         <Dialog open={true} onOpenChange={onCloseAction}>
             <DialogContent className="w-[85vw] !max-w-none max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-3">
                         <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                            {representative.picture ? (
+                            {pictureUrl ? (
                                 <Image
-                                    src={typeof representative.picture === 'object' ? representative.picture.url || "/placeholder.svg" : "/placeholder.svg"}
+                                    src={pictureUrl}
                                     alt={representative.name}
                                     width={128}
                                     height={128}

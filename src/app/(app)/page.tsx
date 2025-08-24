@@ -4,6 +4,7 @@ import NewsSection from "@/components/NewsSection";
 import ImageViewer from "@/components/ImageViewer";
 import { getHeroImages } from "@/lib/getHeroImages";
 import MUSZAKSection from "@/components/MUSZAKSection";
+import HomeNewsHeader from "@/components/HomeNewsHeader";
 
 export default async function Home() {
     const heroImages = await getHeroImages();
@@ -20,7 +21,7 @@ export default async function Home() {
                 <section className="py-16 px-4">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="max-w-7xl mx-auto col-span-1 sm:col-span-2">
-                            <h2 className="text-3xl font-bold mb-8 border-b-2 border-red-500 pb-2 inline-block">Hírek</h2>
+                            <HomeNewsHeader />
                             <NewsSection />
                         </div>
                         <MUSZAKSection/>

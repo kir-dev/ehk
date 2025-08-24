@@ -22,6 +22,7 @@ export default async function MUSZAKSection(){
                     <MUSZAKCard
                         key={paper.id}
                         title={paper.title}
+                        titleEng={paper.titleEng}
                         date={paper.date}
                         imageUrl={isMedia(paper.picture) ? (paper.picture.url ?? "") : ""}
                     />

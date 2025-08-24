@@ -1,16 +1,22 @@
-import { ArrowLeft, Calendar, Tag, Share2, Clock } from "lucide-react"
+import { ArrowLeft, Calendar, Tag, Share2, Clock, Download, FileText, File } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { RelatedNews } from "@/components/related-news"
-import {News} from "@/payload-types";
+import {News, Media} from "@/payload-types";
 import {RichText} from "@payloadcms/richtext-lexical/react";
 import ShareButton from "@/components/ShareButton";
 
 interface NewsDetailProps {
     article: News
+}
+
+type NewsFileItem = {
+    id?: string
+    file: number | Media
+    description?: string
 }
 
 function lexicalToPlainText(data: unknown): string {
@@ -33,6 +39,26 @@ function getReadingTimeFromRichText(data: unknown): number {
     const text = lexicalToPlainText(data)
     const words = text.trim().split(/\s+/).filter(Boolean).length
     return Math.max(1, Math.ceil(words / 200))
+}
+
+function formatBytes(bytes?: number | null): string | null {
+    if (!bytes || bytes <= 0) return null
+    const units = ["B", "KB", "MB", "GB", "TB"]
+    let i = 0
+    let val = bytes
+    while (val >= 1024 && i < units.length - 1) {
+        val = val / 1024
+        i++
+    }
+    return `${val.toFixed(val >= 10 || i === 0 ? 0 : 1)} ${units[i]}`
+}
+
+function getFileIcon(type?: string | null) {
+    const t = (type || "").toLowerCase()
+    if (t.includes("pdf")) return <FileText className="w-4 h-4 text-red-500" />
+    if (t.includes("word") || t.includes("document") || t.includes("msword")) return <FileText className="w-4 h-4 text-blue-500" />
+    if (t.includes("excel") || t.includes("spreadsheet") || t.includes("sheet")) return <FileText className="w-4 h-4 text-green-500" />
+    return <File className="w-4 h-4 text-gray-500" />
 }
 
 export function NewsDetail({ article }: NewsDetailProps) {
@@ -111,6 +137,59 @@ export function NewsDetail({ article }: NewsDetailProps) {
                                     className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                                     <RichText data={article.description.text_hu} />
                                 </div>
+                                {/* Attached Files */}
+                                {article.files && article.files.length > 0 && (
+                                    <>
+                                        <Separator className="my-8" />
+                                        <div>
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                                <Download className="w-5 h-5" />
+                                                Csatolt fájlok
+                                            </h3>
+                                            <div className="grid gap-3">
+                                                {((article.files as unknown) as NewsFileItem[]).map((item) => {
+                                                    const media = typeof item.file === 'object' ? item.file : null
+                                                    const name: string = media?.filename ?? 'Fájl'
+                                                    const mime = media?.mimeType ?? undefined
+                                                    const size = formatBytes(media?.filesize)
+                                                    const url = media?.url ?? undefined
+                                                    const key = item.id ?? media?.id ?? `${name}-${url}`
+                                                    const title = item.description && item.description.trim().length > 0 ? item.description : name
+                                                    return (
+                                                        <div
+                                                            key={key}
+                                                            className="flex items-center justify-between bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors border border-gray-200"
+                                                        >
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="flex-shrink-0">{getFileIcon(mime)}</div>
+                                                                <div>
+                                                                    <h4 className="font-medium text-gray-900">{title}</h4>
+                                                                    <p className="text-sm text-gray-500">
+                                                                        {size ? size : null}
+                                                                        {item.description ? (size ? ' · ' : '') + name : null}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            {url && (
+                                                                <Button
+                                                                    variant="outline"
+                                                                    size="sm"
+                                                                    className="hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 bg-transparent"
+                                                                    asChild
+                                                                >
+                                                                    <a href={url} download>
+                                                                        <Download className="w-4 h-4 mr-2" />
+                                                                        Letöltés
+                                                                    </a>
+                                                                </Button>
+                                                            )}
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </CardContent>
                         </Card>
                     </div>
@@ -130,6 +209,12 @@ export function NewsDetail({ article }: NewsDetailProps) {
                                         <span className="text-sm font-medium text-gray-500">Olvasási idő</span>
                                         <p className="text-sm text-gray-900">{getReadingTimeFromRichText(article.description.text_hu)} perc</p>
                                     </div>
+                                    {article.files && article.files.length > 0 && (
+                                        <div>
+                                            <span className="text-sm font-medium text-gray-500">Csatolt fájlok</span>
+                                            <p className="text-sm text-gray-900">{article.files.length} fájl</p>
+                                        </div>
+                                    )}
                                     <div>
                                         <span className="text-sm font-medium text-gray-500">Címkék</span>
                                         <div className="flex flex-wrap gap-1 mt-1">

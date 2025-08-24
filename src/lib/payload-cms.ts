@@ -50,6 +50,8 @@ export async function getNewsById(id: number) {
     const payload = await getPayload({ config });
     const news = await payload.find({
         collection: "news",
+        depth: 2,
+        limit: 1,
         where: {
             id: {
                 equals: id,

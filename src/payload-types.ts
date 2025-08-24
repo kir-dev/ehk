@@ -315,6 +315,13 @@ export interface News {
     | 'Tájékoztatás'
     | 'Kiemelt hír'
   )[];
+  files?:
+    | {
+        file: number | Media;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -555,6 +562,13 @@ export interface NewsSelect<T extends boolean = true> {
       };
   date?: T;
   tags?: T;
+  files?:
+    | T
+    | {
+        file?: T;
+        description?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

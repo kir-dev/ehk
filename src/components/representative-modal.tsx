@@ -17,7 +17,7 @@ interface RepresentativeModalProps {
 
 type RepWithPic = Representative & { picture?: number | Media | null }
 
-export function RepresentativeModal({ representative, onClose }: RepresentativeModalProps) {
+export function RepresentativeModal({ representative, onCloseAction }: RepresentativeModalProps) {
     const facultyColors = {
         'ÉMK': 'bg-red-100 text-red-800',
         'GPK': 'bg-blue-100 text-blue-800',

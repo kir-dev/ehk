@@ -15,7 +15,7 @@ interface RepresentativeCardProps {
 
 type RepWithPic = Representative & { picture?: number | Media | null }
 
-export function RepresentativeCard({ representative, onClick }: RepresentativeCardProps) {
+export function RepresentativeCard({ representative, onClickAction }: RepresentativeCardProps) {
     const facultyColors = {
         'ÉMK': 'bg-red-100 text-red-800',
         'GPK': 'bg-blue-100 text-blue-800',

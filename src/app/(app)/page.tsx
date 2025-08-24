@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const dynamic = "force-dynamic";
 
 import NewsSection from "@/components/NewsSection";
@@ -5,6 +7,9 @@ import ImageViewer from "@/components/ImageViewer";
 import { getHeroImages } from "@/lib/getHeroImages";
 import MUSZAKSection from "@/components/MUSZAKSection";
 import HomeNewsHeader from "@/components/HomeNewsHeader";
+import {getEvents} from "@/lib/payload-cms";
+import Calendar from "@/components/Calendar";
+
 
 export default async function Home() {
   const heroImages = await getHeroImages();
@@ -45,9 +50,7 @@ export default async function Home() {
               <Calendar events={events} className="md:w-full h-2/3 mx-auto" />
             </div>
             <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-8 border-b-2 border-red-500 pb-2 inline-block">
-                Hírek
-              </h2>
+                <HomeNewsHeader />
               <NewsSection />
             </div>
             <MUSZAKSection />

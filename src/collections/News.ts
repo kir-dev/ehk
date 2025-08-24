@@ -104,5 +104,25 @@ export const News: CollectionConfig = {
             hasMany: true,
             required: true,
         },
+        {
+            name: "files",
+            label: "Fájlok",
+            type: "array",
+            fields: [
+                {
+                    name: "file",
+                    label: "Fájl",
+                    type: "upload",
+                    relationTo: "media",
+                    required: true,
+                },
+                {
+                    name: "description",
+                    label: "Leírás",
+                    type: "text",
+                    required: false,
+                },
+            ],
+        },
     ],
 }

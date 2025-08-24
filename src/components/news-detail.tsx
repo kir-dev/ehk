@@ -75,7 +75,7 @@ export function NewsDetail({ article }: NewsDetailProps) {
             <div className="container mx-auto px-4 py-8">
                 {/* Back Navigation */}
                 <div className="mb-6">
-                    <Button variant="ghost" asChild className="hover:bg-gray-100">
+                    <Button variant="ghost" asChild className="hover:bg-gray-100 hover:text-ehk-dark-red">
                         <Link href="/" className="flex items-center gap-2">
                             <ArrowLeft className="w-4 h-4" />
                             Vissza a hírekhez
@@ -92,11 +92,11 @@ export function NewsDetail({ article }: NewsDetailProps) {
                                 <div className="mb-6">
                                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                                         <div className="flex items-center gap-1">
-                                            <Calendar className="w-4 h-4" />
+                                            <Calendar className="w-4 h-4 text-ehk-dark-red" />
                                             <span>{formatDate(article.date)}</span>
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            <Clock className="w-4 h-4" />
+                                            <Clock className="w-4 h-4 text-ehk-dark-red" />
                                             <span>{getReadingTimeFromRichText(article.description.text_hu)} perc olvasás</span>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@ export function NewsDetail({ article }: NewsDetailProps) {
                                         <ShareButton
                                             variant="outline"
                                             size="sm"
-                                            className="flex items-center gap-2 bg-transparent"
+                                            className="flex items-center gap-2 bg-transparent hover:border-ehk-dark-red hover:text-ehk-dark-red"
                                             title={article.title}
                                             text={article.shortDescription.text_hu}
                                         >
@@ -174,7 +174,7 @@ export function NewsDetail({ article }: NewsDetailProps) {
                                                                 <Button
                                                                     variant="outline"
                                                                     size="sm"
-                                                                    className="hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 bg-transparent"
+                                                                    className="hover:bg-white hover:border-ehk-dark-red hover:text-ehk-dark-red bg-transparent"
                                                                     asChild
                                                                 >
                                                                     <a href={url} download>

@@ -35,7 +35,7 @@ export async function RelatedNews({ currentArticle }: RelatedNewsProps) {
                     {relatedArticles.map((article) => (
                         <div key={article.id} className="border-b border-gray-100 last:border-b-0 pb-4 last:pb-0">
                             <Link href={`/hirek/${article.id}`} className="group block">
-                                <h4 className="font-medium text-sm text-gray-900 group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">
+                                <h4 className="font-medium text-sm text-gray-900 group-hover:text-ehk-dark-red transition-colors mb-2 line-clamp-2">
                                     {article.title}
                                 </h4>
                                 <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
@@ -56,7 +56,7 @@ export async function RelatedNews({ currentArticle }: RelatedNewsProps) {
                         </div>
                     ))}
                 </div>
-                <Button variant="outline" size="sm" className="w-full mt-4 bg-transparent" asChild>
+                <Button variant="outline" size="sm" className="w-full mt-4 bg-transparent hover:border-ehk-dark-red hover:text-ehk-dark-red" asChild>
                     <Link href="/">
                         Összes hír megtekintése
                         <ArrowRight className="w-4 h-4 ml-2" />

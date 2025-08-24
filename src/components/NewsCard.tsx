@@ -68,7 +68,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
             <div className="px-6 pb-6 relative z-10">
                 <Link
                     href={`/hirek/${id}`}
-                    className="inline-block bg-ehk-dark-red hover:bg-white hover:text-red-600 text-white py-2 px-4 rounded transition-colors duration-200 text-center w-full border border-transparent hover:border-red-600"
+                    className="inline-block bg-ehk-dark-red hover:bg-white hover:text-ehk-dark-red text-white py-2 px-4 rounded transition-colors duration-200 text-center w-full border border-transparent hover:border-ehk-dark-red"
                 >
                     {t('Tovább', 'Read more')}
                 </Link>

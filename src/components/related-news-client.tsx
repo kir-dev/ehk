@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { News } from "@/payload-types"
 import { useLanguage } from "@/components/LanguageProvider"
+import { translateTags } from "@/lib/utils"
 
 export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[] }) {
   const { lang } = useLanguage()
@@ -43,7 +44,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </div>
                 <div className="flex flex-wrap gap-1">
-                  {article.tags.slice(0, 2).map((tag, index) => (
+                  {translateTags((article.tags as unknown) as string[], lang).slice(0, 2).map((tag, index) => (
                     <Badge key={index} variant="outline" className="text-xs">
                       {tag}
                     </Badge>
@@ -63,4 +64,3 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
     </Card>
   )
 }
-

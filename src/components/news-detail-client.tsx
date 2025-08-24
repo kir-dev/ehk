@@ -10,6 +10,7 @@ import { News, Media } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 import ShareButton from "@/components/ShareButton"
 import { useLanguage } from "@/components/LanguageProvider"
+import { translateTags } from "@/lib/utils"
 
 export interface NewsDetailClientProps {
   article: News
@@ -75,6 +76,7 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
   const title = lang === 'EN' && article.titleEng ? article.titleEng : article.title
   const shortText = lang === 'EN' ? (article.shortDescription.text_en || article.shortDescription.text_hu) : article.shortDescription.text_hu
   const content = lang === 'EN' ? article.description.text_en : article.description.text_hu
+  const displayTags = translateTags(article.tags as unknown as string[], lang)
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString(lang === 'EN' ? 'en-US' : 'hu-HU', {
@@ -106,11 +108,11 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {article.tags.map((tag, index) => (
+            {displayTags.map((tag, index) => (
               <Badge
                 key={index}
                 variant="outline"
-                className="flex items-center gap-1 border-black transition-colors"
+                className="flex items-center gap-1 border-black"
               >
                 <Tag className="w-3 h-3" />
                 {tag}
@@ -233,7 +235,7 @@ export function NewsDetailClientSidebar({ article }: NewsDetailClientProps) {
           <div>
             <span className="text-sm font-medium text-gray-500">{t('Címkék', 'Tags')}</span>
             <div className="flex flex-wrap gap-1 mt-1">
-              {article.tags.map((tag, index) => (
+              {translateTags(article.tags as unknown as string[], lang).map((tag, index) => (
                 <Badge key={index} variant="outline" className="text-xs">
                   {tag}
                 </Badge>
@@ -251,4 +253,3 @@ export function NewsDetailClientSidebar({ article }: NewsDetailClientProps) {
     </Card>
   )
 }
-

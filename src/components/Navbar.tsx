@@ -156,7 +156,7 @@ export default function Navbar() {
                                     <NavigationMenuItem key={item.title}>
                                         {item.items.length > 0 ? (
                                             <>
-                                                <NavigationMenuTrigger className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2">
+                                                <NavigationMenuTrigger className="text-gray-700 relative hover:text-ehk-dark-red font-medium text-sm px-3 py-2">
                                                     {item.title}
                                                 </NavigationMenuTrigger>
                                                 <NavigationMenuContent className="z-50">
@@ -168,7 +168,7 @@ export default function Navbar() {
                                                                         href={subItem.href}
                                                                         target={subItem.targetBlank ? "_blank" : undefined}
                                                                         rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                                        className="block px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-gray-50 rounded-md transition-colors "
+                                                                        className="block px-3 py-2 text-sm text-gray-700 hover:text-ehk-dark-red hover:bg-gray-50 rounded-md transition-colors "
                                                                     >
                                                                         {subItem.label}
                                                                     </Link>
@@ -184,7 +184,7 @@ export default function Navbar() {
                                                     href={item.href}
                                                     target={item.targetBlank ? "_blank" : undefined}
                                                     rel={item.targetBlank ? "noopener noreferrer" : undefined}
-                                                    className="text-gray-700 relative hover:text-red-700 font-medium text-sm px-3 py-2 block"
+                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-medium text-sm px-3 py-2 block"
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -201,14 +201,14 @@ export default function Navbar() {
                                 variant="ghost"
                                 size="sm"
                                 onClick={toggleLang}
-                                className="text-gray-600 hover:text-red-700 px-2 py-1 border border-gray-200 rounded-md"
+                                className="text-gray-600 hover:text-ehk-dark-red px-2 py-1 border border-gray-200 rounded-md"
                                 aria-label={ui.langToggle}
                                 aria-pressed={lang === 'EN'}
                             >
                                 {lang}
                             </Button>
 
-                            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-red-700">
+                            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-ehk-dark-red">
                                 <Search className="h-5 w-5" />
                                 <span className="sr-only">{ui.search}</span>
                             </Button>
@@ -240,7 +240,7 @@ export default function Navbar() {
                                                             href={subItem.href}
                                                             target={subItem.targetBlank ? "_blank" : undefined}
                                                             rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                            className="block text-sm text-gray-600 hover:text-red-700 py-1"
+                                                            className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
                                                             onClick={() => setIsOpen(false)}
                                                         >
                                                             {subItem.label}

@@ -45,3 +45,39 @@ export async function getDecisions() {
 
   return decisions.docs as Decision[];
 }
+
+export async function getNewsById(id: number) {
+    const payload = await getPayload({ config });
+    const news = await payload.find({
+        collection: "news",
+        where: {
+            id: {
+                equals: id,
+            },
+        },
+    });
+
+    return news.docs[0] as News;
+}
+
+export async function getRelatedNews(id: number, tags: string[] = [], limit: number = 2) {
+  const payload = await getPayload({ config });
+
+  if (!Array.isArray(tags) || tags.length === 0) {
+    return [] as News[];
+  }
+
+  const baseFilter = { id: { not_equals: id } };
+  const tagOr = { or: tags.map((tag) => ({ tags: { contains: tag } })) };
+  const where = { and: [baseFilter, tagOr] };
+
+  const news = await payload.find({
+    collection: "news",
+    limit,
+    sort: "-date",
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    where: where as any,
+  });
+
+  return news.docs as News[];
+}

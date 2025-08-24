@@ -75,6 +75,7 @@ export interface Config {
     'hero-images': HeroImage;
     'muszak-paper': MuszakPaper;
     decisions: Decision;
+    events: Event;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -89,6 +90,7 @@ export interface Config {
     'hero-images': HeroImagesSelect<false> | HeroImagesSelect<true>;
     'muszak-paper': MuszakPaperSelect<false> | MuszakPaperSelect<true>;
     decisions: DecisionsSelect<false> | DecisionsSelect<true>;
+    events: EventsSelect<false> | EventsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -370,6 +372,30 @@ export interface Decision {
   createdAt: string;
 }
 /**
+ * Események gyűjteménye - egy napos és többszörös napos eseményekhez
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: number;
+  title_hu: string;
+  title_en: string;
+  shortDescription: {
+    description_hu: string;
+    description_en: string;
+  };
+  date: {
+    startDate: string;
+    /**
+     * Ha egy napos esemény, akkor ugyanaz legyen mint a kezdő dátum
+     */
+    endDate: string;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -407,6 +433,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'decisions';
         value: number | Decision;
+      } | null)
+    | ({
+        relationTo: 'events';
+        value: number | Event;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -604,6 +634,28 @@ export interface DecisionsSelect<T extends boolean = true> {
   text_en?: T;
   displayText?: T;
   file?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events_select".
+ */
+export interface EventsSelect<T extends boolean = true> {
+  title_hu?: T;
+  title_en?: T;
+  shortDescription?:
+    | T
+    | {
+        description_hu?: T;
+        description_en?: T;
+      };
+  date?:
+    | T
+    | {
+        startDate?: T;
+        endDate?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

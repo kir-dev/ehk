@@ -5,7 +5,7 @@ import { FileText, Building2 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {Representative} from "@/payload-types";
+import {Representative, Media} from "@/payload-types";
 import { useLanguage } from '@/components/LanguageProvider'
 
 interface RepresentativeCardProps {
@@ -13,11 +13,13 @@ interface RepresentativeCardProps {
     onClickAction: () => void
 }
 
+type RepWithPic = Representative & { picture?: number | Media | null }
+
 export function RepresentativeCard({ representative, onClickAction }: RepresentativeCardProps) {
     const facultyColors = {
-        '\u00C9MK': 'bg-red-100 text-red-800',
+        'ÉMK': 'bg-red-100 text-red-800',
         'GPK': 'bg-blue-100 text-blue-800',
-        '\u00C9PK': 'bg-green-100 text-green-800',
+        'ÉPK': 'bg-green-100 text-green-800',
         'VBK': 'bg-purple-100 text-purple-800',
         'VIK': 'bg-orange-100 text-orange-800',
         'GTK': 'bg-pink-100 text-pink-800',
@@ -33,15 +35,19 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
 
     const detailsLabel = lang === 'EN' ? 'View details' : 'Részletek megtekintése'
 
+    const rep = representative as RepWithPic
+    const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
+    const pictureUrl = media?.url || null
+
     return (
         <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" onClick={onClickAction}>
             <CardContent className="p-6 h-full flex flex-col">
                 <div className="flex flex-col items-center text-center flex-1">
                     <div className="relative mb-4">
                         <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                            {representative.picture ? (
+                            {pictureUrl ? (
                                 <Image
-                                    src={typeof representative.picture === 'object' ? representative.picture.url || "/nincs.jpg" : "/nincs.jpg"}
+                                    src={pictureUrl}
                                     alt={representative.name}
                                     width={128}
                                     height={128}

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import MUSZAKCard from "@/components/MUSZAKCard";
 import getMuszakPapers from "@/lib/getMuszakPapers";
-import {isMedia} from "@/utils/isMedia";
+import { isMedia } from "@/utils/isMedia";
 
-export default async function MUSZAKSection(){
-    const papers = await getMuszakPapers();
+export default async function MUSZAKSection() {
+  const papers = await getMuszakPapers();
 
     return (
         <section className="bg-gray-100 p-8">

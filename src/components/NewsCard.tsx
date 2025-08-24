@@ -6,7 +6,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { translateTags } from "@/lib/utils";
 
 interface NewsCardProps {
-    news: News;
+  news: News;
 }
 
 export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags } }: NewsCardProps) {

@@ -43,10 +43,12 @@ function getFileIcon(extension: string) {
 
 export default function DecisionsArchiveClient({ decisions }: Props) {
   const { lang } = useLanguage()
+  const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-500 mb-4 uppercase">Határozatok Tára</h1>
+        <h1 className="text-4xl font-bold text-gray-500 mb-4 uppercase">{t('Határozatok Tára', 'Decisions Archive')}</h1>
       </div>
 
       {decisions.length === 0 ? (
@@ -55,8 +57,8 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
             <div className="bg-gray-100 rounded-full w-16 h-12 flex items-center justify-center mx-auto mb-4">
               <FileText className="h-8 w-8 text-gray-400" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Nincsenek találatok</h3>
-            <p className="text-gray-600">Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('Nincsenek találatok', 'No results')}</h3>
+            <p className="text-gray-600">{t('Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.', 'Try different search criteria or adjust the filters.')}</p>
           </CardContent>
         </Card>
       ) : (
@@ -98,7 +100,7 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
                     >
                       <a href={href} download>
                         <Download className="w-4 h-4 mr-2" />
-                        Letöltés
+                        {t('Letöltés', 'Download')}
                       </a>
                     </Button>
                   </div>

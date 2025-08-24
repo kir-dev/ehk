@@ -1,21 +1,27 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Footer() {
+    const { lang } = useLanguage()
+    const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+
     return (
         <footer className="bg-[#3E3D3D] text-white py-12 px-6">
             <div className="container mx-auto max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-8 mb-8">
                     {/* KAPCSOLAT Section */}
                     <div className="flex-1 space-y-4">
-                        <h3 className="text-lg font-semibold mb-4">KAPCSOLAT</h3>
+                        <h3 className="text-lg font-semibold mb-4">{t('KAPCSOLAT', 'CONTACT')}</h3>
                         <div className="space-y-2 text-sm text-gray-300">
-                            <p>Budapesti Műszaki és Gazdaságtudományi Egyetem</p>
-                            <p>Egyetemi Hallgatói Képviselet</p>
+                            <p>{t('Budapesti Műszaki és Gazdaságtudományi Egyetem', 'Budapest University of Technology and Economics')}</p>
+                            <p>{t('Egyetemi Hallgatói Képviselet', 'University Student Council')}</p>
 
                             <div className="mt-4 space-y-1">
                                 <p>
-                                    <span className="text-gray-400">Cím:</span>{' '}
+                                    <span className="text-gray-400">{t('Cím:', 'Address:')}</span>{' '}
                                     <Link
                                         href="https://maps.google.com/?q=1111+Budapest,+Műegyetem+rkp.+7-9"
                                         target="_blank"
@@ -29,7 +35,7 @@ export default function Footer() {
                                     <span className="text-gray-400">Tel:</span> +36-1-463-3836
                                 </p>
                                 <p>
-                                    <span className="text-gray-400">E-mail címek:</span>
+                                    <span className="text-gray-400">{t('E-mail címek:', 'Email addresses:')}</span>
                                 </p>
 
                                 <ul className="ml-4 space-y-1">
@@ -83,7 +89,7 @@ export default function Footer() {
 
                             <div className="mt-4">
                                 <p>
-                                    <span className="text-gray-400">Az Iroda fogadó ideje:</span> hétköznap 10-14 óra között
+                                    <span className="text-gray-400">{t('Az Iroda fogadó ideje:', 'Office hours:')}</span> {t('hétköznap 10-14 óra között', 'weekdays 10:00–14:00')}
                                 </p>
                             </div>
                         </div>
@@ -94,25 +100,25 @@ export default function Footer() {
 
                     {/* EGYETEMI OLDALAK Section */}
                     <div className="flex-1 space-y-4">
-                        <h3 className="text-lg font-semibold mb-4">EGYETEMI OLDALAK</h3>
+                        <h3 className="text-lg font-semibold mb-4">{t('EGYETEMI OLDALAK', 'UNIVERSITY PAGES')}</h3>
                         <nav className="space-y-2">
                             <Link href="https://bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                                 BME
                             </Link>
                             <Link href="https://telefon.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                BME Telefonkönyv
+                                {t('BME Telefonkönyv', 'BME Phonebook')}
                             </Link>
                             <Link href="https://www.hszi.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                Értékesítési és Szolgáltatási Igazgatóság
+                                {t('Értékesítési és Szolgáltatási Igazgatóság', 'Directorate of Sales and Services')}
                             </Link>
                             <Link href="https://kth.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                Központi Tanulmányi Hivatal
+                                {t('Központi Tanulmányi Hivatal', 'Central Academic Office')}
                             </Link>
                             <Link href="https://miszisz.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                MISZ Műegyetemi Iskolaszövetkezet
+                                {t('MISZ Műegyetemi Iskolaszövetkezet', 'MISZ University Student Cooperative')}
                             </Link>
                             <Link href="https://www.szkene.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                Színé színház
+                                {t('Szkéné színház', 'Szkéné Theatre')}
                             </Link>
                             <Link href="https://muhely.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                                 MŰHELY Online
@@ -123,7 +129,7 @@ export default function Footer() {
 
                 {/* University Logo */}
                 <div className="flex justify-center items-center pt-8">
-                    <Image src={"/bmelogo.png"} alt={"BME Logo"} width={100} height={100} className="h-16 w-auto" />
+                    <Image src={"/bmelogo.png"} alt={t("BME Logó", "BME Logo")} width={100} height={100} className="h-16 w-auto" />
                 </div>
             </div>
         </footer>

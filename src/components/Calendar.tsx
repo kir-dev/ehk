@@ -4,9 +4,10 @@ import * as React from "react";
 import { Event } from "@/payload-types";
 import { useMemo, useState } from "react";
 import { Calendar } from "./ui/calendar";
-import { hu } from "react-day-picker/locale";
+import { hu, enUS } from "react-day-picker/locale";
 import EventCard from "./EventCard";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "./LanguageProvider";
 // Helper function to get all dates between start and end date
 function getDatesBetween(startDate: string, endDate: string): Date[] {
   const start = new Date(startDate);
@@ -33,6 +34,8 @@ export default function EventCalendar({
 }: EventCalendarProps) {
   const [selectedEvents, setSelectedEvents] = useState<Event[]>([]);
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
+  const { lang } = useLanguage();
+  const locale = lang === "EN" ? enUS : hu;
 
   const {
     eventsByDay,
@@ -98,7 +101,7 @@ export default function EventCalendar({
     <Calendar
       mode="single"
       className={cn("rounded-lg border", className)}
-      locale={hu}
+      locale={locale}
       onSelect={(day) => {
         if (day) {
           setSelectedEvents(

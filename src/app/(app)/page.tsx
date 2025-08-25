@@ -10,11 +10,13 @@ import Calendar from "@/components/Calendar";
 import ImportantLinks from "@/components/ImportantLinks";
 
 
-export default async function Home({ searchParams }: { searchParams?: { page?: string } }) {
+export default async function Home({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const heroImages = await getHeroImages();
   const events = await getEvents();
 
-  const rawPage = searchParams?.page;
+  const sp = await searchParams;
+  const rawPageParam = sp?.page;
+  const rawPage = Array.isArray(rawPageParam) ? rawPageParam[0] : rawPageParam;
   const currentPage = rawPage ? Number(rawPage) : 1;
   const page = Number.isFinite(currentPage) && currentPage > 0 ? currentPage : 1;
 

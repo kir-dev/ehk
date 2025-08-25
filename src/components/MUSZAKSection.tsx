@@ -7,7 +7,7 @@ export default async function MUSZAKSection() {
   const papers = await getMuszakPapers();
 
     return (
-        <section className="bg-gray-100 p-8">
+        <section className="bg-gray-100 p-8 ">
             <div className="relative w-full h-[100px]">
                 <Image
                     src={'/muhelyehklapja.gif'}

@@ -3,15 +3,22 @@ import {Decision, News, Reminder, Representative, Event } from "@/payload-types"
 import { getPayload } from "payload";
 import config from "@payload-config";
 
-export async function getNews() {
+export async function getNews(options?: { page?: number; limit?: number }) {
   const payload = await getPayload({ config });
-  const groups = await payload.find({
+  const result = await payload.find({
     collection: "news",
-    limit: 1000,
     sort: "-date",
+    page: options?.page ?? 1,
+    limit: options?.limit ?? 6,
   });
 
-  return groups.docs as News[];
+  return {
+    docs: result.docs as News[],
+    totalDocs: result.totalDocs ?? result.docs.length,
+    totalPages: result.totalPages ?? 1,
+    page: result.page ?? 1,
+    limit: result.limit ?? (options?.limit ?? 6),
+  };
 }
 
 export async function getEvents(): Promise<Event[]> {

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const dynamic = "force-dynamic";
 
 import NewsSection from "@/components/NewsSection";
@@ -9,51 +7,46 @@ import MUSZAKSection from "@/components/MUSZAKSection";
 import HomeNewsHeader from "@/components/HomeNewsHeader";
 import {getEvents} from "@/lib/payload-cms";
 import Calendar from "@/components/Calendar";
+import ImportantLinks from "@/components/ImportantLinks";
 
 
-export default async function Home() {
+export default async function Home({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const heroImages = await getHeroImages();
   const events = await getEvents();
+
+  const sp = await searchParams;
+  const rawPageParam = sp?.page;
+  const rawPage = Array.isArray(rawPageParam) ? rawPageParam[0] : rawPageParam;
+  const currentPage = rawPage ? Number(rawPage) : 1;
+  const page = Number.isFinite(currentPage) && currentPage > 0 ? currentPage : 1;
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
       <main className="flex-grow">
         <section className="w-full">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-screen mx-4">
             <ImageViewer images={heroImages} />
           </div>
         </section>
 
-        <section className="py-16 px-4">
-          <div className="flex flex-row items-center mx-8 gap-x-8">
-            <div className="col-span-1 flex justify-between flex-col gap-y-4 h-full min-w-[250px]">
-              <div className="bg-white rounded-lg shadow-md flex flex-col relative p-4 flex-1">
-                Fontos linkek:
-                <ul className="list-disc list-inside">
-                  <li>
-                    <Link href="https://neptun.bme.hu" target="_blank">
-                      Neptun
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="https://mueper.bme.hu" target="_blank">
-                      Műeper
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="https://kefir.bme.hu" target="_blank">
-                      Kefír
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <Calendar events={events} className="md:w-full h-2/3 mx-auto" />
+        <section className="px-4">
+          <div className="max-w-screen mx-auto grid grid-cols-12 gap-6 items-start">
+            {/* Sidebar: Important links + Calendar */}
+            <div className="order-2 md:order-1 col-span-3 md:col-span-4 lg:pt-19 lg:col-span-3 xl:col-span-2 flex flex-col gap-y-4 min-w-[250px]">
+              <ImportantLinks />
+              <Calendar events={events} className="w-full h-auto" />
             </div>
-            <div className="flex-1">
-                <HomeNewsHeader />
-              <NewsSection />
+
+            {/* Main news feed */}
+            <div className="order-1 md:order-2 col-span-9 md:col-span-8 lg:col-span-7 xl:col-span-8 min-w-0">
+              <HomeNewsHeader />
+              <NewsSection page={page} />
             </div>
-            <MUSZAKSection />
+
+            {/* MUSZAK section: below on md, right column on lg */}
+            <div className="order-3 lg:pt-19 col-span-12 lg:col-span-2 xl:col-span-2">
+              <MUSZAKSection />
+            </div>
           </div>
         </section>
       </main>

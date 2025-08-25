@@ -88,31 +88,31 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
 
   return (
     <Card className="mb-6">
-      <CardContent className="p-8">
+      <CardContent className="p-4 md:p-8">
         {/* Header */}
-        <div className="mb-6">
-          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+        <div className="mb-4 md:mb-6">
+          <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
             <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4 text-ehk-dark-red" />
+              <Calendar className="w-4 h-4 text-[#862633]" />
               <span>{formatDate(article.date)}</span>
             </div>
             <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4 text-ehk-dark-red" />
+              <Clock className="w-4 h-4 text-[#862633]" />
               <span>{getReadingTimeFromRichText(content)} {t('perc olvasás', 'min read')}</span>
             </div>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{title}</h1>
+          <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 leading-tight">{title}</h1>
 
-          <p className="text-xl text-gray-600 leading-relaxed mb-6">{shortText}</p>
+          <p className="text-base md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-6">{shortText}</p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
             {displayTags.map((tag, index) => (
               <Badge
                 key={index}
                 variant="outline"
-                className="flex items-center gap-1 border-black"
+                className="flex items-center gap-1 border-[#862633] text-[#862633] text-xs md:text-sm hover:bg-red-50"
               >
                 <Tag className="w-3 h-3" />
                 {tag}
@@ -121,11 +121,11 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
           </div>
 
           {/* Share */}
-          <div className="flex justify-end">
+          <div className="flex justify-start md:justify-end">
             <ShareButton
               variant="outline"
               size="sm"
-              className="flex items-center gap-2 bg-transparent hover:border-ehk-dark-red hover:text-ehk-dark-red"
+              className="flex items-center gap-2 bg-transparent hover:border-[#862633] hover:text-[#862633]"
               title={title}
               text={shortText}
             >
@@ -135,19 +135,19 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
           </div>
         </div>
 
-        <Separator className="mb-8" />
+        <Separator className="mb-6 md:mb-8" />
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+        <div className="prose prose-sm md:prose-lg max-w-none text-gray-700 leading-relaxed">
           <RichText data={content} />
         </div>
 
         {/* Files */}
         {article.files && article.files.length > 0 && (
           <>
-            <Separator className="my-8" />
+            <Separator className="my-6 md:my-8" />
             <div>
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 flex items-center gap-2">
                 <Download className="w-5 h-5" />
                 {t('Csatolt fájlok', 'Attachments')}
               </h3>
@@ -164,13 +164,13 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
                   return (
                     <div
                       key={key}
-                      className="flex items-center justify-between bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors border border-gray-200"
+                      className="flex items-center justify-between gap-3 bg-gray-50 hover:bg-gray-100 p-3 md:p-4 rounded-lg transition-colors border border-gray-200 overflow-hidden"
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 min-w-0">
                         <div className="flex-shrink-0">{getFileIcon(mime)}</div>
-                        <div>
-                          <h4 className="font-medium text-gray-900">{titleVal}</h4>
-                          <p className="text-sm text-gray-500">
+                        <div className="min-w-0">
+                          <h4 className="font-medium text-gray-900 text-sm md:text-base truncate">{titleVal}</h4>
+                          <p className="text-xs md:text-sm text-gray-500 truncate">
                             {size ? size : null}
                             {hasDesc ? (size ? ' · ' : '') + name : null}
                           </p>
@@ -180,7 +180,7 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="hover:bg-white hover:border-ehk-dark-red hover:text-ehk-dark-red bg-transparent"
+                          className="shrink-0 hover:bg-white hover:border-[#862633] hover:text-[#862633] bg-transparent"
                           asChild
                         >
                           <a href={url} download>
@@ -215,25 +215,25 @@ export function NewsDetailClientSidebar({ article }: NewsDetailClientProps) {
 
   return (
     <Card className="mb-6">
-      <CardContent className="p-6">
-        <h3 className="font-semibold text-lg mb-4">{t('Cikk információk', 'Article info')}</h3>
-        <div className="space-y-3">
+      <CardContent className="p-4 md:p-6">
+        <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">{t('Cikk információk', 'Article info')}</h3>
+        <div className="space-y-2.5 md:space-y-3">
           <div>
-            <span className="text-sm font-medium text-gray-500">{t('Publikálás dátuma', 'Published')}</span>
+            <span className="text-xs md:text-sm font-medium text-gray-500">{t('Publikálás dátuma', 'Published')}</span>
             <p className="text-sm text-gray-900">{formatDate(article.date)}</p>
           </div>
           <div>
-            <span className="text-sm font-medium text-gray-500">{t('Olvasási idő', 'Reading time')}</span>
+            <span className="text-xs md:text-sm font-medium text-gray-500">{t('Olvasási idő', 'Reading time')}</span>
             <p className="text-sm text-gray-900">{getReadingTimeFromRichText((lang === 'EN' ? article.description.text_en : article.description.text_hu))} {t('perc', 'min')}</p>
           </div>
           {article.files && article.files.length > 0 && (
             <div>
-              <span className="text-sm font-medium text-gray-500">{t('Csatolt fájlok', 'Attachments')}</span>
+              <span className="text-xs md:text-sm font-medium text-gray-500">{t('Csatolt fájlok', 'Attachments')}</span>
               <p className="text-sm text-gray-900">{article.files.length} {t('fájl', 'file(s)')}</p>
             </div>
           )}
           <div>
-            <span className="text-sm font-medium text-gray-500">{t('Címkék', 'Tags')}</span>
+            <span className="text-xs md:text-sm font-medium text-gray-500">{t('Címkék', 'Tags')}</span>
             <div className="flex flex-wrap gap-1 mt-1">
               {translateTags(article.tags as unknown as string[], lang).map((tag, index) => (
                 <Badge key={index} variant="outline" className="text-xs">
@@ -242,7 +242,7 @@ export function NewsDetailClientSidebar({ article }: NewsDetailClientProps) {
               ))}
             </div>
           </div>
-          <Button variant="outline" size="sm" className="w-full justify-start bg-transparent hover:border-ehk-dark-red hover:text-ehk-dark-red" asChild>
+          <Button variant="outline" size="sm" className="w-full justify-start bg-transparent hover:border-[#862633] hover:text-[#862633]" asChild>
             <Link href="/">
               <ArrowLeft className="w-4 h-4 mr-2" />
               {t('Vissza a hírekhez', 'Back to news')}

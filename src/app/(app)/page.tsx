@@ -23,17 +23,24 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className=" px-4">
-          <div className="flex flex-row items-center mx-4 gap-x-6">
-            <div className="col-span-1 flex justify-between flex-col gap-y-4 h-full min-w-[250px]">
+        <section className="px-4">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            {/* Sidebar: Important links + Calendar */}
+            <div className="order-2 md:order-1 md:col-span-4 lg:col-span-3 flex flex-col gap-y-4 md:min-w-[250px]">
               <ImportantLinks />
-              <Calendar events={events} className="md:w-full h-2/3 mx-auto" />
+              <Calendar events={events} className="w-full h-auto" />
             </div>
-            <div className="flex-1">
-                <HomeNewsHeader />
+
+            {/* Main news feed */}
+            <div className="order-1 md:order-2 md:col-span-8 lg:col-span-6">
+              <HomeNewsHeader />
               <NewsSection />
             </div>
-            <MUSZAKSection />
+
+            {/* MUSZAK section: below on md, right column on lg */}
+            <div className="order-3 md:col-span-12 lg:col-span-3">
+              <MUSZAKSection />
+            </div>
           </div>
         </section>
       </main>

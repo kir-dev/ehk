@@ -10,9 +10,13 @@ import Calendar from "@/components/Calendar";
 import ImportantLinks from "@/components/ImportantLinks";
 
 
-export default async function Home() {
+export default async function Home({ searchParams }: { searchParams?: { page?: string } }) {
   const heroImages = await getHeroImages();
   const events = await getEvents();
+
+  const rawPage = searchParams?.page;
+  const currentPage = rawPage ? Number(rawPage) : 1;
+  const page = Number.isFinite(currentPage) && currentPage > 0 ? currentPage : 1;
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
@@ -34,7 +38,7 @@ export default async function Home() {
             {/* Main news feed */}
             <div className="order-1 md:order-2 md:col-span-8 lg:col-span-7 xl:col-span-8">
               <HomeNewsHeader />
-              <NewsSection />
+              <NewsSection page={page} />
             </div>
 
             {/* MUSZAK section: below on md, right column on lg */}

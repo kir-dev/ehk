@@ -18,27 +18,27 @@ export default async function Home() {
     <div className="bg-gray-50 min-h-screen flex flex-col">
       <main className="flex-grow">
         <section className="w-full">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-screen mx-4">
             <ImageViewer images={heroImages} />
           </div>
         </section>
 
         <section className="px-4">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div className="max-w-screen mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
             {/* Sidebar: Important links + Calendar */}
-            <div className="order-2 md:order-1 md:col-span-4 lg:col-span-3 flex flex-col gap-y-4 md:min-w-[250px]">
+            <div className="order-2 md:order-1 md:col-span-4 lg:pt-19 lg:col-span-3 xl:col-span-2 flex flex-col gap-y-4 md:min-w-[250px] xl:min-w-0">
               <ImportantLinks />
               <Calendar events={events} className="w-full h-auto" />
             </div>
 
             {/* Main news feed */}
-            <div className="order-1 md:order-2 md:col-span-8 lg:col-span-6">
+            <div className="order-1 md:order-2 md:col-span-8 lg:col-span-7 xl:col-span-8">
               <HomeNewsHeader />
               <NewsSection />
             </div>
 
             {/* MUSZAK section: below on md, right column on lg */}
-            <div className="order-3 md:col-span-12 lg:col-span-3">
+            <div className="order-3 lg:pt-19 md:col-span-12 lg:col-span-2 xl:col-span-2">
               <MUSZAKSection />
             </div>
           </div>

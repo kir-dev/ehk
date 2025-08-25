@@ -20,7 +20,7 @@ export default function ImageViewer({ images = [] }: ImageViewerProps) {
 
     if (images.length === 0) {
         return (
-            <div className="max-w-4xl mx-auto p-4">
+            <div className="max-w-screen mx-auto p-4">
                 <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl">
                     <div className="relative aspect-[4/3] w-full flex items-center justify-center text-white">
                         {t('Nincs elérhető kép', 'No images available')}
@@ -43,7 +43,7 @@ export default function ImageViewer({ images = [] }: ImageViewerProps) {
     }
 
     return (
-        <div className="max-w-7xl mx-auto p-4">
+        <div className="max-w-screen mx-auto p-4 pb-12">
             <div className="relative bg-transparent rounded-lg overflow-hidden">
                 {/* Main Image Container */}
                 <div className="relative h-[500px] w-full">

@@ -23,8 +23,8 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="py-16 px-4">
-          <div className="flex flex-row items-center mx-8 gap-x-8">
+        <section className=" px-4">
+          <div className="flex flex-row items-center mx-4 gap-x-6">
             <div className="col-span-1 flex justify-between flex-col gap-y-4 h-full min-w-[250px]">
               <ImportantLinks />
               <Calendar events={events} className="md:w-full h-2/3 mx-auto" />

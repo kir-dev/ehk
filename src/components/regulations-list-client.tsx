@@ -3,24 +3,13 @@
 import { FileText, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import type { Media } from "@/payload-types"
+import type {Media, Regulation} from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
 import { useLanguage } from "@/components/LanguageProvider"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 
 interface Props {
-  regulations: unknown[]
-}
-
-type RegulationX = {
-  id: number
-  name_hu: string
-  name_en: string
-  text_hu: unknown
-  text_en: unknown
-  displayText_hu?: string | null
-  displayText_en?: string | null
-  file?: number | Media | null
+  regulations: Regulation[]
 }
 
 export default function RegulationsListClient({ regulations }: Props) {
@@ -42,7 +31,7 @@ export default function RegulationsListClient({ regulations }: Props) {
       ) : (
         <div className="space-y-4">
           {regulations.map((r0) => {
-            const r = r0 as RegulationX
+            const r = r0 as Regulation
             const title = lang === 'EN' ? (r.name_en || r.name_hu) : (r.name_hu || r.name_en)
             const description = lang === 'EN' ? (r.text_en || r.text_hu) : (r.text_hu || r.text_en)
             const href = r.file && isMedia(r.file) ? (r.file.url || "#") : undefined
@@ -58,7 +47,7 @@ export default function RegulationsListClient({ regulations }: Props) {
                       </h3>
                     </div>
                     <div className="prose max-w-none text-gray-700 richtext">
-                      <RichText data={description as never} />
+                      <RichText data={description} />
                     </div>
                     {href && (
                       <div className="mt-1 flex items-center justify-between bg-gray-50 p-2 md:p-3 rounded-lg border border-gray-200">

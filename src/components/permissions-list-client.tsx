@@ -12,17 +12,6 @@ interface Props {
   permissions: Permission[]
 }
 
-// Extend generated type to reflect current collection fields without regenerating
-type PermissionX = Permission & {
-  name_hu: string;
-  name_en: string;
-  text_hu: unknown;
-  text_en: unknown;
-  displayText_hu?: string | null;
-  displayText_en?: string | null;
-  file?: number | Media | null;
-}
-
 export default function PermissionsListClient({ permissions }: Props) {
   const { lang } = useLanguage()
   const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
@@ -42,7 +31,7 @@ export default function PermissionsListClient({ permissions }: Props) {
       ) : (
         <div className="space-y-4">
           {permissions.map((p0) => {
-            const p = p0 as PermissionX
+            const p = p0 as Permission
             const title = lang === 'EN' ? (p.name_en || p.name_hu) : (p.name_hu || p.name_en)
             const description = lang === 'EN' ? (p.text_en || p.text_hu) : (p.text_hu || p.text_en)
             const href = p.file && isMedia(p.file) ? (p.file.url || "#") : undefined

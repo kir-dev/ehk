@@ -1,5 +1,5 @@
 import 'server-only';
-import {Decision, News, Reminder, Representative, Event, Permission } from "@/payload-types";
+import {Decision, News, Reminder, Representative, Event, Permission, Regulation} from "@/payload-types";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
@@ -84,7 +84,7 @@ export async function getRegulations() {
     sort: "name_hu",
     depth: 1,
   });
-  return regulations.docs as unknown[];
+  return regulations.docs as Regulation[];
 }
 
 export async function getNewsById(id: number) {

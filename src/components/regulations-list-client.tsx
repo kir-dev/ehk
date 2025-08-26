@@ -3,7 +3,7 @@
 import { FileText, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import type {Media, Regulation} from "@/payload-types"
+import type {Regulation} from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
 import { useLanguage } from "@/components/LanguageProvider"
 import { RichText } from "@payloadcms/richtext-lexical/react"

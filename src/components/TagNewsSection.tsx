@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getNews } from "@/lib/payload-cms";
 import NewsCard from "./NewsCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import TagNewsEmptyState from "@/components/TagNewsEmptyState";
 
 interface Props {
   page?: number
@@ -13,6 +14,10 @@ export default async function TagNewsSection({ page = 1, tag, basePath }: Props)
   const { docs: news, totalPages, page: currentPage } = await getNews({ page, limit: 6, tag });
 
   const makePageHref = (p: number) => (p === 1 ? basePath : `${basePath}?page=${p}`);
+
+  if (!news || news.length === 0) {
+    return <TagNewsEmptyState />
+  }
 
   return (
     <div className="w-full">
@@ -61,4 +66,3 @@ export default async function TagNewsSection({ page = 1, tag, basePath }: Props)
     </div>
   );
 }
-

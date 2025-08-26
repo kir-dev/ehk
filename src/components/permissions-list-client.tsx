@@ -28,7 +28,7 @@ export default function PermissionsListClient({ permissions }: Props) {
   const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto lg:px-4 px-2 py-8">
       {permissions.length === 0 ? (
         <Card>
           <CardContent className="text-center py-12">
@@ -50,10 +50,10 @@ export default function PermissionsListClient({ permissions }: Props) {
             const disp = lang === 'EN' ? (p.displayText_en || p.displayText_hu) : (p.displayText_hu || p.displayText_en)
             return (
               <Card key={p.id} className="group hover:shadow-md transition-all duration-300">
-                <CardContent className="p-4 md:p-6">
-                  <div className="flex flex-col gap-3">
+                <CardContent className="p-3 md:p-6">
+                  <div className="flex flex-col gap-2 md:gap-3">
                     <div>
-                      <h3 className="font-bold text-xl leading-tight text-[#862633] transition-colors">
+                      <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
                         {title}
                       </h3>
                     </div>
@@ -61,7 +61,7 @@ export default function PermissionsListClient({ permissions }: Props) {
                       <RichText data={description} />
                     </div>
                     {href && (
-                      <div className="mt-1 flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
+                      <div className="mt-1 flex items-center justify-between bg-gray-50 p-2 md:p-3 rounded-lg border border-gray-200">
                         <div className="flex items-center gap-2 min-w-0">
                           <FileText className="h-5 w-5 text-[#862633]" />
                           <span className="font-medium text-gray-900 truncate">{disp || ext}</span>

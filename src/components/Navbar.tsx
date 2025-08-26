@@ -3,6 +3,7 @@
 import { Search, Menu } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -13,7 +14,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -23,7 +24,7 @@ function getNavigationItems(lang: string) {
     return [
         {
             title: t("SZERVEZET", "ORGANIZATION"),
-            href: "/szervezet",
+            href: "/szervezet/hirek",
             targetBlank: false,
             items: [
                 { label: t("ADMIN", "ADMIN"), href: "/admin", targetBlank: false },
@@ -37,7 +38,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("OKTATÁS", "EDUCATION"),
-            href: "/oktatas",
+            href: "/oktatas/hirek",
             targetBlank: false,
             items: [
                 { label: t("Szabályzatok", "Regulations"), href: "/szabalyzatok", targetBlank: false },
@@ -49,7 +50,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("JUTTATÁS", "GRANTS"),
-            href: "/juttatas",
+            href: "/juttatas/hirek",
             targetBlank: false,
             items: [
                 { label: t("Tanulmányi ösztöndíjak", "Academic scholarships"), href: "#", targetBlank: false },
@@ -62,7 +63,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("KOLLÉGIUM", "DORMITORY"),
-            href: "/kollegium",
+            href: "/kollegium/hirek",
             targetBlank: false,
             items: [
                 { label: t("Bemutató", "Overview"), href: "#", targetBlank: false },
@@ -72,7 +73,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("SPORT", "SPORTS"),
-            href: "/sport",
+            href: "/sport/hirek",
             targetBlank: false,
             items: [
                 { label: t("Sportpálya támogatás pályázat", "Sports field subsidy application"), href: "#", targetBlank: false },
@@ -83,7 +84,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("KÜLÜGY", "INTERNATIONAL AFFAIRS"),
-            href: "/kulugy",
+            href: "/kulugy/hirek",
             targetBlank: false,
             items: [
                 { label: "Erasmus", href: "#", targetBlank: false },
@@ -93,7 +94,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: "INTERNATIONAL",
-            href: "/international",
+            href: "/international/hirek",
             targetBlank: false,
             items: [
                 { label: "", href: "", targetBlank: false },
@@ -101,7 +102,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("KÖZÉLET", "COMMUNITY LIFE"),
-            href: "/kozelet",
+            href: "/kozelet/hirek",
             targetBlank: false,
             items: [
                 { label: t("Versenycsapatok", "Competition teams"), href: "#", targetBlank: false },
@@ -113,7 +114,7 @@ function getNavigationItems(lang: string) {
         },
         {
             title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
-            href: "/golyaknak",
+            href: "/golyaknak/hirek",
             targetBlank: false,
             items: [],
         },
@@ -124,6 +125,8 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const { lang, toggleLang } = useLanguage()
     const navigationItems = getNavigationItems(lang)
+    const router = useRouter()
+    const mobileMenuTitle = lang === 'EN' ? 'Menu' : 'Menü'
 
     // Localized UI labels
     const ui = {
@@ -156,7 +159,12 @@ export default function Navbar() {
                                     <NavigationMenuItem key={item.title}>
                                         {item.items.length > 0 ? (
                                             <>
-                                                <NavigationMenuTrigger className="text-gray-700 relative hover:text-ehk-dark-red font-medium text-sm px-3 py-2">
+                                                <NavigationMenuTrigger
+                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-medium text-sm px-3 py-2"
+                                                    onClick={() => {
+                                                        if (item.href) router.push(item.href)
+                                                    }}
+                                                >
                                                     {item.title}
                                                 </NavigationMenuTrigger>
                                                 <NavigationMenuContent className="z-50">
@@ -222,36 +230,39 @@ export default function Navbar() {
                                     </Button>
                                 </SheetTrigger>
                                 <SheetContent side="right" className="w-80">
-                                    <div className="flex items-center justify-between mb-6">
-                                        <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-gray-600">
-                                        </Button>
-                                    </div>
+                                    <SheetHeader>
+                                        <SheetTitle className="sr-only">{mobileMenuTitle}</SheetTitle>
+                                    </SheetHeader>
 
-                                    <nav className="space-y-4">
-                                        {navigationItems.map((item) => (
-                                            <div key={item.title} className="space-y-2">
-                                                <div className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2">
-                                                    {item.title}
-                                                </div>
-                                                <div className="space-y-1 pl-4">
-                                                    {item.items.map((subItem) => (
-                                                        <Link
-                                                            key={subItem.label}
-                                                            href={subItem.href}
-                                                            target={subItem.targetBlank ? "_blank" : undefined}
-                                                            rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                            className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
-                                                            onClick={() => setIsOpen(false)}
-                                                        >
-                                                            {subItem.label}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </nav>
-                                </SheetContent>
-                            </Sheet>
+                                     <nav className="space-y-4">
+                                         {navigationItems.map((item) => (
+                                             <div key={item.title} className="space-y-2">
+                                                 <Link
+                                                     href={item.href}
+                                                     className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
+                                                     onClick={() => setIsOpen(false)}
+                                                 >
+                                                     {item.title}
+                                                 </Link>
+                                                 <div className="space-y-1 pl-4">
+                                                     {item.items.map((subItem) => (
+                                                         <Link
+                                                             key={subItem.label}
+                                                             href={subItem.href}
+                                                             target={subItem.targetBlank ? "_blank" : undefined}
+                                                             rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
+                                                             className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
+                                                             onClick={() => setIsOpen(false)}
+                                                         >
+                                                             {subItem.label}
+                                                         </Link>
+                                                     ))}
+                                                 </div>
+                                             </div>
+                                         ))}
+                                     </nav>
+                                 </SheetContent>
+                             </Sheet>
                         </div>
                     </div>
                 </div>

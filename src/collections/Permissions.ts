@@ -51,13 +51,13 @@ export const Permissions: CollectionConfig = {
         {
             name: "displayText_hu",
             type: "text",
-            required: true,
+            required: false,
             label: "Megjelenítendő fájlnév (magyar)",
         },
         {
             name: "displayText_en",
             type: "text",
-            required: true,
+            required: false,
             label: "Megjelenítendő fájlnév (angol)",
         },
         {

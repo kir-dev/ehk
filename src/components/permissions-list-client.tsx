@@ -53,7 +53,7 @@ export default function PermissionsListClient({ permissions }: Props) {
                 <CardContent className="p-4 md:p-6">
                   <div className="flex flex-col gap-3">
                     <div>
-                      <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
+                      <h3 className="font-bold text-xl leading-tight text-[#862633] transition-colors">
                         {title}
                       </h3>
                     </div>

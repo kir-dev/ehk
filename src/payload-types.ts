@@ -437,8 +437,8 @@ export interface Permission {
     };
     [k: string]: unknown;
   };
-  displayText_hu: string;
-  displayText_en: string;
+  displayText_hu?: string | null;
+  displayText_en?: string | null;
   file?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;

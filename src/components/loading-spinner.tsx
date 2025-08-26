@@ -152,7 +152,7 @@ export function LoadingDecisionsGrid() {
                     <div className="w-16 h-16 border-4 border-gray-200 border-t-[#862633] rounded-full animate-spin"></div>
                     <div className="text-center mt-6">
                         <p className="text-[#862633] font-medium text-lg animate-pulse">
-                            {t('Határozatok betöltése...', 'Loading decisions...')}
+                            {t('Engedélyek betöltése...', 'Loading permits...')}
                         </p>
                     </div>
                 </div>

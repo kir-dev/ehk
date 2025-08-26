@@ -76,6 +76,17 @@ export async function getPermissions() {
   return permissions.docs as Permission[];
 }
 
+export async function getRegulations() {
+  const payload = await getPayload({ config });
+  const regulations = await payload.find({
+    collection: "regulations",
+    limit: 1000,
+    sort: "name_hu",
+    depth: 1,
+  });
+  return regulations.docs as unknown[];
+}
+
 export async function getNewsById(id: number) {
     const payload = await getPayload({ config });
     const news = await payload.find({

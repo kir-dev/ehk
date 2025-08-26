@@ -3,13 +3,19 @@ import {Decision, News, Reminder, Representative, Event, Permission, Regulation}
 import { getPayload } from "payload";
 import config from "@payload-config";
 
-export async function getNews(options?: { page?: number; limit?: number }) {
+export async function getNews(options?: { page?: number; limit?: number; tag?: string }) {
   const payload = await getPayload({ config });
+  const where = options?.tag
+    ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ({ tags: { contains: options.tag } } as any)
+    : undefined;
   const result = await payload.find({
     collection: "news",
     sort: "-date",
     page: options?.page ?? 1,
     limit: options?.limit ?? 6,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    where: where as any,
   });
 
   return {

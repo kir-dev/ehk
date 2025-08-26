@@ -14,7 +14,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -126,6 +126,7 @@ export default function Navbar() {
     const { lang, toggleLang } = useLanguage()
     const navigationItems = getNavigationItems(lang)
     const router = useRouter()
+    const mobileMenuTitle = lang === 'EN' ? 'Menu' : 'Menü'
 
     // Localized UI labels
     const ui = {
@@ -229,40 +230,39 @@ export default function Navbar() {
                                     </Button>
                                 </SheetTrigger>
                                 <SheetContent side="right" className="w-80">
-                                    <div className="flex items-center justify-between mb-6">
-                                        <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-gray-600">
-                                        </Button>
-                                    </div>
+                                    <SheetHeader>
+                                        <SheetTitle className="sr-only">{mobileMenuTitle}</SheetTitle>
+                                    </SheetHeader>
 
-                                    <nav className="space-y-4">
-                                        {navigationItems.map((item) => (
-                                            <div key={item.title} className="space-y-2">
-                                                <Link
-                                                    href={item.href}
-                                                    className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
-                                                    onClick={() => setIsOpen(false)}
-                                                >
-                                                    {item.title}
-                                                </Link>
-                                                <div className="space-y-1 pl-4">
-                                                    {item.items.map((subItem) => (
-                                                        <Link
-                                                            key={subItem.label}
-                                                            href={subItem.href}
-                                                            target={subItem.targetBlank ? "_blank" : undefined}
-                                                            rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                            className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
-                                                            onClick={() => setIsOpen(false)}
-                                                        >
-                                                            {subItem.label}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </nav>
-                                </SheetContent>
-                            </Sheet>
+                                     <nav className="space-y-4">
+                                         {navigationItems.map((item) => (
+                                             <div key={item.title} className="space-y-2">
+                                                 <Link
+                                                     href={item.href}
+                                                     className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
+                                                     onClick={() => setIsOpen(false)}
+                                                 >
+                                                     {item.title}
+                                                 </Link>
+                                                 <div className="space-y-1 pl-4">
+                                                     {item.items.map((subItem) => (
+                                                         <Link
+                                                             key={subItem.label}
+                                                             href={subItem.href}
+                                                             target={subItem.targetBlank ? "_blank" : undefined}
+                                                             rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
+                                                             className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
+                                                             onClick={() => setIsOpen(false)}
+                                                         >
+                                                             {subItem.label}
+                                                         </Link>
+                                                     ))}
+                                                 </div>
+                                             </div>
+                                         ))}
+                                     </nav>
+                                 </SheetContent>
+                             </Sheet>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import TagNewsSection from "@/components/TagNewsSection";
+import TagNewsHeader from "@/components/TagNewsHeader";
 
 export default async function KollegiumNewsPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
@@ -11,7 +12,13 @@ export default async function KollegiumNewsPage({ searchParams }: { searchParams
     <div className="bg-gray-50 min-h-screen flex flex-col">
       <main className="flex-grow">
         <section className="px-4">
-          <div className="max-w-screen mx-auto">
+          <div className="max-w-7xl mx-auto">
+            <TagNewsHeader
+              titleHu="Kollégium hírei"
+              titleEn="Dormitory news"
+              descHu="A kollégiumi élettel és szabályozással kapcsolatos hírek."
+              descEn="News about dorm life and regulations."
+            />
             <TagNewsSection page={page} tag="Kollégium" basePath="/kollegium/hirek" />
           </div>
         </section>
@@ -19,4 +26,3 @@ export default async function KollegiumNewsPage({ searchParams }: { searchParams
     </div>
   );
 }
-

@@ -1,4 +1,5 @@
 import TagNewsSection from "@/components/TagNewsSection";
+import TagNewsHeader from "@/components/TagNewsHeader";
 
 export default async function InternationalNewsPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
@@ -12,7 +13,13 @@ export default async function InternationalNewsPage({ searchParams }: { searchPa
     <div className="bg-gray-50 min-h-screen flex flex-col">
       <main className="flex-grow">
         <section className="px-4">
-          <div className="max-w-screen mx-auto">
+          <div className="max-w-7xl mx-auto">
+            <TagNewsHeader
+              titleHu="Nemzetközi hírek"
+              titleEn="International news"
+              descHu="Nemzetközi hallgatóknak és ügyeknek szóló hírek."
+              descEn="News for international students and matters."
+            />
             <TagNewsSection page={page} tag="Külügy" basePath="/international/hirek" />
           </div>
         </section>
@@ -20,4 +27,3 @@ export default async function InternationalNewsPage({ searchParams }: { searchPa
     </div>
   );
 }
-

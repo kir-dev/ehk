@@ -1,7 +1,7 @@
 import TagNewsSection from "@/components/TagNewsSection";
 import TagNewsHeader from "@/components/TagNewsHeader";
 
-export default async function JuttatasNewsPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
+export default async function GolyaknakNewsPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
   const rawPageParam = sp?.page;
   const rawPage = Array.isArray(rawPageParam) ? rawPageParam[0] : rawPageParam;
@@ -14,15 +14,17 @@ export default async function JuttatasNewsPage({ searchParams }: { searchParams?
         <section className="px-4">
           <div className="max-w-7xl mx-auto">
             <TagNewsHeader
-              titleHu="Juttatások hírei"
-              titleEn="Grants news"
-              descHu="Ösztöndíjakról és támogatásokról szóló hírek."
-              descEn="News about grants and scholarships."
+              titleHu="Gólyáknak hírei"
+              titleEn="Freshmen news"
+              descHu="Információk és hírek gólyáknak."
+              descEn="Information and news for freshmen."
             />
-            <TagNewsSection page={page} tag="Juttatás" basePath="/juttatas/hirek" />
+            {/* Assumption: use the 'Tájékoztatás' tag for freshmen-related news */}
+            <TagNewsSection page={page} tag="Tájékoztatás" basePath="/golyaknak/hirek" />
           </div>
         </section>
       </main>
     </div>
   );
 }
+

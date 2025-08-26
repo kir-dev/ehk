@@ -32,7 +32,7 @@ function getNavigationItems(lang: string) {
                 { label: t("Határozatok tára", "Decisions archive"), href: "/hatarozatok-tara", targetBlank: false },
                 { label: t("ESZB honlap", "ESZB website"), href: "#", targetBlank: false },
                 { label: t("EDK honlap", "EDK website"), href: "https://www.bmeedk.hu/page/1", targetBlank: true },
-                { label: t("Engedélyek", "Permissions"), href: "#", targetBlank: false },
+                { label: t("Engedélyek", "Permissions"), href: "/engedelyek", targetBlank: false },
             ],
         },
         {

@@ -141,3 +141,25 @@
   * { @apply border-border outline-ring/50; }
   body { @apply bg-background text-foreground; }
 }
+
+/* Brand link styles inside rich text content */
+.richtext a {
+  color: var(--ehk-dark-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: color-mix(in oklab, var(--ehk-dark-red) 45%, transparent);
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+.richtext a:hover {
+  color: var(--ehk-light-red);
+  text-decoration-color: currentColor;
+}
+.richtext a:focus-visible {
+  outline: 2px solid var(--ehk-dark-red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.richtext a:visited {
+  color: color-mix(in oklab, var(--ehk-dark-red) 75%, black);
+}

@@ -3,42 +3,42 @@
 import { FileText, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import type { Permission } from "@/payload-types"
+import type {Regulation} from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
 import { useLanguage } from "@/components/LanguageProvider"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 
 interface Props {
-  permissions: Permission[]
+  regulations: Regulation[]
 }
 
-export default function PermissionsListClient({ permissions }: Props) {
+export default function RegulationsListClient({ regulations }: Props) {
   const { lang } = useLanguage()
   const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
 
   return (
-    <div className="container mx-auto lg:px-4 px-2 py-8">
-      {permissions.length === 0 ? (
+    <div className="container mx-auto px-2 lg:px-4 py-8">
+      {regulations.length === 0 ? (
         <Card>
           <CardContent className="text-center py-12">
             <div className="bg-gray-100 rounded-full w-16 h-12 flex items-center justify-center mx-auto mb-4">
               <FileText className="h-8 w-8 text-gray-400" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('Nincsenek találatok', 'No results')}</h3>
-            <p className="text-gray-600">{t('Jelenleg nincsenek elérhető engedélyek.', 'No permissions available at the moment.')}</p>
+            <p className="text-gray-600">{t('Jelenleg nincsenek elérhető szabályzatok.', 'No regulations available at the moment.')}</p>
           </CardContent>
         </Card>
       ) : (
         <div className="space-y-4">
-          {permissions.map((p0) => {
-            const p = p0 as Permission
-            const title = lang === 'EN' ? (p.name_en || p.name_hu) : (p.name_hu || p.name_en)
-            const description = lang === 'EN' ? (p.text_en || p.text_hu) : (p.text_hu || p.text_en)
-            const href = p.file && isMedia(p.file) ? (p.file.url || "#") : undefined
-            const ext = p.file && isMedia(p.file) ? (p.file.filename?.split(".").pop()?.toLowerCase() || "file") : undefined
-            const disp = lang === 'EN' ? (p.displayText_en || p.displayText_hu) : (p.displayText_hu || p.displayText_en)
+          {regulations.map((r0) => {
+            const r = r0 as Regulation
+            const title = lang === 'EN' ? (r.name_en || r.name_hu) : (r.name_hu || r.name_en)
+            const description = lang === 'EN' ? (r.text_en || r.text_hu) : (r.text_hu || r.text_en)
+            const href = r.file && isMedia(r.file) ? (r.file.url || "#") : undefined
+            const ext = r.file && isMedia(r.file) ? (r.file.filename?.split(".").pop()?.toLowerCase() || "file") : undefined
+            const disp = lang === 'EN' ? (r.displayText_en || r.displayText_hu) : (r.displayText_hu || r.displayText_en)
             return (
-              <Card key={p.id} className="group hover:shadow-md transition-all duration-300">
+              <Card key={r.id} className="group hover:shadow-md transition-all duration-300">
                 <CardContent className="p-3 md:p-6">
                   <div className="flex flex-col gap-2 md:gap-3">
                     <div>

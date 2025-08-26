@@ -77,6 +77,7 @@ export interface Config {
     decisions: Decision;
     events: Event;
     permissions: Permission;
+    regulations: Regulation;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -93,6 +94,7 @@ export interface Config {
     decisions: DecisionsSelect<false> | DecisionsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
     permissions: PermissionsSelect<false> | PermissionsSelect<true>;
+    regulations: RegulationsSelect<false> | RegulationsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -444,6 +446,52 @@ export interface Permission {
   createdAt: string;
 }
 /**
+ * Szabályzatok kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "regulations".
+ */
+export interface Regulation {
+  id: number;
+  name_hu: string;
+  name_en: string;
+  text_hu: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  text_en: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  displayText_hu?: string | null;
+  displayText_en?: string | null;
+  file?: (number | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -489,6 +537,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'permissions';
         value: number | Permission;
+      } | null)
+    | ({
+        relationTo: 'regulations';
+        value: number | Regulation;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -716,6 +768,21 @@ export interface EventsSelect<T extends boolean = true> {
  * via the `definition` "permissions_select".
  */
 export interface PermissionsSelect<T extends boolean = true> {
+  name_hu?: T;
+  name_en?: T;
+  text_hu?: T;
+  text_en?: T;
+  displayText_hu?: T;
+  displayText_en?: T;
+  file?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "regulations_select".
+ */
+export interface RegulationsSelect<T extends boolean = true> {
   name_hu?: T;
   name_en?: T;
   text_hu?: T;

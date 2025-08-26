@@ -1,4 +1,5 @@
 import TagNewsSection from "@/components/TagNewsSection";
+import TagNewsHeader from "@/components/TagNewsHeader";
 
 export default async function KulugyNewsPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
@@ -11,7 +12,13 @@ export default async function KulugyNewsPage({ searchParams }: { searchParams?: 
     <div className="bg-gray-50 min-h-screen flex flex-col">
       <main className="flex-grow">
         <section className="px-4">
-          <div className="max-w-screen mx-auto">
+          <div className="max-w-7xl mx-auto">
+            <TagNewsHeader
+              titleHu="Külügy hírei"
+              titleEn="International affairs news"
+              descHu="Nemzetközi kapcsolatokkal és programokkal kapcsolatos hírek."
+              descEn="News about international affairs and programs."
+            />
             <TagNewsSection page={page} tag="Külügy" basePath="/kulugy/hirek" />
           </div>
         </section>
@@ -19,4 +26,3 @@ export default async function KulugyNewsPage({ searchParams }: { searchParams?: 
     </div>
   );
 }
-

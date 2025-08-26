@@ -30,15 +30,15 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
         </section>
 
         <section className="px-4">
-          <div className="max-w-screen mx-auto grid grid-cols-12 gap-6 items-start">
+          <div className="max-w-screen mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
             {/* Sidebar: Important links + Calendar */}
-            <div className="order-2 md:order-1 col-span-3 md:col-span-4 lg:pt-19 lg:col-span-3 xl:col-span-2 flex flex-col gap-y-4 min-w-[250px]">
+            <div className="order-2 md:order-1 col-span-12 md:col-span-4 lg:pt-19 lg:col-span-3 xl:col-span-2 flex flex-col gap-y-4 min-w-[250px]">
               <ImportantLinks />
               <Calendar events={events} className="w-full h-auto" />
             </div>
 
             {/* Main news feed */}
-            <div className="order-1 md:order-2 col-span-9 md:col-span-8 lg:col-span-7 xl:col-span-8 min-w-0">
+            <div className="order-1 md:order-2 col-span-12 md:col-span-8 lg:col-span-7 xl:col-span-8 min-w-0">
               <HomeNewsHeader />
               <NewsSection page={page} />
             </div>

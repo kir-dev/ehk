@@ -9,14 +9,20 @@ export const Permissions: CollectionConfig = {
     },
     admin: {
         description: "Engedélyek kezelése.",
-        useAsTitle: "name",
+        useAsTitle: "name_hu",
     },
     fields: [
         {
-            name: "name",
+            name: "name_hu",
             type: "text",
             required: true,
-            label: "Engedély neve",
+            label: "Engedély neve (magyar)",
+        },
+        {
+            name: "name_en",
+            type: "text",
+            required: true,
+            label: "Engedély neve (angol)",
         },
         {
             name: "text_hu",
@@ -43,16 +49,22 @@ export const Permissions: CollectionConfig = {
             }),
         },
         {
-            name: "displayText",
+            name: "displayText_hu",
             type: "text",
             required: true,
-            label: "Megjelenítendő fájlnév",
+            label: "Megjelenítendő fájlnév (magyar)",
+        },
+        {
+            name: "displayText_en",
+            type: "text",
+            required: true,
+            label: "Megjelenítendő fájlnév (angol)",
         },
         {
             name: "file",
             type: "upload",
             relationTo: "media",
-            required: true,
+            required: false,
             label: "Fájl",
         },
     ],

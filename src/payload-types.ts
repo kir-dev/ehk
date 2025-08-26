@@ -405,7 +405,8 @@ export interface Event {
  */
 export interface Permission {
   id: number;
-  name: string;
+  name_hu: string;
+  name_en: string;
   text_hu: {
     root: {
       type: string;
@@ -436,8 +437,9 @@ export interface Permission {
     };
     [k: string]: unknown;
   };
-  displayText: string;
-  file: number | Media;
+  displayText_hu: string;
+  displayText_en: string;
+  file?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -714,10 +716,12 @@ export interface EventsSelect<T extends boolean = true> {
  * via the `definition` "permissions_select".
  */
 export interface PermissionsSelect<T extends boolean = true> {
-  name?: T;
+  name_hu?: T;
+  name_en?: T;
   text_hu?: T;
   text_en?: T;
-  displayText?: T;
+  displayText_hu?: T;
+  displayText_en?: T;
   file?: T;
   updatedAt?: T;
   createdAt?: T;

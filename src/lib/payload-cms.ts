@@ -70,7 +70,7 @@ export async function getPermissions() {
   const permissions = await payload.find({
     collection: "permissions",
     limit: 1000,
-    sort: "name",
+    sort: "name_hu",
     depth: 1,
   });
   return permissions.docs as Permission[];

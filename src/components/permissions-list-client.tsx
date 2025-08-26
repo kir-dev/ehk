@@ -12,14 +12,15 @@ interface Props {
   permissions: Permission[]
 }
 
-function getFileExtension(file: number | Media) {
-  if (isMedia(file)) return file.filename?.split(".").pop()?.toLowerCase() || "file"
-  return "file"
-}
-
-function getFileUrl(file: number | Media) {
-  if (isMedia(file)) return file.url || "#"
-  return "#"
+// Extend generated type to reflect current collection fields without regenerating
+type PermissionX = Permission & {
+  name_hu: string;
+  name_en: string;
+  text_hu: unknown;
+  text_en: unknown;
+  displayText_hu?: string | null;
+  displayText_en?: string | null;
+  file?: number | Media | null;
 }
 
 export default function PermissionsListClient({ permissions }: Props) {
@@ -40,42 +41,44 @@ export default function PermissionsListClient({ permissions }: Props) {
         </Card>
       ) : (
         <div className="space-y-4">
-          {permissions.map((p) => {
-            const href = getFileUrl(p.file)
-            const ext = getFileExtension(p.file)
-            const description = lang === 'EN' ? p.text_en : p.text_hu
+          {permissions.map((p0) => {
+            const p = p0 as PermissionX
+            const title = lang === 'EN' ? (p.name_en || p.name_hu) : (p.name_hu || p.name_en)
+            const description = lang === 'EN' ? (p.text_en || p.text_hu) : (p.text_hu || p.text_en)
+            const href = p.file && isMedia(p.file) ? (p.file.url || "#") : undefined
+            const ext = p.file && isMedia(p.file) ? (p.file.filename?.split(".").pop()?.toLowerCase() || "file") : undefined
+            const disp = lang === 'EN' ? (p.displayText_en || p.displayText_hu) : (p.displayText_hu || p.displayText_en)
             return (
               <Card key={p.id} className="group hover:shadow-md transition-all duration-300">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start gap-3 mb-2">
-                        <div className="flex-shrink-0 bg-gray-50 p-2 rounded-lg group-hover:bg-gray-100 transition-colors">
-                          <FileText className="h-6 w-6 text-[#862633]" />
-                        </div>
-                        <div className="min-w-0">
-                          <h3 className="font-bold text-xl leading-tight text-gray-900 mb-1 group-hover:text-[#862633] transition-colors line-clamp-2">
-                            {p.name}
-                          </h3>
-                          <p className="text-xs uppercase text-gray-500">{ext}</p>
-                        </div>
-                      </div>
-                      <div className="prose max-w-none text-gray-700 richtext">
-                        <RichText data={description} />
-                      </div>
+                  <div className="flex flex-col gap-3">
+                    <div>
+                      <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
+                        {title}
+                      </h3>
                     </div>
-                    <div className="md:ml-4 flex-shrink-0">
-                      <Button
-                        variant="outline"
-                        className="group/button hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]"
-                        asChild
-                      >
-                        <a href={href} download>
-                          <Download className="w-4 h-4 mr-2" />
-                          {t('Letöltés', 'Download')}
-                        </a>
-                      </Button>
+                    <div className="prose max-w-none text-gray-700 richtext">
+                      <RichText data={description} />
                     </div>
+                    {href && (
+                      <div className="mt-1 flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <FileText className="h-5 w-5 text-[#862633]" />
+                          <span className="font-medium text-gray-900 truncate">{disp || ext}</span>
+                        </div>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="group/button hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]"
+                          asChild
+                        >
+                          <a href={href} download>
+                            <Download className="w-4 h-4 mr-2" />
+                            {t('Letöltés', 'Download')}
+                          </a>
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>

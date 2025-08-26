@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react"
+import React, { createContext, useContext, useEffect, useMemo, useState, useCallback } from "react"
 
 export type Lang = 'HU' | 'EN'
 
@@ -39,7 +39,7 @@ export function LanguageProvider({ defaultLang, children }: Props) {
     } catch {}
   }, [defaultLang])
 
-  const setLang = (next: Lang) => {
+  const setLang = useCallback((next: Lang) => {
     setLangState(next)
     try {
       if (typeof window !== 'undefined') {
@@ -49,11 +49,11 @@ export function LanguageProvider({ defaultLang, children }: Props) {
       }
       document.documentElement.lang = next.toLowerCase()
     } catch {}
-  }
+  }, [])
 
-  const toggleLang = () => setLang(lang === 'HU' ? 'EN' : 'HU')
+  const toggleLang = useCallback(() => setLang(lang === 'HU' ? 'EN' : 'HU'), [lang, setLang])
 
-  const value = useMemo(() => ({ lang, setLang, toggleLang }), [lang, toggleLang])
+  const value = useMemo(() => ({ lang, setLang, toggleLang }), [lang, setLang, toggleLang])
 
   return (
     <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>

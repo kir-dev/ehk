@@ -58,7 +58,7 @@ export default function RegulationsListClient({ regulations }: Props) {
                       </h3>
                     </div>
                     <div className="prose max-w-none text-gray-700 richtext">
-                      <RichText data={description as any} />
+                      <RichText data={description as never} />
                     </div>
                     {href && (
                       <div className="mt-1 flex items-center justify-between bg-gray-50 p-2 md:p-3 rounded-lg border border-gray-200">

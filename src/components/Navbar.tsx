@@ -237,9 +237,13 @@ export default function Navbar() {
                                     <nav className="space-y-4">
                                         {navigationItems.map((item) => (
                                             <div key={item.title} className="space-y-2">
-                                                <div className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2">
+                                                <Link
+                                                    href={item.href}
+                                                    className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
+                                                    onClick={() => setIsOpen(false)}
+                                                >
                                                     {item.title}
-                                                </div>
+                                                </Link>
                                                 <div className="space-y-1 pl-4">
                                                     {item.items.map((subItem) => (
                                                         <Link

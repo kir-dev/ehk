@@ -132,7 +132,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
 
                     <div>
                         <h3 className="font-semibold text-lg mb-3">{labels.intro}</h3>
-                        <div className="text-gray-700 leading-relaxed">
+                        <div className="text-gray-700 leading-relaxed richtext">
                             <RichText data={introData} />
                         </div>
                     </div>

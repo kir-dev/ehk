@@ -18,6 +18,7 @@ import { Events } from "@/collections/Events";
 import { HeroImages } from "@/collections/HeroImages";
 import { MuszakPaper } from "@/collections/MuszakPaper";
 import {Decisions} from "@/collections/Decisions";
+import {Permissions} from "@/collections/Permissions";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -43,6 +44,7 @@ export default buildConfig({
       MuszakPaper,
       Decisions,
       Events,
+      Permissions,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

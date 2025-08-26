@@ -138,7 +138,7 @@ export function NewsDetailClientMain({ article }: NewsDetailClientProps) {
         <Separator className="mb-6 md:mb-8" />
 
         {/* Content */}
-        <div className="prose prose-sm md:prose-lg max-w-none text-gray-700 leading-relaxed">
+        <div className="prose prose-sm md:prose-lg max-w-none text-gray-700 leading-relaxed richtext">
           <RichText data={content} />
         </div>
 

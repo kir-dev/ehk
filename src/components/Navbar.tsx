@@ -229,13 +229,15 @@ export default function Navbar() {
                                         <span className="sr-only">{ui.openMenu}</span>
                                     </Button>
                                 </SheetTrigger>
-                                <SheetContent side="right" className="w-80 p-0">
-                                    <div className="flex h-full flex-col">
+                                {/* Add padding to SheetContent and ensure scrollability */}
+                                <SheetContent side="right" className="w-80 px-0 py-0 sm:px-2 sm:py-2">
+                                    <div className="flex h-full flex-col min-h-0">
                                         <SheetHeader className="px-4 py-4 border-b">
                                             <SheetTitle className="text-base font-medium">{mobileMenuTitle}</SheetTitle>
                                         </SheetHeader>
-                                        <div className="flex-1 overflow-y-auto">
-                                            <nav className="space-y-4 p-4">
+                                        {/* Ensure nav is always scrollable and doesn't touch edges */}
+                                        <div className="flex-1 min-h-0 overflow-y-auto">
+                                            <nav className="space-y-4 p-4 pt-2 pb-6">
                                                 {navigationItems.map((item) => (
                                                     <div key={item.title} className="space-y-2">
                                                         <Link

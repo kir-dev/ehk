@@ -3,7 +3,7 @@
 import { News } from "@/payload-types";
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
-import { translateTags } from "@/lib/utils";
+import { translateTag, getTagRoute } from "@/lib/utils";
 
 interface NewsCardProps {
   news: News;
@@ -16,7 +16,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
 
     const displayTitle = lang === 'EN' && titleEng ? titleEng : title
     const shortText = lang === 'EN' ? (shortDescription.text_en || shortDescription.text_hu) : shortDescription.text_hu
-    const displayTags = translateTags((tags as unknown) as string[], lang)
+    const originalTags = (tags as unknown) as string[]
 
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group relative">
@@ -39,14 +39,24 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
                 </div>
 
                 <div className="flex flex-wrap gap-2 mt-3 md:mt-4">
-                    {displayTags.map((tag, index) => (
-                        <span
-                            key={index}
-                            className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs md:text-sm group-hover:bg-white group-hover:text-red-800 transition-colors duration-300"
-                        >
-                            {tag}
-                        </span>
-                    ))}
+                    {originalTags?.map((rawTag, index) => {
+                        const href = getTagRoute(rawTag, lang)
+                        const label = translateTag(rawTag, lang)
+                        const chip = (
+                            <span
+                                className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs md:text-sm group-hover:bg-white group-hover:text-red-800 transition-colors duration-300"
+                            >
+                                {label}
+                            </span>
+                        )
+                        return href ? (
+                            <Link key={`${rawTag}-${index}`} href={href} className="focus:outline-none focus:ring-2 focus:ring-ehk-dark-red rounded-full">
+                                {chip}
+                            </Link>
+                        ) : (
+                            <span key={`${rawTag}-${index}`}>{chip}</span>
+                        )
+                    })}
                 </div>
             </div>
 

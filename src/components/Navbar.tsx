@@ -229,40 +229,43 @@ export default function Navbar() {
                                         <span className="sr-only">{ui.openMenu}</span>
                                     </Button>
                                 </SheetTrigger>
-                                <SheetContent side="right" className="w-80">
-                                    <SheetHeader>
-                                        <SheetTitle className="sr-only">{mobileMenuTitle}</SheetTitle>
-                                    </SheetHeader>
-
-                                     <nav className="space-y-4">
-                                         {navigationItems.map((item) => (
-                                             <div key={item.title} className="space-y-2">
-                                                 <Link
-                                                     href={item.href}
-                                                     className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
-                                                     onClick={() => setIsOpen(false)}
-                                                 >
-                                                     {item.title}
-                                                 </Link>
-                                                 <div className="space-y-1 pl-4">
-                                                     {item.items.map((subItem) => (
-                                                         <Link
-                                                             key={subItem.label}
-                                                             href={subItem.href}
-                                                             target={subItem.targetBlank ? "_blank" : undefined}
-                                                             rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                             className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
-                                                             onClick={() => setIsOpen(false)}
-                                                         >
-                                                             {subItem.label}
-                                                         </Link>
-                                                     ))}
-                                                 </div>
-                                             </div>
-                                         ))}
-                                     </nav>
-                                 </SheetContent>
-                             </Sheet>
+                                <SheetContent side="right" className="w-80 p-0">
+                                    <div className="flex h-full flex-col">
+                                        <SheetHeader className="px-4 py-4 border-b">
+                                            <SheetTitle className="text-base font-medium">{mobileMenuTitle}</SheetTitle>
+                                        </SheetHeader>
+                                        <div className="flex-1 overflow-y-auto">
+                                            <nav className="space-y-4 p-4">
+                                                {navigationItems.map((item) => (
+                                                    <div key={item.title} className="space-y-2">
+                                                        <Link
+                                                            href={item.href}
+                                                            className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
+                                                            onClick={() => setIsOpen(false)}
+                                                        >
+                                                            {item.title}
+                                                        </Link>
+                                                        <div className="space-y-1 pl-4">
+                                                            {item.items.map((subItem) => (
+                                                                <Link
+                                                                    key={subItem.label}
+                                                                    href={subItem.href}
+                                                                    target={subItem.targetBlank ? "_blank" : undefined}
+                                                                    rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
+                                                                    className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
+                                                                    onClick={() => setIsOpen(false)}
+                                                                >
+                                                                    {subItem.label}
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </SheetContent>
+                            </Sheet>
                         </div>
                     </div>
                 </div>

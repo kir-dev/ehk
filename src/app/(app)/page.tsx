@@ -45,7 +45,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
                 {/* Sidebar: Important links + Calendar */}
                 <div>
                   <ImportantLinks />
-                  <div className="w-full overflow-hidden mt-4">
+                  <div className="w-full mt-4 min-w-0">
                     <Calendar events={events} className="w-full max-w-full h-auto" />
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
                   {/* Sidebar: Important links + Calendar */}
                   <div className="min-w-0">
                     <ImportantLinks />
-                    <div className="w-full overflow-hidden mt-4">
+                    <div className="w-full mt-4 min-w-0">
                       <div className="max-w-full">
                         <Calendar events={events} className="w-full max-w-full h-auto [&_.rdp]:text-sm" />
                       </div>
@@ -92,7 +92,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
               <div className="xl:col-span-2 min-w-0">
                 <div className="flex flex-col gap-y-4">
                   <ImportantLinks />
-                  <div className="w-full overflow-hidden">
+                  <div className="w-full min-w-0">
                     <div className="max-w-full">
                       <Calendar events={events} className="w-full max-w-full h-auto [&_.rdp]:text-sm" />
                     </div>
@@ -117,4 +117,3 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
     </div>
   );
 }
-

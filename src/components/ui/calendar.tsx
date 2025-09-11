@@ -29,10 +29,10 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        // Responsive: full width, max width, horizontal scroll on small screens
-        "bg-background group/calendar p-3 w-full max-w-md overflow-x-auto sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl",
-        String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
-        String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
+        // Full width without restrictive max-widths
+        "bg-background group/calendar p-3 w-full overflow-visible",
+        String.raw`rtl:**:[.rdp-button_next>svg]:rotate-180`,
+        String.raw`rtl:**:[.rdp-button_previous>svg]:rotate-180`,
         className
       )}
       captionLayout={captionLayout}

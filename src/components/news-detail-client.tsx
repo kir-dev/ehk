@@ -10,7 +10,7 @@ import { News, Media } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 import ShareButton from "@/components/ShareButton"
 import { useLanguage } from "@/components/LanguageProvider"
-import { translateTags } from "@/lib/utils"
+import {translateTags} from "@/lib/utils"
 
 export interface NewsDetailClientProps {
   article: News

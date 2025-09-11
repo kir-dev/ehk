@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { News } from "@/payload-types"
 import { useLanguage } from "@/components/LanguageProvider"
-import { translateTags } from "@/lib/utils"
+import {getTagRoute, translateTag} from "@/lib/utils"
 
 export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[] }) {
   const { lang } = useLanguage()
@@ -32,10 +32,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
         <div className="space-y-4">
           {relatedArticles.map((article) => (
             <div key={article.id} className="border-b border-gray-100 last:border-b-0 pb-4 last:pb-0">
-              <Link href={`/hirek/${article.id}`} className="group block">
-                <h4 className="font-medium text-sm text-gray-900 group-hover:text-ehk-dark-red transition-colors mb-2 line-clamp-2">
-                  {lang === 'EN' && article.titleEng ? article.titleEng : article.title}
-                </h4>
+              <div className="group block">
                 <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-3 h-3" />
@@ -43,14 +40,30 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
                   </div>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </div>
+                <Link href={`/hirek/${article.id}`} className="group/title block">
+                  <h4 className="font-medium text-sm text-gray-900 group-hover/title:text-ehk-dark-red transition-colors mb-2 line-clamp-2">
+                    {lang === 'EN' && article.titleEng ? article.titleEng : article.title}
+                  </h4>
+                </Link>
                 <div className="flex flex-wrap gap-1">
-                  {translateTags((article.tags as unknown) as string[], lang).slice(0, 2).map((tag, index) => (
-                    <Badge key={index} variant="outline" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
+                  {(article.tags as unknown as string[])?.slice(0, 2).map((rawTag, index) => {
+                    const href = getTagRoute(rawTag, lang)
+                    const label = translateTag(rawTag, lang)
+                    const badge = (
+                      <Badge variant="outline" className="text-xs">
+                        {label}
+                      </Badge>
+                    )
+                    return href ? (
+                      <Link key={`${rawTag}-${index}`} href={href} className="focus:outline-none focus:ring-2 focus:ring-ehk-dark-red rounded">
+                        {badge}
+                      </Link>
+                    ) : (
+                      <span key={`${rawTag}-${index}`}>{badge}</span>
+                    )
+                  })}
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>

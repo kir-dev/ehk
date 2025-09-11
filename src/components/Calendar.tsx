@@ -23,6 +23,14 @@ function getDatesBetween(startDate: string, endDate: string): Date[] {
   return dates;
 }
 
+// Stable local date key: YYYY-MM-DD in local time to avoid timezone issues
+function dateKeyLocal(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
 interface EventCalendarProps {
   events: Event[];
   className?: string;
@@ -52,17 +60,12 @@ export default function EventCalendar({
         event.date.endDate
       );
       eventDays.forEach((eventDay) => {
-        const prevEventDay = new Date(eventDay);
-        prevEventDay.setDate(prevEventDay.getDate() - 1);
-        const currentDayString = prevEventDay.toISOString().split("T")[0];
-        const currentEvents = eventsByDay.get(currentDayString)?.events;
-        if (currentEvents) {
-          currentEvents.push(event);
+        const key = dateKeyLocal(eventDay);
+        const current = eventsByDay.get(key)?.events;
+        if (current) {
+          current.push(event);
         } else {
-          eventsByDay.set(currentDayString, {
-            date: eventDay,
-            events: [event],
-          });
+          eventsByDay.set(key, { date: eventDay, events: [event] });
         }
         highlightedDays.push(eventDay);
       });
@@ -104,9 +107,7 @@ export default function EventCalendar({
       locale={locale}
       onSelect={(day) => {
         if (day) {
-          setSelectedEvents(
-            eventsByDay.get(day.toISOString().split("T")[0])?.events || []
-          );
+          setSelectedEvents(eventsByDay.get(dateKeyLocal(day))?.events || []);
         }
       }}
       modifiers={{

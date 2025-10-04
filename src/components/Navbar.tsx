@@ -1,11 +1,12 @@
 "use client"
 
-import { Search, Menu } from "lucide-react"
-import Link from "next/link"
-import { useState } from "react"
+import { Menu, Search } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/components/LanguageProvider";
+import { Button } from "@/components/ui/button";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -13,10 +14,9 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+} from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
-import { useLanguage } from "@/components/LanguageProvider";
 
 // Build navigation items based on current language
 function getNavigationItems(lang: string) {
@@ -160,7 +160,7 @@ export default function Navbar() {
                                         {item.items.length > 0 ? (
                                             <>
                                                 <NavigationMenuTrigger
-                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-medium text-sm px-3 py-2"
+                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-semibold text-base px-3 py-2.5 transition-all duration-200 hover:scale-105"
                                                     onClick={() => {
                                                         if (item.href) router.push(item.href)
                                                     }}
@@ -176,7 +176,7 @@ export default function Navbar() {
                                                                         href={subItem.href}
                                                                         target={subItem.targetBlank ? "_blank" : undefined}
                                                                         rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                                        className="block px-3 py-2 text-sm text-gray-700 hover:text-ehk-dark-red hover:bg-gray-50 rounded-md transition-colors "
+                                                                        className="block px-4 py-2.5 text-sm text-gray-700 hover:text-ehk-dark-red hover:bg-gray-50 rounded-lg transition-all duration-200 hover:pl-5 font-medium"
                                                                     >
                                                                         {subItem.label}
                                                                     </Link>
@@ -192,7 +192,7 @@ export default function Navbar() {
                                                     href={item.href}
                                                     target={item.targetBlank ? "_blank" : undefined}
                                                     rel={item.targetBlank ? "noopener noreferrer" : undefined}
-                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-medium text-sm px-3 py-2 block"
+                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-semibold text-base px-3 py-2.5 block transition-all duration-200 hover:scale-105"
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -242,7 +242,7 @@ export default function Navbar() {
                                                     <div key={item.title} className="space-y-2">
                                                         <Link
                                                             href={item.href}
-                                                            className="font-medium text-gray-900 text-sm border-b border-gray-200 pb-2 block hover:text-ehk-dark-red"
+                                                            className="font-semibold text-gray-900 text-base border-b-2 border-gray-200 pb-2 block hover:text-ehk-dark-red hover:border-ehk-dark-red transition-all duration-200"
                                                             onClick={() => setIsOpen(false)}
                                                         >
                                                             {item.title}
@@ -254,7 +254,7 @@ export default function Navbar() {
                                                                     href={subItem.href}
                                                                     target={subItem.targetBlank ? "_blank" : undefined}
                                                                     rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                                    className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1"
+                                                                    className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1.5 transition-all duration-200 hover:pl-2 font-medium"
                                                                     onClick={() => setIsOpen(false)}
                                                                 >
                                                                     {subItem.label}

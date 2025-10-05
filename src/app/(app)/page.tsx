@@ -33,6 +33,9 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
         {/* Grid sections */}
         <section className="px-4 py-6">
           <div className="max-w-[1800px] mx-auto">
+            {/* Unique anchor for scrolling to the news section in all layouts */}
+            <div id="hirek-section" className="h-0" aria-hidden />
+
             {/* Mobile: stacked layout */}
             <div className="block lg:hidden">
               <div className="flex flex-col gap-6">

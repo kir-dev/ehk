@@ -8,7 +8,6 @@ import { ExternalLink } from 'lucide-react';
 export default function SocialScholarshipPage() {
     const { lang } = useLanguage()
     const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
-
     const translations = {
         regularSocialScholarshipTitleHu : "Rendszeres szociális ösztöndíj",
         regularSocialScholarshipTitleEn : "Regular Grant Based on Social Needs",
@@ -88,7 +87,6 @@ export default function SocialScholarshipPage() {
                             </div>
                         </div>
                     </CardContent>
-
                 </Card>
                 <Card className="group hover:shadow-md transition-all duration-300">
                     <CardContent className="p-3 md:p-6">
@@ -102,7 +100,6 @@ export default function SocialScholarshipPage() {
                                 <p>
                                     {t(translations.exceptionalSocialScholarshipDescriptionHuSection1, translations.exceptionalSocialScholarshipDescriptionEnSection1)}
                                 </p>
-
                                 <p className="pt-6">
                                     {t(translations.exceptionalSocialScholarshipDescriptionHuSection2,translations.exceptionalSocialScholarshipDescriptionEnSection2)}
                                     <a href="https://mueper.bme.hu"
@@ -120,14 +117,11 @@ export default function SocialScholarshipPage() {
                                     <ExternalLink/>
                                     {lang === 'EN' ? "ESZB website" : "ESZB honlapja"}
                                 </Button>
-
                             </div>
                         </div>
                     </CardContent>
                 </Card>
-
             </div>
-
         </div>
     )
 }

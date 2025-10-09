@@ -1,18 +1,18 @@
 import { Suspense } from "react"
-import { RegulationsHeader } from "@/components/regulations-header"
+import { AcademicRegulationsHeader } from "@/components/academic-regulations-header"
 import RegulationsList from "@/components/regulations-list"
 import { LoadingRegulationsGrid } from "@/components/loading-spinner"
+import { getAcademicRegulations } from "@/lib/payload-cms"
 
 export default function RegulationsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <RegulationsHeader />
+        <AcademicRegulationsHeader />
         <Suspense fallback={<LoadingRegulationsGrid />}>
-          <RegulationsList />
+          <RegulationsList loader={getAcademicRegulations} />
         </Suspense>
       </div>
     </div>
   )
 }
-

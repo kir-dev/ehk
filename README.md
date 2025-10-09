@@ -53,6 +53,54 @@ Ensure you have the following installed on your machine:
   yarn lint
   ```
 
+### Migrations (Payload + Postgres)
+
+This project uses Payload's migrate CLI wired to the Postgres adapter. Migration files live in `./src/migrations` and are indexed by `./src/migrations/index.ts`.
+
+Common tasks:
+
+- Create a new migration (auto-generates a timestamped file):
+  ```sh
+  yarn migrate:create <name>
+  # example
+  yarn migrate:create add_regulations_file_eng
+  ```
+  Options:
+  - `--skip-empty` to avoid creating an empty migration when nothing changed
+
+- Apply pending migrations (up):
+  ```sh
+  yarn migrate
+  ```
+
+- Show migration status:
+  ```sh
+  yarn migrate:status
+  ```
+
+- Roll back the last batch:
+  ```sh
+  yarn migrate:down
+  ```
+
+- Reset/refresh (use with care):
+  ```sh
+  yarn migrate:reset     # run all downs
+  yarn migrate:refresh   # run downs then ups
+  yarn migrate:fresh     # drops DB and runs ups (requires --yes already in script)
+  ```
+
+Typical workflow:
+1) Modify your Payload collections/config.
+2) Generate a migration: `yarn migrate:create meaningful_name`.
+3) Review the generated file in `src/migrations/` (it uses Postgres SQL via `db.execute(sql\`...\`)`).
+4) Run `yarn migrate` to apply.
+
+Notes:
+- The CLI auto-updates `src/migrations/index.ts`. Avoid manual edits unless you know what you're doing.
+- Ensure database env vars (e.g., `DATABASE_URL`) are set. For `migrate:create`, Payload initializes without DB connect; for running migrations, DB must be reachable.
+- Scripts are available in `package.json` under `scripts`.
+
 ### Notes
 
 - Ensure Docker is running before starting the development server.

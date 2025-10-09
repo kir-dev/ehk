@@ -7,7 +7,15 @@
     "dev": "next dev --turbopack",
     "build": "payload generate:importmap && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "payload migrate --yes",
+    "migrate:create": "payload migrate:create",
+    "migrate:status": "payload migrate:status",
+    "migrate:down": "payload migrate:down",
+    "migrate:refresh": "payload migrate:refresh",
+    "migrate:reset": "payload migrate:reset",
+    "migrate:fresh": "payload migrate:fresh --yes",
+    "types": "payload generate:types"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.43.0",

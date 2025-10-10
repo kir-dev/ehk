@@ -41,7 +41,7 @@ function getNavigationItems(lang: string) {
             href: "/oktatas/hirek",
             targetBlank: false,
             items: [
-                { label: t("Szabályzatok", "Regulations"), href: "/szabalyzatok", targetBlank: false },
+                { label: t("Szabályzatok", "Regulations"), href: "/oktatasi-szabalyzatok", targetBlank: false },
                 { label: "OMHV", href: "https://ohv.bme.hu/hu", targetBlank: true },
                 { label: "Neptun", href: "https://neptun.bme.hu/hallgatoi/login.aspx", targetBlank: true },
                 { label: t("Nyelvoktatás", "Language courses"), href: "#", targetBlank: false },
@@ -56,7 +56,7 @@ function getNavigationItems(lang: string) {
                 { label: t("Tanulmányi ösztöndíjak", "Academic scholarships"), href: "#", targetBlank: false },
                 { label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"), href: "#", targetBlank: false },
                 { label: t("EHK ösztöndíjak", "EHK scholarships"), href: "#", targetBlank: false },
-                { label: t("Szabályzatok", "Regulations"), href: "#", targetBlank: false },
+                { label: t("Szabályzatok", "Regulations"), href: "juttatasi-szabalyzatok", targetBlank: false },
                 { label: "MŰEPER", href: "https://mueper.bme.hu", targetBlank: true },
                 { label: t("Esélyegyenlőség", "Equal opportunities"), href: "#", targetBlank: false },
             ],

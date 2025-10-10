@@ -65,7 +65,35 @@ export const Regulations: CollectionConfig = {
             type: "upload",
             relationTo: "media",
             required: false,
-            label: "Fájl",
+            label: "Fájl(magyar)",
+        },
+        {
+            name: "file_eng",
+            type: "upload",
+            relationTo: "media",
+            required: false,
+            label: "Fájl (angol)",
+        },
+        {
+            name: "type",
+            type: "select",
+            label: "Típus",
+            options: [
+                {
+                    label: "Oktatási",
+                    value: "academic",
+                },
+                {
+                    label: "Juttatási",
+                    value: "benefits",
+                },
+                {
+                    label: "Kollégiumi",
+                    value: "dormitory",
+                },
+                ],
+            required: true,
+            defaultValue: "academic",
         },
     ],
 };

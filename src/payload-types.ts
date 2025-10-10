@@ -488,6 +488,8 @@ export interface Regulation {
   displayText_hu?: string | null;
   displayText_en?: string | null;
   file?: (number | null) | Media;
+  file_eng?: (number | null) | Media;
+  type: 'academic' | 'benefits' | 'dormitory';
   updatedAt: string;
   createdAt: string;
 }
@@ -790,6 +792,8 @@ export interface RegulationsSelect<T extends boolean = true> {
   displayText_hu?: T;
   displayText_en?: T;
   file?: T;
+  file_eng?: T;
+  type?: T;
   updatedAt?: T;
   createdAt?: T;
 }

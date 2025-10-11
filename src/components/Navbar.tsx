@@ -54,7 +54,7 @@ function getNavigationItems(lang: string) {
             targetBlank: false,
             items: [
                 { label: t("Tanulmányi ösztöndíjak", "Academic scholarships"), href: "#", targetBlank: false },
-                { label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"), href: "#", targetBlank: false },
+                { label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"), href: "/szocialis-osztondijak", targetBlank: false },
                 { label: t("EHK ösztöndíjak", "EHK scholarships"), href: "#", targetBlank: false },
                 { label: t("Szabályzatok", "Regulations"), href: "#", targetBlank: false },
                 { label: "MŰEPER", href: "https://mueper.bme.hu", targetBlank: true },

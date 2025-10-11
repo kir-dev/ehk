@@ -49,7 +49,7 @@ export default function SocialScholarshipPage() {
                     <CardContent className="p-3 md:p-6">
                         <div className="flex flex-col gap-2 md:gap-3">
                             <div>
-                                <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
+                                <h3 className="font-bold text-xl leading-tight uppercase text-gray-900 group-hover:text-[#862633] transition-colors">
                                     {t(translations.regularSocialScholarshipTitleHu, translations.regularSocialScholarshipTitleEn )}
                                 </h3>
                             </div>
@@ -92,7 +92,7 @@ export default function SocialScholarshipPage() {
                     <CardContent className="p-3 md:p-6">
                         <div className="flex flex-col gap-2 md:gap-3">
                             <div>
-                                <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
+                                <h3 className="font-bold text-xl leading-tight uppercase text-gray-900 group-hover:text-[#862633] transition-colors">
                                     {t(translations.exceptionalSocialScholarshipTitleHu, translations.exceptionalSocialScholarshipTitleEn )}
                                 </h3>
                             </div>

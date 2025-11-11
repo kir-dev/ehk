@@ -1,7 +1,7 @@
-import 'server-only';
-import {Decision, News, Reminder, Representative, Event, Permission, Regulation} from "@/payload-types";
-import { getPayload } from "payload";
+import { Decision, Event, News, Permission, Regulation, Reminder, Representative } from "@/payload-types";
 import config from "@payload-config";
+import { getPayload } from "payload";
+import 'server-only';
 
 export async function getNews(options?: { page?: number; limit?: number; tag?: string }) {
   const payload = await getPayload({ config });
@@ -104,6 +104,19 @@ export async function getBenefitRegulations() {
     depth: 1,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     where: { type: { equals: 'benefits' } } as any,
+  });
+  return regulations.docs as Regulation[];
+}
+
+export async function getDormitoryRegulations() {
+  const payload = await getPayload({ config });
+  const regulations = await payload.find({
+    collection: "regulations",
+    limit: 1000,
+    sort: "name_hu",
+    depth: 1,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    where: { type: { equals: 'dormitory' } } as any,
   });
   return regulations.docs as Regulation[];
 }

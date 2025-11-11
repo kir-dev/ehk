@@ -34,13 +34,13 @@ export default function Navbar() {
     } as const
 
     return (
-        <header className="w-full bg-white border-b border-gray-200">
+        <header className="w-full bg-ehk-navbar border-b border-ehk-navbar/30">
             <div className="px-4 w-full">
                 <div className="flex items-center h-20 w-full">
                     <Link href="/" className="flex items-center h-full mr-4 shrink-0">
                         <div className="relative h-full flex items-center shrink-0">
                             <Image
-                                src={"/EHK_svg.svg"}
+                                src={"/EHK_felirat_feher.svg"}
                                 alt={"EHK Logo"}
                                 width={240}
                                 height={240}
@@ -58,14 +58,14 @@ export default function Navbar() {
                                         {item.items.length > 0 ? (
                                             <>
                                                 <NavigationMenuTrigger
-                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-semibold text-base px-3 py-2.5 transition-all duration-200 hover:scale-105"
+                                                    className="text-white relative bg-ehk-navbar hover:text-gray-200 font-semibold text-base px-3 py-2.5 transition-all duration-200 hover:scale-105"
                                                     onClick={() => {
                                                         if (item.href) router.push(item.href)
                                                     }}
                                                 >
                                                     {item.title}
                                                 </NavigationMenuTrigger>
-                                                <NavigationMenuContent className="z-50">
+                                                <NavigationMenuContent className="z-50 bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg">
                                                     <div className="w-80 p-4">
                                                         <div className="grid gap-2">
                                                             {item.items.map((subItem) => (
@@ -74,7 +74,7 @@ export default function Navbar() {
                                                                         href={subItem.href}
                                                                         target={subItem.targetBlank ? "_blank" : undefined}
                                                                         rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                                        className="block px-4 py-2.5 text-sm text-gray-700 hover:text-ehk-dark-red hover:bg-gray-50 rounded-lg transition-all duration-200 hover:pl-5 font-medium"
+                                                                        className="block px-4 py-2.5 text-sm text-gray-800 hover:text-ehk-navbar hover:bg-gray-100 rounded-lg transition-all duration-200 hover:pl-5 font-medium"
                                                                     >
                                                                         {subItem.label}
                                                                     </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
                                                     href={item.href}
                                                     target={item.targetBlank ? "_blank" : undefined}
                                                     rel={item.targetBlank ? "noopener noreferrer" : undefined}
-                                                    className="text-gray-700 relative hover:text-ehk-dark-red font-semibold text-base px-3 py-2.5 block transition-all duration-200 hover:scale-105"
+                                                    className="text-white relative hover:text-gray-200 font-semibold text-base px-3 py-2.5 block transition-all duration-200 hover:scale-105"
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -107,14 +107,14 @@ export default function Navbar() {
                                 variant="ghost"
                                 size="sm"
                                 onClick={toggleLang}
-                                className="text-gray-600 hover:text-ehk-dark-red px-2 py-1 border border-gray-200 rounded-md"
+                                className="bg-ehk-button text-white hover:bg-ehk-button/90 px-2 py-1 border border-ehk-button rounded-md font-semibold transition-all duration-200"
                                 aria-label={ui.langToggle}
                                 aria-pressed={lang === 'EN'}
                             >
                                 {lang}
                             </Button>
 
-                            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-ehk-dark-red">
+                            <Button variant="ghost" size="icon" className="text-white hover:text-gray-200 transition-colors duration-200">
                                 <Search className="h-5 w-5" />
                                 <span className="sr-only">{ui.search}</span>
                             </Button>
@@ -122,7 +122,7 @@ export default function Navbar() {
                             {/* Mobile Menu */}
                             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                                 <SheetTrigger asChild>
-                                    <Button variant="ghost" size="icon" className="lg:hidden text-gray-600">
+                                    <Button variant="ghost" size="icon" className="lg:hidden text-white hover:text-gray-200 transition-colors duration-200">
                                         <Menu className="h-5 w-5" />
                                         <span className="sr-only">{ui.openMenu}</span>
                                     </Button>
@@ -140,7 +140,7 @@ export default function Navbar() {
                                                     <div key={item.title} className="space-y-2">
                                                         <Link
                                                             href={item.href}
-                                                            className="font-semibold text-gray-900 text-base border-b-2 border-gray-200 pb-2 block hover:text-ehk-dark-red hover:border-ehk-dark-red transition-all duration-200"
+                                                            className="font-semibold text-gray-900 text-base border-b-2 border-gray-200 pb-2 block hover:text-ehk-navbar hover:border-ehk-navbar transition-all duration-200"
                                                             onClick={() => setIsOpen(false)}
                                                         >
                                                             {item.title}
@@ -152,7 +152,7 @@ export default function Navbar() {
                                                                     href={subItem.href}
                                                                     target={subItem.targetBlank ? "_blank" : undefined}
                                                                     rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
-                                                                    className="block text-sm text-gray-600 hover:text-ehk-dark-red py-1.5 transition-all duration-200 hover:pl-2 font-medium"
+                                                                    className="block text-sm text-gray-600 hover:text-ehk-navbar py-1.5 transition-all duration-200 hover:pl-2 font-medium"
                                                                     onClick={() => setIsOpen(false)}
                                                                 >
                                                                     {subItem.label}

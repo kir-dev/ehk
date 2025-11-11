@@ -37,6 +37,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-ehk-navbar: var(--ehk-navbar);
+  --color-ehk-button: var(--ehk-button);
+  --color-ehk-dark-red: var(--ehk-dark-red);
+  --color-ehk-light-red: var(--ehk-light-red);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -45,6 +49,8 @@
 
     :root {
         --radius: 0.625rem;
+        --ehk-navbar: #8A2432;
+        --ehk-button: #b2293b;
         --ehk-dark-red: #862633;
         --ehk-light-red: #B2293B;
         --ehk-grad-color-1: #740D1C;
@@ -129,12 +135,37 @@
     .bg-ehk-gradient {
         background-image: var(--ehk-dark-red);
     }
+    /* Navbar colors */
+    .bg-ehk-navbar { background-color: var(--ehk-navbar); }
+    .text-ehk-navbar { color: var(--ehk-navbar); }
+    .border-ehk-navbar { border-color: var(--ehk-navbar); }
+    .hover\:bg-ehk-navbar:hover { background-color: var(--ehk-navbar); }
+    .hover\:text-ehk-navbar:hover { color: var(--ehk-navbar); }
+    .hover\:border-ehk-navbar:hover { border-color: var(--ehk-navbar); }
+    
+    /* Button colors */
+    .bg-ehk-button { background-color: var(--ehk-button); }
+    .text-ehk-button { color: var(--ehk-button); }
+    .border-ehk-button { border-color: var(--ehk-button); }
+    .hover\:bg-ehk-button:hover { background-color: var(--ehk-button); }
+    .hover\:text-ehk-button:hover { color: var(--ehk-button); }
+    .hover\:border-ehk-button:hover { border-color: var(--ehk-button); }
+    
+    /* Dark red colors */
     .bg-ehk-dark-red { background-color: var(--ehk-dark-red); }
     .text-ehk-dark-red { color: var(--ehk-dark-red); }
     .border-ehk-dark-red { border-color: var(--ehk-dark-red); }
     .hover\:bg-ehk-dark-red:hover { background-color: var(--ehk-dark-red); }
     .hover\:text-ehk-dark-red:hover { color: var(--ehk-dark-red); }
     .hover\:border-ehk-dark-red:hover { border-color: var(--ehk-dark-red); }
+    
+    /* Light red colors */
+    .bg-ehk-light-red { background-color: var(--ehk-light-red); }
+    .text-ehk-light-red { color: var(--ehk-light-red); }
+    .border-ehk-light-red { border-color: var(--ehk-light-red); }
+    .hover\:bg-ehk-light-red:hover { background-color: var(--ehk-light-red); }
+    .hover\:text-ehk-light-red:hover { color: var(--ehk-light-red); }
+    .hover\:border-ehk-light-red:hover { border-color: var(--ehk-light-red); }
 }
 
     @layer base {

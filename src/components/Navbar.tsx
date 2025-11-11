@@ -44,7 +44,7 @@ function getNavigationItems(lang: string) {
                 { label: t("Szabályzatok", "Regulations"), href: "/szabalyzatok", targetBlank: false },
                 { label: "OMHV", href: "https://ohv.bme.hu/hu", targetBlank: true },
                 { label: "Neptun", href: "https://neptun.bme.hu/hallgatoi/login.aspx", targetBlank: true },
-                { label: t("Nyelvoktatás", "Language courses"), href: "#", targetBlank: false },
+                { label: t("Nyelvoktatás", "Language courses"), href: "/nyelvoktatas", targetBlank: false },
                 { label: t("Kisokosok/Segédletek", "Guides"), href: "#", targetBlank: false },
             ],
         },

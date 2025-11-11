@@ -1,13 +1,13 @@
 export const dynamic = 'force-dynamic';
 
+import Calendar from '@/components/Calendar';
+import HomeNewsHeader from '@/components/HomeNewsHeader';
 import ImageViewer from '@/components/ImageViewer';
+import ImportantLinks from '@/components/ImportantLinks';
+import MUSZAKSection from '@/components/MUSZAKSection';
+import NewsSection from '@/components/NewsSection';
 import { getHeroImages } from '@/lib/getHeroImages';
 import { getEvents } from '@/lib/payload-cms';
-import Calendar from '@/components/Calendar';
-import ImportantLinks from '@/components/ImportantLinks';
-import HomeNewsHeader from '@/components/HomeNewsHeader';
-import NewsSection from '@/components/NewsSection';
-import MUSZAKSection from '@/components/MUSZAKSection';
 
 // Home page: mobile 1 col, desktop 2 cols
 export default async function Home({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
@@ -32,7 +32,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
 
         {/* Grid sections */}
         <section className="px-4 py-6">
-          <div className="max-w-[1800px] mx-auto">
+          <div className="max-w-[2200px] mx-auto">
             {/* Unique anchor for scrolling to the news section in all layouts */}
             <div id="hirek-section" className="h-0" aria-hidden />
 
@@ -46,7 +46,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
                 </div>
 
                 {/* Sidebar: Important links + Calendar + MUSZAK */}
-                <div>
+                <div className="bg-ehk-links-bg p-4 rounded-lg">
                   <ImportantLinks />
                   <div className="w-full mt-4 min-w-0">
                     <Calendar events={events} className="w-full max-w-full h-auto" />
@@ -62,7 +62,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<Re
             <div className="hidden lg:grid lg:grid-cols-12 gap-8">
               {/* Left column: Important links + Calendar + MUSZAK */}
               <div className="lg:col-span-3 min-w-0">
-                <div className="flex flex-col gap-y-4">
+                <div className="flex flex-col gap-y-4 bg-ehk-links-bg p-4 rounded-lg">
                   <ImportantLinks />
                   <div className="w-full min-w-0">
                     <div className="max-w-full">

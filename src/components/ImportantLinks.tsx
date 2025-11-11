@@ -1,10 +1,9 @@
 "use client"
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ExternalLink, Link2 } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "./LanguageProvider"
-import React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Link2, ExternalLink } from "lucide-react"
 
 type Props = {
   className?: string

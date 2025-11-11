@@ -41,6 +41,7 @@
   --color-ehk-button: var(--ehk-button);
   --color-ehk-dark-red: var(--ehk-dark-red);
   --color-ehk-light-red: var(--ehk-light-red);
+  --color-ehk-links-bg: var(--ehk-links-bg);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -53,6 +54,7 @@
         --ehk-button: #b2293b;
         --ehk-dark-red: #862633;
         --ehk-light-red: #B2293B;
+        --ehk-links-bg: #b5868e;
         --ehk-grad-color-1: #740D1C;
         --ehk-grad-color-2: #CB6666;
         --ehk-grad-color-3: #F4DDDF;

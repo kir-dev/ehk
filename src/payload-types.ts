@@ -78,6 +78,7 @@ export interface Config {
     events: Event;
     permissions: Permission;
     regulations: Regulation;
+    help: Help;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -95,6 +96,7 @@ export interface Config {
     events: EventsSelect<false> | EventsSelect<true>;
     permissions: PermissionsSelect<false> | PermissionsSelect<true>;
     regulations: RegulationsSelect<false> | RegulationsSelect<true>;
+    help: HelpSelect<false> | HelpSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -495,6 +497,28 @@ export interface Regulation {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "help".
+ */
+export interface Help {
+  id: number;
+  title_hu: string;
+  title_en: string;
+  description_hu: string;
+  description_en: string;
+  files?:
+    | {
+        displayName_hu: string;
+        file_hu: number | Media;
+        displayName_en?: string | null;
+        file_en?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -543,6 +567,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'regulations';
         value: number | Regulation;
+      } | null)
+    | ({
+        relationTo: 'help';
+        value: number | Help;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -794,6 +822,27 @@ export interface RegulationsSelect<T extends boolean = true> {
   file?: T;
   file_eng?: T;
   type?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "help_select".
+ */
+export interface HelpSelect<T extends boolean = true> {
+  title_hu?: T;
+  title_en?: T;
+  description_hu?: T;
+  description_en?: T;
+  files?:
+    | T
+    | {
+        displayName_hu?: T;
+        file_hu?: T;
+        displayName_en?: T;
+        file_en?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

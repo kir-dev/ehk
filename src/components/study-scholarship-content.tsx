@@ -8,7 +8,7 @@ export default function LanguageEducationContent() {
   const { lang } = useLanguage();
   const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
   return (
-    <div className="flex md:flex-col items-center lg:px-4 px-2 py-8 gap-4 md:gap-6">
+    <div className="flex flex-col items-center lg:px-4 px-2 py-8 gap-4 md:gap-6">
       <Card>
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">

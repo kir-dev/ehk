@@ -46,7 +46,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
             href: "/juttatas/hirek",
             targetBlank: false,
             items: [
-                { label: t("Tanulmányi ösztöndíjak", "Academic scholarships"), href: "#", targetBlank: false },
+                { label: t("Tanulmányi ösztöndíj", "Academic scholarship"), href: "/tanulmanyi-osztondij", targetBlank: false },
                 { label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"), href: "#", targetBlank: false },
                 { label: t("EHK ösztöndíjak", "EHK scholarships"), href: "#", targetBlank: false },
                 { label: t("Szabályzatok", "Regulations"), href: "/juttatasi-szabalyzatok", targetBlank: false },

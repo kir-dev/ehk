@@ -1,6 +1,6 @@
-import { DecisionsArchive } from "@/components/DecisionsArchive"
+import { DecisionsArchive } from "@/app/(app)/hatarozatok-tara/components/DecisionsArchive"
 import { Suspense } from "react"
-import { LoadingDecisionsGrid } from "@/components/LoadingSpinner"
+import { LoadingDecisionsGrid } from "@/components/common/LoadingSpinner"
 
 export default function DecisionsPage() {
     return (

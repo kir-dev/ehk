@@ -1,6 +1,6 @@
-import { LoadingRegulationsGrid } from "@/components/LoadingSpinner";
-import StudyScholarshipContent from "@/components/StudyScholarshipContent";
-import { StudyScholarshipHeader } from "@/components/StudyScholarshipHeader";
+import { LoadingRegulationsGrid } from "@/components/common/LoadingSpinner";
+import StudyScholarshipContent from "@/app/(app)/tanulmanyi-osztondij/components/StudyScholarshipContent";
+import { StudyScholarshipHeader } from "@/app/(app)/tanulmanyi-osztondij/components/StudyScholarshipHeader";
 import { Suspense } from "react";
 
 export default function StudyScholarshipPage(){

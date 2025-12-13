@@ -1,11 +1,11 @@
 export const dynamic = 'force-dynamic';
 
-import Calendar from '@/components/Calendar';
-import HomeNewsHeader from '@/components/HomeNewsHeader';
-import ImageViewer from '@/components/ImageViewer';
-import ImportantLinks from '@/components/ImportantLinks';
-import MUSZAKSection from '@/components/MUSZAKSection';
-import NewsSection from '@/components/NewsSection';
+import Calendar from '@/app/(app)/components/Calendar';
+import HomeNewsHeader from '@/app/(app)/components/HomeNewsHeader';
+import ImageViewer from '@/app/(app)/components/ImageViewer';
+import ImportantLinks from '@/app/(app)/components/ImportantLinks';
+import MUSZAKSection from '@/app/(app)/components/MUSZAKSection';
+import NewsSection from '@/app/(app)/components/NewsSection';
 import { getHeroImages } from '@/lib/get-hero-images';
 import { getEvents } from '@/lib/payload-cms';
 

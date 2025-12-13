@@ -1,6 +1,6 @@
-import LanguageEducationContent from "@/components/LanguageEducationContent";
-import { LanguageEducationHeader } from "@/components/LanguageEducationHeader";
-import { LoadingRegulationsGrid } from "@/components/LoadingSpinner";
+import LanguageEducationContent from "@/app/(app)/nyelvoktatas/components/LanguageEducationContent";
+import { LanguageEducationHeader } from "@/app/(app)/nyelvoktatas/components/LanguageEducationHeader";
+import { LoadingRegulationsGrid } from "@/components/common/LoadingSpinner";
 import { Suspense } from "react";
 
 export default function LanguageEducationPage(){

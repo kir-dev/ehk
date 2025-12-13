@@ -1,7 +1,7 @@
 "use client"
-import RegularSocialScholarshipHeader from "@/components/RegularSocialScholarshipHeader";
+import RegularSocialScholarshipHeader from "@/app/(app)/szocialis-osztondijak/components/RegularSocialScholarshipHeader";
 import {Card, CardContent} from "@/components/ui/card";
-import {useLanguage} from "@/components/LanguageProvider";
+import {useLanguage} from "@/components/common/LanguageProvider";
 import {Button} from "@/components/ui/button";
 import { ExternalLink } from 'lucide-react';
 

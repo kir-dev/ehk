@@ -1,5 +1,5 @@
-import TagNewsSection from "@/components/TagNewsSection";
-import TagNewsHeader from "@/components/TagNewsHeader";
+import TagNewsSection from "@/components/news/TagNewsSection";
+import TagNewsHeader from "@/components/news/TagNewsHeader";
 
 export default async function KulugyNewsPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;

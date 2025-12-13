@@ -1,6 +1,6 @@
-import HelpPageContent from "@/components/helpPage/HelpPageContent";
-import { LoadingHelpPageContent } from "@/components/LoadingSpinner";
-import { PageHeader } from "@/components/PageHeader";
+import HelpPageContent from "@/app/(app)/kisokosok/components/HelpPageContent";
+import { LoadingHelpPageContent } from "@/components/common/LoadingSpinner";
+import { PageHeader } from "@/app/(app)/kisokosok/components/PageHeader";
 import { Suspense } from "react";
 
 export default function HelpPage() {

@@ -1,7 +1,7 @@
 import { Suspense } from "react"
-import { PermissionsHeader } from "@/components/PermissionsHeader"
-import PermissionsList from "@/components/PermissionsList"
-import { LoadingDecisionsGrid as LoadingPermissionsGrid } from "@/components/LoadingSpinner"
+import { PermissionsHeader } from "@/app/(app)/engedelyek/components/PermissionsHeader"
+import PermissionsList from "@/app/(app)/engedelyek/components/PermissionsList"
+import { LoadingDecisionsGrid as LoadingPermissionsGrid } from "@/components/common/LoadingSpinner"
 
 export default function PermissionsPage() {
   return (

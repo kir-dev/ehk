@@ -64,7 +64,7 @@ export default function Navbar() {
                     </Link>
                     <div className="flex flex-1 items-center justify-end">
                         {/* Desktop Navigation */}
-                        <NavigationMenu className="hidden lg:flex" viewport={false}>
+                        <NavigationMenu className="hidden xlg:flex" viewport={false}>
                             <NavigationMenuList className="">
                                 {navigationItems.map((item) => (
                                     <NavigationMenuItem key={item.title}>
@@ -135,7 +135,7 @@ export default function Navbar() {
                             {/* Mobile Menu */}
                             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                                 <SheetTrigger asChild>
-                                    <Button variant="ghost" size="icon" className="lg:hidden text-white hover:text-gray-200 transition-colors duration-200">
+                                    <Button variant="ghost" size="icon" className="xlg:hidden text-white hover:text-gray-200 transition-colors duration-200">
                                         <Menu className="h-5 w-5" />
                                         <span className="sr-only">{ui.openMenu}</span>
                                     </Button>

@@ -21,7 +21,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       return `${prefix}${href}`;
   };
 
-  return [
+  const items: NavigationItem[] = [
     {
       title: t("SZERVEZET", "ORGANIZATION"),
       href: link("/szervezet/hirek"),
@@ -220,4 +220,13 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       items: [],
     },
   ];
+
+  // Filter out certain menu items for English version
+  if (lang === "EN") {
+    return items.filter(item => 
+      item.title !== "DORMITORY" && item.title !== "INTERNATIONAL"
+    );
+  }
+
+  return items;
 }

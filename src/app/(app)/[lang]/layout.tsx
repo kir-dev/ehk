@@ -1,5 +1,5 @@
 import Footer from "@/app/(app)/components/Footer";
-import Navbar from "@/app/(app)/components/Navbar";
+import Navbar from "@/app/(app)/components/navbar";
 import { LanguageProvider } from "@/components/common/LanguageProvider";
 import { i18n } from "@/i18n-config";
 import type { Metadata } from "next";

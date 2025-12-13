@@ -6,7 +6,7 @@ import ImageViewer from '@/components/ImageViewer';
 import ImportantLinks from '@/components/ImportantLinks';
 import MUSZAKSection from '@/components/MUSZAKSection';
 import NewsSection from '@/components/NewsSection';
-import { getHeroImages } from '@/lib/getHeroImages';
+import { getHeroImages } from '@/lib/get-hero-images';
 import { getEvents } from '@/lib/payload-cms';
 
 // Home page: mobile 1 col, desktop 2 cols

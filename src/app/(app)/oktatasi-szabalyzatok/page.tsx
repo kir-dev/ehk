@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { AcademicRegulationsHeader } from "@/components/academic-regulations-header";
-import RegulationsList from "@/components/regulations-list";
-import { LoadingRegulationsGrid } from "@/components/loading-spinner";
+import { AcademicRegulationsHeader } from "@/components/AcademicRegulationsHeader";
+import RegulationsList from "@/components/RegulationsList";
+import { LoadingRegulationsGrid } from "@/components/LoadingSpinner";
 import { getAcademicRegulations } from "@/lib/payload-cms";
 
 export default function RegulationsPage() {

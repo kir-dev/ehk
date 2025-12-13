@@ -1,5 +1,5 @@
 import { getRepresentatives } from "@/lib/payload-cms";
-import RepresentativesGridClient from './representatives-grid-client';
+import RepresentativesGridClient from './RepresentativesGridClient';
 
 // Server component for data fetching
 export default async function RepresentativesGrid() {

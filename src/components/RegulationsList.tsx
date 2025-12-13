@@ -1,5 +1,5 @@
 import { getAcademicRegulations } from "@/lib/payload-cms";
-import RegulationsListClient from "./regulations-list-client";
+import RegulationsListClient from "./RegulationsListClient";
 import type { Regulation } from "@/payload-types";
 
 export default async function RegulationsList({ loader = getAcademicRegulations }: { loader?: () => Promise<Regulation[]> }) {

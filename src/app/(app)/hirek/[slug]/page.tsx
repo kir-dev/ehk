@@ -1,4 +1,4 @@
-import { NewsDetail } from "@/components/news-detail"
+import { NewsDetail } from "@/components/NewsDetail"
 import { notFound } from "next/navigation"
 import { getNewsById } from "@/lib/payload-cms";
 

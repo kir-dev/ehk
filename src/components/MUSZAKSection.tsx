@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MUSZAKCard from "@/components/MUSZAKCard";
-import getMuszakPapers from "@/lib/getMuszakPapers";
+import getMuszakPapers from "@/lib/get-muszak-papers";
 import { isMedia } from "@/utils/isMedia";
 
 export default async function MUSZAKSection() {

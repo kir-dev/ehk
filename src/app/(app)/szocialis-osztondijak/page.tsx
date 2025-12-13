@@ -1,5 +1,5 @@
 "use client"
-import RegularSocialScholarshipHeader from "@/components/regular-social-scholarship-header";
+import RegularSocialScholarshipHeader from "@/components/RegularSocialScholarshipHeader";
 import {Card, CardContent} from "@/components/ui/card";
 import {useLanguage} from "@/components/LanguageProvider";
 import {Button} from "@/components/ui/button";

@@ -1,6 +1,6 @@
 import { Suspense } from "react"
-import RegulationsList from "@/components/regulations-list"
-import { LoadingRegulationsGrid } from "@/components/loading-spinner"
+import RegulationsList from "@/components/RegulationsList"
+import { LoadingRegulationsGrid } from "@/components/LoadingSpinner"
 import {BenefitsRegulationsHeader} from "@/components/ui/benefits-regulations";
 import { getBenefitRegulations } from "@/lib/payload-cms";
 

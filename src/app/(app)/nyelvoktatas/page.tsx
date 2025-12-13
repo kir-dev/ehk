@@ -1,6 +1,6 @@
-import LanguageEducationContent from "@/components/language-education-content";
-import { LanguageEducationHeader } from "@/components/language-education-header";
-import { LoadingRegulationsGrid } from "@/components/loading-spinner";
+import LanguageEducationContent from "@/components/LanguageEducationContent";
+import { LanguageEducationHeader } from "@/components/LanguageEducationHeader";
+import { LoadingRegulationsGrid } from "@/components/LoadingSpinner";
 import { Suspense } from "react";
 
 export default function LanguageEducationPage(){

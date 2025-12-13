@@ -1,6 +1,6 @@
 import { getNews } from "@/lib/payload-cms";
 import NewsCard from "./NewsCard";
-import NewsPagination from "./news-pagination";
+import NewsPagination from "./NewsPagination";
 
 export default async function NewsSection({ page = 1 }: { page?: number }) {
   const { docs: news, totalPages, page: currentPage } = await getNews({ page, limit: 6 });

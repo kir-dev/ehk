@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import { RepresentativeCard } from '@/components/representative-card';
-import { RepresentativeModal } from '@/components/representative-modal';
+import { RepresentativeCard } from '@/components/RepresentativeCard';
+import { RepresentativeModal } from '@/components/RepresentativeModal';
 import { Representative } from '@/payload-types';
 
 export default function RepresentativesGridClient({ representatives }: { representatives: Representative[] }) {

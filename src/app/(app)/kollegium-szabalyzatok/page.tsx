@@ -1,6 +1,6 @@
-import { DormitoryRegulationsHeader } from "@/components/dormitory-regulations-header"
-import { LoadingRegulationsGrid } from "@/components/loading-spinner"
-import RegulationsList from "@/components/regulations-list"
+import { DormitoryRegulationsHeader } from "@/components/DormitoryRegulationsHeader"
+import { LoadingRegulationsGrid } from "@/components/LoadingSpinner"
+import RegulationsList from "@/components/RegulationsList"
 import { getDormitoryRegulations } from "@/lib/payload-cms"
 import { Suspense } from "react"
 

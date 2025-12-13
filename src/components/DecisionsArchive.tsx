@@ -1,5 +1,5 @@
 import {getDecisions} from "@/lib/payload-cms";
-import DecisionsArchiveClient from "./decisions-archive-client";
+import DecisionsArchiveClient from "./DecisionsArchiveClient";
 
 export async function DecisionsArchive() {
     const Decisions = await getDecisions();

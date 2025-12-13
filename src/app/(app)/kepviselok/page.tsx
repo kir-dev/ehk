@@ -1,9 +1,9 @@
 export const dynamic = "force-dynamic";
 
 import { Suspense } from 'react'
-import RepresentativesGrid from '@/components/representatives-grid'
-import { RepresentativesHeader } from '@/components/representatives-header'
-import { LoadingRepresentativesGrid } from '@/components/loading-spinner'
+import RepresentativesGrid from '@/components/RepresentativesGrid'
+import { RepresentativesHeader } from '@/components/RepresentativesHeader'
+import { LoadingRepresentativesGrid } from '@/components/LoadingSpinner'
 
 export default function RepresentativesPage() {
     return (

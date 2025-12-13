@@ -1,7 +1,7 @@
 import { getNews } from "@/lib/payload-cms";
 import NewsCard from "./NewsCard";
 import TagNewsEmptyState from "@/components/TagNewsEmptyState";
-import NewsPagination from "./news-pagination";
+import NewsPagination from "./NewsPagination";
 
 interface Props {
   page?: number

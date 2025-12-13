@@ -1,6 +1,6 @@
-import { RelatedNews } from "@/components/related-news"
+import { RelatedNews } from "@/components/RelatedNews"
 import { News } from "@/payload-types";
-import { NewsDetailClientMain, NewsDetailClientSidebar } from "@/components/news-detail-client";
+import { NewsDetailClientMain, NewsDetailClientSidebar } from "@/components/NewsDetailClient";
 import BackNav from "@/components/BackNav";
 
 interface NewsDetailProps {

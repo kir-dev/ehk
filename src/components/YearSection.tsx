@@ -2,7 +2,7 @@
 
 import { Calendar, ChevronDown, ChevronUp } from 'lucide-react'
 import { useState } from 'react'
-import { ReminderCard } from '@/components/reminder-card'
+import { ReminderCard } from '@/components/ReminderCard'
 import { Button } from '@/components/ui/button'
 import {Reminder} from "@/payload-types";
 import { useLanguage } from "@/components/LanguageProvider";

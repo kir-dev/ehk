@@ -1,9 +1,9 @@
 export const dynamic = "force-dynamic";
 
 import { Suspense } from 'react'
-import RemindersGrid from '@/components/reminders-grid'
-import { RemindersHeader } from '@/components/reminders-header'
-import { LoadingGrid } from '@/components/loading-spinner'
+import RemindersGrid from '@/components/RemindersGrid'
+import { RemindersHeader } from '@/components/RemindersHeader'
+import { LoadingGrid } from '@/components/LoadingSpinner'
 
 export default function RemindersPage() {
     return (

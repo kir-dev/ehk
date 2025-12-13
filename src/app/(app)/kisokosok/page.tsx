@@ -1,5 +1,5 @@
 import HelpPageContent from "@/components/helpPage/HelpPageContent";
-import { LoadingHelpPageContent } from "@/components/loading-spinner";
+import { LoadingHelpPageContent } from "@/components/LoadingSpinner";
 import { PageHeader } from "@/components/PageHeader";
 import { Suspense } from "react";
 

@@ -1,6 +1,6 @@
 import {getRelatedNews} from "@/lib/payload-cms";
 import {News} from "@/payload-types";
-import { RelatedNewsClient } from "@/components/related-news-client";
+import { RelatedNewsClient } from "@/components/RelatedNewsClient";
 
 interface RelatedNewsProps {
     currentArticle: News

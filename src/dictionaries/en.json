@@ -1,0 +1,10 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "learn_more": "Learn more"
+  },
+  "navigation": {
+    "home": "Home",
+    "news": "News"
+  }
+}

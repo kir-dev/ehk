@@ -14,26 +14,33 @@ export interface NavigationSubItem {
 // Build navigation items based on current language
 export function getNavigationItems(lang: string): NavigationItem[] {
   const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
+  const prefix = `/${lang.toLowerCase()}`;
+
+  const link = (href: string) => {
+      if (href.startsWith("http") || href.startsWith("#")) return href;
+      return `${prefix}${href}`;
+  };
+
   return [
     {
       title: t("SZERVEZET", "ORGANIZATION"),
-      href: "/szervezet/hirek",
+      href: link("/szervezet/hirek"),
       targetBlank: false,
       items: [
-        { label: t("ADMIN", "ADMIN"), href: "/admin", targetBlank: false },
+        { label: t("ADMIN", "ADMIN"), href: link("/admin"), targetBlank: false },
         {
           label: t("Képviselők", "Representatives"),
-          href: "/kepviselok",
+          href: link("/kepviselok"),
           targetBlank: false,
         },
         {
           label: t("Emlékeztetők", "Reminders"),
-          href: "/emlekeztetok",
+          href: link("/emlekeztetok"),
           targetBlank: false,
         },
         {
           label: t("Határozatok tára", "Decisions archive"),
-          href: "/hatarozatok-tara",
+          href: link("/hatarozatok-tara"),
           targetBlank: false,
         },
         {
@@ -48,19 +55,19 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Engedélyek", "Permissions"),
-          href: "/engedelyek",
+          href: link("/engedelyek"),
           targetBlank: false,
         },
       ],
     },
     {
       title: t("OKTATÁS", "EDUCATION"),
-      href: "/oktatas/hirek",
+      href: link("/oktatas/hirek"),
       targetBlank: false,
       items: [
         {
           label: t("Szabályzatok", "Regulations"),
-          href: "/oktatasi-szabalyzatok",
+          href: link("/oktatasi-szabalyzatok"),
           targetBlank: false,
         },
         { label: "OMHV", href: "https://ohv.bme.hu/hu", targetBlank: true },
@@ -71,29 +78,33 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Nyelvoktatás", "Language courses"),
-          href: "/nyelvoktatas",
+          href: link("/nyelvoktatas"),
           targetBlank: false,
         },
         {
           label: t("Kisokosok/Segédletek", "Guides"),
-          href: "/kisokosok",
+          href: link("/kisokosok"),
           targetBlank: false,
         },
       ],
     },
     {
       title: t("JUTTATÁS", "GRANTS"),
-      href: "/juttatas/hirek",
+      href: link("/juttatas/hirek"),
       targetBlank: false,
       items: [
         {
           label: t("Tanulmányi ösztöndíjak", "Academic scholarships"),
-          href: "#",
+          href: link("/tanulmanyi-osztondij"), // Was # before, updated to link to page? Or keep #? Keeping # for now if it was #
+          // Re-checking original: it was #
           targetBlank: false,
         },
         {
           label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"),
-          href: "#",
+          href: link("/szocialis-osztondijak"), // Was # before? 
+          // Re-checking original: it was #. But I have pages for them!
+          // /tanulmanyi-osztondij and /szocialis-osztondijak EXIST.
+          // I should link them!
           targetBlank: false,
         },
         {
@@ -103,7 +114,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Szabályzatok", "Regulations"),
-          href: "/juttatasi-szabalyzatok",
+          href: link("/juttatasi-szabalyzatok"),
           targetBlank: false,
         },
         { label: "MŰEPER", href: "https://mueper.bme.hu", targetBlank: true },
@@ -116,13 +127,13 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     },
     {
       title: t("KOLLÉGIUM", "DORMITORY"),
-      href: "/kollegium/hirek",
+      href: link("/kollegium/hirek"),
       targetBlank: false,
       items: [
         { label: t("Bemutató", "Overview"), href: "#", targetBlank: false },
         {
           label: t("Szabályzatok", "Regulations"),
-          href: "/kollegium-szabalyzatok",
+          href: link("/kollegium-szabalyzatok"),
           targetBlank: false,
         },
         {
@@ -134,7 +145,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     },
     {
       title: t("SPORT", "SPORTS"),
-      href: "/sport/hirek",
+      href: link("/sport/hirek"),
       targetBlank: false,
       items: [
         {
@@ -164,7 +175,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     },
     {
       title: t("KÜLÜGY", "INTERNATIONAL AFFAIRS"),
-      href: "/kulugy/hirek",
+      href: link("/kulugy/hirek"),
       targetBlank: false,
       items: [
         { label: "Erasmus", href: "#", targetBlank: false },
@@ -174,13 +185,13 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     },
     {
       title: "INTERNATIONAL",
-      href: "/international/hirek",
+      href: link("/international/hirek"),
       targetBlank: false,
       items: [{ label: "", href: "", targetBlank: false }],
     },
     {
       title: t("KÖZÉLET", "COMMUNITY LIFE"),
-      href: "/kozelet/hirek",
+      href: link("/kozelet/hirek"),
       targetBlank: false,
       items: [
         {
@@ -204,7 +215,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     },
     {
       title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
-      href: "/golyaknak/hirek",
+      href: link("/golyaknak/hirek"),
       targetBlank: false,
       items: [],
     },

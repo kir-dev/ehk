@@ -76,7 +76,7 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
       rafScroll();
       return;
     }
-  }, [searchParams, queryKey]);
+  }, [searchParams, queryKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handlePageClick = (e: React.MouseEvent<HTMLAnchorElement>, page: number) => {
     e.preventDefault();

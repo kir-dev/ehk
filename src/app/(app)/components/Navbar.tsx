@@ -2,11 +2,11 @@
 
 import { Menu, Search } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-import { useLanguage } from "@/components/common/LanguageProvider";
 import { getNavigationItems } from "@/app/(app)/components/navigation-items";
+import { useLanguage } from "@/components/common/LanguageProvider";
 import { Button } from "@/components/ui/button";
 import {
     NavigationMenu,
@@ -24,6 +24,7 @@ export default function Navbar() {
     const { lang, toggleLang } = useLanguage()
     const navigationItems = getNavigationItems(lang)
     const router = useRouter()
+    const pathname = usePathname()
     const mobileMenuTitle = lang === 'EN' ? 'Menu' : 'Menü'
 
     // Localized UI labels
@@ -33,11 +34,23 @@ export default function Navbar() {
         openMenu: lang === 'EN' ? 'Open menu' : 'Menü megnyitása',
     } as const
 
+    const handleLangToggle = () => {
+        const newLang = lang === 'EN' ? 'hu' : 'en';
+        const segments = pathname.split('/');
+        if (segments.length > 1 && (segments[1] === 'hu' || segments[1] === 'en')) {
+            segments[1] = newLang;
+            router.push(segments.join('/'));
+        } else {
+            router.push(`/${newLang}${pathname}`);
+        }
+        toggleLang();
+    };
+
     return (
         <header className="w-full bg-ehk-navbar border-b border-ehk-navbar/30">
             <div className="px-4 w-full">
                 <div className="flex items-center h-20 w-full">
-                    <Link href="/" className="flex items-center h-full mr-4 shrink-0">
+                    <Link href={`/${lang.toLowerCase()}`} className="flex items-center h-full mr-4 shrink-0">
                         <div className="relative h-full flex items-center shrink-0">
                             <Image
                                 src={"/EHK_felirat_feher.svg"}
@@ -106,7 +119,7 @@ export default function Navbar() {
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                onClick={toggleLang}
+                                onClick={handleLangToggle}
                                 className="bg-ehk-button text-white hover:bg-ehk-button/90 px-2 py-1 border border-ehk-button rounded-md font-semibold transition-all duration-200"
                                 aria-label={ui.langToggle}
                                 aria-pressed={lang === 'EN'}

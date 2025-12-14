@@ -1,15 +1,15 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image";
 import { useLanguage } from "@/components/common/LanguageProvider";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
     const { lang } = useLanguage()
     const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
 
     return (
-        <footer className="bg-[#3E3D3D] text-white py-12 px-6">
+        <footer className="bg-[#3E3D3D] text-white py-12 pb-4 px-6">
             <div className="container mx-auto max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-8 mb-8">
                     {/* KAPCSOLAT Section */}
@@ -128,8 +128,11 @@ export default function Footer() {
                 </div>
 
                 {/* University Logo */}
-                <div className="flex justify-center items-center pt-8">
+                <div className="flex flex-col justify-center items-center pt-8 gap-4">
                     <Image src={"/bmelogo.png"} alt={t("BME Logó", "BME Logo")} width={100} height={100} className="h-16 w-auto" />
+                    <p className="text-xs text-gray-400">
+                        Made with 🤍 by <a href="https://kir-dev.hu" className="underline hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">Kir-Dev</a>
+                    </p>
                 </div>
             </div>
         </footer>

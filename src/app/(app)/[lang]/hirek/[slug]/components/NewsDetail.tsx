@@ -1,7 +1,8 @@
-import { RelatedNews } from "@/app/(app)/[lang]/hirek/[slug]/components/RelatedNews"
-import { News } from "@/payload-types";
-import { NewsDetailClientMain, NewsDetailClientSidebar } from "@/app/(app)/[lang]/hirek/[slug]/components/NewsDetailClient";
 import BackNav from "@/app/(app)/[lang]/hirek/[slug]/components/BackNav";
+import { NewsDetailMain } from "@/app/(app)/[lang]/hirek/[slug]/components/NewsDetailMain";
+import { NewsDetailSidebar } from "@/app/(app)/[lang]/hirek/[slug]/components/NewsDetailSidebar";
+import { RelatedNews } from "@/app/(app)/[lang]/hirek/[slug]/components/RelatedNews";
+import { News } from "@/payload-types";
 
 interface NewsDetailProps {
     article: News
@@ -14,10 +15,10 @@ export function NewsDetail({ article }: NewsDetailProps) {
                 <BackNav />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     <div className="md:col-span-2">
-                        <NewsDetailClientMain article={article} />
+                        <NewsDetailMain article={article} />
                     </div>
                     <div className="md:col-span-1">
-                        <NewsDetailClientSidebar article={article} />
+                        <NewsDetailSidebar article={article} />
                         <RelatedNews currentArticle={article} />
                     </div>
                 </div>

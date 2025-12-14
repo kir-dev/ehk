@@ -95,16 +95,12 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       items: [
         {
           label: t("Tanulmányi ösztöndíjak", "Academic scholarships"),
-          href: link("/tanulmanyi-osztondij"), // Was # before, updated to link to page? Or keep #? Keeping # for now if it was #
-          // Re-checking original: it was #
+          href: link("/tanulmanyi-osztondij"),
           targetBlank: false,
         },
         {
           label: t("Szociális alapú ösztöndíjak", "Need-based scholarships"),
-          href: link("/szocialis-osztondijak"), // Was # before? 
-          // Re-checking original: it was #. But I have pages for them!
-          // /tanulmanyi-osztondij and /szocialis-osztondijak EXIST.
-          // I should link them!
+          href: link("/szocialis-osztondijak"),
           targetBlank: false,
         },
         {

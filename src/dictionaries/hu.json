@@ -1,0 +1,10 @@
+{
+  "common": {
+    "welcome": "Üdvözöljük",
+    "learn_more": "Tudj meg többet"
+  },
+  "navigation": {
+    "home": "Kezdőlap",
+    "news": "Hírek"
+  }
+}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "@/components/LanguageProvider"
+import { useLanguage } from "@/components/common/LanguageProvider"
 
 export function BenefitsRegulationsHeader() {
     const { lang } = useLanguage()

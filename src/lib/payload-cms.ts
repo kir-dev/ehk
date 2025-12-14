@@ -6,8 +6,7 @@ import {
   Permission,
   Regulation,
   Reminder,
-  Representative,
-} from "@/payload-types";
+  Representative } from "@/payload-types";
 import config from "@payload-config";
 import { getPayload } from "payload";
 import "server-only";
@@ -16,28 +15,25 @@ export async function getNews(options?: {
   page?: number;
   limit?: number;
   tag?: string;
+ 
 }) {
   const payload = await getPayload({ config });
   const where = options?.tag
-    ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ({ tags: { contains: options.tag } } as any)
+    ? { tags: { contains: options.tag } }
     : undefined;
   const result = await payload.find({
     collection: "news",
     sort: "-date",
     page: options?.page ?? 1,
     limit: options?.limit ?? 6,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    where: where as any,
-  });
+    ...(where && { where }) });
 
   return {
     docs: result.docs as News[],
     totalDocs: result.totalDocs ?? result.docs.length,
     totalPages: result.totalPages ?? 1,
     page: result.page ?? 1,
-    limit: result.limit ?? options?.limit ?? 6,
-  };
+    limit: result.limit ?? options?.limit ?? 6 };
 }
 
 export async function getEvents(): Promise<Event[]> {
@@ -45,8 +41,7 @@ export async function getEvents(): Promise<Event[]> {
   const events = await payload.find({
     collection: "events",
     limit: 1000,
-    sort: "date.startDate",
-  });
+    sort: "date.startDate" });
 
   return events.docs as Event[];
 }
@@ -57,8 +52,7 @@ export async function getRepresentatives() {
     collection: "representatives",
     depth: 1,
     limit: 1000,
-    sort: "order",
-  });
+    sort: "order" });
 
   return representatives.docs as Representative[];
 }
@@ -68,8 +62,7 @@ export async function getReminders() {
   const reminders = await payload.find({
     collection: "reminders",
     limit: 1000,
-    sort: "-date",
-  });
+    sort: "-date" });
 
   return reminders.docs as Reminder[];
 }
@@ -78,8 +71,7 @@ export async function getDecisions() {
   const payload = await getPayload({ config });
   const decisions = await payload.find({
     collection: "decisions",
-    limit: 1000,
-  });
+    limit: 1000 });
 
   return decisions.docs as Decision[];
 }
@@ -90,8 +82,7 @@ export async function getPermissions() {
     collection: "permissions",
     limit: 1000,
     sort: "name_hu",
-    depth: 1,
-  });
+    depth: 1 });
   return permissions.docs as Permission[];
 }
 
@@ -102,9 +93,7 @@ export async function getAcademicRegulations() {
     limit: 1000,
     sort: "name_hu",
     depth: 1,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    where: { type: { equals: "academic" } } as any,
-  });
+    where: { type: { equals: "academic" } } });
   return regulations.docs as Regulation[];
 }
 
@@ -115,9 +104,7 @@ export async function getBenefitRegulations() {
     limit: 1000,
     sort: "name_hu",
     depth: 1,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    where: { type: { equals: "benefits" } } as any,
-  });
+    where: { type: { equals: "benefits" } } });
   return regulations.docs as Regulation[];
 }
 
@@ -128,9 +115,7 @@ export async function getDormitoryRegulations() {
     limit: 1000,
     sort: "name_hu",
     depth: 1,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    where: { type: { equals: "dormitory" } } as any,
-  });
+    where: { type: { equals: "dormitory" } } });
   return regulations.docs as Regulation[];
 }
 
@@ -142,10 +127,7 @@ export async function getNewsById(id: number) {
     limit: 1,
     where: {
       id: {
-        equals: id,
-      },
-    },
-  });
+        equals: id } } });
 
   return news.docs[0] as News;
 }
@@ -153,7 +135,8 @@ export async function getNewsById(id: number) {
 export async function getRelatedNews(
   id: number,
   tags: string[] = [],
-  limit: number = 2
+  limit: number = 2,
+  locale?: 'hu' | 'en'
 ) {
   const payload = await getPayload({ config });
 
@@ -169,9 +152,7 @@ export async function getRelatedNews(
     collection: "news",
     limit,
     sort: "-date",
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    where: where as any,
-  });
+    where });
 
   return news.docs as News[];
 }
@@ -180,8 +161,7 @@ export async function getHelp() {
   const payload = await getPayload({ config });
   const help = await payload.find({
     collection: "help",
-    limit: 1000,
-  });
+    limit: 1000 });
 
   return help.docs as Help[];
 }

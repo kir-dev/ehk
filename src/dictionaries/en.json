@@ -55,5 +55,12 @@
     "no_results": "No representatives found in this category",
     "no_results_desc": "No representative found matching your search.",
     "search_placeholder": "Search by name, position or faculty..."
+  },
+  "permissions": {
+    "title": "Permissions",
+    "description": "Permissions and requests managed by the University Students' Union.",
+    "search_placeholder": "Search for permissions...",
+    "no_results": "No results",
+    "no_permissions": "No permissions available at the moment."
   }
 }

@@ -1,20 +1,19 @@
 "use client"
 
-import { FileText, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useTranslate } from "@/hooks/useTranslate"
 import type { Permission } from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
-import { useLanguage } from "@/components/common/LanguageProvider"
 import { RichText } from "@payloadcms/richtext-lexical/react"
+import { Download, FileText } from "lucide-react"
 
 interface Props {
   permissions: Permission[]
 }
 
 export default function PermissionsListClient({ permissions }: Props) {
-  const { lang } = useLanguage()
-  const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+  const { t, lang } = useTranslate()
 
   return (
     <div className="container mx-auto lg:px-4 px-2 py-8">
@@ -24,8 +23,8 @@ export default function PermissionsListClient({ permissions }: Props) {
             <div className="bg-gray-100 rounded-full w-16 h-12 flex items-center justify-center mx-auto mb-4">
               <FileText className="h-8 w-8 text-gray-400" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('Nincsenek találatok', 'No results')}</h3>
-            <p className="text-gray-600">{t('Jelenleg nincsenek elérhető engedélyek.', 'No permissions available at the moment.')}</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('permissions.no_results')}</h3>
+            <p className="text-gray-600">{t('permissions.no_permissions')}</p>
           </CardContent>
         </Card>
       ) : (
@@ -63,7 +62,7 @@ export default function PermissionsListClient({ permissions }: Props) {
                         >
                           <a href={href} download>
                             <Download className="w-4 h-4 mr-2" />
-                            {t('Letöltés', 'Download')}
+                            {t('common.download')}
                           </a>
                         </Button>
                       </div>

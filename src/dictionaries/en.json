@@ -81,5 +81,68 @@
     "min": "min",
     "file_s": "file(s)",
     "file": "File"
+    },
+  "scholarships": {
+    "academic": {
+      "title": "Academic Scholarship",
+      "intro": "The academic scholarship is one of the most important merit-based financial grants, awarded to students who have achieved outstanding academic results in their previous active semester.",
+      "who": {
+        "title": "Who can receive an academic scholarship?",
+        "items": [
+          "The grant is available to state-funded, full-time students of the University, and up to 50% of students may receive it.",
+          "The scholarship is awarded for one academic semester, i.e. a period of five months.",
+          "Eligibility and the amount of the scholarship are determined on the basis of the academic results of the most recently completed active semester. A suspended semester does not exclude a student from eligibility; in such cases, the results of the last active semester are taken into account.",
+          "It is important to note that first-year students (in Bachelor’s or single-cycle programmes) cannot receive an academic scholarship in their first semester.",
+          "If a student is enrolled in parallel programmes, the scholarship may be awarded separately for each programme; however, it may be granted only once for the same academic performance."
+        ]
+      },
+      "calculation": {
+        "title": "How is the scholarship calculated?",
+        "paragraphs": [
+          "The basis of the academic scholarship is the scholarship index, calculated from the performance achieved in the previous active semester.",
+          "Depending on the faculty’s regulations, this may be the credit index or the corrected credit index.",
+          "Students’ performance is compared within so-called Homogeneous Student Groups (HHCS), which may be formed according to academic year, programme, or specialisation."
+        ]
+      },
+      "decision": {
+        "title": "Who decides on the academic scholarship?",
+        "paragraphs": [
+          "The Faculty Student Union is responsible for the administration of the scholarship. They determine the specific faculty regulations and make the first-instance decision.",
+          "The results are published on the Faculty Student Union’s website within five working days following the decision. The published list includes the scholarship indices of each HHCS and the corresponding scholarship amounts."
+        ]
+      },
+      "tjsz": {
+        "title": "Relevant passages from the Student Financial Regulations (TJSZ)",
+        "quotes": [
+          "Up to 50% of full-time, state-funded students at the University may receive an academic scholarship, and the monthly amount awarded to each student must reach at least 5% of the student normative grant.",
+          "When awarding the academic scholarship, students must be assigned to Homogeneous Student Groups for a given semester. These groups may be established according to programme, academic year, specialisation, field of study, sub-specialisation, module, subject area, branch, or other curriculum unit, or as a combination of these criteria.",
+          "The suspension of the semester(s) preceding the subject semester does not exclude eligibility for the academic scholarship. In such cases, the results of the last active semester must be taken into account.",
+          "The Faculty Student Union defines the further principles of faculty-level allocation (including the procedure for evaluating the academic results of students transferred from another higher education institution or faculty, from a different programme or study form, or those who participated in partial studies abroad), as well as the procedural rules and deadlines. These are to be finalised by the beginning of the semester preceding the awarding period and published on the faculty’s website following the approval of the Faculty Study Committee (KTB).",
+          "The Faculty Student Union is responsible for coordinating, evaluating, and deciding on the academic scholarship, and for providing official notification of the results.",
+          "The results of the academic scholarship are published on the Faculty Student Union’s website within five working days after the decision. The published results must include, for each HHCS, the scholarship index and the corresponding amount of the scholarship."
+        ]
+      }
+    },
+    "social": {
+      "regular": {
+        "title": "Regular Grant Based on Social Needs",
+        "list_title": "A student may apply for the Regular Social Scholarship if they,",
+        "list_items": [
+          "are enrolled in a full-time bachelor’s, master’s, single-cycle, or doctoral program, and",
+          "are studying in a state-funded or state scholarship-funded form of education, or began their studies in such a form and, based on the number of semesters started in the given program, would still be eligible to participate in a state-funded program."
+        ],
+        "description_1": " Regardless of the number of programs they are enrolled in, each applicant may submit only one application for this scholarship. The application must be submitted through the ",
+        "description_2": " (Unified Application and Evaluation System of the Budapest University of Technology and Economics) platform during the application period."
+      },
+      "exceptional": {
+        "title": "Exceptional Grant Based on Social Needs",
+        "description_1": "Students who have become socially disadvantaged due to an unexpected event, or whose social situation has unexpectedly deteriorated, are eligible to apply for the Exceptional Social Scholarship.",
+        "description_2": "The scholarship is a one-time grant. Students may submit multiple applications within a semester if several events justify it, but only one application may be submitted per event. The application must be submitted through the ",
+        "description_3": "(Unified Application and Evaluation System of the Budapest University of Technology and Economics) platform.",
+        "description_4": "Before submitting the application, it is recommended to consult with the current president of the University Social Committee regarding the required documents."
+      },
+      "more_info": "For more information, please visit the website of the University Social Committee (ESZB): ",
+      "eszb_website": "ESZB website"
+    }
   }
 }

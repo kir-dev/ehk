@@ -1,8 +1,8 @@
 
-import RegularSocialScholarshipHeader from "@/app/(app)/[lang]/szocialis-osztondijak/components/RegularSocialScholarshipHeader";
-import {Card, CardContent} from "@/components/ui/card";
+import { PageHeader } from "@/components/common/PageHeader";
+import { Card, CardContent } from "@/components/ui/card";
 
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { ExternalLink } from 'lucide-react';
 
 export default async function SocialScholarshipPage({
@@ -46,7 +46,7 @@ export default async function SocialScholarshipPage({
     return (
         <div className="bg-gray-50 min-h-screen flex flex-col">
             <div className="container mx-auto px-4 py-8">
-                <RegularSocialScholarshipHeader locale={lang as 'hu' | 'en'} />
+                <PageHeader title={t(translations.regularSocialScholarshipTitleHu, translations.regularSocialScholarshipTitleEn)} />
                 <Card className="group hover:shadow-md transition-all duration-300 mb-6">
                     <CardContent className="p-3 md:p-6">
                         <div className="flex flex-col gap-2 md:gap-3">

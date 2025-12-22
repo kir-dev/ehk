@@ -62,5 +62,24 @@
     "search_placeholder": "Keresés engedélyek között...",
     "no_results": "Nincsenek találatok",
     "no_permissions": "Jelenleg nincsenek elérhető engedélyek."
+  },
+  "news": {
+    "title": "Hírek",
+    "no_results": "Nincsenek találatok",
+    "no_news_category": "Ebben a kategóriában még nincsenek hírek.",
+    "read_more": "Tovább",
+    "back_to_news": "Vissza a hírekhez",
+    "published": "Publikálás dátuma",
+    "reading_time": "Olvasási idő",
+    "attachments": "Csatolt fájlok",
+    "tags": "Címkék",
+    "related_news": "Kapcsolódó hírek",
+    "view_all_news": "Összes hír megtekintése",
+    "share": "Megosztás",
+    "article_info": "Cikk információk",
+    "min_read": "perc olvasás",
+    "min": "perc",
+    "file_s": "fájl",
+    "file": "Fájl"
   }
 }

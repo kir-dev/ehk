@@ -1,17 +1,16 @@
 "use client"
 
+import { useTranslate } from "@/hooks/useTranslate";
+import { getTagRoute, translateTag } from "@/lib/utils";
 import { News } from "@/payload-types";
 import Link from "next/link";
-import { useLanguage } from "@/components/common/LanguageProvider";
-import { translateTag, getTagRoute } from "@/lib/utils";
 
 interface NewsCardProps {
   news: News;
 }
 
 export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags } }: NewsCardProps) {
-    const { lang } = useLanguage()
-    const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+    const { t, lang } = useTranslate()
     const locale = lang === 'EN' ? 'en-US' : 'hu-HU'
 
     const displayTitle = lang === 'EN' && titleEng ? titleEng : title
@@ -65,7 +64,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
                     href={`/hirek/${id}`}
                     className="inline-block bg-ehk-dark-red hover:bg-white hover:text-ehk-dark-red text-white py-2 px-4 rounded transition-colors duration-200 text-center w-full border border-transparent hover:border-ehk-dark-red"
                 >
-                    {t('Tovább', 'Read more')}
+                    {t('news.read_more')}
                 </Link>
             </div>
         </div>

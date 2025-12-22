@@ -1,10 +1,12 @@
 "use client"
 
-import { Eye, FileText, Calendar } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import {Reminder} from "@/payload-types";
+import FileIcon from "@/components/common/FileIcon";
 import { useLanguage } from "@/components/common/LanguageProvider";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Reminder } from "@/payload-types";
+import { getFileExtension } from "@/utils/file";
+import { Calendar, Eye } from 'lucide-react';
 
 interface ReminderCardProps {
     reminder: Reminder
@@ -23,32 +25,8 @@ export function ReminderCard({ reminder }: ReminderCardProps) {
         })
     }
 
-    const getFileExtension = (filename: string) => {
-        return filename.split('.').pop()?.toLowerCase() || 'file'
-    }
-
-    const getFileIcon = (extension: string) => {
-        const iconClass = "h-8 w-8"
-
-        switch (extension) {
-            case 'pdf':
-                return <FileText className={`${iconClass} text-red-500`} />
-            case 'doc':
-            case 'docx':
-                return <FileText className={`${iconClass} text-blue-500`} />
-            case 'xls':
-            case 'xlsx':
-                return <FileText className={`${iconClass} text-green-500`} />
-            case 'ppt':
-            case 'pptx':
-                return <FileText className={`${iconClass} text-orange-500`} />
-            default:
-                return <FileText className={`${iconClass} text-gray-500`} />
-        }
-    }
-
     const extension = typeof reminder.file === 'object' && reminder.file.filename
-        ? getFileExtension(reminder.file.filename)
+        ? getFileExtension(reminder.file)
         : 'file'
 
     const fileUrl = typeof reminder.file === 'object' ? reminder.file.url : undefined
@@ -66,7 +44,9 @@ export function ReminderCard({ reminder }: ReminderCardProps) {
             <CardContent className="p-4">
                 <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 bg-gray-50 p-2 rounded-lg group-hover:bg-gray-100 transition-colors">
-                        {getFileIcon(extension)}
+                        <div className="h-8 w-8 flex items-center justify-center">
+                            <FileIcon extension={extension} />
+                        </div>
                     </div>
 
                     <div className="flex-1 min-w-0">

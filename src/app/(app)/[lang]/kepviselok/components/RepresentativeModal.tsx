@@ -1,14 +1,14 @@
 'use client'
 
-import { Mail, Download, Building2, User } from 'lucide-react'
-import Image from 'next/image'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Separator } from '@/components/ui/separator'
-import {Representative, Media} from "@/payload-types";
-import {RichText} from "@payloadcms/richtext-lexical/react";
-import { useLanguage } from '@/components/common/LanguageProvider'
+import { useTranslate } from "@/hooks/useTranslate"
+import { Media, Representative } from "@/payload-types"
+import { RichText } from "@payloadcms/richtext-lexical/react"
+import { Building2, Download, Mail, User } from "lucide-react"
+import Image from "next/image"
 
 interface RepresentativeModalProps {
     representative: Representative
@@ -29,7 +29,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
         'KJK': 'bg-yellow-100 text-yellow-800',
     }
 
-    const { lang } = useLanguage()
+    const { lang, t } = useTranslate()
     const firstPos = representative.position?.[0]
     const headerPosition = lang === 'EN'
         ? (firstPos?.position_en || firstPos?.position_hu)
@@ -40,12 +40,12 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
 
     // Localized labels
     const labels = {
-        positions: lang === 'EN' ? 'Positions' : 'Pozíciók',
-        contacts: lang === 'EN' ? 'Contacts' : 'Elérhetőségek',
-        intro: lang === 'EN' ? 'Introduction' : 'Bemutatkozás',
-        reports: lang === 'EN' ? 'Reports and documents' : 'Beszámolók és dokumentumok',
-        open: lang === 'EN' ? 'Open' : 'Megnyitás',
-        unavailable: lang === 'EN' ? 'Unavailable' : 'Nem elérhető',
+        positions: t('representatives.positions', lang === 'EN' ? 'Positions' : 'Pozíciók'),
+        contacts: t('representatives.contacts', lang === 'EN' ? 'Contacts' : 'Elérhetőségek'),
+        intro: t('representatives.intro', lang === 'EN' ? 'Introduction' : 'Bemutatkozás'),
+        reports: t('representatives.reports', lang === 'EN' ? 'Reports and documents' : 'Beszámolók és dokumentumok'),
+        open: t('representatives.open', lang === 'EN' ? 'Open' : 'Megnyitás'),
+        unavailable: t('representatives.unavailable', lang === 'EN' ? 'Unavailable' : 'Nem elérhető'),
     } as const
 
     const introData = lang === 'EN' ? representative.introduction.text_en : representative.introduction.text_hu

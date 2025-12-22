@@ -1,7 +1,30 @@
 {
   "common": {
     "welcome": "Welcome",
-    "learn_more": "Learn more"
+    "learn_more": "Learn more",
+    "save": "Save",
+    "cancel": "Cancel",
+    "download": "Download",
+    "search": "Search...",
+    "close": "Close",
+    "loading": "Loading..."
+  },
+  "regulations": {
+    "title_academic": "Academic Regulations",
+    "title_benefits": "Benefits Regulations",
+    "title_dormitory": "Dormitory Regulations",
+    "no_results": "No results",
+    "no_regulations": "No regulations available at the moment."
+  },
+  "decisions": {
+    "title": "Decisions Archive",
+    "description": "Archive of decisions made by the University Students' Union.",
+    "select_year": "Select Year",
+    "view_all": "All Decisions",
+    "no_decisions_year": "No decisions found for this year.",
+    "no_decisions_global": "No decisions currently available.",
+    "no_results": "No results",
+    "try_filtering": "Try different search criteria or adjust the filters."
   },
   "navigation": {
     "home": "Home",
@@ -14,5 +37,23 @@
     "no_ehk_desc": "There are currently no available EHK reminders.",
     "no_ehdk": "No EHDK reminders",
     "no_ehdk_desc": "There are currently no available EHDK reminders."
+  },
+  "representatives": {
+    "title": "Representatives",
+    "contacts": "Contacts",
+    "reports": "Reports and documents",
+    "intro": "Introduction",
+    "open": "Open",
+    "unavailable": "Unavailable",
+    "view_details": "View details",
+    "positions": "Positions",
+    "description": "Members and contacts of the University Students' Union",
+    "filter_all": "All",
+    "filter_leadership": "Leadership",
+    "filter_members": "Members",
+    "filter_delegates": "Delegates",
+    "no_results": "No representatives found in this category",
+    "no_results_desc": "No representative found matching your search.",
+    "search_placeholder": "Search by name, position or faculty..."
   }
 }

@@ -4,14 +4,19 @@ import RegulationsList from "@/components/regulations/RegulationsList";
 import { getAcademicRegulations } from "@/lib/payload-cms";
 import { Suspense } from "react";
 
+import { getDictionary } from "@/get-dictionary";
+import { i18n } from "@/i18n-config";
+
 export default async function RegulationsPage({
   params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const t = (hu: string, en?: string) => (lang === 'en' ? (en || hu) : hu);
+  const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
+  const dictionary = await getDictionary(validLang);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <PageHeader title={t('Oktatási szabályzatok', 'Academic Regulations')} />
+        <PageHeader title={dictionary.regulations.title_academic} />
         <Suspense fallback={<LoadingRegulationsGrid />}>
           <RegulationsList loader={getAcademicRegulations}  locale={lang as 'hu' | 'en'} />
         </Suspense>

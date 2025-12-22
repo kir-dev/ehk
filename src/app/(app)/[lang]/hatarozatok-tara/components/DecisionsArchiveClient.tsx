@@ -1,29 +1,28 @@
 "use client";
 
-import { FileText, Download } from "lucide-react";
+import FileIcon from "@/components/common/FileIcon";
+import { PageHeader } from "@/components/common/PageHeader";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useTranslate } from "@/hooks/useTranslate";
 import type { Decision } from "@/payload-types";
-import { useLanguage } from "@/components/common/LanguageProvider";
 import { getFileExtension, getFileUrl } from "@/utils/file";
-import FileIcon from "@/components/common/FileIcon";
+import { Download, FileText } from "lucide-react";
 
 interface Props {
   decisions: Decision[];
 }
 
 export default function DecisionsArchiveClient({ decisions }: Props) {
-  const { lang } = useLanguage();
-  const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
+  const { t, lang } = useTranslate();
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-500 mb-4 uppercase">
-          {t("Határozatok Tára", "Decisions Archive")}
-        </h1>
-      </div>
+      <PageHeader 
+        title={t("decisions.title", lang === "EN" ? "Decisions Archive" : "Határozatok Tára")}
+        description={t("decisions.description", lang === "EN" ? "Archive of decisions made by the University Students' Union." : "Az Egyetemi Hallgatói Képviselet által hozott határozatok archívuma.")}
+      />
 
       {decisions.length === 0 ? (
         <Card>
@@ -32,13 +31,10 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
               <FileText className="h-8 w-8 text-gray-400" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              {t("Nincsenek találatok", "No results")}
+              {t("decisions.no_results", lang === "EN" ? "No results" : "Nincsenek találatok")}
             </h3>
             <p className="text-gray-600">
-              {t(
-                "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.",
-                "Try different search criteria or adjust the filters."
-              )}
+              {t("decisions.try_filtering", lang === "EN" ? "Try different search criteria or adjust the filters." : "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.")}
             </p>
           </CardContent>
         </Card>
@@ -47,8 +43,12 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
           {decisions.map((decision) => {
             const ext = getFileExtension(decision.file);
             const href = getFileUrl(decision.file);
-            const title = lang === "EN" ? decision.text_en : decision.text_hu;
+            // Fallback content handling
+            const title = lang === 'EN' 
+                ? (decision.text_en || decision.text_hu) 
+                : (decision.text_hu || decision.text_en);
             const secondary = decision.displayText;
+            
             return (
               <Card
                 key={decision.id}
@@ -93,7 +93,7 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
                     >
                       <a href={href} download>
                         <Download className="w-4 h-4 mr-2" />
-                        {t("Letöltés", "Download")}
+                        {t("common.download")}
                       </a>
                     </Button>
                   </div>

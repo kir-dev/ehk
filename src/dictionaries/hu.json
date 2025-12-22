@@ -1,7 +1,30 @@
 {
   "common": {
     "welcome": "Üdvözöljük",
-    "learn_more": "Tudj meg többet"
+    "learn_more": "Tudj meg többet",
+    "save": "Mentés",
+    "cancel": "Mégse",
+    "download": "Letöltés",
+    "search": "Keresés...",
+    "close": "Bezárás",
+    "loading": "Betöltés..."
+  },
+  "regulations": {
+    "title_academic": "Oktatási szabályzatok",
+    "title_benefits": "Juttatási szabályzatok",
+    "title_dormitory": "Kollégiumi szabályzatok",
+    "no_results": "Nincsenek találatok",
+    "no_regulations": "Jelenleg nincsenek elérhető szabályzatok."
+  },
+  "decisions": {
+    "title": "Határozatok Tára",
+    "description": "Az Egyetemi Hallgatói Képviselet által hozott határozatok archívuma.",
+    "select_year": "Év kiválasztása",
+    "view_all": "Összes határozat",
+    "no_decisions_year": "Nincsenek határozatok ebben az évben.",
+    "no_decisions_global": "Jelenleg nincsenek elérhető határozatok.",
+    "no_results": "Nincsenek találatok",
+    "try_filtering": "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket."
   },
   "navigation": {
     "home": "Kezdőlap",
@@ -14,5 +37,23 @@
     "no_ehk_desc": "Jelenleg nincsenek elérhető EHK emlékeztetők.",
     "no_ehdk": "Nincsenek EHDK emlékeztetők",
     "no_ehdk_desc": "Jelenleg nincsenek elérhető EHDK emlékeztetők."
+  },
+  "representatives": {
+    "title": "Képviselők",
+    "contacts": "Elérhetőségek",
+    "reports": "Beszámolók és dokumentumok",
+    "intro": "Bemutatkozás",
+    "open": "Megnyitás",
+    "unavailable": "Nem elérhető",
+    "view_details": "Részletek megtekintése",
+    "positions": "Pozíciók",
+    "description": "Az Egyetemi Hallgatói Képviselet tagjai és elérhetőségei",
+    "filter_all": "Összes",
+    "filter_leadership": "Vezetőség",
+    "filter_members": "Képviselők",
+    "filter_delegates": "Delegáltak",
+    "no_results": "Jelenleg nincsenek képviselők ebben a kategóriában",
+    "no_results_desc": "A keresésnek megfelelő képviselő nem található.",
+    "search_placeholder": "Keresés név, pozíció vagy kar alapján..."
   }
 }

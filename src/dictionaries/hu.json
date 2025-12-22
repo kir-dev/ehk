@@ -6,5 +6,13 @@
   "navigation": {
     "home": "Kezdőlap",
     "news": "Hírek"
+  },
+  "reminders": {
+    "tab_ehk": "EHK Emlékeztetők",
+    "tab_ehdk": "EHDK Emlékeztetők",
+    "no_ehk": "Nincsenek EHK emlékeztetők",
+    "no_ehk_desc": "Jelenleg nincsenek elérhető EHK emlékeztetők.",
+    "no_ehdk": "Nincsenek EHDK emlékeztetők",
+    "no_ehdk_desc": "Jelenleg nincsenek elérhető EHDK emlékeztetők."
   }
 }

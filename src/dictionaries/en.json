@@ -6,5 +6,13 @@
   "navigation": {
     "home": "Home",
     "news": "News"
+  },
+  "reminders": {
+    "tab_ehk": "EHK Reminders",
+    "tab_ehdk": "EHDK Reminders",
+    "no_ehk": "No EHK reminders",
+    "no_ehk_desc": "There are currently no available EHK reminders.",
+    "no_ehdk": "No EHDK reminders",
+    "no_ehdk_desc": "There are currently no available EHDK reminders."
   }
 }

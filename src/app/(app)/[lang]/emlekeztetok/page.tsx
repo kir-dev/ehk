@@ -14,7 +14,7 @@ export default async function RemindersPage({
             <div className="container mx-auto px-4 py-8">
                 <PageHeader title={t('Emlékeztetők', 'Reminders')} />
                 <Suspense fallback={<LoadingGrid />}>
-                    <RemindersGrid  locale={lang as 'hu' | 'en'} />
+                    <RemindersGrid />
                 </Suspense>
             </div>
         </div>

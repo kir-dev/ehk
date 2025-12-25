@@ -144,5 +144,15 @@
       "more_info": "For more information, please visit the website of the University Social Committee (ESZB): ",
       "eszb_website": "ESZB website"
     }
+  },
+  "language_education": {
+    "title": "Language Education",
+    "info_box": {
+      "title": "Everything about language, all in one place!",
+      "content": "The Centre for Modern Languages offers general, professional and examination preparation courses in six foreign languages and at several proficiency levels. Both credit-bearing and non-credit courses are available for students. If you wish to take a language examination, you have the opportunity to do so right here at BME. If you already hold a language certificate but would like to continue developing your language skills, you may also choose from the Centre’s postgraduate specialist training programmes in translation and interpreting, which open up further professional opportunities. Further details are available here:"
+    }
+  },
+  "knowledge_base": {
+    "title": "Cheat Sheets"
   }
 }

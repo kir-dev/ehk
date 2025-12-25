@@ -1,7 +1,7 @@
 'use client'
 
+import FileCard from '@/components/common/FileCard'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Separator } from '@/components/ui/separator'
 import { useTranslate } from "@/hooks/useTranslate"
@@ -147,32 +147,14 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
                                 </h3>
                                 <div className="grid gap-3">
                                     {representative.files.map((fileObj, index) => {
-                                        const fileUrl = typeof fileObj.file === 'object' ? fileObj.file?.url : undefined;
                                         const fileTitle = lang === 'EN' ? (fileObj.title_en || fileObj.title_hu) : (fileObj.title_hu || fileObj.title_en)
                                         return (
-                                            <div key={index} className="flex items-center justify-between bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                                                <div>
-                                                    <h4 className="font-medium">{fileTitle}</h4>
-                                                </div>
-                                                {fileUrl ? (
-                                                    <a
-                                                        href={fileUrl}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center"
-                                                    >
-                                                        <Button variant="outline" size="sm">
-                                                            <Download className="w-4 h-4 mr-2" />
-                                                            {labels.open}
-                                                        </Button>
-                                                    </a>
-                                                ) : (
-                                                    <Button variant="outline" size="sm" disabled>
-                                                        <Download className="w-4 h-4 mr-2" />
-                                                        {labels.unavailable}
-                                                    </Button>
-                                                )}
-                                            </div>
+                                            <FileCard
+                                                key={index}
+                                                file={fileObj.file || undefined}
+                                                title={fileTitle || 'Dokumentum'}
+                                                actionType="view"
+                                            />
                                         );
                                     })}
                                 </div>

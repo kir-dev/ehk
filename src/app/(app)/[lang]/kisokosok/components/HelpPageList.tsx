@@ -31,7 +31,7 @@ export default function HelpPageList({ help, locale }: HelpPageListProps) {
           const title = t(displayName_hu, displayName_en || displayName_hu);
           const currentFile = lang === "hu" ? file_hu : file_en || file_hu;
 
-          return <FileCard key={file.id} file={currentFile} title={title} />;
+          return <FileCard key={file.id} file={currentFile || undefined} title={title} actionType="view" className="mt-2" />;
         })}
       </div>
     );

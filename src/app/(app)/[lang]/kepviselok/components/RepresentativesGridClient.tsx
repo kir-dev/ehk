@@ -5,18 +5,19 @@ import { RepresentativeModal } from '@/app/(app)/[lang]/kepviselok/components/Re
 import { Input } from "@/components/ui/input";
 import { useTranslate } from "@/hooks/useTranslate";
 import { Representative } from '@/payload-types';
+import { normalizeString } from "@/utils/normalizeString";
 import { Search, User } from "lucide-react";
 import { useEffect, useState } from 'react';
 
 const facultyMap: Record<string, string[]> = {
-    'ÉMK': ['építőmérnöki kar', 'émk', 'építő', 'emk', 'epito'],
-    'GPK': ['gépészmérnöki kar', 'gpk', 'gépész', 'gepesz'],
-    'ÉPK': ['építészmérnöki kar', 'épk', 'építész', 'epk', 'epitesz'],
-    'VBK': ['vegyészmérnöki és biomérnöki kar', 'vbk', 'vegyész', 'biomérnök', 'vegyesz', 'biomernok'],
-    'VIK': ['villamosmérnöki és informatikai kar', 'vik', 'kandó', 'kando'],
-    'GTK': ['gazdaság- és társadalomtudományi kar', 'gtk', 'gazdaság', 'gazdasag'],
-    'TTK': ['természettudományi kar', 'ttk', 'természettudomány', 'termeszettudomany'],
-    'KJK': ['közlekedésmérnöki és járműmérnöki kar', 'kjk', 'közlekedés', 'jármű', 'kozlekedes', 'jarmu'],
+    'ÉMK': ['építőmérnöki kar', 'émk', 'építő'],
+    'GPK': ['gépészmérnöki kar', 'gpk', 'gépész'],
+    'ÉPK': ['építészmérnöki kar', 'épk', 'építész'],
+    'VBK': ['vegyészmérnöki és biomérnöki kar', 'vbk', 'vegyész', 'biomérnök'],
+    'VIK': ['villamosmérnöki és informatikai kar', 'vik', 'kandó'],
+    'GTK': ['gazdaság- és társadalomtudományi kar', 'gtk', 'gazdaság'],
+    'TTK': ['természettudományi kar', 'ttk', 'természettudomány'],
+    'KJK': ['közlekedésmérnöki és járműmérnöki kar', 'kjk', 'közlekedés', 'jármű'],
 };
 
 export default function RepresentativesGridClient({ representatives }: { representatives: Representative[] }) {
@@ -31,10 +32,10 @@ export default function RepresentativesGridClient({ representatives }: { represe
             return;
         }
 
-        const query = searchQuery.toLowerCase();
+        const query = normalizeString(searchQuery);
         const results = representatives.filter(rep =>
-            rep.name.toLowerCase().includes(query) ||
-            (rep.faculty && facultyMap[rep.faculty as keyof typeof facultyMap]?.some(keyword => keyword.toLowerCase().includes(query)))
+            normalizeString(rep.name).includes(query) ||
+            (rep.faculty && facultyMap[rep.faculty as keyof typeof facultyMap]?.some(keyword => normalizeString(keyword).includes(query)))
         );
         setFilteredRepresentatives(results);
     }, [searchQuery, representatives]);

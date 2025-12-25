@@ -40,21 +40,21 @@ export default function RemindersGridClient({ remindersByYear }: RemindersGridCl
                     value="ehk"
                     className="px-4 py-2 text-sm font-medium data-[state=active]:bg-[#862633] data-[state=active]:text-white data-[state=inactive]:text-gray-700 data-[state=inactive]:hover:text-[#862633] transition-colors"
                 >
-                    {t('reminders.tab_ehk', 'EHK Reminders')}
+                    {t('reminders.tab_ehk')}
                 </TabsTrigger>
                 <TabsTrigger
                     value="ehdk"
                     className="px-4 py-2 text-sm font-medium data-[state=active]:bg-[#862633] data-[state=active]:text-white data-[state=inactive]:text-gray-700 data-[state=inactive]:hover:text-[#862633] transition-colors"
                 >
-                    {t('reminders.tab_ehdk', 'EHDK Reminders')}
+                    {t('reminders.tab_ehdk')}
                 </TabsTrigger>
             </TabsList>
 
             <TabsContent value="ehk">
                 {ehkYears.length === 0 ? (
                     <EmptyState
-                        title={t('reminders.no_ehk', `No EHK reminders`)}
-                        description={t('reminders.no_ehk_desc', `There are currently no available EHK reminders.`)}
+                        title={t('reminders.no_ehk')}
+                        description={t('reminders.no_ehk_desc')}
                     />
                 ) : (
                     <div className="space-y-8">
@@ -72,8 +72,8 @@ export default function RemindersGridClient({ remindersByYear }: RemindersGridCl
             <TabsContent value="ehdk">
                 {ehdkYears.length === 0 ? (
                     <EmptyState
-                        title={t('reminders.no_ehdk', `No EHDK reminders`)}
-                        description={t('reminders.no_ehdk_desc', `There are currently no available EHDK reminders.`)}
+                        title={t('reminders.no_ehdk')}
+                        description={t('reminders.no_ehdk_desc')}
                     />
                 ) : (
                     <div className="space-y-8">

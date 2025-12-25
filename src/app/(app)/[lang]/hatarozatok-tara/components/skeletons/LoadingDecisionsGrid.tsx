@@ -1,11 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/components/common/LanguageProvider";
 import { PageLoader } from "@/components/common/PageLoader";
+import { useTranslate } from "@/hooks/useTranslate";
 
 export function LoadingDecisionsGrid() {
-  const { lang } = useLanguage();
-  const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
+  const { t } = useTranslate();
 
   return (
     <div className="space-y-8">

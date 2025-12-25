@@ -31,6 +31,7 @@
     "news": "News"
   },
   "reminders": {
+    "title": "Reminders",
     "tab_ehk": "EHK Reminders",
     "tab_ehdk": "EHDK Reminders",
     "no_ehk": "No EHK reminders",

@@ -40,12 +40,12 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
 
     // Localized labels
     const labels = {
-        positions: t('representatives.positions', lang === 'EN' ? 'Positions' : 'Pozíciók'),
-        contacts: t('representatives.contacts', lang === 'EN' ? 'Contacts' : 'Elérhetőségek'),
-        intro: t('representatives.intro', lang === 'EN' ? 'Introduction' : 'Bemutatkozás'),
-        reports: t('representatives.reports', lang === 'EN' ? 'Reports and documents' : 'Beszámolók és dokumentumok'),
-        open: t('representatives.open', lang === 'EN' ? 'Open' : 'Megnyitás'),
-        unavailable: t('representatives.unavailable', lang === 'EN' ? 'Unavailable' : 'Nem elérhető'),
+        positions: t('representatives.positions'),
+        contacts: t('representatives.contacts'),
+        intro: t('representatives.intro'),
+        reports: t('representatives.reports'),
+        open: t('representatives.open'),
+        unavailable: t('representatives.unavailable'),
     } as const
 
     const introData = lang === 'EN' ? representative.introduction.text_en : representative.introduction.text_hu

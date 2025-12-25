@@ -12,13 +12,13 @@ interface Props {
 }
 
 export default function DecisionsArchiveClient({ decisions }: Props) {
-  const { t, lang } = useTranslate();
+  const { t } = useTranslate();
 
   return (
     <div className="container mx-auto px-4 py-8">
       <PageHeader 
-        title={t("decisions.title", lang === "EN" ? "Decisions Archive" : "Határozatok Tára")}
-        description={t("decisions.description", lang === "EN" ? "Archive of decisions made by the University Students' Union." : "Az Egyetemi Hallgatói Képviselet által hozott határozatok archívuma.")}
+        title={t("decisions.title")}
+        description={t("decisions.description")}
       />
 
       {decisions.length === 0 ? (
@@ -28,27 +28,24 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
               <FileText className="h-8 w-8 text-gray-400" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              {t("decisions.no_results", lang === "EN" ? "No results" : "Nincsenek találatok")}
+              {t("decisions.no_results")}
             </h3>
             <p className="text-gray-600">
-              {t("decisions.try_filtering", lang === "EN" ? "Try different search criteria or adjust the filters." : "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.")}
+              {t("decisions.try_filtering")}
             </p>
           </CardContent>
         </Card>
       ) : (
         <div className="space-y-4">
           {decisions.map((decision) => {
-            // Fallback content handling
-            const title = lang === 'EN' 
-                ? (decision.text_en || decision.text_hu) 
-                : (decision.text_hu || decision.text_en);
+            const title = t(decision.text_hu || decision.text_en || "", decision.text_en || decision.text_hu || "");
             const secondary = decision.displayText;
             
             return (
               <FileCard
                 key={decision.id}
                 file={decision.file}
-                title={title || ''}
+                title={title}
                 secondaryText={secondary}
                 actionType="view" 
               />

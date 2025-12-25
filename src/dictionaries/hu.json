@@ -31,6 +31,7 @@
     "news": "Hírek"
   },
   "reminders": {
+    "title": "Emlékeztetők",
     "tab_ehk": "EHK Emlékeztetők",
     "tab_ehdk": "EHDK Emlékeztetők",
     "no_ehk": "Nincsenek EHK emlékeztetők",

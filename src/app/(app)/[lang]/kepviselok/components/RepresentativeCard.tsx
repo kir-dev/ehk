@@ -33,7 +33,7 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
         ? (primaryPos?.position_en || primaryPos?.position_hu)
         : (primaryPos?.position_hu || primaryPos?.position_en)
 
-    const detailsLabel = t('representatives.view_details', lang === 'EN' ? 'View details' : 'Részletek megtekintése')
+    const detailsLabel = t('representatives.view_details')
 
     const rep = representative as RepWithPic
     const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null

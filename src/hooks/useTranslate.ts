@@ -7,6 +7,8 @@ export function useTranslate() {
   const { lang, dictionary } = useLanguage();
 
   const t = (keyOrHu: string, en?: string) => {
+    if (typeof keyOrHu !== 'string') return '';
+
     // 1. Try dictionary lookup regardless of arguments
     const keys = keyOrHu.split('.');
     let result: unknown = dictionary;

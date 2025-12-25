@@ -3,13 +3,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslate } from "@/hooks/useTranslate";
 import { cn } from "@/lib/utils";
 import type { Media } from "@/payload-types";
 import { getFileExtension } from "@/utils/file";
 import { Calendar, Download, Eye } from "lucide-react";
 import { ReactNode } from "react";
 import FileIcon from "./FileIcon";
-import { useLanguage } from "./LanguageProvider";
 
 interface FileCardProps {
   file?: number | Media | { url?: string; filename?: string };
@@ -30,8 +30,7 @@ export default function FileCard({
   actionLabel,
   className 
 }: FileCardProps) {
-  const { lang } = useLanguage();
-  const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
+  const { t } = useTranslate();
   
   // Helper to extract file info safely
   const getFileInfo = () => {

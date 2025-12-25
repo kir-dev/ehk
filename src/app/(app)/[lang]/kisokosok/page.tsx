@@ -16,7 +16,7 @@ export default async function HelpPage({
       <div className="container mx-auto px-4 py-8">
         <PageHeader title={dictionary.knowledge_base.title} />
         <Suspense fallback={<LoadingHelpPageContent />}>
-          <HelpPageContent locale={lang} />
+          <HelpPageContent />
         </Suspense>
       </div>
     </div>

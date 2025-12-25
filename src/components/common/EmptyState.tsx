@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslate } from "@/hooks/useTranslate";
 import { FileText, LucideIcon } from "lucide-react";
 
 interface EmptyStateProps {
@@ -14,7 +13,7 @@ export function EmptyState({
   description,
   icon: Icon = FileText,
 }: EmptyStateProps) {
-  const { t } = useTranslate();
+  // const { t } = useTranslate();
 
   // Note: We expect title and description to be already translated strings passed from the parent,
   // OR raw strings if the parent handles translation logic differently.

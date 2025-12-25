@@ -15,7 +15,7 @@ export default async function StudyScholarshipPage({
           <div className="container mx-auto px-4 py-8">
             <PageHeader title={dictionary.scholarships.academic.title} />
             <Suspense fallback={<LoadingRegulationsGrid />}>
-              <StudyScholarshipContent content={dictionary.scholarships.academic} locale={lang} />
+              <StudyScholarshipContent content={dictionary.scholarships.academic} />
             </Suspense>
           </div>
         </div>

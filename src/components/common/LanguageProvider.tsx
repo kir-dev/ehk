@@ -12,16 +12,16 @@ import React, {
 
 export type Lang = "HU" | "EN";
 
-type Dictionary = Record<string, any>; // Basic type, can be refined
+type Dictionary = Record<string, unknown>; // Basic type, can be refined
 
-type LanguageContextValue = {
+type LanguageContextType = {
   lang: Lang;
   setLang: (l: Lang) => void;
   toggleLang: () => void;
   dictionary: Dictionary;
 };
 
-const LanguageContext = createContext<LanguageContextValue | undefined>(
+const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 

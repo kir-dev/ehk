@@ -16,7 +16,7 @@ export default async function RepresentativesPage({
             <div className="container mx-auto px-4 py-8">
                 <PageHeader title={dictionary.representatives.title} description={dictionary.representatives.description}/>
                 <Suspense fallback={<LoadingRepresentativesGrid />}>
-                    <RepresentativesGrid  locale={lang as 'hu' | 'en'} />
+                    <RepresentativesGrid />
                 </Suspense>
             </div>
         </div>

@@ -33,7 +33,7 @@ export function formatBytes(bytes?: number | null): string | null {
   return `${val.toFixed(val >= 10 || i === 0 ? 0 : 1)} ${units[i]}`
 }
 
-export function translateTags(tags: string[] | undefined, lang: string): string[] {
+export function translateTags(tags: string[] | undefined): string[] {
   if (!tags) return []
   // This is a placeholder since the original translateTags was imported from @/lib/utils
   // but we are creating a dedicated utils file. If translateTags is generic, 

@@ -5,45 +5,38 @@ import { RepresentativeModal } from '@/app/(app)/[lang]/kepviselok/components/Re
 import { Input } from "@/components/ui/input";
 import { useTranslate } from "@/hooks/useTranslate";
 import { Representative } from '@/payload-types';
-import { normalizeString } from "@/utils/normalizeString";
 import { Search, User } from "lucide-react";
 import { useEffect, useState } from 'react';
 
+const facultyMap: Record<string, string[]> = {
+    'ÉMK': ['építőmérnöki kar', 'émk', 'építő', 'emk', 'epito'],
+    'GPK': ['gépészmérnöki kar', 'gpk', 'gépész', 'gepesz'],
+    'ÉPK': ['építészmérnöki kar', 'épk', 'építész', 'epk', 'epitesz'],
+    'VBK': ['vegyészmérnöki és biomérnöki kar', 'vbk', 'vegyész', 'biomérnök', 'vegyesz', 'biomernok'],
+    'VIK': ['villamosmérnöki és informatikai kar', 'vik', 'kandó', 'kando'],
+    'GTK': ['gazdaság- és társadalomtudományi kar', 'gtk', 'gazdaság', 'gazdasag'],
+    'TTK': ['természettudományi kar', 'ttk', 'természettudomány', 'termeszettudomany'],
+    'KJK': ['közlekedésmérnöki és járműmérnöki kar', 'kjk', 'közlekedés', 'jármű', 'kozlekedes', 'jarmu'],
+};
+
 export default function RepresentativesGridClient({ representatives }: { representatives: Representative[] }) {
-    const { t, lang } = useTranslate()
+    const { t } = useTranslate()
     const [selectedRepresentative, setSelectedRepresentative] = useState<Representative | null>(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredRepresentatives, setFilteredRepresentatives] = useState<Representative[]>(representatives);
 
-    const facultyMap: Record<string, string[]> = {
-        'ÉMK': ['építőmérnöki kar', 'émk', 'építő', 'emk', 'epito'],
-        'GPK': ['gépészmérnöki kar', 'gpk', 'gépész', 'gepesz'],
-        'ÉPK': ['építészmérnöki kar', 'épk', 'építész', 'epk', 'epitesz'],
-        'VBK': ['vegyészmérnöki és biomérnöki kar', 'vbk', 'vegyész', 'biomérnök', 'vegyesz', 'biomernok'],
-        'VIK': ['villamosmérnöki és informatikai kar', 'vik', 'kandó', 'kando'],
-        'GTK': ['gazdaság- és társadalomtudományi kar', 'gtk', 'gazdaság', 'gazdasag'],
-        'TTK': ['természettudományi kar', 'ttk', 'természettudomány', 'termeszettudomany'],
-        'KJK': ['közlekedésmérnöki és járműmérnöki kar', 'kjk', 'közlekedés', 'jármű', 'kozlekedes', 'jarmu'],
-    };
-
     useEffect(() => {
-        const filtered = representatives.filter(rep => {
-            const query = normalizeString(searchQuery.trim());
-            if (query === '') return true;
+        if (!searchQuery.trim()) {
+            setFilteredRepresentatives(representatives);
+            return;
+        }
 
-            const facultyKeywords = rep.faculty ? facultyMap[rep.faculty] || [rep.faculty.toLowerCase()] : [];
-            const matchesFaculty = facultyKeywords.some(keyword => normalizeString(keyword).includes(query));
-
-            const matchesSearch = 
-                normalizeString(rep.name).includes(query) ||
-                matchesFaculty ||
-                rep.position?.some(pos =>
-                    (pos.position_hu && normalizeString(pos.position_hu).includes(query)) ||
-                    (pos.position_en && normalizeString(pos.position_en).includes(query))
-                );
-            return matchesSearch;
-        });
-        setFilteredRepresentatives(filtered);
+        const query = searchQuery.toLowerCase();
+        const results = representatives.filter(rep =>
+            rep.name.toLowerCase().includes(query) ||
+            (rep.faculty && facultyMap[rep.faculty as keyof typeof facultyMap]?.some(keyword => keyword.toLowerCase().includes(query)))
+        );
+        setFilteredRepresentatives(results);
     }, [searchQuery, representatives]);
 
     return (

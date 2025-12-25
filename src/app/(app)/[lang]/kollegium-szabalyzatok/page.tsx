@@ -18,7 +18,7 @@ export default async function RegulationsPage({
       <div className="container mx-auto px-4 py-8">
         <PageHeader title={dictionary.regulations.title_dormitory} />
         <Suspense fallback={<LoadingRegulationsGrid />}>
-          <RegulationsList loader={getDormitoryRegulations}  locale={lang as 'hu' | 'en'} />
+          <RegulationsList loader={getDormitoryRegulations} />
         </Suspense>
       </div>
     </div>

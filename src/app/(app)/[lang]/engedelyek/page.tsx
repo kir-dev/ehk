@@ -23,7 +23,7 @@ export default async function PermissionsPage({
         />
         <Suspense fallback={<LoadingPermissionsGrid />}>
           {/* Server component fetching and rendering */}
-          <PermissionsList locale={lang as 'hu' | 'en'} />
+          <PermissionsList />
         </Suspense>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Locale } from "@/i18n-config";
 import { Quote } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -24,7 +23,7 @@ interface AcademicScholarshipContent {
   };
 }
 
-export default function StudyScholarshipContent({ content, locale }: { content: AcademicScholarshipContent; locale?: Locale }) {
+export default function StudyScholarshipContent({ content }: { content: AcademicScholarshipContent }) {
   return (
     <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
       {/* Intro Card */}

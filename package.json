@@ -39,7 +39,7 @@
     "image-size": "^1.2.1",
     "lucide-react": "^0.536.0",
     "negotiator": "^1.0.0",
-    "next": "15.5.7",
+    "next": "15.5.9",
     "payload": "^3.67.0",
     "react": "19.2.1",
     "react-day-picker": "^9.8.1",

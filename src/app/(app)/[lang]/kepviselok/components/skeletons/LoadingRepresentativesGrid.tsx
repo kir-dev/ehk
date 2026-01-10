@@ -1,17 +1,16 @@
 "use client";
 
-import { useLanguage } from "@/components/common/LanguageProvider";
 import { PageLoader } from "@/components/common/PageLoader";
+import { useTranslate } from "@/hooks/useTranslate";
 import { LoadingRepresentativeCard } from "./LoadingRepresentativeCard";
 
 export function LoadingRepresentativesGrid() {
-  const { lang } = useLanguage();
-  const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
+  const { t } = useTranslate();
 
   return (
     <div className="space-y-8">
       {/* Main loading spinner prominently displayed */}
-      <PageLoader text={t("Képviselők betöltése...", "Loading representatives...")} />
+      <PageLoader text={t("representatives.loading")} />
 
       {/* Skeleton cards grid */}
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -55,7 +55,8 @@
     "filter_delegates": "Delegates",
     "no_results": "No representatives found in this category",
     "no_results_desc": "No representative found matching your search.",
-    "search_placeholder": "Search by name, position or faculty..."
+    "search_placeholder": "Search by name, position or faculty...",
+    "loading": "Loading representatives..."
   },
   "permissions": {
     "title": "Permissions",

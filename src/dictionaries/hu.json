@@ -55,7 +55,8 @@
     "filter_delegates": "Delegáltak",
     "no_results": "Jelenleg nincsenek képviselők ebben a kategóriában",
     "no_results_desc": "A keresésnek megfelelő képviselő nem található.",
-    "search_placeholder": "Keresés név, pozíció vagy kar alapján..."
+    "search_placeholder": "Keresés név, pozíció vagy kar alapján...",
+    "loading": "Képviselők betöltése..."
   },
   "permissions": {
     "title": "Engedélyek",

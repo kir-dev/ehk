@@ -2,11 +2,12 @@
 "use client";
 
 import { useLanguage } from "@/components/common/LanguageProvider";
+import { useCallback } from "react";
 
 export function useTranslate() {
   const { lang, dictionary } = useLanguage();
 
-  const t = (keyOrHu: string, en?: string) => {
+  const t = useCallback((keyOrHu: string, en?: string) => {
     if (typeof keyOrHu !== 'string') return '';
 
     // 1. Try dictionary lookup regardless of arguments
@@ -34,7 +35,7 @@ export function useTranslate() {
     
     // 3. Fallback: Lookup failed, no legacy params -> return key
     return keyOrHu;
-  };
+  }, [dictionary, lang]);
 
   return { t, lang };
 }

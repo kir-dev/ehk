@@ -8,7 +8,7 @@ export function LoadingDecisionsGrid() {
 
   return (
     <div className="space-y-8">
-      <PageLoader text={t("Határozatok betöltése...", "Loading decisions...")} />
+      <PageLoader text={t("decisions.loading")} />
 
       <div className="space-y-4">
         {Array.from({ length: 4 }).map((_, i) => (

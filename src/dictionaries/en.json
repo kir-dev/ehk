@@ -24,7 +24,8 @@
     "no_decisions_year": "No decisions found for this year.",
     "no_decisions_global": "No decisions currently available.",
     "no_results": "No results",
-    "try_filtering": "Try different search criteria or adjust the filters."
+    "try_filtering": "Try different search criteria or adjust the filters.",
+    "loading": "Loading decisions..."
   },
   "navigation": {
     "home": "Home",

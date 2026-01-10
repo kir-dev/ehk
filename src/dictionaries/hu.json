@@ -24,7 +24,8 @@
     "no_decisions_year": "Nincsenek határozatok ebben az évben.",
     "no_decisions_global": "Jelenleg nincsenek elérhető határozatok.",
     "no_results": "Nincsenek találatok",
-    "try_filtering": "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket."
+    "try_filtering": "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.",
+    "loading": "Határozatok betöltése..."
   },
   "navigation": {
     "home": "Kezdőlap",

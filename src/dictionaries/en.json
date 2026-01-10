@@ -156,5 +156,15 @@
   },
   "knowledge_base": {
     "title": "Cheat Sheets"
+  },
+  "faculties": {
+    "ÉMK": "Faculty of Civil Engineering",
+    "GPK": "Faculty of Mechanical Engineering",
+    "ÉPK": "Faculty of Architecture",
+    "VBK": "Faculty of Chemical Technology and Biotechnology",
+    "VIK": "Faculty of Electrical Engineering and Informatics",
+    "GTK": "Faculty of Economic and Social Sciences",
+    "TTK": "Faculty of Natural Sciences",
+    "KJK": "Faculty of Transportation Engineering and Vehicle Engineering"
   }
 }

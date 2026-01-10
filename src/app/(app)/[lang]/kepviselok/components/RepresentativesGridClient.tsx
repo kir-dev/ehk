@@ -9,17 +9,6 @@ import { normalizeString } from "@/utils/normalizeString";
 import { Search, User } from "lucide-react";
 import { useEffect, useState } from 'react';
 
-const facultyMap: Record<string, string[]> = {
-    'ÉMK': ['építőmérnöki kar', 'émk', 'építő'],
-    'GPK': ['gépészmérnöki kar', 'gpk', 'gépész'],
-    'ÉPK': ['építészmérnöki kar', 'épk', 'építész'],
-    'VBK': ['vegyészmérnöki és biomérnöki kar', 'vbk', 'vegyész', 'biomérnök'],
-    'VIK': ['villamosmérnöki és informatikai kar', 'vik', 'kandó'],
-    'GTK': ['gazdaság- és társadalomtudományi kar', 'gtk', 'gazdaság'],
-    'TTK': ['természettudományi kar', 'ttk', 'természettudomány'],
-    'KJK': ['közlekedésmérnöki és járműmérnöki kar', 'kjk', 'közlekedés', 'jármű'],
-};
-
 export default function RepresentativesGridClient({ representatives }: { representatives: Representative[] }) {
     const { t } = useTranslate()
     const [selectedRepresentative, setSelectedRepresentative] = useState<Representative | null>(null);
@@ -33,12 +22,16 @@ export default function RepresentativesGridClient({ representatives }: { represe
         }
 
         const query = normalizeString(searchQuery);
-        const results = representatives.filter(rep =>
-            normalizeString(rep.name).includes(query) ||
-            (rep.faculty && facultyMap[rep.faculty as keyof typeof facultyMap]?.some(keyword => normalizeString(keyword).includes(query)))
-        );
+        const results = representatives.filter(rep => {
+            const facultyName = rep.faculty ? t(`faculties.${rep.faculty}`) : '';
+            return normalizeString(rep.name).includes(query) ||
+                (rep.faculty && (
+                    normalizeString(rep.faculty).includes(query) ||
+                    normalizeString(facultyName).includes(query)
+                ));
+        });
         setFilteredRepresentatives(results);
-    }, [searchQuery, representatives]);
+    }, [searchQuery, representatives, t]);
 
     return (
         <div className="space-y-8">

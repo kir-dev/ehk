@@ -156,5 +156,15 @@
   },
   "knowledge_base": {
     "title": "Kisokosok"
+  },
+  "faculties": {
+    "ÉMK": "Építőmérnöki Kar",
+    "GPK": "Gépészmérnöki Kar",
+    "ÉPK": "Építészmérnöki Kar",
+    "VBK": "Vegyészmérnöki és Biomérnöki Kar",
+    "VIK": "Villamosmérnöki és Informatikai Kar",
+    "GTK": "Gazdaság- és Társadalomtudományi Kar",
+    "TTK": "Természettudományi Kar",
+    "KJK": "Közlekedésmérnöki és Járműmérnöki Kar"
   }
 }

@@ -1,14 +1,14 @@
 'use client'
 
-import { Mail, Download, Building2, User } from 'lucide-react'
-import Image from 'next/image'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
+import FileCard from '@/components/common/FileCard'
 import { Badge } from '@/components/ui/badge'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Separator } from '@/components/ui/separator'
-import {Representative, Media} from "@/payload-types";
-import {RichText} from "@payloadcms/richtext-lexical/react";
-import { useLanguage } from '@/components/common/LanguageProvider'
+import { useTranslate } from "@/hooks/useTranslate"
+import { Media, Representative } from "@/payload-types"
+import { RichText } from "@payloadcms/richtext-lexical/react"
+import { Building2, Download, Mail, User } from "lucide-react"
+import Image from "next/image"
 
 interface RepresentativeModalProps {
     representative: Representative
@@ -29,7 +29,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
         'KJK': 'bg-yellow-100 text-yellow-800',
     }
 
-    const { lang } = useLanguage()
+    const { lang, t } = useTranslate()
     const firstPos = representative.position?.[0]
     const headerPosition = lang === 'EN'
         ? (firstPos?.position_en || firstPos?.position_hu)
@@ -40,12 +40,12 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
 
     // Localized labels
     const labels = {
-        positions: lang === 'EN' ? 'Positions' : 'Pozíciók',
-        contacts: lang === 'EN' ? 'Contacts' : 'Elérhetőségek',
-        intro: lang === 'EN' ? 'Introduction' : 'Bemutatkozás',
-        reports: lang === 'EN' ? 'Reports and documents' : 'Beszámolók és dokumentumok',
-        open: lang === 'EN' ? 'Open' : 'Megnyitás',
-        unavailable: lang === 'EN' ? 'Unavailable' : 'Nem elérhető',
+        positions: t('representatives.positions'),
+        contacts: t('representatives.contacts'),
+        intro: t('representatives.intro'),
+        reports: t('representatives.reports'),
+        open: t('representatives.open'),
+        unavailable: t('representatives.unavailable'),
     } as const
 
     const introData = lang === 'EN' ? representative.introduction.text_en : representative.introduction.text_hu
@@ -147,32 +147,14 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
                                 </h3>
                                 <div className="grid gap-3">
                                     {representative.files.map((fileObj, index) => {
-                                        const fileUrl = typeof fileObj.file === 'object' ? fileObj.file?.url : undefined;
                                         const fileTitle = lang === 'EN' ? (fileObj.title_en || fileObj.title_hu) : (fileObj.title_hu || fileObj.title_en)
                                         return (
-                                            <div key={index} className="flex items-center justify-between bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                                                <div>
-                                                    <h4 className="font-medium">{fileTitle}</h4>
-                                                </div>
-                                                {fileUrl ? (
-                                                    <a
-                                                        href={fileUrl}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center"
-                                                    >
-                                                        <Button variant="outline" size="sm">
-                                                            <Download className="w-4 h-4 mr-2" />
-                                                            {labels.open}
-                                                        </Button>
-                                                    </a>
-                                                ) : (
-                                                    <Button variant="outline" size="sm" disabled>
-                                                        <Download className="w-4 h-4 mr-2" />
-                                                        {labels.unavailable}
-                                                    </Button>
-                                                )}
-                                            </div>
+                                            <FileCard
+                                                key={index}
+                                                file={fileObj.file || undefined}
+                                                title={fileTitle || 'Dokumentum'}
+                                                actionType="view"
+                                            />
                                         );
                                     })}
                                 </div>

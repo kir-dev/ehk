@@ -1,6 +1,7 @@
 import Footer from "@/app/(app)/components/Footer";
 import Navbar from "@/app/(app)/components/navbar";
 import { LanguageProvider } from "@/components/common/LanguageProvider";
+import { getDictionary } from "@/get-dictionary";
 import { i18n } from "@/i18n-config";
 import type { Metadata } from "next";
 import "../globals.css";
@@ -24,11 +25,12 @@ export default async function RootLayout({
   const { lang } = await params;
   // Ensure valid lang or fallback (middleware should handle this but for safety)
   const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
+  const dictionary = await getDictionary(validLang);
 
   return (
     <html lang={validLang}>
       <body>
-        <LanguageProvider defaultLang={validLang.toUpperCase() as "HU" | "EN"}>
+        <LanguageProvider defaultLang={validLang.toUpperCase() as "HU" | "EN"} dictionary={dictionary}>
           <Navbar />
           {children}
           <Footer />

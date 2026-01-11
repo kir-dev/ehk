@@ -1,12 +1,13 @@
 import {
-  Decision,
-  Event,
-  Help,
-  News,
-  Permission,
-  Regulation,
-  Reminder,
-  Representative } from "@/payload-types";
+    Decision,
+    Event,
+    Help,
+    News,
+    Permission,
+    Regulation,
+    Reminder,
+    Representative
+} from "@/payload-types";
 import config from "@payload-config";
 import { getPayload } from "payload";
 import "server-only";
@@ -136,7 +137,6 @@ export async function getRelatedNews(
   id: number,
   tags: string[] = [],
   limit: number = 2,
-  locale?: 'hu' | 'en'
 ) {
   const payload = await getPayload({ config });
 

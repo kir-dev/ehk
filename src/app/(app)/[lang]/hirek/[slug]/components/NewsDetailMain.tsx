@@ -1,11 +1,11 @@
 "use client"
 
 import ShareButton from "@/app/(app)/[lang]/hirek/[slug]/components/ShareButton"
-import { useLanguage } from "@/components/common/LanguageProvider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { useTranslate } from "@/hooks/useTranslate"
 import { translateTags } from "@/lib/utils"
 import { Media, News } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
@@ -23,14 +23,8 @@ type NewsFileItem = {
   description?: string
 }
 
-function useT() {
-  const { lang } = useLanguage()
-  return (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
-}
-
 export function NewsDetailMain({ article }: NewsDetailMainProps) {
-  const t = useT()
-  const { lang } = useLanguage()
+  const { t, lang } = useTranslate()
 
   const title = lang === 'EN' && article.titleEng ? article.titleEng : article.title
   const shortText = lang === 'EN' ? (article.shortDescription.text_en || article.shortDescription.text_hu) : article.shortDescription.text_hu
@@ -57,7 +51,7 @@ export function NewsDetailMain({ article }: NewsDetailMainProps) {
             </div>
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4 text-[#862633]" />
-              <span>{getReadingTimeFromRichText(content)} {t('perc olvasás', 'min read')}</span>
+              <span>{getReadingTimeFromRichText(content)} {t('news.min_read')}</span>
             </div>
           </div>
 
@@ -89,7 +83,7 @@ export function NewsDetailMain({ article }: NewsDetailMainProps) {
               text={shortText}
             >
               <Share2 className="w-4 h-4" />
-              {t('Megosztás', 'Share')}
+              {t('news.share')}
             </ShareButton>
           </div>
         </div>
@@ -108,7 +102,7 @@ export function NewsDetailMain({ article }: NewsDetailMainProps) {
             <div>
               <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 flex items-center gap-2">
                 <Download className="w-5 h-5" />
-                {t('Csatolt fájlok', 'Attachments')}
+                {t('news.attachments')}
               </h3>
               <div className="grid gap-3">
                 {((article.files as unknown) as NewsFileItem[]).map((item) => {
@@ -144,7 +138,7 @@ export function NewsDetailMain({ article }: NewsDetailMainProps) {
                         >
                           <a href={url} download>
                             <Download className="w-4 h-4 mr-2" />
-                            {t('Letöltés', 'Download')}
+                            {t('common.download')}
                           </a>
                         </Button>
                       )}

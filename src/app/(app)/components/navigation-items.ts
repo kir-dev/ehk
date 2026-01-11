@@ -27,7 +27,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/szervezet/hirek"),
       targetBlank: false,
       items: [
-        { label: t("ADMIN", "ADMIN"), href: link("/admin"), targetBlank: false },
+        { label: t("ADMIN", "ADMIN"), href: "/admin", targetBlank: true },
         {
           label: t("Képviselők", "Representatives"),
           href: link("/kepviselok"),

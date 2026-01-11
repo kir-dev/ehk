@@ -1,17 +1,16 @@
 "use client"
 
-import Link from "next/link"
-import { Calendar, ArrowRight } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useTranslate } from "@/hooks/useTranslate"
+import { getTagRoute, translateTag } from "@/lib/utils"
 import { News } from "@/payload-types"
-import { useLanguage } from "@/components/common/LanguageProvider"
-import {getTagRoute, translateTag} from "@/lib/utils"
+import { ArrowRight, Calendar } from "lucide-react"
+import Link from "next/link"
 
 export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[] }) {
-  const { lang } = useLanguage()
-  const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+  const { t, lang } = useTranslate()
   const locale = lang === 'EN' ? 'en-US' : 'hu-HU'
 
   const formatDate = (dateString: string) => {
@@ -26,7 +25,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">{t('Kapcsolódó hírek', 'Related news')}</CardTitle>
+        <CardTitle className="text-lg">{t('news.related_news')}</CardTitle>
       </CardHeader>
       <CardContent className="p-6 pt-0">
         <div className="space-y-4">
@@ -69,7 +68,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
         </div>
         <Button variant="outline" size="sm" className="w-full mt-4 bg-transparent hover:border-ehk-dark-red hover:text-ehk-dark-red" asChild>
           <Link href="/">
-            {t('Összes hír megtekintése', 'View all news')}
+            {t('news.view_all_news')}
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
         </Button>

@@ -1,12 +1,12 @@
 "use client"
 
-import Image from 'next/image'
-import { FileText, Building2 } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {Representative, Media} from "@/payload-types";
-import { useLanguage } from '@/components/common/LanguageProvider'
+import { Card, CardContent } from '@/components/ui/card'
+import { useTranslate } from "@/hooks/useTranslate"
+import { Media, Representative } from "@/payload-types"
+import { Building2, FileText } from 'lucide-react'
+import Image from 'next/image'
 
 interface RepresentativeCardProps {
     representative: Representative
@@ -27,13 +27,13 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
         'KJK': 'bg-yellow-100 text-yellow-800',
     } as const
 
-    const { lang } = useLanguage()
+    const { t, lang } = useTranslate()
     const primaryPos = representative.position?.[0]
     const positionText = lang === 'EN'
         ? (primaryPos?.position_en || primaryPos?.position_hu)
         : (primaryPos?.position_hu || primaryPos?.position_en)
 
-    const detailsLabel = lang === 'EN' ? 'View details' : 'Részletek megtekintése'
+    const detailsLabel = t('representatives.view_details')
 
     const rep = representative as RepWithPic
     const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null

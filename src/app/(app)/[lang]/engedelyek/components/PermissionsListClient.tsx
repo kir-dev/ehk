@@ -1,20 +1,19 @@
 "use client"
 
-import { FileText, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import FileCard from "@/components/common/FileCard"
 import { Card, CardContent } from "@/components/ui/card"
+import { useTranslate } from "@/hooks/useTranslate"
 import type { Permission } from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
-import { useLanguage } from "@/components/common/LanguageProvider"
 import { RichText } from "@payloadcms/richtext-lexical/react"
+import { FileText } from "lucide-react"
 
 interface Props {
   permissions: Permission[]
 }
 
 export default function PermissionsListClient({ permissions }: Props) {
-  const { lang } = useLanguage()
-  const t = (hu: string, en?: string) => (lang === 'EN' ? (en || hu) : hu)
+  const { t, lang } = useTranslate()
 
   return (
     <div className="container mx-auto lg:px-4 px-2 py-8">
@@ -24,8 +23,8 @@ export default function PermissionsListClient({ permissions }: Props) {
             <div className="bg-gray-100 rounded-full w-16 h-12 flex items-center justify-center mx-auto mb-4">
               <FileText className="h-8 w-8 text-gray-400" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('Nincsenek találatok', 'No results')}</h3>
-            <p className="text-gray-600">{t('Jelenleg nincsenek elérhető engedélyek.', 'No permissions available at the moment.')}</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('permissions.no_results')}</h3>
+            <p className="text-gray-600">{t('permissions.no_permissions')}</p>
           </CardContent>
         </Card>
       ) : (
@@ -50,23 +49,12 @@ export default function PermissionsListClient({ permissions }: Props) {
                       <RichText data={description} />
                     </div>
                     {href && (
-                      <div className="mt-1 flex items-center justify-between bg-gray-50 p-2 md:p-3 rounded-lg border border-gray-200">
-                        <div className="flex items-center gap-2 min-w-0">
-                          <FileText className="h-5 w-5 text-[#862633]" />
-                          <span className="font-medium text-gray-900 truncate">{disp || ext}</span>
-                        </div>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="group/button hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]"
-                          asChild
-                        >
-                          <a href={href} download>
-                            <Download className="w-4 h-4 mr-2" />
-                            {t('Letöltés', 'Download')}
-                          </a>
-                        </Button>
-                      </div>
+                      <FileCard
+                        file={p.file || undefined}
+                        title={disp || ext || 'file'}
+                        actionType="view"
+                        className="mt-1"
+                      />
                     )}
                   </div>
                 </CardContent>

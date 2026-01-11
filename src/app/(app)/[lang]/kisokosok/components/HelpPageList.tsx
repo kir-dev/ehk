@@ -1,18 +1,16 @@
 
+"use client";
 
 import FileCard from "@/components/common/FileCard";
-
+import { useTranslate } from "@/hooks/useTranslate";
 import { Help } from "@/payload-types";
 
 interface HelpPageListProps {
   help: Help[];
-  locale?: 'hu' | 'en';
 }
 
-export default function HelpPageList({ help, locale }: HelpPageListProps) {
-  const lang = locale ?? 'hu';
-  
-  const t = (hu: string, en?: string) => (lang === "en" ? en || hu : hu);
+export default function HelpPageList({ help }: HelpPageListProps) {
+  const { t, lang } = useTranslate();
 
   return help.map((item) => {
     const { title_hu, title_en, description_hu, description_en } = item;
@@ -29,9 +27,9 @@ export default function HelpPageList({ help, locale }: HelpPageListProps) {
         {item.files?.map((file) => {
           const { displayName_hu, displayName_en, file_hu, file_en } = file;
           const title = t(displayName_hu, displayName_en || displayName_hu);
-          const currentFile = lang === "hu" ? file_hu : file_en || file_hu;
+          const currentFile = lang === "HU" ? file_hu : file_en || file_hu;
 
-          return <FileCard key={file.id} file={currentFile} title={title} />;
+          return <FileCard key={file.id} file={currentFile || undefined} title={title} actionType="view" className="mt-2" />;
         })}
       </div>
     );

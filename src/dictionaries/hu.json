@@ -146,6 +146,66 @@
       },
       "more_info": "Bővebb információkat az Egyetemi Szociális Bizottság (ESZB) honlapján olvashattok: ",
       "eszb_website": "ESZB honlapja"
+    },
+    "ehk": {
+      "ehk": {
+        "items": [
+          {
+            "title": "Egyetemi Hallgatói Képviselet ösztöndíj",
+            "paragraphs": [
+              "Az Egyetemi Hallgatói Képviselet tagjai a BME Hallgatói és Doktorandusz Önkormányzat Alapszabályában rögzített feladatok végrehajtásáért ezen ösztöndíjon belül kerülnek jutalmazásra. A képviselők beszámolói az EHK honlapján publikálásra kerülnek."
+            ]
+          },
+          {
+            "title": "Egyetemi Doktorandusz Képviselet ösztöndíj",
+            "paragraphs": [
+              "Az Egyetemi Doktorandusz Képviselet tagjai a BME Hallgatói és Doktorandusz Önkormányzat Alapszabályában rögzített feladatok végrehajtásáért ezen ösztöndíjon belül kerülnek jutalmazásra. A képviselők beszámolói az EDK honlapján publikálásra kerülnek"
+            ]
+          },
+          {
+            "title": "Egyetemi BME ösztöndíj",
+            "paragraphs": [
+              "Az Egyetemi BME ösztöndíj a mintatantervekben meghatározott követelményeken túlmutató szakmai és tudományos teljesítményen alapuló legmagasabb szintű elismerések egyike. Az ösztöndíjjal az Egyetemi Hallgatói Képviselet a legkiválóbb hallgatókat jutalmazza, akik kimagasló szakmai vagy tudományos eredményt értek el az előző félévük során."
+            ]
+          },
+          {
+            "title": "Nemzeti felsőoktatási ösztöndíj",
+            "paragraphs": [
+              "A kiemelkedő tanulmányi eredményű, szakmai téren kimagasló teljesítményt nyújtó hallgatók részére a felsőoktatásért felelős miniszter nemzeti felsőoktatási ösztöndíjat adományoz egy tanév időtartamára. Az ösztöndíj elbírálásának menetét, részleteit az adott évben kiadott Rektori Utasítás határozza meg."
+            ]
+          },
+          {
+            "title": "Egyetemi közéleti ösztöndíj",
+            "paragraphs": [
+              "Az Egyetemi közéleti ösztöndíj azoknak a hallgatóknak szól, akik az EHK munkáját segítő közéleti tevékenységet végeznek, például rendezvények szervezésében való segédkezés."
+            ]
+          },
+          {
+            "title": "Egyetemi közösségi ösztöndíj",
+            "paragraphs": [
+              "Az Egyetemi közösségi ösztöndíj azoknak a hallgatóknak szól, akik a BME közösségi életében aktívan részt vesz. Pályázni lehet egyetemi öntevékeny körben és szakkollégiumban, a Műegyetemi Versenycsapat Közösségben vagy a Hallgatói Külügyi Testületben végzett tevékenységgel. Az ösztöndíj célja, hogy elismerje azokat a hallgatókat, akik tanulmányaik mellett közösségi munkájukkal is értéket teremtenek az egyetemen."
+            ]
+          },
+          {
+            "title": "Sportösztöndíj",
+            "paragraphs": [
+              "A Sportösztöndíj keretein belül az Egyetemi Hallgatói Képviselet azokat a hallgatókat jutalmazza, akik a testnevelési órákon felül és az egyetemi tanulmányaik mellett kimagasló sportteljesítményt nyújtottak."
+            ]
+          },
+          {
+            "title": "BME “Jó tanuló, jó sportoló” ösztöndíj",
+            "paragraphs": [
+              "A “Jó tanuló, jó sportoló” ösztöndíj nem csak a kimagasló sportteljesítményt díjazó ösztöndíj, hanem a versenyszerű sportolás mellett sikeresen teljesített tanulmányi eredményeket is figyelembe veszi. Az érvényes pályázáshoz a hallgató kreditindexének el kell érnie a 3,00 értékét."
+            ]
+          },
+          {
+            "title": "Tudományos Diákköri Konferencia ösztöndíj",
+            "paragraphs": [
+              "Az ösztöndíj célja, hogy elismerje a Tudományos Diákköri Konferencián nyújtott kiemelkedő munkát. Azok a hallgatók pályázhatnak, akik részt vettek a BME-n megrendezésre kerülő TDK Konferencián, és azon 1., 2., vagy 3. helyezést ért el, különdíjban vagy dicséretben részesültek."
+            ]
+          }
+        ]
+      }
     }
   },
   "language_education": {

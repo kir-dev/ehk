@@ -8,7 +8,7 @@ export const SportteremContent = () => {
         Tornaterem Igénylési Tájékoztató
       </h1>
 
-      {/* Általános leírás */}
+      {/* Introduction */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
@@ -22,7 +22,7 @@ export const SportteremContent = () => {
         </CardContent>
       </Card>
 
-      {/* Helyszínek */}
+      {/* Facilities */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
@@ -39,7 +39,7 @@ export const SportteremContent = () => {
         </CardContent>
       </Card>
 
-      {/* Feltételek */}
+      {/* Conditions */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
@@ -53,7 +53,7 @@ export const SportteremContent = () => {
         </CardContent>
       </Card>
 
-      {/* Igénylés menete */}
+      {/* Process & Deadlines */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
@@ -70,7 +70,7 @@ export const SportteremContent = () => {
         </CardContent>
       </Card>
 
-      {/* Kotelezo adatok */}
+      {/* Required Data */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
@@ -91,7 +91,27 @@ export const SportteremContent = () => {
         </CardContent>
       </Card>
 
-      {/* Tudnivalok */}
+      {/* Selection Criteria */}
+      <Card className="group hover:shadow-md transition-all duration-300">
+        <CardContent className="p-3 md:p-6">
+          <div className="flex flex-col gap-2 md:gap-3">
+            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
+              Elbírálás és Előnyben Részesítés
+            </h3>
+            <p>Az igénylések elbírálását a BME Üzemeltető és Műszaki Szolgáltató Kft. Sport Divíziója végzi, az EHK egyetértésével</p>
+            <p><strong>Túljelentkezés esetén</strong> a bíráló bizottság a következő szempontok alapján részesíti előnyben a csapatokat:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>A minél több <strong>aktív hallgatói jogviszonyú</strong> műegyetemistát tartalmazó csapatok.</li>
+              <li>A sportversenyeken <strong>eredményesebben</strong> szereplő csapatok.</li>
+            </ul>
+            <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm">
+                <strong> Fontos! </strong>A terembeosztás eredményével kapcsolatban fellebbezésre lehetőség nincs.
+              </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Rules & usage */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
@@ -110,7 +130,7 @@ export const SportteremContent = () => {
         </CardContent>
       </Card>
 
-      {/* Berleti dij */}
+      {/* Costs */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">

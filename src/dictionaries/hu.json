@@ -148,6 +148,77 @@
       "eszb_website": "ESZB honlapja"
     }
   },
+
+  "sport": {
+    "sportterem": {
+      "title": "Tornaterem Igénylési Tájékoztató",
+      "general": {
+        "title": "Általános tudnivalók",
+        "description": "A Budapesti Műszaki és Gazdaságtudományi Egyetem Sport Divíziója és az Egyetemi Hallgatói Képviselet (EHK) lehetőséget biztosít a sportolni vágyó csapatoknak és baráti köröknek, hogy kedvezményesen edzzenek az egyetem sportlétesítményeiben."
+      },
+      "facilities": {
+        "title": "Elérhető Sportlétesítmények",
+        "items": [
+          "BME Sportközpont (Bertalan Lajos utca 4-6. ÉL Épület) termeire.",
+          "Kollégiumi tornatermek: Kármán Tódor Kollégium és Bercsényi 28-30 Kollégium tornatermei."
+        ]
+      },
+      "conditions": {
+        "title": "Kedvezményes Terembérlés Feltétele",
+        "description": "Kedvezményes terembérlésre akkor van lehetőség, ha a pályázatot leadó csapat 80%-a BME nappali tagozatos hallgatói jogviszonnyal rendelkezik az adott szemeszterben."
+      },
+      "process": {
+        "title": "Igénylés Menete és Határidők",
+        "description": "Az igényléseket a megadott online űrlapon lehet leadni. A kitöltött taglistákat e-mailben várjuk a bmesport@umsz.bme.hu címre a kiírásban meghatározott határidőig.",
+        "warning": "Fontos! A hiányosan vagy a határidő után beérkező igényléseket nem áll módunkban elfogadni."
+      },
+      "requiredData": {
+        "title": "Kötelezően Megadandó Adatok az Igénylés Során",
+        "intro": "Az igénylés leadásánál a csapatoknak kötelező megadni:",
+        "items": [
+          "Csapatnév, Sportág",
+          "Csapatvezető neve, elérhetőségei (ő a felelős a csapatért az egyetemi sportlétesítményekben)",
+          "Csapatnévsor, feltüntetve az aktív BME-s hallgatói jogviszonnyal rendelkezők körét",
+          "Melyik teremben/termekben szeretne sportolni a csapat",
+          "Hány alkalommal edzene egy héten a csapat",
+          "Melyik napokon, melyik idősávok felelnek meg a csapat számára",
+          "A csapat 3 legjobb eredménye az előző 2 évben (ha van)"
+        ]
+      },
+      "selection": {
+        "title": "Elbírálás és Előnyben Részesítés",
+        "intro": "Túljelentkezés esetén a bíráló bizottság a következő szempontok alapján részesíti előnyben a csapatokat:",
+        "items": [
+          "A minél több aktív hallgatói jogviszonyú műegyetemistát tartalmazó csapatok.",
+          "A sportversenyeken eredményesebben szereplő csapatok."
+        ],
+        "warning": "Fontos! A terembeosztás eredményével kapcsolatban fellebbezésre lehetőség nincs."
+      },
+      "usage": {
+        "title": "Tudnivalók a Bérlésről és Használatról",
+        "items": [
+          "Terembeosztás: A végleges terembeosztás a kiírásban megadott napon válik elérhetővé.",
+          "Sportolói kör: Csak a leadott listán szereplő személyek sportolhatnak, fényképes igazolvány ellenében.",
+          "Cipőhasználat: Csak világos talpú és nyomot nem hagyó sportcipő megengedett.",
+          "Kollégiumi Kulcsfelelősök: Maximum 4 főt kell megjelölni a kulcsok felvételéhez."
+        ]
+      },
+      "costs": {
+        "title": "Bérleti Díjak (Tájékoztató jelleggel)",
+        "description": "A BME hallgatói kedvezményesen vehetik igénybe a sportlétesítményeket. A bérleti díjakat a Sport Divíziónak kell befizetni.",
+        "items": [
+          "Kollégiumi Tornatermek: Különböző óradíjak főidőben és főidőn kívül.",
+          "BME Sportközpont: Az árak a résztvevők számától függően sávosan emelkedhetnek."
+        ]
+      },
+      "contact": {
+        "title": "Kapcsolattartás",
+        "description": "Kérdés esetén: bmesport@umsz.bme.hu"
+      },
+      "footer": "*A pontos információkat mindig az adott félévben kiírt pályázat tartalmazza."
+    }
+  },
+
   "language_education": {
     "title": "Nyelvoktatás",
     "info_box": {

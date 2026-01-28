@@ -148,6 +148,77 @@
       "eszb_website": "ESZB website"
     }
   },
+
+  "sport": {
+    "sportterem": {
+      "title": "Gym Application Information",
+      "general": {
+        "title": "General Information",
+        "description": "The Sport Division of the Budapest University of Technology and Economics (BME) and the University Student Representative Council (EHK) provide an opportunity for sports teams and groups of friends to train in the university's sports facilities at a discounted rate."
+      },
+      "facilities": {
+        "title": "Available Sports Facilities",
+        "items": [
+          "BME Sports Center (Bertalan Lajos street 4-6, Building ÉL) rooms.",
+          "Dormitory gyms: Kármán Tódor Dormitory and Bercsényi 28-30 Dormitory gyms."
+        ]
+      },
+      "conditions": {
+        "title": "Conditions for Discounted Rental",
+        "description": "Discounted gym rental is available if 80% of the applying team has active full-time student status at BME in the given semester."
+      },
+      "process": {
+        "title": "Application Process and Deadlines",
+        "description": "Applications can be submitted via the specified online form. Completed member lists should be sent via email to bmesport@umsz.bme.hu by the deadline specified in the call for applications.",
+        "warning": "Important! Incomplete applications or those received after the deadline cannot be accepted."
+      },
+      "requiredData": {
+        "title": "Required Data for Application",
+        "intro": "When submitting an application, teams must provide:",
+        "items": [
+          "Team name, Sport",
+          "Team leader's name and contact details (responsible for the team within university sports facilities)",
+          "Team roster, indicating members with active BME student status",
+          "Which gym(s) the team wishes to use",
+          "How many times a week the team would train",
+          "Which days and time slots are suitable for the team",
+          "The team's top 3 results from the last 2 years (if applicable)"
+        ]
+      },
+      "selection": {
+        "title": "Evaluation and Priority",
+        "intro": "In case of oversubscription, the evaluation committee prioritizes teams based on the following criteria:",
+        "items": [
+          "Teams containing the highest number of active BME students.",
+          "Teams with better results in sports competitions."
+        ],
+        "warning": "Important! There is no possibility to appeal the results of the gym scheduling."
+      },
+      "usage": {
+        "title": "Information on Rental and Usage",
+        "items": [
+          "Gym Scheduling: The final schedule will be available on the date specified in the call.",
+          "Authorized Athletes: Only persons on the submitted list may participate, subject to ID verification.",
+          "Footwear: Only light-soled, non-marking sports shoes are allowed.",
+          "Dormitory Key Holders: A maximum of 4 people must be designated for key pickup."
+        ]
+      },
+      "costs": {
+        "title": "Rental Fees (For Information Only)",
+        "description": "BME students can use the sports facilities at a discount. Rental fees must be paid to the Sport Division.",
+        "items": [
+          "Dormitory Gyms: Different hourly rates for peak and off-peak hours.",
+          "BME Sports Center: Prices may increase in tiers depending on the number of participants."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "In case of questions: bmesport@umsz.bme.hu"
+      },
+      "footer": "*Accurate information is always contained in the call for applications published for the specific semester."
+    }
+  },
+
   "language_education": {
     "title": "Language Education",
     "info_box": {

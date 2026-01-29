@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {JSX, ReactNode} from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageHeader } from '@/components/common/PageHeader';
 
@@ -45,24 +45,66 @@ interface SportteremContentData {
   footer: string;
 }
 
-function convertEmailsToLinks(text: string) {
-  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
-  const parts = text.split(emailRegex);
+function parseFormattedText(text: string) {
+  // Split by both patterns
+  const parts: (string | JSX.Element)[] = [];
+  let lastIndex = 0;
+  let match;
   
-  return parts.map((part, index) => {
-    if (emailRegex.test(part)) {
-      return (
+  // Combined regex to match both bold and email
+  const combinedRegex = /(\*\*.*?\*\*)|([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+  
+  while ((match = combinedRegex.exec(text)) !== null) {
+    // Add text before match
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    
+    // Check if it's bold text
+    if (match[0].startsWith('**')) {
+      const boldText = match[0].replace(/\*\*/g, '');
+      
+      // Check if bold text contains an email
+      const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+      const emailMatch = emailRegex.exec(boldText);
+      
+      if (emailMatch) {
+        // Bold text with email inside
+        parts.push(
+          <a 
+            key={match.index}
+            href={`mailto:${emailMatch[0]}`}
+            className="text-[#862633] hover:underline font-bold"
+            >
+            {boldText}
+            </a>
+        );
+      } else {
+        // Just bold text
+        parts.push(<strong key={match.index} className="font-bold">{boldText}</strong>);
+      }
+    } else {
+      // Just email link (not bold)
+      parts.push(
         <a 
-          key={index} 
-          href={`mailto:${part}`}
+          key={match.index}
+          href={`mailto:${match[0]}`}
           className="text-[#862633] hover:underline font-medium"
         >
-          {part}
+          {match[0]}
         </a>
       );
     }
-    return part;
-  });
+    
+    lastIndex = match.index + match[0].length;
+  }
+  
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+  
+  return parts.length > 0 ? parts : text;
 }
 
 export default function SportteremContent({ content }: { content: SportteremContentData }) {
@@ -75,7 +117,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
             <Paragraph>
-            {convertEmailsToLinks(content.description)}
+            {parseFormattedText(content.description)}
             </Paragraph>
           </div>
         </CardContent>
@@ -91,7 +133,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <div className="space-y-2 text-gray-700">
               <ul className="list-disc pl-5 space-y-2">
                 {content.facilities.items.map((item, i) => (
-                <li key={i}>{convertEmailsToLinks(item)}</li>
+                <li key={i}>{parseFormattedText(item)}</li>
                 ))}
               </ul>
             </div>
@@ -106,7 +148,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.conditions.title}
             </h3>
-            <Paragraph>{convertEmailsToLinks(content.conditions.description)}</Paragraph>
+            <Paragraph>{parseFormattedText(content.conditions.description)}</Paragraph>
           </div>
         </CardContent>
       </Card>
@@ -118,9 +160,9 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.process.title}
             </h3>
-            <Paragraph>{convertEmailsToLinks(content.process.description)}</Paragraph>
+            <Paragraph>{parseFormattedText(content.process.description)}</Paragraph>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
-              {convertEmailsToLinks(content.process.warning)}
+              {parseFormattedText(content.process.warning)}
             </div>
           </div>
         </CardContent>
@@ -133,10 +175,10 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.requiredData.title}
             </h3>
-            <p>{convertEmailsToLinks(content.requiredData.intro)}</p>
+            <p>{parseFormattedText(content.requiredData.intro)}</p>
             <ul className="list-disc pl-5 space-y-1">
               {content.requiredData.items.map((item, i) => (
-                <li key={i}>{convertEmailsToLinks(item)}</li>
+                <li key={i}>{parseFormattedText(item)}</li>
               ))}
             </ul>
           </div>
@@ -150,14 +192,14 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.selection.title}
             </h3>
-            <p>{convertEmailsToLinks(content.selection.intro)}</p>
+            <p>{parseFormattedText(content.selection.intro)}</p>
             <ul className="list-disc pl-5 space-y-1">
               {content.selection.items.map((item, i) => (
-                <li key={i}>{convertEmailsToLinks(item)}</li>
+                <li key={i}>{parseFormattedText(item)}</li>
               ))}
             </ul>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
-              {convertEmailsToLinks(content.selection.warning)}
+              {parseFormattedText(content.selection.warning)}
             </div>
           </div>
         </CardContent>
@@ -172,7 +214,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
             </h3>
             <ul className="list-disc pl-5 space-y-1">
               {content.usage.items.map((item, i) => (
-                <li key={i}>{convertEmailsToLinks(item)}</li>
+                <li key={i}>{parseFormattedText(item)}</li>
               ))}
             </ul>
           </div>
@@ -186,10 +228,10 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.costs.title}
             </h3>
-            <Paragraph>{convertEmailsToLinks(content.costs.description)}</Paragraph>
+            <Paragraph>{parseFormattedText(content.costs.description)}</Paragraph>
             <ul className="list-disc pl-5 space-y-1">
               {content.costs.items.map((item, i) => (
-                <li key={i}>{convertEmailsToLinks(item)}</li>
+                <li key={i}>{parseFormattedText(item)}</li>
               ))}
             </ul>
           </div>
@@ -203,12 +245,12 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.contact.title}
             </h3>
-            <Paragraph>{convertEmailsToLinks(content.contact.description)}</Paragraph>
+            <Paragraph>{parseFormattedText(content.contact.description)}</Paragraph>
           </div>
         </CardContent>
       </Card>
 
-      <p className="text-center text-sm text-gray-400 italic mt-4">{convertEmailsToLinks(content.footer)}</p>
+      <p className="text-center text-sm text-gray-400 italic mt-4">{parseFormattedText(content.footer)}</p>
 
     </div>
   );

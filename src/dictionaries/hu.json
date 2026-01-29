@@ -152,23 +152,23 @@
   "sport": {
     "sportterem": {
       "title": "Tornaterem Igénylési Tájékoztató",
-      "description": "A Budapesti Műszaki és Gazdaságtudományi Egyetem Sport Divíziója és az Egyetemi Hallgatói Képviselet (EHK) lehetőséget biztosít a sportolni vágyó csapatoknak és baráti köröknek, hogy kedvezményesen edzzenek az egyetem sportlétesítményeiben."
+      "description": "A **Budapesti Műszaki és Gazdaságtudományi Egyetem Sport Divíziója** és az **Egyetemi Hallgatói Képviselet (EHK)** lehetőséget biztosít a sportolni vágyó csapatoknak és baráti köröknek, hogy kedvezményesen edzzenek az egyetem sportlétesítményeiben."
       ,
       "facilities": {
         "title": "Elérhető Sportlétesítmények",
         "items": [
-          "BME Sportközpont (Bertalan Lajos utca 4-6. ÉL Épület) termeire.",
-          "Kollégiumi tornatermek: Kármán Tódor Kollégium és Bercsényi 28-30 Kollégium tornatermei."
+          "**BME Sportközpont** (Bertalan Lajos utca 4-6. ÉL Épület) termeire.",
+          "**Kollégiumi tornatermek:** Kármán Tódor Kollégium és Bercsényi 28-30 Kollégium tornatermei."
         ]
       },
       "conditions": {
         "title": "Kedvezményes Terembérlés Feltétele",
-        "description": "Kedvezményes terembérlésre akkor van lehetőség, ha a pályázatot leadó csapat 80%-a BME nappali tagozatos hallgatói jogviszonnyal rendelkezik az adott szemeszterben."
+        "description": "Kedvezményes terembérlésre akkor van lehetőség, ha a pályázatot leadó csapat **80%-a BME nappali tagozatos hallgatói jogviszonnyal** rendelkezik az adott szemeszterben."
       },
       "process": {
         "title": "Igénylés Menete és Határidők",
-        "description": "Az igényléseket a megadott online űrlapon (link a kiírásban) lehet leadni. A kitöltött taglistákat (minta szintén elérhető a kiírásban megadott linken) e-mailben várjuk a bmesport@umsz.bme.hu címre a kiírásban meghatározott határidőig.",
-        "warning": "Fontos! A hiányosan vagy a határidő után beérkező igényléseket nem áll módunkban elfogadni."
+        "description": "Az igényléseket a megadott online űrlapon (link a kiírásban) lehet leadni. A kitöltött taglistákat (minta szintén elérhető a kiírásban megadott linken) e-mailben várjuk a **bmesport@umsz.bme.hu** címre a kiírásban meghatározott határidőig.",
+        "warning": "**Fontos!** A hiányosan vagy a határidő után beérkező igényléseket nem áll módunkban elfogadni."
       },
       "requiredData": {
         "title": "Kötelezően Megadandó Adatok az Igénylés Során",
@@ -185,35 +185,35 @@
       },
       "selection": {
         "title": "Elbírálás és Előnyben Részesítés",
-        "intro": "Az igénylések elbírálását a BME Üzemeltető és Műszaki Szolgáltató Kft. Sport Divíziója végzi, az EHK egyetértésével. Túljelentkezés esetén a bíráló bizottság a következő szempontok alapján részesíti előnyben a csapatokat:",
+        "intro": "Az igénylések elbírálását a BME Üzemeltető és Műszaki Szolgáltató Kft. Sport Divíziója végzi, az EHK egyetértésével. **Túljelentkezés esetén** a bíráló bizottság a következő szempontok alapján részesíti előnyben a csapatokat:",
         "items": [
-          "A minél több aktív hallgatói jogviszonyú műegyetemistát tartalmazó csapatok.",
-          "A sportversenyeken eredményesebben szereplő csapatok."
+          "A minél több **aktív hallgatói jogviszonyú** műegyetemistát tartalmazó csapatok.",
+          "A sportversenyeken **eredményesebben** szereplő csapatok."
         ],
-        "warning": "Fontos! A terembeosztás eredményével kapcsolatban fellebbezésre lehetőség nincs."
+        "warning": "**Fontos!** A terembeosztás eredményével kapcsolatban fellebbezésre lehetőség nincs."
       },
       "usage": {
         "title": "Tudnivalók a Bérlésről és Használatról",
         "items": [
-          "Terembeosztás: A végleges terembeosztás a kiírásban megadott napon válik elérhetővé, és minden igénylőt e-mailben értesítenek.",
-          "Sportolói kör: Az adott idősávban csak az igénylés során leadott listán szereplő személyek sportolhatnak. A sportolásra mindig vigyenek magukkal fényképes igazolványt. Ha olyan személy sportol a csapattal, aki nincs rajta a listán, a csapat elveszti a teremre való jogosultságát, és az előre kifizetett bérleti díj visszafizetésére nincs kötelezettség. A névsor minimális mértékben módosítható a szemeszter közben, amit előre jelezni kell a Sport Divízió felé a bmesport@umsz.bme.hu címen.",
-          "Cipőhasználat: A sportlétesítmények pályáira csak világos talpú és nyomot nem hagyó sportcipőben lehet belépni.",
-          "Házirend: A házirend betartása kötelező.",
-          "Kollégiumi Kulcsfelelősök: Azoknak a csapatoknak, akik kollégiumi tornateremben szeretnének sportolni, maximum 4 kulcsfelelőst kell megjelölniük a taglistán, akik jogosultságot kapnak a kulcsok felvételére a kollégiumok portáin.",
-          "Kármán/Bercsényi Tornatermek: A Kármán teremben főként edzés jellegű teremfoglalások lehetségesek, a mérkőzésekkel járó edzéseket a Bercsényi tornateremben javasolt tervezni."
+          "**Terembeosztás:** A végleges terembeosztás a kiírásban megadott napon válik elérhetővé, és minden igénylőt e-mailben értesítenek.",
+          "**Sportolói kör:** Az adott idősávban csak az igénylés során leadott listán szereplő személyek sportolhatnak. A sportolásra mindig vigyenek magukkal fényképes igazolványt. Ha olyan személy sportol a csapattal, aki nincs rajta a listán, a csapat elveszti a teremre való jogosultságát, és az előre kifizetett bérleti díj visszafizetésére nincs kötelezettség. A névsor minimális mértékben módosítható a szemeszter közben, amit előre jelezni kell a Sport Divízió felé a **bmesport@umsz.bme.hu** címen.",
+          "**Cipőhasználat:** A sportlétesítmények pályáira csak **világos talpú és nyomot nem hagyó** sportcipőben lehet belépni.",
+          "**Házirend:** A házirend betartása kötelező.",
+          "**Kollégiumi Kulcsfelelősök:** Azoknak a csapatoknak, akik kollégiumi tornateremben szeretnének sportolni, maximum 4 kulcsfelelőst kell megjelölniük a taglistán, akik jogosultságot kapnak a kulcsok felvételére a kollégiumok portáin.",
+          "**Kármán/Bercsényi Tornatermek:** A Kármán teremben főként edzés jellegű teremfoglalások lehetségesek, a mérkőzésekkel járó edzéseket a Bercsényi tornateremben javasolt tervezni."
         ]
       },
       "costs": {
         "title": "Bérleti Díjak (Tájékoztató jelleggel)",
         "description": "A BME hallgatói kedvezményesen vehetik igénybe a sportlétesítményeket. A bérleti díjakat a Sport Divíziónak kell befizetni. A Sport Divízió tájékoztatja az érintett csapatokat a befizetéssel kapcsolatos információkról.",
         "items": [
-          "Kollégiumi Tornatermek: Különböző bruttó óradíjak érvényesek főidőben (H-P 6:00-8:00 és 14:00-24:00) és főidőn kívül/éjjel.",
-          "BME Sportközpont Termei: A tornatermek és az Aréna terem ára a résztvevők számától függően sávosan emelkedik. A tatami és a multifunkcionális terem esetén fix óradíj vonatkozik a maximális létszámra."
+          "**Kollégiumi Tornatermek:** Különböző bruttó óradíjak érvényesek főidőben (H-P 6:00-8:00 és 14:00-24:00) és főidőn kívül/éjjel.",
+          "**BME Sportközpont Termei:** A tornatermek és az Aréna terem ára a résztvevők számától függően sávosan emelkedik. A tatami és a multifunkcionális terem esetén fix óradíj vonatkozik a maximális létszámra."
         ]
       },
       "contact": {
         "title": "Kapcsolattartás",
-        "description": "Bármilyen felmerülő kérdéssel forduljanak a BME Üzemeltető és Műszaki Szolgáltató Kft. (BME ÜMSZ Kft.) Sport Divíziójához a bmesport@umsz.bme.hu e-mail címen."
+        "description": "Bármilyen felmerülő kérdéssel forduljanak a BME Üzemeltető és Műszaki Szolgáltató Kft. (BME ÜMSZ Kft.) Sport Divíziójához a **bmesport@umsz.bme.hu** e-mail címen."
       },
       "footer": "*A pontos információkat mindig az adott félévben kiírt pályázat tartalmazza."
     }

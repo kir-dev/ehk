@@ -152,10 +152,8 @@
   "sport": {
     "sportterem": {
       "title": "Gym Application Information",
-      "general": {
-        "title": "General Information",
-        "description": "The Sport Division of the Budapest University of Technology and Economics (BME) and the University Student Representative Council (EHK) provide an opportunity for sports teams and groups of friends to train in the university's sports facilities at a discounted rate."
-      },
+      "description": "The Sport Division of the Budapest University of Technology and Economics (BME) and the University Student Representative Council (EHK) provide an opportunity for sports teams and groups of friends to train in the university's sports facilities at a discounted rate."
+      ,
       "facilities": {
         "title": "Available Sports Facilities",
         "items": [

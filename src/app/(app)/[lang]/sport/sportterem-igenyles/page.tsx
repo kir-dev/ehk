@@ -1,6 +1,7 @@
 import { getDictionary } from '@/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { PageHeader } from '@/components/common/PageHeader';
+import SportteremContent from './components/SportteremContent';
 type SportteremIgenylesPageProps = {
   params: Promise<{ lang: Locale }>;
 };
@@ -12,15 +13,10 @@ export default async function SportteremIgenylesPage({
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <PageHeader
-          title={lang === 'hu' ? 'Sportterem Igénylés' : 'Gym Reservation'}
-          description={lang === 'hu' ? 'Sportterem igénylésével kapcsolatos információk.' : 'Information about gym reservations.'}
-        />
         <main className="container mx-auto py-10 px-4">
-          {/* TODO: Add SportteremContent component or form here */}
-          <p className="text-gray-600">
-            {lang === 'hu' ? 'A tartalom hamarosan elérhető lesz.' : 'Content coming soon.'}
-          </p>
+          <SportteremContent 
+            content={dictionary.sport.sportterem} 
+          />
         </main>
       </div>
     </div>

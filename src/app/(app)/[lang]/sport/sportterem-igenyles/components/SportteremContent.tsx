@@ -45,6 +45,26 @@ interface SportteremContentData {
   footer: string;
 }
 
+function convertEmailsToLinks(text: string) {
+  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+  const parts = text.split(emailRegex);
+  
+  return parts.map((part, index) => {
+    if (emailRegex.test(part)) {
+      return (
+        <a 
+          key={index} 
+          href={`mailto:${part}`}
+          className="text-[#862633] hover:underline font-medium"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function SportteremContent({ content }: { content: SportteremContentData }) {
   return (
     <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
@@ -54,11 +74,8 @@ export default function SportteremContent({ content }: { content: SportteremCont
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
           <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.title}
-            </h3>
             <Paragraph>
-              {content.description}
+            {convertEmailsToLinks(content.description)}
             </Paragraph>
           </div>
         </CardContent>
@@ -74,7 +91,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <div className="space-y-2 text-gray-700">
               <ul className="list-disc pl-5 space-y-2">
                 {content.facilities.items.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>{convertEmailsToLinks(item)}</li>
                 ))}
               </ul>
             </div>
@@ -89,7 +106,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.conditions.title}
             </h3>
-            <Paragraph>{content.conditions.description}</Paragraph>
+            <Paragraph>{convertEmailsToLinks(content.conditions.description)}</Paragraph>
           </div>
         </CardContent>
       </Card>
@@ -101,9 +118,9 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.process.title}
             </h3>
-            <Paragraph>{content.process.description}</Paragraph>
+            <Paragraph>{convertEmailsToLinks(content.process.description)}</Paragraph>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
-              {content.process.warning}
+              {convertEmailsToLinks(content.process.warning)}
             </div>
           </div>
         </CardContent>
@@ -116,10 +133,10 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.requiredData.title}
             </h3>
-            <p>Az igénylés leadásánál a csapatoknak kötelező megadni:</p>
+            <p>{convertEmailsToLinks(content.requiredData.intro)}</p>
             <ul className="list-disc pl-5 space-y-1">
               {content.requiredData.items.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>{convertEmailsToLinks(item)}</li>
               ))}
             </ul>
           </div>
@@ -133,14 +150,14 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.selection.title}
             </h3>
-            <p>{content.selection.intro}</p>
+            <p>{convertEmailsToLinks(content.selection.intro)}</p>
             <ul className="list-disc pl-5 space-y-1">
               {content.selection.items.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>{convertEmailsToLinks(item)}</li>
               ))}
             </ul>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
-              {content.selection.warning}
+              {convertEmailsToLinks(content.selection.warning)}
             </div>
           </div>
         </CardContent>
@@ -155,7 +172,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
             </h3>
             <ul className="list-disc pl-5 space-y-1">
               {content.usage.items.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>{convertEmailsToLinks(item)}</li>
               ))}
             </ul>
           </div>
@@ -169,10 +186,10 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.costs.title}
             </h3>
-            <Paragraph>{content.costs.description}</Paragraph>
+            <Paragraph>{convertEmailsToLinks(content.costs.description)}</Paragraph>
             <ul className="list-disc pl-5 space-y-1">
               {content.costs.items.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>{convertEmailsToLinks(item)}</li>
               ))}
             </ul>
           </div>
@@ -186,12 +203,12 @@ export default function SportteremContent({ content }: { content: SportteremCont
             <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
               {content.contact.title}
             </h3>
-            <Paragraph>{content.contact.description}</Paragraph>
+            <Paragraph>{convertEmailsToLinks(content.contact.description)}</Paragraph>
           </div>
         </CardContent>
       </Card>
 
-      <p className="text-center text-sm text-gray-400 italic mt-4">{content.footer}</p>
+      <p className="text-center text-sm text-gray-400 italic mt-4">{convertEmailsToLinks(content.footer)}</p>
 
     </div>
   );

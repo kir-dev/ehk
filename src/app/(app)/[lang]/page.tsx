@@ -27,13 +27,13 @@ export default async function Home({
       {/* Hero */}
       <main className="flex-grow">
         <section className="w-full">
-          <div className="max-w-screen mx-4">
+          <div className="max-w-screen">
             <ImageViewer images={heroImages} />
           </div>
         </section>
 
         {/* Grid sections */}
-        <section className="px-4 py-6">
+        <section className="px-4 md:px-0 md:pr-4 pb-6 md:pb-0">
           <div className="max-w-[2200px] mx-auto">
             {/* Unique anchor for scrolling to the news section in all layouts */}
             <div id="hirek-section" className="h-0" aria-hidden />
@@ -42,7 +42,7 @@ export default async function Home({
             <div className="block lg:hidden">
               <div className="flex flex-col gap-6">
                 {/* Main news feed - first on mobile */}
-                <div>
+                <div className="mt-6">
                   <HomeNewsHeader />
                   <NewsSection page={page} />
                 </div>
@@ -64,7 +64,7 @@ export default async function Home({
             <div className="hidden lg:grid lg:grid-cols-12 gap-8">
               {/* Left column: Important links + Calendar + MUSZAK */}
               <div className="lg:col-span-3 min-w-0">
-                <div className="flex flex-col gap-y-4 bg-ehk-links-bg p-4 rounded-lg">
+                <div className="flex flex-col gap-y-4 bg-ehk-links-bg p-4">
                   <ImportantLinks />
                   <div className="w-full min-w-0">
                     <div className="max-w-full">
@@ -78,7 +78,7 @@ export default async function Home({
               </div>
 
               {/* Right column: Main news feed */}
-              <div className="lg:col-span-9 min-w-0">
+              <div className="lg:col-span-9 mt-6 min-w-0">
                 <HomeNewsHeader />
                 <NewsSection page={page} />
               </div>

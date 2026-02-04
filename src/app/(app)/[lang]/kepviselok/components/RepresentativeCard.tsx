@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useTranslate } from "@/hooks/useTranslate"
 import { Media, Representative } from "@/payload-types"
-import { Building2, FileText } from 'lucide-react'
+import { Building2, FileText, Mail } from 'lucide-react'
 import Image from 'next/image'
 
 interface RepresentativeCardProps {
@@ -44,17 +44,17 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
             <CardContent className="p-4 md:p-6 h-full flex flex-col">
                 <div className="flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-4 md:gap-0 flex-1">
                     <div className="relative mb-0 md:mb-4 shrink-0">
-                        <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                        <div className="w-28 h-28 md:w-48 md:h-48 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                             {pictureUrl ? (
                                 <Image
                                     src={pictureUrl}
                                     alt={representative.name}
-                                    width={128}
-                                    height={128}
+                                    width={192}
+                                    height={192}
                                     className="w-full h-full object-cover"
                                 />
                             ) : (
-                                <div className="text-xl md:text-3xl font-semibold text-gray-600">
+                                <div className="text-3xl md:text-5xl font-semibold text-gray-600">
                                     {representative.name.split(' ').map(n => n[0]).join('')}
                                 </div>
                             )}
@@ -79,7 +79,23 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
                             </Badge>
                         )}
 
-                        <div className="hidden md:flex items-center gap-4 text-sm text-gray-500 mb-4">
+                        {representative.emails && representative.emails.length > 0 && (
+                            <div className="flex flex-col gap-1 mb-2 md:mb-3">
+                                {representative.emails.map((emailObj, index) => (
+                                    <a
+                                        key={index}
+                                        href={`mailto:${emailObj.email}`}
+                                        className="text-xs md:text-sm text-gray-600 hover:text-[#862633] flex items-center justify-start md:justify-center gap-1 transition-colors"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Mail size={14} />
+                                        {emailObj.email}
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="hidden md:flex items-center justify-center gap-4 text-sm text-gray-500 mb-4">
                             {representative.files && representative.files.length > 0 && (
                                 <div className="flex items-center">
                                     <FileText className="w-4 h-4 mr-1" />

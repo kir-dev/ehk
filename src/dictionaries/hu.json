@@ -7,7 +7,9 @@
     "download": "Letöltés",
     "search": "Keresés...",
     "close": "Bezárás",
-    "loading": "Betöltés..."
+    "loading": "Betöltés...",
+    "questions": "Kérdésed van?",
+    "contact_aria_label": "Email küldése az info@bmeehk.hu címre"
   },
   "regulations": {
     "title_academic": "Oktatási szabályzatok",
@@ -167,5 +169,40 @@
     "GTK": "Gazdaság- és Társadalomtudományi Kar",
     "TTK": "Természettudományi Kar",
     "KJK": "Közlekedésmérnöki és Járműmérnöki Kar"
+  },
+  "footer": {
+    "contact": {
+      "title": "KAPCSOLAT",
+      "university": "Budapesti Műszaki és Gazdaságtudományi Egyetem",
+      "ehk": "Egyetemi Hallgatói Képviselet",
+      "address_label": "Cím:",
+      "address_value": "1111 Bp., Műegyetem rkp. 7-9. R. ép. 2.07.",
+      "emails_label": "E-mail címek:",
+      "office_hours_label": "Az Iroda fogadó ideje:",
+      "study_period": "Szorgalmi időszakban:",
+      "exam_period": "Vizsgaidőszakban:",
+      "weekdays_10_14": "hétköznap 10-14",
+      "weekdays_11_13": "hétköznap 11-13"
+    },
+    "faculty_representation": {
+      "title": "KARI HALLGATÓI KÉPVISELETEK",
+      "emk": "ÉMK - KARI HALLGATÓI KÉPVISELET",
+      "gpk": "GPK - KARI HALLGATÓI KÉPVISELET",
+      "epk": "ÉPK - KARI HALLGATÓI KÉPVISELET",
+      "vbk": "VBK - KARI HALLGATÓI KÉPVISELET",
+      "vik": "VIK - KARI HALLGATÓI KÉPVISELET",
+      "kjk": "KJK - KARI HALLGATÓI KÉPVISELET",
+      "ttk": "TTK - KARI HALLGATÓI KÉPVISELET",
+      "gtk": "GTK - KARI HALLGATÓI KÉPVISELET"
+    },
+    "university_pages": {
+      "title": "EGYETEMI OLDALAK",
+      "phonebook": "BME Telefonkönyv",
+      "sales_directorate": "Értékesítési és Szolgáltatási Igazgatóság",
+      "academic_office": "Központi Tanulmányi Hivatal",
+      "misz": "MISZ Műegyetemi Iskolaszövetkezet",
+      "szkene": "Szkéné színház"
+    },
+    "logo_alt": "BME Logó"
   }
 }

@@ -5,7 +5,7 @@ import { LanguageToggle } from "./LanguageToggle"
 import { MobileNavigation } from "./MobileNavigation"
 import { NAVBAR_STYLES } from "./navbar.constants"
 import { NavbarLogo } from "./NavbarLogo"
-import { SearchButton } from "./SearchButton"
+
 import { useNavbarLogic } from "./useNavbarLogic"
 
 export default function Navbar() {
@@ -35,7 +35,7 @@ export default function Navbar() {
                 lang={lang}
                 onToggle={handleLangToggle}
               />
-              <SearchButton lang={lang} />
+
               <MobileNavigation 
                 items={navigationItems}
                 lang={lang}

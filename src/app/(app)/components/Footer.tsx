@@ -89,10 +89,52 @@ export default function Footer() {
 
                             <div className="mt-4">
                                 <p>
-                                    <span className="text-gray-400">{t('Az Iroda fogadó ideje:', 'Office hours:')}</span> {t('hétköznap 10-14 óra között', 'weekdays 10:00–14:00')}
+                                    <span className="text-gray-400">{t('Az Iroda fogadó ideje:', 'Office hours:')}</span>
                                 </p>
+                                <div className="ml-2 mt-1 space-y-1">
+                                    <p>
+                                        <span className="text-gray-400">{t('Szorgalmi időszakban:', 'Study period:')}</span> {t('hétköznap 10-14', 'weekdays 10:00–14:00')}
+                                    </p>
+                                    <p>
+                                        <span className="text-gray-400">{t('Vizsgaidőszakban:', 'Exam period:')}</span> {t('hétköznap 11-13', 'weekdays 11:00–13:00')}
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="hidden lg:block w-px bg-gray-600"></div>
+
+                    {/* KARI HALLGATÓI KÉPVISELETEK Section */}
+                    <div className="flex-1 space-y-4">
+                        <h3 className="text-lg font-semibold mb-4">KARI HALLGATÓI KÉPVISELETEK</h3>
+                        <nav className="space-y-2">
+                            <Link href="https://emkhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                ÉMK - KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="https://ghk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                GPK- KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="http://epiteszhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                ÉPK - KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="https://vegyeszhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                VBK- KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="https://vik.hk/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                VIK - KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="http://kozlekhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                KJK - KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="https://ttkhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                TTK- KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                            <Link href="http://gtkhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                                GTK- KARI HALLGATÓI KÉPVISELET
+                            </Link>
+                        </nav>
                     </div>
 
                     {/* Divider */}

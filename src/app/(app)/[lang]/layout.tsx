@@ -1,5 +1,6 @@
 import Footer from "@/app/(app)/components/Footer";
 import Navbar from "@/app/(app)/components/navbar";
+import { ContactBubble } from "@/components/common/ContactBubble";
 import { LanguageProvider } from "@/components/common/LanguageProvider";
 import { getDictionary } from "@/get-dictionary";
 import { i18n } from "@/i18n-config";
@@ -34,6 +35,7 @@ export default async function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <ContactBubble />
         </LanguageProvider>
       </body>
     </html>

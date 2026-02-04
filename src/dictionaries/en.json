@@ -7,7 +7,9 @@
     "download": "Download",
     "search": "Search...",
     "close": "Close",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "questions": "Any questions?",
+    "contact_aria_label": "Send email to info@bmeehk.hu"
   },
   "regulations": {
     "title_academic": "Academic Regulations",
@@ -167,5 +169,40 @@
     "GTK": "Faculty of Economic and Social Sciences",
     "TTK": "Faculty of Natural Sciences",
     "KJK": "Faculty of Transportation Engineering and Vehicle Engineering"
+  },
+  "footer": {
+    "contact": {
+      "title": "CONTACT",
+      "university": "Budapest University of Technology and Economics",
+      "ehk": "University Student Council",
+      "address_label": "Address:",
+      "address_value": "1111 Bp., Műegyetem rkp. 7-9. Bldg. R, 2.07.",
+      "emails_label": "Email addresses:",
+      "office_hours_label": "Office hours:",
+      "study_period": "Study period:",
+      "exam_period": "Exam period:",
+      "weekdays_10_14": "weekdays 10:00–14:00",
+      "weekdays_11_13": "weekdays 11:00–13:00"
+    },
+    "faculty_representation": {
+      "title": "FACULTY STUDENT REPRESENTATIONS",
+      "emk": "ÉMK - FACULTY STUDENT REPRESENTATION",
+      "gpk": "GPK - FACULTY STUDENT REPRESENTATION",
+      "epk": "ÉPK - FACULTY STUDENT REPRESENTATION",
+      "vbk": "VBK - FACULTY STUDENT REPRESENTATION",
+      "vik": "VIK - FACULTY STUDENT REPRESENTATION",
+      "kjk": "KJK - FACULTY STUDENT REPRESENTATION",
+      "ttk": "TTK - FACULTY STUDENT REPRESENTATION",
+      "gtk": "GTK - FACULTY STUDENT REPRESENTATION"
+    },
+    "university_pages": {
+      "title": "UNIVERSITY PAGES",
+      "phonebook": "BME Phonebook",
+      "sales_directorate": "Directorate of Sales and Services",
+      "academic_office": "Central Academic Office",
+      "misz": "MISZ University Student Cooperative",
+      "szkene": "Szkéné Theatre"
+    },
+    "logo_alt": "BME Logo"
   }
 }

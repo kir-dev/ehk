@@ -127,6 +127,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       targetBlank: false,
       items: [
         { label: t("Bemutató", "Overview"), href: "#", targetBlank: false },
+        { label: t("Felvételi tájékoztató", "Admission Information"),
+          href: "/kollegium/felveteli-tajekoztato",
+          targetBlank: false },
         {
           label: t("Szabályzatok", "Regulations"),
           href: link("/kollegium-szabalyzatok"),

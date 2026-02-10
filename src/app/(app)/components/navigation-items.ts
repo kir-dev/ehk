@@ -105,7 +105,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("EHK ösztöndíjak", "EHK scholarships"),
-          href: "#",
+          href: link("/ehk-osztondij"),
           targetBlank: false,
         },
         {

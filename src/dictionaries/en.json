@@ -148,6 +148,65 @@
       },
       "more_info": "For more information, please visit the website of the University Social Committee (ESZB): ",
       "eszb_website": "ESZB website"
+    },
+    "ehk": {
+      "title" : "EHK scholarships",
+      "items": [
+        {
+          "title": "University Student Union Scholarship",
+          "paragraphs": [
+            "Members of the University Student Union are rewarded through this scholarship for carrying out the tasks defined in the Rules and Regulations of the BME Students’ and Doctoral Students’ Union. Reports submitted by the representatives are published on the website of the University Student Union."
+          ]
+        },
+        {
+          "title": "University Doctoral Student Union Scholarship",
+          "paragraphs": [
+            "Members of the University Doctoral Student Union are rewarded through this scholarship for carrying out the tasks defined in the Rules and Regulations of the BME Students’ and Doctoral Students’ Union. Reports submitted by the representatives are published on the website of the University Doctoral Student Union."
+          ]
+        },
+        {
+          "title": "University BME Scholarship",
+          "paragraphs": [
+            "The University BME Scholarship is one of the highest-level recognitions based on professional and scientific achievements that go beyond the requirements defined in the model curricula. Through this scholarship, the University Student Union rewards the most outstanding students who achieved exceptional professional or scientific results during the previous semester."
+          ]
+        },
+        {
+          "title": "National Higher Education Scholarship",
+          "paragraphs": [
+            "For students with outstanding academic results and exceptional professional achievements, the minister responsible for higher education awards the National Higher Education Scholarship for the duration of one academic year. The procedure and details of the evaluation are defined by the Rector’s Instruction issued for the given year."
+          ]
+        },
+        {
+          "title": "University Public Life Scholarship",
+          "paragraphs": [
+            "The University Public Life Scholarship is intended for students who carry out public life activities supporting the work of the University Student Union, such as assisting in the organization of events."
+          ]
+        },
+        {
+          "title": "University Community Scholarship",
+          "paragraphs": [
+            "The University Community Scholarship is intended for students who actively participate in community life at BME. Applications may be submitted for activities carried out in university self-organizing student groups and colleges for advanced studies, in the BME Racing Teams Community, or in the Student International Relations Committee. The aim of the scholarship is to recognize students who create value at the university through their community work alongside their studies."
+          ]
+        },
+        {
+          "title": "Sports Scholarship",
+          "paragraphs": [
+            "Within the framework of the Sports Scholarship, the University Student Union rewards students who, in addition to physical education classes and their university studies, have demonstrated outstanding athletic performance."
+          ]
+        },
+        {
+          "title": "BME “Good Student, Good Athlete” Scholarship",
+          "paragraphs": [
+            "The “Good Student, Good Athlete” Scholarship not only rewards outstanding athletic performance but also takes into account successful academic achievements alongside competitive sports activities. To submit a valid application, the student’s credit index must reach a value of 3.00."
+          ]
+        },
+        {
+          "title": "Scientific Students’ Conference Scholarship",
+          "paragraphs": [
+            "The aim of the scholarship is to recognize outstanding work performed at the Scientific Students’ Conference. Students may apply if they participated in the Scientific Students’ Conference organized at BME and achieved 1st, 2nd or 3rd place, or received a special prize or commendation."
+          ]
+        }
+      ]
     }
   },
   "language_education": {

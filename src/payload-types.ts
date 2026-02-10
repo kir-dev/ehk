@@ -536,7 +536,8 @@ export interface PayoutPeriod {
   autumnSemester?: {
     payouts?:
       | {
-          month: string;
+          month_hu: string;
+          month_en: string;
           date: string;
           id?: string | null;
         }[]
@@ -545,7 +546,8 @@ export interface PayoutPeriod {
   springSemester?: {
     payouts?:
       | {
-          month: string;
+          month_hu: string;
+          month_en: string;
           date: string;
           id?: string | null;
         }[]
@@ -917,7 +919,8 @@ export interface PayoutPeriodsSelect<T extends boolean = true> {
         payouts?:
           | T
           | {
-              month?: T;
+              month_hu?: T;
+              month_en?: T;
               date?: T;
               id?: T;
             };
@@ -928,7 +931,8 @@ export interface PayoutPeriodsSelect<T extends boolean = true> {
         payouts?:
           | T
           | {
-              month?: T;
+              month_hu?: T;
+              month_en?: T;
               date?: T;
               id?: T;
             };

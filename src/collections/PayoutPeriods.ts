@@ -39,14 +39,50 @@ export const PayoutPeriods: CollectionConfig = {
           name: "payouts",
           label: "Kifizetések",
           type: "array",
+          defaultValue: [
+            {
+              month_hu: "Szeptember",
+              month_en: "September",
+              date: "",
+            },
+            {
+              month_hu: "Október",
+              month_en: "October",
+              date: "",
+            },
+            {
+              month_hu: "November",
+              month_en: "November",
+              date: "",
+            },
+            {
+              month_hu: "December",
+              month_en: "December",
+              date: "",
+            },
+            {
+              month_hu: "Január",
+              month_en: "January",
+              date: "",
+            },
+          ],
           fields: [
             {
-              name: "month",
-              label: "Hónap",
+              name: "month_hu",
+              label: "Hónap (magyar)",
               type: "text",
               required: true,
               admin: {
                 placeholder: "pl. Szeptember",
+              },
+            },
+            {
+              name: "month_en",
+              label: "Hónap (angol)",
+              type: "text",
+              required: true,
+              admin: {
+                placeholder: "pl. September",
               },
             },
             {
@@ -71,14 +107,60 @@ export const PayoutPeriods: CollectionConfig = {
           name: "payouts",
           label: "Kifizetések",
           type: "array",
+          defaultValue: [
+            {
+              month_hu: "Február",
+              month_en: "February",
+              date: "",
+            },
+            {
+              month_hu: "Március",
+              month_en: "March",
+              date: "",
+            },
+            {
+              month_hu: "Április",
+              month_en: "April",
+              date: "",
+            },
+            {
+              month_hu: "Május",
+              month_en: "May",
+              date: "",
+            },
+            {
+              month_hu: "Június",
+              month_en: "June",
+              date: "",
+            },
+            {
+              month_hu: "Július",
+              month_en: "July",
+              date: "",
+            },
+            {
+              month_hu: "Augusztus",
+              month_en: "August",
+              date: "",
+            },
+          ],
           fields: [
             {
-              name: "month",
-              label: "Hónap",
+              name: "month_hu",
+              label: "Hónap (magyar)",
               type: "text",
               required: true,
               admin: {
                 placeholder: "pl. Február",
+              },
+            },
+            {
+              name: "month_en",
+              label: "Hónap (angol)",
+              type: "text",
+              required: true,
+              admin: {
+                placeholder: "pl. February",
               },
             },
             {

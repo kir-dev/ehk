@@ -79,6 +79,7 @@ export interface Config {
     permissions: Permission;
     regulations: Regulation;
     help: Help;
+    'payout-periods': PayoutPeriod;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -98,6 +99,7 @@ export interface Config {
     permissions: PermissionsSelect<false> | PermissionsSelect<true>;
     regulations: RegulationsSelect<false> | RegulationsSelect<true>;
     help: HelpSelect<false> | HelpSelect<true>;
+    'payout-periods': PayoutPeriodsSelect<false> | PayoutPeriodsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -522,6 +524,38 @@ export interface Help {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payout-periods".
+ */
+export interface PayoutPeriod {
+  id: number;
+  title: string;
+  /**
+   * Ha bepipálod, ez lesz az aktuálisan megjelenő időszak az oldalon. (A többi automatikusan inaktív lesz.)
+   */
+  isActive?: boolean | null;
+  autumnSemester?: {
+    payouts?:
+      | {
+          month: string;
+          date: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  springSemester?: {
+    payouts?:
+      | {
+          month: string;
+          date: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -591,6 +625,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'help';
         value: number | Help;
+      } | null)
+    | ({
+        relationTo: 'payout-periods';
+        value: number | PayoutPeriod;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -862,6 +900,38 @@ export interface HelpSelect<T extends boolean = true> {
         displayName_en?: T;
         file_en?: T;
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payout-periods_select".
+ */
+export interface PayoutPeriodsSelect<T extends boolean = true> {
+  title?: T;
+  isActive?: T;
+  autumnSemester?:
+    | T
+    | {
+        payouts?:
+          | T
+          | {
+              month?: T;
+              date?: T;
+              id?: T;
+            };
+      };
+  springSemester?:
+    | T
+    | {
+        payouts?:
+          | T
+          | {
+              month?: T;
+              date?: T;
+              id?: T;
+            };
       };
   updatedAt?: T;
   createdAt?: T;

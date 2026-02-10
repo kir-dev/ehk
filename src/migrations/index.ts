@@ -11,6 +11,7 @@ import * as migration_20251009_170808 from './20251009_170808';
 import * as migration_20251009_170959 from './20251009_170959';
 import * as migration_20251009_174520_add_regulations_file_eng from './20251009_174520_add_regulations_file_eng';
 import * as migration_20251113_185415 from './20251113_185415';
+import * as migration_20260210_212659_add_payout_periods from './20260210_212659_add_payout_periods';
 
 export const migrations = [
   {
@@ -76,6 +77,11 @@ export const migrations = [
   {
     up: migration_20251113_185415.up,
     down: migration_20251113_185415.down,
-    name: '20251113_185415'
+    name: '20251113_185415',
+  },
+  {
+    up: migration_20260210_212659_add_payout_periods.up,
+    down: migration_20260210_212659_add_payout_periods.down,
+    name: '20260210_212659_add_payout_periods'
   },
 ];

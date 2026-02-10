@@ -154,7 +154,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Sportterem igénylés", "Gym booking request"),
-          href: "#",
+          href: link("/sport/sportterem-igenyles"),
           targetBlank: false,
         },
         {

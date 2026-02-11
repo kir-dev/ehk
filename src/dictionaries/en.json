@@ -173,7 +173,8 @@
       "contacts": "Contacts",
       "contacts_p1": "Should you have any questions regarding dormitory accommodation, please contact the relevant Faculty Student Union, which can be reached at the following addresses:",
       "contacts_p2": "For general inquiries, feel free to contact us at ",
-      "contacts_p3": "."
+      "contacts_p3": ".",
+      "dormitory": "Dormitory"
     }
   },
   "faculties": {

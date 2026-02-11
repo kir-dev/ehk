@@ -219,6 +219,23 @@
   "knowledge_base": {
     "title": "Cheat Sheets"
   },
+  "dormitories":{
+    "admission_information": {
+      "title": "Dormitory Admission Information",
+      "capacity": "Capacity",
+      "capacity_p1": "Students of the Budapest University of Technology and Economics can get accommodation in a total of 7 dormitories:",
+      "capacity_p2": "Students of each faculty can move into the dormitories assigned to their faculty (you can find more information about this on the websites of the Faculty Student Unions).",
+      "application": "Application Process",
+      "application_p1": "You can apply for dormitory accommodation through the dormitory admission process. The USU has created the Unified Dormitory Admission System, which provides a framework for the faculties to carry out the applications, but you can find the exact regulations applicable to you on the website of the relevant Faculty Student Union.",
+      "application_p2": "The application submission interface for the admission process is ",
+      "application_p3": " the Unified Dormitory Admission and Information System (Egységes Kollégiumi Felvételi Rendszer), where you can log in with the Neptun-code (i.e., the BME Directory generated from it) received in the admission information package from the university.",
+      "contacts": "Contacts",
+      "contacts_p1": "Should you have any questions regarding dormitory accommodation, please contact the relevant Faculty Student Union, which can be reached at the following addresses:",
+      "contacts_p2": "For general inquiries, feel free to contact us at ",
+      "contacts_p3": ".",
+      "dormitory": "Dormitory"
+    }
+  },
   "faculties": {
     "ÉMK": "Faculty of Civil Engineering",
     "GPK": "Faculty of Mechanical Engineering",

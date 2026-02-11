@@ -219,6 +219,23 @@
   "knowledge_base": {
     "title": "Kisokosok"
   },
+  "dormitories":{
+    "admission_information": {
+      "title": "Kollégiumi felvételi tájékoztató",
+      "capacity": "Férőhelyek",
+      "capacity_p1": "A Budapesti Műszaki és Gazdaságtudományi Egyetem hallgatói összesen 7 kollégiumban kaphatnak férőhelyet: ",
+      "capacity_p2": "Minden kar hallgatói a karhoz rendelt kollégiumokba költözhetnek be (bővebb információt a kari Hallgatói Képviseletek honlapján találhatsz erről).",
+      "application": "Jelentkezés menete",
+      "application_p1": "Kollégiumi férőhelyben kollégiumi felvételi eljárás során részesülhettek. Az EHK a felvételi eljárás lebonyolítására megalkotta az Egységes Kollégiumi Felvételi Rendszert, ami egy keretet ad a karoknak a pályázat lebonyolítására, de a rád vonatkozó pontos szabályzatot az illetékes Kari Hallgatói Képviselet oldalán találod meg.",
+      "application_p2": "A felvételi pályázat leadási felülete a ",
+      "application_p3": ", azaz a Kollégiumi Egységes Felvételi és Információs Rendszer, ahova az egyetemtől kapott felvételi tájékoztató csomagban kapott Neptun-kóddal (azaz az ebből generált BME Címtárral) tudtok belépni.",
+      "contacts": "Elérhetőségek",
+      "contacts_p1": "Amennyiben bármilyen kérdésetek merül fel a kollégiumi elhelyezéssel kapcsolatban, forduljatok az illetékes Kari Hallgatói Képviselethez, melyek oldalát az alábbi címeken érhetitek el:",
+      "contacts_p2": "Általános ügyekben forduljatok bátran hozzánk az ",
+      "contacts_p3": " elérhetőségen.",
+      "dormitory": "Kollégium"
+    }
+  },
   "faculties": {
     "ÉMK": "Építőmérnöki Kar",
     "GPK": "Gépészmérnöki Kar",

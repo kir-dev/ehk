@@ -165,3 +165,14 @@ export async function getHelp() {
 
   return help.docs as Help[];
 }
+
+export async function getActivePayoutPeriod() {
+  const payload = await getPayload({ config });
+  const payoutPeriods = await payload.find({
+    collection: "payout-periods",
+    where: { isActive: { equals: true } },
+    limit: 1,
+  });
+
+  return payoutPeriods.docs[0];
+}

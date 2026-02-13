@@ -229,6 +229,24 @@
     "TTK": "Természettudományi Kar",
     "KJK": "Közlekedésmérnöki és Járműmérnöki Kar"
   },
+
+  "payouts": {
+    "title": "Kifizetési információk",
+    "intro_text": "Az ösztöndíjak kifizetési időpontjai a {title} tanévben az alábbiak szerint alakulnak:",
+    "autumn_semester": "Kifizetési időpontok {title} ősz",
+    "spring_semester": "Kifizetési időpontok {title} tavasz",
+    "table_header_name": "Elnevezés",
+    "table_header_date": "Kifizetési időpont",
+    "important_todo_title": "Fontos teendők a kifizetés előtt",
+    "important_todo_p1": "Ahhoz, hogy az ösztöndíjad kifizetése sikeresen megtörténjen, időben rögzítened kell bankszámlaszámodat a Neptunban, különben az utalás nem teljesíthető.",
+    "important_todo_p2": "A bankszámlaszám megadásának menetei: Neptun → Pénzügyek → Beállítások → Számlaszámok → Új bankszámlaszám.",
+    "important_todo_p3": "Emellett a Neptunban rögzített állandó lakcím is szükséges a kifizetéshez.",
+    "important_todo_p4": "Ha a szükséges adatokat a harmadik kifizetési kísérletig sem rögzíted, az Egyetem nem köteles újabb utalást kezdeményezni, amíg nem jelzed feléjük, hogy pótoltad a hiányosságokat.",
+    "wrong_transfer_title": "Téves utalás vagy jogviszony megszűnése eseténi teendők",
+    "wrong_transfer_p1": "Abban az esetben ha téves utalás történik, a tévesen kifizetett összeget 15 napon belül vissza kell fizetned az Egyetem részére. Jogviszony megszűnésekor, munkarend változásakor vagy ösztöndíjra való jogosultság megszűnésekor ugyanez érvényes, a változást követő 15 napon belül szükséges rendezni az esetleges visszafizetést.",
+    "check_mueper" : "Azt, hogy a megpályázott ösztöndíj melyik kifizetési időpontban kerül utalásra, mindig a MŰEPER felületén elérhető pályázati kiírás tartalmazza.",
+    "no_active_period": "Jelenleg nincs aktív kifizetési időszak."
+  },
   "footer": {
     "contact": {
       "title": "KAPCSOLAT",

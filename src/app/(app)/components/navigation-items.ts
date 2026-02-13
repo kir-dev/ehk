@@ -109,6 +109,11 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           targetBlank: false,
         },
         {
+          label: t("Kifizetési időpontok", "Payout dates"),
+          href: link("/kifizetesi-idopontok"),
+          targetBlank: false,
+        },
+        {
           label: t("Szabályzatok", "Regulations"),
           href: link("/juttatasi-szabalyzatok"),
           targetBlank: false,

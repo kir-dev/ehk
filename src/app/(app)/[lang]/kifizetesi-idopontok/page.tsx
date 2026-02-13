@@ -1,9 +1,9 @@
-
 import { PageHeader } from "@/components/common/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getActivePayoutPeriod } from "@/lib/payload-cms";
+import { PayoutTable } from "./components/PayoutTable";
 
 export default async function PayoutInfoPage({
   params,
@@ -37,77 +37,16 @@ export default async function PayoutInfoPage({
         </p>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Autumn Semester Card */}
-          <Card>
-            <CardHeader className="bg-muted/50 border-b pb-4">
-              <CardTitle className="text-xl">
-                {dictionary.payouts.autumn_semester.replace("{title}", title)}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <table className="w-full text-left text-lg">
-                <tbody className="divide-y">
-                  {autumnSemester?.payouts?.map((payout, index) => (
-                    <tr key={index} className="hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 text-muted-foreground text-center font-medium">
-                        {index + 1}.
-                      </td>
-                      <td className="px-6 py-4 font-medium capitalize">
-                        {lang === "hu" ? payout.month_hu : payout.month_en}
-                      </td>
-                      <td className="px-6 py-4 text-right text-muted-foreground">
-                        {payout.date}
-                      </td>
-                    </tr>
-                  ))}
-                  {(!autumnSemester?.payouts ||
-                    autumnSemester.payouts.length === 0) && (
-                    <tr>
-                      <td colSpan={3} className="px-6 py-8 text-center text-muted-foreground italic">
-                        -
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </CardContent>
-          </Card>
-
-          {/* Spring Semester Card */}
-          <Card>
-            <CardHeader className="bg-muted/50 border-b pb-4">
-              <CardTitle className="text-xl">
-                {dictionary.payouts.spring_semester.replace("{title}", title)}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <table className="w-full text-left text-lg">
-                <tbody className="divide-y">
-                  {springSemester?.payouts?.map((payout, index) => (
-                    <tr key={index} className="hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 text-muted-foreground text-center font-medium">
-                        {index + 1}.
-                      </td>
-                      <td className="px-6 py-4 font-medium capitalize">
-                        {lang === "hu" ? payout.month_hu : payout.month_en}
-                      </td>
-                      <td className="px-6 py-4 text-right text-muted-foreground">
-                        {payout.date}
-                      </td>
-                    </tr>
-                  ))}
-                  {(!springSemester?.payouts ||
-                    springSemester.payouts.length === 0) && (
-                    <tr>
-                      <td colSpan={3} className="px-6 py-8 text-center text-muted-foreground italic">
-                        -
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </CardContent>
-          </Card>
+          <PayoutTable
+            title={dictionary.payouts.autumn_semester.replace("{title}", title)}
+            payouts={autumnSemester?.payouts}
+            lang={lang}
+          />
+          <PayoutTable
+            title={dictionary.payouts.spring_semester.replace("{title}", title)}
+            payouts={springSemester?.payouts}
+            lang={lang}
+          />
         </div>
 
         <p className="text-center text-muted-foreground italic">

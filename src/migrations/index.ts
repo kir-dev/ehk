@@ -14,6 +14,9 @@ import * as migration_20251113_185415 from './20251113_185415';
 import * as migration_20260210_212659_add_payout_periods from './20260210_212659_add_payout_periods';
 import * as migration_20260210_215940_add_payout_periods_and_months from './20260210_215940_add_payout_periods_and_months';
 import * as migration_20260222_182719_clubs_collection from './20260222_182719_clubs_collection';
+import * as migration_20260222_195349_clubs_opening_hours_richtext from './20260222_195349_clubs_opening_hours_richtext';
+import * as migration_20260222_200022_add_link_to_clubs from './20260222_200022_add_link_to_clubs';
+import * as migration_20260222_201957_simplify_clubs_image from './20260222_201957_simplify_clubs_image';
 
 export const migrations = [
   {
@@ -94,6 +97,21 @@ export const migrations = [
   {
     up: migration_20260222_182719_clubs_collection.up,
     down: migration_20260222_182719_clubs_collection.down,
-    name: '20260222_182719_clubs_collection'
+    name: '20260222_182719_clubs_collection',
+  },
+  {
+    up: migration_20260222_195349_clubs_opening_hours_richtext.up,
+    down: migration_20260222_195349_clubs_opening_hours_richtext.down,
+    name: '20260222_195349_clubs_opening_hours_richtext',
+  },
+  {
+    up: migration_20260222_200022_add_link_to_clubs.up,
+    down: migration_20260222_200022_add_link_to_clubs.down,
+    name: '20260222_200022_add_link_to_clubs',
+  },
+  {
+    up: migration_20260222_201957_simplify_clubs_image.up,
+    down: migration_20260222_201957_simplify_clubs_image.down,
+    name: '20260222_201957_simplify_clubs_image'
   },
 ];

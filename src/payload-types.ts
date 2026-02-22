@@ -212,18 +212,47 @@ export interface Club {
    * Cím vagy helyszín, pl.: Kármán Tódor Kollégium
    */
   location?: string | null;
-  /**
-   * Pl.: Hétfő és Csütörtök
-   */
-  openingHours?: string | null;
-  images: {
-    image: number | Media;
-    id?: string | null;
-  }[];
+  openingHours?: {
+    text_hu?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    text_en?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  image?: (number | null) | Media;
   /**
    * Megjelenítési sorrend (pl. 1 az első)
    */
   order?: number | null;
+  /**
+   * Opcionális link a klub weboldalához vagy közösségi oldalához
+   */
+  link?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -776,14 +805,15 @@ export interface ClubsSelect<T extends boolean = true> {
         text_en?: T;
       };
   location?: T;
-  openingHours?: T;
-  images?:
+  openingHours?:
     | T
     | {
-        image?: T;
-        id?: T;
+        text_hu?: T;
+        text_en?: T;
       };
+  image?: T;
   order?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
 }

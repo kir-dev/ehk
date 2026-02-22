@@ -65,26 +65,39 @@ export const Clubs: CollectionConfig = {
     {
       name: 'openingHours',
       label: 'Nyitvatartás',
-      type: 'text',
+      type: 'group',
       required: false,
-      admin: {
-        description: 'Pl.: Hétfő és Csütörtök',
-      },
-    },
-    {
-      name: 'images',
-      label: 'Képek',
-      type: 'array',
-      required: true,
       fields: [
         {
-          name: 'image',
-          label: 'Kép',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
+          name: 'text_hu',
+          label: 'Nyitvatartás (magyar)',
+          type: 'richText',
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+        {
+          name: 'text_en',
+          label: 'Nyitvatartás (angol)',
+          type: 'richText',
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
         },
       ],
+    },
+    {
+      name: 'image',
+      label: 'Kép',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
     },
     {
       name: 'order',
@@ -93,6 +106,15 @@ export const Clubs: CollectionConfig = {
       required: false,
       admin: {
         description: 'Megjelenítési sorrend (pl. 1 az első)',
+      },
+    },
+    {
+      name: 'link',
+      label: 'Link',
+      type: 'text',
+      required: false,
+      admin: {
+        description: 'Opcionális link a klub weboldalához vagy közösségi oldalához',
       },
     },
   ],

@@ -32,8 +32,12 @@ export default async function RootLayout({
     <html lang={validLang}>
       <body>
         <LanguageProvider defaultLang={validLang.toUpperCase() as "HU" | "EN"} dictionary={dictionary}>
-          <Navbar />
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+          </div>
           <Footer />
           <ContactBubble />
         </LanguageProvider>

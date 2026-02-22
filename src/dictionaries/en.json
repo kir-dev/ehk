@@ -229,6 +229,24 @@
     "TTK": "Faculty of Natural Sciences",
     "KJK": "Faculty of Transportation Engineering and Vehicle Engineering"
   },
+
+  "payouts": {
+    "title": "Payout Information",
+    "intro_text": "The scholarship payout dates for the {title} academic year are as follows:",
+    "autumn_semester": "Payout dates {title} Autumn",
+    "spring_semester": "Payout dates {title} Spring",
+    "table_header_name": "Month",
+    "table_header_date": "Payout Date",
+    "important_todo_title": "Important To-Dos Before Payout",
+    "important_todo_p1": "To ensure successful scholarship payout, you must register your bank account number in Neptun in time; otherwise, the transfer cannot be completed.",
+    "important_todo_p2": "Steps to register your bank account: Neptun → Finances → Settings → Bank accounts → Add bank account number.",
+    "important_todo_p3": "Additionally, a permanent address registered in Neptun is required for the payout.",
+    "important_todo_p4": "If you do not register the necessary data by the third payout attempt, the University is not obliged to initiate another transfer until you notify them that you have corrected the deficiencies.",
+    "wrong_transfer_title": "To-Dos in Case of Incorrect Transfer or Termination of Student Status",
+    "wrong_transfer_p1": "In the event of an incorrect transfer, you must repay the incorrectly paid amount to the University within 15 days. The same applies upon termination of student status, change of work schedule, or termination of scholarship eligibility; any necessary repayment must be settled within 15 days following the change.",
+    "check_mueper" : "The specific payout date for the applied scholarship is always contained in the call for applications available on the MŰEPER interface.",
+    "no_active_period": "No active payout period at the moment."
+  },
   "footer": {
     "contact": {
       "title": "CONTACT",

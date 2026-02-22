@@ -1,26 +1,27 @@
-import { s3Storage } from "@payloadcms/storage-s3";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { s3Storage } from "@payloadcms/storage-s3";
 import path from "path";
 import { buildConfig } from "payload";
-import { fileURLToPath } from "url";
 import sharp from "sharp";
+import { fileURLToPath } from "url";
 
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
-import { Representatives } from "@/collections/Representatives";
-import { en } from "@payloadcms/translations/languages/en";
-import { hu } from "@payloadcms/translations/languages/hu";
-import { Reminders } from "@/collections/Reminders";
-import { News } from "@/collections/News";
+import { Decisions } from "@/collections/Decisions";
 import { Events } from "@/collections/Events";
 import { HeroImages } from "@/collections/HeroImages";
 import { MuszakPaper } from "@/collections/MuszakPaper";
-import { Decisions } from "@/collections/Decisions";
+import { News } from "@/collections/News";
 import { Permissions } from "@/collections/Permissions";
 import { Regulations } from "@/collections/Regulations";
+import { Reminders } from "@/collections/Reminders";
+import { Representatives } from "@/collections/Representatives";
+import { en } from "@payloadcms/translations/languages/en";
+import { hu } from "@payloadcms/translations/languages/hu";
 import { Help } from "./collections/Help";
+import { Media } from "./collections/Media";
+import { PayoutPeriods } from "./collections/PayoutPeriods";
+import { Users } from "./collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -49,6 +50,7 @@ export default buildConfig({
     Permissions,
     Regulations,
     Help,
+    PayoutPeriods,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

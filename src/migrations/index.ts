@@ -13,6 +13,7 @@ import * as migration_20251009_174520_add_regulations_file_eng from './20251009_
 import * as migration_20251113_185415 from './20251113_185415';
 import * as migration_20260210_212659_add_payout_periods from './20260210_212659_add_payout_periods';
 import * as migration_20260210_215940_add_payout_periods_and_months from './20260210_215940_add_payout_periods_and_months';
+import * as migration_20260222_182719_clubs_collection from './20260222_182719_clubs_collection';
 
 export const migrations = [
   {
@@ -88,6 +89,11 @@ export const migrations = [
   {
     up: migration_20260210_215940_add_payout_periods_and_months.up,
     down: migration_20260210_215940_add_payout_periods_and_months.down,
-    name: '20260210_215940_add_payout_periods_and_months'
+    name: '20260210_215940_add_payout_periods_and_months',
+  },
+  {
+    up: migration_20260222_182719_clubs_collection.up,
+    down: migration_20260222_182719_clubs_collection.down,
+    name: '20260222_182719_clubs_collection'
   },
 ];

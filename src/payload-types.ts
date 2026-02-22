@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
+    clubs: Club;
     media: Media;
     representatives: Representative;
     reminders: Reminder;
@@ -88,6 +89,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    clubs: ClubsSelect<false> | ClubsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
     reminders: RemindersSelect<false> | RemindersSelect<true>;
@@ -163,6 +165,67 @@ export interface User {
       }[]
     | null;
   password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clubs".
+ */
+export interface Club {
+  id: number;
+  /**
+   * A klub neve
+   */
+  title: string;
+  description: {
+    text_hu: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    text_en: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  /**
+   * Cím vagy helyszín, pl.: Kármán Tódor Kollégium
+   */
+  location?: string | null;
+  /**
+   * Pl.: Hétfő és Csütörtök
+   */
+  openingHours?: string | null;
+  images: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  /**
+   * Megjelenítési sorrend (pl. 1 az első)
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -585,6 +648,10 @@ export interface PayloadLockedDocument {
         value: number | User;
       } | null)
     | ({
+        relationTo: 'clubs';
+        value: number | Club;
+      } | null)
+    | ({
         relationTo: 'media';
         value: number | Media;
       } | null)
@@ -695,6 +762,30 @@ export interface UsersSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clubs_select".
+ */
+export interface ClubsSelect<T extends boolean = true> {
+  title?: T;
+  description?:
+    | T
+    | {
+        text_hu?: T;
+        text_en?: T;
+      };
+  location?: T;
+  openingHours?: T;
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -3,7 +3,7 @@ import { DormitoryAdmissionInformationContent} from "./DormitoryAdmissionInforma
 import { ImageCard } from "@/components/common/ImageCard";
 
 
-export default function StudentUnionCardsComtainer({ content }: Readonly<{ content: DormitoryAdmissionInformationContent; }>) {
+export default function StudentUnionCardsContainer({ content }: Readonly<{ content: DormitoryAdmissionInformationContent; }>) {
     const faculties = content.faculties;
     const dimensions = {
         width: 62,

@@ -1,8 +1,8 @@
 "use client";
 
 import {PostBlock} from "@/components/common/PageBlock";
-import  DormitoryCardsComtainer  from "./DormitoryCardsComtainer";
-import  StudentUnionCardsComtainer  from "./StudentUnionCardsComtainer";
+import  DormitoryCardsComtainer  from "./DormitoryCardsContainer";
+import  StudentUnionCardsComtainer  from "./StudentUnionCardsContainer";
 
 export interface DormitoryAdmissionInformationContent {
     admission_information: {

@@ -3,7 +3,7 @@
 import { ImageCard } from "@/components/common/ImageCard";
 
 
-export default function DormitoryCardsComtainer({ dormitory} : Readonly<{ dormitory: string}>) {
+export default function DormitoryCardsContainer({ dormitory} : Readonly<{ dormitory: string}>) {
     const dimensions = {
         width: 60,
         height: 60

@@ -1,6 +1,7 @@
 import {JSX, ReactNode} from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageHeader } from '@/components/common/PageHeader';
+import { parseFormattedText } from '@/utils/emailKatt-felkover';
 
 interface SportpalyaTamogatasContentData {
   title: string;
@@ -30,68 +31,6 @@ interface SportpalyaTamogatasContentData {
   };
   
   footer: string;
-}
-
-function parseFormattedText(text: string) {
-  // Split by both patterns
-  const parts: (string | JSX.Element)[] = [];
-  let lastIndex = 0;
-  let match;
-  
-  // Combined regex to match both bold and email
-  const combinedRegex = /(\*\*.*?\*\*)|([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
-  
-  while ((match = combinedRegex.exec(text)) !== null) {
-    // Add text before match
-    if (match.index > lastIndex) {
-      parts.push(text.substring(lastIndex, match.index));
-    }
-    
-    // Check if it's bold text
-    if (match[0].startsWith('**')) {
-      const boldText = match[0].replace(/\*\*/g, '');
-      
-      // Check if bold text contains an email
-      const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
-      const emailMatch = emailRegex.exec(boldText);
-      
-      if (emailMatch) {
-        // Bold text with email inside
-        parts.push(
-          <a 
-            key={match.index}
-            href={`mailto:${emailMatch[0]}`}
-            className="text-[#862633] hover:underline font-bold"
-            >
-            {boldText}
-            </a>
-        );
-      } else {
-        // Just bold text
-        parts.push(<strong key={match.index} className="font-bold">{boldText}</strong>);
-      }
-    } else {
-      // Just email link (not bold)
-      parts.push(
-        <a 
-          key={match.index}
-          href={`mailto:${match[0]}`}
-          className="text-[#862633] hover:underline font-medium"
-        >
-          {match[0]}
-        </a>
-      );
-    }
-    
-    lastIndex = match.index + match[0].length;
-  }
-  
-  // Add remaining text
-  if (lastIndex < text.length) {
-    parts.push(text.substring(lastIndex));
-  }
-  
-  return parts.length > 0 ? parts : text;
 }
 
 export default function SportpalyaTamogatasContent({ content }: { content: SportpalyaTamogatasContentData }) {
@@ -193,7 +132,6 @@ export default function SportpalyaTamogatasContent({ content }: { content: Sport
         </CardContent>
       </Card>
       <p className="text-center text-sm text-gray-400 italic mt-4">{parseFormattedText(content.footer)}</p>
-
     </div>
   );
 };

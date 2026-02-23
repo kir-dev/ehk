@@ -1,7 +1,7 @@
-import {JSX, ReactNode} from 'react';
+import React, {JSX, ReactNode} from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageHeader } from '@/components/common/PageHeader';
-import { parseFormattedText } from '@/utils/emailKatt-felkover';
+import { parseFormattedText } from '@/utils/emailKatt-felkover'; //todo merge masik branchrol h letezzen a fuggveny
 
 interface SportpalyaTamogatasContentData {
   title: string;
@@ -87,11 +87,11 @@ export default function SportpalyaTamogatasContent({ content }: { content: Sport
               {content.condition.title}
             </h3>
             <p>{parseFormattedText(content.condition.intro)}</p>
-            <ul className="list-disc pl-5 space-y-1">
+            <ol className="list-disc pl-5 space-y-1">
               {content.condition.items.map((item, i) => (
                 <li key={i}>{parseFormattedText(item)}</li>
               ))}
-            </ul>
+            </ol>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
               {parseFormattedText(content.condition.outro)}
             </div>

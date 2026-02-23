@@ -148,6 +148,44 @@
       "eszb_website": "ESZB website"
     }
   },
+  "sport": {
+    "sportpalyaTamogatas": {
+      "title": "Sports Field Support Application",
+      "description": "The **Budapest University of Technology and Economics Physical Education Center** and the **University Student Council (EHK) ** are announcing a joint application to support the rental of a sports field for **BME student teams**. Our goal is to support regular sports activities among the university's citizens.",
+      "application": { 
+        "title": "Who can apply?",
+        "description": "Any team that has **at least 80%** of its members in the given semester as full-time students with an active student status at BME can participate in the competition." 
+      },
+      "period": { 
+        "title": "The Period and Location of the Support",
+        "items": ["The support applies to **a semester** (fall or spring semester) of the given academic year.", 
+        "You can apply not only for sports activities carried out at BME sports facilities (BME Sports Center, Bogdánfy Street Sports Complex, Kármán Tódor Dormitory, Bercsényi 28-30 Dormitory)."] 
+      },
+      "condition": { 
+        "title": "Application Conditions and Submission",
+        "intro": "An application is valid if the team:",
+        "items": ["Complete and submit the **member list** published as an attachment to the application on time.", 
+        "Complete and submit **the application form attached** to the application on time."],
+        "outro": "The application is submitted **electronically**, and the completed attachments must be sent to the email address **info@bmeehk.hu** by the deadline set in the schedule published on the EHK website."
+      },
+      "selection": { 
+        "title": "Judging Criteria",
+        "description": "The applications are evaluated by the BME Physical Education Center in cooperation with the Hungarian Academy of Sciences. The main criteria are:",
+        "items": ["The team should regularly mobilize **as many people as possible** with the support required.", 
+        "The team's **achievements in the last 2 years**.",
+        "The **proportion of full-time, active BME students** in the team."] 
+      },
+      "result": { 
+        "title": "Result and Remedy",
+        "items": ["The EHK will publish the final result **on its website** by the deadline set in the application schedule.", 
+        "We are unable to accept applications that do not comply with the announcement (in terms of form or content) or that are submitted after the deadline.",
+        "In the event of an application with false content, the team may be punished by exclusion and disciplinary proceedings may also be initiated.",
+        "Questions about the application and any intention to object to the evaluation can be sent to the e-mail address **info@bmeehk.hu**."
+  ] 
+      },
+      "footer": "*Exact information is always included in the application announced for the given semester."
+    }
+  },
   "language_education": {
     "title": "Language Education",
     "info_box": {

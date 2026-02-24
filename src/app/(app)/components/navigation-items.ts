@@ -154,12 +154,12 @@ export function getNavigationItems(lang: string): NavigationItem[] {
             "Sportpálya támogatás pályázat",
             "Sports field subsidy application"
           ),
-          href: "#",
+          href: link("/sport/sportpalya-tamogatas-palyazat"),
           targetBlank: false,
         },
         {
           label: t("Sportterem igénylés", "Gym booking request"),
-          href: "#",
+          href: link("/sport/sportterem-igenyles"),
           targetBlank: false,
         },
         {

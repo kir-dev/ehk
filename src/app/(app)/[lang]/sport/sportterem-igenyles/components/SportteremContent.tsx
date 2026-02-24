@@ -1,7 +1,7 @@
 import {JSX, ReactNode} from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageHeader } from '@/components/common/PageHeader';
-import { parseFormattedText } from '@/utils/emailKatt-felkover';
+import { parseFormattedText } from '@/utils/parseFormattedText';
 
 interface SportteremContentData {
   title: string;
@@ -50,7 +50,6 @@ interface SportteremContentData {
 export default function SportteremContent({ content }: { content: SportteremContentData }) {
   return (
     <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
-      <PageHeader title={content.title} />
 
       {/* Introduction */}
       <Card className="group hover:shadow-md transition-all duration-300">

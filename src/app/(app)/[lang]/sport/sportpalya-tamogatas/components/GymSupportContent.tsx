@@ -1,6 +1,5 @@
 import React, {ReactNode} from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { PageHeader } from '@/components/common/PageHeader';
 import { parseFormattedText } from '@/utils/parseFormattedText'; 
 
 interface SportpalyaTamogatasContentData {
@@ -36,8 +35,6 @@ interface SportpalyaTamogatasContentData {
 export default function SportpalyaTamogatasContent({ content }: { content: SportpalyaTamogatasContentData }) {
   return (
     <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
-      <PageHeader title={content.title} />
-
       {/* Introduction */}
       <Card className="group hover:shadow-md transition-all duration-300">
         <CardContent className="p-3 md:p-6">
@@ -87,9 +84,9 @@ export default function SportpalyaTamogatasContent({ content }: { content: Sport
               {content.condition.title}
             </h3>
             <p>{parseFormattedText(content.condition.intro)}</p>
-            <ol className="list-disc pl-5 space-y-1">
+            <ol className="list-decimal pl-5 space-y-1">
               {content.condition.items.map((item, i) => (
-                <li key={i}>{parseFormattedText(item)}</li>
+              <li key={i}>{parseFormattedText(item)}</li>
               ))}
             </ol>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">

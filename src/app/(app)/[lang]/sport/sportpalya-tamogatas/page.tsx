@@ -1,6 +1,7 @@
 import { getDictionary } from '@/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import GymSupportContent from './components/GymSupportContent';
+import { PageHeader } from '@/components/common/PageHeader';
 type SportpalyaTamogatasPageProps = {
   params: Promise<{ lang: Locale }>;
 };
@@ -12,11 +13,10 @@ export default async function SportpalyaTamogatasPage({
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <main className="container mx-auto py-10 px-4">
+          <PageHeader title={dictionary.sport.sportpalyaTamogatas.title} />
           <GymSupportContent 
             content={dictionary.sport.sportpalyaTamogatas} 
           />
-        </main>
       </div>
     </div>
   );

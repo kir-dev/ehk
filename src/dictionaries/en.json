@@ -281,7 +281,7 @@
   
     "sportpalyaTamogatas": {
       "title": "Sports Field Support Application",
-      "description": "The **Budapest University of Technology and Economics Physical Education Center** and the **University Student Council (EHK) ** are announcing a joint application to support the rental of a sports field for **BME student teams**. Our goal is to support regular sports activities among the university's citizens.",
+      "description": "The **Budapest University of Technology and Economics Physical Education Center** and the **University Student Council (EHK)** are announcing a joint application to support the rental of a sports field for **BME student teams**. Our goal is to support regular sports activities among the university's citizens.",
       "application": { 
         "title": "Who can apply?",
         "description": "Any team that has **at least 80%** of its members in the given semester as full-time students with an active student status at BME can participate in the competition." 
@@ -289,7 +289,7 @@
       "period": { 
         "title": "The Period and Location of the Support",
         "items": ["The support applies to **a semester** (fall or spring semester) of the given academic year.", 
-        "You can apply not only for sports activities carried out at BME sports facilities (BME Sports Center, Bogdánfy Street Sports Complex, Kármán Tódor Dormitory, Bercsényi 28-30 Dormitory)."] 
+        "You can apply not only for sports activities carried out at BME sports facilities (BME Sports Center, Bogdánfy Street Sports Complex, Kármán Tódor Dormitory, Bercsényi 28-30 Dormitory), but also for sports activities held at other external venues."] 
       },
       "condition": { 
         "title": "Application Conditions and Submission",
@@ -300,7 +300,7 @@
       },
       "selection": { 
         "title": "Judging Criteria",
-        "description": "The applications are evaluated by the BME Physical Education Center in cooperation with the Hungarian Academy of Sciences. The main criteria are:",
+        "description": "The applications are evaluated by the BME Physical Education Center in cooperation with the University Student Council (EHK). The main criteria are:",
         "items": ["The team should regularly mobilize **as many people as possible** with the support required.", 
         "The team's **achievements in the last 2 years**.",
         "The **proportion of full-time, active BME students** in the team."] 

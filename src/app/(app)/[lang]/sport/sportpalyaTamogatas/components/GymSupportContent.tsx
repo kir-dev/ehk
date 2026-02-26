@@ -1,7 +1,7 @@
-import React, {JSX, ReactNode} from 'react';
+import React, {ReactNode} from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageHeader } from '@/components/common/PageHeader';
-import { parseFormattedText } from '@/utils/emailKatt-felkover'; //todo merge masik branchrol h letezzen a fuggveny
+import { parseFormattedText } from '@/utils/parseFormattedText'; 
 
 interface SportpalyaTamogatasContentData {
   title: string;

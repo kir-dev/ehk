@@ -1,6 +1,5 @@
 import { getDictionary } from '@/get-dictionary';
 import type { Locale } from '@/i18n-config';
-import { PageHeader } from '@/components/common/PageHeader';
 import GymSupportContent from './components/GymSupportContent';
 type SportpalyaTamogatasPageProps = {
   params: Promise<{ lang: Locale }>;

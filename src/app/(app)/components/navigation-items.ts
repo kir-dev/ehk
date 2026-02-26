@@ -105,7 +105,12 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("EHK ösztöndíjak", "EHK scholarships"),
-          href: "#",
+          href: link("/ehk-osztondij"),
+          targetBlank: false,
+        },
+        {
+          label: t("Kifizetési időpontok", "Payout dates"),
+          href: link("/kifizetesi-idopontok"),
           targetBlank: false,
         },
         {
@@ -154,7 +159,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Sportterem igénylés", "Gym booking request"),
-          href: "#",
+          href: link("/sport/sportterem-igenyles"),
           targetBlank: false,
         },
         {

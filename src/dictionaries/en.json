@@ -7,7 +7,9 @@
     "download": "Download",
     "search": "Search...",
     "close": "Close",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "questions": "Any questions?",
+    "contact_aria_label": "Send email to info@bmeehk.hu"
   },
   "regulations": {
     "title_academic": "Academic Regulations",
@@ -146,9 +148,137 @@
       },
       "more_info": "For more information, please visit the website of the University Social Committee (ESZB): ",
       "eszb_website": "ESZB website"
+    },
+    "ehk": {
+      "title" : "EHK scholarships",
+      "items": [
+        {
+          "title": "University Student Union Scholarship",
+          "paragraphs": [
+            "Members of the University Student Union are rewarded through this scholarship for carrying out the tasks defined in the Rules and Regulations of the BME Students’ and Doctoral Students’ Union. Reports submitted by the representatives are published on the website of the University Student Union."
+          ]
+        },
+        {
+          "title": "University Doctoral Student Union Scholarship",
+          "paragraphs": [
+            "Members of the University Doctoral Student Union are rewarded through this scholarship for carrying out the tasks defined in the Rules and Regulations of the BME Students’ and Doctoral Students’ Union. Reports submitted by the representatives are published on the website of the University Doctoral Student Union."
+          ]
+        },
+        {
+          "title": "University BME Scholarship",
+          "paragraphs": [
+            "The University BME Scholarship is one of the highest-level recognitions based on professional and scientific achievements that go beyond the requirements defined in the model curricula. Through this scholarship, the University Student Union rewards the most outstanding students who achieved exceptional professional or scientific results during the previous semester."
+          ]
+        },
+        {
+          "title": "National Higher Education Scholarship",
+          "paragraphs": [
+            "For students with outstanding academic results and exceptional professional achievements, the minister responsible for higher education awards the National Higher Education Scholarship for the duration of one academic year. The procedure and details of the evaluation are defined by the Rector’s Instruction issued for the given year."
+          ]
+        },
+        {
+          "title": "University Public Life Scholarship",
+          "paragraphs": [
+            "The University Public Life Scholarship is intended for students who carry out public life activities supporting the work of the University Student Union, such as assisting in the organization of events."
+          ]
+        },
+        {
+          "title": "University Community Scholarship",
+          "paragraphs": [
+            "The University Community Scholarship is intended for students who actively participate in community life at BME. Applications may be submitted for activities carried out in university self-organizing student groups and colleges for advanced studies, in the BME Racing Teams Community, or in the Student International Relations Committee. The aim of the scholarship is to recognize students who create value at the university through their community work alongside their studies."
+          ]
+        },
+        {
+          "title": "Sports Scholarship",
+          "paragraphs": [
+            "Within the framework of the Sports Scholarship, the University Student Union rewards students who, in addition to physical education classes and their university studies, have demonstrated outstanding athletic performance."
+          ]
+        },
+        {
+          "title": "BME “Good Student, Good Athlete” Scholarship",
+          "paragraphs": [
+            "The “Good Student, Good Athlete” Scholarship not only rewards outstanding athletic performance but also takes into account successful academic achievements alongside competitive sports activities. To submit a valid application, the student’s credit index must reach a value of 3.00."
+          ]
+        },
+        {
+          "title": "Scientific Students’ Conference Scholarship",
+          "paragraphs": [
+            "The aim of the scholarship is to recognize outstanding work performed at the Scientific Students’ Conference. Students may apply if they participated in the Scientific Students’ Conference organized at BME and achieved 1st, 2nd or 3rd place, or received a special prize or commendation."
+          ]
+        }
+      ]
     }
   },
+
   "sport": {
+    "sportterem": {
+      "title": "Gym Application Information",
+      "description": "The **Sport Division of the Budapest University of Technology and Economics (BME)** and the **University Student Representative Council (EHK)** provide an opportunity for sports teams and groups of friends to train in the university's sports facilities at a discounted rate."
+      ,
+      "facilities": {
+        "title": "Available Sports Facilities",
+        "items": [
+          "**BME Sports Center** (Bertalan Lajos street 4-6, Building ÉL) rooms.",
+          "**Dormitory gyms:** Kármán Tódor Dormitory and Bercsényi 28-30 Dormitory gyms."
+        ]
+      },
+      "conditions": {
+        "title": "Conditions for Discounted Rental",
+        "description": "Discounted gym rental is available if **80% of the applying team has active full-time student status** at BME in the given semester."
+      },
+      "process": {
+        "title": "Application Process and Deadlines",
+        "description": "Applications can be submitted via the specified online form. Completed member lists should be sent via email to **bmesport@umsz.bme.hu** by the deadline specified in the call for applications.",
+        "warning": "**Important!** Incomplete applications or those received after the deadline cannot be accepted."
+      },
+      "requiredData": {
+        "title": "Required Data for Application",
+        "intro": "When submitting an application, teams must provide:",
+        "items": [
+          "Team name, Sport",
+          "Team leader's name and contact details (responsible for the team within university sports facilities)",
+          "Team roster, indicating members with active BME student status",
+          "Which gym(s) the team wishes to use",
+          "How many times a week the team would train",
+          "Which days and time slots are suitable for the team",
+          "The team's top 3 results from the last 2 years (if applicable)"
+        ]
+      },
+      "selection": {
+        "title": "Evaluation and Priority",
+        "intro": "The applications are assessed by the Sports Division of BME Operating and Technical Service Ltd., with the approval of the EHK. **In case of oversubscription**, the evaluation committee prioritizes teams based on the following criteria:",
+        "items": [
+          "Teams containing the highest number of **active BME students**.",
+          "Teams with **better results** in sports competitions."
+        ],
+        "warning": "**Important!** There is no possibility to appeal the results of the gym scheduling."
+      },
+      "usage": {
+        "title": "Information on Rental and Usage",
+        "items": [
+          "**Gym Scheduling:** The final schedule will be available on the date specified in the announcement. All applicants will be notified via email.",
+          "**Athletes’ Circle:** Only individuals included on the list submitted during the application process are permitted to play during the assigned time slot. Always carry a photo ID when attending. If an unregistered person is found playing with the team, the team will lose its right to use the facility, and there is no obligation to refund the prepaid rental fee. The roster may be modified slightly during the semester, provided the Sport Division is notified in advance at **bmesport@umsz.bme.hu**.",
+          "**Footwear:** Access to the sports courts is permitted only in **non-marking sports shoes with light-colored soles**.",
+          "**House Rules:** Compliance with the facility's House Rules is mandatory.",
+          "**Dormitory Key Holders:** Teams wishing to use dormitory gyms must designate a maximum of 4 'Key Holders' on their member list. Only these individuals are authorized to pick up keys at the dormitory receptions.",
+          "**Kármán/Bercsényi Gyms:** The Kármán gym is primarily intended for training-style bookings. It is recommended to schedule matches or match-oriented training sessions in the Bercsényi gym."
+        ]
+      },
+      "costs": {
+        "title": "Rental Fees (For Information Only)",
+        "description": "BME students can use the sports facilities at a discount. Rental fees must be paid to the Sport Division.",
+        "items": [
+          "**Dormitory Gyms:** Different hourly rates for peak and off-peak hours.",
+          "**BME Sports Center:** Prices may increase in tiers depending on the number of participants."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "In case of questions: **bmesport@umsz.bme.hu**"
+      },
+      "footer": "*Accurate information is always contained in the call for applications published for the specific semester."
+    },
+  
     "sportpalyaTamogatas": {
       "title": "Sports Field Support Application",
       "description": "The **Budapest University of Technology and Economics Physical Education Center** and the **University Student Council (EHK) ** are announcing a joint application to support the rental of a sports field for **BME student teams**. Our goal is to support regular sports activities among the university's citizens.",
@@ -181,7 +311,7 @@
         "We are unable to accept applications that do not comply with the announcement (in terms of form or content) or that are submitted after the deadline.",
         "In the event of an application with false content, the team may be punished by exclusion and disciplinary proceedings may also be initiated.",
         "Questions about the application and any intention to object to the evaluation can be sent to the e-mail address **info@bmeehk.hu**."
-  ] 
+        ] 
       },
       "footer": "*Exact information is always included in the application announced for the given semester."
     }
@@ -205,5 +335,58 @@
     "GTK": "Faculty of Economic and Social Sciences",
     "TTK": "Faculty of Natural Sciences",
     "KJK": "Faculty of Transportation Engineering and Vehicle Engineering"
+  },
+
+  "payouts": {
+    "title": "Payout Information",
+    "intro_text": "The scholarship payout dates for the {title} academic year are as follows:",
+    "autumn_semester": "Payout dates {title} Autumn",
+    "spring_semester": "Payout dates {title} Spring",
+    "table_header_name": "Month",
+    "table_header_date": "Payout Date",
+    "important_todo_title": "Important To-Dos Before Payout",
+    "important_todo_p1": "To ensure successful scholarship payout, you must register your bank account number in Neptun in time; otherwise, the transfer cannot be completed.",
+    "important_todo_p2": "Steps to register your bank account: Neptun → Finances → Settings → Bank accounts → Add bank account number.",
+    "important_todo_p3": "Additionally, a permanent address registered in Neptun is required for the payout.",
+    "important_todo_p4": "If you do not register the necessary data by the third payout attempt, the University is not obliged to initiate another transfer until you notify them that you have corrected the deficiencies.",
+    "wrong_transfer_title": "To-Dos in Case of Incorrect Transfer or Termination of Student Status",
+    "wrong_transfer_p1": "In the event of an incorrect transfer, you must repay the incorrectly paid amount to the University within 15 days. The same applies upon termination of student status, change of work schedule, or termination of scholarship eligibility; any necessary repayment must be settled within 15 days following the change.",
+    "check_mueper" : "The specific payout date for the applied scholarship is always contained in the call for applications available on the MŰEPER interface.",
+    "no_active_period": "No active payout period at the moment."
+  },
+  "footer": {
+    "contact": {
+      "title": "CONTACT",
+      "university": "Budapest University of Technology and Economics",
+      "ehk": "University Student Council",
+      "address_label": "Address:",
+      "address_value": "1111 Bp., Műegyetem rkp. 7-9. Bldg. R, 2.07.",
+      "emails_label": "Email addresses:",
+      "office_hours_label": "Office hours:",
+      "study_period": "Study period:",
+      "exam_period": "Exam period:",
+      "weekdays_10_14": "weekdays 10:00–14:00",
+      "weekdays_11_13": "weekdays 11:00–13:00"
+    },
+    "faculty_representation": {
+      "title": "FACULTY STUDENT REPRESENTATIONS",
+      "emk": "ÉMK - FACULTY STUDENT REPRESENTATION",
+      "gpk": "GPK - FACULTY STUDENT REPRESENTATION",
+      "epk": "ÉPK - FACULTY STUDENT REPRESENTATION",
+      "vbk": "VBK - FACULTY STUDENT REPRESENTATION",
+      "vik": "VIK - FACULTY STUDENT REPRESENTATION",
+      "kjk": "KJK - FACULTY STUDENT REPRESENTATION",
+      "ttk": "TTK - FACULTY STUDENT REPRESENTATION",
+      "gtk": "GTK - FACULTY STUDENT REPRESENTATION"
+    },
+    "university_pages": {
+      "title": "UNIVERSITY PAGES",
+      "phonebook": "BME Phonebook",
+      "sales_directorate": "Directorate of Sales and Services",
+      "academic_office": "Central Academic Office",
+      "misz": "MISZ University Student Cooperative",
+      "szkene": "Szkéné Theatre"
+    },
+    "logo_alt": "BME Logo"
   }
 }

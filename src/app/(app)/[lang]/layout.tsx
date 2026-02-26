@@ -1,5 +1,6 @@
 import Footer from "@/app/(app)/components/Footer";
 import Navbar from "@/app/(app)/components/navbar";
+import { ContactBubble } from "@/components/common/ContactBubble";
 import { LanguageProvider } from "@/components/common/LanguageProvider";
 import { getDictionary } from "@/get-dictionary";
 import { i18n } from "@/i18n-config";
@@ -31,9 +32,14 @@ export default async function RootLayout({
     <html lang={validLang}>
       <body>
         <LanguageProvider defaultLang={validLang.toUpperCase() as "HU" | "EN"} dictionary={dictionary}>
-          <Navbar />
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+          </div>
           <Footer />
+          <ContactBubble />
         </LanguageProvider>
       </body>
     </html>

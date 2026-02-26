@@ -43,8 +43,8 @@ export default function ImageViewer({ images = [] }: ImageViewerProps) {
     }
 
     return (
-        <div className="max-w-screen mx-auto pt-4">
-            <div className="relative bg-transparent rounded-lg overflow-hidden w-full">
+        <div className="max-w-screen mx-auto">
+            <div className="relative bg-transparent overflow-hidden w-full">
                 {/* Main Image Container */}
                 <div className="relative w-full aspect-10/3">
                     {/* Keep the aspect ratio of the upoaded image approximately 30/9=10/3 to ensure best appearence*/}

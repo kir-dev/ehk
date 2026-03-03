@@ -169,6 +169,15 @@
     .hover\:bg-ehk-light-red:hover { background-color: var(--ehk-light-red); }
     .hover\:text-ehk-light-red:hover { color: var(--ehk-light-red); }
     .hover\:border-ehk-light-red:hover { border-color: var(--ehk-light-red); }
+
+    /*Global word break and hyphenation*/
+    /*Can be locally overridden by 'hypens-none' tailwind class for specific elements if needed*/
+    /*This code is placed here, in the utilites layer, because of CSS displaying priorities*/
+
+    p, h1, h2, h3, h4, h5, h6, li, a, span, div, button, input, textarea{
+      word-break: break-word;
+      hyphens: auto;
+}
 }
 
     @layer base {

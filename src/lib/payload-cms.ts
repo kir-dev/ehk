@@ -184,6 +184,7 @@ export async function getClubs() {
     collection: "clubs",
     limit: 1000,
     sort: "order",
+    depth: 1,
   });
 
   return clubs.docs as Club[];

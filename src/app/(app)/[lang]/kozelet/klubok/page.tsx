@@ -5,10 +5,21 @@ import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getClubs } from "@/lib/payload-cms";
 import { Media } from "@/payload-types";
+import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { Clock, ExternalLink, MapPin } from "lucide-react";
 import Image from "next/image";
 import { ClubsEmptyState } from "./components/ClubsEmptyState";
+
+function isValidUrl(url: string | null | undefined): boolean {
+  if (!url) return false;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "http:" || parsed.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
 
 export default async function KlubokPage({
   params,
@@ -52,13 +63,14 @@ export default async function KlubokPage({
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
           {clubs.map((club) => {
-            const coverImage = club.image as Media;
+            // Safe check for the populated relation (it might occasionally be an ID or null)
+            const coverImage = typeof club.image === "object" && club.image !== null ? (club.image as Media) : null;
             const openingHoursData = club.openingHours?.[`text_${lang}`];
             const descriptionData = club.description?.[`text_${lang}`];
 
             const cardContent = (
               <Card className="group overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow bg-white">
-                {coverImage ? (
+                {coverImage?.url ? (
                   <div className="relative h-48 w-full bg-slate-100">
                     <Image
                       src={coverImage.url || ""}
@@ -78,7 +90,7 @@ export default async function KlubokPage({
                     <CardTitle className="text-2xl group-hover:text-ehk-dark-red transition-colors">
                       {club.title}
                     </CardTitle>
-                    {club.link ? (
+                    {club.link && isValidUrl(club.link) ? (
                       <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-ehk-dark-red transition-colors shrink-0 mt-1" />
                     ) : null}
                   </div>
@@ -95,8 +107,7 @@ export default async function KlubokPage({
                         <div className="flex items-start gap-2">
                           <Clock className="h-4 w-4 mt-0.5 shrink-0" />
                           <div className="prose prose-sm max-w-none dark:prose-invert leading-tight">
-                            {/* eslint-disable @typescript-eslint/no-explicit-any */}
-                            <RichText data={openingHoursData as any} />
+                            <RichText data={openingHoursData as unknown as SerializedEditorState} />
                           </div>
                         </div>
                       ) : null}
@@ -109,10 +120,7 @@ export default async function KlubokPage({
                     <>
                       <Separator className="mb-4" />
                       <div className="prose dark:prose-invert prose-sm max-w-none">
-                        <RichText
-                          /* eslint-disable @typescript-eslint/no-explicit-any */
-                          data={descriptionData as any}
-                        />
+                        <RichText data={descriptionData as unknown as SerializedEditorState} />
                       </div>
                     </>
                   ) : null}
@@ -122,7 +130,7 @@ export default async function KlubokPage({
 
             return (
               <div key={club.id} className="h-full">
-                {club.link ? (
+                {club.link && isValidUrl(club.link) ? (
                   <a 
                     href={club.link} 
                     target="_blank" 

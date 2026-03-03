@@ -11,7 +11,6 @@ export function ClubsEmptyState({ title }: ClubsEmptyStateProps) {
   return (
     <EmptyState
       title={title}
-      description=""
       icon={PartyPopper}
       iconClassName="text-ehk-dark-red"
     />

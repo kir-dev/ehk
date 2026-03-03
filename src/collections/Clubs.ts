@@ -114,7 +114,19 @@ export const Clubs: CollectionConfig = {
       type: 'text',
       required: false,
       admin: {
-        description: 'Opcionális link a klub weboldalához vagy közösségi oldalához',
+        description: 'Opcionális link a klub weboldalához vagy közösségi oldalához. Csak érvényes HTTP vagy HTTPS URL megengedett.',
+      },
+      validate: (val: string | null | undefined) => {
+        if (!val) return true; // Optional field
+        try {
+          const parsed = new URL(val);
+          if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+            return 'A linknek érvényes HTTP vagy HTTPS URL-nek kell lennie (pl. https://example.com).';
+          }
+          return true;
+        } catch {
+          return 'Érvénytelen URL formátum.';
+        }
       },
     },
   ],

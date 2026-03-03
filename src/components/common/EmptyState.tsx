@@ -5,7 +5,7 @@ import { FileText, LucideIcon } from "lucide-react";
 
 interface EmptyStateProps {
   title: string;
-  description: string;
+  description?: string;
   icon?: LucideIcon;
   iconClassName?: string;
 }
@@ -23,7 +23,7 @@ export function EmptyState({
         <Icon className={cn("h-8 w-8 text-gray-400", iconClassName)} />
       </div>
       <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      {description && <p className="text-gray-600">{description}</p>}
     </div>
   );
 }

@@ -154,7 +154,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
             "Sportpálya támogatás pályázat",
             "Sports field subsidy application"
           ),
-          href: link("/sport/sportpalya-tamogatas-palyazat"),
+          href: link("/sport/sportpalya-tamogatas"),
           targetBlank: false,
         },
         {

@@ -277,9 +277,44 @@
         "description": "Bármilyen felmerülő kérdéssel forduljanak a BME Üzemeltető és Műszaki Szolgáltató Kft. (BME ÜMSZ Kft.) Sport Divíziójához a **bmesport@umsz.bme.hu** e-mail címen."
       },
       "footer": "*A pontos információkat mindig az adott félévben kiírt pályázat tartalmazza."
+    },
+    
+    "sportpalyaTamogatas": {
+      "title": "Sportpálya Támogatás Pályázat",
+      "description": "A **Budapesti Műszaki és Gazdaságtudományi Egyetem Testnevelési Központ** és az **Egyetemi Hallgatói Képviselet (EHK)** közös pályázatot hirdet a **BME hallgatói csapatok** sportpálya bérlésének támogatására. Célunk, hogy támogassuk a rendszeres sporttevékenységet az egyetem polgárai körében.",
+      "application": { 
+        "title": "Kik Pályázhatnak?",
+        "description": "Pályázaton részt vehet minden olyan csapat, amelynek **legalább 80%-a** az adott félévben, a BME nappali tagozatos, aktív hallgatói jogviszonnyal rendelkező hallgatója." 
+      },
+      "period": { 
+        "title": "A Támogatás Időszaka és Helyszíne",
+        "items": ["A támogatás az adott tanév **egy szemeszterére** (őszi vagy tavaszi félév) vonatkozik.", 
+        "Pályázni nem csak a BME sportlétesítményeiben (BME Sportközpont, Bogdánfy utcai Sporttelep, Kármán Tódor Kollégium, Bercsényi 28-30 Kollégium) végzett sporttevékenységgel lehet."] 
+      },
+      "condition": { 
+        "title": "Pályázati Feltételek és Benyújtás",
+        "intro": "A pályázat akkor érvényes, ha a csapat:",
+        "items": ["Hiánytalanul kitölti és időben elküldi a pályázat mellékleteként közzétett **taglistát**.", 
+        "Hiánytalanul kitölti és időben elküldi a pályázat mellékleteként közzétett **igénylőlapot.**"],
+        "outro": "A pályázás **elektronikus formában** történik, a kitöltött mellékleteket az EHK honlapján közzétett ütemezésben rögzített időpontig kell elküldeni az **info@bmeehk.hu** e-mail címre."
+      },
+      "selection": { 
+        "title": "Bírálási Szempontok",
+        "description": "A pályázatok elbírálását a BME Testnevelési Központ az EHK-val együttműködésben végzi. A legfőbb szempontok:",
+        "items": ["A csapat **minél több embert mozgasson meg rendszeresen** az igényelt támogatás segítségével.", 
+        "A csapat **elért eredményei az elmúlt 2 évben**.",
+        "A **BME nappali tagozatos, aktív hallgatói aránya** a csapatban."] 
+      },
+      "result": { 
+        "title": "Eredmény és Jogorvoslat",
+        "items": ["A végleges eredményt az EHK a pályázati ütemezésben rögzített határidőig a **saját honlapján** teszi közzé.", 
+        "A kiírásnak (formai vagy tartalmi) meg nem felelő, vagy a határidő után benyújtott pályázatokat nem áll módunkban elfogadni.",
+        "Valótlan tartalmú pályázat esetén a csapat kizárással büntethető, és fegyelmi eljárás is kezdeményezhető.",
+        "A pályázattal kapcsolatos kérdéseket és a felszólalási szándékot az elbírálás ellen az **info@bmeehk.hu** e-mail címen lehet jelezni."] 
+      },
+      "footer": "*A pontos információkat mindig az adott félévben kiírt pályázat tartalmazza."
     }
   },
-
   "language_education": {
     "title": "Nyelvoktatás",
     "info_box": {

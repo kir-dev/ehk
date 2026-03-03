@@ -405,5 +405,13 @@
       "szkene": "Szkéné Theatre"
     },
     "logo_alt": "BME Logo"
+  },
+  "clubs": {
+    "title": "BME Dormitory Community Life",
+    "subtitle": "Scene: Clubs and Venues",
+    "description": "BME dormitories provide not only accommodation but also serve as key venues for student community life and entertainment. Below are the clubs and bars organized or operated by students, which are the centers of vibrant nightlife.",
+    "location": "Location:",
+    "opening_hours": "Opening hours:",
+    "no_results": "There are no active clubs at the moment"
   }
 }

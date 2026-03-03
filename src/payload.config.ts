@@ -7,6 +7,7 @@ import { buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 
+import { Clubs } from "@/collections/Clubs";
 import { Decisions } from "@/collections/Decisions";
 import { Events } from "@/collections/Events";
 import { HeroImages } from "@/collections/HeroImages";
@@ -39,6 +40,7 @@ export default buildConfig({
   },
   collections: [
     Users,
+    Clubs,
     Media,
     Representatives,
     Reminders,
@@ -58,7 +60,7 @@ export default buildConfig({
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: postgresAdapter({
-    push: false,
+    // push: false,
     pool: {
       connectionString:
         process.env.DATABASE_URI ?? process.env.DATABASE_URL ?? "",

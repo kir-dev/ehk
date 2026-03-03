@@ -404,5 +404,13 @@
       "szkene": "Szkéné színház"
     },
     "logo_alt": "BME Logó"
+  },
+  "clubs": {
+    "title": "A BME Kollégiumi Közösségi Élet",
+    "subtitle": "Színtér: Klubok és Szórakozóhelyek",
+    "description": "A BME kollégiumai nem csupán szállást biztosítanak, hanem a hallgatói közösségi élet és szórakozás meghatározó helyszínei is. Az alábbiakban a diákok által szervezett vagy üzemeltetett klubok és bárok kerülnek bemutatásra, amelyek a pezsgő éjszakai élet központjai.",
+    "location": "Helyszín:",
+    "opening_hours": "Nyitvatartás:",
+    "no_results": "Jelenleg nincsenek aktív klubok"
   }
 }

@@ -1,4 +1,5 @@
 import {
+    Club,
     Decision,
     Event,
     Help,
@@ -175,4 +176,16 @@ export async function getActivePayoutPeriod() {
   });
 
   return payoutPeriods.docs[0];
+}
+
+export async function getClubs() {
+  const payload = await getPayload({ config });
+  const clubs = await payload.find({
+    collection: "clubs",
+    limit: 1000,
+    sort: "order",
+    depth: 1,
+  });
+
+  return clubs.docs as Club[];
 }

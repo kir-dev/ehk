@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/common/PageHeader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getClubs } from "@/lib/payload-cms";
@@ -41,7 +42,7 @@ export default async function KlubokPage({
       <div className="container mx-auto px-4 py-8">
         <PageHeader title={title} />
 
-        <Card className="max-w-4xl mx-auto mb-12 bg-white/50 backdrop-blur-sm border-slate-200/60 shadow-sm">
+        <Card className="mx-auto mb-12 bg-white/50 backdrop-blur-sm border-slate-200/60 shadow-sm">
           <CardContent>
             <p className="text-gray-700 leading-relaxed text-center text-lg">
               {dictionary.clubs.description}
@@ -104,14 +105,17 @@ export default async function KlubokPage({
                 </CardHeader>
 
                 <CardContent className="flex-1 text-muted-foreground">
-                  <div className="prose dark:prose-invert prose-sm max-w-none">
-                    {descriptionData ? (
-                      <RichText
-                        /* eslint-disable @typescript-eslint/no-explicit-any */
-                        data={descriptionData as any}
-                      />
-                    ) : null}
-                  </div>
+                  {descriptionData ? (
+                    <>
+                      <Separator className="mb-4" />
+                      <div className="prose dark:prose-invert prose-sm max-w-none">
+                        <RichText
+                          /* eslint-disable @typescript-eslint/no-explicit-any */
+                          data={descriptionData as any}
+                        />
+                      </div>
+                    </>
+                  ) : null}
                 </CardContent>
               </Card>
             );

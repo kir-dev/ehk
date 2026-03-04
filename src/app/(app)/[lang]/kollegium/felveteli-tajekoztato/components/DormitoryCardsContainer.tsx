@@ -28,12 +28,12 @@ export default function DormitoryCardsContainer({ dormitory, linkOrRoute} : Read
     const schonherz = {
         imageSrc: imageFolder+"schonherz.jpg",
         title: "Schönherz "+dormitory,
-        href: linkOrRoute === "link" ? "https://sch.bme.hu/" : "/kollegium/kollegium-bemutato/schonherz"
+        href: linkOrRoute === "link" ? "https://sch.bme.hu/" : "/kollegium/kollegium-bemutato/sch"
     }
     const vasarhelyi = {
         imageSrc: imageFolder+"vasarhelyi.jpg",
         title: "Vásárhelyi Pál "+dormitory,
-        href: linkOrRoute === "link" ? "https://vpk.bme.hu/" : "/kollegium/kollegium-bemutato/vasarhelyi",
+        href: linkOrRoute === "link" ? "https://vpk.bme.hu/" : "/kollegium/kollegium-bemutato/vpk",
     }
     const wigner = {
         imageSrc: imageFolder+"wigner.jpg",

@@ -414,5 +414,38 @@
     "location": "Location:",
     "opening_hours": "Opening hours:",
     "no_results": "There are no active clubs at the moment"
+  },
+  "dormitory_details": {
+    "back_button": "Back to Dormitories",
+    "images_title": "Image Gallery",
+    "no_images": "There are currently no images uploaded for this dormitory.",
+    "baross": {
+      "title": "Baross Gábor Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "bercsenyi": {
+      "title": "Bercsényi 28-30 Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "karman": {
+      "title": "Kármán Tódor Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "martos": {
+      "title": "Martos Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "sch": {
+      "title": "Schönherz Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "vpk": {
+      "title": "Vásárhelyi Pál Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "wigner": {
+      "title": "Wigner Jenő Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    }
   }
 }

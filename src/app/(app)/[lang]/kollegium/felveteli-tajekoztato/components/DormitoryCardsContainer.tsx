@@ -3,42 +3,42 @@
 import { ImageCard } from "@/components/common/ImageCard";
 
 
-export default function DormitoryCardsContainer({ dormitory} : Readonly<{ dormitory: string}>) {
+export default function DormitoryCardsContainer({ dormitory, linkOrRoute} : Readonly<{ dormitory: string, linkOrRoute: "link" | "route"}>) {
     const imageFolder = "/kolik/"
     const baross = {
         imageSrc: imageFolder+"baross.jpg",
         title: "Baross Gábor "+dormitory,
-        href: "https://epiteszhk.bme.hu/kollegium/kollegiumaink/baross-gabor-kollegium/"
+        href: linkOrRoute === "link" ? "https://epiteszhk.bme.hu/kollegium/kollegiumaink/baross-gabor-kollegium/" : "/kollegium/kollegium-bemutato/baross",
     }
     const bercsenyi = {
         imageSrc: imageFolder+"bercsenyi.jpg",
         title: "Bercsényi 28-30 "+dormitory,
-        href: "https://bercsenyi.bme.hu/"
+        href: linkOrRoute === "link" ? "https://bercsenyi.bme.hu/" : "/kollegium/kollegium-bemutato/bercsenyi"
     }
     const karman = {
         imageSrc: imageFolder+"karman.jpg",
         title: "Kármán Tódor "+dormitory,
-        href: "https://ttkhk.bme.hu/koli/karman-2/"
+        href: linkOrRoute === "link" ? "https://ttkhk.bme.hu/koli/karman-2/" : "/kollegium/kollegium-bemutato/karman",
     }
     const martos = {
         imageSrc: imageFolder+"martos.jpg",
         title: "Martos "+dormitory,
-        href: "https://martos.bme.hu/"
+        href: linkOrRoute === "link" ? "https://martos.bme.hu/" : "/kollegium/kollegium-bemutato/martos"
     }
     const schonherz = {
         imageSrc: imageFolder+"schonherz.jpg",
         title: "Schönherz "+dormitory,
-        href: "https://sch.bme.hu/"
+        href: linkOrRoute === "link" ? "https://sch.bme.hu/" : "/kollegium/kollegium-bemutato/schonherz"
     }
     const vasarhelyi = {
         imageSrc: imageFolder+"vasarhelyi.jpg",
         title: "Vásárhelyi Pál "+dormitory,
-        href: "https://vpk.bme.hu/"
+        href: linkOrRoute === "link" ? "https://vpk.bme.hu/" : "/kollegium/kollegium-bemutato/vasarhelyi",
     }
     const wigner = {
         imageSrc: imageFolder+"wigner.jpg",
         title: "Wigner Jenő "+dormitory,
-        href: "https://wigner.bme.hu/"
+        href: linkOrRoute === "link" ? "https://wigner.bme.hu/" : "/kollegium/kollegium-bemutato/wigner"
     }
     return (
         <div className="flex flex-col sm:flex-row flex-wrap items-stretch justify-center gap-4 sm:gap-6 flex-1">

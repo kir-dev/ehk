@@ -193,6 +193,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       targetBlank: false,
       items: [
         { label: "Education Information", href: link("/international/education-information"), targetBlank: false },
+        { label: "Application Information", href: link("/international/application-information"), targetBlank: false },
       ],
     },
     {

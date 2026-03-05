@@ -697,6 +697,200 @@
           "extra": "Check your faculty’s TDK page for deadlines and topic ideas."
         }
       }
+    },
+    "application_information": {
+      "title": "Scholarship Opportunities & Neptun Requests",
+      "intro": "The Budapest University of Technology and Economics (BME) offers a wide range of scholarship opportunities to support students' academic performance and personal development. Scholarships are available both at the university level and at the faculty level, ensuring that students from all fields of study can benefit from tailored support.",
+      "university_scholarships": {
+        "title": "University-level scholarships",
+        "items": [
+          {
+            "title": "University BME scholarship (Egyetemi BME Ösztöndíj)",
+            "description": "The aim of the competition is to reward those among the university students who have achieved the most professional and scientific merit in the semester specified in the competition announcement. The competition is open to active full-time students studying in full-time undergraduate, master's or undivided programs who have engaged in outstanding academic, professional and scientific activities."
+          },
+          {
+            "title": "Good Student, Good Athlete (Jó Tanuló, Jó Sportoló)",
+            "description": "The BME \"Good Student, Good Athlete\" scholarship can be awarded to an applicant whose scholarship index in the last two semesters spent at the University is at least 3.00, or if he/she has achieved results in one of the sports categories listed below: Olympics and World Championships; European Championships, World Cup, UNIVERSIADE; Age-group World and European Championships; Hungarian Championships, international competitions; MEFOB, age-group national championships; National and regional competitions, Universitas; Other competitions."
+          }
+        ]
+      },
+      "faculty_scholarships": {
+        "title": "Faculty-level scholarships",
+        "items": [
+          {
+            "title": "Közéleti ösztöndíj (Public Life Scholarship)",
+            "description": "The respective Student Unions support students with this scholarship who, in addition to their university studies, carry out community activities at the given BME faculty that contribute to the successful work of the Faculty Student Union.",
+            "faculties": "ÉMK, GPK, VBK, VIK, ÉPK, GTK"
+          },
+          {
+            "title": "Közösségi ösztöndíj (Community Scholarship)",
+            "description": "The respective Student Unions support students with this scholarship who, beyond fulfilling their academic obligations, have performed outstanding community work within the Faculty's Student Organizations, external committees, or as organizers of events.",
+            "faculties": "GPK, VBK, ÉPK, GTK, KJK, TTK"
+          },
+          {
+            "title": "Hallgatók az oktatásért ösztöndíj (Students for Education Scholarship)",
+            "description": "The respective Student Unions support students with this scholarship who, alongside their university studies, have carried out tutoring activities at the given BME faculty during the semester specified in the call for applications.",
+            "faculties": "VBK, ÉPK, VIK, GTK"
+          },
+          {
+            "title": "Kari BME ösztöndíj (Faculty BME Scholarship)",
+            "description": "The aim of the application is to provide special recognition to those students within the given faculty who achieve the most professional and scientific merits during the academic year specified in the call for applications. The scholarship rewards students who have performed outstanding professional and scientific activities at the faculty level, including exceptional academic or language achievements.",
+            "faculties": "VBK, GPK, ÉPK, VIK, KJK, GTK"
+          },
+          {
+            "title": "Sportösztöndíj (Sports Scholarship)",
+            "description": "The respective Student Unions announce a scholarship application to recognize and encourage students who, in addition to fulfilling their academic obligations, have achieved outstanding results in sports.",
+            "faculties": "GPK, VIK"
+          }
+        ],
+        "note": "The application requirements may differ by faculty, so it is important to consult the website or contact the respective Faculty Student Council via email to get accurate information about the activities eligible for application."
+      },
+      "submission": {
+        "title": "Submission process",
+        "description": "Applications for the scholarships must be submitted via the MŰEPER (Unified Application and Evaluation System of the Budapest University of Technology and Economics) platform. This may vary by faculty, so please consult the appropriate contact information for details. You can also receive assistance during the submission process."
+      },
+      "contacts": {
+        "title": "Contact Information",
+        "students_union": {
+          "title": "Students' Union",
+          "website": "http://ehk.bme.hu/",
+          "email": "palyazat@bmeehk.hu"
+        },
+        "faculty_councils_title": "Faculty-level Student Councils",
+        "faculty_councils": [
+          {
+            "faculty": "Civil Engineering",
+            "website": "https://emkhk.bme.hu/en/main-page/",
+            "email": "osztondij@emkhk.hu"
+          },
+          {
+            "faculty": "Mechanical Engineering",
+            "website": "https://ghk.bme.hu/en/info",
+            "email": "osztondij@ghk.bme.hu"
+          },
+          {
+            "faculty": "Architecture",
+            "website": "https://epiteszhk.bme.hu/en/archisc/introduction/about-us/",
+            "email": "palyazat@epiteszhk.hu"
+          },
+          {
+            "faculty": "Chemical Technology and Biotechnology",
+            "website": "https://vegyeszhk.hu/",
+            "email": "palyazat@vegyeszhk.hu"
+          },
+          {
+            "faculty": "Electrical Engineering and Informatics",
+            "website": "https://vik.hk/",
+            "email": "palyazat@vik.hk"
+          },
+          {
+            "faculty": "Transportation Engineering and Vehicle Engineering",
+            "website": "https://kozlekhk.hu/",
+            "email": "juttatas@kozlekkar.hu"
+          },
+          {
+            "faculty": "Natural Sciences",
+            "website": "https://ttkhk.bme.hu/en/",
+            "email": "palyazat@ttkhk.hu"
+          },
+          {
+            "faculty": "Economics and Social Sciences",
+            "website": "http://gtkhk.hu/",
+            "email": "altalanos@gtkhk.bme.hu"
+          }
+        ]
+      },
+      "neptun_requests": {
+        "title": "Some of the most important requests in Neptun",
+        "note": "There might be requests not shown here, if it is for/by the Faculties or the Directorate of Sales and services.",
+        "items": [
+          {
+            "code": "E001",
+            "title": "Appeal",
+            "description": "This is a request for reconsideration of the decision on another request."
+          },
+          {
+            "code": "002",
+            "title": "Request for equity (Faculty Chance)",
+            "description": "This request is for asking exemption from any one of the BME Code of Studies regulations. You can get faculty chance only once during your studies!"
+          },
+          {
+            "code": "010",
+            "title": "Request for tuition fee reduction",
+            "description": "This request is for tuition fee paying students, who can ask for tuition fee reduction."
+          },
+          {
+            "code": "018",
+            "title": "Request to register for subjects / to drop subjects",
+            "description": "It is available each term and until the end of the registration week it is free, after that you have to pay 5500 HUF/ course through your Neptun account. For more details, please read ASC instructions among Neptun guides."
+          },
+          {
+            "code": "022",
+            "title": "Request for Preferential Course Schedule",
+            "description": "To receive permission to arrive late and follow the classes in asynchronous mode by professors' teaching material."
+          },
+          {
+            "code": "E024",
+            "title": "Request for subject accreditation",
+            "description": "By this request, you can transfer credits from your previous studies. For more details, please read ASC instruction among Neptun guides.\n1. Pre-BME-studies accreditation: it is basically part of the admission process, especially for transfer students. In this case, you have to fill out the Excel file for request E024 with the Faculty Credit Transfer Committee, and MUST include the decision columns.\n2. Parallel-BME-studies accreditation: if you took part in a summer school, exchange program, etc., parallel to your BME studies, you may accredit the subjects/marks you obtained outside of BME. In this case, please DO NOT fill out the decision columns of the table, the Credit Transfer Committee will do so!"
+          },
+          {
+            "code": "027",
+            "title": "Request for a certificate",
+            "description": "Through this request you can ask for any kind of official certificate/document, e.g.: General Student Status Certificate, Transcript, Diploma copy etc. For some documents you will need to pay, but it will be shown in the request, please read it carefully when submitting it! The digital documents can be downloaded from the request supplement."
+          },
+          {
+            "code": "032",
+            "title": "Dismissal upon request",
+            "description": ""
+          },
+          {
+            "code": "E033",
+            "title": "Request for changing institution, major or/and language of studies for SH/HDS/SCYP students",
+            "description": "The request will be available in the Spring term between mid March – mid April, in the Fall term between mid October – mid November."
+          },
+          {
+            "code": "034",
+            "title": "Resignation from enrolment opportunity",
+            "description": "This request is for every new student at the beginning of studies in order to resign from the enrolment opportunity. In relation with the student's enrolment for the concerned training programme especially with the student's registration for the concerned term is void according to the request and the student's term can be cancelled."
+          },
+          {
+            "code": "040",
+            "title": "Presentation of document",
+            "description": "Study contract, Declaration of state scholarship, Certificate of language exam, Learning agreement of incoming Erasmus+ mobility students, SCYP Travel allowance declaration, Credit certificate for checking the minimum credit requirement, Authorisation, Certificate for data in diploma and declaration of consent for transmission."
+          },
+          {
+            "code": "066",
+            "title": "Request for student ID certificate",
+            "description": ""
+          },
+          {
+            "code": "100",
+            "title": "Online registration",
+            "description": "This request is for every new student at the beginning of studies in order to complete the enrolment."
+          },
+          {
+            "code": "101",
+            "title": "Request to pay the tuition fee in installments and/or to modify the deadline of tuition fee payment",
+            "description": "It can be submitted from an inflicted item."
+          },
+          {
+            "code": "102",
+            "title": "Request for late activation of the term",
+            "description": "This request is available after the registration period for 1 week. It is necessary to have 5500 HUF on your Neptun bank account before submitting the request."
+          },
+          {
+            "code": "112",
+            "title": "Request for International Bank Account registration",
+            "description": ""
+          },
+          {
+            "code": "E999",
+            "title": "Request for a purpose not specified in any other requests",
+            "description": ""
+          }
+        ]
+      }
     }
   }
 }

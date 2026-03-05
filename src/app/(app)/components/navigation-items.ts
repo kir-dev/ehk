@@ -191,7 +191,11 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       title: "INTERNATIONAL",
       href: link("/international/hirek"),
       targetBlank: false,
-      items: [{ label: "", href: "", targetBlank: false }],
+      items: [
+        { label: "Education Information", href: link("/international/education-information"), targetBlank: false },
+        { label: "Application Information", href: link("/international/application-information"), targetBlank: false },
+        { label: "Dormitory Information", href: link("/international/dormitory-information"), targetBlank: false },
+      ],
     },
     {
       title: t("KÖZÉLET", "COMMUNITY LIFE"),

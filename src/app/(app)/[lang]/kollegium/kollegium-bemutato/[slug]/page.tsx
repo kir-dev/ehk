@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import fs from "fs";
@@ -10,6 +9,10 @@ import path from "path";
 
 const validSlugs = ["baross", "bercsenyi", "karman", "martos", "sch", "vpk", "wigner"] as const;
 type DormitorySlug = typeof validSlugs[number];
+
+type ContentBlock =
+  | { type: 'text'; content: string }
+  | { type: 'images'; indices: number[] };
 
 function getDormitoryImages(slug: DormitorySlug): string[] {
     const imagesDir = path.join(process.cwd(), "public", "kolik", slug);
@@ -54,9 +57,31 @@ export default async function DormitoryDetailsPage({
     const embeddedImageCount = Math.min(images.length, descriptionParts.length - 1);
     const remainingImages = images.slice(embeddedImageCount);
 
+    const blocks: ContentBlock[] = [];
+    let currentImageGroup: number[] = [];
+
+    descriptionParts.forEach((part, idx) => {
+        const text = part.trim();
+        if (text) {
+            if (currentImageGroup.length > 0) {
+                blocks.push({ type: 'images', indices: currentImageGroup });
+                currentImageGroup = [];
+            }
+            blocks.push({ type: 'text', content: text });
+        }
+        
+        if (idx < descriptionParts.length - 1) {
+            currentImageGroup.push(idx);
+        }
+    });
+
+    if (currentImageGroup.length > 0) {
+        blocks.push({ type: 'images', indices: currentImageGroup });
+    }
+
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="container mx-auto px-4 py-8 max-w-5xl">
+            <div className="container mx-auto px-4 py-8">
                 <Link 
                     href={`/${lang}/kollegium/kollegium-bemutato`} 
                     className="inline-flex items-center text-red-700 hover:text-red-800 font-medium mb-6 transition-colors"
@@ -69,32 +94,43 @@ export default async function DormitoryDetailsPage({
 
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 mb-8">
                     <div className="prose prose-lg max-w-none text-gray-700">
-                        {descriptionParts.map((part, idx) => (
-                            <div key={idx}>
-                                {part.trim() && (
-                                    <p className="whitespace-pre-line leading-relaxed mb-6">
-                                        {part.trim()}
+                        {blocks.map((block, bIdx) => {
+                            if (block.type === 'text') {
+                                return (
+                                    <p key={bIdx} className="whitespace-pre-line leading-relaxed mb-6">
+                                        {block.content}
                                     </p>
-                                )}
-                                {idx < descriptionParts.length - 1 && (
-                                    images[idx] ? (
-                                        <div className="my-6 md:my-10 relative w-full aspect-[4/3] md:aspect-video rounded-xl overflow-hidden shadow-md md:shadow-lg border border-gray-100">
-                                            <Image 
-                                                src={images[idx]} 
-                                                alt={`${dormData.title} inline image ${idx + 1}`}
-                                                fill
-                                                className="object-cover"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1024px"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className="my-6 md:my-10 p-8 md:p-12 bg-gray-50 rounded-xl border border-gray-200 border-dashed text-center text-gray-500 italic text-sm md:text-base">
-                                            [ Kép helye: {idx + 1}. kép hiányzik ]
-                                        </div>
-                                    )
-                                )}
-                            </div>
-                        ))}
+                                );
+                            } else {
+                                return (
+                                    <div key={bIdx} className="my-6 md:my-10 flex flex-wrap justify-center gap-6 items-center w-full">
+                                        {block.indices.map(imgIdx => (
+                                            images[imgIdx] ? (
+                                                <img 
+                                                    key={imgIdx}
+                                                    src={images[imgIdx]} 
+                                                    alt={`${dormData.title} inline image ${imgIdx + 1}`}
+                                                    className={`rounded-xl shadow-md md:shadow-lg border border-gray-100 object-contain ${
+                                                        block.indices.length > 1 
+                                                            ? "max-w-full sm:max-w-[calc(50%-12px)] md:max-w-[calc(33.333%-16px)] max-h-[40vh]" 
+                                                            : "max-w-full max-h-[60vh]"
+                                                    }`}
+                                                    loading="lazy"
+                                                />
+                                            ) : (
+                                                <div key={imgIdx} className={`p-8 md:p-12 bg-gray-50 rounded-xl border border-gray-200 border-dashed text-center text-gray-500 italic text-sm md:text-base ${
+                                                        block.indices.length > 1 
+                                                            ? "max-w-full sm:max-w-[calc(50%-12px)] md:max-w-[calc(33.333%-16px)]" 
+                                                            : "w-full"
+                                                    }`}>
+                                                    [ Kép helye: {imgIdx + 1}. kép hiányzik ]
+                                                </div>
+                                            )
+                                        ))}
+                                    </div>
+                                );
+                            }
+                        })}
                     </div>
                 </div>
 
@@ -105,15 +141,14 @@ export default async function DormitoryDetailsPage({
                         </h2>
                         
                         {remainingImages.length > 0 ? (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            <div className="flex flex-wrap justify-center gap-6 items-center">
                                 {remainingImages.map((imgSrc, idx) => (
-                                    <div key={idx} className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md group">
-                                        <Image 
+                                    <div key={idx} className="rounded-lg overflow-hidden shadow-md group bg-white border border-gray-100">
+                                        <img 
                                             src={imgSrc} 
                                             alt={`${dormData.title} image ${embeddedImageCount + idx + 1}`}
-                                            fill
-                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            className="max-w-full h-auto max-h-[350px] object-contain transition-transform duration-300 group-hover:scale-105"
+                                            loading="lazy"
                                         />
                                     </div>
                                 ))}

@@ -959,6 +959,86 @@
           }
         ]
       }
+    },
+    "mobility_programs": {
+      "title": "Mobility Opportunities",
+      "intro": "For fee-paying international students enrolled at the Budapest University of Technology and Economics (BME), several mobility opportunities are available, offering both short-term and long-term academic or professional experiences abroad.",
+      "programs": [
+        {
+          "id": "erasmus",
+          "title": "Erasmus+",
+          "type": "long-term",
+          "description": "BME is an active participant in the Erasmus+ programme, which allows students to spend one or two semesters at a European partner institution or complete an internship abroad. All faculties and doctoral schools take part in the programme, and the scholarship covers part of the living expenses while students are exempt from paying tuition fees at the host institution.",
+          "destinations_title": "Some of the most popular destinations include:",
+          "destinations": [
+            "Germany (Berlin, Munich)",
+            "Spain (Barcelona, Madrid, Valencia)",
+            "France (Paris, Lyon, Grenoble)",
+            "Finland, Sweden, and other Nordic countries",
+            "Canada",
+            "Mexico",
+            "Japan (Hokkaido, Waseda)",
+            "Singapore",
+            "Vietnam",
+            "and many more…"
+          ],
+          "extra": "With Erasmus+, you will not only continue your studies abroad but also experience another country's culture and daily life – a truly valuable adventure for your future career. Applications are submitted via the Neptun system, within the announced deadlines. Be sure to apply in time, as the most popular destinations fill up quickly!",
+          "more_info_label": "For up-to-date information, visit the NKI website",
+          "more_info_link": "https://nki.bme.hu/"
+        },
+        {
+          "id": "erasmus-traineeship",
+          "title": "Erasmus+ Traineeship",
+          "type": "internship",
+          "description": "BME students may complete a professional internship abroad through the Erasmus+ Traineeship programme. This option is available for bachelor's, master's, and doctoral students, either during their studies or within one year after graduation. Internships can take place at companies, research centers, or other relevant institutions in Erasmus+ programme countries. The duration ranges from 2 to 12 months, and participants receive a monthly grant to support their living expenses. Students must be actively enrolled at BME at the time of application.",
+          "extra": "Stipendium Hungaricum Scholarship students are also eligible to apply for Erasmus+ traineeships. They can apply only after graduation.",
+          "more_info_label": "More information",
+          "more_info_link": "https://nki.bme.hu/SZAKGYAK"
+        },
+        {
+          "id": "eelisa",
+          "title": "EELISA",
+          "type": "short-term",
+          "description": "BME is a core member of the European Engineering Learning Innovation and Science Alliance (EELISA), a European University alliance that aims to redefine engineering education by fostering innovation, sustainability, and societal engagement. Through EELISA mobility actions, students can participate in short-term study visits, joint learning activities, research projects, or challenge-based initiatives at partner institutions across Europe. These activities are often multidisciplinary, may award ECTS credits, and are open to bachelor's, master's, and doctoral students. EELISA also promotes micro-credentials and the recognition of skills acquired during these engagements.",
+          "extra": "You can find out about current opportunities on the following page:",
+          "more_info_label": "Current opportunities",
+          "more_info_link": "https://opportunities.eelisa.eu/"
+        },
+        {
+          "id": "athens",
+          "title": "ATHENS",
+          "type": "short-term",
+          "description": "The ATHENS (Advanced Technology Higher Education Network SOCRATES) programme is a short-term exchange initiative coordinated by a network of leading European technical universities, including BME. It offers students the opportunity to attend intensive, one-week interdisciplinary courses abroad, typically in March or November. Courses cover a wide range of scientific, technical, and humanities subjects, and are combined with cultural activities. Participants may receive academic credit upon successful completion, and the programme is particularly suitable for students looking to enhance their international exposure in a compact format.",
+          "more_info_label": "More information",
+          "more_info_link": "https://nki.bme.hu/BMEAthens"
+        },
+        {
+          "id": "ceepus",
+          "title": "CEEPUS Programme",
+          "type": "long-term",
+          "description": "Through the CEEPUS (Central European Exchange Program for University Studies), BME students can study for a semester or a shorter period at universities in Central and Eastern European countries participating in the program. The CEEPUS scholarship supports living expenses, and the program is open to bachelor's, master's, and doctoral students.",
+          "subsections": [
+            {
+              "title": "Bilateral Exchange Programs",
+              "description": "BME has established numerous bilateral agreements with universities worldwide, allowing students to study for one or two semesters at partner institutions, usually without paying tuition fees. Application to these programs requires nomination from the sending institution as well as online registration at BME."
+            },
+            {
+              "title": "Semester Abroad Program",
+              "description": "BME also offers its own Semester Abroad program, in which students can spend a semester at the university and take English-language courses from various faculties. Successfully completed courses are awarded ECTS credits, which can be transferred to the student's home university."
+            }
+          ],
+          "more_info_label": "More information",
+          "more_info_link": "https://nki.bme.hu/CEEPUS"
+        },
+        {
+          "id": "aiesec",
+          "title": "AIESEC Internships",
+          "type": "internship",
+          "description": "AIESEC, a global student organization present at BME, offers international internship opportunities for students seeking practical experience in various fields such as marketing, IT, engineering, or education. These internships are typically 6 weeks to several months long, and are available in numerous countries worldwide. AIESEC provides support with placement, visa, and accommodation. These internships are not always credit-bearing, but they offer valuable real-world experience and cultural exchange.",
+          "more_info_label": "More information",
+          "more_info_link": "https://www.aiesec.hu/"
+        }
+      ]
     }
   }
 }

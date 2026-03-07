@@ -372,6 +372,27 @@
     "check_mueper" : "The specific payout date for the applied scholarship is always contained in the call for applications available on the MŰEPER interface.",
     "no_active_period": "No active payout period at the moment."
   },
+  "international": {
+    "erasmus": {
+      "title": "Erasmus+",
+      "what_is_it": {
+        "title": "What is Erasmus+?",
+        "description": "The Erasmus+ programme is one of BME's most popular international opportunities, allowing you to try yourself abroad – either in the form of a study semester or an internship. A new country, new culture, and plenty of experiences await, while you don't have to interrupt your studies at home. Erasmus+ is not just a scholarship, but a lifelong adventure that improves your language skills, gives you independence, and helps you build international connections – both professionally and personally."
+      },
+      "mobility_options": {
+        "title": "Mobility options:",
+        "items": [
+          "Study mobility",
+          "Internship",
+          "Non-EU mobility"
+        ]
+      },
+      "additional_support": "Additional support during mobility",
+      "current_call": "Current call for applications for long-term study mobility",
+      "additional_support_link": "https://nki.bme.hu/node/6140",
+      "current_call_link": "https://nki.bme.hu/ERASMUS/RESZKEPZES"
+    }
+  },
   "footer": {
     "contact": {
       "title": "CONTACT",

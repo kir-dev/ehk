@@ -182,8 +182,8 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/kulugy/hirek"),
       targetBlank: false,
       items: [
-        { label: "Erasmus", href: "#", targetBlank: false },
-        { label: "EELISA", href: "#", targetBlank: false },
+        { label: "Erasmus", href: "/kulugy/erasmus", targetBlank: false },
+        { label: "EELISA", href: "/kulugy/eelisa", targetBlank: false },
         { label: "HKT", href: "#", targetBlank: false },
       ],
     },

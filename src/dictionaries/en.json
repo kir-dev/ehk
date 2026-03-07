@@ -372,6 +372,92 @@
     "check_mueper" : "The specific payout date for the applied scholarship is always contained in the call for applications available on the MŰEPER interface.",
     "no_active_period": "No active payout period at the moment."
   },
+  "international": {
+    "erasmus": {
+      "title": "Erasmus+",
+      "what_is_it": {
+        "title": "What is Erasmus+?",
+        "description": "The Erasmus+ programme is one of BME's most popular international opportunities, allowing you to try yourself abroad – either in the form of a study semester or an internship. A new country, new culture, and plenty of experiences await, while you don't have to interrupt your studies at home. Erasmus+ is not just a scholarship, but a lifelong adventure that improves your language skills, gives you independence, and helps you build international connections – both professionally and personally."
+      },
+      "mobility_options": {
+        "title": "Mobility options:",
+        "items": [
+          "Study mobility",
+          "Internship",
+          "Non-EU mobility"
+        ]
+      },
+      "additional_support": "Additional support during mobility",
+      "current_call": "Current call for applications for long-term study mobility",
+      "additional_support_link": "https://nki.bme.hu/node/6140",
+      "current_call_link": "https://nki.bme.hu/ERASMUS/RESZKEPZES"
+    },
+    "eelisa": {
+      "title": "EELISA",
+      "what_is_it": {
+        "title": "What is EELISA?",
+        "description": "EELISA (European Engineering Learning Innovation and Science Alliance) is an alliance of ten European universities, involving engineering, technical, and broader educational institutions from eight countries. The initiative aims to jointly rethink what it means to be a European engineer today – training professionals who contribute to shaping the future not only with their technical knowledge but also with their social responsibility and broad perspective. By connecting engineering, scientific, and humanities fields, EELISA is working to create a more inclusive, sustainable, and digital Europe."
+      },
+      "partners": {
+        "title": "Partner Universities:",
+        "items": [
+          "Universidad Politécnica de Madrid (UPM)",
+          "École des Ponts ParisTech (ÉPP)",
+          "Friedrich Alexander Universität Erlangen Nürnberg (FAU)",
+          "Istanbul Technical University (ITU)",
+          "Scuola Normale Superiore di Pisa (SNS)",
+          "Sant’Anna School of Advanced Studies (SNS)",
+          "University Politechnica of Bucharest (UPB)",
+          "Paris Sciences et Lettres (PSL)",
+          "ZHAW Zürcher Hochschule für Angewandte Wissenschaften (ZHAW)"
+        ]
+      },
+      "how_to_apply": {
+        "title": "How to apply?",
+        "steps": [
+          {
+            "description": "Find a program you like and check if you are eligible for the scholarship! Links to current program opportunities:",
+            "links": [
+              {
+                "label": "EELISA News & Events",
+                "url": "https://eelisa.eu/news-events/"
+              },
+              {
+                "label": "EELISA Digital Campus",
+                "url": "https://digitalcampus.eelisa.eu/activities?titlePattern=&communityId=&keyword=&activityAvailabilityFilter=Upcoming&page=1&pageSize=12&sortDirection=Ascending&sortField=Name&communityScopeFilter=AllCommunities"
+              }
+            ]
+          },
+          {
+            "description": "Wait for feedback on your application!",
+            "links": []
+          },
+          {
+            "description": "Submit your BME EELISA scholarship application here!",
+            "links": [
+              {
+                "label": "BME EELISA scholarship application",
+                "url": "https://regisztracio.bme.hu/eelisa-activity-hallgatoi-osztondij-jelentkezes-2025-osz"
+              }
+            ]
+          },
+          {
+            "description": "Enjoy the journey!",
+            "links": []
+          }
+        ]
+      },
+      "current_opportunities": {
+        "title": "Current program opportunities",
+        "link": "https://eelisa.eu/news-events/"
+      },
+      "call_for_applications": {
+        "title": "The call for applications is available here!",
+        "link": "https://eelisa.bme.hu/wp-content/uploads/2025/10/Act-hallg-oszt-paly-2025-szeptember.pdf"
+      },
+      "contact": "If you have any questions, feel free to contact us at international@bmeehk.hu or eelisa@bme.hu!"
+    }
+  },
   "footer": {
     "contact": {
       "title": "CONTACT",

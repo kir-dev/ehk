@@ -250,7 +250,7 @@ export interface Club {
    */
   order?: number | null;
   /**
-   * Opcionális link a klub weboldalához vagy közösségi oldalához
+   * Opcionális link a klub weboldalához vagy közösségi oldalához. Csak érvényes HTTP vagy HTTPS URL megengedett.
    */
   link?: string | null;
   updatedAt: string;

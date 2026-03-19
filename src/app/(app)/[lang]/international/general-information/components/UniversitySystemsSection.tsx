@@ -1,8 +1,33 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Info, ExternalLink, MonitorSmartphone } from "lucide-react";
+import { 
+  CheckCircle, 
+  Info, 
+  ExternalLink, 
+  MonitorSmartphone, 
+  FileText, 
+  Table, 
+  Presentation, 
+  Cloud, 
+  Mail, 
+  Users, 
+  Notebook 
+} from "lucide-react";
 import { SystemCard } from "./SystemCard";
 import { ExternalLinkCard } from "./ExternalLinkCard";
+
+const getAppIcon = (name: string) => {
+  switch (name) {
+    case "Word": return <FileText size={16} />;
+    case "Excel": return <Table size={16} />;
+    case "PowerPoint": return <Presentation size={16} />;
+    case "OneDrive": return <Cloud size={16} />;
+    case "Outlook": return <Mail size={16} />;
+    case "Teams": return <Users size={16} />;
+    case "OneNote": return <Notebook size={16} />;
+    default: return null;
+  }
+};
 
 export function UniversitySystemsSection({ content, lang }: { content: any, lang: string }) {
   const moreInfoText = lang === "hu" ? "További információ" : "More information";
@@ -126,7 +151,8 @@ export function UniversitySystemsSection({ content, lang }: { content: any, lang
           <p className="font-bold text-xs uppercase tracking-wide mb-3 text-gray-500">{content.university_systems.office.list_title}</p>
           <div className="flex flex-wrap gap-2 mb-6">
             {content.university_systems.office.items.map((item: string, i: number) => (
-              <span key={i} className="px-3 py-1.5 bg-blue-50/50 border border-blue-100 text-blue-700 rounded-md text-sm font-semibold shadow-sm">
+              <span key={i} className="flex items-center gap-2 px-3 py-1.5 bg-blue-50/50 border border-blue-100 text-blue-700 rounded-md text-sm font-semibold shadow-sm">
+                {getAppIcon(item)}
                 {item}
               </span>
             ))}

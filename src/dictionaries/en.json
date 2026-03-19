@@ -147,7 +147,7 @@
         "description_3": "(Unified Application and Evaluation System of the Budapest University of Technology and Economics) platform.",
         "description_4": "Before submitting the application, it is recommended to consult with the current president of the University Social Committee regarding the required documents."
       },
-    "more_info": "For more information, please visit the website of the University Social Committee (ESZB): ",
+      "more_info": "For more information, please visit the website of the University Social Committee (ESZB): ",
       "eszb_website": "ESZB website"
     },
     "ehk": {
@@ -619,6 +619,7 @@
           ]
         },
         "organizations_intro": "At the Budapest University of Technology and Economics (BME), numerous professional colleges (szakkollégium) and student-led organizations (öntevékeny kör) operate, offering outstanding opportunities for students’ professional, academic, community, and personal development.",
+        "professional_communities_title": "BME Professional Communities",
         "mvk": {
           "title": "BME Competitive Team Community (MVK)",
           "description": "The Community of Competition Teams at the Budapest University of Technology and Economics (MVK) was established with the aim of supporting the student teams that build competition vehicles at the university in a coordinated manner. It also seeks to provide its members with opportunities for professional development that complement their academic education. Another key goal of MVK is to promote and represent the university at national and international events."
@@ -652,96 +653,6 @@
           "title": "Culture on Campus",
           "paragraphs": [
             "**Szkéné Theatre** is the university's independent theatre **located on the campus of BME**. It has been a unique cultural hub for students and the wider public since 1970. Known for its contemporary, experimental performances and collaborations with renowned directors and theatre companies, Szkéné offers a diverse repertoire ranging from drama and physical theatre to modern interpretations of classical works. It provides students not only with high-quality cultural experiences but also opportunities to engage with the performing arts in a thought-provoking and inspiring environment."
-          ]
-        }
-      },
-      "contacts_and_explore": {
-        "important_contacts": {
-          "title": "Important Contacts for International Students at BME",
-          "items": [
-            {
-              "name": "Academic Services Centre (ASC)",
-              "description": "The Academic Services Centre handles student cards, enrollment, official certificates, and other academic administration.",
-              "contacts": [
-                { "label": "Website", "value": "https://kth.bme.hu/en/" },
-                { "label": "Email", "value": "kth-info@bme.hu" },
-                { "label": "Location", "value": "H-1111 Budapest, Műegyetem rkp. 7-9. R building, ground floor" },
-                { "label": "Phone", "value": "+3614634242" }
-              ]
-            },
-            {
-              "name": "Directorate of International Relations (NKI)",
-              "description": "The Directorate of International Relations assists with Erasmus+ and other mobility programs, as well as general support for international students.",
-              "contacts": [
-                { "label": "Website", "value": "https://nki.bme.hu/" },
-                { "label": "Email", "value": "internationalrelations@bme.hu" },
-                { "label": "Location", "value": "K Building, 1st floor, Room 76, 1111 Budapest, Műegyetem rakpart 3." },
-                { "label": "Phone", "value": "+3614633364" }
-              ]
-            },
-            {
-              "name": "Students’ Union",
-              "description": "The Student Representation can assist you with academic, social, and community matters. Each faculty has its own representatives, and there is also a central office.",
-              "contacts": [
-                { "label": "Website", "value": "http://ehk.bme.hu/" },
-                { "label": "Email", "value": "international@bmeehk.hu" },
-                { "label": "Location", "value": "Műegyetem rkp. 7-9. R building, 2nd floor room 207" },
-                { "label": "Phone", "value": "+36 1 463 3836" }
-              ]
-            },
-            {
-              "name": "International Mentor Team",
-              "description": "This is the website of the International Mentor team, their organization exists to help International students settle in Budapest. They have all the necessary information you need to start your studies at BME on their website, including various contact information, how transportation works in Budapest and all the official steps you need to make.",
-              "contacts": [
-                { "label": "Website", "value": "https://www.imt.bme.hu/" },
-                { "label": "Email", "value": "imt@bme.hu" },
-                { "label": "Location", "value": "Műegyetem rkp. 7-9. R building, 1st floor room 102" }
-              ]
-            }
-          ]
-        },
-        "transport": {
-          "title": "How to get to BME from the airport?",
-          "paragraphs": [
-            "100E bus leaves in every 10 minutes from Liszt Ferenc Airport. You should take the bus till Kálvin Tér. Once you get there you can either take metro 4 in direction to Kelenföld or get on tram 47 or 49 (to Városháza tér or Kelenföld vasútállomás), and go till Szent Gellért tér - Műegyetem. From here you already can see Building K. It takes around 15 minutes to walk from one edge of the Campus to the other.",
-            "You need a separate ticket for the 100E and 200E buses. (You can either buy it on the buses, at the Airport or on the BudapestGO app.)",
-            "Also you can download the BudapestGO app. You can buy a Citypass or Hungary Pass if you wish to. (You don’t need a Budapest Pass if you have a Hungary Pass or a Pest County Pass.)"
-          ]
-        },
-        "sights": {
-          "title": "Sights you should visit while living in Budapest:",
-          "items": [
-            "Széchenyi Baths and Pool",
-            "Hungarian Parliament Building",
-            "Fisherman’s Bastion",
-            "Buda Castle",
-            "Matthias Church",
-            "St. Stephen’s Basilica",
-            "Margit-sziget",
-            "Shoes on the Danube Bank",
-            "Danube River",
-            "Gellért Hill",
-            "Heroes’ Square",
-            "Vajdahunyad Castle",
-            "House of Terror Museum",
-            "Hospital in the Rock Nuclear Bunker Museum",
-            "Central Market Hall"
-          ]
-        },
-        "restaurants": {
-          "title": "Good restaurants and cafés around the University:",
-          "restaurants_title": "Restaurants:",
-          "cafes_title": "Cafés and Bakeries:",
-          "restaurants_list": [
-            "At the Móricz square you can find a lot of fast food restaurants: McDonalds’, Pesti Pipi, KFC, Krumpli., Pizza Forte, Moto Pizza",
-            "On Karinthy Frigyes Street: Da Giovanni, Karimi Gyros",
-            "On Budafoki Street: LA Burger, a lot of chinese restaurants, Tölcsibe, Pizza Di Napoli"
-          ],
-          "cafes_list": [
-            "On Móricz Square: Félegyházi Bakery, Café Frei",
-            "On Bartók Béla Street: Kelet Café and Gallery, And a lot of fancier restaurants",
-            "On Budafoki Street: Starbucks, Nanu Café, Kávébab Café",
-            "On Karinthy Frigyes Street: Lipóti Bakery, Fornetti"
           ]
         }
       }

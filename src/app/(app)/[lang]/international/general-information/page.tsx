@@ -87,7 +87,7 @@ export default async function GeneralInformationPage({
             <GettingStartedSection content={content} lang={lang} />
             <UniversitySystemsSection content={content} lang={lang} />
             <StudentLifeSection content={content} lang={lang} />
-            <ContactsSection content={content} />
+            <ContactsSection content={content} lang={lang} />
           </div>
         </div>
       </div>

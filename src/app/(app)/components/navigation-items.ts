@@ -191,7 +191,10 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       title: "INTERNATIONAL",
       href: link("/international/hirek"),
       targetBlank: false,
-      items: [{ label: "", href: "", targetBlank: false }],
+      items: [
+        { label: t("Hírek", "News"), href: link("/international/hirek"), targetBlank: false },
+        { label: t("Általános információk", "General Information"), href: link("/international/general-information"), targetBlank: false }
+      ],
     },
     {
       title: t("KÖZÉLET", "COMMUNITY LIFE"),
@@ -228,7 +231,13 @@ export function getNavigationItems(lang: string): NavigationItem[] {
   // Filter out certain menu items for English version
   if (lang === "EN") {
     return items.filter(item => 
-      item.title !== "DORMITORY" && item.title !== "INTERNATIONAL"
+      item.title !== "DORMITORY"
+    );
+  }
+
+  if (lang === "HU") {
+    return items.filter(item => 
+      item.title !== "INTERNATIONAL"
     );
   }
 

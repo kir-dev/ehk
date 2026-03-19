@@ -9,6 +9,7 @@
     "close": "Bezárás",
     "loading": "Betöltés...",
     "questions": "Kérdésed van?",
+    "more_info": "További információ",
     "contact_aria_label": "Email küldése az info@bmeehk.hu címre"
   },
   "regulations": {
@@ -150,7 +151,7 @@
       "eszb_website": "ESZB honlapja"
     },
     "ehk": {
-      "title" : "EHK ösztöndíjak",
+      "title": "EHK ösztöndíjak",
       "items": [
         {
           "title": "Egyetemi Hallgatói Képviselet ösztöndíj",
@@ -209,12 +210,10 @@
       ]
     }
   },
-
   "sport": {
     "sportterem": {
       "title": "Tornaterem Igénylési Tájékoztató",
-      "description": "A **Budapesti Műszaki és Gazdaságtudományi Egyetem Sport Divíziója** és az **Egyetemi Hallgatói Képviselet (EHK)** lehetőséget biztosít a sportolni vágyó csapatoknak és baráti köröknek, hogy kedvezményesen edzzenek az egyetem sportlétesítményeiben."
-      ,
+      "description": "A **Budapesti Műszaki és Gazdaságtudományi Egyetem Sport Divíziója** és az **Egyetemi Hallgatói Képviselet (EHK)** lehetőséget biztosít a sportolni vágyó csapatoknak és baráti köröknek, hogy kedvezményesen edzzenek az egyetem sportlétesítményeiben.",
       "facilities": {
         "title": "Elérhető Sportlétesítmények",
         "items": [
@@ -278,39 +277,46 @@
       },
       "footer": "*A pontos információkat mindig az adott félévben kiírt pályázat tartalmazza."
     },
-    
     "sportpalyaTamogatas": {
       "title": "Sportpálya Támogatás Pályázat",
       "description": "A **Budapesti Műszaki és Gazdaságtudományi Egyetem Testnevelési Központ** és az **Egyetemi Hallgatói Képviselet (EHK)** közös pályázatot hirdet a **BME hallgatói csapatok** sportpálya bérlésének támogatására. Célunk, hogy támogassuk a rendszeres sporttevékenységet az egyetem polgárai körében.",
-      "application": { 
+      "application": {
         "title": "Kik Pályázhatnak?",
-        "description": "Pályázaton részt vehet minden olyan csapat, amelynek **legalább 80%-a** az adott félévben, a BME nappali tagozatos, aktív hallgatói jogviszonnyal rendelkező hallgatója." 
+        "description": "Pályázaton részt vehet minden olyan csapat, amelynek **legalább 80%-a** az adott félévben, a BME nappali tagozatos, aktív hallgatói jogviszonnyal rendelkező hallgatója."
       },
-      "period": { 
+      "period": {
         "title": "A Támogatás Időszaka és Helyszíne",
-        "items": ["A támogatás az adott tanév **egy szemeszterére** (őszi vagy tavaszi félév) vonatkozik.", 
-        "Pályázni nem csak a BME sportlétesítményeiben (BME Sportközpont, Bogdánfy utcai Sporttelep, Kármán Tódor Kollégium, Bercsényi 28-30 Kollégium) végzett sporttevékenységgel lehet."] 
+        "items": [
+          "A támogatás az adott tanév **egy szemeszterére** (őszi vagy tavaszi félév) vonatkozik.",
+          "Pályázni nem csak a BME sportlétesítményeiben (BME Sportközpont, Bogdánfy utcai Sporttelep, Kármán Tódor Kollégium, Bercsényi 28-30 Kollégium) végzett sporttevékenységgel lehet."
+        ]
       },
-      "condition": { 
+      "condition": {
         "title": "Pályázati Feltételek és Benyújtás",
         "intro": "A pályázat akkor érvényes, ha a csapat:",
-        "items": ["Hiánytalanul kitölti és időben elküldi a pályázat mellékleteként közzétett **taglistát**.", 
-        "Hiánytalanul kitölti és időben elküldi a pályázat mellékleteként közzétett **igénylőlapot.**"],
+        "items": [
+          "Hiánytalanul kitölti és időben elküldi a pályázat mellékleteként közzétett **taglistát**.",
+          "Hiánytalanul kitölti és időben elküldi a pályázat mellékleteként közzétett **igénylőlapot.**"
+        ],
         "outro": "A pályázás **elektronikus formában** történik, a kitöltött mellékleteket az EHK honlapján közzétett ütemezésben rögzített időpontig kell elküldeni az **info@bmeehk.hu** e-mail címre."
       },
-      "selection": { 
+      "selection": {
         "title": "Bírálási Szempontok",
         "description": "A pályázatok elbírálását a BME Testnevelési Központ az EHK-val együttműködésben végzi. A legfőbb szempontok:",
-        "items": ["A csapat **minél több embert mozgasson meg rendszeresen** az igényelt támogatás segítségével.", 
-        "A csapat **elért eredményei az elmúlt 2 évben**.",
-        "A **BME nappali tagozatos, aktív hallgatói aránya** a csapatban."] 
+        "items": [
+          "A csapat **minél több embert mozgasson meg rendszeresen** az igényelt támogatás segítségével.",
+          "A csapat **elért eredményei az elmúlt 2 évben**.",
+          "A **BME nappali tagozatos, aktív hallgatói aránya** a csapatban."
+        ]
       },
-      "result": { 
+      "result": {
         "title": "Eredmény és Jogorvoslat",
-        "items": ["A végleges eredményt az EHK a pályázati ütemezésben rögzített határidőig a **saját honlapján** teszi közzé.", 
-        "A kiírásnak (formai vagy tartalmi) meg nem felelő, vagy a határidő után benyújtott pályázatokat nem áll módunkban elfogadni.",
-        "Valótlan tartalmú pályázat esetén a csapat kizárással büntethető, és fegyelmi eljárás is kezdeményezhető.",
-        "A pályázattal kapcsolatos kérdéseket és a felszólalási szándékot az elbírálás ellen az **info@bmeehk.hu** e-mail címen lehet jelezni."] 
+        "items": [
+          "A végleges eredményt az EHK a pályázati ütemezésben rögzített határidőig a **saját honlapján** teszi közzé.",
+          "A kiírásnak (formai vagy tartalmi) meg nem felelő, vagy a határidő után benyújtott pályázatokat nem áll módunkban elfogadni.",
+          "Valótlan tartalmú pályázat esetén a csapat kizárással büntethető, és fegyelmi eljárás is kezdeményezhető.",
+          "A pályázattal kapcsolatos kérdéseket és a felszólalási szándékot az elbírálás ellen az **info@bmeehk.hu** e-mail címen lehet jelezni."
+        ]
       },
       "footer": "*A pontos információkat mindig az adott félévben kiírt pályázat tartalmazza."
     }
@@ -325,7 +331,7 @@
   "knowledge_base": {
     "title": "Kisokosok"
   },
-  "dormitories":{
+  "dormitories": {
     "admission_information": {
       "title": "Kollégiumi felvételi tájékoztató",
       "capacity": "Férőhelyek",
@@ -352,7 +358,6 @@
     "TTK": "Természettudományi Kar",
     "KJK": "Közlekedésmérnöki és Járműmérnöki Kar"
   },
-
   "payouts": {
     "title": "Kifizetési információk",
     "intro_text": "Az ösztöndíjak kifizetési időpontjai a {title} tanévben az alábbiak szerint alakulnak:",
@@ -367,7 +372,7 @@
     "important_todo_p4": "Ha a szükséges adatokat a harmadik kifizetési kísérletig sem rögzíted, az Egyetem nem köteles újabb utalást kezdeményezni, amíg nem jelzed feléjük, hogy pótoltad a hiányosságokat.",
     "wrong_transfer_title": "Téves utalás vagy jogviszony megszűnése esetén a teendők",
     "wrong_transfer_p1": "Abban az esetben ha téves utalás történik, a tévesen kifizetett összeget 15 napon belül vissza kell fizetned az Egyetem részére. Jogviszony megszűnésekor, munkarend változásakor vagy ösztöndíjra való jogosultság megszűnésekor ugyanez érvényes, a változást követő 15 napon belül szükséges rendezni az esetleges visszafizetést.",
-    "check_mueper" : "Azt, hogy a megpályázott ösztöndíj melyik kifizetési időpontban kerül utalásra, mindig a MŰEPER felületén elérhető pályázati kiírás tartalmazza.",
+    "check_mueper": "Azt, hogy a megpályázott ösztöndíj melyik kifizetési időpontban kerül utalásra, mindig a MŰEPER felületén elérhető pályázati kiírás tartalmazza.",
     "no_active_period": "Jelenleg nincs aktív kifizetési időszak."
   },
   "footer": {
@@ -412,5 +417,333 @@
     "location": "Helyszín:",
     "opening_hours": "Nyitvatartás:",
     "no_results": "Jelenleg nincsenek aktív klubok"
+  },
+  "international": {
+    "general_information": {
+      "title": "Általános Információk",
+      "description": "Fontos általános információk külföldi állampolgárok számára, akik a BME-n tanulnak",
+      "nav": {
+        "getting_started": "Kezdő lépések",
+        "university_systems": "Egyetemi rendszerek",
+        "student_life": "Hallgatói élet",
+        "contacts": "Kapcsolatok és felfedezés"
+      },
+      "getting_started": {
+        "admission": {
+          "title": "Felvételi és tanulmányi lehetőségek",
+          "description": "A BME számos programot kínál nemzetközi hallgatók számára:",
+          "items": [
+            "Alapképzés (BSc), Mesterképzés (MSc) és Doktori (PhD) programok angol nyelven",
+            "Csereprogramok (mobilitási programok, pl. Erasmus+, ATHENS, EELISA)",
+            "Ösztöndíjas és önköltséges lehetőségek egyaránt."
+          ]
+        },
+        "application": {
+          "title": "Jelentkezés és beiratkozás",
+          "items": [
+            "A jelentkezéseket online kell benyújtani; például a 2025/26-os tanévre április 1. és május 31. között lehet jelentkezni.",
+            "A beiratkozási folyamat részletes leírása és a szükséges dokumentumok listája a Központi Tanulmányi Hivatal (KTH) honlapján található."
+          ]
+        },
+        "administrative_tasks": {
+          "title": "Adminisztratív teendők érkezés után",
+          "items": [
+            "A BME-s beiratkozást a KTH szervezi. A 2025/26/1 félév kezdetéről szóló hírlevelet itt találod: https://www.kth.bme.hu/en/news/2318/",
+            "Először fel kell töltened a szükséges dokumentumokat a Neptunba a hírlevélben leírtak szerint. Ezt személyes beiratkozás követi, ahol ellenőrzik a dokumentumokat.",
+            "A tárgyakat a Neptunban a Tárgyak/Tárgyfelvétel menüpont alatt veheted fel, miután aktív hallgatóként bejelentkeztél a félévre."
+          ]
+        },
+        "official_documents": {
+          "title": "Szükséges hivatalos dokumentumok",
+          "items": [
+            "**Tartózkodási engedély**: Magyarországi tartózkodásodhoz és tanulmányaidhoz tartózkodási engedély szükséges. Ez hosszabb időt is igénybe vehet, ezért minél hamarabb el kell indítani a folyamatot. Bővebb információ: https://www.imt.bme.hu/immigration/application/",
+            "**TAJ Kártya / Magánegészségügyi Biztosítás:** TAJ kártya és adókártya igénylése. Bővebb információ: https://www.imt.bme.hu/taj/",
+            "**Diákigazolvány:** További információk itt: https://kth.bme.hu/hallgatoknak/gyik/diakigazolvany-es-matrica/",
+            "**Magyar bankszámla** nyitása (ösztöndíjakhoz, tandíjakhoz és egyéb utalásokhoz)"
+          ]
+        },
+        "academic_affairs": {
+          "title": "Tanulmányi ügyek és támogatás",
+          "items": [
+            "A tanulmányi adminisztrációt a Központi Tanulmányi Hivatal és a kari tanulmányi osztályok kezelik.",
+            "Az egyetem biztosítja, hogy a hallgatók minden fontos szabályzathoz és információhoz hozzáférjenek a képzés nyelvén (pl. tanév rendje, ösztöndíjak, fegyelmi szabályzatok).",
+            "Kiemelt támogatás: nemzetközi mentorcsapatok, tanácsadók és kari Erasmus koordinátorok állnak rendelkezésre."
+          ]
+        },
+        "tasks_by_sept_1": {
+          "title": "Szeptember 1-ig elvégzendő teendők",
+          "items": [
+            "Ismerkedj meg a Neptun rendszerrel",
+            "Kezdj el használni a @edu.bme.hu email címedet",
+            "Telepítsd az Office alkalmazásokat (Word, Excel, PowerPoint, stb.)",
+            "Regisztráld az Office 365 fiókodat az egyetemi email címeddel a következőkhöz: OneDrive tárhely, Microsoft Teams, Egyetemi Wi-Fi",
+            "Egyéb kapcsolódó szolgáltatások",
+            "Tanuld meg használni az oktatási platformokat (pl. Moodle, Teams, vagy a karodon használt egyéb rendszert)"
+          ]
+        }
+      },
+      "university_systems": {
+        "neptun": {
+          "title": "Neptun Rendszer",
+          "description": "A Neptun az egyetem rendszere a tanulmányi ügyek és az egyetemi adminisztráció kezelésére.",
+          "list_title": "A Neptunon keresztül lehetséges:",
+          "items": [
+            "Beiratkozni és bejelentkezni a félévre",
+            "Tárgyakat felvenni",
+            "Megtekinteni a személyes órarended",
+            "Vizsgákra jelentkezni"
+          ],
+          "footer": "A felvételi értesítőddel együtt megkaptad a 6 karakterből álló egyedi azonosítódat (Neptun-kód) és a kezdeti jelszavadat. Neptun útmutatók: https://kth.bme.hu/en/for-students/about-neptun/neptun-guides/"
+        },
+        "eduid": {
+          "title": "BME Címtár (eduID)",
+          "paragraphs": [
+            "A BME-n a legtöbb egyetemi weboldal a **BME Címtárat (eduID)** használja a bejelentkezéshez (Moodle, KEFIR, MŰEPER, stb.).",
+            "Minden hallgató automatikusan kap egy **címtár azonosítót**, amely a címtár adminisztrációs felületén található meg a Neptun-kóddal történő bejelentkezés után.",
+            "Bejelentkezés után a **címtár azonosító** az **eduID** felirat mellett látható.",
+            "Az első bejelentkezéskor meg kell változtatni az induló jelszót, és később is ezt az oldalt használhatod a jelszavad frissítéséhez.",
+            "Innentől kezdve, amikor egy egyetemi weboldal az eduID bejelentkezési oldalát kéri, => a **címtár azonosítót** és az **általad beállított jelszót** kell használni.",
+            "Ugyanezen az adminisztrációs felületen igényelheted az Office 365 (O365) hozzáférést is eszközeidhez (Egyetemi Wi-Fi, Teams, OneDrive)."
+          ]
+        },
+        "o365": {
+          "title": "O365 Regisztráció (Microsoft 365)",
+          "description": "Az O365 fiókod többek között az alábbi szolgáltatásokhoz nyújt hozzáférést: Microsoft Teams, a @edu.bme.hu e-mail címed, 1 TB OneDrive felhőtárhely, a BME Wi-Fi hálózata (és világszerte az Eduroam hálózatok). *(A Microsoft az O365-öt M365-re nevezte át, de a legtöbb egyetemi oldal továbbra is O365 néven hivatkozik rá.)*",
+          "how_to_register_title": "Regisztráció menete",
+          "steps": [
+            "Lépj be a BME Címtár Adminisztrációs oldalra a Neptun azonosítóddal.",
+            "Válaszd a \"Felhasználói fiók beállítása Microsoft Office 365-höz\" menüpontot.",
+            "Válaszd ki a kívánt O365 felhasználónevet.",
+            "Kattints az \"Igen\" opcióra a hozzáférés kérésénél.",
+            "Kattints a \"Beállítások mentése\" gombra."
+          ],
+          "footer": "A hozzáférésed 24 órán belül aktiválódik."
+        },
+        "moodle": {
+          "title": "MOODLE",
+          "list_title": "A kurzusokat két módon találhatod meg:",
+          "items": [
+            "Böngészve nyelv, tanszék és a kurzus neve alapján, vagy",
+            "A bal oldali navigációs menüből, ahol csak a már felvett kurzusaid szerepelnek – így gyorsan és egyszerűen elérheted őket."
+          ]
+        },
+        "teams": {
+          "title": "Az MS Teams használata",
+          "paragraphs": [
+            "A **Microsoft Teams** egy online kommunikációs platform, amely támogatja a **videóhívásokat** és a **virtuális megbeszéléseket**.",
+            "Az egyetemen az oktatók jelenleg elsősorban **online órákra** és **konzultációkra** használják.",
+            "A Teams elérhető: Webböngészőn keresztül, Mobilalkalmazásként, Asztali alkalmazásként.",
+            "A legjobb élmény érdekében az asztali alkalmazás használatát javasoljuk. A bejelentkezéshez használd az **O365 fiókodat** (az **@edu.bme.hu e-mail címedet**)."
+          ]
+        },
+        "wifi": {
+          "title": "Az egyetemi Wi-Fi hálózat használata",
+          "description": "A legegyszerűbb módja az egyetemi **Wi-Fi** hálózatra való csatlakozásnak az **O365 fiók** használata. Részletes **beállítási útmutató** itt érhető el: https://net.bme.hu/wlan/eduroam-bme.php?lang=hu"
+        },
+        "office": {
+          "title": "Office alkalmazások telepítése",
+          "description": "A https://www.office.com/ oldalon az **eduID**-val való bejelentkezés után a jobb felső sarokban lehetőséged van telepíteni az **Office alkalmazásokat** az eszközödre.",
+          "list_title": "Elérhető alkalmazások:",
+          "items": [
+            "Word",
+            "Excel",
+            "PowerPoint",
+            "OneDrive",
+            "Outlook",
+            "Teams",
+            "OneNote"
+          ],
+          "footer": "Ingyenesen elérhető szoftverek hallgatók számára: https://net.bme.hu/sw/"
+        }
+      },
+      "student_life": {
+        "ehk": {
+          "title": "Egyetemi Hallgatói Képviselet (EHK)",
+          "paragraphs": [
+            "A Budapesti Műszaki és Gazdaságtudományi Egyetem (BME) Egyetemi Hallgatói Képviselete a hallgatók hivatalos **képviseleti** szerve. Fő feladata a hallgatói érdekek érvényesítése az egyetemi döntéshozatali folyamatokban és a mindennapi ügyekben. A Hallgatói Képviselet tagjait a hallgatók választják.",
+            "A Hallgatói Képviselet minden karon működik, illetve van egy egyetemi szintű szervezet is, amely összehangolja a kari hallgatói képviseletek munkáját.",
+            "Fordulj hozzánk bizalommal, ha bármilyen problémád adódna a tanulmányaiddal, a kollégiummal, ösztöndíjakkal vagy szociális támogatásokkal kapcsolatban."
+          ],
+          "list_title": "A Hallgatói Képviselet:",
+          "items": [
+            "Hídként szolgál a hallgatók és az egyetemi vezetés között.",
+            "Tájékoztatja a hallgatókat a fontos hírekről, lehetőségekről és szabályzatokról.",
+            "Részt vesz az egyetemi szabályzatok és döntések előkészítésében.",
+            "Közösségi, sport- és kulturális eseményeket szervez."
+          ],
+          "contact": "weboldal: http://ehk.bme.hu/ | e-mail: info@bmeehk.hu"
+        },
+        "faculty_councils": {
+          "title": "Kari Hallgatói Képviseletek",
+          "items": [
+            {
+              "name": "Építőmérnöki Kar",
+              "website": "https://emkhk.bme.hu/",
+              "email": "info@emkhk.hu"
+            },
+            {
+              "name": "Gépészmérnöki Kar",
+              "website": "https://ghk.bme.hu/",
+              "email": "info@ghk.bme.hu"
+            },
+            {
+              "name": "Építészmérnöki Kar",
+              "website": "https://epiteszhk.bme.hu/",
+              "email": "info@epiteszhk.bme.hu"
+            },
+            {
+              "name": "Vegyészmérnöki és Biomérnöki Kar",
+              "website": "https://vegyeszhk.hu/",
+              "email": "vegyeszhk@vegyeszhk.hu"
+            },
+            {
+              "name": "Villamosmérnöki és Informatikai Kar",
+              "website": "https://vik.hk/",
+              "email": "info@vik.hk"
+            },
+            {
+              "name": "Közlekedésmérnöki és Járműmérnöki Kar",
+              "website": "https://kozlekhk.hu/",
+              "email": "info@kozlekkar.hu"
+            },
+            {
+              "name": "Természettudományi Kar",
+              "website": "https://ttkhk.bme.hu/",
+              "email": "info@ttkhk.hu"
+            },
+            {
+              "name": "Gazdaság- és Társadalomtudományi Kar",
+              "website": "http://gtkhk.hu/",
+              "email": "info@gtkhk.bme.hu"
+            }
+          ]
+        },
+        "organizations_intro": "A BME-n számos szakkollégium és öntevékeny kör működik, amelyek kiváló lehetőségeket kínálnak a hallgatók szakmai, akadémiai, közösségi és személyes fejlődésére.",
+        "mvk": {
+          "title": "Műegyetemi Versenycsapat Közösség (MVK)",
+          "description": "Az MVK célja, hogy összehangolt módon támogassa az egyetemen működő versenyjárműveket építő hallgatói csapatokat. Célja továbbá, hogy tagjainak az akadémiai oktatást kiegészítő szakmai fejlődési lehetőségeket biztosítson."
+        },
+        "professional_colleges": {
+          "title": "Szakkollégiumok",
+          "description": "A szakkollégiumok olyan hallgatói közösségek, amelyek a rendes egyetemi tanulmányokhoz kapcsolódó, de azokon túlmutató programokat nyújtanak. A tagok aktív és inspiráló környezetben dolgozhatnak együtt.",
+          "items": [
+            "Simonyi Károly Szakkollégium",
+            "BME Építész Klub Szakkollégium",
+            "BME Gépész Szakkollégium",
+            "BME Közlekedésmérnöki Szakkollégium",
+            "BME Management Szakkollégium",
+            "Universitas Cosmos Szakkollégium",
+            "és sok más…"
+          ]
+        },
+        "student_led": {
+          "title": "Öntevékeny körök",
+          "description": "Az öntevékeny körök a hallgatók által érdeklődésüknek megfelelően alapított egyetemi vagy kari csoportok, amelyek szakmai, akadémiai, sport, kulturális vagy közösségépítő tevékenységet folytatnak.",
+          "items": [
+            "Műegyetemi Néptáncegyüttes",
+            "Búvárklub",
+            "Műegyetemi Vívókör",
+            "Műegyetemi Szimfonikus Zenekar",
+            "és sok más…"
+          ]
+        },
+        "culture": {
+          "title": "Kultúra az Egyetemen",
+          "paragraphs": [
+            "A **Szkéné Színház** az egyetem független színháza, amely **a BME kampuszán** működik. 1970 óta a hallgatók és a szélesebb közönség egyedülálló kulturális központja. A Szkéné kortárs, kísérleti előadásairól és elismert rendezőkkel való együttműködéséről ismert."
+          ]
+        }
+      },
+      "contacts_and_explore": {
+        "important_contacts": {
+          "title": "Fontos Elérhetőségek Külföldi Hallgatók Számára",
+          "items": [
+            {
+              "name": "Központi Tanulmányi Hivatal (KTH)",
+              "description": "A KTH kezeli a diákigazolványokat, beiratkozásokat, hivatalos igazolásokat és az egyetemi adminisztrációt.",
+              "contacts": [
+                { "label": "Web", "value": "https://kth.bme.hu/" },
+                { "label": "E-mail", "value": "kth-info@bme.hu" },
+                { "label": "Cím", "value": "1111 Budapest, Műegyetem rkp. 7-9. R épület, földszint" },
+                { "label": "Telefon", "value": "+36 1 463 4242" }
+              ]
+            },
+            {
+              "name": "Nemzetközi Kapcsolatok Igazgatósága (NKI)",
+              "description": "Az NKI segít az Erasmus+ és egyéb mobilitási programokkal, valamint általános támogatást nyújt a nemzetközi hallgatóknak.",
+              "contacts": [
+                { "label": "Web", "value": "https://nki.bme.hu/" },
+                { "label": "E-mail", "value": "internationalrelations@bme.hu" },
+                { "label": "Cím", "value": "K épület, 1. emelet, 76. szoba, 1111 Budapest, Műegyetem rakpart 3." },
+                { "label": "Telefon", "value": "+36 1 463 3364" }
+              ]
+            },
+            {
+              "name": "Hallgatói Képviselet",
+              "description": "A Hallgatói Képviselet segíteni tud tanulmányi, szociális és közösségi ügyekben. Minden karnak van saját képviselete, és van egy központi iroda is.",
+              "contacts": [
+                { "label": "Web", "value": "http://ehk.bme.hu/" },
+                { "label": "E-mail", "value": "info@bmeehk.hu" },
+                { "label": "Cím", "value": "Műegyetem rkp. 7-9. R épület, 2. emelet 207-es szoba" },
+                { "label": "Telefon", "value": "+36 1 463 3836" }
+              ]
+            },
+            {
+              "name": "International Mentor Team",
+              "description": "Az International Mentor Team célja, hogy segítse a külföldi hallgatók beilleszkedését Budapesten. Honlapjukon minden szükséges információ megtalálható.",
+              "contacts": [
+                { "label": "Web", "value": "https://www.imt.bme.hu/" },
+                { "label": "E-mail", "value": "imt@bme.hu" },
+                { "label": "Cím", "value": "Műegyetem rkp. 7-9. R épület, 1. emelet 102" }
+              ]
+            }
+          ]
+        },
+        "transport": {
+          "title": "Hogyan juss el a BME-re a repülőtérről?",
+          "paragraphs": [
+            "A 100E busz 10 percenként indul a Liszt Ferenc Repülőtérről. A busszal a Kálvin Térig kell utaznod. Onnan a 4-es metróval Kelenföld irányába, vagy a 47-es, 49-es villamossal a Szent Gellért tér - Műegyetem megállóig. Innen már látható a K épület.",
+            "A 100E és 200E buszokra külön repülőtéri vonaljegy szükséges (amit a buszokon, a repülőtéren vagy a BudapestGO alkalmazásban vásárolhatsz meg).",
+            "Töltsd le a BudapestGO appot, ahol kényelmesen vehetsz bérletet is."
+          ]
+        },
+        "sights": {
+          "title": "Látnivalók, amiket érdemes megnézni Budapesten:",
+          "items": [
+            "Széchenyi Gyógyfürdő",
+            "Országház (Parlament)",
+            "Halászbástya",
+            "Budavári Palota",
+            "Mátyás-templom",
+            "Szent István Bazilika",
+            "Margit-sziget",
+            "Cipők a Duna-parton",
+            "Duna-part",
+            "Gellért-hegy",
+            "Hősök tere",
+            "Vajdahunyad vára",
+            "Terror Háza",
+            "Sziklakórház",
+            "Nagy Vásárcsarnok"
+          ]
+        },
+        "restaurants": {
+          "title": "Jó éttermek és kávézók az egyetem környékén:",
+          "restaurants_title": "Éttermek:",
+          "cafes_title": "Kávézók és pékségek:",
+          "restaurants_list": [
+            "A Móricz Zsigmond körtéren sok gyorsétterem található: McDonalds’, Pesti Pipi, KFC, Krumpli., Pizza Forte, Moto Pizza",
+            "On Karinthy Frigyes Street: Da Giovanni, Karimi Gyros",
+            "On Budafoki Street: LA Burger, számos kínai étterem, Tölcsibe, Pizza Di Napoli"
+          ],
+          "cafes_list": [
+            "A Móricz Zsigmond körtéren: Félegyházi Pékség, Café Frei",
+            "A Bartók Béla úton: Kelet Kávézó",
+            "A Budafoki úton: Starbucks, Nanu Kávézó, Kávébab Kávézó",
+            "A Karinthy Frigyes úton: Lipóti Pékség, Fornetti"
+          ]
+        }
+      }
+    }
   }
 }

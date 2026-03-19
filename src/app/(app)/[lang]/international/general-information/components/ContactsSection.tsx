@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Info, Mail, Globe, MapPin, Phone, ExternalLink, HeartHandshake, Camera, Coffee, PlaneTakeoff } from "lucide-react";
 
-export function ContactsSection({ content }: { content: any }) {
+export function ContactsSection({ content, lang }: { content: any; lang: string }) {
   return (
     <section id="contacts-and-explore" className="scroll-mt-28 space-y-8">
       <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
@@ -30,7 +30,7 @@ export function ContactsSection({ content }: { content: any }) {
                     const labelLower = contactDetail.label.toLowerCase();
                     if (labelLower.includes('email') || labelLower.includes('e-mail')) Icon = Mail;
                     else if (labelLower.includes('web') || labelLower.includes('honlap')) Icon = Globe;
-                    else if (labelLower.includes('location') || labelLower.includes('cím')) Icon = MapPin;
+                    else if (labelLower.includes('location') || labelLower.includes('cím') || labelLower.includes('address')) Icon = MapPin;
                     else if (labelLower.includes('phone') || labelLower.includes('telefon')) Icon = Phone;
 
                     return (
@@ -66,8 +66,8 @@ export function ContactsSection({ content }: { content: any }) {
         </CardContent>
       </Card>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="shadow-sm border-gray-200 md:col-span-3 lg:col-span-1 bg-blue-50/30">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card className="shadow-sm border-gray-200 bg-blue-50/30">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
                 <PlaneTakeoff size={20} className="text-blue-500" />
@@ -83,25 +83,6 @@ export function ContactsSection({ content }: { content: any }) {
           </CardContent>
         </Card>
         
-        <Card className="shadow-sm border-gray-200 flex flex-col h-full">
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-                <Camera size={20} className="text-emerald-500" />
-                {content.contacts_and_explore.sights.title.split(':')[0]}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex-1">
-            <ul className="space-y-2 h-full overflow-y-auto pr-2 custom-scrollbar">
-              {content.contacts_and_explore.sights.items.map((item: string, i: number) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-gray-600 bg-gray-50 border border-gray-100 p-2 rounded-lg font-medium">
-                  <MapPin size={14} className="text-emerald-400 shrink-0" />
-                  <span className="truncate">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
         <Card className="shadow-sm border-gray-200 flex flex-col h-full">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
@@ -135,6 +116,25 @@ export function ContactsSection({ content }: { content: any }) {
           </CardContent>
         </Card>
       </div>
+
+      <Card className="shadow-sm border-gray-200 flex flex-col">
+        <CardHeader>
+          <CardTitle className="text-lg flex items-center gap-2">
+              <Camera size={20} className="text-emerald-500" />
+              {content.contacts_and_explore.sights.title.split(':')[0]}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pr-2">
+            {content.contacts_and_explore.sights.items.map((item: string, i: number) => (
+              <li key={i} className="flex items-center gap-3 text-sm text-gray-600 bg-gray-50 border border-gray-100 p-2 rounded-lg font-medium">
+                <MapPin size={14} className="text-emerald-400 shrink-0" />
+                <span className="truncate">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
     </section>
   );
 }

@@ -2,10 +2,10 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { i18n } from "@/i18n-config";
 import { ExternalLink } from "lucide-react";
-import { GettingStartedSection } from "./components/GettingStartedSection";
-import { UniversitySystemsSection } from "./components/UniversitySystemsSection";
-import { StudentLifeSection } from "./components/StudentLifeSection";
 import { ContactsSection } from "./components/ContactsSection";
+import { GettingStartedSection } from "./components/GettingStartedSection";
+import { StudentLifeSection } from "./components/StudentLifeSection";
+import { UniversitySystemsSection } from "./components/UniversitySystemsSection";
 
 export default async function GeneralInformationPage({
   params,
@@ -32,7 +32,7 @@ export default async function GeneralInformationPage({
 
   return (
     <div className="min-h-screen bg-gray-50/50">
-      <div className="mx-auto px-4 py-10 lg:py-16 max-w-screen-2xl">
+      <div className="mx-auto px-4 pb-10 lg:py-8 max-w-screen-2xl">
         <div className="mb-12">
           <PageHeader title={content.title} description={content.description} />
         </div>

@@ -1,0 +1,44 @@
+{
+  "title": "Important Contacts for International Students",
+  "items": [
+    {
+      "name": "Academic Services Centre (KTH)",
+      "description": "KTH manages student ID cards, enrollments, official certificates, and university administration.",
+      "contacts": [
+        { "label": "Web", "value": "https://kth.bme.hu/" },
+        { "label": "E-mail", "value": "kth-info@bme.hu" },
+        { "label": "Address", "value": "1111 Budapest, Műegyetem rkp. 7-9. Building R, ground floor" },
+        { "label": "Phone", "value": "+36 1 463 4242" }
+      ]
+    },
+    {
+      "name": "Department of International Relations (NKI)",
+      "description": "NKI assists with Erasmus+ and other mobility programs, and provides general support to international students.",
+      "contacts": [
+        { "label": "Web", "value": "https://nki.bme.hu/" },
+        { "label": "E-mail", "value": "internationalrelations@bme.hu" },
+        { "label": "Address", "value": "Building K, 1st floor, Room 76, 1111 Budapest, Műegyetem rakpart 3." },
+        { "label": "Phone", "value": "+36 1 463 3364" }
+      ]
+    },
+    {
+      "name": "Students' Union (EHK)",
+      "description": "The Students' Union can assist with academic, social, and community issues. Each faculty has its own representation, and there is a central office as well.",
+      "contacts": [
+        { "label": "Web", "value": "http://ehk.bme.hu/" },
+        { "label": "E-mail", "value": "info@bmeehk.hu" },
+        { "label": "Address", "value": "Műegyetem rkp. 7-9. Building R, 2nd floor, Room 207" },
+        { "label": "Phone", "value": "+36 1 463 3836" }
+      ]
+    },
+    {
+      "name": "International Mentor Team",
+      "description": "The International Mentor Team aims to help international students integrate into life in Budapest. All necessary information can be found on their website.",
+      "contacts": [
+        { "label": "Web", "value": "https://www.imt.bme.hu/" },
+        { "label": "E-mail", "value": "imt@bme.hu" },
+        { "label": "Address", "value": "Műegyetem rkp. 7-9. Building R, 1st floor, Room 102" }
+      ]
+    }
+  ]
+}

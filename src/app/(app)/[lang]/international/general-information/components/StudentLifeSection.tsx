@@ -62,19 +62,19 @@ export function StudentLifeSection({ content, lang }: { content: any; lang: stri
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="flex flex-col gap-3 md:grid md:grid-cols-2">
             {content.student_life.faculty_councils.items.map((council: { name: string; website: string; email: string }, i: number) => (
-              <div key={i} className="bg-white border text-center border-gray-200 rounded-xl p-4 hover:border-ehk-light-red hover:shadow-md transition-all group flex flex-col items-center">
-                <h4 className="font-bold text-gray-800 mb-3 text-sm leading-tight group-hover:text-ehk-dark-red transition-colors">{council.name}</h4>
-                <div className="mt-auto flex w-full gap-2">
-                  <Button variant="outline" size="sm" className="flex-1 hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]" asChild>
+              <div key={i} className="bg-white border border-gray-200 rounded-xl p-4 hover:border-ehk-light-red hover:shadow-md transition-all group flex flex-row items-center justify-between">
+                <h4 className="font-bold text-gray-800 text-sm leading-tight group-hover:text-ehk-dark-red transition-colors flex-1">{council.name}</h4>
+                <div className="flex items-center gap-2 ml-4">
+                  <Button variant="outline" size="sm" className="hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]" asChild>
                     <a href={council.website} target="_blank" rel="noopener noreferrer" className="flex justify-center items-center gap-1.5 text-xs font-semibold">
-                      {lang === "hu" ? "További információ" : "More information"} <ExternalLink size={12} />
+                      <ExternalLink size={12} />
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" className="hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]" asChild>
                     <a href={`mailto:${council.email}`} title={council.email} className="flex justify-center items-center gap-1.5 text-xs font-semibold">
-                      <Mail size={14} /> {lang === "hu" ? "E-mail" : "Email"}
+                      <Mail size={12} />
                     </a>
                   </Button>
                 </div>

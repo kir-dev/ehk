@@ -220,12 +220,12 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         { label: t("Klubok", "Clubs"), href: link("/kozelet/klubok"), targetBlank: false },
       ],
     },
-    {
-      title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
-      href: link("/golyaknak/hirek"),
-      targetBlank: false,
-      items: [],
-    },
+    // {
+    //   title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
+    //   href: link("/golyaknak/hirek"),
+    //   targetBlank: false,
+    //   items: [],
+    // },
   ];
 
   // Filter out certain menu items for English version

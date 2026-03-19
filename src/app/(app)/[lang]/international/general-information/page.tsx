@@ -32,7 +32,7 @@ export default async function GeneralInformationPage({
 
   return (
     <div className="min-h-screen bg-gray-50/50">
-      <div className="mx-auto px-4 pb-10 lg:py-8 max-w-screen-2xl">
+      <div className="mx-auto px-4 py-4 lg:py-8 max-w-screen-2xl">
         <div className="mb-12">
           <PageHeader title={content.title} description={content.description} />
         </div>

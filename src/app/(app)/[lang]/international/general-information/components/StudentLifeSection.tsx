@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Building, Mail, ExternalLink, Music, Rocket } from "lucide-react";
 
-export function StudentLifeSection({ content, lang }: { content: any; lang: string }) {
+export function StudentLifeSection({ content }: { content: any }) {
   return (
     <section id="student-life" className="scroll-mt-28 space-y-8">
       <div className="flex items-center gap-4 pb-4 border-b border-gray-200">

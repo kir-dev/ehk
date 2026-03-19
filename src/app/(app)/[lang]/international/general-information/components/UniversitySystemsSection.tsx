@@ -1,8 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  CheckCircle, 
-  Info, 
   ExternalLink, 
   MonitorSmartphone, 
   FileText, 
@@ -29,8 +27,8 @@ const getAppIcon = (name: string) => {
   }
 };
 
-export function UniversitySystemsSection({ content, lang }: { content: any, lang: string }) {
-  const moreInfoText = lang === "hu" ? "További információ" : "More information";
+export function UniversitySystemsSection({ content }: { content: any }) {
+  const moreInfoText = content.more_info;
   return (
     <section id="university-systems" className="scroll-mt-28 space-y-8">
       <div className="flex items-center gap-4 pb-4 border-b border-gray-200">

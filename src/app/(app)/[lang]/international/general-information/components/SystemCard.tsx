@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink, Info } from "lucide-react";
-import { useTranslate } from "@/hooks/useTranslate";
 
 export function SystemCard({ title, description, listTitle, items, footer, moreInfoText }: {
   title: string;

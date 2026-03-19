@@ -423,11 +423,14 @@
       "title": "Általános Információk",
       "description": "Fontos általános információk külföldi állampolgárok számára, akik a BME-n tanulnak",
       "nav": {
+        "main_sections": "Tartalomjegyzék",
+        "portals": "Portálok",
         "getting_started": "Kezdő lépések",
         "university_systems": "Egyetemi rendszerek",
         "student_life": "Hallgatói élet",
         "contacts": "Kapcsolatok és felfedezés"
       },
+      "more_info": "További információ",
       "getting_started": {
         "admission": {
           "title": "Felvételi és tanulmányi lehetőségek",

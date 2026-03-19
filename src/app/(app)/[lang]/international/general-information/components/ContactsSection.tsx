@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Info, Mail, Globe, MapPin, Phone, ExternalLink, HeartHandshake, Camera, Coffee, PlaneTakeoff } from "lucide-react";
 
-export function ContactsSection({ content, lang }: { content: any; lang: string }) {
+export function ContactsSection({ content}: { content: any; }) {
   return (
     <section id="contacts-and-explore" className="scroll-mt-28 space-y-8">
       <div className="flex items-center gap-4 pb-4 border-b border-gray-200">

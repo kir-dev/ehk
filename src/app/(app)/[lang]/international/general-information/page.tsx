@@ -29,6 +29,7 @@ export default async function GeneralInformationPage({
     { id: "student-life", title: content.nav.student_life },
     { id: "contacts-and-explore", title: content.nav.contacts },
   ];
+  const nav = content.nav as typeof content.nav & { portals: string };
 
   return (
     <div className="min-h-screen bg-gray-50/50">
@@ -43,7 +44,7 @@ export default async function GeneralInformationPage({
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
               <div className="p-4 border-b border-gray-100 bg-gray-50/80">
                 <span className="font-bold text-xs uppercase tracking-widest text-gray-500">
-                  {lang === "hu" ? "Tartalomjegyzék" : "Main Sections"}
+                  {content.nav.main_sections}
                 </span>
               </div>
               <nav className="flex flex-col py-2">
@@ -64,7 +65,7 @@ export default async function GeneralInformationPage({
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hidden lg:block">
               <div className="p-4 border-b border-gray-100 bg-gray-50/80">
                 <span className="font-bold text-xs uppercase tracking-widest text-gray-500">
-                  {lang === "hu" ? "Portálok" : "Portals"}
+                  {nav.portals}
                 </span>
               </div>
               <div className="p-3 space-y-1">
@@ -84,10 +85,10 @@ export default async function GeneralInformationPage({
 
           {/* Main Content */}
           <div className="flex-1 min-w-0 space-y-16 pb-24">
-            <GettingStartedSection content={content} lang={lang} />
-            <UniversitySystemsSection content={content} lang={lang} />
-            <StudentLifeSection content={content} lang={lang} />
-            <ContactsSection content={content} lang={lang} />
+            <GettingStartedSection content={content} />
+            <UniversitySystemsSection content={content} />
+            <StudentLifeSection content={content} />
+            <ContactsSection content={content} />
           </div>
         </div>
       </div>

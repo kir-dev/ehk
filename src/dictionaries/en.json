@@ -423,11 +423,14 @@
       "title": "General Information",
       "description": "Important General Information for Non-Hungarian Citizens Studying at BME",
       "nav": {
+        "main_sections": "Main Sections",
+        "portals": "Portals",
         "getting_started": "Getting Started",
         "university_systems": "University Systems",
         "student_life": "Student Life",
         "contacts": "Contacts & Explore"
       },
+      "more_info": "More information",
       "getting_started": {
         "admission": {
           "title": "Admission and Study Opportunities",

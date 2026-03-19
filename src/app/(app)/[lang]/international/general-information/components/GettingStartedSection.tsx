@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { School, CalendarCheck, FileCheck2, CheckCircle, GraduationCap, ExternalLink } from "lucide-react";
 import React from "react";
-import { useTranslate } from "@/hooks/useTranslate";
 
 // InfoCard komponens az egységes stílushoz
 function InfoCard({ title, icon: Icon, children }: { title: string; icon?: any; children: React.ReactNode }) {
@@ -17,8 +16,7 @@ function InfoCard({ title, icon: Icon, children }: { title: string; icon?: any; 
   );
 }
 
-export function GettingStartedSection({ content, lang }: { content: any, lang: string }) {
-  const moreInfoText = lang === "hu" ? "További információ" : "More information";
+export function GettingStartedSection({ content }: { content: any }) {
   return (
     <section id="getting-started" className="scroll-mt-28 space-y-8">
       <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
@@ -77,7 +75,7 @@ export function GettingStartedSection({ content, lang }: { content: any, lang: s
                        part.match(/https?:\/\/[^\s]+/) ? (
                          <Button key={j} variant="outline" size="sm" asChild className="mx-1 hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]">
                            <a href={part} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5">
-                             {moreInfoText} <ExternalLink size={12} />
+                             {content.more_info} <ExternalLink size={12} />
                            </a>
                          </Button>
                        ) : (
@@ -111,7 +109,7 @@ export function GettingStartedSection({ content, lang }: { content: any, lang: s
                        part.match(/https?:\/\/[^\s]+/) ? (
                          <Button key={j} variant="outline" size="sm" asChild className="mt-2 hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]">
                             <a href={part} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5">
-                               {moreInfoText} <ExternalLink size={12} />
+                               {content.more_info} <ExternalLink size={12} />
                             </a>
                          </Button>
                        ) : (

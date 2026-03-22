@@ -17,11 +17,12 @@ export function DesktopNavigation({ items, onNavigate }: DesktopNavigationProps)
   return (
     <NavigationMenu className={NAVBAR_STYLES.desktop.nav} viewport={false}>
       <NavigationMenuList>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <DesktopMenuItem 
             key={item.title} 
             item={item} 
             onNavigate={onNavigate} 
+            isNearRight={index >= items.length - 2}
           />
         ))}
       </NavigationMenuList>

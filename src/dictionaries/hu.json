@@ -701,39 +701,84 @@
               "name": "Központi Tanulmányi Hivatal (KTH)",
               "description": "A KTH kezeli a diákigazolványokat, beiratkozásokat, hivatalos igazolásokat és az egyetemi adminisztrációt.",
               "contacts": [
-                { "label": "Web", "value": "https://kth.bme.hu/" },
-                { "label": "E-mail", "value": "kth-info@bme.hu" },
-                { "label": "Cím", "value": "1111 Budapest, Műegyetem rkp. 7-9. R épület, földszint" },
-                { "label": "Telefon", "value": "+36 1 463 4242" }
+                {
+                  "label": "Web",
+                  "value": "https://kth.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "kth-info@bme.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "1111 Budapest, Műegyetem rkp. 7-9. R épület, földszint"
+                },
+                {
+                  "label": "Telefon",
+                  "value": "+36 1 463 4242"
+                }
               ]
             },
             {
               "name": "Nemzetközi Kapcsolatok Igazgatósága (NKI)",
               "description": "Az NKI segít az Erasmus+ és egyéb mobilitási programokkal, valamint általános támogatást nyújt a nemzetközi hallgatóknak.",
               "contacts": [
-                { "label": "Web", "value": "https://nki.bme.hu/" },
-                { "label": "E-mail", "value": "internationalrelations@bme.hu" },
-                { "label": "Cím", "value": "K épület, 1. emelet, 76. szoba, 1111 Budapest, Műegyetem rakpart 3." },
-                { "label": "Telefon", "value": "+36 1 463 3364" }
+                {
+                  "label": "Web",
+                  "value": "https://nki.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "internationalrelations@bme.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "K épület, 1. emelet, 76. szoba, 1111 Budapest, Műegyetem rakpart 3."
+                },
+                {
+                  "label": "Telefon",
+                  "value": "+36 1 463 3364"
+                }
               ]
             },
             {
               "name": "Hallgatói Képviselet",
               "description": "A Hallgatói Képviselet segíteni tud tanulmányi, szociális és közösségi ügyekben. Minden karnak van saját képviselete, és van egy központi iroda is.",
               "contacts": [
-                { "label": "Web", "value": "http://ehk.bme.hu/" },
-                { "label": "E-mail", "value": "info@bmeehk.hu" },
-                { "label": "Cím", "value": "Műegyetem rkp. 7-9. R épület, 2. emelet 207-es szoba" },
-                { "label": "Telefon", "value": "+36 1 463 3836" }
+                {
+                  "label": "Web",
+                  "value": "http://ehk.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "info@bmeehk.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "Műegyetem rkp. 7-9. R épület, 2. emelet 207-es szoba"
+                },
+                {
+                  "label": "Telefon",
+                  "value": "+36 1 463 3836"
+                }
               ]
             },
             {
               "name": "International Mentor Team",
               "description": "Az International Mentor Team célja, hogy segítse a külföldi hallgatók beilleszkedését Budapesten. Honlapjukon minden szükséges információ megtalálható.",
               "contacts": [
-                { "label": "Web", "value": "https://www.imt.bme.hu/" },
-                { "label": "E-mail", "value": "imt@bme.hu" },
-                { "label": "Cím", "value": "Műegyetem rkp. 7-9. R épület, 1. emelet 102" }
+                {
+                  "label": "Web",
+                  "value": "https://www.imt.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "imt@bme.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "Műegyetem rkp. 7-9. R épület, 1. emelet 102"
+                }
               ]
             }
           ]
@@ -783,10 +828,17 @@
           ]
         }
       }
-    }
-  },
-  "international": {
+    },
     "education_information": {
+      "nav": {
+        "main_sections": "Fő részek",
+        "subject_description": "Tantárgyi Követelményrendszer (Tantárgyleírás)",
+        "registration_periods": "Tárgyfelvétel és módosítás",
+        "code_of_studies": "Tanulmányi és Vizsgaszabályzat (TVSZ)",
+        "evaluation": "Különböző értékelési és számonkérési módszerek",
+        "semester_info": "Fontos információk a félév során",
+        "tdk": "Tudományos Diákköri Konferencia (TDK)"
+      },
       "title": "Education-related information",
       "subject_description": {
         "title": "Subject Description",
@@ -832,7 +884,7 @@
         }
       },
       "registration_periods": {
-        "title": "Course Registration Periods at BME",
+        "title": "Tárgyfelvétel és módosítás a BME-n",
         "paragraphs": [
           "Unless stated otherwise, the preliminary subject and course registration period starts at 18:00 on the third working day after the exam period and ends at 12:00 on the last working day before the registration week.",
           "For exact dates and times, students should always check the official ASC website. Also you can always find all the dates on the websites, Instagram and Facebook of the Students’ Union or Faculty Student Councils.",

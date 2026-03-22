@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { School, CalendarCheck, FileCheck2, CheckCircle, GraduationCap, ExternalLink, LucideIcon } from "lucide-react";
 import React from "react";
 import { renderFormattedText } from "@/lib/utils";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 // InfoCard komponens az egységes stílushoz
 function InfoCard({ title, icon: Icon, children }: { title: string; icon?: LucideIcon; children: React.ReactNode }) {
@@ -21,14 +22,7 @@ function InfoCard({ title, icon: Icon, children }: { title: string; icon?: Lucid
 export function GettingStartedSection({ content }: { content: any }) {
   return (
     <section id="getting-started" className="scroll-mt-28 space-y-8">
-      <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
-        <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center border border-red-100 shrink-0 shadow-sm">
-          <School className="text-ehk-dark-red" size={24} />
-        </div>
-        <h2 className="text-3xl font-bold text-gray-800">
-          {content.nav.getting_started}
-        </h2>
-      </div>
+      <SectionHeader title={content.nav.getting_started} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <InfoCard title={content.getting_started.admission.title} icon={School}>

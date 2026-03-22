@@ -195,7 +195,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         { label: t("Hírek", "News"), href: link("/international/hirek"), targetBlank: false },
         { label: t("Általános információk", "General Information"), href: link("/international/general-information"), targetBlank: false },
         { label: t("Oktatási információk", "Education Information"), href: link("/international/education-information"), targetBlank: false },
-        { label: "Application Information", href: link("/international/application-information"), targetBlank: false },
+        { label: t("Jelentkezési információk", "Application Information"), href: link("/international/application-information"), targetBlank: false },
       ],
     },
     {

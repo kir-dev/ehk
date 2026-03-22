@@ -1,12 +1,11 @@
 import { LucideIcon } from "lucide-react";
-import React from "react";
 
 interface SectionHeaderProps {
   title: string;
   icon?: LucideIcon;
 }
 
-export function SectionHeader({ title, icon: Icon }: SectionHeaderProps) {
+export function SectionHeader({ title, icon: Icon }: Readonly<SectionHeaderProps>) {
   return (
     <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
       {Icon && (

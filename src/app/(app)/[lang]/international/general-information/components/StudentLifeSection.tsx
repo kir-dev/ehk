@@ -2,19 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Building, Mail, ExternalLink, Music, Rocket } from "lucide-react";
 import { renderFormattedText } from "@/lib/utils";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function StudentLifeSection({ content }: { content: any }) {
   return (
     <section id="student-life" className="scroll-mt-28 space-y-8">
-      <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
-        <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center border border-red-100 shrink-0 shadow-sm">
-          <Users className="text-ehk-dark-red" size={24} />
-        </div>
-        <h2 className="text-3xl font-bold text-gray-800">
-          {content.nav.student_life}
-        </h2>
-      </div>
+      <SectionHeader title={content.nav.student_life} />
 
       {/* EHK Card */}
       <Card className="shadow-sm border-gray-200">

@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { 
   ExternalLink, 
-  MonitorSmartphone, 
   FileText, 
   Table, 
   Presentation, 
@@ -14,6 +13,7 @@ import {
 import { SystemCard } from "./SystemCard";
 import { ExternalLinkCard } from "./ExternalLinkCard";
 import { renderFormattedText } from "@/lib/utils";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 const getAppIcon = (name: string) => {
   switch (name) {
@@ -34,14 +34,7 @@ export function UniversitySystemsSection({ content }: { content: any }) {
 
   return (
     <section id="university-systems" className="scroll-mt-28 space-y-8">
-      <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
-        <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center border border-red-100 shrink-0 shadow-sm">
-          <MonitorSmartphone className="text-ehk-dark-red" size={24} />
-        </div>
-        <h2 className="text-3xl font-bold text-gray-800">
-          {content.nav.university_systems}
-        </h2>
-      </div>
+      <SectionHeader title={content.nav.university_systems} />
 
       <SystemCard 
         title={content.university_systems.neptun.title}

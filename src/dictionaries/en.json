@@ -701,39 +701,84 @@
               "name": "Academic Services Centre (KTH)",
               "description": "KTH manages student ID cards, enrollments, official certificates, and university administration.",
               "contacts": [
-                { "label": "Web", "value": "https://kth.bme.hu/" },
-                { "label": "E-mail", "value": "kth-info@bme.hu" },
-                { "label": "Address", "value": "1111 Budapest, Műegyetem rkp. 7-9. Building R, ground floor" },
-                { "label": "Phone", "value": "+36 1 463 4242" }
+                {
+                  "label": "Web",
+                  "value": "https://kth.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "kth-info@bme.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "1111 Budapest, Műegyetem rkp. 7-9. Building R, ground floor"
+                },
+                {
+                  "label": "Phone",
+                  "value": "+36 1 463 4242"
+                }
               ]
             },
             {
               "name": "Department of International Relations (NKI)",
               "description": "NKI assists with Erasmus+ and other mobility programs, and provides general support to international students.",
               "contacts": [
-                { "label": "Web", "value": "https://nki.bme.hu/" },
-                { "label": "E-mail", "value": "internationalrelations@bme.hu" },
-                { "label": "Address", "value": "Building K, 1st floor, Room 76, 1111 Budapest, Műegyetem rakpart 3." },
-                { "label": "Phone", "value": "+36 1 463 3364" }
+                {
+                  "label": "Web",
+                  "value": "https://nki.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "internationalrelations@bme.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "Building K, 1st floor, Room 76, 1111 Budapest, Műegyetem rakpart 3."
+                },
+                {
+                  "label": "Phone",
+                  "value": "+36 1 463 3364"
+                }
               ]
             },
             {
               "name": "Students' Union (EHK)",
               "description": "The Students' Union can assist with academic, social, and community issues. Each faculty has its own representation, and there is a central office as well.",
               "contacts": [
-                { "label": "Web", "value": "http://ehk.bme.hu/" },
-                { "label": "E-mail", "value": "info@bmeehk.hu" },
-                { "label": "Address", "value": "Műegyetem rkp. 7-9. Building R, 2nd floor, Room 207" },
-                { "label": "Phone", "value": "+36 1 463 3836" }
+                {
+                  "label": "Web",
+                  "value": "http://ehk.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "info@bmeehk.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "Műegyetem rkp. 7-9. Building R, 2nd floor, Room 207"
+                },
+                {
+                  "label": "Phone",
+                  "value": "+36 1 463 3836"
+                }
               ]
             },
             {
               "name": "International Mentor Team",
               "description": "The International Mentor Team aims to help international students integrate into life in Budapest. All necessary information can be found on their website.",
               "contacts": [
-                { "label": "Web", "value": "https://www.imt.bme.hu/" },
-                { "label": "E-mail", "value": "imt@bme.hu" },
-                { "label": "Address", "value": "Műegyetem rkp. 7-9. Building R, 1st floor, Room 102" }
+                {
+                  "label": "Web",
+                  "value": "https://www.imt.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "imt@bme.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "Műegyetem rkp. 7-9. Building R, 1st floor, Room 102"
+                }
               ]
             }
           ]
@@ -781,6 +826,294 @@
             "On Budafoki road: Starbucks, Nanu Kávézó, Kávébab Kávézó",
             "On Karinthy Frigyes street: Lipóti Pékség, Fornetti"
           ]
+        }
+      }
+    },
+    "education_information": {
+      "nav": {
+        "main_sections": "Main sections",
+        "subject_description": "Subject Description",
+        "registration_periods": "Course Registration & Late Changes",
+        "code_of_studies": "Code of Studies and Exams (CoS)",
+        "evaluation": "Different methods of evaluation and assessment of learning outcomes",
+        "semester_info": "Important information during the semester",
+        "tdk": "Students' Scientific Conference (TDK)"
+      },
+      "title": "Education-related information",
+      "subject_description": {
+        "title": "Subject Description",
+        "where_available": {
+          "title": "Where it’s available:",
+          "description": "Every subject offered by the University must have a subject description. This must be available in the SAS system or on the faculty’s website."
+        },
+        "languages": {
+          "title": "Languages:",
+          "description": "Subject descriptions must be provided in:",
+          "items": [
+            "Hungarian",
+            "English",
+            "The language of the training programme (if different)"
+          ]
+        },
+        "approval": {
+          "title": "Approval:",
+          "items": [
+            "For some subjects (as defined in Section 17. (3) a & b), the Faculty Council must approve the subject description.",
+            "For others (as defined in Section 17. (3) c), a designated person or body (as decided by the Faculty Council) approves it."
+          ]
+        },
+        "must_include": {
+          "title": "What the Subject Description Must Include:",
+          "items": [
+            "Subject title",
+            "Subject code (from Section 19)",
+            "Language(s) it's offered in",
+            "Type of subject (based on Section 17. (2))",
+            "Role in the curriculum for each academic programme (Section 17. (3))",
+            "Course type and number of hours per week or per term",
+            "Number of credits",
+            "Type of evaluation (based on Section 18)",
+            "Name, contact info, and department of the subject coordinator",
+            "Department responsible for teaching",
+            "Purpose of the subject and how it connects to the programme's learning goals",
+            "Requirements to register (see Section 37)",
+            "Learning outcomes, aligned with the programme’s training goals",
+            "How learning outcomes are evaluated (see Title 31)",
+            "Learning materials (print or digital) and where to access them"
+          ]
+        }
+      },
+      "registration_periods": {
+        "title": "Course Registration Periods at BME",
+        "paragraphs": [
+          "Unless stated otherwise, the preliminary subject and course registration period starts at 18:00 on the third working day after the exam period and ends at 12:00 on the last working day before the registration week.",
+          "For exact dates and times, students should always check the official ASC website. Also you can always find all the dates on the websites, Instagram and Facebook of the Students’ Union or Faculty Student Councils.",
+          "The final course registration period starts at 18:00 on the first day of the registration week and runs until 23:59 on the last day of that week."
+        ]
+      },
+      "late_registration": {
+        "title": "Late Subject Registration or Withdrawal at BME",
+        "paragraphs": [
+          "It’s possible to register for or drop a subject after the regular period, but only until the first day of the second teaching week. You must submit a request via Neptun:"
+        ],
+        "requests": [
+          "Request 018 – Subject registration/withdrawal request (NOT your own fault)",
+          "Request 019 – Late subject registration/withdrawal request (YOUR own fault) - A 5,500 HUF fee per subject applies if it’s your own fault."
+        ],
+        "not_own_fault": {
+          "title": "What counts as \"not your own fault\"?",
+          "intro": "You can use the 018 form without a fee if, for example:",
+          "items": [
+            "You were entitled to register the subject according to your curriculum, but Neptun didn’t allow it or deleted it by mistake.",
+            "You completed the subject in a previous programme, but want to register it again (not just get it recognized).",
+            "The course time changed and now conflicts with another subject, so you need to drop it.",
+            "You couldn’t register for a specialization course due to late specialization approval.",
+            "You want to register for a course from another faculty.",
+            "Other justified reasons."
+          ],
+          "outro": "You should attach instructor approval using the official form. This is strongly recommended in all cases. It becomes mandatory starting from the third teaching week."
+        }
+      },
+      "code_of_studies": {
+        "title": "Code of Studies and Exams (CoS)",
+        "study_levels": {
+          "title": "There are a lot of different types of study levels at BME",
+          "items": [
+            "bachelor training programme (BA, BSc);",
+            "master training programme (MA, MSc);",
+            "single-cycle training programme;",
+            "doctoral training programme (PhD, DLA, DBA)."
+          ],
+          "extra": "Also the University organises postgraduate specialist training programmes, which do not award a higher education degree."
+        },
+        "languages": {
+          "title": "Following their statutory registration, by the Office of Education, the academic programmes may be announced in the following languages:",
+          "items": [
+            "Hungarian",
+            "English",
+            "German"
+          ]
+        },
+        "formats": {
+          "title": "Programmes under Section Section 11. may be organised in",
+          "items": [
+            "full-time (daytime),",
+            "part-time (evening or correspondence), or",
+            "distance learning format."
+          ]
+        },
+        "subjects": {
+          "title": "Subjects based on their role in the curriculum, a subject can be",
+          "items": [
+            "mandatory;",
+            "elective whose adding and completion is mandatory, and of which students have to add and complete a given number of credits as specified in the curriculum;",
+            "optional, not identified by the curriculum on an itemised basis, but of which students shave to add and complete a given number of credits; or",
+            "a criterion requirement of which students have to add and complete a given number of subjects to obtain their degree or qualification. Such as PE class, etc…"
+          ]
+        },
+        "problems": {
+          "title": "If problems occur during your studies…",
+          "professor": {
+            "title": "you should contact your professor if…",
+            "items": [
+              "…you have problems with your homework",
+              "…you don't understand something",
+              "…you couldn't attend a laboratory class, and you have to go to another",
+              "etc."
+            ]
+          },
+          "students_council": {
+            "title": "You should contact the Students’ Council of your Faculty if",
+            "items": [
+              "…the whole class have the same problem,",
+              "…over 50% fail on a test and exam,",
+              "…if you don’t understand something about the CoS"
+            ]
+          }
+        }
+      },
+      "evaluation": {
+        "title": "Different methods of evaluation and assessment of learning outcomes",
+        "assessment_goals": {
+          "title": "Learning Outcome Assessment",
+          "intro": "Assessing learning outcomes helps achieve the following goals:",
+          "items": [
+            "Diagnostic Assessment: To identify what students already know before starting an activity.",
+            "Formative Assessment: To monitor students' progress during the course, with ongoing feedback from the instructor.",
+            "Practical Work: To guide students as they work on projects, presentations, creative work, or other tasks with instructor support.",
+            "Dual/Cooperative Training: To solve practical tasks in training that involves both school and workplace settings."
+          ]
+        },
+        "assessment_types": {
+          "title": "Types of Assessment",
+          "diagnostic": {
+            "title": "Diagnostic Assessment (before starting an activity):",
+            "items": [
+              "Checks if students have the basic knowledge/skills needed.",
+              "Can be graded as “satisfactory”/“fail” or with points.",
+              "Grades may or may not count toward the final grade."
+            ]
+          },
+          "formative": {
+            "title": "Formative Assessment (during the course):",
+            "items": [
+              "Based on class participation, group work, oral reports, lab work, homework, etc.",
+              "Helps track progress and gives students feedback to improve.",
+              "If required for a subject, it must count for at least 15% of the final grade (except for pass/fail requirements)."
+            ]
+          },
+          "summative": {
+            "title": "Summative Assessment (at the end of a course or topic):",
+            "items": [
+              "Assesses what students have learned overall.",
+              "Examples: exams (written, oral, practical), complex assessments.",
+              "May include one or more types of tests."
+            ]
+          }
+        },
+        "ohv": {
+          "title": "Evaluation of Teachers by Students (OHV):",
+          "intro": "At Budapest University of Technology and Economics (BME), student feedback is an important part of improving education quality. The university makes sure students have the chance to share their opinions about courses and teaching.",
+          "why_matters": {
+            "title": "Why student feedback matters:",
+            "items": [
+              "If a teacher agrees in writing, students can see what others thought of the course.",
+              "Teachers get useful feedback to improve their teaching.",
+              "Faculties and the university learn how students view their programmes.",
+              "Overall, feedback helps BME improve the quality of its education."
+            ],
+            "extra": "(Also as a reward for taking part in the OHV you can take up courses from 16:00 instead of 18:00.)"
+          }
+        }
+      },
+      "semester_info": {
+        "title": "Important information during the semester",
+        "absences": {
+          "title": "Absences",
+          "paragraphs": [
+            "The CoS regulates how many lessons teachers can require you to attend during the semester to complete the course.",
+            "For lectures, there is no minimum attendance requirement set by the CoS, but teachers can require you to attend, at most 70% of the lectures during a semester, to pass if the subject description includes."
+          ]
+        },
+        "how_it_works": {
+          "title": "How a semester works:",
+          "intro": "Each semester (both fall and spring) is divided into 5 parts, each of which is important and complicated in its own regard, here we will only talk about the most important things to know about each.",
+          "stages": [
+            {
+              "title": "Registration week (3-5 workdays)",
+              "description": "This is when you need to set your semester to active, and decide which classes you want to take. (or earlier, see above). It's important to check, whether or not you have any payments left to cover to the university, as any payment that has passed its deadline, will prevent you from registering to any classes."
+            },
+            {
+              "title": "Active Semester period (At least 14 weeks, but at most 70 workdays)",
+              "description": "This is the main part of the semester, students attend classes, midterm tests are written, assignments need to be made, etc. The exam registration is also scheduled for the 14th week."
+            },
+            {
+              "title": "Retake week (5 days)",
+              "description": "Most test retakes and late assignment submissions happen this week, so for some, this may be a very difficult and long week, while some may not have anything left to do. Be careful to not end up with more than you can handle this week. Also there might be a possibility to take an early exam, this depends on the subject."
+            },
+            {
+              "title": "Exam period (20 workdays)",
+              "description": "These 4 weeks are where all your exams will take place. Much like how at the beginning of the semester, when you need to register for classes, before the exam period, you will need to register for exams, which is also prevented if you have any late payments left to the university. Exams can be retaken as many times as possible, if there are exam times, and student spaces on them left in the semester, however, from the second retake of an exam (3rd time going), it will cost a fee, which you can pay later. There are also 10 extra workdays left after the exam period for final exams."
+            }
+          ]
+        },
+        "calendar": {
+          "title": "Mid-term test and assignment calendar",
+          "paragraphs": [
+            "Test and assignment calendars are important tools to keep organized during the semester. Since every faculty has specific needs, they are usually made at a faculty, or Student Council level. Ask around if your faculty, or Student Council makes test calendars, and if so, where you can find them.",
+            "If not, you can make your own, to keep track of the tests, assignments and their deadlines, to not get lost during the semester."
+          ]
+        }
+      },
+      "completion": {
+        "title": "Completion of Studies",
+        "paragraphs": [
+          "You can find the general rules of completing your studies in Chapter V. of the Code of Studies.",
+          "The exact way of completing your studies varies based on the faculty you study at, and the course you're taking, you can find out these specifics at your faculty's website"
+        ]
+      },
+      "curriculum": {
+        "title": "Curriculum and prerequisite system",
+        "paragraphs": [
+          "Whichever faculty you take your classes at, everyone will have a curriculum and prerequisite system, where you can see, which subjects you need to complete, to take the next one. These can be usually found on the faculty website, and are an extremely important tool, to know how long you have left of the university, especially if you fail some classes"
+        ]
+      },
+      "tdk": {
+        "title": "Students' Scientific Conference (TDK)",
+        "intro": "TDK (Students' Scientific Association) is a chance to dive into a topic you love, do real research, and present your findings at a university conference. You’ll work with a lecturer (your advisor) and write a paper, then present it in November at BME’s TDK Conference.",
+        "why": {
+          "title": "Why participate in TDK?",
+          "items": [
+            "Explore a topic you're passionate about",
+            "Gain research and presentation experience",
+            "Boost your CV and scholarship/PhD chances",
+            "Use your TDK paper as a base for your thesis",
+            "Extra points for Erasmus+, Master’s programs, and more"
+          ]
+        },
+        "who": {
+          "title": "Who can apply?",
+          "items": [
+            "University students with an advisor and a specific topic",
+            "High school students interested in research"
+          ]
+        },
+        "how": {
+          "title": "How to get started:",
+          "items": [
+            "Pick a topic that fascinates you",
+            "Find a lecturer to be your advisor",
+            "Start working in spring or early summer"
+          ]
+        },
+        "timeline": {
+          "title": "Timeline:",
+          "items": [
+            "September: Apply with your topic, advisor, and summary",
+            "November: Submit your paper + give your presentation",
+            "The best projects move on to the national OTDK round"
+          ],
+          "extra": "Check your faculty’s TDK page for deadlines and topic ideas."
         }
       }
     }

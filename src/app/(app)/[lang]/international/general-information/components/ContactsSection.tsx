@@ -1,19 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Info, Mail, Globe, MapPin, Phone, ExternalLink, HeartHandshake, Camera, Coffee, PlaneTakeoff } from "lucide-react";
+import { Info, Mail, Globe, MapPin, Phone, ExternalLink, Camera, Coffee, PlaneTakeoff } from "lucide-react";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ContactsSection({ content}: { content: any; }) {
   return (
     <section id="contacts-and-explore" className="scroll-mt-28 space-y-8">
-      <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
-        <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center border border-red-100 shrink-0 shadow-sm">
-          <HeartHandshake className="text-ehk-dark-red" size={24} />
-        </div>
-        <h2 className="text-3xl font-bold text-gray-800">
-          {content.nav.contacts}
-        </h2>
-      </div>
+      <SectionHeader title={content.nav.contacts} />
 
       <Card className="shadow-sm border-gray-200 mb-8">
         <CardHeader className="bg-gray-50/50">

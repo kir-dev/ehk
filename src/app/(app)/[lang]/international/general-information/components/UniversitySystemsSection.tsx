@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { SystemCard } from "./SystemCard";
 import { ExternalLinkCard } from "./ExternalLinkCard";
+import React from "react";
+import { renderFormattedText } from "@/lib/utils";
 
 const getAppIcon = (name: string) => {
   switch (name) {
@@ -27,8 +29,10 @@ const getAppIcon = (name: string) => {
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function UniversitySystemsSection({ content }: { content: any }) {
   const moreInfoText = content.more_info;
+
   return (
     <section id="university-systems" className="scroll-mt-28 space-y-8">
       <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
@@ -59,7 +63,7 @@ export function UniversitySystemsSection({ content }: { content: any }) {
           <CardContent>
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
               {content.university_systems.eduid.paragraphs.map((p: string, i: number) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-800">$1</strong>') }} />
+                <p key={i}>{renderFormattedText(p, "text-gray-800")}</p>
               ))}
             </div>
           </CardContent>
@@ -72,9 +76,9 @@ export function UniversitySystemsSection({ content }: { content: any }) {
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col h-full">
-            <p className="text-sm text-gray-600 mb-5 leading-relaxed" dangerouslySetInnerHTML={{ 
-              __html: content.university_systems.o365.description.replace(/\*(.*?)\*/g, '<em class="text-gray-400 block mt-2 text-xs">$1</em>') 
-            }} />
+            <p className="text-sm text-gray-600 mb-5 leading-relaxed">
+               {renderFormattedText(content.university_systems.o365.description, "text-gray-800")}
+            </p>
             
             <div className="bg-gray-50 border border-gray-100 rounded-lg p-4 mt-auto">
               <h4 className="font-bold text-sm text-gray-800 mb-3">{content.university_systems.o365.how_to_register_title}</h4>
@@ -113,7 +117,7 @@ export function UniversitySystemsSection({ content }: { content: any }) {
           <CardContent className="flex-1">
             <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
               {content.university_systems.teams.paragraphs.map((p: string, i: number) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-800">$1</strong>') }} />
+                <p key={i}>{renderFormattedText(p, "text-gray-800")}</p>
               ))}
             </div>
           </CardContent>
@@ -122,7 +126,7 @@ export function UniversitySystemsSection({ content }: { content: any }) {
         <ExternalLinkCard
           title={content.university_systems.wifi.title}
           description={
-            <span dangerouslySetInnerHTML={{ __html: content.university_systems.wifi.description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-800">$1</strong>').replace(/(https?:\/\/[^\s]+)/g, '') }} />
+            <span>{renderFormattedText(content.university_systems.wifi.description.replace(/(https?:\/\/[^\s]+)/g, ''), "text-gray-800")}</span>
           }
           href={content.university_systems.wifi.description.match(/https?:\/\/[^\s]+/)?.[0] || "#"}
           icon={null}
@@ -140,7 +144,7 @@ export function UniversitySystemsSection({ content }: { content: any }) {
                     office.com <ExternalLink size={14} className="shrink-0" />
                   </a>
                 ) : (
-                  <span key={i} dangerouslySetInnerHTML={{ __html: part.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-800">$1</strong>') }} />
+                  <span key={i}>{renderFormattedText(part, "text-gray-800")}</span>
                 )
             )}
           </CardDescription>

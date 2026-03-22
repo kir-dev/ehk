@@ -4,7 +4,7 @@ import { CheckCircle, ExternalLink, Info } from "lucide-react";
 
 export function SystemCard({ title, description, listTitle, items, footer, moreInfoText }: {
   title: string;
-  description: string;
+  description?: string;
   listTitle: string;
   items: string[];
   footer: string;
@@ -31,8 +31,8 @@ export function SystemCard({ title, description, listTitle, items, footer, moreI
         <div className="text-sm font-medium text-gray-600 bg-blue-50/50 p-4 border border-blue-100 rounded-lg flex gap-3 items-center">
           <Info className="text-blue-500 shrink-0" size={18} />
           <div className="leading-relaxed flex items-center gap-1.5 flex-wrap">
-            {footer.split(/(https?:\/\/[^\s]+)/g).map((part, j) => 
-              part.match(/https?:\/\/[^\s]+/) ? (
+            {footer.split(/(https?:\/\/[^\s.,;:!?)]+)/g).filter(Boolean).map((part, j) => 
+              part.match(/^https?:\/\//) ? (
                 <Button key={j} variant="outline" size="sm" asChild className="hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]">
                   <a href={part} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5">
                     {moreInfoText} <ExternalLink size={12} />

@@ -7,6 +7,7 @@ export function ExternalLinkCard({ title, description, href, icon: Icon, moreInf
   title: string;
   description: React.ReactNode;
   href: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon?: any;
   moreInfoText: string;
 }) {

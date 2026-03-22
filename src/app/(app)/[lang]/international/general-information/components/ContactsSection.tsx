@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Info, Mail, Globe, MapPin, Phone, ExternalLink, HeartHandshake, Camera, Coffee, PlaneTakeoff } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ContactsSection({ content}: { content: any; }) {
   return (
     <section id="contacts-and-explore" className="scroll-mt-28 space-y-8">
@@ -20,7 +21,7 @@ export function ContactsSection({ content}: { content: any; }) {
         </CardHeader>
         <CardContent className="pt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-            {content.contacts_and_explore.important_contacts.items.map((contact: { name: string; description: string; contacts: { label: string; value: string }[] }, i: number) => (
+            {content.contacts_and_explore.important_contacts.items?.map((contact: { name: string; description: string; contacts: { label: string; value: string }[] }, i: number) => (
               <div key={i} className="border-l-2 border-gray-200 pl-6">
                 <h4 className="text-lg font-bold text-gray-800 mb-2">{contact.name}</h4>
                 <p className="text-sm text-gray-600 mb-5 leading-relaxed">{contact.description}</p>
@@ -87,7 +88,7 @@ export function ContactsSection({ content}: { content: any; }) {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
                 <Coffee size={20} className="text-amber-600" />
-                {content.contacts_and_explore.restaurants.title.split(':')[0]}
+                {content.contacts_and_explore.restaurants.title?.split(':')[0] ?? content.contacts_and_explore.restaurants.title}
             </CardTitle>
           </CardHeader>
           <CardContent className="flex-1 space-y-6">

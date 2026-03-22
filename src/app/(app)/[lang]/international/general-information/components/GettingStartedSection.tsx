@@ -1,10 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { School, CalendarCheck, FileCheck2, CheckCircle, GraduationCap, ExternalLink } from "lucide-react";
+import { School, CalendarCheck, FileCheck2, CheckCircle, GraduationCap, ExternalLink, LucideIcon } from "lucide-react";
 import React from "react";
+import { renderFormattedText } from "@/lib/utils";
 
 // InfoCard komponens az egységes stílushoz
-function InfoCard({ title, icon: Icon, children }: { title: string; icon?: any; children: React.ReactNode }) {
+function InfoCard({ title, icon: Icon, children }: { title: string; icon?: LucideIcon; children: React.ReactNode }) {
   return (
     <Card className="shadow-sm border-gray-200 gap-0 py-0 overflow-hidden">
       <CardHeader className="py-3 px-5 border-b border-gray-100 bg-gray-50/50 flex flex-row items-center gap-3">
@@ -16,6 +17,7 @@ function InfoCard({ title, icon: Icon, children }: { title: string; icon?: any; 
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function GettingStartedSection({ content }: { content: any }) {
   return (
     <section id="getting-started" className="scroll-mt-28 space-y-8">
@@ -63,7 +65,7 @@ export function GettingStartedSection({ content }: { content: any }) {
         <CardContent className="p-5">
           <div className="space-y-0">
             {content.getting_started.administrative_tasks.items.map((item: string, i: number) => {
-              const parts = item.split(/(https?:\/\/[^\s]+)/g);
+              const parts = item.split(/(https?:\/\/[^\s.,;:!?)]+)/g);
               const isLast = i === content.getting_started.administrative_tasks.items.length - 1;
               return (
                 <div key={i} className={`flex items-start gap-4 py-3 ${!isLast ? 'border-b border-gray-100' : ''}`}>
@@ -79,7 +81,7 @@ export function GettingStartedSection({ content }: { content: any }) {
                            </a>
                          </Button>
                        ) : (
-                         <span key={j} dangerouslySetInnerHTML={{ __html: part }} />
+                         <span key={j}>{part}</span>
                        )
                      )}
 
@@ -100,8 +102,7 @@ export function GettingStartedSection({ content }: { content: any }) {
         <CardContent className="p-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {content.getting_started.official_documents.items.map((item: string, i: number) => {
-               const formatted = item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 border-b-2 border-red-100 pb-0.5">$1</strong>');
-               const parts = formatted.split(/(https?:\/\/[^\s]+)/g);
+               const parts = item.split(/(https?:\/\/[^\s]+)/g);
                return (
                  <div key={i} className="flex flex-col border border-gray-100 bg-gray-50/30 rounded-xl p-4 hover:border-red-200 hover:shadow-sm transition-all h-full">
                    <p className="text-sm text-gray-600 leading-relaxed">
@@ -113,7 +114,7 @@ export function GettingStartedSection({ content }: { content: any }) {
                             </a>
                          </Button>
                        ) : (
-                         <span key={j} dangerouslySetInnerHTML={{ __html: part }} />
+                         <span key={j}>{renderFormattedText(part, "text-gray-900 border-b-2 border-red-100 pb-0.5")}</span>
                        )
                      )}
                    </p>

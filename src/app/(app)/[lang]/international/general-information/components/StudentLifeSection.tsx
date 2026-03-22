@@ -1,7 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Building, Mail, ExternalLink, Music, Rocket } from "lucide-react";
+import React from "react";
+import { renderFormattedText } from "@/lib/utils";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function StudentLifeSection({ content }: { content: any }) {
   return (
     <section id="student-life" className="scroll-mt-28 space-y-8">
@@ -24,7 +27,7 @@ export function StudentLifeSection({ content }: { content: any }) {
         <CardContent>
           <div className="space-y-4 text-sm text-gray-700 mb-8 leading-relaxed font-medium">
               {content.student_life.ehk.paragraphs.map((p: string, i: number) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>') }} />
+                <p key={i}>{renderFormattedText(p, "text-gray-900")}</p>
               ))}
           </div>
           
@@ -68,12 +71,12 @@ export function StudentLifeSection({ content }: { content: any }) {
                 <h4 className="font-bold text-gray-800 text-sm leading-tight group-hover:text-ehk-dark-red transition-colors flex-1">{council.name}</h4>
                 <div className="flex items-center gap-2 ml-4">
                   <Button variant="outline" size="sm" className="hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]" asChild>
-                    <a href={council.website} target="_blank" rel="noopener noreferrer" className="flex justify-center items-center gap-1.5 text-xs font-semibold">
+                    <a href={council.website} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${council.name} website`} className="flex justify-center items-center gap-1.5 text-xs font-semibold">
                       <ExternalLink size={12} />
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" className="hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]" asChild>
-                    <a href={`mailto:${council.email}`} title={council.email} className="flex justify-center items-center gap-1.5 text-xs font-semibold">
+                    <a href={`mailto:${council.email}`} aria-label={`Email ${council.name}`} title={council.email} className="flex justify-center items-center gap-1.5 text-xs font-semibold">
                       <Mail size={12} />
                     </a>
                   </Button>
@@ -133,7 +136,7 @@ export function StudentLifeSection({ content }: { content: any }) {
           <CardContent className="pt-6">
             <div className="space-y-2 text-sm text-gray-600 leading-relaxed font-medium">
               {content.student_life.culture.paragraphs.map((p: string, i: number) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>') }} />
+                <p key={i}>{renderFormattedText(p, "text-gray-900")}</p>
               ))}
             </div>
           </CardContent>

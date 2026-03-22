@@ -46,7 +46,7 @@ export default function DormitoryAdmissionInformationContent({ content }: Readon
                 {admission_information.capacity_p1}
             </p>
             <div>
-                <DormitoryCardsComtainer dormitory={admission_information.dormitory}/>
+                <DormitoryCardsComtainer dormitory={admission_information.dormitory} linkOrRoute="link"/>
             </div>
             <p className="text-gray-700 text-lg richtext text-justify">
                 {admission_information.capacity_p2}

@@ -957,9 +957,9 @@
             "title": "you should contact your professor if…",
             "items": [
               "…you have problems with your homework",
-              "…you don’t understand something",
-              "…you couldn’t attend a laboratory class, and you have to go to another",
-              "ect."
+              "…you don't understand something",
+              "…you couldn't attend a laboratory class, and you have to go to another",
+              "etc."
             ]
           },
           "students_council": {
@@ -1036,7 +1036,7 @@
           ]
         },
         "how_it_works": {
-          "title": "How a semester work:",
+          "title": "How a semester works:",
           "intro": "Each semester (both fall and spring) is divided into 5 parts, each of which is important and complicated in its own regard, here we will only talk about the most important things to know about each.",
           "stages": [
             {
@@ -1068,8 +1068,8 @@
       "completion": {
         "title": "Completion of Studies",
         "paragraphs": [
-          "You can find the general rules of completing your studies in Chaper V. of the Code of Studies.",
-          "The exact way of completing your studies varies based on the faculty you study at, and the course you’re taking, you can find out these specifics at your faculty’s website"
+          "You can find the general rules of completing your studies in Chapter V. of the Code of Studies.",
+          "The exact way of completing your studies varies based on the faculty you study at, and the course you're taking, you can find out these specifics at your faculty's website"
         ]
       },
       "curriculum": {

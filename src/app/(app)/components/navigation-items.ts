@@ -228,7 +228,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     // },
   ];
 
-  // Filter out certain menu items for English version
+  // Filter out certain menu items for specific languages
   if (lang === "EN") {
     return items.filter(item => 
       item.title !== "DORMITORY"

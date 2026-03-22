@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { SystemCard } from "./SystemCard";
 import { ExternalLinkCard } from "./ExternalLinkCard";
-import React from "react";
 import { renderFormattedText } from "@/lib/utils";
 
 const getAppIcon = (name: string) => {

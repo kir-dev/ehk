@@ -1,5 +1,5 @@
 export const NAVBAR_STYLES = {
-  header: 'w-full bg-ehk-navbar border-b border-ehk-navbar/30',
+  header: 'w-full bg-ehk-navbar border-b border-ehk-navbar/30 relative z-[100] overflow-x-clip',
   container: 'px-4 w-full',
   innerContainer: 'flex items-center h-20 w-full',
   
@@ -12,7 +12,7 @@ export const NAVBAR_STYLES = {
   desktop: {
     nav: 'hidden xlg:flex',
     menuTrigger: 'text-white relative bg-ehk-navbar hover:text-gray-200 font-semibold text-base px-3 py-2.5 transition-all duration-200 hover:scale-105',
-    menuContent: 'z-50 bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg',
+    menuContent: 'absolute z-[100] bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg max-w-[calc(100vw-1rem)]',
     menuContentInner: 'w-80 p-4',
     menuLink: 'text-white relative hover:text-gray-200 font-semibold text-base px-3 py-2.5 block transition-all duration-200 hover:scale-105',
     subMenuItem: 'block px-4 py-2.5 text-sm text-gray-800 hover:text-ehk-navbar hover:bg-gray-100 rounded-lg transition-all duration-200 hover:pl-5 font-medium'

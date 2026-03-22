@@ -13,9 +13,10 @@ import type { NavigationItem } from "./navbar.types"
 interface DesktopMenuItemProps {
   item: NavigationItem
   onNavigate: (href: string) => void
+  isNearRight?: boolean
 }
 
-export function DesktopMenuItem({ item, onNavigate }: DesktopMenuItemProps) {
+export function DesktopMenuItem({ item, onNavigate, isNearRight }: DesktopMenuItemProps) {
   const hasSubItems = item.items.length > 0
   
   if (hasSubItems) {
@@ -29,7 +30,7 @@ export function DesktopMenuItem({ item, onNavigate }: DesktopMenuItemProps) {
         >
           {item.title}
         </NavigationMenuTrigger>
-        <NavigationMenuContent className={NAVBAR_STYLES.desktop.menuContent}>
+        <NavigationMenuContent className={`${NAVBAR_STYLES.desktop.menuContent} ${isNearRight ? '!right-0 !left-auto' : ''} !w-max`}>
           <div className={NAVBAR_STYLES.desktop.menuContentInner}>
             <div className="grid gap-2">
               {item.items.map((subItem) => (

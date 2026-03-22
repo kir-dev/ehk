@@ -419,6 +419,7 @@ export interface News {
     | 'Beszámoló'
     | 'Tájékoztatás'
     | 'Kiemelt hír'
+    | 'International'
   )[];
   files?:
     | {

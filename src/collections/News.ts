@@ -100,6 +100,7 @@ export const News: CollectionConfig = {
                 { label: 'Beszámoló', value: 'Beszámoló' },
                 { label: 'Tájékoztatás', value: 'Tájékoztatás' },
                 { label: 'Kiemelt hír', value: 'Kiemelt hír' },
+                { label: 'International', value: 'International' },
             ],
             hasMany: true,
             required: true,

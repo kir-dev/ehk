@@ -55,6 +55,7 @@ export const TAG_TRANSLATIONS: Record<string, string> = {
   'Beszámoló': 'Report',
   'Tájékoztatás': 'Information',
   'Kiemelt hír': 'Featured',
+  'International': 'International',
 }
 
 export function translateTag(tag: string, lang: 'HU' | 'EN'): string {
@@ -85,6 +86,8 @@ export function getTagRoute(tag: string, lang: 'HU' | 'EN'): string | null {
       return '/kozelet/hirek'
     case 'Tájékoztatás':
       return '/golyaknak/hirek'
+    case 'International':
+      return '/international/hirek'
     default:
       return null
   }

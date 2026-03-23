@@ -12,20 +12,20 @@ export default function LateRegistrationSection({ late_registration }: Props) {
             {late_registration.title}
           </h3>
           <div className="prose max-w-none text-gray-700 space-y-4">
-            {late_registration.paragraphs.map((p, i) => (
-              <p key={i} className="leading-relaxed">{p}</p>
+            {late_registration.paragraphs.map((p) => (
+              <p key={p} className="leading-relaxed">{p}</p>
             ))}
             <ul className="list-disc pl-5 mt-1">
-              {late_registration.requests.map((item, i) => (
-                <li key={i}>{item}</li>
+              {late_registration.requests.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
             <div>
               <h4 className="font-semibold text-gray-900">{late_registration.not_own_fault.title}</h4>
               <p className="mt-1">{late_registration.not_own_fault.intro}</p>
               <ul className="list-disc pl-5 mt-1">
-                {late_registration.not_own_fault.items.map((item, i) => (
-                  <li key={i}>{item}</li>
+                {late_registration.not_own_fault.items.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
               <p className="mt-2 text-sm italic">{late_registration.not_own_fault.outro}</p>

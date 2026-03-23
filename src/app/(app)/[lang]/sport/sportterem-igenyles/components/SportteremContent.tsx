@@ -1,6 +1,5 @@
-import {JSX, ReactNode} from 'react';
+import { ReactNode } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { PageHeader } from '@/components/common/PageHeader';
 import { parseFormattedText } from '@/utils/parseFormattedText';
 
 interface SportteremContentData {

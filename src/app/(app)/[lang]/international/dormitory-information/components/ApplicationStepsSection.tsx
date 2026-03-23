@@ -3,7 +3,7 @@ import { DormitoryInformationData } from "./types";
 
 type Props = Pick<DormitoryInformationData, "application_steps">;
 
-const URL_SPLIT_REGEX = /(https?:\/\/[^\s]+)/g;
+const URL_SPLIT_REGEX = /(https?:\/\/[^\s]+?)(?=[.,;:!?)]*(?:\s|$))/g;
 const URL_TEST_REGEX = /^https?:\/\//;
 
 function StepText({ text }: { text: string }) {

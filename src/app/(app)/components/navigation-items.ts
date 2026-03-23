@@ -192,10 +192,12 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/international/hirek"),
       targetBlank: false,
       items: [
-        { label: "Education Information", href: link("/international/education-information"), targetBlank: false },
-        { label: "Application Information", href: link("/international/application-information"), targetBlank: false },
-        { label: "Dormitory Information", href: link("/international/dormitory-information"), targetBlank: false },
-        { label: "Mobility Programs", href: link("/international/mobility-programs"), targetBlank: false },
+        { label: t("Hírek", "News"), href: link("/international/hirek"), targetBlank: false },
+        { label: t("Általános információk", "General Information"), href: link("/international/general-information"), targetBlank: false },
+        { label: t("Oktatási információk", "Education Information"), href: link("/international/education-information"), targetBlank: false },
+        { label: t("Jelentkezési információk", "Application Information"), href: link("/international/application-information"), targetBlank: false },
+        { label: t("Kollégiumi információk", "Dormitory Information"), href: link("/international/dormitory-information"), targetBlank: false },
+        { label: t("Mobilitási programok", "Mobility Programs"), href: link("/international/mobility-programs"), targetBlank: false },
       ],
     },
     {
@@ -222,18 +224,24 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         { label: t("Klubok", "Clubs"), href: link("/kozelet/klubok"), targetBlank: false },
       ],
     },
-    {
-      title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
-      href: link("/golyaknak/hirek"),
-      targetBlank: false,
-      items: [],
-    },
+    // {
+    //   title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
+    //   href: link("/golyaknak/hirek"),
+    //   targetBlank: false,
+    //   items: [],
+    // },
   ];
 
-  // Filter out certain menu items for English version
+  // Filter out certain menu items for specific languages
   if (lang === "EN") {
     return items.filter(item => 
-      item.title !== "DORMITORY" && item.title !== "INTERNATIONAL"
+      item.title !== "DORMITORY"
+    );
+  }
+
+  if (lang === "HU") {
+    return items.filter(item => 
+      item.title !== "INTERNATIONAL"
     );
   }
 

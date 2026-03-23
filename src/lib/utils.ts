@@ -1,9 +1,26 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import {Reminder} from "@/payload-types";
+import React from "react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
+}
+
+export function renderFormattedText(
+  text: string, 
+  boldClassName: string = "text-gray-900", 
+  italicClassName: string = "text-gray-400 block mt-2 text-xs"
+) {
+  const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return React.createElement('strong', { key: index, className: boldClassName }, part.slice(2, -2));
+    } else if (part.startsWith('*') && part.endsWith('*')) {
+      return React.createElement('em', { key: index, className: italicClassName }, part.slice(1, -1));
+    }
+    return React.createElement(React.Fragment, { key: index }, part);
+  });
 }
 
 export function groupRemindersByYear(reminders: Reminder[]): Record<string, Reminder[]> {
@@ -38,6 +55,7 @@ export const TAG_TRANSLATIONS: Record<string, string> = {
   'Beszámoló': 'Report',
   'Tájékoztatás': 'Information',
   'Kiemelt hír': 'Featured',
+  'International': 'International',
 }
 
 export function translateTag(tag: string, lang: 'HU' | 'EN'): string {
@@ -68,6 +86,8 @@ export function getTagRoute(tag: string, lang: 'HU' | 'EN'): string | null {
       return '/kozelet/hirek'
     case 'Tájékoztatás':
       return '/golyaknak/hirek'
+    case 'International':
+      return '/international/hirek'
     default:
       return null
   }

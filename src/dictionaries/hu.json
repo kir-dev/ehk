@@ -9,6 +9,7 @@
     "close": "Bezárás",
     "loading": "Betöltés...",
     "questions": "Kérdésed van?",
+    "more_info": "További információ",
     "contact_aria_label": "Email küldése az info@bmeehk.hu címre"
   },
   "regulations": {
@@ -418,8 +419,426 @@
     "opening_hours": "Nyitvatartás:",
     "no_results": "Jelenleg nincsenek aktív klubok"
   },
+  "dormitory_details": {
+    "back_button": "Vissza a kollégiumokhoz",
+    "images_title": "Képgaléria",
+    "no_images": "Jelenleg nincsenek feltöltve képek ehhez a kollégiumhoz.",
+    "baross": {
+      "title": "Baross Gábor Kollégium",
+      "description": "A Közlekedésmérnöki-és Járműmérnöki Kar kollégistáinak nagy részének a Baross Gábor Kollégium ad otthont. A kollégium impozáns épülete Újbudán a Bartók Béla út 17. szám alatt helyezkedik el, csupán néhány percnyi sétára a kar hallgatói által használt egyetemi épületektől. A közlekedés szempontjából is megfelelő az elhelyezkedése, hiszen számos busz-, villamos-, metróvonal elérhető rövid idő alatt, ily módon körülbelül szűk fél órán belül el lehet érni a frekventáltabb budapesti helyeket, valamint a nagyobb pályaudvarokat is. Ugyancsak egy említésre méltó szempont az elhelyezkedését illetően, hogy a környéken számos kisbolt, étkezde, könyvtár, pláza, mozi, kulturális-és sportolási lehetőség, vendéglátó-és szórakozóhely található, melyek fontosak egy egyetemista mindennapi életében. Továbbá a bejárattól csupán néhány méterre található pékség, illetve gyógyszertár is.\n(Image)\nA kollégiumban különböző férőhelyű szobák találhatóak, egészen az egyágyas szobáktól a négyágyasig. A szobákban található hűtőszekrény, valamint kézmosó. Emeletenként és szárnyanként vannak kialakítva közös használatú vizesblokk és konyha helyiségek. A szobákban kialakításra kerültek internet csatlakozási pontok, valamint a kollégiumi WiFi hálózat is kialakítás alatt áll.\n(Image)\nAz épület szép, régi kapuján belépve rögtön megérint a hely szelleme. Természetesen nem egy ijesztő kísértetre kell gondolni, hanem arra a légkörre, amit a kollégium falai magukból árasztanak. Az intézményben egy olyan lakóközösség él, melynek tagjai - csupa közlekedés-, jármű- és logisztikai mérnökpalánta - hasonló céllal kezdték meg felsőfokú tanulmányaikat: mérnökké akarnak válni. Ehhez azonban hosszú és rögös út vezet, amiben a kollégiumban szövődő barátságok, közös tanulások, bulizások, egymás átsegítése a nehézségeken is nagyon nagy szerepet játszik. Természetesen azzal, hogy az ember kollégiumban lakik, nem zárja el magát a külvilágtól sem, ugyanúgy barátkozhat külsős hallgatókkal is, hiszen a „Baross-palota\" biztosít helyszínt a kar hallgatói rendezvényeinek, legyen az Szakestély, Kari napok vagy akár egy jó kis HaBár-buli.\n(Image)\nA kollégiumban rendelkezésre állnak sportolási lehetőségek is. Az alagsorban található egy jól felszerelt kondi-és kardio terem, valamint egy ping-pong terem is.\n(Image)(Image)\nNem elhanyagolható előnye a kollégiumnak, hogy az alagsorban található a HaBár(R) Szórakoztató-és Élménycentrum, melyről egyetemista éveid alatt még sokat fogsz hallani."
+    },
+    "bercsenyi": {
+      "title": "Bercsényi 28-30 Kollégium",
+      "description": "Az 1963-ban diákotthonból kollégiummá vált intézmény már több évtizede hagyományosan az Építészmérnöki Kar kollégiuma. Budapest XI. kerületében, a Bercsényi utca 28-30-as házszám alatt található. Az épület sok szempontból kedvező helyen fekszik, vele szemben található az Allee bevásárlóközpont, ahol nagyon sok bolt, szupermarket, étkezdék, mozi szolgálja ki az igényeket. Öt perc sétára található a Móricz Zsigmond körtér, innen indul számtalan villamos- és buszjárat, de tíz perc alatt az egyetemre is el lehet jutni a kollégiumból.\nAz épületen belül alagsor, földszint és öt lakószint található, ide mágnes-kártyás beléptető rendszeren keresztül lehet bejutni. A szintek lifttel is megközelíthetőek. Minden szinten nemek szerint WC, zuhanyzó, továbbá minden emeleten található egy konyha, saját szekrénnyel minden szobának, illetve minden páratlan emeleten található egy vasalószoba is. A szobák kétágyasak, az alap tartozék továbbá két asztal, két szék, igény szerint polcok, beépített szekrény, mosdókagyló, falitükör, illetve egy hűtő. A szobák a folyosó két oldaláról közelíthetők meg, a szobák fele az utcára, másik fele az udvarra néz. A szobák elrendezését természetesen lehet változtatni, saját bútorokat is lehet használni, illetve szabadon lehet festeni és dekorálni a szobákat. A kollégium folyosóit, illetve vizesblokkjait a hétvégéken kivűl minden nap takarítják, a lakószobák takarítása mindenki saját felelőssége, ehhez eszközöket a portán lehet igényelni.\n\nA kollégiumban a lakófunkción kívül számos más tevékenységre is van lehetőség. A közös munkát, és közéletet elősegítendő közösségi terek a földszinten találhatóak, ilyen a könyvtár, a nagytársalgó, illetve a makettező, melyek a nem kollégista építész hallgatók által is megközelíthetők. A beléptető-rendszeren belül található továbbá a szerverszoba, a gondnoki iroda, az öntevékeny köri helység, valamint a mosókonyha. A földszinten, a tornaterem előterében található egy konditerem. A tornateremben a késő esti órákban szinte minden nap van lehetőség valamilyen sporttevékenységre. Az alagsorban, illetve az udvaron fedett kerékpártárolási lehetőség is biztosított.\n\nAz alagsorban található továbbá a kollégium szórakozóhelye, a Bercsényi Gödör Klub, mely minden héten várja a kollégistákat egy kis lazításra.\n\nAz épületen belül internet elérhetőség adott, melyhez minden félévben a a kollégium weboldalán keresztül lehet regisztrálni két eszközt.\nA kollégium ad otthont továbbá a Kar szinte összes öntevékeny körének, akik a hét minden napján valamilyen programmal igyekeznek színesebbé tenni a hétköznapokat.\nA kollégium weboldala: http://bercsenyi.bme.hu"
+    },
+    "karman": {
+      "title": "Kármán Tódor Kollégium",
+      "description": "A Kármán Tódor Kollégium a Budapesti Műszaki és Gazdaságtudományi Egyetem egyik legnagyobb és legnépesebb kollégiuma. Az épület közel ezer hallgatónak biztosít otthont, elsősorban a Gépészmérnöki Kar és a Természettudományi Kar diákjai számára, de kisebb létszámban más karok hallgatói is itt laknak. A kollégium a XI. kerület szívében, a Petőfi híd budai hídfőjénél található, kiváló elhelyezkedéssel. A közlekedés rendkívül kedvező: a Nyugati pályaudvarról és a Kelenföldi vasútállomásról egyaránt körülbelül 20 perc alatt elérhető.\n(Image)\nA kollégium közelében megtalálható az Allee bevásárlóközpont, számos gyorsétterem, kocsma, valamint egy LIDL üzlet is, így minden karnyújtásnyira van. Az egyetemi kampusz mindössze néhány perc sétára helyezkedik el, így minden ami az egyetemi élethez fontos megtalálható egy helyen.\n\nDe mi is található a Kollégiumban?\nHa belépsz a kollégiumba egy tágas aula fogad, ami otthont ad a Gépészkar egyik legnépszerűbb hagyományának a Harmadoló estnek de egyéb rendezvények is gyakran megtartásra kerülnek az aulában.\n(Image)(Image)\nAz aulából a kollégisták három lifttel és három lépcsőházon keresztül juthatnak el a kollégium különböző szintjeire, így a közlekedés kényelmes és gyors.\n(Image)(Image)\nA szobák a folyosók két oldaláról nyílnak, mindegyik kétágyas elrendezésű. Minden szobában található 2 ágy, 2 szekrény, egy kétfős íróasztal, valamint mosdó tükörrel és hűtőszekrény is, hogy a mindennapi kényelmet semmi se zavarja.\n(Image)\nA szobákon túl a hallgatók a kollégiumban minden alapvető szükségletüket kényelmesen kielégíthetik. Minden emeleten található egy közös konyha, amely két elektromos tűzhellyel, mosogatóval, mikrohullámú sütővel, vízforralóval, valamint a hallgatók számára kiadott tárolószekrényekkel van felszerelve - így az edényeket és konyhai eszközöket nem a szobában kell tárolni.\n(Image)(Image)\nMinden szinten találhatók vizesblokkok, amelyek alapvetően koedukált kialakításúak, azonban a 3., 7. és 9. emeleten külön női és férfi mosdók is rendelkezésre állnak. A kényelmet tovább növeli, hogy minden vizesblokkhoz tartozik két mosógép és egy szárítógép, így a lakók helyben, egyszerűen el tudják intézni a mosást.\n(Image)(Image)\nA tanulás mellett a kollégium számos szabadidős tevékenységnek is otthont ad. A közösségi terek között szinte minden emeleten találhatók közös tanulószobák, egy könyvtárhelyiség, valamint egy tágas, tetőtéri, teraszos társalgó, ahol a lakók kikapcsolódhatnak, beszélgethetnek vagy akár közösen tanulhatnak.\n(Image)(Image)(Image)(Image)\nA Kármánban a sport szerelmesei is otthonra lelnek. A kollégium alagsorában található egy kardióterem és egy konditerem, ahol a hallgatók szabadon edzhetnek, feltöltődhetnek egy hosszú nap után. Emellett a hátsó udvarban egy tágas kerékpártároló is rendelkezésre áll, amelyet a lakók kedvük szerint használhatnak.\n(Image)(Image)(Image)\nA Gépész Karon nagy hagyománya van a különböző öntevékeny köröknek, amelyek természetesen aktívan részt vesznek a kollégiumi életben is. A kollégiumban például található egy műhely, ahol a hallgatók alkothatnak és kísérletezhetnek, valamint egy fotóstúdió, amely kreatív lehetőséget kínál a fényképezés iránt érdeklődőknek.\n(Image)(Image)\nA Kármánban működik a Kármán Klub, amely egy hangulatos beltéri térrel, valamint jó időben megnyitott kültéri résszel várja a hallgatókat. Emellett az Old's Club is a kollégium része, ahol a diákok felejthetetlen élményeket és közös emlékeket szerezhetnek a barátaikkal.\n(Image)(Image)(Image)\nCsatlakozz pezsgő közösségünkhöz és tapasztald meg a Kármán Tódor Kollégium igazi otthonos, összetartó hangulatát!"
+    },
+    "martos": {
+      "title": "Martos Kollégium",
+      "description": "A Stoczek József utca 1-7-es szám alatt található Martos Kollégiumban ad otthont elsősorban a Vegyészmérnöki és Biomérnöki Kar hallgatói számára. A kollégium az egyetemi kampusz mellett helyezkedik el, a VBK-sok által leggyakrabban látogatott épületek, mint a Ch-, F- és K épületek, Egyetem könyvtára, illetve a Sportközpont mind pár perces sétával elérhetőek. Továbbá tömegközlekedési szempontból is remek helyen fekszik, számos villamos és buszjárat, illetve metró percek alatt megközelíthető, azonban éppen elég messze vannak a megállói ahhoz, hogy a kollégium közvetlen környezete csendes maradhasson. Emellett a Keleti- és Nyugati Pályaudvar is 20 perc tömegközlekedéssel könnyedén megközelíthető.\n(Image)\nA Kollégium közelében található több kisbolt, étkezde, vendéglátó egység, és bevásárlóközpont. Ezen felül a közelben gond nélkül elérhető számtalan szórakozási, sportolási és kulturális lehetőség.\n(Image)(Image)\nA Kollégium 6 emeletének 2 ágyas szobái több, mint 400 hallgatónak adnak otthont. Minden szoba 2-2 íróasztalt, széket és többpolcos szekrényt, valamint közös vízcsapot, polcokat és tükröket is tartalmaz. Biztosított a bentlakók számára az ingyenes internethasználat, amelyhez csupán az eszközök regisztrációjára van szükség.\n\nEmeletenként közös konyhák, hűtők, vizesblokkok és mosókonyhák állnak a lakók rendelkezésére.\n(Image)(Image)\nAz épületben állandó 0-24 órás portaszolgálat, mágneskártyás beléptető rendszer és biztonsági kamerák üzemelnek, ezzel kiszűrve a hívatlan vendégeket.\nA Kollégiumban található számos közösségi helyiség, amelyek színteret adnak kisebb kollégiumi rendezvényeknek, illetve számos öntevékeny kör eseményeinek. Az épület rendelkezik emellett egy kisebb udvarral is, ami szintén több kari eseménynek ad otthont, valamint egy ingyenesen használható fedett biciklitárolónak is. Az ötödik emeleten található a Kollégium állandó tanulószobájaként funkcionáló könyvtár, melyben számos, az évek során felhalmozott hasznos irodalom is fellelhető. Továbbá az alagsorban található a konditerem, ami kizárólag az Egyetem hallgatói által vehető igénybe.\n(Image)(Image)\nMindemellett a földszint otthont ad a Martos Csocsó Klubnak, mely szórakozási lehetőségekkel, finomabbnál finomabb italokkal, valamint nagyképernyős sportközvetítéssel minden hétköznap 14:00-tól éjfélig vár minden kikapcsolódásra vágyó vegyészkari és azon túli hallgatót. A pult mögött is mindig ismerős arcokkal lehet találkozni, hiszen a Klub minden dolgozója a kar aktív hallgatója. Szintén itt kerülnek megrendezésre az Ars Presso Csoport által szervezett bulik és számtalan kari esemény is.\n(Image)"
+    },
+    "sch": {
+      "title": "Schönherz Kollégium",
+      "description": "Itt jelenik meg majd a kollégium bővebb leírása."
+    },
+    "vpk": {
+      "title": "Vásárhelyi Pál Kollégium",
+      "description": "A Vásárhelyi Pál Kollégium a Budapesti Műszaki és Gazdaságtudományi Egyetem egyik legnagyobb és legsokoldalúbb kollégiuma. Az épület Budapest budai oldalán, a XI. kerületben, a Kruspér utca 2 - 4. szám alatt található, közvetlenül a BME kampusza mellett. Az egyetem központi épülete mindössze 3 perc sétára van, a szomszédos utcában pedig elérhető a Stoczek menza, ahol a hallgatók kedvező áron étkezhetnek. A kollégium 1977 óta elsősorban az építőmérnök hallgatóknak biztosít szállást, de számos más kar diákjai is otthonra találnak itt.\n(Image)(Image)\nA két épületszárnyban összesen 747 férőhely található. A hallgatók többnyire négyágyas, valamint három- és kétágyas szobákban laknak. Minden négyágyas szoba 4 ággyal, 4 íróasztallal, 4 székkel, 4 zárható beépített szekrénnyel, valamint egy közös hűtővel van felszerelve. A szobákban vezetékes szélessávú internet-hozzáférés is biztosított. A szobákhoz saját zuhanyzó helyiség tartozik, amelyben egy zuhanyzó és egy mosdókagyló található. A szobák alapterülete kb. 25 m2, ami elegendő 4 fő kényelmes együttéléséhez.\n(Image)(Image)\nMinden szinten külön férfi és női mosdóhelyiség, valamint szemétledobó található. A szinteken továbbá sütővel és főzőlappal felszerelt konyha is rendelkezésre áll. Emellett minden konyhában elhelyezésre került egy olajgyűjtő tartály, valamint egy zöld komposztedény is.\nA mosókonyhákban található legalább egy mosó- és egy szárítógép. A mosókonyhák kulcsát a 0-24 órában működő portaszolgálaton lehet felvenni.\n(Image)(Image)(Image)\nA kollégiumban van lehetőség kerékpártárolására is. Ennek menete, hogy a Vásárhelyi Diák Sport Körnek kell egy email-t írni, a tároló használatának igényéről minden félévben, ezután az igénylők fel tudják venni a tároló kulcsát a portán. Továbbá a Vásárhelyi Diák Sport Kör üzemelteti az alagsorban található konditermet, valamint az A épületben található boksz- és kardiótermet.\n(Image)\nA kollégiumban számos öntevékeny hallgatói csoport tevékenykedik mindenféle érdeklődési igényeket kielégítve. Az itt lakók kipróbálhatják magukat a média különböző ágazataiban, esetleg, mint buli vagy rendezvényszervezők, elmélyülhetnek a szakmában a Szakkollégium jóvoltából, sportolhatnak és az informatika világába is betekintést nyerhetnek. Az aulából nyíló nagyteremben hetente több rendezvényt is tartunk, itt mindenki talál számára megfelelő rendezvényt, legyen az bulizás, csapatépítő vagy közösségi esemény. A kollégium B épülete alatt található a Drönk, ahova várjuk a bulizni vágyó egyetemistákat.\n(Image)"
+    },
+    "wigner": {
+      "title": "Wigner Jenő Kollégium",
+      "description": "\n(Image)\nA Budapesti Műszaki és Gazdaságtudományi Egyetem Gazdaság- és Társadalomtudományi Karának kollégiuma, a Wigner Jenő Kollégium a Kar közösségi életének központi helyszíne. Az épület Budapest XI. kerületében, a Dombóvári úton található, néhány perc sétára Újbuda-központtól, ahol a 4-es metró közlekedik, valamint a 4-es és 6-os villamos egyik végállomása is megtalálható, így a város szinte bármely pontja gyorsan elérhető. Az állomás közelében helyezkedik el az Allee Bevásárlóközpont, amely széles körű vásárlási, étkezési és szórakozási lehetőségeket kínál.\n\nA kollégiumtól mintegy 18 perc sétára található az Infopark, ahol a BME Q épülete is helyet kapott, amely a GTK-s hallgatók egyik leggyakrabban látogatott oktatási helyszíne.\nA Csonka János téri villamosmegálló közvetlenül a kollégium közelében fekszik, így a közlekedés gyors és kényelmes. A megálló mellett egy Tesco és egy Spar üzlet is elérhető, megkönnyítve a mindennapi bevásárlást a kollégisták számára.\n\nA háromszárnyas (A, B, C) épület négy emeletből és egy alagsorból áll. A szobák többségében háromágyasak, de korlátozott számban két- és egyágyas elhelyezés is elérhető. A szobákban hűtőszekrény és kézmosó is található.\n(Image)\nSzintenként jól felszerelt konyha (elektromos tűzhely, mikrohullámú sütő, szendvicssütő, pirító, vízforraló), társalgó, valamint folyósónként zuhanyzók és mellékhelyiségek állnak a lakók rendelkezésére.\n\nA kollégium zárt udvarral, parkolóval és fedett kerékpártárolóval rendelkezik, továbbá aszfaltozott sportpálya is található a területén. Az alagsorban tanulóhelyiség biztosít csendes környezetet a vizsgaidőszakban. Az aulából nyíló nagyterem akár 100 fő befogadására is alkalmas, így ideális helyszínt kínál közösségi programok, szakkollégiumi rendezvények, csapatépítések vagy egyéb események lebonyolítására.\n\nA GTK Hallgatói Képviselet irodája a kollégium A105-ös szobájában működik, ahol a hallgatók fogadóidőben személyesen is feltehetik kérdéseiket a képviselet tagjainak.\nAz A épület alagsorában található a mosókonyha (AL05), ahol a hallgatók ingyenesen használhatják a mosó- és szárítógépeket. Ugyanitt helyezkedik el a kardióterem (AL06), amely futópadokkal, szobakerékpárral, elliptikus trénerrel és további gépekkel felszerelt, valamint a konditerem (AL09), amely széles eszközkínálattal biztosít sportolási lehetőséget.\n(Image)(Image)\nA B épület alagsorában kapott helyet a tükrös terem, amely tánc- és csoportos edzésekhez kiválóan alkalmas. Ugyanitt működik a BME-GTK Wigner Jenő Fotókör stúdiója is, amely professzionális felszereltségével támogatja a hallgatói alkotótevékenységet.\n(Image)(Image)\nA C épület alagsorában található a Roller Klub, a GTK hallgatóinak saját szórakozóhelye, amely közösségi eseményeknek, koncerteknek és rendezvényeknek ad otthont.\nA kollégium szolgáltatásai közé tartozik a gyors és stabil egyetemi internet, amely vezetékes és Wi-Fi formában is elérhető, a nap 24 órájában működő portaszolgálat."
+    }
+  },
   "international": {
+    "general_information": {
+      "title": "Általános Információk",
+      "description": "Fontos általános információk külföldi állampolgárok számára, akik a BME-n tanulnak",
+      "nav": {
+        "main_sections": "Tartalomjegyzék",
+        "portals": "Portálok",
+        "getting_started": "Kezdő lépések",
+        "university_systems": "Egyetemi rendszerek",
+        "student_life": "Hallgatói élet",
+        "contacts": "Kapcsolatok és felfedezés"
+      },
+      "more_info": "További információ",
+      "getting_started": {
+        "admission": {
+          "title": "Felvételi és tanulmányi lehetőségek",
+          "description": "A BME számos programot kínál nemzetközi hallgatók számára:",
+          "items": [
+            "Alapképzés (BSc), Mesterképzés (MSc) és Doktori (PhD) programok angol nyelven",
+            "Csereprogramok (mobilitási programok, pl. Erasmus+, ATHENS, EELISA)",
+            "Ösztöndíjas és önköltséges lehetőségek egyaránt."
+          ]
+        },
+        "application": {
+          "title": "Jelentkezés és beiratkozás",
+          "items": [
+            "A jelentkezéseket online kell benyújtani; például a 2025/26-os tanévre április 1. és május 31. között lehet jelentkezni.",
+            "A beiratkozási folyamat részletes leírása és a szükséges dokumentumok listája a Központi Tanulmányi Hivatal (KTH) honlapján található."
+          ]
+        },
+        "administrative_tasks": {
+          "title": "Adminisztratív teendők érkezés után",
+          "items": [
+            "A BME-s beiratkozást a KTH szervezi. A 2025/26/1 félév kezdetéről szóló hírlevelet itt találod: https://www.kth.bme.hu/en/news/2318/",
+            "Először fel kell töltened a szükséges dokumentumokat a Neptunba a hírlevélben leírtak szerint. Ezt személyes beiratkozás követi, ahol ellenőrzik a dokumentumokat.",
+            "A tárgyakat a Neptunban a Tárgyak/Tárgyfelvétel menüpont alatt veheted fel, miután aktív hallgatóként bejelentkeztél a félévre."
+          ]
+        },
+        "official_documents": {
+          "title": "Szükséges hivatalos dokumentumok",
+          "items": [
+            "**Tartózkodási engedély**: Magyarországi tartózkodásodhoz és tanulmányaidhoz tartózkodási engedély szükséges. Ez hosszabb időt is igénybe vehet, ezért minél hamarabb el kell indítani a folyamatot. Bővebb információ: https://www.imt.bme.hu/immigration/application/",
+            "**TAJ Kártya / Magánegészségügyi Biztosítás:** TAJ kártya és adókártya igénylése. Bővebb információ: https://www.imt.bme.hu/taj/",
+            "**Diákigazolvány:** További információk itt: https://kth.bme.hu/hallgatoknak/gyik/diakigazolvany-es-matrica/",
+            "**Magyar bankszámla** nyitása (ösztöndíjakhoz, tandíjakhoz és egyéb utalásokhoz)"
+          ]
+        },
+        "academic_affairs": {
+          "title": "Tanulmányi ügyek és támogatás",
+          "items": [
+            "A tanulmányi adminisztrációt a Központi Tanulmányi Hivatal és a kari tanulmányi osztályok kezelik.",
+            "Az egyetem biztosítja, hogy a hallgatók minden fontos szabályzathoz és információhoz hozzáférjenek a képzés nyelvén (pl. tanév rendje, ösztöndíjak, fegyelmi szabályzatok).",
+            "Kiemelt támogatás: nemzetközi mentorcsapatok, tanácsadók és kari Erasmus koordinátorok állnak rendelkezésre."
+          ]
+        },
+        "tasks_by_sept_1": {
+          "title": "Szeptember 1-ig elvégzendő teendők",
+          "items": [
+            "Ismerkedj meg a Neptun rendszerrel",
+            "Kezdj el használni a @edu.bme.hu email címedet",
+            "Telepítsd az Office alkalmazásokat (Word, Excel, PowerPoint, stb.)",
+            "Regisztráld az Office 365 fiókodat az egyetemi email címeddel a következőkhöz: OneDrive tárhely, Microsoft Teams, Egyetemi Wi-Fi",
+            "Egyéb kapcsolódó szolgáltatások",
+            "Tanuld meg használni az oktatási platformokat (pl. Moodle, Teams, vagy a karodon használt egyéb rendszert)"
+          ]
+        }
+      },
+      "university_systems": {
+        "neptun": {
+          "title": "Neptun Rendszer",
+          "description": "A Neptun az egyetem rendszere a tanulmányi ügyek és az egyetemi adminisztráció kezelésére.",
+          "list_title": "A Neptunon keresztül lehetséges:",
+          "items": [
+            "Beiratkozni és bejelentkezni a félévre",
+            "Tárgyakat felvenni",
+            "Megtekinteni a személyes órarended",
+            "Vizsgákra jelentkezni"
+          ],
+          "footer": "A felvételi értesítőddel együtt megkaptad a 6 karakterből álló egyedi azonosítódat (Neptun-kód) és a kezdeti jelszavadat. Neptun útmutatók: https://kth.bme.hu/en/for-students/about-neptun/neptun-guides/"
+        },
+        "eduid": {
+          "title": "BME Címtár (eduID)",
+          "paragraphs": [
+            "A BME-n a legtöbb egyetemi weboldal a **BME Címtárat (eduID)** használja a bejelentkezéshez (Moodle, KEFIR, MŰEPER, stb.).",
+            "Minden hallgató automatikusan kap egy **címtár azonosítót**, amely a címtár adminisztrációs felületén található meg a Neptun-kóddal történő bejelentkezés után.",
+            "Bejelentkezés után a **címtár azonosító** az **eduID** felirat mellett látható.",
+            "Az első bejelentkezéskor meg kell változtatni az induló jelszót, és később is ezt az oldalt használhatod a jelszavad frissítéséhez.",
+            "Innentől kezdve, amikor egy egyetemi weboldal az eduID bejelentkezési oldalát kéri, => a **címtár azonosítót** és az **általad beállított jelszót** kell használni.",
+            "Ugyanezen az adminisztrációs felületen igényelheted az Office 365 (O365) hozzáférést is eszközeidhez (Egyetemi Wi-Fi, Teams, OneDrive)."
+          ]
+        },
+        "o365": {
+          "title": "O365 Regisztráció (Microsoft 365)",
+          "description": "Az O365 fiókod többek között az alábbi szolgáltatásokhoz nyújt hozzáférést: Microsoft Teams, a @edu.bme.hu e-mail címed, 1 TB OneDrive felhőtárhely, a BME Wi-Fi hálózata (és világszerte az Eduroam hálózatok). *(A Microsoft az O365-öt M365-re nevezte át, de a legtöbb egyetemi oldal továbbra is O365 néven hivatkozik rá.)*",
+          "how_to_register_title": "Regisztráció menete",
+          "steps": [
+            "Lépj be a BME Címtár Adminisztrációs oldalra a Neptun azonosítóddal.",
+            "Válaszd a \"Felhasználói fiók beállítása Microsoft Office 365-höz\" menüpontot.",
+            "Válaszd ki a kívánt O365 felhasználónevet.",
+            "Kattints az \"Igen\" opcióra a hozzáférés kérésénél.",
+            "Kattints a \"Beállítások mentése\" gombra."
+          ],
+          "footer": "A hozzáférésed 24 órán belül aktiválódik."
+        },
+        "moodle": {
+          "title": "MOODLE",
+          "list_title": "A kurzusokat két módon találhatod meg:",
+          "items": [
+            "Böngészve nyelv, tanszék és a kurzus neve alapján, vagy",
+            "A bal oldali navigációs menüből, ahol csak a már felvett kurzusaid szerepelnek – így gyorsan és egyszerűen elérheted őket."
+          ]
+        },
+        "teams": {
+          "title": "Az MS Teams használata",
+          "paragraphs": [
+            "A **Microsoft Teams** egy online kommunikációs platform, amely támogatja a **videóhívásokat** és a **virtuális megbeszéléseket**.",
+            "Az egyetemen az oktatók jelenleg elsősorban **online órákra** és **konzultációkra** használják.",
+            "A Teams elérhető: Webböngészőn keresztül, Mobilalkalmazásként, Asztali alkalmazásként.",
+            "A legjobb élmény érdekében az asztali alkalmazás használatát javasoljuk. A bejelentkezéshez használd az **O365 fiókodat** (az **@edu.bme.hu e-mail címedet**)."
+          ]
+        },
+        "wifi": {
+          "title": "Az egyetemi Wi-Fi hálózat használata",
+          "description": "A legegyszerűbb módja az egyetemi **Wi-Fi** hálózatra való csatlakozásnak az **O365 fiók** használata. Részletes **beállítási útmutató** itt érhető el: https://net.bme.hu/wlan/eduroam-bme.php?lang=hu"
+        },
+        "office": {
+          "title": "Office alkalmazások telepítése",
+          "description": "A https://www.office.com/ oldalon az **eduID**-val való bejelentkezés után a jobb felső sarokban lehetőséged van telepíteni az **Office alkalmazásokat** az eszközödre.",
+          "list_title": "Elérhető alkalmazások:",
+          "items": [
+            "Word",
+            "Excel",
+            "PowerPoint",
+            "OneDrive",
+            "Outlook",
+            "Teams",
+            "OneNote"
+          ],
+          "footer": "Ingyenesen elérhető szoftverek hallgatók számára: https://net.bme.hu/sw/"
+        }
+      },
+      "student_life": {
+        "ehk": {
+          "title": "Egyetemi Hallgatói Képviselet (EHK)",
+          "paragraphs": [
+            "A Budapesti Műszaki és Gazdaságtudományi Egyetem (BME) Egyetemi Hallgatói Képviselete a hallgatók hivatalos **képviseleti** szerve. Fő feladata a hallgatói érdekek érvényesítése az egyetemi döntéshozatali folyamatokban és a mindennapi ügyekben. A Hallgatói Képviselet tagjait a hallgatók választják.",
+            "A Hallgatói Képviselet minden karon működik, illetve van egy egyetemi szintű szervezet is, amely összehangolja a kari hallgatói képviseletek munkáját.",
+            "Fordulj hozzánk bizalommal, ha bármilyen problémád adódna a tanulmányaiddal, a kollégiummal, ösztöndíjakkal vagy szociális támogatásokkal kapcsolatban."
+          ],
+          "list_title": "A Hallgatói Képviselet:",
+          "items": [
+            "Hídként szolgál a hallgatók és az egyetemi vezetés között.",
+            "Tájékoztatja a hallgatókat a fontos hírekről, lehetőségekről és szabályzatokról.",
+            "Részt vesz az egyetemi szabályzatok és döntések előkészítésében.",
+            "Közösségi, sport- és kulturális eseményeket szervez."
+          ],
+          "contact": "weboldal: http://ehk.bme.hu/ | e-mail: info@bmeehk.hu"
+        },
+        "faculty_councils": {
+          "title": "Kari Hallgatói Képviseletek",
+          "items": [
+            {
+              "name": "Építőmérnöki Kar",
+              "website": "https://emkhk.bme.hu/",
+              "email": "info@emkhk.hu"
+            },
+            {
+              "name": "Gépészmérnöki Kar",
+              "website": "https://ghk.bme.hu/",
+              "email": "info@ghk.bme.hu"
+            },
+            {
+              "name": "Építészmérnöki Kar",
+              "website": "https://epiteszhk.bme.hu/",
+              "email": "info@epiteszhk.bme.hu"
+            },
+            {
+              "name": "Vegyészmérnöki és Biomérnöki Kar",
+              "website": "https://vegyeszhk.hu/",
+              "email": "vegyeszhk@vegyeszhk.hu"
+            },
+            {
+              "name": "Villamosmérnöki és Informatikai Kar",
+              "website": "https://vik.hk/",
+              "email": "info@vik.hk"
+            },
+            {
+              "name": "Közlekedésmérnöki és Járműmérnöki Kar",
+              "website": "https://kozlekhk.hu/",
+              "email": "info@kozlekkar.hu"
+            },
+            {
+              "name": "Természettudományi Kar",
+              "website": "https://ttkhk.bme.hu/",
+              "email": "info@ttkhk.hu"
+            },
+            {
+              "name": "Gazdaság- és Társadalomtudományi Kar",
+              "website": "http://gtkhk.hu/",
+              "email": "info@gtkhk.bme.hu"
+            }
+          ]
+        },
+        "organizations_intro": "A BME-n számos szakkollégium és öntevékeny kör működik, amelyek kiváló lehetőségeket kínálnak a hallgatók szakmai, akadémiai, közösségi és személyes fejlődésére.",
+        "professional_communities_title": "Szakmai közösségeink",
+        "community_and_culture_title": "Közösségi élet és kultúra",
+        "mvk": {
+          "title": "Műegyetemi Versenycsapat Közösség (MVK)",
+          "description": "Az MVK célja, hogy összehangolt módon támogassa az egyetemen működő versenyjárműveket építő hallgatói csapatokat. Célja továbbá, hogy tagjainak az akadémiai oktatást kiegészítő szakmai fejlődési lehetőségeket biztosítson."
+        },
+        "professional_colleges": {
+          "title": "Szakkollégiumok",
+          "description": "A szakkollégiumok olyan hallgatói közösségek, amelyek a rendes egyetemi tanulmányokhoz kapcsolódó, de azokon túlmutató programokat nyújtanak. A tagok aktív és inspiráló környezetben dolgozhatnak együtt.",
+          "items": [
+            "Simonyi Károly Szakkollégium",
+            "BME Építész Klub Szakkollégium",
+            "BME Gépész Szakkollégium",
+            "BME Közlekedésmérnöki Szakkollégium",
+            "BME Management Szakkollégium",
+            "Universitas Cosmos Szakkollégium",
+            "és sok más…"
+          ]
+        },
+        "student_led": {
+          "title": "Öntevékeny körök",
+          "description": "Az öntevékeny körök a hallgatók által érdeklődésüknek megfelelően alapított egyetemi vagy kari csoportok, amelyek szakmai, akadémiai, sport, kulturális vagy közösségépítő tevékenységet folytatnak.",
+          "items": [
+            "Műegyetemi Néptáncegyüttes",
+            "Búvárklub",
+            "Műegyetemi Vívókör",
+            "Műegyetemi Szimfonikus Zenekar",
+            "és sok más…"
+          ]
+        },
+        "culture": {
+          "title": "Kultúra az Egyetemen",
+          "paragraphs": [
+            "A **Szkéné Színház** az egyetem független színháza, amely **a BME kampuszán** működik. 1970 óta a hallgatók és a szélesebb közönség egyedülálló kulturális központja. A Szkéné kortárs, kísérleti előadásairól és elismert rendezőkkel való együttműködéséről ismert."
+          ]
+        }
+      },
+      "contacts_and_explore": {
+        "important_contacts": {
+          "title": "Fontos Elérhetőségek Külföldi Hallgatók Számára",
+          "items": [
+            {
+              "name": "Központi Tanulmányi Hivatal (KTH)",
+              "description": "A KTH kezeli a diákigazolványokat, beiratkozásokat, hivatalos igazolásokat és az egyetemi adminisztrációt.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "https://kth.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "kth-info@bme.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "1111 Budapest, Műegyetem rkp. 7-9. R épület, földszint"
+                },
+                {
+                  "label": "Telefon",
+                  "value": "+36 1 463 4242"
+                }
+              ]
+            },
+            {
+              "name": "Nemzetközi Kapcsolatok Igazgatósága (NKI)",
+              "description": "Az NKI segít az Erasmus+ és egyéb mobilitási programokkal, valamint általános támogatást nyújt a nemzetközi hallgatóknak.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "https://nki.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "internationalrelations@bme.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "K épület, 1. emelet, 76. szoba, 1111 Budapest, Műegyetem rakpart 3."
+                },
+                {
+                  "label": "Telefon",
+                  "value": "+36 1 463 3364"
+                }
+              ]
+            },
+            {
+              "name": "Hallgatói Képviselet",
+              "description": "A Hallgatói Képviselet segíteni tud tanulmányi, szociális és közösségi ügyekben. Minden karnak van saját képviselete, és van egy központi iroda is.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "http://ehk.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "info@bmeehk.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "Műegyetem rkp. 7-9. R épület, 2. emelet 207-es szoba"
+                },
+                {
+                  "label": "Telefon",
+                  "value": "+36 1 463 3836"
+                }
+              ]
+            },
+            {
+              "name": "International Mentor Team",
+              "description": "Az International Mentor Team célja, hogy segítse a külföldi hallgatók beilleszkedését Budapesten. Honlapjukon minden szükséges információ megtalálható.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "https://www.imt.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "imt@bme.hu"
+                },
+                {
+                  "label": "Cím",
+                  "value": "Műegyetem rkp. 7-9. R épület, 1. emelet 102"
+                }
+              ]
+            }
+          ]
+        },
+        "transport": {
+          "title": "Hogyan juss el a BME-re a repülőtérről?",
+          "paragraphs": [
+            "A 100E busz 10 percenként indul a Liszt Ferenc Repülőtérről. A busszal a Kálvin Térig kell utaznod. Onnan a 4-es metróval Kelenföld irányába, vagy a 47-es, 49-es villamossal a Szent Gellért tér - Műegyetem megállóig. Innen már látható a K épület.",
+            "A 100E és 200E buszokra külön repülőtéri vonaljegy szükséges (amit a buszokon, a repülőtéren vagy a BudapestGO alkalmazásban vásárolhatsz meg).",
+            "Töltsd le a BudapestGO appot, ahol kényelmesen vehetsz bérletet is."
+          ]
+        },
+        "sights": {
+          "title": "Látnivalók, amiket érdemes megnézni Budapesten:",
+          "items": [
+            "Széchenyi Gyógyfürdő",
+            "Országház (Parlament)",
+            "Halászbástya",
+            "Budavári Palota",
+            "Mátyás-templom",
+            "Szent István Bazilika",
+            "Margit-sziget",
+            "Cipők a Duna-parton",
+            "Duna-part",
+            "Gellért-hegy",
+            "Hősök tere",
+            "Vajdahunyad vára",
+            "Terror Háza",
+            "Sziklakórház",
+            "Nagy Vásárcsarnok"
+          ]
+        },
+        "restaurants": {
+          "title": "Jó éttermek és kávézók az egyetem környékén:",
+          "restaurants_title": "Éttermek:",
+          "cafes_title": "Kávézók és pékségek:",
+          "restaurants_list": [
+            "A Móricz Zsigmond körtéren sok gyorsétterem található: McDonalds', Pesti Pipi, KFC, Krumpli., Pizza Forte, Moto Pizza",
+            "A Karinthy Frigyes úton: Da Giovanni, Karimi Gyros",
+            "A Budafoki úton: LA Burger, számos kínai étterem, Tölcsibe, Pizza Di Napoli"
+          ],
+          "cafes_list": [
+            "A Móricz Zsigmond körtéren: Félegyházi Pékség, Café Frei",
+            "A Bartók Béla úton: Kelet Kávézó",
+            "A Budafoki úton: Starbucks, Nanu Kávézó, Kávébab Kávézó",
+            "A Karinthy Frigyes úton: Lipóti Pékség, Fornetti"
+          ]
+        }
+      }
+    },
     "education_information": {
+      "nav": {
+        "main_sections": "Fő részek",
+        "subject_description": "Tantárgyi Követelményrendszer (Tantárgyleírás)",
+        "registration_periods": "Tárgyfelvétel és módosítás",
+        "code_of_studies": "Tanulmányi és Vizsgaszabályzat (TVSZ)",
+        "evaluation": "Különböző értékelési és számonkérési módszerek",
+        "semester_info": "Fontos információk a félév során",
+        "tdk": "Tudományos Diákköri Konferencia (TDK)"
+      },
       "title": "Education-related information",
       "subject_description": {
         "title": "Subject Description",
@@ -465,7 +884,7 @@
         }
       },
       "registration_periods": {
-        "title": "Course Registration Periods at BME",
+        "title": "Tárgyfelvétel és módosítás a BME-n",
         "paragraphs": [
           "Unless stated otherwise, the preliminary subject and course registration period starts at 18:00 on the third working day after the exam period and ends at 12:00 on the last working day before the registration week.",
           "For exact dates and times, students should always check the official ASC website. Also you can always find all the dates on the websites, Instagram and Facebook of the Students’ Union or Faculty Student Councils.",
@@ -516,7 +935,7 @@
           ]
         },
         "formats": {
-          "title": "Programmes under Section Section 11. may be organised in",
+          "title": "Programmes under Section 11. may be organised in",
           "items": [
             "full-time (daytime),",
             "part-time (evening or correspondence), or",
@@ -528,7 +947,7 @@
           "items": [
             "mandatory;",
             "elective whose adding and completion is mandatory, and of which students have to add and complete a given number of credits as specified in the curriculum;",
-            "optional, not identified by the curriculum on an itemised basis, but of which students shave to add and complete a given number of credits; or",
+            "optional, not identified by the curriculum on an itemised basis, but of which students have to add and complete a given number of credits; or",
             "a criterion requirement of which students have to add and complete a given number of subjects to obtain their degree or qualification. Such as PE class, etc…"
           ]
         },
@@ -540,7 +959,7 @@
               "…you have problems with your homework",
               "…you don’t understand something",
               "…you couldn’t attend a laboratory class, and you have to go to another",
-              "ect."
+              "etc."
             ]
           },
           "students_council": {
@@ -617,7 +1036,7 @@
           ]
         },
         "how_it_works": {
-          "title": "How a semester work:",
+          "title": "How a semester works:",
           "intro": "Each semester (both fall and spring) is divided into 5 parts, each of which is important and complicated in its own regard, here we will only talk about the most important things to know about each.",
           "stages": [
             {
@@ -649,7 +1068,7 @@
       "completion": {
         "title": "Completion of Studies",
         "paragraphs": [
-          "You can find the general rules of completing your studies in Chaper V. of the Code of Studies.",
+          "You can find the general rules of completing your studies in Chapter V. of the Code of Studies.",
           "The exact way of completing your studies varies based on the faculty you study at, and the course you’re taking, you can find out these specifics at your faculty’s website"
         ]
       },
@@ -940,10 +1359,10 @@
             "intro": "If you intend to live in a dormitory during the autumn semester, you must complete the following steps:",
             "steps": [
               "Submit your application through the Unified Dormitory Admission and Information System (KEFIR) at http://kefir.bme.hu/. You can log in using your Directory ID, which you can create with your Neptun code.",
-              "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the actual (for example 2025/2026) autumn semester, and carefully fill in the required fields with the necessary information. Be mindful of the application deadline listed on the website.",
+              "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the current (for example 2025/2026) autumn semester, and carefully fill in the required fields with the necessary information. Be mindful of the application deadline listed on the website.",
               "Applications can only be submitted during the specified period; late submissions will not be accepted. Only students who have successfully submitted their application will be considered for a dormitory place.",
               "By submitting the dormitory application, you officially express your request for accommodation.",
-              "Students who are recipients of the Stipendium Hungaricum or Diaspora Scholarship will be accommodated in the Óbuda Student Hotel."
+              "Students who are recipients of the Stipendium Hungaricum or Diaspora Scholarship will be accommodated in the Óbuda Diák Hotel."
             ]
           },
           {

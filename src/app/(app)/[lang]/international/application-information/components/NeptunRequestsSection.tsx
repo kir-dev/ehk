@@ -13,8 +13,8 @@ export default function NeptunRequestsSection({ neptun_requests }: Props) {
         <p className="text-sm text-gray-500 italic mb-4">{neptun_requests.note}</p>
 
         <div className="space-y-3">
-          {neptun_requests.items.map((req, i) => (
-            <div key={i} className="flex gap-3 items-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+          {neptun_requests.items.map((req) => (
+            <div key={req.code} className="flex gap-3 items-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
               <span className="shrink-0 inline-block bg-[#862633] text-white text-xs font-bold px-2 py-1 rounded min-w-[4rem] text-center">
                 {req.code}
               </span>

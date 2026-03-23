@@ -11,8 +11,8 @@ export default function UniversityScholarshipsSection({ university_scholarships 
           {university_scholarships.title}
         </h3>
         <div className="space-y-4">
-          {university_scholarships.items.map((item, i) => (
-            <div key={i} className="bg-gray-50 p-4 rounded-md border border-gray-100">
+          {university_scholarships.items.map((item) => (
+            <div key={`${item.title}-${item.description.substring(0, 20)}`} className="bg-gray-50 p-4 rounded-md border border-gray-100">
               <h4 className="font-semibold text-[#862633]">{item.title}</h4>
               <p className="mt-2 text-gray-700 leading-relaxed">{item.description}</p>
             </div>

@@ -1,4 +1,13 @@
 export interface EducationInformationData {
+  nav: {
+    main_sections: string;
+    subject_description: string;
+    registration_periods: string;
+    code_of_studies: string;
+    evaluation: string;
+    semester_info: string;
+    tdk: string;
+  };
   title: string;
   subject_description: {
     title: string;

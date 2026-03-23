@@ -8,11 +8,7 @@ export default function SubjectDescriptionSection({ subject_description }: Props
     <Card className="group hover:shadow-md transition-all duration-300">
       <CardContent className="p-4 md:p-6">
         <div className="flex flex-col gap-2 md:gap-3">
-          <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-            {subject_description.title}
-          </h3>
-
-          <div className="prose max-w-none text-gray-700 mt-2 space-y-4">
+          <div className="prose max-w-none text-gray-700 space-y-4">
             <div>
               <h4 className="font-semibold text-gray-900">{subject_description.where_available.title}</h4>
               <p>{subject_description.where_available.description}</p>

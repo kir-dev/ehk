@@ -6,10 +6,10 @@ import { MobilityProgramsData } from "./components/types";
 
 export default async function MobilityProgramsPage({
   params
-}: { params: Promise<{ lang: Locale }> }) {
+}: Readonly<{ params: Promise<{ lang: Locale }> }>) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  const content = dictionary.international.mobility_programs as unknown as MobilityProgramsData;
+  const content = dictionary.international.mobility_programs as MobilityProgramsData;
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -33,7 +33,6 @@ export interface DormitoryInformationData {
   };
   application_steps: {
     title: string;
-    kefir_link: string;
     groups: ApplicationGroup[];
   };
 }

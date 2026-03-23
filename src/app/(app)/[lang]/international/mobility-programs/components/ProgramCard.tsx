@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { MobilityProgram, ProgramType } from "./types";
 
 const TYPE_LABELS: Record<ProgramType, string> = {
@@ -66,17 +68,16 @@ export default function ProgramCard({ program }: Props) {
 
         {/* More info link */}
         {program.more_info_link && (
-          <p className="mt-4 text-sm border-t pt-3 text-gray-600">
-            {program.more_info_label}:{" "}
+          <Button variant="outline" size="sm" asChild className="mt-4 hover:bg-red-50 hover:border-[#862633] hover:text-[#862633]">
             <a
               href={program.more_info_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#862633] hover:underline font-medium break-all"
+              className="inline-flex items-center gap-1.5"
             >
-              {program.more_info_link}
+              {program.more_info_label} <ExternalLink size={12} />
             </a>
-          </p>
+          </Button>
         )}
       </CardContent>
     </Card>

@@ -1310,6 +1310,74 @@
           }
         ]
       }
+    },
+    "dormitory_information": {
+      "title": "Dormitory Admission Information",
+      "eligibility": {
+        "title": "Who is eligible to apply for a dormitory place?",
+        "description": "Any student who establishes a student status with the Budapest University of Technology and Economics (BME) and registers for an active semester is eligible to apply for a dormitory place.",
+        "dormitory_types_title": "Dormitories you can apply to are the following:",
+        "dormitory_types": [
+          {
+            "name": "Óbudai Diák Hotel",
+            "description": "for Stipendium Hungaricum and Diaspora scholarship holders"
+          },
+          {
+            "name": "Martos Kollégium",
+            "description": "for SCYP (Scholarship for Christian Young People) holders"
+          },
+          {
+            "name": "BME dormitories",
+            "description": "fee-paying students can apply for accommodation in 7 dormitories, each assigned to a different faculty."
+          }
+        ]
+      },
+      "frequency": {
+        "title": "How often do students need to apply for accommodation?",
+        "description": "Dormitory places must be applied for each semester individually, meaning that a granted place is valid only for one semester. Applications are organized separately for the autumn and spring semesters, as well as for the summer period (July–August)."
+      },
+      "admission": {
+        "title": "How can students apply for a dormitory place, and how is admission determined?",
+        "description": "Dormitory places are allocated based on a competitive application process.",
+        "ranking": [
+          {
+            "group": "For first-year students",
+            "detail": "establishing their first student status with the Budapest University of Technology and Economics (BME), the ranking for admission is based on both academic performance (admission score) and social circumstances."
+          },
+          {
+            "group": "For upper-year students",
+            "detail": "the ranking is based on academic performance, social circumstances and community activities carried out for the benefit of university life."
+          }
+        ]
+      },
+      "application_steps": {
+        "title": "Steps to Apply for Dormitory Accommodation in the Autumn Semester",
+        "kefir_link": "http://kefir.bme.hu/",
+        "groups": [
+          {
+            "title": "Stipendium Hungaricum and Diaspora students:",
+            "intro": "If you intend to live in a dormitory during the autumn semester, you must complete the following steps:",
+            "steps": [
+              "Submit your application through the Unified Dormitory Admission and Information System (KEFIR) at http://kefir.bme.hu/. You can log in using your Directory ID, which you can create with your Neptun code.",
+              "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the actual (for example 2025/2026) autumn semester, and carefully fill in the required fields with the necessary information. Be mindful of the application deadline listed on the website.",
+              "Applications can only be submitted during the specified period; late submissions will not be accepted. Only students who have successfully submitted their application will be considered for a dormitory place.",
+              "By submitting the dormitory application, you officially express your request for accommodation.",
+              "Students who are recipients of the Stipendium Hungaricum or Diaspora Scholarship will be accommodated in the Óbuda Student Hotel."
+            ]
+          },
+          {
+            "title": "Fee-paying students:",
+            "intro": "If you intend to live in a dormitory during the autumn semester, you must complete the following steps:",
+            "steps": [
+              "Submit your application through the Unified Dormitory Admission and Information System (KEFIR) at http://kefir.bme.hu/. You can log in using your Directory ID, which you can create with your Neptun code.",
+              "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the actual (for example 2025/2026) autumn semester, and carefully fill in the required fields with the necessary information. Be mindful of the application deadline listed on the website.",
+              "Applications can only be submitted during the specified period; late submissions will not be accepted. Only students who have successfully submitted their application will be considered for a dormitory place.",
+              "By submitting the dormitory application, you officially express your request for accommodation.",
+              "Applications will be evaluated by the Dormitory Representative of the Students' Union."
+            ]
+          }
+        ]
+      }
     }
   }
 }

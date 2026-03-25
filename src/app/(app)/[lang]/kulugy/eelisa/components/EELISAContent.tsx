@@ -38,7 +38,7 @@ interface EELISAData {
   contact: string;
 }
 
-export default function EELISAContent({ content }: { content: EELISAData }) {
+export default function EELISAContent({ content }: Readonly<{ content: EELISAData }>) {
   // Mapping icons to steps for visual appeal
   const iconWrapper = "flex items-center justify-center w-10 h-10 bg-[#862633]/10 rounded-full shrink-0";
   const iconClass = "w-5 h-5 text-[#862633]/80 overflow-visible";

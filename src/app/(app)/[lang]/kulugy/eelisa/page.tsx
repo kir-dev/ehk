@@ -5,10 +5,10 @@ import EELISAContent from "./components/EELISAContent";
 
 export default async function EELISAPage({
   params 
-}: { params: Promise<{ lang: Locale }> }) {
+}: Readonly<{ params: Promise<{ lang: Locale }> }>) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  const content = dictionary.international.eelisa;
+  const content = dictionary.kulugy.eelisa;
 
   return (
     <div className="min-h-screen bg-gray-50">

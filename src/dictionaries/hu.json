@@ -371,10 +371,10 @@
     "check_mueper" : "Azt, hogy a megpályázott ösztöndíj melyik kifizetési időpontban kerül utalásra, mindig a MŰEPER felületén elérhető pályázati kiírás tartalmazza.",
     "no_active_period": "Jelenleg nincs aktív kifizetési időszak."
   },
-  "international": {
+  "kulugy": {
     "erasmus": {
       "title": "Erasmus+",
-      "what_is_it": {
+      "general_info": {
         "title": "Mi is az az Erasmus+?",
         "description": "Az Erasmus+ program a BME egyik legnépszerűbb nemzetközi lehetősége, amelynek segítségével te is kipróbálhatod magad külföldön – akár tanulmányi félév, akár szakmai gyakorlat formájában. Egy új ország, új kultúra és rengeteg élmény vár, miközben nem kell megszakítanod az itthoni tanulmányaidat. Az Erasmus+ nem csupán ösztöndíj, hanem egy életre szóló kaland, amely fejleszti a nyelvtudásodat, önállóságot ad, és segít nemzetközi kapcsolatokat építeni – szakmailag és emberileg egyaránt."
       },

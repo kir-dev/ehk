@@ -1458,11 +1458,11 @@
       "additional_support_link": "https://nki.bme.hu/node/6140",
       "current_call_link": "https://nki.bme.hu/ERASMUS/RESZKEPZES"
     },
-        "eelisa": {
+    "eelisa": {
       "title": "EELISA",
       "what_is_it": {
         "title": "What is EELISA?",
-        "description": "EELISA (European Engineering Learning Innovation and Science Alliance) is an alliance of ten European universities, involving engineering, technical, and broader educational institutions from eight countries. The initiative aims to jointly rethink what it means to be a European engineer today – training professionals who contribute to shaping the future not only with their technical knowledge but also with their social responsibility and broad perspective. By connecting engineering, scientific, and humanities fields, EELISA is working to create a more inclusive, sustainable, and digital Europe."
+        "description": "EELISA (European Engineering Learning Innovation and Science Alliance) is an alliance of nine European universities, involving engineering, technical, and broader educational institutions from eight countries. The initiative aims to jointly rethink what it means to be a European engineer today – training professionals who contribute to shaping the future not only with their technical knowledge but also with their social responsibility and broad perspective. By connecting engineering, scientific, and humanities fields, EELISA is working to create a more inclusive, sustainable, and digital Europe."
       },
       "partners": {
         "title": "Partner Universities:",

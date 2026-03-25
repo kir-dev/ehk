@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Send, HeartHandshake, PlaneTakeoff, Info } from "lucide-react";
+import { ArrowRight, CheckCircle2, Send, PlaneTakeoff, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -136,15 +136,15 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
       {/* Action Banners */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
         <Button asChild variant="outline" className="h-auto p-6 font-bold text-lg text-gray-900 border-2 border-transparent hover:border-[#862633] hover:text-[#862633] rounded-xl transition-all duration-300 flex items-center justify-between">
-          <Link href={content.current_opportunities.link} target="_blank">
+          <Link href={content.current_opportunities.link} target="_blank" rel="noopener noreferrer">
             {content.current_opportunities.title} 
-            <ArrowRight className="w-6 h-6 text-[#862633] group-hover:translate-x-2 transition-transform duration-300" />
+            <ExternalLink className="w-5 h-5 ml-2 text-[#862633]" />
           </Link>
         </Button>
         <Button asChild variant="outline" className="h-auto p-6 font-bold text-lg text-gray-900 border-2 border-transparent hover:border-[#862633] hover:text-[#862633] rounded-xl transition-all duration-300 flex items-center justify-between">
-          <Link href={content.call_for_applications.link} target="_blank">
+          <Link href={content.call_for_applications.link} target="_blank" rel="noopener noreferrer">
             {content.call_for_applications.title} 
-            <ArrowRight className="w-6 h-6 text-[#862633] group-hover:translate-x-2 transition-transform duration-300" />
+            <ExternalLink className="w-5 h-5 ml-2 text-[#862633]" />
           </Link>
         </Button>
       </div>

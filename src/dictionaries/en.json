@@ -9,6 +9,7 @@
     "close": "Close",
     "loading": "Loading...",
     "questions": "Any questions?",
+    "more_info": "More information",
     "contact_aria_label": "Send email to info@bmeehk.hu"
   },
   "regulations": {
@@ -86,7 +87,7 @@
     "min": "min",
     "file_s": "file(s)",
     "file": "File"
-    },
+  },
   "scholarships": {
     "academic": {
       "title": "Academic Scholarship",
@@ -150,7 +151,7 @@
       "eszb_website": "ESZB website"
     },
     "ehk": {
-      "title" : "EHK scholarships",
+      "title": "EHK scholarships",
       "items": [
         {
           "title": "University Student Union Scholarship",
@@ -209,12 +210,10 @@
       ]
     }
   },
-
   "sport": {
     "sportterem": {
       "title": "Gym Application Information",
-      "description": "The **Sport Division of the Budapest University of Technology and Economics (BME)** and the **University Student Representative Council (EHK)** provide an opportunity for sports teams and groups of friends to train in the university's sports facilities at a discounted rate."
-      ,
+      "description": "The **Sport Division of the Budapest University of Technology and Economics (BME)** and the **University Student Representative Council (EHK)** provide an opportunity for sports teams and groups of friends to train in the university's sports facilities at a discounted rate.",
       "facilities": {
         "title": "Available Sports Facilities",
         "items": [
@@ -278,40 +277,46 @@
       },
       "footer": "*Accurate information is always contained in the call for applications published for the specific semester."
     },
-  
     "sportpalyaTamogatas": {
       "title": "Sports Field Support Application",
       "description": "The **Budapest University of Technology and Economics Physical Education Center** and the **University Student Council (EHK)** are announcing a joint application to support the rental of a sports field for **BME student teams**. Our goal is to support regular sports activities among the university's citizens.",
-      "application": { 
+      "application": {
         "title": "Who can apply?",
-        "description": "Any team that has **at least 80%** of its members in the given semester as full-time students with an active student status at BME can participate in the competition." 
+        "description": "Any team that has **at least 80%** of its members in the given semester as full-time students with an active student status at BME can participate in the competition."
       },
-      "period": { 
+      "period": {
         "title": "The Period and Location of the Support",
-        "items": ["The support applies to **a semester** (fall or spring semester) of the given academic year.", 
-        "You can apply not only for sports activities carried out at BME sports facilities (BME Sports Center, Bogdánfy Street Sports Complex, Kármán Tódor Dormitory, Bercsényi 28-30 Dormitory), but also for sports activities held at other external venues."] 
+        "items": [
+          "The support applies to **a semester** (fall or spring semester) of the given academic year.",
+          "You can apply not only for sports activities carried out at BME sports facilities (BME Sports Center, Bogdánfy Street Sports Complex, Kármán Tódor Dormitory, Bercsényi 28-30 Dormitory), but also for sports activities held at other external venues."
+        ]
       },
-      "condition": { 
+      "condition": {
         "title": "Application Conditions and Submission",
         "intro": "An application is valid if the team:",
-        "items": ["Complete and submit the **member list** published as an attachment to the application on time.", 
-        "Complete and submit **the application form attached** to the application on time."],
+        "items": [
+          "Complete and submit the **member list** published as an attachment to the application on time.",
+          "Complete and submit **the application form attached** to the application on time."
+        ],
         "outro": "The application is submitted **electronically**, and the completed attachments must be sent to the email address **info@bmeehk.hu** by the deadline set in the schedule published on the EHK website."
       },
-      "selection": { 
+      "selection": {
         "title": "Judging Criteria",
         "description": "The applications are evaluated by the BME Physical Education Center in cooperation with the University Student Council (EHK). The main criteria are:",
-        "items": ["The team should regularly mobilize **as many people as possible** with the support required.", 
-        "The team's **achievements in the last 2 years**.",
-        "The **proportion of full-time, active BME students** in the team."] 
+        "items": [
+          "The team should regularly mobilize **as many people as possible** with the support required.",
+          "The team's **achievements in the last 2 years**.",
+          "The **proportion of full-time, active BME students** in the team."
+        ]
       },
-      "result": { 
+      "result": {
         "title": "Result and Remedy",
-        "items": ["The EHK will publish the final result **on its website** by the deadline set in the application schedule.", 
-        "We are unable to accept applications that do not comply with the announcement (in terms of form or content) or that are submitted after the deadline.",
-        "In the event of an application with false content, the team may be punished by exclusion and disciplinary proceedings may also be initiated.",
-        "Questions about the application and any intention to object to the evaluation can be sent to the e-mail address **info@bmeehk.hu**."
-        ] 
+        "items": [
+          "The EHK will publish the final result **on its website** by the deadline set in the application schedule.",
+          "We are unable to accept applications that do not comply with the announcement (in terms of form or content) or that are submitted after the deadline.",
+          "In the event of an application with false content, the team may be punished by exclusion and disciplinary proceedings may also be initiated.",
+          "Questions about the application and any intention to object to the evaluation can be sent to the e-mail address **info@bmeehk.hu**."
+        ]
       },
       "footer": "*Exact information is always included in the application announced for the given semester."
     }
@@ -326,7 +331,7 @@
   "knowledge_base": {
     "title": "Cheat Sheets"
   },
-  "dormitories":{
+  "dormitories": {
     "admission_information": {
       "title": "Dormitory Admission Information",
       "capacity": "Capacity",
@@ -354,7 +359,6 @@
     "TTK": "Faculty of Natural Sciences",
     "KJK": "Faculty of Transportation Engineering and Vehicle Engineering"
   },
-
   "payouts": {
     "title": "Payout Information",
     "intro_text": "The scholarship payout dates for the {title} academic year are as follows:",
@@ -369,7 +373,7 @@
     "important_todo_p4": "If you do not register the necessary data by the third payout attempt, the University is not obliged to initiate another transfer until you notify them that you have corrected the deficiencies.",
     "wrong_transfer_title": "To-Dos in Case of Incorrect Transfer or Termination of Student Status",
     "wrong_transfer_p1": "In the event of an incorrect transfer, you must repay the incorrectly paid amount to the University within 15 days. The same applies upon termination of student status, change of work schedule, or termination of scholarship eligibility; any necessary repayment must be settled within 15 days following the change.",
-    "check_mueper" : "The specific payout date for the applied scholarship is always contained in the call for applications available on the MŰEPER interface.",
+    "check_mueper": "The specific payout date for the applied scholarship is always contained in the call for applications available on the MŰEPER interface.",
     "no_active_period": "No active payout period at the moment."
   },
   "international": {
@@ -435,5 +439,1046 @@
     "location": "Location:",
     "opening_hours": "Opening hours:",
     "no_results": "There are no active clubs at the moment"
+  },
+  "dormitory_details": {
+    "back_button": "Back to Dormitories",
+    "images_title": "Image Gallery",
+    "no_images": "There are currently no images uploaded for this dormitory.",
+    "baross": {
+      "title": "Baross Gábor Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "bercsenyi": {
+      "title": "Bercsényi 28-30 Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "karman": {
+      "title": "Kármán Tódor Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "martos": {
+      "title": "Martos Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "sch": {
+      "title": "Schönherz Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "vpk": {
+      "title": "Vásárhelyi Pál Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "wigner": {
+      "title": "Wigner Jenő Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    }
+  },
+  "international": {
+    "general_information": {
+      "title": "General Information",
+      "description": "Important General Information for Non-Hungarian Citizens Studying at BME",
+      "nav": {
+        "main_sections": "Main Sections",
+        "portals": "Portals",
+        "getting_started": "Getting Started",
+        "university_systems": "University Systems",
+        "student_life": "Student Life",
+        "contacts": "Contacts & Explore"
+      },
+      "more_info": "More information",
+      "getting_started": {
+        "admission": {
+          "title": "Admission and Study Opportunities",
+          "description": "BME offers various programs for international students, including:",
+          "items": [
+            "Bachelor’s (BSc), Master’s (MSc), and Doctoral (PhD) programs in English",
+            "Exchange programs (mobility programs such as Erasmus+, ATHENS, EELISA)",
+            "Both scholarship-based and self-financed (tuition-paying) options."
+          ]
+        },
+        "application": {
+          "title": "Application and Enrollment",
+          "items": [
+            "Applications are submitted online; for example, for the 2025/26 academic year, applications are accepted between April 1 and May 31.",
+            "Detailed descriptions of the enrollment process and required documents can be found on the website of the Academic Services Centre (ASC/ETK)."
+          ]
+        },
+        "administrative_tasks": {
+          "title": "Administrative Tasks After Arrival",
+          "items": [
+            "Registration at BME is organized by the Academic Services Centre. Here you can find the newsletter on the start of the 2025/26/1 semester: https://www.kth.bme.hu/en/news/2318/",
+            "Firstly, you have to upload the necessary documents to Neptun as described in the newsletter. This will be followed by an in-person registration, where your documents will be checked.",
+            "Subjects can be registered in Neptun at Subjects/Register for subjects after you registered for the term as an active student."
+          ]
+        },
+        "official_documents": {
+          "title": "Official documents you will need",
+          "items": [
+            "**Residence permit**: To stay and study in Hungary you are required to obtain a residence permit. It can take quite a long time so you should start as early as possible. You can find more information here: https://www.imt.bme.hu/immigration/application/",
+            "**TAJ Card/Private Health Insurance:** Applying for a TAJ card (Hungarian health insurance card) and a tax card. More information: https://www.imt.bme.hu/taj/",
+            "**Student ID Card:** Find out more here: https://www.kth.bme.hu/en/for-students/faq/student-id-card/",
+            "Opening a **Hungarian bank account** (for scholarships, tuition, and other transfers)"
+          ]
+        },
+        "academic_affairs": {
+          "title": "Academic Affairs and Support",
+          "items": [
+            "Academic administration is managed by the Academic Services Centre and the faculty study offices.",
+            "The university ensures that students have access to all important regulations and information in the language of instruction (e.g., academic calendar, scholarships, disciplinary rules, appeals, healthcare).",
+            "Dedicated support: international mentor teams, advisors, and faculty Erasmus coordinators are available."
+          ]
+        },
+        "tasks_by_sept_1": {
+          "title": "Tasks to Complete by September 1st",
+          "items": [
+            "Get familiar with the Neptun system",
+            "Start using your @edu.bme.hu email address",
+            "Install Office applications (Word, Excel, PowerPoint, etc.)",
+            "Register your Office 365 account using your university email address to access: OneDrive storage, Microsoft Teams, University Wi-Fi",
+            "Other related services",
+            "Learn to use the educational platforms (e.g., Moodle, Teams, or other systems used in your faculty)"
+          ]
+        }
+      },
+      "university_systems": {
+        "neptun": {
+          "title": "Neptun System",
+          "description": "Neptun is the system used at the university for managing all academic and study-related matters.",
+          "list_title": "Through Neptun, you can:",
+          "items": [
+            "Enroll for the semester",
+            "Register for subjects",
+            "View your personal timetable",
+            "Sign up for exams"
+          ],
+          "footer": "With your admission letter, you received a 6-character unique identifier (your Neptun code) and an initial password. Neptun guides: https://kth.bme.hu/en/for-students/about-neptun/neptun-guides/"
+        },
+        "eduid": {
+          "title": "BME Directory (eduID)",
+          "paragraphs": [
+            "At BME, most university websites use the **BME Directory (eduID)** for login (Moodle, KEFIR, MŰEPER, etc.).",
+            "Every student is automatically assigned a **directory ID**, which can be found on the directory administration page, after logging in with your Neptun login credentials.",
+            "Once logged in, you’ll see your **directory ID** next to the label **eduID**.",
+            "During your first login, you must change the initial password, and later you can also use this site to update your password anytime.",
+            "From that point on, when a university website prompts you with the eduID login page, => use your **directory ID** and the **password you set**.",
+            "On the same admin page, you can also request access to Office 365 (O365), which gives you access to: University Wi-Fi, Microsoft Teams, OneDrive and other O365 services."
+          ]
+        },
+        "o365": {
+          "title": "O365 Registration (Microsoft 365)",
+          "description": "Your O365 account gives you access to the following services: Microsoft Teams, Your @edu.bme.hu email address, 1 TB of OneDrive cloud storage, The BME Wi-Fi network (and Eduroam networks at universities worldwide). *(Microsoft has renamed O365 to M365, most university pages still refer to it as O365.)*",
+          "how_to_register_title": "How to Register",
+          "steps": [
+            "Log in to the BME Directory Administration Page using your Neptun login details.",
+            "Select the menu: \"Set up user account for Microsoft Office 365\"",
+            "Choose your O365 username (you can set this yourself).",
+            "Tick \"Yes\" under \"Request O365 access\".",
+            "Click \"Save settings\"."
+          ],
+          "footer": "Your access will be activated within 24 hours."
+        },
+        "moodle": {
+          "title": "MOODLE",
+          "list_title": "You can find courses in two ways:",
+          "items": [
+            "By browsing based on language, department, and course name, or",
+            "From the left-hand navigation menu, where only your own registered courses are listed — making them quick and easy to access."
+          ]
+        },
+        "teams": {
+          "title": "Using MS Teams",
+          "paragraphs": [
+            "**Microsoft Teams** is an online communication platform that supports **video calls** and **virtual meetings**.",
+            "At the university, instructors currently use it mainly for **online classes** and **consultations**.",
+            "You can access Teams via: Web browser, Mobile app, Desktop app.",
+            "We recommend using the desktop application on a laptop or computer for the best experience. To log in, use your **O365 account** (your **@edu.bme.hu email address**)."
+          ]
+        },
+        "wifi": {
+          "title": "Using the University Wi-Fi Network",
+          "description": "The easiest way to connect to the university **Wi-Fi network** is by using your **O365 account**, so if you haven’t registered yet, it’s worth doing it first. A detailed **setup guide** is available here: https://net.bme.hu/wlan/eduroam-bme.php?lang=en"
+        },
+        "office": {
+          "title": "Installing Office Applications",
+          "description": "At https://www.office.com/, after logging in with your **eduID**, you’ll see an option in the top-right corner to install **Office apps** on your device.",
+          "list_title": "Available apps include:",
+          "items": [
+            "Word",
+            "Excel",
+            "PowerPoint",
+            "OneDrive",
+            "Outlook",
+            "Teams",
+            "OneNote"
+          ],
+          "footer": "Free Software Available for Students: https://net.bme.hu/sw/"
+        }
+      },
+      "student_life": {
+        "ehk": {
+          "title": "Students’ Union (EHK)",
+          "paragraphs": [
+            "The Students’ Union at the Budapest University of Technology and Economics (BME) is the official **student representative** organization. Its main role is to advocate for students’ interests in university decision-making processes and in everyday matters. Members of the Students’ Union are elected by the students, and they assist with academic, social, dormitory, and other student-related issues.",
+            "The Students’ Union operates at each faculty and also has a university-level organization, which coordinates the work of the faculty-level student councils.",
+            "You can contact us if you have any problems either with your studies, dormitory, scholarships or social assistance on everything explained above."
+          ],
+          "list_title": "The Students’ Union:",
+          "items": [
+            "Acts as a bridge between students and the university administration.",
+            "Informs students about important news, opportunities, and regulations affecting them.",
+            "Participates in the preparation and review of university policies and decisions.",
+            "Organizes community, sports, and cultural events, and supports student life."
+          ],
+          "contact": "website: http://ehk.bme.hu/ | email: international@bmeehk.hu"
+        },
+        "faculty_councils": {
+          "title": "Faculty-level Student Councils",
+          "items": [
+            {
+              "name": "Civil Engineering",
+              "website": "https://emkhk.bme.hu/en/main-page/",
+              "email": "international@emkhk.hu"
+            },
+            {
+              "name": "Mechanical Engineering",
+              "website": "https://ghk.bme.hu/en/info",
+              "email": "international@ghk.bme.hu"
+            },
+            {
+              "name": "Architecture",
+              "website": "https://epiteszhk.bme.hu/en/archisc/introduction/about-us/",
+              "email": "archihelp@iasc.hu"
+            },
+            {
+              "name": "Chemical Technology and Biotechnology",
+              "website": "https://vegyeszhk.hu/",
+              "email": "vkb@vegyeszhk.hu"
+            },
+            {
+              "name": "Electrical Engineering and Informatics",
+              "website": "https://vik.hk/",
+              "email": "kulugy@vik.hk"
+            },
+            {
+              "name": "Transportation Engineering and Vehicle Engineering",
+              "website": "https://kozlekhk.hu/",
+              "email": "international@kozlekkar.hu"
+            },
+            {
+              "name": "Natural Sciences",
+              "website": "https://ttkhk.bme.hu/en/",
+              "email": "info@ttkhk.hu"
+            },
+            {
+              "name": "Economics and Social Sciences",
+              "website": "http://gtkhk.hu/",
+              "email": "international@gtkhk.bme.hu"
+            }
+          ]
+        },
+        "organizations_intro": "At the Budapest University of Technology and Economics (BME), numerous professional colleges (szakkollégium) and student-led organizations (öntevékeny kör) operate, offering outstanding opportunities for students’ professional, academic, community, and personal development.",
+        "professional_communities_title": "BME Professional Communities",
+        "mvk": {
+          "title": "BME Competitive Team Community (MVK)",
+          "description": "The Community of Competition Teams at the Budapest University of Technology and Economics (MVK) was established with the aim of supporting the student teams that build competition vehicles at the university in a coordinated manner. It also seeks to provide its members with opportunities for professional development that complement their academic education. Another key goal of MVK is to promote and represent the university at national and international events."
+        },
+        "professional_colleges": {
+          "title": "Professional Colleges (Szakkollégiumok)",
+          "description": "Professional colleges are student communities that provide programs closely related to, but going beyond, regular university studies. They offer professional, academic, research, and community activities. Members can work together in an active and inspiring environment, participate in specialized trainings, courses, workshops, lectures, and team-building programs.",
+          "items": [
+            "Simonyi Károly Professional College",
+            "BME Architecture Club Professional College",
+            "BME Mechanical Engineering Professional College",
+            "BME Transportation Engineering Professional College",
+            "BME Management Professional College",
+            "BME Zielinski Szilárd Civil Engineering Professional College",
+            "University Cosmos Professional College",
+            "and many more…"
+          ]
+        },
+        "student_led": {
+          "title": "Student-led Organizations (Öntevékeny körök)",
+          "description": "Student-led organizations are university or faculty groups founded by students according to their interests, and they engage in professional, academic, sports, cultural, or community-building activities. These groups provide opportunities for students to try themselves in various fields, such as IT projects, photography, economics, or sports. Student-led organizations actively contribute to the community life of the faculties and the university, organize programs, and help students integrate and develop.",
+          "items": [
+            "Hungarian Folk Dance Club",
+            "Diving Club",
+            "Fencing Committee",
+            "Symphony Orchestra",
+            "and many more…"
+          ]
+        },
+        "culture": {
+          "title": "Culture on Campus",
+          "paragraphs": [
+            "**Szkéné Theatre** is the university's independent theatre **located on the campus of BME**. It has been a unique cultural hub for students and the wider public since 1970. Known for its contemporary, experimental performances and collaborations with renowned directors and theatre companies, Szkéné offers a diverse repertoire ranging from drama and physical theatre to modern interpretations of classical works. It provides students not only with high-quality cultural experiences but also opportunities to engage with the performing arts in a thought-provoking and inspiring environment."
+          ]
+        }
+      },
+      "contacts_and_explore": {
+        "important_contacts": {
+          "title": "Important Contacts for International Students",
+          "items": [
+            {
+              "name": "Academic Services Centre (KTH)",
+              "description": "KTH manages student ID cards, enrollments, official certificates, and university administration.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "https://kth.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "kth-info@bme.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "1111 Budapest, Műegyetem rkp. 7-9. Building R, ground floor"
+                },
+                {
+                  "label": "Phone",
+                  "value": "+36 1 463 4242"
+                }
+              ]
+            },
+            {
+              "name": "Department of International Relations (NKI)",
+              "description": "NKI assists with Erasmus+ and other mobility programs, and provides general support to international students.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "https://nki.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "internationalrelations@bme.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "Building K, 1st floor, Room 76, 1111 Budapest, Műegyetem rakpart 3."
+                },
+                {
+                  "label": "Phone",
+                  "value": "+36 1 463 3364"
+                }
+              ]
+            },
+            {
+              "name": "Students' Union (EHK)",
+              "description": "The Students' Union can assist with academic, social, and community issues. Each faculty has its own representation, and there is a central office as well.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "http://ehk.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "info@bmeehk.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "Műegyetem rkp. 7-9. Building R, 2nd floor, Room 207"
+                },
+                {
+                  "label": "Phone",
+                  "value": "+36 1 463 3836"
+                }
+              ]
+            },
+            {
+              "name": "International Mentor Team",
+              "description": "The International Mentor Team aims to help international students integrate into life in Budapest. All necessary information can be found on their website.",
+              "contacts": [
+                {
+                  "label": "Web",
+                  "value": "https://www.imt.bme.hu/"
+                },
+                {
+                  "label": "E-mail",
+                  "value": "imt@bme.hu"
+                },
+                {
+                  "label": "Address",
+                  "value": "Műegyetem rkp. 7-9. Building R, 1st floor, Room 102"
+                }
+              ]
+            }
+          ]
+        },
+        "transport": {
+          "title": "How to get to BME from the airport?",
+          "paragraphs": [
+            "Bus 100E runs every 10 minutes from Liszt Ferenc Airport. Take the bus to Kálvin Tér. From there, take metro line 4 towards Kelenföld, or trams 47 or 49 to the stop 'Szent Gellért tér - Műegyetem'. You can already see Building K from there.",
+            "For buses 100E and 200E, a special airport ticket is required (which can be bought on the buses, at the airport, or in the BudapestGO app).",
+            "Download the BudapestGO app to conveniently buy a pass."
+          ]
+        },
+        "sights": {
+          "title": "Sights to see in Budapest:",
+          "items": [
+            "Széchenyi Thermal Bath",
+            "Hungarian Parliament Building",
+            "Fisherman's Bastion",
+            "Buda Castle",
+            "Matthias Church",
+            "St. Stephen's Basilica",
+            "Margaret Island",
+            "Shoes on the Danube Bank",
+            "Danube Bank",
+            "Gellért Hill",
+            "Heroes' Square",
+            "Vajdahunyad Castle",
+            "House of Terror",
+            "Hospital in the Rock",
+            "Great Market Hall"
+          ]
+        },
+        "restaurants": {
+          "title": "Good restaurants and cafes around the university:",
+          "restaurants_title": "Restaurants:",
+          "cafes_title": "Cafes and bakeries:",
+          "restaurants_list": [
+            "There are many fast-food places at Móricz Zsigmond körtér: McDonald’s, Pesti Pipi, KFC, Krumpli., Pizza Forte, Moto Pizza",
+            "On Karinthy Frigyes Street: Da Giovanni, Karimi Gyros",
+            "On Budafoki Street: LA Burger, many Chinese restaurants, Tölcsibe, Pizza Di Napoli"
+          ],
+          "cafes_list": [
+            "At Móricz Zsigmond körtér: Félegyházi Pékség, Café Frei",
+            "On Bartók Béla road: Kelet Kávézó",
+            "On Budafoki road: Starbucks, Nanu Kávézó, Kávébab Kávézó",
+            "On Karinthy Frigyes street: Lipóti Pékség, Fornetti"
+          ]
+        }
+      }
+    },
+    "education_information": {
+      "nav": {
+        "main_sections": "Main sections",
+        "subject_description": "Subject Description",
+        "registration_periods": "Course Registration & Late Changes",
+        "code_of_studies": "Code of Studies and Exams (CoS)",
+        "evaluation": "Different methods of evaluation and assessment of learning outcomes",
+        "semester_info": "Important information during the semester",
+        "tdk": "Students' Scientific Conference (TDK)"
+      },
+      "title": "Education-related information",
+      "subject_description": {
+        "title": "Subject Description",
+        "where_available": {
+          "title": "Where it’s available:",
+          "description": "Every subject offered by the University must have a subject description. This must be available in the SAS system or on the faculty’s website."
+        },
+        "languages": {
+          "title": "Languages:",
+          "description": "Subject descriptions must be provided in:",
+          "items": [
+            "Hungarian",
+            "English",
+            "The language of the training programme (if different)"
+          ]
+        },
+        "approval": {
+          "title": "Approval:",
+          "items": [
+            "For some subjects (as defined in Section 17. (3) a & b), the Faculty Council must approve the subject description.",
+            "For others (as defined in Section 17. (3) c), a designated person or body (as decided by the Faculty Council) approves it."
+          ]
+        },
+        "must_include": {
+          "title": "What the Subject Description Must Include:",
+          "items": [
+            "Subject title",
+            "Subject code (from Section 19)",
+            "Language(s) it's offered in",
+            "Type of subject (based on Section 17. (2))",
+            "Role in the curriculum for each academic programme (Section 17. (3))",
+            "Course type and number of hours per week or per term",
+            "Number of credits",
+            "Type of evaluation (based on Section 18)",
+            "Name, contact info, and department of the subject coordinator",
+            "Department responsible for teaching",
+            "Purpose of the subject and how it connects to the programme's learning goals",
+            "Requirements to register (see Section 37)",
+            "Learning outcomes, aligned with the programme’s training goals",
+            "How learning outcomes are evaluated (see Title 31)",
+            "Learning materials (print or digital) and where to access them"
+          ]
+        }
+      },
+      "registration_periods": {
+        "title": "Course Registration Periods at BME",
+        "paragraphs": [
+          "Unless stated otherwise, the preliminary subject and course registration period starts at 18:00 on the third working day after the exam period and ends at 12:00 on the last working day before the registration week.",
+          "For exact dates and times, students should always check the official ASC website. Also you can always find all the dates on the websites, Instagram and Facebook of the Students’ Union or Faculty Student Councils.",
+          "The final course registration period starts at 18:00 on the first day of the registration week and runs until 23:59 on the last day of that week."
+        ]
+      },
+      "late_registration": {
+        "title": "Late Subject Registration or Withdrawal at BME",
+        "paragraphs": [
+          "It’s possible to register for or drop a subject after the regular period, but only until the first day of the second teaching week. You must submit a request via Neptun:"
+        ],
+        "requests": [
+          "Request 018 – Subject registration/withdrawal request (NOT your own fault)",
+          "Request 019 – Late subject registration/withdrawal request (YOUR own fault) - A 5,500 HUF fee per subject applies if it’s your own fault."
+        ],
+        "not_own_fault": {
+          "title": "What counts as \"not your own fault\"?",
+          "intro": "You can use the 018 form without a fee if, for example:",
+          "items": [
+            "You were entitled to register the subject according to your curriculum, but Neptun didn’t allow it or deleted it by mistake.",
+            "You completed the subject in a previous programme, but want to register it again (not just get it recognized).",
+            "The course time changed and now conflicts with another subject, so you need to drop it.",
+            "You couldn’t register for a specialization course due to late specialization approval.",
+            "You want to register for a course from another faculty.",
+            "Other justified reasons."
+          ],
+          "outro": "You should attach instructor approval using the official form. This is strongly recommended in all cases. It becomes mandatory starting from the third teaching week."
+        }
+      },
+      "code_of_studies": {
+        "title": "Code of Studies and Exams (CoS)",
+        "study_levels": {
+          "title": "There are a lot of different types of study levels at BME",
+          "items": [
+            "bachelor training programme (BA, BSc);",
+            "master training programme (MA, MSc);",
+            "single-cycle training programme;",
+            "doctoral training programme (PhD, DLA, DBA)."
+          ],
+          "extra": "Also the University organises postgraduate specialist training programmes, which do not award a higher education degree."
+        },
+        "languages": {
+          "title": "Following their statutory registration, by the Office of Education, the academic programmes may be announced in the following languages:",
+          "items": [
+            "Hungarian",
+            "English",
+            "German"
+          ]
+        },
+        "formats": {
+          "title": "Programmes under Section 11. may be organised in",
+          "items": [
+            "full-time (daytime),",
+            "part-time (evening or correspondence), or",
+            "distance learning format."
+          ]
+        },
+        "subjects": {
+          "title": "Subjects based on their role in the curriculum, a subject can be",
+          "items": [
+            "mandatory;",
+            "elective whose adding and completion is mandatory, and of which students have to add and complete a given number of credits as specified in the curriculum;",
+            "optional, not identified by the curriculum on an itemised basis, but of which students have to add and complete a given number of credits; or",
+            "a criterion requirement of which students have to add and complete a given number of subjects to obtain their degree or qualification. Such as PE class, etc…"
+          ]
+        },
+        "problems": {
+          "title": "If problems occur during your studies…",
+          "professor": {
+            "title": "you should contact your professor if…",
+            "items": [
+              "…you have problems with your homework",
+              "…you don't understand something",
+              "…you couldn't attend a laboratory class, and you have to go to another",
+              "etc."
+            ]
+          },
+          "students_council": {
+            "title": "You should contact the Students’ Council of your Faculty if",
+            "items": [
+              "…the whole class have the same problem,",
+              "…over 50% fail on a test and exam,",
+              "…if you don’t understand something about the CoS"
+            ]
+          }
+        }
+      },
+      "evaluation": {
+        "title": "Different methods of evaluation and assessment of learning outcomes",
+        "assessment_goals": {
+          "title": "Learning Outcome Assessment",
+          "intro": "Assessing learning outcomes helps achieve the following goals:",
+          "items": [
+            "Diagnostic Assessment: To identify what students already know before starting an activity.",
+            "Formative Assessment: To monitor students' progress during the course, with ongoing feedback from the instructor.",
+            "Practical Work: To guide students as they work on projects, presentations, creative work, or other tasks with instructor support.",
+            "Dual/Cooperative Training: To solve practical tasks in training that involves both school and workplace settings."
+          ]
+        },
+        "assessment_types": {
+          "title": "Types of Assessment",
+          "diagnostic": {
+            "title": "Diagnostic Assessment (before starting an activity):",
+            "items": [
+              "Checks if students have the basic knowledge/skills needed.",
+              "Can be graded as “satisfactory”/“fail” or with points.",
+              "Grades may or may not count toward the final grade."
+            ]
+          },
+          "formative": {
+            "title": "Formative Assessment (during the course):",
+            "items": [
+              "Based on class participation, group work, oral reports, lab work, homework, etc.",
+              "Helps track progress and gives students feedback to improve.",
+              "If required for a subject, it must count for at least 15% of the final grade (except for pass/fail requirements)."
+            ]
+          },
+          "summative": {
+            "title": "Summative Assessment (at the end of a course or topic):",
+            "items": [
+              "Assesses what students have learned overall.",
+              "Examples: exams (written, oral, practical), complex assessments.",
+              "May include one or more types of tests."
+            ]
+          }
+        },
+        "ohv": {
+          "title": "Evaluation of Teachers by Students (OHV):",
+          "intro": "At Budapest University of Technology and Economics (BME), student feedback is an important part of improving education quality. The university makes sure students have the chance to share their opinions about courses and teaching.",
+          "why_matters": {
+            "title": "Why student feedback matters:",
+            "items": [
+              "If a teacher agrees in writing, students can see what others thought of the course.",
+              "Teachers get useful feedback to improve their teaching.",
+              "Faculties and the university learn how students view their programmes.",
+              "Overall, feedback helps BME improve the quality of its education."
+            ],
+            "extra": "(Also as a reward for taking part in the OHV you can take up courses from 16:00 instead of 18:00.)"
+          }
+        }
+      },
+      "semester_info": {
+        "title": "Important information during the semester",
+        "absences": {
+          "title": "Absences",
+          "paragraphs": [
+            "The CoS regulates how many lessons teachers can require you to attend during the semester to complete the course.",
+            "For lectures, there is no minimum attendance requirement set by the CoS, but teachers can require you to attend, at most 70% of the lectures during a semester, to pass if the subject description includes."
+          ]
+        },
+        "how_it_works": {
+          "title": "How a semester works:",
+          "intro": "Each semester (both fall and spring) is divided into 5 parts, each of which is important and complicated in its own regard, here we will only talk about the most important things to know about each.",
+          "stages": [
+            {
+              "title": "Registration week (3-5 workdays)",
+              "description": "This is when you need to set your semester to active, and decide which classes you want to take. (or earlier, see above). It's important to check, whether or not you have any payments left to cover to the university, as any payment that has passed its deadline, will prevent you from registering to any classes."
+            },
+            {
+              "title": "Active Semester period (At least 14 weeks, but at most 70 workdays)",
+              "description": "This is the main part of the semester, students attend classes, midterm tests are written, assignments need to be made, etc. The exam registration is also scheduled for the 14th week."
+            },
+            {
+              "title": "Retake week (5 days)",
+              "description": "Most test retakes and late assignment submissions happen this week, so for some, this may be a very difficult and long week, while some may not have anything left to do. Be careful to not end up with more than you can handle this week. Also there might be a possibility to take an early exam, this depends on the subject."
+            },
+            {
+              "title": "Exam period (20 workdays)",
+              "description": "These 4 weeks are where all your exams will take place. Much like how at the beginning of the semester, when you need to register for classes, before the exam period, you will need to register for exams, which is also prevented if you have any late payments left to the university. Exams can be retaken as many times as possible, if there are exam times, and student spaces on them left in the semester, however, from the second retake of an exam (3rd time going), it will cost a fee, which you can pay later. There are also 10 extra workdays left after the exam period for final exams."
+            }
+          ]
+        },
+        "calendar": {
+          "title": "Mid-term test and assignment calendar",
+          "paragraphs": [
+            "Test and assignment calendars are important tools to keep organized during the semester. Since every faculty has specific needs, they are usually made at a faculty, or Student Council level. Ask around if your faculty, or Student Council makes test calendars, and if so, where you can find them.",
+            "If not, you can make your own, to keep track of the tests, assignments and their deadlines, to not get lost during the semester."
+          ]
+        }
+      },
+      "completion": {
+        "title": "Completion of Studies",
+        "paragraphs": [
+          "You can find the general rules of completing your studies in Chapter V. of the Code of Studies.",
+          "The exact way of completing your studies varies based on the faculty you study at, and the course you're taking, you can find out these specifics at your faculty's website"
+        ]
+      },
+      "curriculum": {
+        "title": "Curriculum and prerequisite system",
+        "paragraphs": [
+          "Whichever faculty you take your classes at, everyone will have a curriculum and prerequisite system, where you can see, which subjects you need to complete, to take the next one. These can be usually found on the faculty website, and are an extremely important tool, to know how long you have left of the university, especially if you fail some classes"
+        ]
+      },
+      "tdk": {
+        "title": "Students' Scientific Conference (TDK)",
+        "intro": "TDK (Students' Scientific Association) is a chance to dive into a topic you love, do real research, and present your findings at a university conference. You’ll work with a lecturer (your advisor) and write a paper, then present it in November at BME’s TDK Conference.",
+        "why": {
+          "title": "Why participate in TDK?",
+          "items": [
+            "Explore a topic you're passionate about",
+            "Gain research and presentation experience",
+            "Boost your CV and scholarship/PhD chances",
+            "Use your TDK paper as a base for your thesis",
+            "Extra points for Erasmus+, Master’s programs, and more"
+          ]
+        },
+        "who": {
+          "title": "Who can apply?",
+          "items": [
+            "University students with an advisor and a specific topic",
+            "High school students interested in research"
+          ]
+        },
+        "how": {
+          "title": "How to get started:",
+          "items": [
+            "Pick a topic that fascinates you",
+            "Find a lecturer to be your advisor",
+            "Start working in spring or early summer"
+          ]
+        },
+        "timeline": {
+          "title": "Timeline:",
+          "items": [
+            "September: Apply with your topic, advisor, and summary",
+            "November: Submit your paper + give your presentation",
+            "The best projects move on to the national OTDK round"
+          ],
+          "extra": "Check your faculty’s TDK page for deadlines and topic ideas."
+        }
+      }
+    },
+    "application_information": {
+      "title": "Scholarship Opportunities & Neptun Requests",
+      "intro": "The Budapest University of Technology and Economics (BME) offers a wide range of scholarship opportunities to support students' academic performance and personal development. Scholarships are available both at the university level and at the faculty level, ensuring that students from all fields of study can benefit from tailored support.",
+      "university_scholarships": {
+        "title": "University-level scholarships",
+        "items": [
+          {
+            "title": "University BME scholarship (Egyetemi BME Ösztöndíj)",
+            "description": "The aim of the competition is to reward those among the university students who have achieved the most professional and scientific merit in the semester specified in the competition announcement. The competition is open to active full-time students studying in full-time undergraduate, master's or undivided programs who have engaged in outstanding academic, professional and scientific activities."
+          },
+          {
+            "title": "Good Student, Good Athlete (Jó Tanuló, Jó Sportoló)",
+            "description": "The BME \"Good Student, Good Athlete\" scholarship can be awarded to an applicant whose scholarship index in the last two semesters spent at the University is at least 3.00, or if he/she has achieved results in one of the sports categories listed below: Olympics and World Championships; European Championships, World Cup, UNIVERSIADE; Age-group World and European Championships; Hungarian Championships, international competitions; MEFOB, age-group national championships; National and regional competitions, Universitas; Other competitions."
+          }
+        ]
+      },
+      "faculty_scholarships": {
+        "title": "Faculty-level scholarships",
+        "items": [
+          {
+            "title": "Közéleti ösztöndíj (Public Life Scholarship)",
+            "description": "The respective Student Unions support students with this scholarship who, in addition to their university studies, carry out community activities at the given BME faculty that contribute to the successful work of the Faculty Student Union.",
+            "faculties": "ÉMK, GPK, VBK, VIK, ÉPK, GTK"
+          },
+          {
+            "title": "Közösségi ösztöndíj (Community Scholarship)",
+            "description": "The respective Student Unions support students with this scholarship who, beyond fulfilling their academic obligations, have performed outstanding community work within the Faculty's Student Organizations, external committees, or as organizers of events.",
+            "faculties": "GPK, VBK, ÉPK, GTK, KJK, TTK"
+          },
+          {
+            "title": "Hallgatók az oktatásért ösztöndíj (Students for Education Scholarship)",
+            "description": "The respective Student Unions support students with this scholarship who, alongside their university studies, have carried out tutoring activities at the given BME faculty during the semester specified in the call for applications.",
+            "faculties": "VBK, ÉPK, VIK, GTK"
+          },
+          {
+            "title": "Kari BME ösztöndíj (Faculty BME Scholarship)",
+            "description": "The aim of the application is to provide special recognition to those students within the given faculty who achieve the most professional and scientific merits during the academic year specified in the call for applications. The scholarship rewards students who have performed outstanding professional and scientific activities at the faculty level, including exceptional academic or language achievements.",
+            "faculties": "VBK, GPK, ÉPK, VIK, KJK, GTK"
+          },
+          {
+            "title": "Sportösztöndíj (Sports Scholarship)",
+            "description": "The respective Student Unions announce a scholarship application to recognize and encourage students who, in addition to fulfilling their academic obligations, have achieved outstanding results in sports.",
+            "faculties": "GPK, VIK"
+          }
+        ],
+        "note": "The application requirements may differ by faculty, so it is important to consult the website or contact the respective Faculty Student Council via email to get accurate information about the activities eligible for application."
+      },
+      "submission": {
+        "title": "Submission process",
+        "description": "Applications for the scholarships must be submitted via the MŰEPER (Unified Application and Evaluation System of the Budapest University of Technology and Economics) platform. This may vary by faculty, so please consult the appropriate contact information for details. You can also receive assistance during the submission process."
+      },
+      "contacts": {
+        "title": "Contact Information",
+        "students_union": {
+          "title": "Students' Union",
+          "website": "http://ehk.bme.hu/",
+          "email": "palyazat@bmeehk.hu"
+        },
+        "faculty_councils_title": "Faculty-level Student Councils",
+        "faculty_councils": [
+          {
+            "faculty": "Civil Engineering",
+            "website": "https://emkhk.bme.hu/en/main-page/",
+            "email": "osztondij@emkhk.hu"
+          },
+          {
+            "faculty": "Mechanical Engineering",
+            "website": "https://ghk.bme.hu/en/info",
+            "email": "osztondij@ghk.bme.hu"
+          },
+          {
+            "faculty": "Architecture",
+            "website": "https://epiteszhk.bme.hu/en/archisc/introduction/about-us/",
+            "email": "palyazat@epiteszhk.hu"
+          },
+          {
+            "faculty": "Chemical Technology and Biotechnology",
+            "website": "https://vegyeszhk.hu/",
+            "email": "palyazat@vegyeszhk.hu"
+          },
+          {
+            "faculty": "Electrical Engineering and Informatics",
+            "website": "https://vik.hk/",
+            "email": "palyazat@vik.hk"
+          },
+          {
+            "faculty": "Transportation Engineering and Vehicle Engineering",
+            "website": "https://kozlekhk.hu/",
+            "email": "juttatas@kozlekkar.hu"
+          },
+          {
+            "faculty": "Natural Sciences",
+            "website": "https://ttkhk.bme.hu/en/",
+            "email": "palyazat@ttkhk.hu"
+          },
+          {
+            "faculty": "Economics and Social Sciences",
+            "website": "http://gtkhk.hu/",
+            "email": "altalanos@gtkhk.bme.hu"
+          }
+        ]
+      },
+      "neptun_requests": {
+        "title": "Some of the most important requests in Neptun",
+        "note": "There might be requests not shown here, if it is for/by the Faculties or the Directorate of Sales and Services.",
+        "items": [
+          {
+            "code": "E001",
+            "title": "Appeal",
+            "description": "This is a request for reconsideration of the decision on another request."
+          },
+          {
+            "code": "002",
+            "title": "Request for equity (Faculty Chance)",
+            "description": "This request is for asking exemption from any one of the BME Code of Studies regulations. You can get faculty chance only once during your studies!"
+          },
+          {
+            "code": "010",
+            "title": "Request for tuition fee reduction",
+            "description": "This request is for tuition fee paying students, who can ask for tuition fee reduction."
+          },
+          {
+            "code": "018",
+            "title": "Request to register for subjects / to drop subjects",
+            "description": "It is available each term and until the end of the registration week it is free, after that you have to pay 5500 HUF/ course through your Neptun account. For more details, please read ASC instructions among Neptun guides."
+          },
+          {
+            "code": "022",
+            "title": "Request for Preferential Course Schedule",
+            "description": "To receive permission to arrive late and follow the classes in asynchronous mode by professors' teaching material."
+          },
+          {
+            "code": "E024",
+            "title": "Request for subject accreditation",
+            "description": "By this request, you can transfer credits from your previous studies. For more details, please read ASC instruction among Neptun guides.\n1. Pre-BME-studies accreditation: it is basically part of the admission process, especially for transfer students. In this case, you have to fill out the Excel file for request E024 with the Faculty Credit Transfer Committee, and MUST include the decision columns.\n2. Parallel-BME-studies accreditation: if you took part in a summer school, exchange program, etc., parallel to your BME studies, you may accredit the subjects/marks you obtained outside of BME. In this case, please DO NOT fill out the decision columns of the table, the Credit Transfer Committee will do so!"
+          },
+          {
+            "code": "027",
+            "title": "Request for a certificate",
+            "description": "Through this request you can ask for any kind of official certificate/document, e.g.: General Student Status Certificate, Transcript, Diploma copy etc. For some documents you will need to pay, but it will be shown in the request, please read it carefully when submitting it! The digital documents can be downloaded from the request supplement."
+          },
+          {
+            "code": "032",
+            "title": "Dismissal upon request",
+            "description": ""
+          },
+          {
+            "code": "E033",
+            "title": "Request for changing institution, major or/and language of studies for SH/HDS/SCYP students",
+            "description": "The request will be available in the Spring term between mid March – mid April, in the Fall term between mid October – mid November."
+          },
+          {
+            "code": "034",
+            "title": "Resignation from enrolment opportunity",
+            "description": "This request is for every new student at the beginning of studies in order to resign from the enrolment opportunity. In relation with the student's enrolment for the concerned training programme especially with the student's registration for the concerned term is void according to the request and the student's term can be cancelled."
+          },
+          {
+            "code": "040",
+            "title": "Presentation of document",
+            "description": "Study contract, Declaration of state scholarship, Certificate of language exam, Learning agreement of incoming Erasmus+ mobility students, SCYP Travel allowance declaration, Credit certificate for checking the minimum credit requirement, Authorisation, Certificate for data in diploma and declaration of consent for transmission."
+          },
+          {
+            "code": "066",
+            "title": "Request for student ID certificate",
+            "description": ""
+          },
+          {
+            "code": "100",
+            "title": "Online registration",
+            "description": "This request is for every new student at the beginning of studies in order to complete the enrolment."
+          },
+          {
+            "code": "101",
+            "title": "Request to pay the tuition fee in installments and/or to modify the deadline of tuition fee payment",
+            "description": "It can be submitted from an inflicted item."
+          },
+          {
+            "code": "102",
+            "title": "Request for late activation of the term",
+            "description": "This request is available after the registration period for 1 week. It is necessary to have 5500 HUF on your Neptun bank account before submitting the request."
+          },
+          {
+            "code": "112",
+            "title": "Request for International Bank Account registration",
+            "description": ""
+          },
+          {
+            "code": "E999",
+            "title": "Request for a purpose not specified in any other requests",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "dormitory_information": {
+      "title": "Dormitory Admission Information",
+      "eligibility": {
+        "title": "Who is eligible to apply for a dormitory place?",
+        "description": "Any student who establishes a student status with the Budapest University of Technology and Economics (BME) and registers for an active semester is eligible to apply for a dormitory place.",
+        "dormitory_types_title": "Dormitories you can apply to are the following:",
+        "dormitory_types": [
+          {
+            "name": "Óbudai Diák Hotel",
+            "description": "for Stipendium Hungaricum and Diaspora scholarship holders"
+          },
+          {
+            "name": "Martos Kollégium",
+            "description": "for SCYP (Scholarship for Christian Young People) holders"
+          },
+          {
+            "name": "BME dormitories",
+            "description": "fee-paying students can apply for accommodation in 7 dormitories, each assigned to a different faculty."
+          }
+        ]
+      },
+      "frequency": {
+        "title": "How often do students need to apply for accommodation?",
+        "description": "Dormitory places must be applied for each semester individually, meaning that a granted place is valid only for one semester. Applications are organized separately for the autumn and spring semesters, as well as for the summer period (July–August)."
+      },
+      "admission": {
+        "title": "How can students apply for a dormitory place, and how is admission determined?",
+        "description": "Dormitory places are allocated based on a competitive application process.",
+        "ranking": [
+          {
+            "group": "For first-year students",
+            "detail": "establishing their first student status with the Budapest University of Technology and Economics (BME), the ranking for admission is based on both academic performance (admission score) and social circumstances."
+          },
+          {
+            "group": "For upper-year students",
+            "detail": "the ranking is based on academic performance, social circumstances and community activities carried out for the benefit of university life."
+          }
+        ]
+      },
+      "application_steps": {
+        "title": "Steps to Apply for Dormitory Accommodation in the Autumn Semester",
+        "kefir_link": "http://kefir.bme.hu/",
+        "groups": [
+          {
+            "title": "Stipendium Hungaricum and Diaspora students:",
+            "intro": "If you intend to live in a dormitory during the autumn semester, you must complete the following steps:",
+            "steps": [
+              "Submit your application through the Unified Dormitory Admission and Information System (KEFIR) at http://kefir.bme.hu/. You can log in using your Directory ID, which you can create with your Neptun code.",
+              "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the current (for example 2025/2026) autumn semester, and carefully fill in the required fields with the necessary information. Be mindful of the application deadline listed on the website.",
+              "Applications can only be submitted during the specified period; late submissions will not be accepted. Only students who have successfully submitted their application will be considered for a dormitory place.",
+              "By submitting the dormitory application, you officially express your request for accommodation.",
+              "Students who are recipients of the Stipendium Hungaricum or Diaspora Scholarship will be accommodated in the Óbuda Diák Hotel."
+            ]
+          },
+          {
+            "title": "Fee-paying students:",
+            "intro": "If you intend to live in a dormitory during the autumn semester, you must complete the following steps:",
+            "steps": [
+              "Submit your application through the Unified Dormitory Admission and Information System (KEFIR) at http://kefir.bme.hu/. You can log in using your Directory ID, which you can create with your Neptun code.",
+              "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the current (for example 2025/2026) autumn semester, and carefully fill in the required fields with the necessary information. Be mindful of the application deadline listed on the website.",
+              "Applications can only be submitted during the specified period; late submissions will not be accepted. Only students who have successfully submitted their application will be considered for a dormitory place.",
+              "By submitting the dormitory application, you officially express your request for accommodation.",
+              "Applications will be evaluated by the Dormitory Representative of the Students' Union."
+            ]
+          }
+        ]
+      }
+    },
+    "mobility_programs": {
+      "title": "Mobility Opportunities",
+      "intro": "For fee-paying international students enrolled at the Budapest University of Technology and Economics (BME), several mobility opportunities are available, offering both short-term and long-term academic or professional experiences abroad.",
+      "programs": [
+        {
+          "id": "erasmus",
+          "title": "Erasmus+",
+          "type": "long-term",
+          "description": "BME is an active participant in the Erasmus+ programme, which allows students to spend one or two semesters at a European partner institution or complete an internship abroad. All faculties and doctoral schools take part in the programme, and the scholarship covers part of the living expenses while students are exempt from paying tuition fees at the host institution.",
+          "destinations_title": "Some of the most popular destinations include:",
+          "destinations": [
+            "Germany (Berlin, Munich)",
+            "Spain (Barcelona, Madrid, Valencia)",
+            "France (Paris, Lyon, Grenoble)",
+            "Finland, Sweden, and other Nordic countries",
+            "Canada",
+            "Mexico",
+            "Japan (Hokkaido, Waseda)",
+            "Singapore",
+            "Vietnam",
+            "and many more…"
+          ],
+          "extra": "With Erasmus+, you will not only continue your studies abroad but also experience another country's culture and daily life – a truly valuable adventure for your future career. Applications are submitted via the Neptun system, within the announced deadlines. Be sure to apply in time, as the most popular destinations fill up quickly!",
+          "more_info_label": "For up-to-date information, visit the NKI website",
+          "more_info_link": "https://nki.bme.hu/"
+        },
+        {
+          "id": "erasmus-traineeship",
+          "title": "Erasmus+ Traineeship",
+          "type": "internship",
+          "description": "BME students may complete a professional internship abroad through the Erasmus+ Traineeship programme. This option is available for bachelor's, master's, and doctoral students, either during their studies or within one year after graduation. Internships can take place at companies, research centers, or other relevant institutions in Erasmus+ programme countries. The duration ranges from 2 to 12 months, and participants receive a monthly grant to support their living expenses. Students must be actively enrolled at BME at the time of application.",
+          "extra": "Stipendium Hungaricum Scholarship students are also eligible to apply for Erasmus+ traineeships. They can apply only after graduation.",
+          "more_info_label": "More information",
+          "more_info_link": "https://nki.bme.hu/SZAKGYAK"
+        },
+        {
+          "id": "eelisa",
+          "title": "EELISA",
+          "type": "short-term",
+          "description": "BME is a core member of the European Engineering Learning Innovation and Science Alliance (EELISA), a European University alliance that aims to redefine engineering education by fostering innovation, sustainability, and societal engagement. Through EELISA mobility actions, students can participate in short-term study visits, joint learning activities, research projects, or challenge-based initiatives at partner institutions across Europe. These activities are often multidisciplinary, may award ECTS credits, and are open to bachelor's, master's, and doctoral students. EELISA also promotes micro-credentials and the recognition of skills acquired during these engagements.",
+          "extra": "You can find out about current opportunities on the following page:",
+          "more_info_label": "Current opportunities",
+          "more_info_link": "https://opportunities.eelisa.eu/"
+        },
+        {
+          "id": "athens",
+          "title": "ATHENS",
+          "type": "short-term",
+          "description": "The ATHENS (Advanced Technology Higher Education Network SOCRATES) programme is a short-term exchange initiative coordinated by a network of leading European technical universities, including BME. It offers students the opportunity to attend intensive, one-week interdisciplinary courses abroad, typically in March or November. Courses cover a wide range of scientific, technical, and humanities subjects, and are combined with cultural activities. Participants may receive academic credit upon successful completion, and the programme is particularly suitable for students looking to enhance their international exposure in a compact format.",
+          "more_info_label": "More information",
+          "more_info_link": "https://nki.bme.hu/BMEAthens"
+        },
+        {
+          "id": "ceepus",
+          "title": "CEEPUS Programme",
+          "type": "long-term",
+          "description": "Through the CEEPUS (Central European Exchange Program for University Studies), BME students can study for a semester or a shorter period at universities in Central and Eastern European countries participating in the program. The CEEPUS scholarship supports living expenses, and the program is open to bachelor's, master's, and doctoral students.",
+          "subsections": [
+            {
+              "title": "Bilateral Exchange Programs",
+              "description": "BME has established numerous bilateral agreements with universities worldwide, allowing students to study for one or two semesters at partner institutions, usually without paying tuition fees. Application to these programs requires nomination from the sending institution as well as online registration at BME."
+            },
+            {
+              "title": "Semester Abroad Program",
+              "description": "BME also offers its own Semester Abroad program, in which students can spend a semester at the university and take English-language courses from various faculties. Successfully completed courses are awarded ECTS credits, which can be transferred to the student's home university."
+            }
+          ],
+          "more_info_label": "More information",
+          "more_info_link": "https://nki.bme.hu/CEEPUS"
+        },
+        {
+          "id": "aiesec",
+          "title": "AIESEC Internships",
+          "type": "internship",
+          "description": "AIESEC, a global student organization present at BME, offers international internship opportunities for students seeking practical experience in various fields such as marketing, IT, engineering, or education. These internships are typically 6 weeks to several months long, and are available in numerous countries worldwide. AIESEC provides support with placement, visa, and accommodation. These internships are not always credit-bearing, but they offer valuable real-world experience and cultural exchange.",
+          "more_info_label": "More information",
+          "more_info_link": "https://www.aiesec.hu/"
+        }
+      ]
+    }
   }
 }

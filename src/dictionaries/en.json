@@ -377,103 +377,6 @@
     "no_active_period": "No active payout period at the moment."
   },
   "international": {
-    "erasmus": {
-      "title": "Erasmus+",
-      "what_is_it": {
-        "title": "What is Erasmus+?",
-        "description": "The Erasmus+ programme is one of BME's most popular international opportunities, allowing you to try yourself abroad – either in the form of a study semester or an internship. A new country, new culture, and plenty of experiences await, while you don't have to interrupt your studies at home. Erasmus+ is not just a scholarship, but a lifelong adventure that improves your language skills, gives you independence, and helps you build international connections – both professionally and personally."
-      },
-      "mobility_options": {
-        "title": "Mobility options:",
-        "items": [
-          "Study mobility",
-          "Internship",
-          "Non-EU mobility"
-        ]
-      },
-      "additional_support": "Additional support during mobility",
-      "current_call": "Current call for applications for long-term study mobility",
-      "additional_support_link": "https://nki.bme.hu/node/6140",
-      "current_call_link": "https://nki.bme.hu/ERASMUS/RESZKEPZES"
-    }
-  },
-  "footer": {
-    "contact": {
-      "title": "CONTACT",
-      "university": "Budapest University of Technology and Economics",
-      "ehk": "University Student Council",
-      "address_label": "Address:",
-      "address_value": "1111 Bp., Műegyetem rkp. 7-9. Bldg. R, 2.07.",
-      "emails_label": "Email addresses:",
-      "office_hours_label": "Office hours:",
-      "study_period": "Study period:",
-      "exam_period": "Exam period:",
-      "weekdays_10_14": "weekdays 10:00–14:00",
-      "weekdays_11_13": "weekdays 11:00–13:00"
-    },
-    "faculty_representation": {
-      "title": "FACULTY STUDENT REPRESENTATIONS",
-      "emk": "ÉMK - FACULTY STUDENT REPRESENTATION",
-      "gpk": "GPK - FACULTY STUDENT REPRESENTATION",
-      "epk": "ÉPK - FACULTY STUDENT REPRESENTATION",
-      "vbk": "VBK - FACULTY STUDENT REPRESENTATION",
-      "vik": "VIK - FACULTY STUDENT REPRESENTATION",
-      "kjk": "KJK - FACULTY STUDENT REPRESENTATION",
-      "ttk": "TTK - FACULTY STUDENT REPRESENTATION",
-      "gtk": "GTK - FACULTY STUDENT REPRESENTATION"
-    },
-    "university_pages": {
-      "title": "UNIVERSITY PAGES",
-      "phonebook": "BME Phonebook",
-      "sales_directorate": "Directorate of Sales and Services",
-      "academic_office": "Central Academic Office",
-      "misz": "MISZ University Student Cooperative",
-      "szkene": "Szkéné Theatre"
-    },
-    "logo_alt": "BME Logo"
-  },
-  "clubs": {
-    "title": "BME Dormitory Community Life",
-    "subtitle": "Scene: Clubs and Venues",
-    "description": "BME dormitories provide not only accommodation but also serve as key venues for student community life and entertainment. Below are the clubs and bars organized or operated by students, which are the centers of vibrant nightlife.",
-    "location": "Location:",
-    "opening_hours": "Opening hours:",
-    "no_results": "There are no active clubs at the moment"
-  },
-  "dormitory_details": {
-    "back_button": "Back to Dormitories",
-    "images_title": "Image Gallery",
-    "no_images": "There are currently no images uploaded for this dormitory.",
-    "baross": {
-      "title": "Baross Gábor Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    },
-    "bercsenyi": {
-      "title": "Bercsényi 28-30 Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    },
-    "karman": {
-      "title": "Kármán Tódor Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    },
-    "martos": {
-      "title": "Martos Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    },
-    "sch": {
-      "title": "Schönherz Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    },
-    "vpk": {
-      "title": "Vásárhelyi Pál Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    },
-    "wigner": {
-      "title": "Wigner Jenő Dormitory",
-      "description": "A more detailed description of the dormitory will appear here."
-    }
-  },
-  "international_general": {
     "general_information": {
       "title": "General Information",
       "description": "Important General Information for Non-Hungarian Citizens Studying at BME",
@@ -1405,28 +1308,6 @@
       "intro": "For fee-paying international students enrolled at the Budapest University of Technology and Economics (BME), several mobility opportunities are available, offering both short-term and long-term academic or professional experiences abroad.",
       "programs": [
         {
-          "id": "erasmus",
-          "title": "Erasmus+",
-          "type": "long-term",
-          "description": "BME is an active participant in the Erasmus+ programme, which allows students to spend one or two semesters at a European partner institution or complete an internship abroad. All faculties and doctoral schools take part in the programme, and the scholarship covers part of the living expenses while students are exempt from paying tuition fees at the host institution.",
-          "destinations_title": "Some of the most popular destinations include:",
-          "destinations": [
-            "Germany (Berlin, Munich)",
-            "Spain (Barcelona, Madrid, Valencia)",
-            "France (Paris, Lyon, Grenoble)",
-            "Finland, Sweden, and other Nordic countries",
-            "Canada",
-            "Mexico",
-            "Japan (Hokkaido, Waseda)",
-            "Singapore",
-            "Vietnam",
-            "and many more…"
-          ],
-          "extra": "With Erasmus+, you will not only continue your studies abroad but also experience another country's culture and daily life – a truly valuable adventure for your future career. Applications are submitted via the Neptun system, within the announced deadlines. Be sure to apply in time, as the most popular destinations fill up quickly!",
-          "more_info_label": "For up-to-date information, visit the NKI website",
-          "more_info_link": "https://nki.bme.hu/"
-        },
-        {
           "id": "erasmus-traineeship",
           "title": "Erasmus+ Traineeship",
           "type": "internship",
@@ -1479,6 +1360,103 @@
           "more_info_link": "https://www.aiesec.hu/"
         }
       ]
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "CONTACT",
+      "university": "Budapest University of Technology and Economics",
+      "ehk": "University Student Council",
+      "address_label": "Address:",
+      "address_value": "1111 Bp., Műegyetem rkp. 7-9. Bldg. R, 2.07.",
+      "emails_label": "Email addresses:",
+      "office_hours_label": "Office hours:",
+      "study_period": "Study period:",
+      "exam_period": "Exam period:",
+      "weekdays_10_14": "weekdays 10:00–14:00",
+      "weekdays_11_13": "weekdays 11:00–13:00"
+    },
+    "faculty_representation": {
+      "title": "FACULTY STUDENT REPRESENTATIONS",
+      "emk": "ÉMK - FACULTY STUDENT REPRESENTATION",
+      "gpk": "GPK - FACULTY STUDENT REPRESENTATION",
+      "epk": "ÉPK - FACULTY STUDENT REPRESENTATION",
+      "vbk": "VBK - FACULTY STUDENT REPRESENTATION",
+      "vik": "VIK - FACULTY STUDENT REPRESENTATION",
+      "kjk": "KJK - FACULTY STUDENT REPRESENTATION",
+      "ttk": "TTK - FACULTY STUDENT REPRESENTATION",
+      "gtk": "GTK - FACULTY STUDENT REPRESENTATION"
+    },
+    "university_pages": {
+      "title": "UNIVERSITY PAGES",
+      "phonebook": "BME Phonebook",
+      "sales_directorate": "Directorate of Sales and Services",
+      "academic_office": "Central Academic Office",
+      "misz": "MISZ University Student Cooperative",
+      "szkene": "Szkéné Theatre"
+    },
+    "logo_alt": "BME Logo"
+  },
+  "clubs": {
+    "title": "BME Dormitory Community Life",
+    "subtitle": "Scene: Clubs and Venues",
+    "description": "BME dormitories provide not only accommodation but also serve as key venues for student community life and entertainment. Below are the clubs and bars organized or operated by students, which are the centers of vibrant nightlife.",
+    "location": "Location:",
+    "opening_hours": "Opening hours:",
+    "no_results": "There are no active clubs at the moment"
+  },
+  "dormitory_details": {
+    "back_button": "Back to Dormitories",
+    "images_title": "Image Gallery",
+    "no_images": "There are currently no images uploaded for this dormitory.",
+    "baross": {
+      "title": "Baross Gábor Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "bercsenyi": {
+      "title": "Bercsényi 28-30 Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "karman": {
+      "title": "Kármán Tódor Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "martos": {
+      "title": "Martos Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "sch": {
+      "title": "Schönherz Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "vpk": {
+      "title": "Vásárhelyi Pál Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    },
+    "wigner": {
+      "title": "Wigner Jenő Dormitory",
+      "description": "A more detailed description of the dormitory will appear here."
+    }
+  },
+  "kulugy": {
+    "erasmus": {
+      "title": "Erasmus+",
+      "general_info": {
+        "title": "What is Erasmus+?",
+        "description": "The Erasmus+ programme is one of BME's most popular international opportunities, allowing you to try yourself abroad – either in the form of a study semester or an internship. A new country, new culture, and plenty of experiences await, while you don't have to interrupt your studies at home. Erasmus+ is not just a scholarship, but a lifelong adventure that improves your language skills, gives you independence, and helps you build international connections – both professionally and personally."
+      },
+      "mobility_options": {
+        "title": "Mobility options:",
+        "items": [
+          "Study mobility",
+          "Internship",
+          "Non-EU mobility"
+        ]
+      },
+      "additional_support": "Additional support during mobility",
+      "current_call": "Current call for applications for long-term study mobility",
+      "additional_support_link": "https://nki.bme.hu/node/6140",
+      "current_call_link": "https://nki.bme.hu/ERASMUS/RESZKEPZES"
     }
   }
 }

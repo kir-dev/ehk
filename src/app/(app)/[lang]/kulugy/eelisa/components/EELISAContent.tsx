@@ -115,6 +115,7 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
                               key={j} 
                               href={link.url}
                               target="_blank"
+                              rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 text-[#862633] hover:text-red-900 font-medium transition-colors p-3 bg-red-50 rounded-lg border border-red-100 hover:bg-red-100 hover:border-red-200 w-fit"
                             >
                               <ArrowRight className="w-4 h-4" />

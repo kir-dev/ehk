@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Send, HeartHandshake, PlaneTakeoff, Info } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -53,11 +54,10 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
   return (
     <div className="flex flex-col gap-6 md:gap-8 lg:px-4 px-2 py-8">
       {/* What is EELISA? */}
-      <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-[#862633]">
+      <Card className="group transition-all">
         <CardContent className="p-6 md:p-8">
           <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-2xl leading-tight text-gray-900 flex items-center gap-3">
-              <Info className="w-6 h-6 text-[#862633]" />
+            <h3 className="font-bold text-2xl leading-tight group-hover:text-[#862633] text-gray-900 flex items-center gap-3">
               {content.what_is_it.title}
             </h3>
             <div className="prose prose-lg max-w-none text-gray-700">
@@ -71,11 +71,10 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         {/* Partners */}
-        <Card className="group hover:shadow-lg transition-all duration-300">
+        <Card className="group transition-all duration-300">
           <CardContent className="p-6 md:p-8 h-full">
             <div className="flex flex-col gap-4 h-full">
               <h3 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors flex items-center gap-3">
-                <HeartHandshake className="w-6 h-6" />
                 {content.partners.title}
               </h3>
               <div className="prose max-w-none text-gray-700 bg-gray-50 p-6 rounded-xl border border-gray-100 flex-grow">
@@ -90,7 +89,7 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
         </Card>
 
         {/* How to Apply Timeline */}
-        <Card className="group hover:shadow-lg transition-all duration-300">
+        <Card className="group transition-all duration-300">
           <CardContent className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <h3 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
@@ -100,7 +99,7 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
               <div className="relative border-l-2 border-gray-200 ml-4 md:ml-6 space-y-8 pb-4">
                 {content.how_to_apply.steps.map((step, idx) => (
                   <div key={idx} className="relative pl-8 md:pl-10">
-                    <div className="absolute -left-[3.2rem] md:-left-[3.45rem] mt-0.5 bg-white">
+                    <div className="absolute -left-[3.2rem] md:-left-[3.45rem] mt-0.5 ml-1 bg-white">
                       {stepIcons[idx % stepIcons.length]}
                     </div>
                     
@@ -135,14 +134,18 @@ export default function EELISAContent({ content }: Readonly<{ content: EELISADat
 
       {/* Action Banners */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-        <Link href={content.current_opportunities.link} target="_blank" className="group flex items-center justify-between p-6 bg-white border-2 border-transparent hover:border-[#862633] shadow-md hover:shadow-xl rounded-xl transition-all duration-300">
-          <span className="font-bold text-lg text-gray-900 group-hover:text-[#862633] transition-colors">{content.current_opportunities.title}</span>
-          <ArrowRight className="w-6 h-6 text-[#862633] group-hover:translate-x-2 transition-transform duration-300" />
-        </Link>
-        <Link href={content.call_for_applications.link} target="_blank" className="group flex items-center justify-between p-6 bg-white border-2 border-transparent hover:border-[#862633] shadow-md hover:shadow-xl rounded-xl transition-all duration-300">
-          <span className="font-bold text-lg text-gray-900 group-hover:text-[#862633] transition-colors">{content.call_for_applications.title}</span>
-          <ArrowRight className="w-6 h-6 text-[#862633] group-hover:translate-x-2 transition-transform duration-300" />
-        </Link>
+        <Button asChild variant="outline" className="h-auto p-6 font-bold text-lg text-gray-900 border-2 border-transparent hover:border-[#862633] hover:text-[#862633] rounded-xl transition-all duration-300 flex items-center justify-between">
+          <Link href={content.current_opportunities.link} target="_blank">
+            {content.current_opportunities.title} 
+            <ArrowRight className="w-6 h-6 text-[#862633] group-hover:translate-x-2 transition-transform duration-300" />
+          </Link>
+        </Button>
+        <Button asChild variant="outline" className="h-auto p-6 font-bold text-lg text-gray-900 border-2 border-transparent hover:border-[#862633] hover:text-[#862633] rounded-xl transition-all duration-300 flex items-center justify-between">
+          <Link href={content.call_for_applications.link} target="_blank">
+            {content.call_for_applications.title} 
+            <ArrowRight className="w-6 h-6 text-[#862633] group-hover:translate-x-2 transition-transform duration-300" />
+          </Link>
+        </Button>
       </div>
 
       {/* Contact Note */}

@@ -8,7 +8,12 @@ export default async function ErasmusPage({
 }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
+  
   const content = dictionary.international.erasmus;
+
+  if (!content) {
+    return <div>Content not found</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">

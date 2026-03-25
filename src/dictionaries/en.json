@@ -473,7 +473,7 @@
       "description": "A more detailed description of the dormitory will appear here."
     }
   },
-  "international": {
+  "international_general": {
     "general_information": {
       "title": "General Information",
       "description": "Important General Information for Non-Hungarian Citizens Studying at BME",

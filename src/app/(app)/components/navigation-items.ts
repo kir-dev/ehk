@@ -131,9 +131,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/kollegium/hirek"),
       targetBlank: false,
       items: [
-        { label: t("Bemutató", "Overview"), href: "/kollegium/kollegium-bemutato", targetBlank: false },
+        { label: t("Bemutató", "Overview"), href: link("/kollegium/kollegium-bemutato"), targetBlank: false },
         { label: t("Felvételi tájékoztató", "Admission Information"),
-          href: "/kollegium/felveteli-tajekoztato",
+          href: link("/kollegium/felveteli-tajekoztato"),
           targetBlank: false },
         {
           label: t("Szabályzatok", "Regulations"),
@@ -182,8 +182,8 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/kulugy/hirek"),
       targetBlank: false,
       items: [
-        { label: "Erasmus", href: "/kulugy/erasmus", targetBlank: false },
-        { label: "EELISA", href: "/kulugy/eelisa", targetBlank: false },
+        { label: "Erasmus", href: link("/kulugy/erasmus"), targetBlank: false },
+        { label: "EELISA", href: link("/kulugy/eelisa"), targetBlank: false },
         { label: "HKT", href: "#", targetBlank: false },
       ],
     },

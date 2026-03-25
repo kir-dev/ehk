@@ -58,12 +58,12 @@ export default function ErasmusContent({ content }: { content: ErasmusData }) {
       {/* Action Links */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
         <Button asChild className="w-full bg-[#862633] hover:bg-[#862633]/90 text-white h-auto min-h-[4rem] py-4 px-6 justify-start text-left whitespace-normal transition-all duration-300 hover:shadow-md">
-          <Link href={content.additional_support_link}>
+            <Link href={content.additional_support_link} target="_blank" rel="noopener noreferrer">
             <span className="font-medium text-base">{content.additional_support}</span>
-          </Link>
+            </Link>
         </Button>
         <Button asChild className="w-full bg-[#862633] hover:bg-[#862633]/90 text-white h-auto min-h-[4rem] py-4 px-6 justify-start text-left whitespace-normal transition-all duration-300 hover:shadow-md">
-          <Link href={content.current_call_link}>
+          <Link href={content.current_call_link} target="_blank" rel="noopener noreferrer">
             <span className="font-medium text-base">{content.current_call}</span>
           </Link>
         </Button>

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 interface ErasmusData {
@@ -61,16 +62,18 @@ export default function ErasmusContent({ content }: Readonly<{ content: ErasmusD
       {(content.additional_support_link || content.current_call_link) && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
           {content.additional_support_link && (
-            <Button asChild className="w-full bg-[#862633] hover:bg-[#862633]/90 text-white h-auto min-h-[4rem] py-4 px-6 justify-start text-left whitespace-normal transition-all duration-300 hover:shadow-md">
+            <Button asChild variant="outline" className="h-auto p-6 font-bold text-lg text-gray-900 border-2 border-transparent hover:border-[#862633] hover:text-[#862633] rounded-xl transition-all duration-300 flex items-center justify-between">
               <Link href={content.additional_support_link} target="_blank" rel="noopener noreferrer">
-                <span className="font-medium text-base">{content.additional_support}</span>
+                {content.additional_support}
+                <ExternalLink className="w-5 h-5 ml-2 text-[#862633]" />
               </Link>
             </Button>
           )}
           {content.current_call_link && (
-            <Button asChild className="w-full bg-[#862633] hover:bg-[#862633]/90 text-white h-auto min-h-[4rem] py-4 px-6 justify-start text-left whitespace-normal transition-all duration-300 hover:shadow-md">
+            <Button asChild variant="outline" className="h-auto p-6 font-bold text-lg text-gray-900 border-2 border-transparent hover:border-[#862633] hover:text-[#862633] rounded-xl transition-all duration-300 flex items-center justify-between">
               <Link href={content.current_call_link} target="_blank" rel="noopener noreferrer">
-                <span className="font-medium text-base">{content.current_call}</span>
+                {content.current_call}
+                <ExternalLink className="w-5 h-5 ml-2 text-[#862633]" />
               </Link>
             </Button>
           )}

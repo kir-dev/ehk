@@ -11,8 +11,9 @@ interface ImageCardProps {
 
 export function ImageCard({ content }: Readonly<{content: ImageCardProps }> ) {
     const { href, imageSrc, title, description} = content;
+    const shouldBeBlank = href.startsWith('http');
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto self-stretch">
+        <a href={href} target={shouldBeBlank ? "_blank" : "_self"} rel={shouldBeBlank ? "noopener noreferrer" : ""} className="block w-full sm:w-auto self-stretch">
             <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer w-full sm:w-64 h-full min-h-[17rem] flex flex-col m-0">
                 <CardContent className="h-full flex flex-col flex-1 p-6">
                     <div className="flex flex-col items-center md:items-center text-center gap-4 md:gap-0 flex-1">

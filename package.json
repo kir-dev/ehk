@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -H 127.0.0.1",
     "build": "payload generate:importmap && next build",
     "start": "next start",
     "lint": "next lint",

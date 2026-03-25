@@ -131,9 +131,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/kollegium/hirek"),
       targetBlank: false,
       items: [
-        { label: t("Bemutató", "Overview"), href: "/kollegium/kollegium-bemutato", targetBlank: false },
+        { label: t("Bemutató", "Overview"), href: link("/kollegium/kollegium-bemutato"), targetBlank: false },
         { label: t("Felvételi tájékoztató", "Admission Information"),
-          href: "/kollegium/felveteli-tajekoztato",
+          href: link("/kollegium/felveteli-tajekoztato"),
           targetBlank: false },
         {
           label: t("Szabályzatok", "Regulations"),
@@ -182,8 +182,8 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       href: link("/kulugy/hirek"),
       targetBlank: false,
       items: [
-        { label: "Erasmus", href: "/kulugy/erasmus", targetBlank: false },
-        { label: "EELISA", href: "/kulugy/eelisa", targetBlank: false },
+        { label: "Erasmus", href: link("/kulugy/erasmus"), targetBlank: false },
+        { label: "EELISA", href: link("/kulugy/eelisa"), targetBlank: false },
         { label: "HKT", href: "#", targetBlank: false },
       ],
     },
@@ -191,7 +191,14 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       title: "INTERNATIONAL",
       href: link("/international/hirek"),
       targetBlank: false,
-      items: [{ label: "", href: "", targetBlank: false }],
+      items: [
+        { label: t("Hírek", "News"), href: link("/international/hirek"), targetBlank: false },
+        { label: t("Általános információk", "General Information"), href: link("/international/general-information"), targetBlank: false },
+        { label: t("Oktatási információk", "Education Information"), href: link("/international/education-information"), targetBlank: false },
+        { label: t("Jelentkezési információk", "Application Information"), href: link("/international/application-information"), targetBlank: false },
+        { label: t("Kollégiumi információk", "Dormitory Information"), href: link("/international/dormitory-information"), targetBlank: false },
+        { label: t("Mobilitási programok", "Mobility Programs"), href: link("/international/mobility-programs"), targetBlank: false },
+      ],
     },
     {
       title: t("KÖZÉLET", "COMMUNITY LIFE"),
@@ -217,18 +224,24 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         { label: t("Klubok", "Clubs"), href: link("/kozelet/klubok"), targetBlank: false },
       ],
     },
-    {
-      title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
-      href: link("/golyaknak/hirek"),
-      targetBlank: false,
-      items: [],
-    },
+    // {
+    //   title: t("GÓLYÁKNAK", "FOR FRESHMEN"),
+    //   href: link("/golyaknak/hirek"),
+    //   targetBlank: false,
+    //   items: [],
+    // },
   ];
 
-  // Filter out certain menu items for English version
+  // Filter out certain menu items for specific languages
   if (lang === "EN") {
     return items.filter(item => 
-      item.title !== "DORMITORY" && item.title !== "INTERNATIONAL"
+      item.title !== "DORMITORY"
+    );
+  }
+
+  if (lang === "HU") {
+    return items.filter(item => 
+      item.title !== "INTERNATIONAL"
     );
   }
 

@@ -1,14 +1,20 @@
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
+import { notFound } from "next/navigation";
 import ErasmusContent from "./components/ErasmusContent";
 
 export default async function ErasmusPage({
   params 
-}: { params: Promise<{ lang: Locale }> }) {
+}: Readonly<{ params: Promise<{ lang: Locale }> }>) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  const content = dictionary.international.erasmus;
+  
+  const content = dictionary.kulugy?.erasmus;
+
+  if (!content) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">

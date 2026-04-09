@@ -206,8 +206,8 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       targetBlank: false,
       items: [
         {
-          label: t("Versenycsapatok", "Competition teams"),
-          href: "#",
+          label: t("Versenycsapatok", "Competitive Teams"),
+          href: link("/kozelet/versenycsapatok"),
           targetBlank: false,
         },
         {

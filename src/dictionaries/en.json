@@ -583,7 +583,7 @@
         "professional_communities_title": "BME Professional Communities",
         "mvk": {
           "title": "BME Competitive Team Community (MVK)",
-          "description": "The Community of Competition Teams at the Budapest University of Technology and Economics (MVK) was established with the aim of supporting the student teams that build competition vehicles at the university in a coordinated manner. It also seeks to provide its members with opportunities for professional development that complement their academic education. Another key goal of MVK is to promote and represent the university at national and international events."
+          "description": "The Community of Competitive Teams at the Budapest University of Technology and Economics (MVK) was established with the aim of supporting the student teams that build competition vehicles at the university in a coordinated manner. It also seeks to provide its members with opportunities for professional development that complement their academic education. Another key goal of MVK is to promote and represent the university at national and international events."
         },
         "professional_colleges": {
           "title": "Professional Colleges (Szakkollégiumok)",
@@ -1523,5 +1523,242 @@
       },
       "contact": "If you have any questions, feel free to contact us at international@bmeehk.hu or eelisa@bme.hu!"
     }
+  },
+  "competition_teams": {
+    "title": "Competitive Teams Introduction",
+    "mvk": {
+      "title": "MVK",
+      "description": [
+        "The BME Competition Team Community was established to coordinate the work of student teams building competition vehicles at the Budapest University of Technology and Economics, and to provide its members with opportunities for professional development that complement their academic training. Another goal of MVK is to promote and represent the university at domestic and international events.",
+        "MVK was founded in 2017, and currently, the following teams are members of the community: BME Formula Racing Team, BME Solar Boat Team, BME Motorsport, BME Suborbitals, BME SharkTeam.",
+        "The MVK teams compete in international student competition series against teams from other universities, such as Formula Student, the Solar Boat Challenge, the European Rocketry Challenge, or the Shell Eco Marathon.",
+        "The goal of the competition series and the teams is to allow students to apply the knowledge acquired at the university in practice within the framework of a large-scale project, thereby becoming better engineers and professionals, which will also give them an advantage in the labor market in the future.",
+        "MVK teams have achieved numerous international successes over the years, with several podium finishes and even victories behind them; we can rightfully be proud of all of them."
+      ],
+      "social_title": "Contacts:",
+      "social_links": [
+        {
+          "label": "Website",
+          "url": "https://mvk.bme.hu"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/bmemvk/?locale=hu_HU"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/company/bme-racing-teams-community/"
+        }
+      ]
+    },
+    "teams": [
+      {
+        "id": "bme_motorsport",
+        "title": "BME Motorsport",
+        "description": [
+          "BME Motorsport is a university student racing team that has been designing and building single-seater formula-style race cars since 2018, with which it competes in the Formula Student constructor series. This is a complex project involving design, manufacturing, testing, racing, and, not least, management. Our main goal is to achieve better results year after year by competing in the international field of Formula Student.",
+          "Formula Student is Europe's most recognized international engineering competition series, where student teams from over 200 universities from 30 countries test their skills. The central element of the competition is a race car designed, manufactured, assembled, operated, tested, and raced by team members. During international competitions, university teams from all over the world can test their skills in dynamic and static events. The dynamic part consists of Acceleration, Skidpad, Autocross, and Endurance events, while the static part consists of Business Plan, Cost and Manufacturing, and Engineering Design events. Our team, in just its five years of existence, boasts numerous podium finishes in both individual events and overall competition results. We have also taken the lead in the latest world rankings in our category; BME Motorsport is the best Hungarian team.",
+          "BME Motorsport was founded at the end of 2018 with just 8 members at the Budapest University of Technology and Economics with the aim of providing outstanding development and experience-gaining opportunities for young, talented students interested in motorsport. Their team currently consists of 85 enthusiastic and dedicated engineering, economics, mathematics, and business students. These students sacrifice their free time to improve themselves, spending up to 80 hours a week on this project to achieve their dreams.",
+          "The tasks of the team members include designing, procuring, and manufacturing parts, assembling, testing, operating, and racing the car, as well as handling management, logistics, and economic matters, thus performing tasks they will face daily in the labor market in the future. With this, students gain an outstanding amount and quality of practical experience alongside the theoretical knowledge acquired at the university!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          {
+            "label": "Website",
+            "url": "https://www.bmemotorsport.com/"
+          },
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/bmemotorsportfs/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bmemotorsportfs/"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/bmemotorsportfs/mycompany/"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://www.youtube.com/channel/UC9f2wMgHHAqNdnKvr-j7ipQ"
+          }
+        ],
+        "images": [
+          "Motorsport1.webp",
+          "Motorsport2.webp"
+        ]
+      },
+      {
+        "id": "bme_sharkteam",
+        "title": "BME SharkTeam",
+        "description": [
+          "BME SharkTeam is a BME racing team aiming to build an energy-efficient race car. We prepare year after year for the annual Shell Eco-marathon. At this international competition, we test our knowledge against engineering teams from all over the world.",
+          "Our team's current race car is Léna, a prototype race car for which we have developed a custom-designed hybrid diesel powertrain in recent years. Thanks to the carbon sandwich monocoque and the optimization of the mechanical system, the total weight of our car was less than 40kg at the 2024 competition. Motor control and reliable operation are ensured by an STM32 microcontroller-based system.",
+          "The team recently launched its new large-scale project, the design of a hydrogen fuel cell city car concept, for which they are developing their own fuel cell at the university, for example. We continuously welcome interested people to the team. Our workshop is located in the Jendrassik György Thermal Engineering Laboratory in the BME DCs building. The team's motto is: „Racing for the future”"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          {
+            "label": "Website",
+            "url": "https://sharkteam.hu/"
+          },
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/bmesharkteam"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bme_sharkteam"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/bme-shark-team/"
+          },
+          {
+            "label": "TikTok",
+            "url": "https://www.tiktok.com/@bmesharkteam"
+          }
+        ],
+        "images": [
+          "sharkteam1.webp",
+          "sharkteam2.webp"
+        ]
+      },
+      {
+        "id": "bme_solar_boat",
+        "title": "BME Solar Boat",
+        "description": [
+          "Our team, the BME Solar Boat Team, was founded in 2014 by three mechanical engineering students from the Faculty of Mechanical Engineering. The goal was to break away from car and motorcycle design traditions and design and build Hungary's first exclusively solar-powered, human-driven, fully electric racing boat, and successfully compete with this vehicle in the Dutch Solar Challenge World Championship and Solar 1 Races in the Netherlands and Monte-Carlo in 2016.",
+          "Over the team's decade-long history, it has built and raced two boats so far. Approximately 100 students participated in the creation of our first boat, named Rosana, with which we raced from 2016 to 2018 in the Netherlands, Monte Carlo, and Kaliningrad after two years of persistent design and execution.",
+          "Regarding the structure of our team, it can be divided into three main professional units: Mechanical Engineering, Electronics, and Business. They are led by the team captain, whose primary task is to lead and coordinate the team and harmonize the work of the unit. Furthermore, each professional unit is headed by a group leader who connects the ongoing projects within the group.",
+          "Our second and current boat, Lana, was put on the drawing board at the end of 2018 and debuted on Lake Balaton in 2020. Since then, it has already been to Monaco and Wildau. Design is currently underway to transform it into a hydrofoil, and work is also ongoing regarding the design and construction of the third boat, which is expected to be completed for the next season.",
+          "Besides competitions, we participate in numerous events and professional events, such as the e-Mobility Show, which focused on presenting electric vehicles and related infrastructure, or the Itinerant Assembly Conference and Exhibition in Siófok, which aims to present positive examples of domestic companies in the transforming electrical energy environment. Furthermore, through one of our sponsors, we had the opportunity to promote the projects to an international audience at the Amphenol conference. We also regularly participate in the Budapest Boat Show, Hungary's largest international exhibition related to boating. In addition, we always exhibit at university events such as Researchers' Night, BME Job Fair, and BME Open Day.",
+          "In addition to current design and construction tasks, we also pay attention to the future - we created our racing team with a long-term goal; we hope that our initiative will create a knowledge base and infrastructure upon which the team will operate for years, involving generation after generation of university students in the world of electric vehicle construction."
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/BMEsolar/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bme_solar_team/"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://www.youtube.com/@bmesolarboat"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/solar-boat-team/"
+          },
+          {
+            "label": "TikTok",
+            "url": "https://www.tiktok.com/@bme_solar_boat_team"
+          },
+          {
+            "label": "Website",
+            "url": "https://solarboatteam.hu"
+          }
+        ],
+        "images": [
+          "sb1.webp",
+          "sb2.webp",
+          "sb3.webp"
+        ]
+      },
+      {
+        "id": "bme_suborbitals",
+        "title": "BME Suborbitals",
+        "description": [
+          "BME Suborbitals is a competition team dealing with the development, construction, and operation of research rockets. We build unique research rockets for various domestic and international competitions and events that meet European standards. Our team is proud to manufacture a large number of parts in-house and uses a minimal amount of off-the-shelf products available on the market.",
+          "The team's flagship project is the development of the Prometheus research rocket. This rocket is 3.2 m long, capable of carrying a 3U CubeSat, and can fly up to 10 km high. This system is completely modular thanks to the custom-designed special RadAx connectors. This allows it to fly in countless configurations, and we can integrate any technological module into the system. Currently, units such as a guided recovery system with a paraglider or an airbrake system for altitude control are being planned.",
+          "Furthermore, we also deal with the development of solid-propellant rocket motors. The Kratos development team experiments with the production of their own propellants and different compositions, as well as performing mechanical design optimizations, such as graphite nozzle design. In the long run, we also want to deal with hybrid propellant systems.",
+          "In addition to all this, we also deal with educational projects. Within the framework of the Athena project, BME Suborbitals provides the rockets for organizing the Hungarian CanSat Competition every year. At these competitions, satellite simulations made by high school students fly up to 1-1.5 km high and then take measurements during their descent. We also usually hold lectures at these competitions, and we work closely with the Hungarian Defense Forces and the Hungarian Astronautical Society.",
+          "Our primary competition is the European Rocketry Challenge in Portugal, where we compete against teams from the largest European universities in different categories. Here, the goal is to accurately reach the target altitude and achieve a successful return, but the maturity, reliability, and novelty of the technology are also scored. The organizers pay special attention to the team's sportsmanship and openness, and they reward the best team dynamics.",
+          "If you want to encounter real engineering problems during your university years, such as designing research rocket parts, sizing parachutes, programming onboard computers and control systems, or developing scientific experiments. Beyond technical challenges, we also welcome enthusiastic applicants for management, financial, legal, and marketing tasks.",
+          "If you are interested in the space industry and want to see your work break the sound barrier, and want to be part of a cohesive team, join us!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          {
+            "label": "Website",
+            "url": "https://suborbitals.bme.hu/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bmesuborbitals/"
+          },
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/Suborbitals.BME"
+          }
+        ],
+        "images": [
+          "BMESuborbitals1.webp",
+          "BMESuborbitals2.webp",
+          "BMESuborbitals3.webp"
+        ]
+      },
+      {
+        "id": "bme_formula_racing_team",
+        "title": "BME Formula Racing Team",
+        "description": [
+          "The BME Formula Racing Team was founded in early 2007 by a few talented engineering students to build a race car as the first and, at the time, only Hungarian team, and to participate in the worldwide Formula Student competition series.",
+          "The then only 18-member unit was followed by a 50-member second generation. Later, the third-generation Junior team was also formed. The seventh generation now consists of more than 100 members, representing many different faculties of the university.",
+          "The team members work in different areas, but the goal is common: achieving the best possible results and creating high-level financial, organizational, and material conditions. Thanks in part to these, they have been performing excellently among the world's best since 2007, at German, English, Italian, and Hungarian competitions alike.",
+          "Initially, the team only built cars suitable for manual driving by a pilot. However, now, uniquely in Hungary, they design, develop, and build an innovative, electric, and also self-driving race car year after year.",
+          "9 groups work within the team, all of which have their own areas of responsibility. The coordinated work of these groups has brought success to the team on many occasions - including during the 2023 racing season. The most outstanding of these is the first place achieved in the overall dynamic category at the Hungarian competition, Formula Student East. This means that the team scored the most points in the events where the car goes into motion.",
+          "Their goal every year is to break their previous records and win in as many events as possible, as well as take home the main prize awarded for the overall results of the events. Team members, sparing no time, approach the upcoming racing season with humility, diligence, and dedication.",
+          "Therefore, everything is given for the team to represent Hungary and BME at Formula Student competitions for years to come."
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/FormulaRacingTeam/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bme_formularacingteam"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/bmefrt"
+          },
+          {
+            "label": "Linktr.ee",
+            "url": "https://linktr.ee/bmefrt"
+          },
+          {
+            "label": "Threads",
+            "url": "https://www.threads.net/@bme_formularacingteam"
+          },
+          {
+            "label": "TikTok",
+            "url": "https://www.tiktok.com/@bme.frt"
+          },
+          {
+            "label": "Website",
+            "url": "https://mvk.bme.hu"
+          },
+          {
+            "label": "X",
+            "url": "https://twitter.com/bme_frt"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://www.youtube.com/@bmeFRT"
+          }
+        ],
+        "images": [
+          "frt1.webp",
+          "frt2.webp",
+          "frt3.webp"
+        ]
+      }
+    ]
   }
 }

@@ -1545,5 +1545,242 @@
         }
       ]
     }
+  },
+  "competition_teams": {
+    "title": "Versenycsapatok bemutatkozó",
+    "mvk": {
+      "title": "MVK",
+      "description": [
+        "A Műegyetemi Versenycsapat Közösség azzal a céllal alakult, hogy a Budapesti Műszaki és Gazdaságtudományi Egyetemen működő versenyjármű építő hallgatói csapatok működését összehangoltan segítse, valamint a tagok számára az egyetemi képzést kiegészítő, szakmai fejlődést elősegítő lehetőségeket biztosítsa. Az MVK további célja az egyetem népszerűsítése és képviselete hazai és nemzetközi eseményeken.",
+        "Az MVK 2017-ben alakult és jelenleg az alábbi csapatok tagjai a közösségnek: BME Formula Racing Team, BME Solar Boat Team, BME Motorsport, BME Suborbitals, BME SharkTeam.",
+        "Az MVK csapatai olyan nemzetközi hallgatói versenysorozatokban versenyeznek más egyetemek csapatai ellen, mint a Formula Student, a Solar Boat Challenge, a European Rocketry Challenge vagy a Shell Eco Marathon.",
+        "A versenysorozatok és a csapatok célja is az, hogy az egyetemen megszerzett tudást a gyakorlatban, egy nagyszabású projekt keretei közt is hasznosítani tudják a hallgatók, hogy ezzel jobb mérnökökké és szakemberekké válhassanak, amivel munkaerőpiaci előnyre is szert tesznek a későbbiekben.",
+        "Az MVK csapatok számos nemzetközi sikert értek el az évek során, több dobogós helyezéssel és akár győzelemmel a hátuk mögött méltán lehetünk büszkék mindannyiukra."
+      ],
+      "social_title": "Elérhetőségek:",
+      "social_links": [
+        {
+          "label": "Weblap",
+          "url": "https://mvk.bme.hu"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/bmemvk/?locale=hu_HU"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/company/bme-racing-teams-community/"
+        }
+      ]
+    },
+    "teams": [
+      {
+        "id": "bme_motorsport",
+        "title": "BME Motorsport",
+        "description": [
+          "A BME Motorsport egy egyetemista hallgatókból álló versenycsapat, amely 2018 óta tervez és épít együléses formula típusú versenyautókat, melyekkel a Formula Student konstruktőrisorozatban versenyez. Ez egy olyan összetett projekt, amely magában foglalja a tervezést, a gyártást, a tesztelést, a versenyzést és nem utolsó sorban a menedzselést. Legfőbb célunk a Formula Student nemzetközi mezőnyében versenyezve évről évre egyre jobb eredményt elérni.",
+          "A Formula Student Európa legelismertebb nemzetközi, mérnöki versenysorozata, ahol 30 országból több, mint 200 egyetem hallgatókból álló csapata méri össze tudását. A verseny központi eleme egy versenyautó, amelyet a csapattagok terveznek, gyártanak, szerelnek, üzemeltetnek, tesztelnek és versenyeztetnek. A nemzetközi versenyek során dinamikus és statikus versenyszámokban mérhetik össze a tudásukat a világ minden részéről érkezett egyetemi csapatok. A dinamikus rész a Gyorsulás, Skidpad, Autocross és Endurance versenyszámokból áll, amíg a statikus rész Üzleti terv, Gyártás- és költséghatékonyság és Mérnöki Tervezés számokból áll. Csapatunk csupán öt éves fennállása alatt büszkélkedhet számos dobogós helyezéssel mind különböző versenyszámokban, mind versenyek összesített eredményeiben is. A legújabb világranglistán át is vettük a vezetést, kategóriánkban, a BME Motorsport a legjobb magyar csapat.",
+          "A BME Motorsport 2018 végén alakult csupán 8 fővel, a Budapesti Műszaki és Gazdaságtudományi Egyetemen azzal a céllal, hogy kiemelkedő fejlődési és tapasztalatszerzési lehetőséget biztosítson a fiatal, tehetséges és motorsport iránt érdeklődő hallgatóknak. Csapatukat jelenleg 85 lelkes és elkötelezett mérnök, közgazdász, matematikus, valamint gazdaságtudományi szakos hallgató alkotja. Ezek a diákok szabadidejüket feláldozva fejlesztik magukat és hetente akár 80 órát foglalkoznak ezzel a projektel azért, hogy elérjék álmaikat.",
+          "A csapat tagjainak feladatai közé tartozik az alkatrészek tervezése, beszerzése, gyártáse, a versenyautó összeépítése, tesztelése, üzelemtetése, és versenyeztetése, valamint emellett a menedzsment, logisztika és a gazdasági ügyek intézése is, tehát a munkaerőpiacon későbbiekben rájuk váró feladatokat látják el nap mint nap. Ezzel az egyetemen megszerzett elméleti tudás mellett kiemelkedő mennyiségű és kiemelkedő minőségű gyakorlati tapasztalatra tesznek szert a hallgatók!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          {
+            "label": "Weblap",
+            "url": "https://www.bmemotorsport.com/"
+          },
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/bmemotorsportfs/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bmemotorsportfs/"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/bmemotorsportfs/mycompany/"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://www.youtube.com/channel/UC9f2wMgHHAqNdnKvr-j7ipQ"
+          }
+        ],
+        "images": [
+          "Motorsport1.webp",
+          "Motorsport2.webp"
+        ]
+      },
+      {
+        "id": "bme_sharkteam",
+        "title": "BME SharkTeam",
+        "description": [
+          "A BME SharkTeam egy olyan Műegyetemi versenycsapat, melynek célja egy energiahatékonysági versenyautó megépítése. Az évente megrendezésre kerülő Shell Eco-marathon versenyére készülünk évről évre. Ezen a nemzetközi versenyen mérjük össze tudásunkat a világ minden tájáról érkező mérnök csapatokkal.",
+          "Csapatunk jelenlegi versenyautója Léna, egy olyan prototípus versenyautó melynek saját fejlesztésű hibrid dízel hajtásláncot fejlesztettünk az almúlt években. A karbon szendvics monocoquenak és a mechanikai rendszer optimalizálásának köszönhetően a teljes autónk súlya kevesebb mint 40kg volt a 2024es versenyen. A motorvezérlésről és a megbízható működésről egy STM32 mikrovezérlő alapú rendszer gondoskodik.",
+          "A csapat nemrég indította el az új nagyszabású projektjét, egy hidrogén üzemanyagcellás városi autó konstrukció tervezését, amelyhez az egyetemen fejlesztik például a saját üzemanyagcellát. Folyamatosan várjuk az érdeklődőket a csapatba. A műhelyünk a BME DCs épület Jendrassik György Hőtechnikai Laboratóriumában található. A csapat mottója: „Racing for the future”"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          {
+            "label": "Weblap",
+            "url": "https://sharkteam.hu/"
+          },
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/bmesharkteam"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bme_sharkteam"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/bme-shark-team/"
+          },
+          {
+            "label": "TikTok",
+            "url": "https://www.tiktok.com/@bmesharkteam"
+          }
+        ],
+        "images": [
+          "sharkteam1.webp",
+          "sharkteam2.webp"
+        ]
+      },
+      {
+        "id": "bme_solar_boat",
+        "title": "BME Solar Boat",
+        "description": [
+          "Csapatunkat a BME Solar Boat Team-et, 2014-ben a Gépészmérnöki Kar három gépészmérnök hallgatója alapította, mely azzal a céllal jött létre, szakítva az autó és motortervezési szokásokkal, hogy Magyarország első kizárólag napenergiával működő, ember által vezetett, teljesen elektromos hajtású versenyhajót tervezzen és építsen, és ezzel a járművel 2016-ban a Hollandiában és Monte-Carlóban megrendezésre kerülő Dutch Solar Challenge Világbajnokság és Solar 1 Races megmérettetésein sikerrel szálljon versenybe.",
+          "A csapat évtizedes története során eddig két hajót készített és versenyeztetett, az első, Rosana elnevezésű hajónk elkészítésében nagyjából 100 hallgató vett részt, amellyel két év kitartó tervezés és kivitelezés után 2016-től 2018-ig versenyeztünk Hollandiában, a Monte Carló-ban és Kalinyingrádban.",
+          "Csapatunk felépítését tekintve, három fő szakmai egységre bontható: Gépészet, Elektronika, Gazdaság. Élükön a csapatkapitány akinek elsődleges feladata a csapat vezetése és koordinálása, valamint a egység munkájának harmonizálása. Továbbá minden szakmai egység élén egy csoportvezető áll, aki összekapcsolja a csoporton belül futó projekteket.",
+          "A második és egyben jelenlegi hajónk Lana 2018 végén került a tervezőasztalra, majd 2020-ban Balatonon debütált, azóta pedig már megjárta Monaco-t és Wildaut is. Jelenleg is folyik a tervezés, hogy szárnyashajóvá tudjuk átalakítani, emellett folynak a munkálatok a harmadik hajó tervezésével és építésével kapcsolatban, amely várhatóan a következő szezonra fog elkészülni.",
+          "A versenyek mellett számos eseményen, szakmai rendezvényeken veszünk részt, mint például az e-Mobility Show, amely az elektromos közlekedési eszközök, valamint az ezekhez kapcsolódó infrastruktúrák bemutatására helyezte a hangsúlyt, vagy a Siófokon megrendezésre kerülő Vándorgyűlés Konferencia és Kiállítás, melynek célja, hogy bemutassa a hazai vállalatok pozitív példáit az átalakuló villamos energetikai környezetben. Továbbá az egyik szponzorunk által lehetőségünk nyílt, hogy nemzetközi közönség előtt népszerűsítsük a projektek az Amphenol konferencián. Valamint, rendszeresen részt veszünk a Budapest Boat Shown-n amely hazánk legnagyobb hajózással kapcsolatos nemzetközi kiállítása. Emellett, mindig kiállítunk az egyetemi eseményeken is mint például a Kutatók Éjszakája, Műegyetemi Állásbözre, BME Nyílt Nap.",
+          "A jelen tervezési és építési feladatai mellett a jövőre is figyelmet fordítunk - versenycsapatunkat hosszú távú céllal hoztuk létre; reményeink szerint kezdeményezésünkkel egy olyan tudásbázis és infrastruktúra jön létre, melyre építve éveken keresztül működik majd a csapat, az egyetemi hallgatók újabb és újabb generációját bevonva az elektromos járműépítés világába."
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/BMEsolar/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bme_solar_team/"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://www.youtube.com/@bmesolarboat"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/solar-boat-team/"
+          },
+          {
+            "label": "TikTok",
+            "url": "https://www.tiktok.com/@bme_solar_boat_team"
+          },
+          {
+            "label": "Weblap",
+            "url": "https://solarboatteam.hu"
+          }
+        ],
+        "images": [
+          "sb1.webp",
+          "sb2.webp",
+          "sb3.webp"
+        ]
+      },
+      {
+        "id": "bme_suborbitals",
+        "title": "BME Suborbitals",
+        "description": [
+          "A BME Suborbitals kutató rakéták fejlesztésével, építésével és üzemeltetésével foglalkozó versenycsapat. Különböző hazai és nemzetközi versenyekre és eseményekre készítünk egyedi kutatórakétákat, amik megfelelnek az európai szabványoknak. Csapatunk büszke arra, hogy rengeteg alkatrészt házon belül gyárt, és minimális mennyiségű piacon elérhető kész terméket használ.",
+          "A csapat zászlóshajó projektje a Prometheus kutatórakéta fejlesztése. Ez a rakéta 3.2 m hosszú, 3U CubeSat szállítására képes, és akár 10 km magasra is tud repülni. Ez a rendszer a az egyedi tervezésű speciális RadAx csatlakozóknak köszönhetően teljes mértékben moduláris. Ezáltal számtalan konfigurációban képes repülni, és bármilyen technológiai modult beilleszthetünk a rendszerbe. Jelenleg is tervben vannak olyan egységek, mint irányított visszatérítő rendszer siklóernyővel, vagy a magasság szabályozását megteremtő légfék rendszer.",
+          "Továbbá, szilárd-hajtóanyagú rakétamotor fejlesztésével is foglalkozunk. A Kratos fejlesztő csapata saját hajtóanyagok gyártásával és különböző összetételekkel kísérletezik, valamint mechanikai kialakításbeli optimalizációkat, például grafit fúvóka tervezést, is végeznek. Hosszú távon szeretnénk foglalkozni hibrid hajtóanyagú rendszerekkel is.",
+          "Mindezek mellett oktatási projektekkel is foglalkozunk. Az Athena projekt keretében minden évben a BME Suborbitals biztosítja a rakétákat a Magyarországi CanSat Verseny megszervezéséhez. Ezeken a versenyeken a középiskolások által készített műhold szimulációk 1-1.5 km magasra repülnek fel, majd visszatérés közben méréseket végeznek. Ezeken a versenyeken előadásokat is szoktunk tartani, valamint szorosan együttműködünk a Magyar Honvédséggel és a Magyar Asztronautikai Társasággal.",
+          "Első számú versenyünk a portugáliai European Rocketry Challenge nevezetű verseny, ahol a legnagyobb európai egyetemek csapatával mérkőzünk meg különböző kategóriákban. Itt a célmagasság pontos elérése, és a sikeres visszatérés a cél, de a technológia fejlettségét, megbízhatóságát és újszerűségét is pontozzák. Külön figyelmet fordítanak a szervezők a csapat sportszerűségére, nyitottságára is, és jutalmazzás a legjobb csapatdinamikákat.",
+          "Ha olyan valós mérnöki problémákkal szeretnél találkozni már egyetemi éveid alatt, mint például kutatórakéta alkatrészek tervezése, ejtőernyők méretezése, fedélzeti számítógépek és irányító rendszerek programozása vagy tudományos kísérletek fejlesztése. A műszaki kihívásokon túl menedzsment, pénzügyi, jogi, és marketing feladatokra is várjuk a lelkes jelentkezőket.",
+          "Ha érdekel az űripar, és szeretnéd látni, ahogy a munkád átlépi a hangsebességet, valamint egy összetartó csapat része szeretnél lenni, csatlakozz hozzánk!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          {
+            "label": "Weblap",
+            "url": "https://suborbitals.bme.hu/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bmesuborbitals/"
+          },
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/Suborbitals.BME"
+          }
+        ],
+        "images": [
+          "BMESuborbitals1.webp",
+          "BMESuborbitals2.webp",
+          "BMESuborbitals3.webp"
+        ]
+      },
+      {
+        "id": "bme_formula_racing_team",
+        "title": "BME Formula Racing Team",
+        "description": [
+          "A BME Formula Racing Team-et 2007 elején alapította néhány tehetséges mérnökhallgató, hogy első, és anno egyetlen magyar csapatként versenyautót építsenek, és részt vegyenek a világméretű Formula Student versenysorozatban.",
+          "Az akkor még csak 18 fős alakulatot egy 50 fős második generáció követte. Később megalakult a harmadik generációs Junior csapat is. A hetedik generáció ma már több, mint 100 tagból áll, az egyetem számos különböző karát képviselve.",
+          "A csapat tagjai különböző területeken dolgoznak, de a cél közös: minél jobb eredmények elérése, valamint a magas szintű anyagi, szervezeti és tárgyi feltételek megteremtése. Többek között ezeknek köszönhető, hogy 2007 óta kiválóan helytállnak a világ legjobbjai között, német, angol, olasz és magyar versenyeken egyaránt.",
+          "A csapat kezdetben csak manuális, pilóta általi vezetésre alkalmas autót épített. Mostanra azonban, Magyarországon egyedülálló módon, egy innovatív, elektromos és egyben önvezetésre is képes versenyautót terveznek, fejlesztenek és építenek évről évre.",
+          "A csapaton belül 9 csoport dolgozik, amelyeknek mind megvannak a saját felelősségi körei. Ezen csoportok összehangolt munkája már számos alkalommal - többek között a 2023-as versenyszezon alatt is - sikerre vitte a csapatot. Mindezek közül a legkiemelkedőbb a magyar versenyen, a Formula Student East-en elért első helyezés összetett dinamikus kategóriában. Ez azt jelenti, hogy azon versenyszámokon, amelyeken az autó mozgásba lendül, a csapat érte el a legtöbb pontot.",
+          "Céljuk minden évben az, hogy korábbi rekordjaikat megdöntve a lehető legtöbb versenyszámban nyerjenek, illetve elhozzák a fődíjat, amely a versenyszámok összesített eredményéért jár. A csapattagok idejüket nem sajnálva alázattal, szorgalommal és odaadással fordulnak az előttük álló versenyszezon felé.",
+          "Minden adott tehát ahhoz, hogy a csapat még évekig képviselje Magyarországot és a BME-t a Formula Student versenyeken."
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/FormulaRacingTeam/"
+          },
+          {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/bme_formularacingteam"
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/company/bmefrt"
+          },
+          {
+            "label": "Linktr.ee",
+            "url": "https://linktr.ee/bmefrt"
+          },
+          {
+            "label": "Threads",
+            "url": "https://www.threads.net/@bme_formularacingteam"
+          },
+          {
+            "label": "TikTok",
+            "url": "https://www.tiktok.com/@bme.frt"
+          },
+          {
+            "label": "Weblap",
+            "url": "https://mvk.bme.hu"
+          },
+          {
+            "label": "X",
+            "url": "https://twitter.com/bme_frt"
+          },
+          {
+            "label": "YouTube",
+            "url": "https://www.youtube.com/@bmeFRT"
+          }
+        ],
+        "images": [
+          "frt1.webp",
+          "frt2.webp",
+          "frt3.webp"
+        ]
+      }
+    ]
   }
 }

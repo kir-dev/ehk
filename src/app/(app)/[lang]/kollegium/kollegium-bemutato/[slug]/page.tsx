@@ -110,7 +110,7 @@ export default async function DormitoryDetailsPage({
                                                     key={imgIdx}
                                                     src={images[imgIdx]} 
                                                     alt={`${dormData.title} inline image ${imgIdx + 1}`}
-                                                    className={`rounded-xl shadow-md md:shadow-lg border border-gray-100 object-contain ${
+                                                    className={`rounded-xl shadow-md md:shadow-lg border border-gray-100 object-contain grayscale hover:grayscale-0 transition-all duration-300 ${
                                                         block.indices.length > 1 
                                                             ? "max-w-full sm:max-w-[calc(50%-12px)] md:max-w-[calc(33.333%-16px)] max-h-[40vh]" 
                                                             : "max-w-full max-h-[60vh]"
@@ -147,7 +147,7 @@ export default async function DormitoryDetailsPage({
                                         <img 
                                             src={imgSrc} 
                                             alt={`${dormData.title} image ${embeddedImageCount + idx + 1}`}
-                                            className="max-w-full h-auto max-h-[350px] object-contain transition-transform duration-300 group-hover:scale-105"
+                                            className="max-w-full h-auto max-h-[350px] object-contain transition-all duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0"
                                             loading="lazy"
                                         />
                                     </div>

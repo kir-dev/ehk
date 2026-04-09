@@ -24,7 +24,7 @@ export function ImageCard({ content }: Readonly<{content: ImageCardProps }> ) {
                                     alt={title}
                                     width={128}
                                     height={128}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                                 />
                             </div>
                         </div>

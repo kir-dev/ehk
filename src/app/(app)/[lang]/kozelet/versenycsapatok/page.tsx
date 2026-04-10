@@ -63,7 +63,7 @@ export default async function VersenycsapatokPage({
                       rel="noopener noreferrer"
                     >
                       {getSocialIcon(link.label)}
-                      {getSocialName(link.label)}
+                      {getSocialName(link.label, lang)}
                     </a>
                   </Button>
                 ))}
@@ -136,7 +136,7 @@ export default async function VersenycsapatokPage({
                           rel="noopener noreferrer"
                         >
                           {getSocialIcon(link.label)}
-                          {getSocialName(link.label)}
+                          {getSocialName(link.label, lang)}
                         </a>
                       </Button>
                     ))}

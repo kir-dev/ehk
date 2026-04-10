@@ -87,7 +87,7 @@ export default async function SzakkollegiumokPage({
                       rel="noopener noreferrer"
                     >
                       {getSocialIcon(link.label)}
-                      {getSocialName(link.label)}
+                      {getSocialName(link.label, lang)}
                     </a>
                   </Button>
                 ))}
@@ -160,7 +160,7 @@ export default async function SzakkollegiumokPage({
                           rel="noopener noreferrer"
                         >
                           {getSocialIcon(link.label)}
-                          {getSocialName(link.label)}
+                          {getSocialName(link.label, lang)}
                         </a>
                       </Button>
                     ))}

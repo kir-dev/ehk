@@ -212,7 +212,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Szakkollégiumok", "Specialized colleges"),
-          href: "#",
+          href: link("/kozelet/szakkollegiumok"),
           targetBlank: false,
         },
         {

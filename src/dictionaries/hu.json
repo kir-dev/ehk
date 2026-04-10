@@ -1782,5 +1782,315 @@
         ]
       }
     ]
+  },
+  "advanced_colleges": {
+    "title": "Szakkollégiumok",
+    "description": [
+      "A szakkollégiumok az egyetemi tanulmányokat kiegészítő ismereteket nyújtanak tagjaik számára, ahol egyúttal egy összetartó közösség részeseivé is válhatnak.",
+      "Ezen kívül számos nyilvános ismeretterjesztő eseményt, így előadásokat, workshopokat és kurzusokat is szerveznek a hallgatók számára, sőt több középiskolai tanulmányi versenyt is rendeznek, amelyeken előkelő helyezést elérve pluszpontok szerezhetők a felvételi eljárásban.",
+      "A BME-n összesen tizennégy szakkollégium működik, amelyek mindegyike más és más tudományterület köré szerveződik, így mindenki találhat érdeklődésének megfelelő szervezetet."
+    ],
+    "muszak": {
+      "title": "Műegyetemi Szakkollégiumok Közössége",
+      "description": [
+        "A Műegyetemi Szakkollégiumok Közössége (MŰSZAK) a BME-n található szakkollégiumokat összefogó ernyőszervezet. Kapcsolatot tart az Egyetemi Hallgatói Képviselettel, az egyetemvezetéssel, valamint a külső szervekkel, emellett támogatja a működő és alakuló szakkollégiumokat. A közös képviselet mellett fontosnak tartja a szakkollégiumok közötti kapcsolati hálók kialakítását, a szakterületek közötti ismeretmegosztást. Támogatja a szakkollégiummá válni kívánó csoportosulásokat, valamint őrzi és gyarapítja a szakkollégiumok meglévő tudását, lehetőséget nyújt a fejlődésre, tehetségek kibontakozására. A MŰSZAK egy szakmai és baráti kapcsolatokat nyújtó példamutató közösség is, amely platformot teremt az egyén látókörének szélesítésére és a közös célok elérésére. A rendszeres közösségi események, csapatépítők mellett félévente szakmai programokkal egybekötött MŰSZAK Tábort is szervez."
+      ],
+      "social_title": "Elérhetőségek",
+      "social_links": [
+        {
+          "label": "muszak.bme.hu",
+          "url": "http://muszak.bme.hu"
+        }
+      ],
+      "images": [
+        "muszak.jpg"
+      ]
+    },
+    "teams": [
+      {
+        "id": "energetikai",
+        "title": "Energetikai Szakkollégium",
+        "description": [
+          "Az Energetikai Szakkollégium 2002-ben alakult azzal a céllal, hogy az energetika iránt érdeklődő hallgatóknak egyedülálló lehetőségeket biztosítson az ipar testközelből való megismerésére, és az ágazattal kapcsolatos tudományos életben való részvételre. Ezen kívül küldetésünk a nyilvánosságot megismertetni az energetikával, népszerűsítve a területet.",
+          "Minden egyetemi félévben változatos nyilvános programsorozatot szervezünk előadásokkal és üzemlátogatásokkal, melyeken a részvétel mindenki számára ingyenes. Jelen vagyunk évente több expón és fesztiválon, ahol saját készítésű demonstrációs eszközeinkkel igyekszünk felkelteni az érdeklődést az energetika iránt. A középiskolások számára minden évben többfordulós tanulmányi versennyel készülünk, illetve kétévente megrendezzük az IYCE nemzetközi konferenciánkat, ahova a világ minden tájáról várunk résztvevőket és előadókat.",
+          "Tagságunk számára változatos szakmai és közösségi programokkal készülünk. Az ipari szereplőkkel és egyetemi szakemberekkel együttműködésben belsős kurzusok, tréningek várják a szakkollégistákat minden félévben, ahol a tanulmányok során el nem sajátítható ismeretekkel igyekszünk őket felruházni. Idősebb tagjaink örömmel adnak segítséget a fiataloknak a kutatás világában, aminek a gyümölcse TDK-dolgozatok, folyóiratcikkek és konferenciaelőadások sorozata. Természetesen a szakmaiság mellett a közösség is meghatározó a Szakkollégium életében. Heti rendszerességgel gyűlünk össze sportolni és sörözni, de nagyobb volumenű eseményekkel is készülünk, mint kirándulások, PubQuiz és pár havonta csapatépítő hétvégék.",
+          "Megtalálhatóak vagyunk Facebookon és Linkedinen (Energetikai Szakkollégium), Instagramon (@eszkorg), illetve honlapunkon, az eszk.org oldalon."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "eszk.org",
+            "url": "http://eszk.org"
+          }
+        ],
+        "images": [
+          "energetikai.jpg"
+        ]
+      },
+      {
+        "id": "epitesz_klub",
+        "title": "BME Építész Klub Szakkollégium",
+        "description": [
+          "Közösség. Szakmai fejlődés. Tanulmányi kirándulás. Műterem. Workshopok. Épületbejárások. Gyakorlati tapasztalatok. ArchiCADkurzus. Bevonótábor. Fogalmak, amik jellemzőek ránk, fogalmak, amik a Klubban életre kelnek. Megtalálsz minket a Bercsényi Kollégium 5. emeleti műtermében, gyűlésen, vagy leadás rajzolása közben. Ha szeretnél a képzésen túlmutató skilleket szerezni, és egy szuper közösség tagja lenni, csatlakozz!"
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "facebook.com/EpiteszKlubBME",
+            "url": "http://facebook.com/EpiteszKlubBME"
+          }
+        ],
+        "images": [
+          "epitesz_klub.jpg"
+        ]
+      },
+      {
+        "id": "eszak",
+        "title": "Építész Szakkollégium",
+        "description": [
+          "Az Építész Szakkollégium - ÉSZAK - egy önszerveződő szakmai közösség, amely teret ad az egyetemi kereteken túlmutató tanulásra és fejlődésre. Anyaegyetemünk a BME, de más intézmények és más szakok hallgatói is szerves részét képezik a tagságnak. Célunk, hogy műhelymunkán, önképzőkörökön és más programokon keresztül együtt gondolkodjunk építészetről, művészetről és a világról, hogy a közösen szerzett tudást és tapasztalatokat a tágabb környezetünk javára is fordítsuk."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "eszak.eu",
+            "url": "http://eszak.eu"
+          }
+        ],
+        "images": [
+          "epitesz.jpg"
+        ]
+      },
+      {
+        "id": "gepesz",
+        "title": "BME Gépész Szakkollégium",
+        "description": [
+          "A BME Gépész Szakkollégium 2012-ben alakult a Gépészmérnöki Karon működő öntevékeny körök összefogásával. Azóta az ország legnagyobb minősített szakkollégiumává váltunk több mint 250 aktív taggal és nyolc – a gépészet szinte minden területét lefedő – szakosztállyal. Ezek a következők: Alkalmazott Mechanika Szakosztály, Áramlástan Szakosztály, Design Szakosztály, Épületgépész Szakosztály, Gépészeti Eljárástechnika Szakosztály, Gyártás Szakosztály, Kalorikus Gépek Szakosztály, Mechatronika Szakosztály.",
+          "Szakkollégiumunk célja, hogy tagjaink az egyetemi tanulmányokat kiegészítő, és azokat elmélyítő szakmai ismereteket szerezhessenek. Komplex, több területen átívelő, ipari kapcsolatokkal támogatott mérnöki feladatok végzésére nyílik lehetőség, szakosztályaink üzemlátogatásokat, aktuális témákat érintő előadásokat, konzultációkat, szakosztályos foglalkozásokat és képzéseket szerveznek, szakmailag támogatják a kutató- és TDK-munkákat, segítik a tanszékek munkáját, miközben összetartó szakmai-baráti közösséget építenek."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "gszk.bme.hu",
+            "url": "http://gszk.bme.hu"
+          }
+        ],
+        "images": [
+          "gepesz.jpg"
+        ]
+      },
+      {
+        "id": "gillemot",
+        "title": "Gillemot László Szakkollégium",
+        "description": [
+          "A Gillemot László Szakkollégium 2018-ban alakult azzal a céllal, hogy a BME Gépészmérnöki Kar hallgatói számára az egyetemi képzésen túlmutató, anyagtudományi és -technológiai területeket érintő ismeretek elsajátítását tegye lehetővé. Ezt előadások, tanfolyamok, tanulmányi utak, üzemlátogatások és laborfoglalkozások szervezésével valósítja meg. Kiemelt figyelmet fordítanak az egyetemi közösség építésére, amelyet csapatépítő programokkal és társadalmi felelősségvállalást célzó tevékenységekkel támogatnak.",
+          "A szakkollégium célja továbbá a tagok szakmai fejlődésének és tudományos munkájának elősegítése, amit TDK-, OTDK- és konferencia-részvétel, valamint konzultációk és kutatási lehetőségek támogatása révén valósít meg. Fontos szerepet vállalnak az ipari és szakmai partnerekkel, valamint az egyetem és hallgatók közötti kapcsolattartásban is. Oktatást segítő tevékenységük között korrepetálások, vizsga- és zárthelyi felkészítők is szerepelnek. Az egyetemi közösség számára szolgáltatásaik – mint lézergravírozás, eszközkölcsönzés, egyedi kitűző- és mágnespréselés – folyamatosan bővülnek."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "glsz.bme.hu",
+            "url": "http://glsz.bme.hu"
+          }
+        ],
+        "images": [
+          "gillemot.png"
+        ]
+      },
+      {
+        "id": "kommon",
+        "title": "kommON kommunikációs szakkollégium",
+        "description": [
+          "A kommON egy kreatív fiatalokból álló közösség, akik a kommunikáció világában leltek szakmai otthonra, legyen szó PR-ról, grafikus designról, újságírásról, online marketingről vagy akár rendezvényszervezésről. A szakkollégiumban arra törekszünk, hogy az egyetemen szerzett elméleti tudást értékes piaci, gyakorlati tudással egészítsük ki. A #kommONfamily nem csak egy Instagram-kompatibilis hashtag, hanem a szervezetet átható attitűd és hangulat is: izgalmas csapatépítő programokon veszünk részt, táborozunk, spontán találkozókat szervezünk.",
+          "Szakmai munka: \"Szakmai est\" néven szoktunk szervezni nyilvános előadásokat - ez azonban csak a jéghegy csúcsa: tagjaink számára több alkalmas ingyenes kurzusokat tartunk, melyek gyakorlati vizsgával és oklevéllel zárulnak. Az imént említettek mellett tréningeket, workshopokat is szoktunk tartani egymásnak, hogy új készségeket is elsajátíthassunk.",
+          "Közösségi élet: Bár egy hagyományos értelemben vett kolival ellentétben mi nem lakunk együtt, ettől még számtalan úton-módon építünk egy szoros, összetartó közösséget. Rendszeresen tartunk kötöttebb és kötetlenebb csapatépítő programokat, egy évben háromszor-négyszer pedig táborozni is elmegyünk. Az értékes kapcsolati tőke mellett igaz barátságokat is szeretnénk kialakítani.",
+          "Önszerveződés: A Szakkollégiumi Mozgalom egyik alapelve jegyében a kommON is autonóm, önszerveződő csoport. A szervezet működése és fejlesztése kizárólag a hallgatókból álló tagságon, elnökségen múlik. A tisztújításra Közgyűlést hívunk össze, a vezetőség és az egész szakkoli munkáját pedig a felügyelőbizottság értékeli."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "kommon-szakkollegium.hu",
+            "url": "http://kommon-szakkollegium.hu"
+          }
+        ],
+        "images": [
+          "kommon.jpg"
+        ]
+      },
+      {
+        "id": "kozmosz",
+        "title": "Egyetemi Kozmosz Szakkollégium",
+        "description": [
+          "Az Egyetemi Kozmosz Szakkollégium a Műegyetem űrkutatás iránt érdeklődő diákjainak a közössége. Célunk egy olyan csoport megteremtése volt, ahol mindenki kiélheti a végtelen kozmosz iránti szeretetét.",
+          "A szakkollégium ehhez előadásokat és kurzusokat szervez olyan előadókkal, akik az űripar és csillagászat élvonalát képzik. Az elmúlt időben asztrofizika és áramkörtervező kurzusaink voltak, továbbá hallhattunk már előadásokat NASA mérnöktől, fekete lyuk kutatótól, őslénykutatótól és asztrobiológustól is.",
+          "Projektekkel is foglalkozunk. Jelenleg vizuális és rádiós meteordetektálással, műholdképek letöltésével és asztrofotózással foglalkozunk, de tervben vannak különböző részecskedetektorok elkészítése, illetve egy saját ballon felbocsátása is.",
+          "Előfordul, hogy terepre is kimegyünk. Szoktunk űripari cégeknél is látogatást tenni, illetve többször voltunk a Műegyetem műholdvevő földi állomásán, ahol a Földről készült fényképeket is sikerült letöltenünk az űrből. Ezen felül szoktunk saját műszerekkel csillagászattal és asztrofotózással foglalkozni, valamint rádióamatőr tevékenységet végezni.",
+          "A Kozmosz részt vesz a Cansat Hungary verseny szervezésében is. Ennek keretein belül a középiskolásoknak üdítős doboz méretű műszereket kell készíteniük, amelyek rakétával 1000m-es magasságba felbocsátva tudományos méréseket végeznek. Továbbá a H-Space konferencia lebonyolításában is jelentős szerepet szoktunk vállalni.",
+          "Ha a korábban leírtak bármelyike érdekel téged attól függetlenül, hogy melyik egyetemre jársz, akkor sok szeretettel várunk a Kozmoszban!"
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "kozmosz.bme.hu",
+            "url": "http://kozmosz.bme.hu"
+          }
+        ],
+        "images": [
+          "kozmosz.jpg"
+        ]
+      },
+      {
+        "id": "kozlekedesmernoki",
+        "title": "BME Közlekedésmérnöki Szakkollégium",
+        "description": [
+          "Mi az, amit csinálunk, mivel foglalkozunk? Több mint negyven tagunk segítségével szakmai kirándulásokat, gyárlátogatásokat szervezünk. Az elmúlt félévben ellátogattunk a Waberer’s BILK telephelyre, a Milleniumi Földalattihoz és a Zugligeti Libegőhöz is.",
+          "Előadásokat is szervezünk szakmai szereplőkkel. Vendégelőadónk volt Berezvai Gábor, a Magyar Autoklub Oldtimer Szekció igazgatója, akitől részletesen megtudhattuk hogyan történik a magyar oldtimerek forgalomba helyezése. Novemberben vezetéstechnikai tréningen is részt vehettünk a Magyar Autoklubnál.",
+          "Oktatásokat is szervezünk: az egyetemen, az órákon sokat lehet tanulni, de mindenre nyilván nem jut idő. 2023 szeptemberében kezdtük el a Gólyaoktatást: heti rendszerességgel tartunk járműmérnököknek szóló kiegészítő, elméleti oktatást a belső égésű motorokról, karosszériáról és egyéb érdekes, az autózáshoz kapcsolódó témakörökből. Bemutatjuk a szerszámok, mérőeszközök használatát, ezzel is előkészítve a későbbi motorszerelési oktatást. Itt, a motorszerelések alkalmával az alapoktól megtanulhatnak mindent a motorszerelés alapjairól. Téli átvizsgálást is tartunk minden évben, amikor a tulajok saját autójuk állapotáról kaphatnak pontosabb képet a mérések során.",
+          "Egy tanév alkalmával két saját szervezésű, mára már hagyományossá vált rendezvényünk is megvalósul a tavaszi félév során, név szerint a Szakmai Nap és a Várostervezési Napok (VTN). A Szakmai Nap alkalmával ipari szereplők kiállítóként vesznek részt a rendezvényen, és szakmai előadásokat is tartanak. Az St épület nagy előadótermeiben számos program zajlik, míg a mellette lévő parkolóban különféle érdekes járművekkel lehet találkozni. A kiállítók, az előadók így a jövőbeli munkavállalókkal már az egyetemen kapcsolatba kerülhetnek.",
+          "A VTN egy csapatverseny, aminek lényege, hogy az építészekből és közlekedésmérnökökből álló csapatoknak egy forgalmas budapesti csomópontot kell áttervezniük, hogy egyszerűbbé és jobbá tegyék az ottani közlekedést. A rendezvény koncepciója azon alapszik, hogy az építészek meg tudnak tervezni egy szép épületet, a közlekedésmérnökök pedig meg tudják mondani, hogy közlekedési szempontból ezt hogyan lenne jó kivitelezni. Erre a versenyre már gólyaként is lehet jelentkezni és érdemes is, mert nagyon sok hasznos tapasztalatot lehet vele szerezni a jövőre nézve.",
+          "A legfontosabb dolog, amiért a Közlekedési Szakkollégium is létezik, az a közösség. Teret kínálunk azoknak, akik a szakma iránt érdeklődnek. Sokan itt ismerik meg azokat a hallgatótársaikat, akikkel közös a szenvedélyük, és itt kezdenek közös projektbe is.",
+          "Mindhárom szakon tanuló diák csatlakozhat hozzánk, tanuljon közlekedés-, jármű- vagy logisztikai mérnöknek. Négy tagozatunkba lehet jelentkezni és csatlakozni a futó projektjeinkbe is: Járműtechnika tagozat, Járműinnováció tagozat, Közlekedéstechnika tagozat, Logisztika tagozat."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "szakkollegium.com",
+            "url": "http://www.szakkollegium.com"
+          }
+        ],
+        "images": [
+          "kozlekedesmernoki.jpg"
+        ]
+      },
+      {
+        "id": "liska",
+        "title": "Liska Tibor Szakkollégium",
+        "description": [
+          "A Budapesti Műszaki és Gazdaságtudományi Egyetemen működő Liska Tibor Szakkollégium hivatalosan 2007 márciusában alakult meg a Gazdaság- és Társadalomtudományi Karon. Korábban más formában, de hasonló szellemiségben 2004 óta Szakmai Szervező Team működött.",
+          "A BME számos másik kara mellett fiatalnak számító GTK néhány hallgatójában 2004-ben merült fel a gondolat, hogy szükség van olyan rendezvényekre, előadásokra, melyek túlmutatnak az egyetemi előadások és gyakorlatok szükségszerűen merev korlátain, és a tisztán elméleti megközelítés mellett megmutatják az üzleti, gazdasági folyamatok érdekességeit és gyakorlati működését. E gondolatok eredményeként került megrendezésre 2005 márciusában az I. Gazdasági és Menedzsment Szakmai Hét. A rendezvény programjai között szerepeltek különböző szakmai és fél-szakmai előadások, melyeken több neves cégvezető, valamint az akkori oktatási miniszter is megtisztelt minket egy előadással.",
+          "A Szakmai Hetek sikereit látva a Szakmai Szervező Team idővel elérkezettnek látta az időt arra, hogy az évek munkája által fejlődésnek indított GTK-s szakmai-közösségi életnek új keretet adjon. Ez az új keret az előző évek tapasztalataira épülve a Liska Tibor Szakkollégium lett.",
+          "2007 óta szakkollégiumunk folyamatosan nőtt és fejlődött, több programunk is állandóvá vált az évek során. Ezek közé tartozik többek között az évente megrendezésre kerülő Liska Tibor Szakmai Napok (a korábbi Szakmai Hét utódja), ahová szakmájukban elismert előadókat hívunk el, hogy aktuális témákról szóló előadásukkal segítsék a hallgatóság fejlődését. Kétévente megrendezzük névadónk modelljén alapuló táborunkat, a LisKaLandot, mely iránt egyre szélesebb körű az érdeklődés, valamint több esettanulmányi versenyt is sikeresen szervezett szakkollégiumunk. Ezen kívül minden évben megrendezésre kerülnek őszi és tavaszi táboraink, a támogatóknak és előadóknak rendezett Liska-es,t és 2014-óta megrendezésre kerül a LisKonferencia előadássorozat is.",
+          "Liskásaink számára számos lehetőség biztosított a szakkollégiumon belül. Dönthetnek úgy, hogy az öt csapat közül valamelyikbe (szakmai, PR, HR, pénzügyi, marketing) a jelentkeznek, és felvételük után csapattagként folytatják tovább útjukat. Ezáltal nemcsak új képességekre tehetnek szert, amivel fejlesztik magukat, és segítik az adott területen a szakkollégium fejlődését, hanem hasonló érdeklődési körrel rendelkező társaikat is jobban megismerhetik.",
+          "A csapatba tartozás nem kötelező, sok fejlődési alkalom rejlik egy-egy projekt, valamint különböző programok lebonyolítása során is. Az alulról szerveződés jegyében ezeknek a szervezéseire bármely Aktív tag bátran jelentkezhet. Bárhol is találják magukat Liskásaink, mindenhol elsajátíthatják a csapatmunka, a felelősségvállalás, a problémamegoldás és még sok ezekhez hasonló hasznos készségeket."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "ltsz.hu",
+            "url": "http://ltsz.hu"
+          }
+        ],
+        "images": [
+          "liska.jpg"
+        ]
+      },
+      {
+        "id": "management",
+        "title": "BME Management Szakkollégium",
+        "description": [
+          "A BME Management Szakkollégium (MSZK) büszkén viseli a Budapesti Műszaki és Gazdaságtudományi Egyetem legrégibb szakkollégiumának címét, immár közel 40 éve sikeresen működve bő 800 alumni tagot számlál.",
+          "Központi koncepciónk a \"Leadership Playground\", melynek célja, hogy egy játszóteret teremtsünk a vezetői készségek fejlesztéséhez. Ez azt jelenti, hogy olyan inspiráló környezetet biztosítunk tagjaink számára, ahol kibontakoztathatják vezetői potenciáljukat, és különféle vezetési helyzetekben gyakorolhatnak. Koncepciónk 2010-ben helyet kapott a Kairos Society New York-i konferenciáján a világ 100 leginnovatívabb üzleti ötlete között.",
+          "A szervezetünk egyik alappillére a Közösség. Tagságunk rendkívül változatos, hiszen hozzánk a BME összes karáról jelentkezhetnek hallgatók. Hiszünk abban, hogy egy családi közegben tudjuk kihozni magunkból és egymásból a maximumot. Ennek érdekében a Teheteséggondozási területünk fáradthatatlanul dolgozik a minél izgalmasabb programok szervezésével. Ezek a programok 2 kalap alá tartoznak. Vannak formálisak, mint a minden héten hétfőn tartandó InfoEstek, a csapatépítések, az Összerázó Táboraink, ahol néhány napra leutazunk különböző helyekre közösen, hogy összekovácsolódjunk. Informális programok közé tartoznak a közös mozizások, kocsmázások, társas estek és sok-sok jobbnál jobb élmény.",
+          "Az MSZK egy projekt alapú mátrix szervezet. Ez annyit takar, hogy fel vagyunk bontva a menedzsment 6 különböző munkaterületeire, melynek tagjai projektmunkákban is részt vesznek. Ebből fakad a Gyakorlat alappillérünk.",
+          "Területeink és fő feladataik: Operatív (IT rendszerek, munkakörnyezet és Projekt Management Office), Szakmai (Képzések szervezése és előadókkal való kapcsolattartás), Public Relations / PR (Cégekkel és külső szervezetekkel való kapcsolattartás, támogatások szerzése), Marketing (Online arculat tervezése, Social Media oldalak és a weboldal kezelése), Gazdasági (Pályázatok, szerződések írása és költségvetés tervezése), Tehetséggondozási / TGT (Közösségi programok szervezése, csapatépítések tartása, karrierutak tervezése).",
+          "Projektjeink: Menedzsment Akadémia (Szakmai nyári tábor szervezése és megtartása), ESET (Esettanulmányi verseny szervezése és lebonyolítása), FELVI (Toborzás, új jelentkezők bevonzása, tagság fenntartása), Consulting Group / CG (Más szervezeteknek való tanácsadás).",
+          "Szakkollégiumunk harmadik alappillére a Szakmaiság, melynek keretein belül tagjaink ingyen vehetnek részt a szakmai területünk által szervezett képzéseinken, amelyek akár több 100 000-es nagyságrendbe is sorolhatók. Képzési rendszerünk elvégzése után a jövőben tagjaink egy MSZK diplomával is részesülhetnek."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "mszk.bme.hu",
+            "url": "http://mszk.bme.hu"
+          }
+        ],
+        "images": [
+          "management.jpg"
+        ]
+      },
+      {
+        "id": "simonyi",
+        "title": "Simonyi Károly Szakkollégium",
+        "description": [
+          "A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a Budapesti Műszaki és Gazdaságtudományi Egyetem (BME) Villamosmérnöki és Informatikai Karának (VIK) Schönherz Kollégiumában (1117 Budapest, Irinyi József u. 42) működik. A szakkollégium az 1997-ben alapított Schönherz Szakkollégium jogutódjaként 2003-ban vette fel Simonyi Károly, a BME VIK rajongva tisztelt professzorának nevét. A szakkollégium célja a mérnöki kultúra gondozása és az értelmiségi gondolkodásra nevelés.",
+          "Ennek érdekében tanfolyamokat, bemutatókat, konferenciákat és más szakmai rendezvényeket szervez. A szervezet szakmai öntevékeny köröket fog össze, melyeknek célja, hogy a VIK hallgatóinak lehetőséget biztosítson az egyetemi képzést kiegészítő ismeretek elsajátítására és gyakorlati tapasztalatok szerzésére. Országos és nemzetközi szinten is jelen van a szakkollégiumi közösségekben. A szakkollégium körei tanfolyamokkal és jól felszerelt műhelyekkel biztosítják a hallgatók fejlődését. A szakkollégiumot 2009-ben Junior Prima Primissima díjjal tüntették ki oktatás és köznevelés kategóriában. Legismertebb eseménye a minden évben megrendezésre kerülő Simonyi Konferencia, ahol az ipar legnevesebb cégei is képviselik magukat."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "simonyi.bme.hu",
+            "url": "http://simonyi.bme.hu"
+          }
+        ],
+        "images": [
+          "simonyi.jpg"
+        ]
+      },
+      {
+        "id": "szent_gyorgyi",
+        "title": "BME Szent-Györgyi Albert Szakkollégium",
+        "description": [
+          "A BME Szent-Györgyi Albert Szakkollégium (röviden SzASz) 2001-ben alakult, és azóta is töretlenül működő öntevékeny kör a BME Vegyészmérnöki és Biomérnöki Karán. Szakkollégiumunk fő célja szakmai és tudományos programok szervezése, tudományterületünk és hivatásunk népszerűsítése az egyetemen és azon túl. Számos szakmai, ismeretterjesztő és kulturális rendezvényt szervezünk a tanév során, melyek vagy a hallgatók szakmai tudását bővítik, vagy éppen csak a kellemes kikapcsolódást szolgálják. Tagjainknak folyamatosan lehetőséget biztosítunk az önfejlesztésre mind szakmán belül, mind tágabb körökben.",
+          "Minden évben megrendezésre kerül a Szent-Györgyi Albert Konferencia, ahol a meghívott előadók mellett a Kar hallgatóinak is lehetőségük van bemutatni a kutatási témáikat magyar vagy angol nyelven. Ezen felül kiemelkedő szakmai programunk még a Szakkollégiumi Napok, aminek keretein belül egy egész héten át izgalmas előadásokkal szolgálunk minden kedves érdeklődőnek, és van lehetőség gyárak meglátogatására is.",
+          "Nagy hangsúlyt fektetünk a tehetséggondozásra, és jelentős szerepet vállalunk az oktatásban, mintegy kiegészítve a Kar oktatási tevékenységét. Kiemelt eseményünk a frissen felvett hallgatóknak megrendezésre kerülő Kémszámtábor, ahol a diákok felfrissíthetik tudásukat kémiai számításokból és matematikából, mindamellett megismerhetik leendő szaktársaikat és az egyetem környékét.",
+          "Immáron kettő, a fiatalabb generációt megszólító versenyünk is van. Az egyik a középiskolásoknak szóló Oláh György Országos Középiskolai Kémiaverseny, ahol több kategóriában mérhetik össze tudásukat az érdeklődők. Az id. Szántay Csaba Országos Általános Iskolai Kémiaverseny pedig a kicsik körében kívánja népszerűsíteni a kémiát kreatív feladatokkal.",
+          "Ezeken felül még rengeteg egyéb programunk is van, köztük tréningek, kurzusok, laborok, közösségi programok. Egy biztos, hogy SzASz-osként az ember sosem unatkozik. Rendkívül összetartó és vidám közösség vagyunk, ahol amellett, hogy jól érezheted magad a hasonló érdeklődésű emberek között, rengeteget fejlődhetsz is minden téren."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "szasz.bme.hu",
+            "url": "http://szasz.bme.hu"
+          }
+        ],
+        "images": [
+          "szent_gyorgyi.jpg"
+        ]
+      },
+      {
+        "id": "wigner",
+        "title": "BME Wigner Jenő Szakkollégium",
+        "description": [
+          "A Wigner Jenő Szakkollégium a BME Természettudományi Karának szakkollégiuma, amit pár lelkes fizikus és matematikus hallgató alapított 2011 tavaszán, így az egyik legfiatalabb a Műegyetemen.",
+          "Szakkollégiumunk célja, hogy összefogja a lelkes és érdeklődő hallgatókat, színesítse szakmai és közösségi életüket, mindennapjaikat az egyetemen. Szívesen látunk mindenkit, aki az egyetemi órák kötöttsége nélkül szeretne elmélyedni a fizika vagy a matematika érdekes témáiban. Igyekszünk egyensúlyban tartani az elméleti és a gyakorlati vonalat, a fizika és matematika, illetve ezek határterületeinek legkülönbözőbb részeit érintve.",
+          "A Szakkollégium programjai között találhatók kurzusok, nagyobb előadások, szemináriumok, például programozós, a fizika és a matematika különböző területeit érintő (egyetemi tananyagon túlmutató) szemináriumok, de persze egyéb, nem reál tudományokkal kapcsolatos szemináriumaink is vannak, mint például a filozófia szeminárium, ami évekkel ezelőtt indult és most is az egyik leglátogatottabb. Továbbá részt lehet venni kísérleti és demonstrációs eszközök építésében is, amikkel előszeretettel bemutatózunk a Kutatók Éjszakáján, nyílt napokon vagy iskolalátogatások keretein belül.",
+          "Kari rendezvényeink a BME Fizikaverseny, amit minden évben megszervezünk és amelyre sok szeretettel várunk minden versenyzőt. Szoktunk továbbá sakkversenyeket is rendezni és hagyományt szeretnénk teremteni az idén először megrendezett és nagy sikert aratott Integrálóversenyből is.",
+          "A Wigner Jenő Szakkollégium legfontosabb eseménysorozata pedig a minden tavasszal megrendezett Szak7, amikor egy héten keresztül minden nap készülünk különböző szakmai és közösségi programokkal.",
+          "A látókör szélesítése mellett természetesen az is cél, hogy a tagságot egy jó hangulatú közösséggé kovácsoljuk össze, így kirándulásokat, például túrázásokat, Balaton körbebiciklizést, vacsorákat, közös palacsintázásokat, társasesteket is szervezünk kikapcsolódásként."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "wjsz.ktk.bme.hu",
+            "url": "http://wjsz.ktk.bme.hu"
+          }
+        ],
+        "images": [
+          "wigner.jpg"
+        ]
+      },
+      {
+        "id": "zielinski",
+        "title": "BME Zielinski Szilárd Építőmérnöki Szakkollégium",
+        "description": [
+          "A Műegyetem Építőmérnöki Karán működő legnagyobb öntevékeny, hallgatói és szakmai kör - a sokszor csak „A Szakkoli” néven emlegetett szervezet -, a BME Zielinski Szilárd Építőmérnöki Szakkollégium.",
+          "Szakkollégiumunk a Magyarországon jelen lévő több mint 130 szakkollégium közül az egyetlen, építőmérnök hallgatókat összefogó nemzetközi szervezet Magyarországon, amely többek között szakmai kirándulásokat, versenyeket, építkezéslátogatásokat, konferenciákat, szoftveroktatásokat és kerekasztal-beszélgetéseket bonyolít le.",
+          "Szakkollégiumot 2004-ben alapította tíz lelkes hallgató, hogy a ’70-es évektől jelen lévő szakmai öntevékeny köröket újjáélessze és egyesítse. A szervezett azóta több mint 50 fős tagsággal rendelkezik, csatlakozott az országos Szakkollégiumi Mozgalomhoz és a Műegyetemen működő 14 szakkollégiumot összefogó szervezethez, a Műegyetemi Szakkollégiumok Közösségéhez (MŰSZAK). Emellett Szakkollégiumunk 2026-ig ismét megszerezte a minősített státuszt.",
+          "A szervezet jelenleg négy tagozatból áll. A tagozatok megfeleltethetőek az építőmérnöki képzés szakirányainak. A Földmérő Tagozat a földméréssel és térinformatikával foglalkozó hallgatók csoportjait fogja össze. A Kör-Vas-Út Tagozat (KVÚ) a közlekedés-, közút- és vasút-barátokat, igaz urbanistákat tömörítő alszervezet. A Szerkezetépítő Tagozat sűríti a szerkezetes, azaz a magasépítés, hidak, geotechnika, építéstechnológia vagy akár a szerkezeti anyagok iránt érdeklődő hallgatókat. A szakkollégium Vízépítő Tagozata azokat a hallgatókat fogja össze, akiket a tanórákon kívül is érdekelnek a vízépítéssel, vízgazdálkodással, vízellátással és csatornázással kapcsolatos ismeretek, érdekességek.",
+          "Szervezetünk 2017 óta az International Association of Civil Engineering Students (IACES) tagja, amely több, mint 20 egyetem hallgatóival biztosít összeköttetést világszerte 14 országban. Ennek köszönhetően rengeteg lehetőség nyílik Szakkollégiumunk tagjai számára, hogy szakmai tudásukat bővítsék, és megismerkedjenek más országok építőmérnök hallgatóival Mexikótól kezdve, Németországon át Egyiptomig.",
+          "Fő célunk, hogy az egyetemi elméleti tananyagot gyakorlati, tapasztalati ismeretekkel egészítsük ki, illetve, hogy az ipart közelebb hozzuk az egyetemi oktatáshoz. Ezzel elősegítve, hogy nyitottabb szélesebb látókörrel rendelkező építőmérnökök kerüljenek ki a Műegyetemről.",
+          "Ezeken kívül a Szakkollégium az azonos érdeklődéssel rendelkező hallgatók számára egy olyan baráti légkörrel rendelkező közösséget biztosít, ahol a hallgatók szakmailag kiteljesedhetnek, kapcsolatokat építhetnek és tapasztalatokat szerezhetnek az egyetem elvégzése előtt."
+        ],
+        "social_title": "Elérhetőségek",
+        "social_links": [
+          {
+            "label": "zielinski.hu",
+            "url": "http://zielinski.hu"
+          }
+        ],
+        "images": [
+          "zielinski.jpg"
+        ]
+      }
+    ]
   }
 }

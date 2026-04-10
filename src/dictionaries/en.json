@@ -1760,5 +1760,315 @@
         ]
       }
     ]
+  },
+  "advanced_colleges": {
+    "title": "Professional Colleges",
+    "description": [
+      "Professional Colleges provide members with knowledge complementing their university studies while also allowing them to become part of a cohesive community.",
+      "Furthermore, they organize numerous public educational events, such as lectures, workshops, and courses for students. They even host several academic competitions for high school students, where achieving high rankings can earn extra points in the university admission process.",
+      "There are fourteen Professional Colleges operating at BME in total, each centered around a different field of science, ensuring everyone can find an organization that matches their interests."
+    ],
+    "muszak": {
+      "title": "Community of Professional Colleges at BME",
+      "description": [
+        "The Community of Professional Colleges at BME (MŰSZAK) is the umbrella organization bringing together the Professional Colleges at the university. It maintains relations with the University Students' Representation, the university management, and external bodies, while also supporting operating and newly forming Professional Colleges. Besides joint representation, it considers building networks among Professional Colleges and sharing knowledge across disciplines important. It supports groups aiming to become Professional Colleges and preserves and enriches the existing knowledge of the colleges, providing opportunities for development and talent realization. MŰSZAK is also an exemplary community offering professional and friendly relations, creating a platform to broaden individual perspectives and achieve common goals. Alongside regular community events and team-building activities, it organizes a MŰSZAK Camp with professional programs every semester."
+      ],
+      "social_title": "Contact",
+      "social_links": [
+        {
+          "label": "muszak.bme.hu",
+          "url": "http://muszak.bme.hu"
+        }
+      ],
+      "images": [
+        "muszak.jpg"
+      ]
+    },
+    "teams": [
+      {
+        "id": "energetikai",
+        "title": "Professional College of Energy",
+        "description": [
+          "The Professional College of Energy was founded in 2002 with the aim of providing students interested in energy with unique opportunities to learn about the industry up close and participate in scientific life related to the sector. Furthermore, our mission is to acquaint the public with energy, popularizing the field.",
+          "Every university semester, we organize a diverse series of public programs with lectures and factory visits, which are free for everyone to attend. We are present at several expos and festivals annually, where we try to raise interest in energy using our self-made demonstration tools. We prepare multi-round academic competitions for high school students every year, and we biennially host our IYCE international conference, welcoming participants and speakers from all over the world.",
+          "We prepare various professional and community programs for our members. In cooperation with industry players and university experts, internal courses and training sessions await the college members every semester, where we strive to equip them with knowledge that cannot be acquired during regular studies. Our older members gladly help younger ones in the world of research, which results in a series of TDK (Scientific Students' Associations) papers, journal articles, and conference presentations. Naturally, besides professionalism, community is also defining in the College's life. We gather weekly for sports and beers, but we also prepare larger-scale events like trips, PubQuizzes, and team-building weekends every few months.",
+          "We can be found on Facebook and LinkedIn (Energetikai Szakkollégium), Instagram (@eszkorg), and our website, eszk.org."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "eszk.org",
+            "url": "http://eszk.org"
+          }
+        ],
+        "images": [
+          "energetikai.jpg"
+        ]
+      },
+      {
+        "id": "epitesz_klub",
+        "title": "BME Architecture Club Professional College",
+        "description": [
+          "Community. Professional development. Study trip. Studio. Workshops. Building tours. Practical experience. ArchiCAD course. Freshmen camp. Concepts that characterize us, concepts that come to life in the Club. You can find us in the studio on the 5th floor of the Bercsényi Dormitory, at a meeting, or while drawing for a submission. If you want to acquire skills beyond your studies and be part of a super community, join us!"
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "facebook.com/EpiteszKlubBME",
+            "url": "http://facebook.com/EpiteszKlubBME"
+          }
+        ],
+        "images": [
+          "epitesz_klub.jpg"
+        ]
+      },
+      {
+        "id": "eszak",
+        "title": "Professional College of Architecture",
+        "description": [
+          "The Professional College of Architecture - ÉSZAK - is a self-organizing professional community that provides space for learning and development beyond university frameworks. Our mother university is BME, but students from other institutions and majors are also an integral part of the membership. Our goal is to think together about architecture, art, and the world through workshops, self-education groups, and other programs, so that we can also use the jointly acquired knowledge and experiences for the benefit of our broader environment."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "eszak.eu",
+            "url": "http://eszak.eu"
+          }
+        ],
+        "images": [
+          "epitesz.jpg"
+        ]
+      },
+      {
+        "id": "gepesz",
+        "title": "BME Professional College of Mechanical Engineering",
+        "description": [
+          "The BME Professional College of Mechanical Engineering was formed in 2012 by uniting the self-active circles operating at the Faculty of Mechanical Engineering. Since then, we have become the largest qualified Professional College in the country with over 250 active members and eight departments covering almost all areas of mechanical engineering. These are: Applied Mechanics Department, Fluid Mechanics Department, Design Department, Building Services Engineering Department, Mechanical Process Engineering Department, Manufacturing Department, Heat Engines Department, Mechatronics Department.",
+          "Our college's goal is for our members to acquire professional knowledge that complements and deepens their university studies. There is an opportunity to perform complex, multi-disciplinary engineering tasks supported by industrial contacts; our departments organize factory visits, lectures on current topics, consultations, department sessions, and trainings, professionally support research and TDK work, and assist the departments' work while building a cohesive professional-friendly community."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "gszk.bme.hu",
+            "url": "http://gszk.bme.hu"
+          }
+        ],
+        "images": [
+          "gepesz.jpg"
+        ]
+      },
+      {
+        "id": "gillemot",
+        "title": "Gillemot László Professional College",
+        "description": [
+          "The Gillemot László Professional College was founded in 2018 with the aim of enabling students of the BME Faculty of Mechanical Engineering to acquire knowledge related to materials science and technology beyond their university education. It achieves this by organizing lectures, courses, study trips, factory visits, and laboratory sessions. They pay special attention to building the university community, supported by team-building programs and activities aimed at social responsibility.",
+          "Furthermore, the college's goal is to promote the professional development and scientific work of its members, realized through support for TDK, OTDK, conference participation, consultations, and research opportunities. They also play an important role in maintaining contact with industrial and professional partners, as well as between the university and students. Their educational support activities include tutoring and exam preparation. Their services for the university community – such as laser engraving, equipment rental, and custom badge and magnet pressing – are continuously expanding."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "glsz.bme.hu",
+            "url": "http://glsz.bme.hu"
+          }
+        ],
+        "images": [
+          "gillemot.png"
+        ]
+      },
+      {
+        "id": "kommon",
+        "title": "kommON Professional College of Communication",
+        "description": [
+          "kommON is a community of creative young people who have found a professional home in the world of communication, be it PR, graphic design, journalism, online marketing, or even event organization. In the Professional College, we strive to complement theoretical knowledge acquired at the university with valuable market and practical knowledge. The #kommONfamily is not just an Instagram-compatible hashtag but an attitude and vibe that permeates the organization: we participate in exciting team-building programs, go to camps, and organize spontaneous meetings.",
+          "Professional work: We organize public lectures under the name \"Professional Evening\" - but this is just the tip of the iceberg: we hold multi-session free courses for our members, which end with a practical exam and a certificate. Besides these, we also hold trainings and workshops for each other to learn new skills.",
+          "Community life: Although unlike a traditional dorm we don't live together, we build a close, cohesive community in countless ways. We regularly hold formal and informal team-building programs, and we go camping three or four times a year. Besides valuable networking, we also want to form true friendships.",
+          "Self-organization: In the spirit of one of the basic principles of the Professional College Movement, kommON is an autonomous, self-organizing group. The operation and development of the organization depend exclusively on the student membership and the presidency. We convene a General Assembly for elections, and the work of the leadership and the entire college is evaluated by the supervisory board."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "kommon-szakkollegium.hu",
+            "url": "http://kommon-szakkollegium.hu"
+          }
+        ],
+        "images": [
+          "kommon.jpg"
+        ]
+      },
+      {
+        "id": "kozmosz",
+        "title": "University Cosmos Professional College",
+        "description": [
+          "The University Cosmos Professional College is a community of BME students interested in space research. Our goal was to create a group where everyone can indulge their love for the infinite cosmos.",
+          "To this end, the college organizes lectures and courses with speakers who are at the forefront of the space industry and astronomy. Recently we've had astrophysics and circuit design courses, and we've also heard lectures from a NASA engineer, a black hole researcher, a paleontologist, and an astrobiologist.",
+          "We also work on projects. Currently, we are dealing with visual and radio meteor detection, downloading satellite images, and astrophotography, but we also plan to build various particle detectors and launch our own balloon.",
+          "Sometimes we also go out into the field. We visit space industry companies, and we've been to the BME satellite receiving ground station several times, where we successfully downloaded pictures of Earth from space. Furthermore, we engage in astronomy and astrophotography with our own instruments, as well as amateur radio activities.",
+          "Cosmos also participates in organizing the Cansat Hungary competition. In this framework, high school students have to build instruments the size of a soda can, which perform scientific measurements when launched to an altitude of 1000m by rocket. We also take a significant role in executing the H-Space conference.",
+          "If any of the above interests you, regardless of which university you attend, you are very welcome in Cosmos!"
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "kozmosz.bme.hu",
+            "url": "http://kozmosz.bme.hu"
+          }
+        ],
+        "images": [
+          "kozmosz.jpg"
+        ]
+      },
+      {
+        "id": "kozlekedesmernoki",
+        "title": "BME Professional College of Transportation Engineering",
+        "description": [
+          "What do we do? With the help of more than forty members, we organize professional trips and factory visits. In the past semester, we visited the Waberer’s BILK site, the Millennium Underground, and the Zugliget Chairlift.",
+          "We also organize lectures with industry professionals. Our guest speaker was Gábor Berezvai, director of the Hungarian Automobile Club Classic Car Section, from whom we learned in detail how Hungarian classic cars are put into circulation. In November, we also participated in driving technique training at the Hungarian Automobile Club.",
+          "We also organize educational programs: you can learn a lot at the university during classes, but obviously there isn't time for everything. In September 2023, we started Freshman Education: we hold weekly supplementary theoretical education for vehicle engineers about internal combustion engines, bodywork, and other interesting topics related to cars. We demonstrate the use of tools and measuring instruments, preparing for later engine assembly education. Here, during engine assembly sessions, they can learn everything about the basics of engine assembly from scratch. We also hold a winter inspection every year, where owners can get a more accurate picture of their own car's condition through measurements.",
+          "During an academic year, two of our own events, which have now become traditional, take place in the spring semester, namely the Professional Day and the Urban Planning Days (VTN). During the Professional Day, industry players participate as exhibitors and also hold professional presentations. Numerous programs take place in the large lecture halls of the St building, while you can encounter various interesting vehicles in the adjacent parking lot. Exhibitors and speakers can thus connect with future employees already at the university.",
+          "VTN is a team competition where teams of architects and transportation engineers have to redesign a busy Budapest intersection to make transportation there simpler and better. The concept of the event is based on the fact that architects can design a beautiful building, and transportation engineers can tell how this would be good to implement from a transportation perspective. You can and should apply for this competition even as a freshman because you can gain a lot of useful experience for the future.",
+          "The most important reason the Transportation Professional College exists is the community. We offer space for those interested in the profession. Many meet their fellow students here who share their passion, and they start joint projects here too.",
+          "Students from all three majors can join us, whether they are studying to be transportation, vehicle, or logistics engineers. You can apply to our four sections and join our ongoing projects: Vehicle Technology section, Vehicle Innovation section, Transportation Technology section, Logistics section."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "szakkollegium.com",
+            "url": "http://www.szakkollegium.com"
+          }
+        ],
+        "images": [
+          "kozlekedesmernoki.jpg"
+        ]
+      },
+      {
+        "id": "liska",
+        "title": "Liska Tibor Professional College",
+        "description": [
+          "The Liska Tibor Professional College operating at the Budapest University of Technology and Economics officially formed in March 2007 at the Faculty of Economic and Social Sciences. Previously, in a different form but with a similar spirit, a Professional Organizing Team had been operating since 2004.",
+          "In 2004, the thought arose among a few students of the relatively young GTK (Faculty of Economic and Social Sciences), alongside many other BME faculties, that there is a need for events and lectures that go beyond the necessarily rigid limits of university lectures and practices, showing the interesting aspects and practical operation of business and economic processes alongside a purely theoretical approach. As a result of these thoughts, the 1st Economic and Management Professional Week was held in March 2005. The programs included various professional and semi-professional lectures, where several renowned company executives and the then Minister of Education honored us with a presentation.",
+          "Seeing the success of the Professional Weeks, the Professional Organizing Team eventually found the time right to give a new framework to the GTK professional-community life that had started to develop through years of work. This new framework, building on the experiences of previous years, became the Liska Tibor Professional College.",
+          "Since 2007, our Professional College has continuously grown and developed, and several of our programs have become permanent over the years. These include, among others, the annual Liska Tibor Professional Days (the successor of the former Professional Week), where we invite renowned speakers in their profession to help the audience's development with presentations on current topics. Every two years we organize our camp, LisKaLand, based on our namesake's model, which attracts increasingly broad interest, and our Professional College has also successfully organized several case study competitions. Additionally, our autumn and spring camps, the Liska-evening for sponsors and speakers are held every year, and the LisConference lecture series has been held since 2014.",
+          "Numerous opportunities are provided for our Liska members within the Professional College. They can choose to apply to one of five teams (professional, PR, HR, finance, marketing), and after their admission, they continue their journey as team members. Through this, they not only acquire new skills to develop themselves and help the college's development in that area, but they can also get to know their peers with similar interests better.",
+          "Belonging to a team is not mandatory; many development opportunities lie in the execution of individual projects and various programs as well. In the spirit of grassroots organization, any Active member can boldly apply to organize these. Wherever our Liska members find themselves, they can master teamwork, taking responsibility, problem-solving, and many other useful skills everywhere."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "ltsz.hu",
+            "url": "http://ltsz.hu"
+          }
+        ],
+        "images": [
+          "liska.jpg"
+        ]
+      },
+      {
+        "id": "management",
+        "title": "BME Management Professional College",
+        "description": [
+          "The BME Management Professional College (MSZK) proudly bears the title of the oldest Professional College of the Budapest University of Technology and Economics, operating successfully for nearly 40 years with well over 800 alumni members.",
+          "Our central concept is the \"Leadership Playground\", aiming to create a playground for developing leadership skills. This means providing an inspiring environment for our members where they can unfold their leadership potential and practice in various leadership situations. Our concept was featured at the Kairos Society conference in New York in 2010 among the world's 100 most innovative business ideas.",
+          "One of the main pillars of our organization is Community. Our membership is extremely diverse, as students from all BME faculties can apply to us. We believe that in a family environment, we can bring out the maximum from ourselves and each other. To this end, our Talent Management area works tirelessly to organize the most exciting programs possible. These programs fall under 2 categories. There are formal ones, like the InfoEvenings held every Monday, team buildings, and our Shakedown Camps, where we travel to different places together for a few days to forge bonds. Informal programs include joint movies, pub crawls, board game nights, and many great experiences.",
+          "MSZK is a project-based matrix organization. This means we are divided into 6 different working areas of management, whose members also participate in project work. This gives rise to our Practice pillar.",
+          "Our areas and their main tasks: Operational (IT systems, work environment, and Project Management Office), Professional (Organizing trainings and liaising with speakers), Public Relations / PR (Liaising with companies and external organizations, acquiring sponsorships), Marketing (Designing online identity, managing Social Media pages and the website), Economic (Writing tenders, contracts, and budget planning), Talent Management / TGT (Organizing community programs, holding team buildings, planning career paths).",
+          "Our projects: Management Academy (Organizing and holding a professional summer camp), ESET (Organizing and conducting a case study competition), FELVI (Recruitment, attracting new applicants, retaining membership), Consulting Group / CG (Providing consulting to other organizations).",
+          "The third pillar of our Professional College is Professionalism, within which our members can participate for free in trainings organized by our professional area, which can be valued in the hundreds of thousands of forints. After completing our training system, our members may also receive an MSZK diploma in the future."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "mszk.bme.hu",
+            "url": "http://mszk.bme.hu"
+          }
+        ],
+        "images": [
+          "management.jpg"
+        ]
+      },
+      {
+        "id": "simonyi",
+        "title": "Simonyi Károly Professional College",
+        "description": [
+          "The Simonyi Károly Professional College is a student professional organization operating in the Schönherz Dormitory (1117 Budapest, Irinyi József u. 42) of the Faculty of Electrical Engineering and Informatics (VIK) at the Budapest University of Technology and Economics (BME). The Professional College took the name of Simonyi Károly, the fervently respected professor of BME VIK, in 2003 as the legal successor of the Schönherz Professional College founded in 1997. The goal of the Professional College is to nurture engineering culture and educate for intellectual thinking.",
+          "To this end, it organizes courses, demonstrations, conferences, and other professional events. The organization brings together professional self-active circles aiming to provide VIK students with opportunities to acquire knowledge complementing university education and gain practical experience. It is also present in Professional College communities nationally and internationally. The college's circles ensure students' development with courses and well-equipped workshops. The Professional College was awarded the Junior Prima Primissima prize in the education and public education category in 2009. Its most well-known event is the annual Simonyi Conference, where the industry's most renowned companies also represent themselves."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "simonyi.bme.hu",
+            "url": "http://simonyi.bme.hu"
+          }
+        ],
+        "images": [
+          "simonyi.jpg"
+        ]
+      },
+      {
+        "id": "szent_gyorgyi",
+        "title": "BME Szent-Györgyi Albert Professional College",
+        "description": [
+          "The BME Szent-Györgyi Albert Professional College (SzASz for short) was formed in 2001 and has been an unbroken self-active circle at the BME Faculty of Chemical Technology and Biotechnology ever since. Our Professional College's main goal is to organize professional and scientific programs, and popularize our scientific field and profession at the university and beyond. We organize numerous professional, educational, and cultural events during the academic year, which either expand the students' professional knowledge or just serve for pleasant relaxation. We continuously provide our members with opportunities for self-development both within the profession and in broader circles.",
+          "The Szent-Györgyi Albert Conference is held every year, where besides invited speakers, students of the Faculty also have the opportunity to present their research topics in Hungarian or English. In addition, our outstanding professional program is the Professional College Days, during which we serve all interested with exciting lectures for a whole week, and there is also an opportunity to visit factories.",
+          "We place great emphasis on talent management and play a significant role in education, essentially complementing the Faculty's educational activities. Our prominent event is the ChemMath Camp organized for newly admitted students, where students can refresh their knowledge in chemical calculations and mathematics, while also getting to know their future classmates and the university surroundings.",
+          "We now have two competitions addressing the younger generation. One is the György Oláh National High School Chemistry Competition for high school students, where those interested can measure their knowledge in several categories. The id. Csaba Szántay National Primary School Chemistry Competition aims to popularize chemistry among the little ones with creative tasks.",
+          "In addition to these, we have many other programs, including trainings, courses, labs, and community programs. One thing is certain, as a SzASz member, you never get bored. We are an extremely cohesive and cheerful community where, besides having a good time among people with similar interests, you can also develop a lot in every field."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "szasz.bme.hu",
+            "url": "http://szasz.bme.hu"
+          }
+        ],
+        "images": [
+          "szent_gyorgyi.jpg"
+        ]
+      },
+      {
+        "id": "wigner",
+        "title": "BME Wigner Jenő Professional College",
+        "description": [
+          "The Wigner Jenő Professional College is the Professional College of the BME Faculty of Natural Sciences, founded by a few enthusiastic physics and mathematics students in the spring of 2011, making it one of the youngest at the Technical University.",
+          "Our Professional College's goal is to bring together enthusiastic and interested students, color their professional and community life, and their everyday lives at the university. We welcome everyone who wants to immerse themselves in interesting topics of physics or mathematics without the constraints of university classes. We try to balance the theoretical and practical lines, touching on the most diverse parts of physics and mathematics, and their border areas.",
+          "Among the College's programs are courses, larger lectures, and seminars, such as programming, seminars touching on various areas of physics and mathematics (going beyond the university curriculum), but of course, we also have other seminars not related to exact sciences, such as the philosophy seminar, which started years ago and is still one of the most visited. Furthermore, you can participate in building experimental and demonstration tools, which we love to show off at Researchers' Night, open days, or during school visits.",
+          "Our faculty events include the BME Physics Competition, which we organize every year and where we warmly welcome every competitor. We also organize chess tournaments and want to create a tradition from the Integration Competition, which was held for the first time this year with great success.",
+          "The most important series of events of the Wigner Jenő Professional College is the Szak7 held every spring, when we prepare various professional and community programs every day for a week.",
+          "Besides broadening horizons, it is naturally also a goal to forge the membership into a good-humored community, so we also organize trips, such as hiking, biking around Lake Balaton, dinners, joint pancake eating, and board game nights for relaxation."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "wjsz.ktk.bme.hu",
+            "url": "http://wjsz.ktk.bme.hu"
+          }
+        ],
+        "images": [
+          "wigner.jpg"
+        ]
+      },
+      {
+        "id": "zielinski",
+        "title": "BME Zielinski Szilárd Professional College of Civil Engineering",
+        "description": [
+          "The largest self-active, student, and professional circle operating at the Faculty of Civil Engineering of the Technical University - the organization often referred to simply as \"The Szakkoli\" - is the BME Zielinski Szilárd Professional College of Civil Engineering.",
+          "Among the more than 130 Professional Colleges present in Hungary, our Professional College is the only international organization uniting civil engineering students in Hungary, conducting professional trips, competitions, construction site visits, conferences, software trainings, and roundtable discussions among other things.",
+          "The Professional College was founded in 2004 by ten enthusiastic students to revive and unite the professional self-active circles present since the '70s. Since then, the organization has a membership of over 50 people, joined the national Professional College Movement and the Community of Professional Colleges at BME (MŰSZAK) uniting 14 Professional Colleges operating at the Technical University. Furthermore, our Professional College has again acquired qualified status until 2026.",
+          "The organization currently consists of four sections. The sections correspond to the specializations of the civil engineering program. The Surveyor Section brings together groups of students dealing with surveying and geoinformatics. The Circle-Rail-Road Section (KVÚ) is a sub-organization gathering transport, road, and railway friends, true urbanists. The Structural Builder Section concentrates students interested in structural engineering, i.e., building construction, bridges, geotechnics, construction technology, or even structural materials. The Water Builder Section of the college brings together students who are also interested in knowledge and interesting facts related to water engineering, water management, water supply, and sewerage outside of classes.",
+          "Our organization has been a member of the International Association of Civil Engineering Students (IACES) since 2017, which provides connections with students from more than 20 universities in 14 countries worldwide. Thanks to this, numerous opportunities open up for the members of our Professional College to expand their professional knowledge and get to know civil engineering students from other countries, starting from Mexico, through Germany, to Egypt.",
+          "Our main goal is to complement theoretical university curriculum with practical, experiential knowledge, and to bring the industry closer to university education. Thus facilitating the graduation of more open-minded civil engineers with a broader perspective from the Technical University.",
+          "In addition to these, the Professional College provides a friendly community atmosphere for students with similar interests, where students can fulfill themselves professionally, build relationships, and gain experience before completing university."
+        ],
+        "social_title": "Contact",
+        "social_links": [
+          {
+            "label": "zielinski.hu",
+            "url": "http://zielinski.hu"
+          }
+        ],
+        "images": [
+          "zielinski.jpg"
+        ]
+      }
+    ]
   }
 }

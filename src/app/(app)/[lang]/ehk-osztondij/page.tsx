@@ -14,7 +14,7 @@ export default async function EHKScholarshipPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader title={dictionary.scholarships.ehk.title} />{" "}
         <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
           {dictionary.scholarships.ehk.items.map((item) => (

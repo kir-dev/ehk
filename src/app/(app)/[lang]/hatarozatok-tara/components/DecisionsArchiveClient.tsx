@@ -15,7 +15,7 @@ export default function DecisionsArchiveClient({ decisions }: Props) {
   const { t } = useTranslate();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-2 md:px-4 py-8">
       <PageHeader 
         title={t("decisions.title")}
         description={t("decisions.description")}

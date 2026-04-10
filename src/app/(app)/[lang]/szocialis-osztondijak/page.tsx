@@ -13,7 +13,7 @@ export default async function SocialScholarshipPage({
 
     return (
         <div className="bg-gray-50 min-h-screen flex flex-col">
-            <div className="container mx-auto px-4 py-8">
+            <div className="container mx-auto px-2 md:px-4 py-8">
                 <PageHeader title={social.regular.title} />
                 <Card className="group hover:shadow-md transition-all duration-300 mb-6">
                     <CardContent className="p-3 md:p-6">

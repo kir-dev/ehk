@@ -15,7 +15,7 @@ interface LanguageEducationContent {
 
 export default function LanguageEducationContent({ content }: { content: LanguageEducationContent }) {
   return (
-    <div className="container mx-auto lg:px-4 px-2 py-8">
+    <div className="container mx-auto px-2 md:px-4 py-8">
       <Card>
         <CardContent className="p-3 md:p-6">
           <div className="flex not-md:flex-col gap-2 md:gap-3">

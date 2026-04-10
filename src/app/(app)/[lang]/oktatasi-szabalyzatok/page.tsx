@@ -15,7 +15,7 @@ export default async function RegulationsPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader title={dictionary.regulations.title_academic} />
         <Suspense fallback={<LoadingRegulationsGrid />}>
           <RegulationsList loader={getAcademicRegulations} />

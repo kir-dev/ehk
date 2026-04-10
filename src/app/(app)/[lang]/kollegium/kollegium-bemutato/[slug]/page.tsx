@@ -81,7 +81,7 @@ export default async function DormitoryDetailsPage({
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="container mx-auto px-4 py-8">
+            <div className="container mx-auto px-2 md:px-4 py-8">
                 <Link 
                     href={`/${lang}/kollegium/kollegium-bemutato`} 
                     className="inline-flex items-center text-red-700 hover:text-red-800 font-medium mb-6 transition-colors"

@@ -31,7 +31,7 @@ export default async function VersenycsapatokPage({
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader title={data.title} />
 
         <Card className="mx-auto mb-12 bg-white/50 backdrop-blur-sm border-slate-200/60 shadow-sm">

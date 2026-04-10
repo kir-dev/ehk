@@ -31,7 +31,7 @@ export default async function SzakkollegiumokPage({
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader title={data.title} />
         
         {/* Intro section, if any */}

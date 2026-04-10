@@ -16,7 +16,7 @@ export default function PermissionsListClient({ permissions }: Props) {
   const { t, lang } = useTranslate()
 
   return (
-    <div className="container mx-auto lg:px-4 px-2 py-8">
+    <div className="container mx-auto px-2 md:px-4 py-8">
       {permissions.length === 0 ? (
         <Card>
           <CardContent className="text-center py-12">

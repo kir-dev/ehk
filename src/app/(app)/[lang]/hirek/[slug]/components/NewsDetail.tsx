@@ -11,7 +11,7 @@ interface NewsDetailProps {
 export function NewsDetail({ article }: NewsDetailProps) {
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="container mx-auto px-4 py-6 md:py-8">
+            <div className="container mx-auto px-2 md:px-4 py-6 md:py-8">
                 <BackNav />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     <div className="md:col-span-2">

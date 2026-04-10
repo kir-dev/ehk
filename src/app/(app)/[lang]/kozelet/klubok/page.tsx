@@ -40,7 +40,7 @@ export default async function KlubokPage({
   if (clubs.length === 0) {
     return (
       <div className="min-h-screen">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-2 md:px-4 py-8">
           <PageHeader title={title} />
           <ClubsEmptyState title={dictionary.clubs.no_results} />
         </div>
@@ -50,7 +50,7 @@ export default async function KlubokPage({
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader title={title} />
 
         <Card className="mx-auto mb-12 bg-white/50 backdrop-blur-sm border-slate-200/60 shadow-sm">

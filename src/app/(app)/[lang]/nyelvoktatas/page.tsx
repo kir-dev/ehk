@@ -12,7 +12,7 @@ export default async function LanguageEducationPage({
 
     return (
         <div className="min-h-screen bg-gray-50">
-          <div className="container mx-auto px-4 py-8">
+          <div className="container mx-auto px-2 md:px-4 py-8">
             <PageHeader title={dictionary.language_education.title} />
             <Suspense fallback={<LoadingRegulationsGrid />}>
               <LanguageEducationContent content={dictionary.language_education} />

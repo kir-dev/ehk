@@ -1397,13 +1397,166 @@
     },
     "logo_alt": "BME Logo"
   },
-  "clubs": {
-    "title": "BME Dormitory Community Life",
-    "subtitle": "Scene: Clubs and Venues",
-    "description": "BME dormitories provide not only accommodation but also serve as key venues for student community life and entertainment. Below are the clubs and bars organized or operated by students, which are the centers of vibrant nightlife.",
-    "location": "Location:",
-    "opening_hours": "Opening hours:",
-    "no_results": "There are no active clubs at the moment"
+  "ontevekeny_korok": {
+    "title": "Student Clubs Introduction",
+    "korok": [
+      {
+        "id": "bme_aerospace",
+        "title": "BME Aerospace Team",
+        "description": [
+          "The BME Aerospace Team is an innovative student rocketry team with a committed and motivated membership, where technical developments are coupled with a high emphasis on student knowledge expansion and community building.",
+          "Research rockets are single- or multi-stage vehicles that typically transport scientific experiments into the atmosphere using solid-propellant rocket motors. The BME Aerospace Team was created to build research rockets and pave the way for those interested in space research and space technology, particularly the world of rockets.",
+          "The BME Aerospace Team's developments focus on onboard computers, ground equipment (e.g., antenna systems), and active aerodynamic control. The team launches its experiments using its own developed solid-propellant or hybrid-powered rockets.",
+          "The BME Aerospace Team eagerly awaits students interested in space sciences!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Website", "url": "https://bmeaerospace.hu" },
+          { "label": "Facebook", "url": "https://www.facebook.com/bmeaerospace/" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bmeaerospace/" },
+          { "label": "LinkedIn", "url": "https://www.linkedin.com/company/bmeaerospace/" }
+        ],
+        "images": ["Aerospace1.jpg másolata.jpg", "Aerospace2.jpg másolata.jpg", "Aerospace3.png másolata.png"]
+      },
+      {
+        "id": "squash_kor",
+        "title": "Squash Club",
+        "description": [
+          "The BME Squash Club started in 2012 with the aim of bringing together university students who love squash and helping them improve in the sport. The club was on hiatus for the past few years, but we revived it in 2023, and it is now more active than ever.",
+          "Our current goal is to introduce squash to as many university students as possible and help them make active, regular exercise a part of their daily lives. To this end, we hold hobby and competitive training sessions. The essence of the experience-based division is to provide the most high-quality training for everyone; therefore, we strive to have players of similar levels train together. However, transitioning between levels is informal, so we handle this flexibly, and the system is also influenced by who can join us on which day. We want to give everyone a chance to try this sport, so anyone can come for even a single training session throughout the year, and if they like it, they can join us for exercise multiple times a week. Our training sessions are extremely complex; we introduce students to all aspects of squash, develop their hitting technique, stamina, and concentration skills; thus, the training moves and recharges the entire body and soul of the participants with energy. Our coaches are former junior competitors who provide the best of their 10+ years of knowledge and experience to students so they can get the maximum out of themselves.",
+          "In addition to training, we organize house championships and team-building sessions where our players can test their skills, experience their progress, and everyone can get to know each other better in the process.",
+          "We recommend this sport to those who want to relieve daily stress alongside studying, move their bodies, or just want to be members of a cohesive, good-spirited team."
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/BmeSquashKor/" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bme.squash/" }
+        ],
+        "images": ["squash.jpg másolata.jpg"]
+      },
+      {
+        "id": "egyetemi_zold_kor",
+        "title": "University Green Club",
+        "description": [
+          "The EZK is an active, creative community operating in the spirit of environmental awareness and sustainability at the university and its surroundings.",
+          "Our history dates back to the 1980s, when it was first established at BME. Initially, we drew attention to the importance of environmental protection by organizing leaflet distributions and trash clean-ups. The organization was on hiatus in the '90s but was revived in 2005, and since then, our scope of activities and membership have been continuously expanding.",
+          "The goal of EZK is to make environmental awareness part of our daily lives. Our activities include various eco-friendly projects, such as building green walls from waste materials, creating raised beds and flower boxes from discarded pallets, and establishing bird-friendly gardens on the university campus, where students and faculty can enjoy the green environment.",
+          "With our projects, we make not only the campus but also the dormitories and surrounding districts more beautiful and livable.",
+          "In addition to our awareness-raising work, we organize numerous leisure programs, clothing swaps, lectures, and workshops, through which students can acquire practical knowledge in the field of environmental protection. We regularly participate in trash clean-up actions, such as on the Danube bank and Gellért Hill, directly contributing to preserving the cleanliness of our environment. We also organize trash-collecting canoeing, where we collect trash floating on the Danube.",
+          "If you love creative activities, are interested in environmental protection, and want to be part of a dynamic team, don't hesitate! Get in touch with us and join the BME University Green Club!",
+          "Together we can work to make our university and environment greener and more sustainable.",
+          "Don't miss out, every hand is needed for the success of environmental protection!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/bme.ezk" },
+          { "label": "Email", "url": "mailto:egyetemizoldkor@gmail.com" }
+        ],
+        "images": ["EZK.jpg másolata.jpg"]
+      },
+      {
+        "id": "bme_lacrosse",
+        "title": "BME Lacrosse",
+        "description": [
+          "Hi everyone!",
+          "Our student club was created for lovers of extreme sports in 2020. Lacrosse as a sport is easy to describe: many strong people fight with sticks for a small ball, with which they then try to score a goal in the opponent's goal. Joking aside, the men's version of the sport is highly contact-oriented, while the women's is much more based on fast ball play. It is difficult to introduce the sport because, as things stand, it is played in three different rule systems. The large-scale traditional version is called field, the more aggressive version is box, and the newest one, which will return to the Olympics in 2028, is called sixes.",
+          "The field version of the sport is played on a standard-sized football pitch with 9+1 players per team; its specialty is that the goals are not at the end of the pitch but are placed about 10 meters further in so that play can also happen behind the goal.",
+          "The game is more physical; the other version, called box lacrosse, is played in hockey arenas; here the rules are a bit looser, but we wear significantly more protective gear to avoid injuries.",
+          "The newest version is played with a 5+1 lineup (also per team) on a significantly smaller grass pitch.",
+          "Our members were persuaded by their love for the sport and our team's strong community to try to convey the magnificence of our sport to as many students as possible. If you would like to join our student club, then search for us at the links below. Currently, we have also started to open towards ice hockey, so if that interests you, feel free to contact us at our contact details below:"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=100061182859746" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bme_lacrosse/" }
+        ],
+        "images": ["lacrosse.JPG másolata.jpg"]
+      },
+      {
+        "id": "mente",
+        "title": "Műegyetemi Néptáncegyüttes",
+        "description": [
+          "The Műegyetemi Néptáncegyüttes (MENTE) started in 2001 from the Faculty of Architecture, and with two decades of continuous expansion, it has grown into one of the university's largest student cultural clubs and a well-known player in the Budapest dance house scene. The goal of the ensemble is for university youth to get to know and master the dances of the Carpathian Basin and maintain the traditions of Hungarian peasant culture. MENTE warmly welcomes all those interested to its beginner, intermediate, and advanced groups. If you want to be a member of a super, cohesive community, all you have to do is come to our first rehearsals at the beginning of the semester. For further information or in case of questions, feel free to contact us at the following contacts: neptanc.bme.hu, neptanc.bme@gmail.com, facebook.com/neptanc.bme"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://facebook.com/neptanc.bme" },
+          { "label": "Email", "url": "mailto:neptanc.bme@gmail.com" },
+          { "label": "Instagram", "url": "https://instagram.com/neptanc.bme" },
+          { "label": "Website", "url": "https://neptanc.bme.hu" }
+        ],
+        "images": ["mente_nagymusor_2022.jpg másolata.jpg", "mente_tábor_2022.jpg másolata.jpg"]
+      },
+      {
+        "id": "buvarklub",
+        "title": "BME Diving Club",
+        "description": [
+          "The BME Diving Club looks back on a decade of history. It was founded by Dr. Dénes Szieberth, a university lecturer at BME, and students passionate about the underwater world. Since then, the club's main goal has been to popularize diving and raise interest in the aquatic world among students and employees of the Budapest University of Technology and Economics.",
+          "Members of the club include all age groups, from university students to graduated engineers and families. What we have in common is a passion for the underwater world and a desire for discovery. Our annual programs include domestic and international diving trips, where there is an opportunity to discover the most beautiful diving sites. Over the past years, we have dived in the Adriatic in Croatia, the Red Sea in Egypt, and many other exciting places. These trips not only provide diving opportunities but also unforgettable shared experiences. In addition, there are club evenings and lectures where we can share our experiences and insights with each other about various aspects of diving. Furthermore, club members participate in various underwater research projects. Our goal is to contribute to the protection of aquatic life and environmental protection.",
+          "Within the framework of the club, it is possible to complete various levels of diving courses, from beginner to advanced. Not a few of our members dive in caves, and many of them started diving at the BME Diving Club. The club's base is in Dorog, so we mostly go there, where we plant plants and tidy up the terrain so that we can see as much as possible underwater. During these times, we always have the opportunity to practice according to our level. But what distinguishes us from other clubs? Combining engineering and natural science knowledge with diving is the creation of the 'scientific diver' program at BME, already well-known at foreign universities. With practical and theoretical knowledge, we can safely and effectively carry out measurements, observations, and sampling underwater. The community of the BME Diving Club helps everyone with diving questions from the very beginning, for example, what is worth buying where, and with non-diving questions alike.",
+          "Furthermore, every spring semester we offer a freely elective subject for those interested in the mysteries of diving. The subject's name is: Diving from an engineering perspective (BMEVESAA010).",
+          "If you are interested in diving, want to be a member of a friendly and supportive community, or simply want to know more about the underwater world, then join us! We welcome everyone, whether a beginner or an experienced diver.",
+          "You can find all necessary information on our Facebook and Instagram pages, but feel free to contact us if you have any questions.",
+          "Dive with us, discover the depths yourself!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/muegyetemibuvarklub" },
+          { "label": "Instagram", "url": "https://www.instagram.com/muegyetemi_buvar?igsh=MWZ3eDg1NW9jdnp0aw==v" }
+        ],
+        "images": ["Műegyetemi Búvárklub csoportképe 1.png másolata.png", "Műegyetemi Búvárklub csoportképe 2..png másolata.png"]
+      },
+      {
+        "id": "rueda_tancklub",
+        "title": "BME Rueda Dance Club",
+        "description": [
+          "The BME Rueda Dance Club was formed in the spring of 2021 with the aim of creating an opportunity for university students to get to know and master various social and individual dances, and to create a dancing community. We currently offer courses where students can get to know Cuban salsa, Dominican bachata, and Latin ballroom dances.",
+          "Our further goal is to offer sophisticated entertainment and networking opportunities where lifelong friendships or even romantic relationships can be born. That's why we regularly hold dance parties, summer camps, and outdoor parties!",
+          "Come and let's dance through the semester together!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Email", "url": "mailto:rueda.bme@gmail.com" },
+          { "label": "Facebook", "url": "https://facebook.com/bmerueda" }
+        ],
+        "images": ["rueda.jpg másolata.jpg"]
+      },
+      {
+        "id": "tiztanc",
+        "title": "BME Tíztánc",
+        "description": [
+          "BME Tíztánc is a university self-organizing club established in 2019. Our main goal is to popularize standard and Latin dance genres among students of the Budapest University of Technology and Economics (BME). Our team was created following the model of 'Ballroom dancing team' groups at MIT and other renowned universities, and it basically encompasses ten dances (5 Latin and 5 standard). The goal of our cohesive and friendly community is to establish competitive dance culture at BME, during which we wish to provide professional yet friendly competitions for those wishing to compete.",
+          "Our team treats attendance requirements flexibly; however, to achieve progress, it is recommended to participate in guided classes as often as possible. BME Tíztánc is addressed exclusively to active BME students, primarily in the 18-30 age group. We welcome all new interested people, whether beginners or old dancers, and no partner or prior dance experience is required to join.",
+          "Currently, teaching is conducted in three different groups: beginner, intermediate, and advanced levels. The beginner group is for those who have never encountered these dances before, while the intermediate and advanced groups are recommended mainly for more experienced dancers. We provide 2x90 minutes of guided classes per week for each group, held by our professional competitive dance instructors. In addition, we also provide practice opportunities for our members several times a week.",
+          "We organize numerous events and programs inside and outside the university, for example, a Gala, Mid-semester Ball, team-building events, and performances. Furthermore, we hold a dance camp in the summer, and we now participate in the ETDS international dance competition for university students every semester. Our events help us get to know each other better and weld ourselves into a true team. Everyone in our club can find challenges and dance opportunities suitable for their own level, and thanks to the friendly and supportive atmosphere, countless lifelong friendships have been formed among us over the years."
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/bmetiztanc" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bmetiztanc" },
+          { "label": "TikTok", "url": "https://www.tiktok.com/@bme_tztnc" },
+          { "label": "Email", "url": "mailto:bme.tiztanc@gmail.com" }
+        ],
+        "images": ["tiztanc.jpg másolata.jpg"]
+      },
+      {
+        "id": "vivokor",
+        "title": "Műegyetemi Fencing Club",
+        "description": [
+          "The Műegyetemi Fencing Club started its operation in 2016; its primary goal is to provide regular training opportunities for fencers studying at BME. Since its formation, the team's membership and equipment have expanded significantly; there are athletes from all faculties of the university on our team, and all three weapon types of fencing (sabre, épée, foil) are available with us.",
+          "We place great emphasis on popularizing the sport; to this end, we organize open training sessions annually, where we welcome all enthusiastic people interested in getting to know fencing more closely, as well as - for the 3rd year now - we are successfully launching beginner courses where one can learn the beauties of the sport from the basics.",
+          "Our club is continuously looking for international and domestic opportunities to build relationships with as many similar university-age fencing communities as possible, as a result of which we had the opportunity to participate in an international competition in China, and the fencing team of BME's partner university (Karlsruhe Institute of Technology) hosted us for a training camp.",
+          "Competitions are also not left out of the team's life; every year we participate in the Hungarian University and College National Championship (MEFOB), where BME has been regularly winning the overall points competition for years. In addition, it is possible to join the Műegyetemi Athletic and Football Club (MAFC) Fencing Department, so one can also compete in the competitions of the Hungarian Fencing Federation in a university team, with fencers of the same age group.",
+          "If we have sparked your interest, you used to fence, or you would like to start in the future, feel free to contact us!"
+        ],
+        "social_title": "Contacts:",
+        "social_links": [
+          { "label": "Email", "url": "mailto:muegyetemivivokor@gmail.com" },
+          { "label": "Facebook", "url": "https://www.facebook.com/muegyetemivivokor" }
+        ],
+        "images": ["vivókör.jpg másolata.jpg"]
+      }
+    ]
   },
   "dormitory_details": {
     "back_button": "Back to Dormitories",

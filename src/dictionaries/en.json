@@ -1537,7 +1537,7 @@
           { "label": "TikTok", "url": "https://www.tiktok.com/@bme_tztnc" },
           { "label": "Email", "url": "mailto:bme.tiztanc@gmail.com" }
         ],
-        "images": ["tiztanc.jpg másolata.jpg"]
+        "images": ["tiztanc.jpg", "tiztanc1.jpg"]
       },
       {
         "id": "vivokor",
@@ -1554,7 +1554,7 @@
           { "label": "Email", "url": "mailto:muegyetemivivokor@gmail.com" },
           { "label": "Facebook", "url": "https://www.facebook.com/muegyetemivivokor" }
         ],
-        "images": ["vivókör.jpg másolata.jpg"]
+        "images": ["vivókör.jpg másolata.jpg", "vivókör.jpg másolata(1).jpg"]
       }
     ]
   },

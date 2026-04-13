@@ -217,7 +217,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         },
         {
           label: t("Öntevékeny körök", "Student clubs"),
-          href: "#",
+          href: link("/kozelet/ontevekenykorok"),
           targetBlank: false,
         },
         { label: t("Rendezvények", "Events"), href: "#", targetBlank: false },

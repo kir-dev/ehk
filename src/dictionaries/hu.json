@@ -497,14 +497,168 @@
     },
     "logo_alt": "BME Logó"
   },
-  "clubs": {
-    "title": "A BME Kollégiumi Közösségi Élet",
-    "subtitle": "Színtér: Klubok és Szórakozóhelyek",
-    "description": "A BME kollégiumai nem csupán szállást biztosítanak, hanem a hallgatói közösségi élet és szórakozás meghatározó helyszínei is. Az alábbiakban a diákok által szervezett vagy üzemeltetett klubok és bárok kerülnek bemutatásra, amelyek a pezsgő éjszakai élet központjai.",
-    "location": "Helyszín:",
-    "opening_hours": "Nyitvatartás:",
-    "no_results": "Jelenleg nincsenek aktív klubok"
+  "ontevekeny_korok": {
+    "title": "Öntevékeny körök bemutatkozó",
+    "korok": [
+      {
+        "id": "bme_aerospace",
+        "title": "BME Aerospace Team",
+        "description": [
+          "A BME Aerospace Team egy innovatív, tudományok iránt elkötelezett és motivált tagsággal rendelkező hallgatói rakétatechnikai csapat, ahol a műszaki fejlesztések mellett kiemelt szerepe van a hallgatói tudás gyarapításának és a közösségépítésnek is.",
+          "A kutatórakéták egy- vagy többfokozatú eszközök, amelyek általában szilárd hajtóanyagú rakétamotor segítségével szállítanak tudományos kísérleteket az atmoszférába. A BME Aerospace Team azért jött létre, hogy kutatórakétákat építsen és kikövezze az utat azok számára, akik érdeklődnek az űrkutatás és űrtechnológia, különösképp a rakéták világa iránt.",
+          "A BME Aerospace Team fejlesztéseinek fókuszában a fedélzeti számítógépek, a földi berendezések (pl. antennarendszerek), valamint az aktív aerodinamikai szabályozás áll. A csapat saját fejlesztésű, szilárd hajtóanyagú vagy hibrid hajtóművel ellátott rakétákkal bocsátja fel kísérleteit.",
+          "Szeretettel várja tagjai közé az űrtudományok iránt érdeklődő hallgatókat a BME Aerospace Team!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Weblap", "url": "https://bmeaerospace.hu" },
+          { "label": "Facebook", "url": "https://www.facebook.com/bmeaerospace/" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bmeaerospace/" },
+          { "label": "LinkedIn", "url": "https://www.linkedin.com/company/bmeaerospace/" }
+        ],
+        "images": ["Aerospace1.jpg másolata.jpg", "Aerospace2.jpg másolata.jpg", "Aerospace3.png másolata.png"]
+      },
+      {
+        "id": "squash_kor",
+        "title": "Squash Kör",
+        "description": [
+          "A BME Squash Kör 2012-ben azzal a céllal indult el, hogy a squasholni szerető egyetemistákat összefogja és segítse fejlődésüket a sportágban. A kör az elmúlt években szünetelt, azonban 2023-tól újraélesztettük, és most aktívabb, mint valaha.",
+          "A jelenlegi célkitűzésünk, hogy minél több egyetemista hallgatóval megismertessük a fallabdát, és segítsük őket abban, hogy az aktív, rendszeres mozgás a mindennapjaik részévé váljon. Ennek érdekében hobbi és versenyző edzéseket tartunk. A tapasztalat szerinti bontás lényege, hogy mindenkinek a legszínvonalasabb edzést tudjuk nyújtani, ezért törekszünk rá, hogy azonos szintű játékosok edzenek együtt, azonban a szintek közötti átlépés kötetlen, így ezt rugalmasan kezeljük, és az is befolyásolja a rendszert, hogy ki, melyik napon tud csatlakozni hozzánk. Szeretnénk mindenkinek lehetőséget adni, hogy kipróbálhassa ezt a sportágat, ezért akár év közben is bárki eljöhet akár egy edzésre is, ha pedig megtetszik neki, heti többször is járhat hozzánk egy kis mozgásra. Edzéseink rendkívül összetettek, a fallabda minden oldalával megismertetjük a hallgatókat, fejlesztjük az ütéstechnikájukat, az állóképességüket és koncentrációs készségüket, tehát az edzés a teljes testet és lelket egyaránt átmozgatja, feltölti a résztvevőket energiával.. Edzőink volt junior versenyzők, akik több mint 10 éves tudásuk és tapasztalatuk legjavát nyújtják a hallgatóknak, hogy a maximumot tudják kihozni magukból.",
+          "Az edzések mellett házi bajnokságokat, csapatépítő foglalkozásokat szervezünk, amiken játékosaink összemérhetik tudásukat, megtapasztalhatják fejlődésüket, és közben mindenki jobban megismerheti egymást.",
+          "Azoknak ajánljuk ezt a sportot, akik a tanulás mellett szeretnék levezetni a napi stresszt, átmozgatni magukat, vagy csak egy összetartó, jó hangulatú csapatnak szeretnének a tagjai lenni."
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/BmeSquashKor/" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bme.squash/" }
+        ],
+        "images": ["squash.jpg másolata.jpg"]
+      },
+      {
+        "id": "egyetemi_zold_kor",
+        "title": "Egyetemi Zöld Kör",
+        "description": [
+          "Az EZK egy aktív, kreatív közösség, amely a környezettudatosság és a fenntarthatóság jegyében tevékenykedik az egyetemen és annak környékén.",
+          "Történetünk az 1980-as évekig nyúlik vissza, amikor is először alakult meg a BME-n. Kezdetben szórólapok, szemétszedések szervezésével hívtuk fel a figyelmet a környezetvédelem fontosságára. A szervezet a ’90-es években szünetelt, de 2005-ben újraéledt és azóta is folyamatosan bővül a tevékenységi körünk és a tagságunk.",
+          "Az EZK célja, hogy a környezettudatosságot mindennapjaink részévé tegye. Tevékenységeink között szerepelnek a különböző környezetbarát projektek, mint például a zöld falak építése hulladék anyagokból, magaságyások és virágosládák készítése kidobásra ítélt raklapokból, valamint madárbarát kert kialakítása az egyetem területén, ahol a hallgatók és az oktatók is élvezhetik a zöld környezetet.",
+          "Projektjeinkkel nem csak a kampuszt, hanem a kollégiumokat, valamint környező kerületeket is szebbé és élhetőbbé tesszük.",
+          "Szemléletformáló munkánk mellett számos szabadidős programot, ruhacserét, előadást és műhelymunkát szervezünk, amelyek során a hallgatók gyakorlati ismeretekre tehetnek szert a környezetvédelem területén. Rendszeresen részt veszünk szemétszedési akciókban is, mint például a Duna-parton és a Gellért-hegyen, amelyek során közvetlenül járulunk hozzá környezetünk tisztaságának megőrzéséhez. Rendezünk szemétszedő kenuzást is, melyen a Dunán úszó szemetet szedjük össze.",
+          "Ha szereted a kreatív tevékenységeket, érdekel a környezetvédelem és szeretnél részese lenni egy dinamikus csapatnak, ne habozz! Vedd fel velünk a kapcsolatot és csatlakozz a BME Egyetemi Zöld Körhöz!",
+          "Együtt tehetünk azért, hogy egyetemünk és környezetünk egyre zöldebb és fenntarthatóbb legyen.",
+          "Ne maradj le, a környezetvédelem sikeréhez minden kézre szükség van!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/bme.ezk" },
+          { "label": "Email", "url": "mailto:egyetemizoldkor@gmail.com" }
+        ],
+        "images": ["EZK.jpg másolata.jpg"]
+      },
+      {
+        "id": "bme_lacrosse",
+        "title": "BME Lacrosse",
+        "description": [
+          "Sziasztok!",
+          "Öntevékeny körünk az extrémebb sportok kedvelőinek jött létre 2020-ban. A lacrosse mint sportág egyszerűen leírható, sok erős ember verekszik botokkal egy apró labdáért, amivel utána gólt próbálnak lőni az ellenfél kapujába. Viccet félretéve a sportág férfi verziója erősen kontakt központű, míg a női sokkal inkább a gyors labdajátékra épít. Nehéz a sportágat bemutatni mert jelen állás szerint három különböző szabályrendszerben játszák. A nagyméretű hagyományos verziót fieldnek az agresszívabb verziót boxnak, a legújabbat amivel 2028-ban újra olimpiára fog kerülni pedig sixes-nek nevezzük.",
+          "A sportág field verzióját egy rendes méretű focipályán játszák 9+1 játékossal csapatonként, különlegessége hogy a kapuk nem a pálya végén hanem kb 10 méterrel beljebb helyezkednek el hogy a kapu mögött is lehessen játszani.",
+          "A játék fizikálisabb, más nevén a box lacrosse változatát hoki arénákban játszák itt a szabályok kicsit lazábbak, viszont lényegesen több védőfelszerelést is viselünk hogy a sérüléseket elkerüljük.",
+          "A legújabb verziót pedig 5+1-es felállással (szintén csapatonként) egy lényegesen kisebb füves pályán játszuk.",
+          "Tagjainkat a sport szeretete és a csapatunk erős közössége vette rá arra, hogy megpróbáljuk minél több hallgatóhoz eljuttatni a sportágunk nagyszerűségét, ha szeretnél csatlakozni öntevékeny körünkhöz akkor keress minket a lentebbi linkeken. Jelen állás szerint éppen elkezdtünk a jégkorong irányába is nyitni, így ha az is érdekelne szintén keress minket nyugodtan az alábbi elérhetőségeinken:"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=100061182859746" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bme_lacrosse/" }
+        ],
+        "images": ["lacrosse.JPG másolata.jpg"]
+      },
+      {
+        "id": "mente",
+        "title": "Műegyetemi Néptáncegyüttes",
+        "description": [
+          "A Műegyetemi Néptáncegyüttes (MENTE) 2001-ben az Építészmérnöki Karról indult, majd két évtizedes folyamatos bővüléssel mára az egyetem egyik legnagyobb öntevékeny kulturális körévé és a budapesti táncházas élet ismert szereplőjévé nőtte ki magát. Az együttes célja, hogy az egyetemista fiatalok megismerjék és elsajátítsák a Kárpát-medence táncait és fenntartsák a magyar paraszti kultúra hagyományait. A MENTE szeretettel vár minden érdeklődőt a kezdő, középhaladó, és haladó csoportjaiba. Amennyiben szeretnél egy szuper, összetartó közösség tagja lenni, nincs más dolgod, mint a félév elején eljönni az első próbáinkra. További információkért vagy kérdés esetén bátran keress minket az alábbi elérhetőségeken: neptanc.bme.hu, neptanc.bme@gmail.com, facebook.com/neptanc.bme"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://facebook.com/neptanc.bme" },
+          { "label": "Email", "url": "mailto:neptanc.bme@gmail.com" },
+          { "label": "Instagram", "url": "https://instagram.com/neptanc.bme" },
+          { "label": "Weblap", "url": "https://neptanc.bme.hu" }
+        ],
+        "images": ["mente_nagymusor_2022.jpg másolata.jpg", "mente_tábor_2022.jpg másolata.jpg"]
+      },
+      {
+        "id": "buvarklub",
+        "title": "Műegyetemi Búvárklub",
+        "description": [
+          "A Műegyetemi Búvárklub egy évtizedes múltra tekint vissza. Dr. Szieberth Dénes műegyetemi oktató és a víz alatti világ iránti szenvedéllyel bíró egyetemi hallgatók alapították. Azóta is a klub fő célja a búvárkodás népszerűsítése és a vízi világ iránti érdeklődés felkeltése a Budapesti Műszaki Egyetem hallgatói és munkatársai körében.",
+          "A klub tagjai között minden korosztály megtalálható, az egyetemistáktól a már végzett mérnökökön át egészen a családosokig. Közös bennünk a víz alatti világ iránti szenvedély és a felfedezés iránti vágy. Az éves programjaink között szerepelnek hazai és külföldi búvártúrák, ahol lehetőség nyílik a legszebb merülőhelyek felfedezésére. Az elmúlt évek során merültünk már a horvátországi Adrián, az egyiptomi Vörös-tengeren, valamint számos egyéb izgalmas helyen. Ezek a túrák nemcsak merülési lehetőséget biztosítanak, hanem felejthetetlen közös élményeket is. Emellett vannak klubestek és előadások, ahol tapasztalatainkat és élményeinket oszthatjuk meg egymással a búvárkodás különböző aspektusairól. Valamint a klub tagjai részt vesznek különböző víz alatti kutatási projektekben. Célunk, hogy hozzájáruljunk a vízi élővilág megóvásához és a környezetvédelemhez.",
+          "A klub keretein belül lehetőség van a különböző szintű búvártanfolyamok elvégzésére, kezdőtől a haladó szintig. Nem egy tagunk merül barlangban, ebből pedig sokan a Műegyetemi Búvárklubban kezdtek el először merülni. A Klub bázisa Dorogon van, így legtöbbször oda megyünk, ahol növényeket telepítünk, terepet rendezünk, hogy minél több mindent láthassunk a víz alatt. Ilyenkor mindig van lehetőségünk gyakorolni is a szintünknek megfelelően. De, hogy mi különböztet meg minket a többi klubtól? A mérnöki és a természettudományos ismeretek kombinálása a búvárkodással az a külföldi egyetemeken már jól ismert “scientific diver” program megteremtése a BME-n. A gyakorlati valamint az elméleti tudással biztonságosan és hatékonyan tudunk víz alatt méréseket, megfigyeléseket és mintavételeket végrehajtani. A Műegyetemi Búvárklub közössége a búvárkodás legelejétől fogva segít mindenkinek a búvár kérdésekben, például, hogy mit hol érdemes vásárolni, és a nem búvár kérdésekben egyaránt.",
+          "Ezen felül minden tavaszi félévben szabadon választható tantárgyat kínálunk azok számára, akik érdeklődnek a búvárkodás rejtelmei iránt. A tantárgy neve: Könnyűbúvárkodás mérnöki szemmel (BMEVESAA010).",
+          "Ha érdekel a búvárkodás, szeretnél egy barátságos és támogató közösség tagja lenni, vagy egyszerűen csak többet szeretnél megtudni a víz alatti világról, akkor csatlakozz hozzánk! Várunk szeretettel minden érdeklődőt, legyen akár kezdő, akár tapasztalt búvár.",
+          "Minden szükséges információt megtalálsz a Facebook, illetve Instagram felületeinken, de bátran keress minket, ha kérdésed van.",
+          "Merülj velünk, fedezd fel te is a mélységet!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/muegyetemibuvarklub" },
+          { "label": "Instagram", "url": "https://www.instagram.com/muegyetemi_buvar?igsh=MWZ3eDg1NW9jdnp0aw==v" }
+        ],
+        "images": ["Műegyetemi Búvárklub csoportképe 1.png másolata.png", "Műegyetemi Búvárklub csoportképe 2..png másolata.png"]
+      },
+      {
+        "id": "rueda_tancklub",
+        "title": "BME Rueda Táncklub",
+        "description": [
+          "A BME Rueda Táncklub 2021 tavaszán alakult azzal a céllal, hogy az egyetem diákjai számára lehetőséget teremtsen különböző társas és egyéni táncok megismerésére és elsajátítására, illetve egy táncos közösség létrehozására. Nálunk jelenleg kubai salsával, dominikai bachataval és latin társastáncokkal ismerkedhetnek meg az egyetem diákjai az általunk szervezett különböző kurzusok során.",
+          "Célunk továbbá, hogy igényes szórakozási és ismerkedési lehetőséget kínáljunk, ahol életreszóló baráti vagy akár szerelmi kapcsolatok is megszülethetnek. Ezért tartunk rendszeresen táncesteket, nyári tábort és szabadtéri bulikat is!",
+          "Gyere és táncoljuk át együtt a félévet!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Email", "url": "mailto:rueda.bme@gmail.com" },
+          { "label": "Facebook", "url": "https://facebook.com/bmerueda" }
+        ],
+        "images": ["rueda.jpg másolata.jpg"]
+      },
+      {
+        "id": "tiztanc",
+        "title": "BME Tíztánc",
+        "description": [
+          "A BME Tíztánc egy 2019-ben alakult Egyetemi Öntevékeny Kör, fő célunk a standard és latin táncműfajok népszerűsítése a Budapesti Műszaki és Gazdaságtudományi Egyetem (BME) hallgatói körében. A csapatunk az MIT és más neves egyetemek „Ballroom dancing team” csoportjainak mintájára jött létre, és az alapvetően tíz táncot (5 latin és 5 standard) foglal magában. Az összetartó és barátságos közösségünk célja a versenytánc kultúra kialakítása a BME-n, melynek során professzionális, mégis barátságos versenyeket kívánunk biztosítani a versenyezni vágyóknak.",
+          "Csapatunk rugalmasan kezeli a jelenléti követelményeket, azonban a fejlődés érdekében javasolt minél gyakrabban részt venni a vezetett órákon. A BME Tíztánc kizárólag a BME aktív hallgatóinak, azon belül is elsősorban az 18-30 év közötti korosztálynak szól. Minden új érdeklődőt szeretettel várunk, legyen szó kezdőkről vagy régi táncosokról, és nem szükséges pár vagy előzetes tánc tapasztalat a csatlakozáshoz.",
+          "Jelenleg három különböző csoportban folyik nálunk az oktatás: kezdő, középhaladó és haladó szinten. A kezdő csoport azoknak szól, akik még soha nem találkoztak ezekkel a táncokkal, míg a középhaladó és haladó csoportok főleg a már tapasztaltabb táncosoknak ajánlottak. Minden csoportnak heti 2x90 perces vezetett órát biztosítunk, melyet profi versenytánc oktatóink tartanak. Ezen kívül pedig heti több alkalommal practice lehetőségeket is nyújtunk tagjaink számára.",
+          "Számos eseményt és programot szervezünk egyetemen belül és kívül, például Gálát, Félévközi Bált, csapatépítőket és fellépéseket. Emellett nyáron tánctábort is tartunk, és most már minden félévben részt veszünk az ETDS nevű egyetemista hallgatóknak hirdetett nemzetközi táncversenyen. Rendezvényeink segítenek abban, hogy jobban megismerhessük egymást és igazi csapattá kovácsolódjunk. Körünkben mindenki találhat saját szintjének megfelelő kihívásokat és tánc lehetőségeket is, ráadásul a barátságos és támogató légkörnek hála, számtalan életre szóló barátság kötődött köztünk az évek alatt."
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Facebook", "url": "https://www.facebook.com/bmetiztanc" },
+          { "label": "Instagram", "url": "https://www.instagram.com/bmetiztanc" },
+          { "label": "TikTok", "url": "https://www.tiktok.com/@bme_tztnc" },
+          { "label": "Email", "url": "mailto:bme.tiztanc@gmail.com" }
+        ],
+        "images": ["tiztanc.jpg"]
+      },
+      {
+        "id": "vivokor",
+        "title": "Műegyetemi Vívókör",
+        "description": [
+          "A Műegyetemi Vívókör 2016-ban kezdte meg működését, elsődleges célja, hogy a BME-n tanuló vívók számára rendszeres edzési lehetőséget biztosítson. A megalakulás óta a csapat létszáma és eszköztára jelentősen bővült, az egyetem összes karjáról van sportoló a csapatunkban, és a vívás mindhárom fegyverneme (kard, párbajtőr, tőr) megtalálható nálunk.",
+          "Nagy hangsúlyt fektetünk a sportág népszerűsítésére, ennek érdekében évente nyílt edzést szervezünk, ahová várunk minden lelkes érdeklődőt, akik szeretnének közelebbről megismerkedni a vívással, valamint immár 3. éve indítunk kezdő tanfolyamokat nagy sikerrel, ahol az alapoktól lehet megismerkedni a sportág szépségeivel.",
+          "Körünk folyamatosan keresi a külföldi és belföldi lehetőségeket, hogy minél több hasonló, egyetemi korosztályú vívó közösséggel építsen ki kapcsolatot, aminek eredményeképpen lehetőségünk volt részt venni egy nemzetközi versenyen Kínában, valamint a BME társegyetemének (Karlsruhe Institute of Technology) vívócsapata látott minket vendégül egy edzőtábor keretében.",
+          "A versenyek sem maradnak ki a csapat életéből, minden évben részt veszünk a Magyar Egyetemisták és Főiskolások Országos Bajnokságán (MEFOB), ahol már évek óta rendszeresen a BME nyeri az összesített pontversenyt. Ezen felül lehetőség van csatlakozni a Műegyetemi Atlétikai és Football Club (MAFC) Vívó Szakosztályához is, így akár a Magyar Vívó Szövetség versenyein is egyetemi csapatban, azonos korosztályú vívótársakkal lehet indulni.",
+          "Amennyiben felkeltettük az érdeklődésedet, régen vívtál, vagy a jövőben szeretnél elkezdeni, keress minket bátran!"
+        ],
+        "social_title": "Elérhetőségek:",
+        "social_links": [
+          { "label": "Email", "url": "mailto:muegyetemivivokor@gmail.com" },
+          { "label": "Facebook", "url": "https://www.facebook.com/muegyetemivivokor" }
+        ],
+        "images": ["vivókör.jpg másolata.jpg"]
+      }
+    ]
   },
+
   "dormitory_details": {
     "back_button": "Vissza a kollégiumokhoz",
     "images_title": "Képgaléria",

@@ -497,6 +497,11 @@
     },
     "logo_alt": "BME Logó"
   },
+  "rendezvenyek": {
+    "title": "Rendezvények",
+    "description": "Az Egyetemi Hallgatói Képviselet és a hallgatói szervezetek által szervezett események és programok.",
+    "no_results": "Jelenleg nincsenek elérhető rendezvények."
+  },
   "ontevekeny_korok": {
     "title": "Öntevékeny körök bemutatkozó",
     "korok": [

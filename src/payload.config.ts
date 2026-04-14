@@ -10,6 +10,7 @@ import { fileURLToPath } from "url";
 import { Clubs } from "@/collections/Clubs";
 import { Decisions } from "@/collections/Decisions";
 import { Events } from "@/collections/Events";
+import { EhkEvents } from "@/collections/EhkEvents";
 import { HeroImages } from "@/collections/HeroImages";
 import { MuszakPaper } from "@/collections/MuszakPaper";
 import { News } from "@/collections/News";
@@ -49,6 +50,7 @@ export default buildConfig({
     MuszakPaper,
     Decisions,
     Events,
+    EhkEvents,
     Permissions,
     Regulations,
     Help,

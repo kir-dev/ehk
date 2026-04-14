@@ -2,6 +2,7 @@ import {
     Club,
     Decision,
     Event,
+    EhkEvent,
     Help,
     News,
     Permission,
@@ -188,4 +189,16 @@ export async function getClubs() {
   });
 
   return clubs.docs as Club[];
+}
+
+export async function getEhkEvents() {
+  const payload = await getPayload({ config });
+  const events = await payload.find({
+    collection: "ehk-events",
+    limit: 1000,
+    sort: "order",
+    depth: 1,
+  });
+
+  return events.docs as EhkEvent[];
 }

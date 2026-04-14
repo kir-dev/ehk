@@ -1397,6 +1397,11 @@
     },
     "logo_alt": "BME Logo"
   },
+  "rendezvenyek": {
+    "title": "Events",
+    "description": "Events and programs organized by the University Students' Union and student organizations.",
+    "no_results": "There are currently no events available."
+  },
   "ontevekeny_korok": {
     "title": "Student Clubs Introduction",
     "korok": [

@@ -17,6 +17,8 @@ import * as migration_20260222_182719_clubs_collection from './20260222_182719_c
 import * as migration_20260222_195349_clubs_opening_hours_richtext from './20260222_195349_clubs_opening_hours_richtext';
 import * as migration_20260222_200022_add_link_to_clubs from './20260222_200022_add_link_to_clubs';
 import * as migration_20260222_201957_simplify_clubs_image from './20260222_201957_simplify_clubs_image';
+import * as migration_20260414_110634_ehk_events_collection from './20260414_110634_ehk_events_collection';
+import * as migration_20260414_112338_ehk_events_links from './20260414_112338_ehk_events_links';
 
 export const migrations = [
   {
@@ -112,6 +114,16 @@ export const migrations = [
   {
     up: migration_20260222_201957_simplify_clubs_image.up,
     down: migration_20260222_201957_simplify_clubs_image.down,
-    name: '20260222_201957_simplify_clubs_image'
+    name: '20260222_201957_simplify_clubs_image',
+  },
+  {
+    up: migration_20260414_110634_ehk_events_collection.up,
+    down: migration_20260414_110634_ehk_events_collection.down,
+    name: '20260414_110634_ehk_events_collection',
+  },
+  {
+    up: migration_20260414_112338_ehk_events_links.up,
+    down: migration_20260414_112338_ehk_events_links.down,
+    name: '20260414_112338_ehk_events_links'
   },
 ];

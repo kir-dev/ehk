@@ -77,6 +77,7 @@ export interface Config {
     'muszak-paper': MuszakPaper;
     decisions: Decision;
     events: Event;
+    'ehk-events': EhkEvent;
     permissions: Permission;
     regulations: Regulation;
     help: Help;
@@ -98,6 +99,7 @@ export interface Config {
     'muszak-paper': MuszakPaperSelect<false> | MuszakPaperSelect<true>;
     decisions: DecisionsSelect<false> | DecisionsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
+    'ehk-events': EhkEventsSelect<false> | EhkEventsSelect<true>;
     permissions: PermissionsSelect<false> | PermissionsSelect<true>;
     regulations: RegulationsSelect<false> | RegulationsSelect<true>;
     help: HelpSelect<false> | HelpSelect<true>;
@@ -500,6 +502,63 @@ export interface Event {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ehk-events".
+ */
+export interface EhkEvent {
+  id: number;
+  title: string;
+  description: {
+    text_hu: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    text_en: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  images: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  order?: number | null;
+  /**
+   * Eseményhez tartozó weboldal, Facebook, vagy más hivatkozások.
+   */
+  links?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Engedélyek kezelése.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -712,6 +771,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'events';
         value: number | Event;
+      } | null)
+    | ({
+        relationTo: 'ehk-events';
+        value: number | EhkEvent;
       } | null)
     | ({
         relationTo: 'permissions';
@@ -971,6 +1034,35 @@ export interface EventsSelect<T extends boolean = true> {
     | {
         startDate?: T;
         endDate?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ehk-events_select".
+ */
+export interface EhkEventsSelect<T extends boolean = true> {
+  title?: T;
+  description?:
+    | T
+    | {
+        text_hu?: T;
+        text_en?: T;
+      };
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  order?: T;
+  links?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
       };
   updatedAt?: T;
   createdAt?: T;

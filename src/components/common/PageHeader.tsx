@@ -2,9 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { useTranslate } from "@/hooks/useTranslate";
 
 export interface PageHeaderProps {
   title: string;
@@ -13,6 +12,7 @@ export interface PageHeaderProps {
   tags?: string[];
   onBack?: () => void;
   backHref?: string;
+  backLabel?: string; // optional custom back button label
 }
 
 export function PageHeader({
@@ -22,10 +22,14 @@ export function PageHeader({
   tags,
   onBack,
   backHref,
+  backLabel,
 }: PageHeaderProps) {
   const router = useRouter();
-  const { t } = useTranslate();
+  const params = useParams();
+  const lang = params?.lang;
+  const isEn = lang === "en";
   const displaySubtitle = subtitle || description;
+  const resolvedBackLabel = backLabel || (isEn ? "Back" : "Vissza");
 
   const handleBack = (e: React.MouseEvent) => {
     if (onBack) {
@@ -40,7 +44,7 @@ export function PageHeader({
   const buttonContent = (
     <>
       <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" />
-      <span className="font-open-sans font-bold text-sm leading-none pt-px">{t("common.back")}</span>
+      <span className="font-open-sans font-bold text-sm leading-none pt-px">{resolvedBackLabel}</span>
     </>
   );
 
@@ -67,7 +71,7 @@ export function PageHeader({
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap items-center gap-1.5 text-xs font-open-sans font-bold uppercase tracking-wider text-[#f9f4f0]/80">
             {tags.map((tag, index) => (
-              <React.Fragment key={tag}>
+              <React.Fragment key={`${tag}-${index}`}>
                 {index > 0 && <span className="opacity-50 font-normal">/</span>}
                 <span className="hover:text-white transition-colors cursor-default">{tag}</span>
               </React.Fragment>
@@ -76,7 +80,7 @@ export function PageHeader({
         )}
 
         {/* Title */}
-        <h1 className="font-playfair font-bold text-3xl md:text-[32px] leading-tight tracking-normal text-white uppercase wrap-break-word w-full">
+        <h1 className="font-playfair font-bold text-3xl md:text-[32px] leading-tight tracking-normal text-white uppercase break-words w-full">
           {title}
         </h1>
 

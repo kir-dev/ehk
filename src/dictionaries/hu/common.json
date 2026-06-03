@@ -10,7 +10,8 @@
     "loading": "Betöltés...",
     "questions": "Kérdésed van?",
     "more_info": "További információ",
-    "contact_aria_label": "Email küldése az info@bmeehk.hu címre"
+    "contact_aria_label": "Email küldése az info@bmeehk.hu címre",
+    "back": "Vissza"
   },
   "navigation": {
     "home": "Kezdőlap",

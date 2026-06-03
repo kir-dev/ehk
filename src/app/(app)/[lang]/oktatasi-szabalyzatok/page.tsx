@@ -3,24 +3,26 @@ import { PageHeader } from "@/components/common/PageHeader";
 import RegulationsList from "@/components/regulations/RegulationsList";
 import { getAcademicRegulations } from "@/lib/payload-cms";
 import { Suspense } from "react";
-
 import { getDictionary } from "@/get-dictionary";
 import { i18n } from "@/i18n-config";
+import { LanguageProvider, Lang } from "@/components/common/LanguageProvider";
 
 export default async function RegulationsPage({
   params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
-  const dictionary = await getDictionary(validLang);
+  const dictionary = await getDictionary(validLang, 'regulations');
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-2 md:px-4 py-8">
-        <PageHeader title={dictionary.regulations.title_academic} />
-        <Suspense fallback={<LoadingRegulationsGrid />}>
-          <RegulationsList loader={getAcademicRegulations} />
-        </Suspense>
+    <LanguageProvider defaultLang={validLang.toUpperCase() as Lang} dictionary={dictionary}>
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-2 md:px-4 py-8">
+          <PageHeader title={dictionary.regulations.title_academic} />
+          <Suspense fallback={<LoadingRegulationsGrid />}>
+            <RegulationsList loader={getAcademicRegulations} />
+          </Suspense>
+        </div>
       </div>
-    </div>
+    </LanguageProvider>
   );
 }

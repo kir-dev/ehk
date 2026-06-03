@@ -7,7 +7,7 @@ export default async function DormitoryInformationPage({
   params
 }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'international_dormitory');
   const content = dictionary.international.dormitory_information;
 
   return (

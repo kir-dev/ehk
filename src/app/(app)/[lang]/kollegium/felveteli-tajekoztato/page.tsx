@@ -6,10 +6,11 @@ import { Locale } from "@/i18n-config";
 export default async function AdmissionInformationPage({
   params }: Readonly<{ params: Promise<{ lang: Locale }> }>){
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dormDict = await getDictionary(lang, 'dormitories');
+  const commonDict = await getDictionary(lang, 'common');
 
-  const admission_information = dictionary.dormitories.admission_information;
-  const faculties = dictionary.faculties;
+  const admission_information = dormDict.dormitories.admission_information;
+  const faculties = commonDict.faculties;
   const content = {
     admission_information,
     faculties
@@ -18,7 +19,7 @@ export default async function AdmissionInformationPage({
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-2 md:px-4 py-8">
-        <PageHeader title={dictionary.dormitories.admission_information.title} />
+        <PageHeader title={dormDict.dormitories.admission_information.title} />
         <DormitoryAdmissionInformationContent content={content}/>
       </div>
     </div>

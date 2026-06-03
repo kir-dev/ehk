@@ -4,20 +4,25 @@ import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { ReactNode } from "react";
 
+interface EHKScholarshipItem {
+  title: string;
+  paragraphs: string[];
+}
+
 export default async function EHKScholarshipPage({
   params,
 }: {
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'scholarships');
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader title={dictionary.scholarships.ehk.title} />{" "}
         <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
-          {dictionary.scholarships.ehk.items.map((item) => (
+          {(dictionary.scholarships.ehk.items as EHKScholarshipItem[]).map((item) => (
             <Card
               key={item.title}
               className="group hover:shadow-md transition-all duration-300"

@@ -22,7 +22,7 @@ export default async function OntevekenyKorokPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'ontevekeny_korok');
   const data = dictionary.ontevekeny_korok;
 
   if (!data) {

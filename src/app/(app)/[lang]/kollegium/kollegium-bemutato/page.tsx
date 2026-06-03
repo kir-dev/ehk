@@ -6,7 +6,7 @@ import DormitoryCardsContainer from "../felveteli-tajekoztato/components/Dormito
 export default async function AdmissionInformationPage({
   params }: Readonly<{ params: Promise<{ lang: Locale }> }>){
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'dormitories');
 
   return (
     <div className="min-h-screen bg-gray-50">

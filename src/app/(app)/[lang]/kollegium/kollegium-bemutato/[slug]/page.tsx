@@ -47,7 +47,7 @@ export default async function DormitoryDetailsPage({
     }
 
     const typedSlug = slug as DormitorySlug;
-    const dictionary = await getDictionary(lang);
+    const dictionary = await getDictionary(lang, 'dormitory_details');
     const detailsDict = dictionary.dormitory_details;
     const dormData = detailsDict[typedSlug];
     const images = getDormitoryImages(typedSlug);
@@ -60,7 +60,7 @@ export default async function DormitoryDetailsPage({
     const blocks: ContentBlock[] = [];
     let currentImageGroup: number[] = [];
 
-    descriptionParts.forEach((part, idx) => {
+    descriptionParts.forEach((part: string, idx: number) => {
         const text = part.trim();
         if (text) {
             if (currentImageGroup.length > 0) {

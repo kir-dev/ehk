@@ -5,19 +5,22 @@ import { LoadingGrid } from '@/components/common/LoadingSpinner';
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from '@/get-dictionary';
 import { Suspense } from 'react';
+import { LanguageProvider } from '@/components/common/LanguageProvider';
 
 export default async function RemindersPage({
   params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang as 'hu' | 'en');
+  const dictionary = await getDictionary(lang as 'hu' | 'en', 'regulations');
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-            <div className="container mx-auto px-2 md:px-4 py-8">
-                <PageHeader title={dictionary.reminders.title} />
-                <Suspense fallback={<LoadingGrid />}>
-                    <RemindersGrid />
-                </Suspense>
+        <LanguageProvider defaultLang={(lang as string).toUpperCase() as 'HU' | 'EN'} dictionary={dictionary}>
+            <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+                <div className="container mx-auto px-2 md:px-4 py-8">
+                    <PageHeader title={dictionary.reminders.title} />
+                    <Suspense fallback={<LoadingGrid />}>
+                        <RemindersGrid />
+                    </Suspense>
+                </div>
             </div>
-        </div>
+        </LanguageProvider>
     )
 }

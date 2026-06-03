@@ -8,7 +8,7 @@ import { Suspense } from "react";
 export default async function LanguageEducationPage({
   params }: { params: Promise<{ lang: Locale }> }){
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'language_education');
 
     return (
         <div className="min-h-screen bg-gray-50">

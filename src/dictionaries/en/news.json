@@ -1,0 +1,26 @@
+{
+  "news": {
+    "title": "News",
+    "no_results": "No results",
+    "no_news_category": "There are no news items in this category yet.",
+    "read_more": "Read more",
+    "back_to_news": "Back to news",
+    "published": "Published",
+    "reading_time": "Reading time",
+    "attachments": "Attachments",
+    "tags": "Tags",
+    "related_news": "Related news",
+    "view_all_news": "View all news",
+    "share": "Share",
+    "article_info": "Article info",
+    "min_read": "min read",
+    "min": "min",
+    "file_s": "file(s)",
+    "file": "File"
+  },
+  "rendezvenyek": {
+    "title": "Events",
+    "description": "Events and programs organized by the University Students' Union and student organizations.",
+    "no_results": "There are currently no events available."
+  }
+}

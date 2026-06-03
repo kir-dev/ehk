@@ -26,7 +26,7 @@ export default async function RootLayout({
   const { lang } = await params;
   // Ensure valid lang or fallback (middleware should handle this but for safety)
   const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
-  const dictionary = await getDictionary(validLang);
+  const dictionary = await getDictionary(validLang, 'common');
 
   return (
     <html lang={validLang}>

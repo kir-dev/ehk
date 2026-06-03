@@ -8,7 +8,7 @@ import { ExternalLink } from 'lucide-react';
 export default async function SocialScholarshipPage({
   params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'scholarships');
   const social = dictionary.scholarships.social;
 
     return (
@@ -26,7 +26,7 @@ export default async function SocialScholarshipPage({
                             <div className="pt-6  prose max-w-none text-gray-700 richtext">
                                 <p>{social.regular.list_title}</p>
                                 <ol className="pt-6 space-y-4 list-decimal list-inside">
-                                    {social.regular.list_items.map((item, i) => (
+                                    {(social.regular.list_items as string[]).map((item, i) => (
                                         <li key={i}>
                                             {item}
                                         </li>))}

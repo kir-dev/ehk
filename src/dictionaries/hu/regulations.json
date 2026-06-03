@@ -1,0 +1,29 @@
+{
+  "regulations": {
+    "title_academic": "Oktatási szabályzatok",
+    "title_benefits": "Juttatási szabályzatok",
+    "title_dormitory": "Kollégiumi szabályzatok",
+    "no_results": "Nincsenek találatok",
+    "no_regulations": "Jelenleg nincsenek elérhető szabályzatok."
+  },
+  "decisions": {
+    "title": "Határozatok Tára",
+    "description": "Az Egyetemi Hallgatói Képviselet által hozott határozatok archívuma.",
+    "select_year": "Év kiválasztása",
+    "view_all": "Összes határozat",
+    "no_decisions_year": "Nincsenek határozatok ebben az évben.",
+    "no_decisions_global": "Jelenleg nincsenek elérhető határozatok.",
+    "no_results": "Nincsenek találatok",
+    "try_filtering": "Próbáljon meg más keresési feltételeket vagy módosítsa a szűrőket.",
+    "loading": "Határozatok betöltése..."
+  },
+  "reminders": {
+    "title": "Emlékeztetők",
+    "tab_ehk": "EHK Emlékeztetők",
+    "tab_ehdk": "EHDK Emlékeztetők",
+    "no_ehk": "Nincsenek EHK emlékeztetők",
+    "no_ehk_desc": "Jelenleg nincsenek elérhető EHK emlékeztetők.",
+    "no_ehdk": "Nincsenek EHDK emlékeztetők",
+    "no_ehdk_desc": "Jelenleg nincsenek elérhető EHDK emlékeztetők."
+  }
+}

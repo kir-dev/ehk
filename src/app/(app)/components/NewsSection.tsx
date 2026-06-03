@@ -2,7 +2,7 @@ import NewsCard from "@/components/news/NewsCard";
 import NewsPagination from "@/components/news/NewsPagination";
 import { getNews } from "@/lib/payload-cms";
 
-export default async function NewsSection({ page = 1 }: { page?: number }) {
+export default async function NewsSection({ page = 1, basePath = "/" }: { page?: number; basePath?: string }) {
   const { docs: news, totalPages, page: currentPage } = await getNews({ page, limit: 6 });
 
   return (
@@ -16,6 +16,7 @@ export default async function NewsSection({ page = 1 }: { page?: number }) {
       <NewsPagination
         currentPage={currentPage}
         totalPages={totalPages}
+        basePath={basePath}
       />
     </div>
   );

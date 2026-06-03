@@ -38,6 +38,7 @@ type Props = {
 };
 
 export function LanguageProvider({ defaultLang, dictionary, children }: Props) {
+  const parentContext = useContext(LanguageContext);
   const [lang, setLangState] = useState<Lang>(defaultLang);
   const pathname = usePathname();
   const router = useRouter();
@@ -80,9 +81,16 @@ export function LanguageProvider({ defaultLang, dictionary, children }: Props) {
     }
   }, [lang, pathname, router, setLang]);
 
+  const mergedDictionary = useMemo(() => {
+    if (parentContext) {
+      return { ...parentContext.dictionary, ...dictionary };
+    }
+    return dictionary;
+  }, [parentContext, dictionary]);
+
   const value = useMemo(
-    () => ({ lang, setLang, toggleLang, dictionary }),
-    [lang, setLang, toggleLang, dictionary]
+    () => ({ lang, setLang, toggleLang, dictionary: mergedDictionary }),
+    [lang, setLang, toggleLang, mergedDictionary]
   );
 
   return (

@@ -60,7 +60,7 @@ export default async function DormitoryDetailsPage({
     const blocks: ContentBlock[] = [];
     let currentImageGroup: number[] = [];
 
-    descriptionParts.forEach((part, idx) => {
+    descriptionParts.forEach((part: string, idx: number) => {
         const text = part.trim();
         if (text) {
             if (currentImageGroup.length > 0) {

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getEhkEvents } from "@/lib/payload-cms";
-import { Media } from "@/payload-types";
+import { Media, EhkEvent } from "@/payload-types";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { getSocialIcon, getSocialPriority, getSocialName } from "@/lib/social-utils";
@@ -64,7 +64,7 @@ export default async function RendezvenyekPage({
         )}
 
         <div className="space-y-12">
-          {events.map((event) => {
+          {events.map((event: EhkEvent) => {
             const descriptionData = event.description?.[`text_${lang}`];
             const images = event.images || [];
 

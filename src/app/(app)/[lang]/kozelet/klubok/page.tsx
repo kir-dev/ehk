@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getClubs } from "@/lib/payload-cms";
-import { Media } from "@/payload-types";
+import { Club, Media } from "@/payload-types";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { Clock, ExternalLink, MapPin } from "lucide-react";
@@ -67,7 +67,7 @@ export default async function KlubokPage({
           </Card>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
-            {clubs.map((club) => {
+            {clubs.map((club: Club) => {
               // Safe check for the populated relation (it might occasionally be an ID or null)
               const coverImage = typeof club.image === "object" && club.image !== null ? (club.image as Media) : null;
               const openingHoursData = club.openingHours?.[`text_${lang}`];

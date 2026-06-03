@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "title": "Engedélyek",
+    "description": "Az Egyetemi Hallgatói Képviselet által kezelt engedélyek és igénylések.",
+    "search_placeholder": "Keresés engedélyek között...",
+    "no_results": "Nincsenek találatok",
+    "no_permissions": "Jelenleg nincsenek elérhető engedélyek."
+  }
+}

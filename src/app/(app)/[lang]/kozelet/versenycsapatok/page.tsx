@@ -22,7 +22,7 @@ export default async function VersenycsapatokPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'competition_teams');
   const data = dictionary.competition_teams;
 
   if (!data) {

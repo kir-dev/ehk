@@ -22,7 +22,7 @@ export default async function SzakkollegiumokPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'advanced_colleges');
   const data = dictionary.advanced_colleges;
 
   if (!data) {

@@ -16,7 +16,7 @@ export default async function GeneralInformationPage({
   const validLang = i18n.locales.includes(lang as "hu" | "en")
     ? (lang as "hu" | "en")
     : i18n.defaultLocale;
-  const dictionary = await getDictionary(validLang);
+  const dictionary = await getDictionary(validLang, 'international_general');
   const content = dictionary.international?.general_information;
 
   if (!content) {

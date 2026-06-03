@@ -8,7 +8,7 @@ export default async function EELISAPage({
   params 
 }: Readonly<{ params: Promise<{ lang: Locale }> }>) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'eelisa');
   const content = dictionary.kulugy?.eelisa;
 
   if (!content) {

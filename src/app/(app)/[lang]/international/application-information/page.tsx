@@ -7,7 +7,7 @@ export default async function ApplicationInformationPage({
   params
 }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'international_application');
   const content = dictionary.international.application_information;
 
   return (

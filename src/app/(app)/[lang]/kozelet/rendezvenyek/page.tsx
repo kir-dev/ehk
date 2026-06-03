@@ -29,7 +29,7 @@ export default async function RendezvenyekPage({
   const { lang } = await params;
   
   const [dictionary, events] = await Promise.all([
-    getDictionary(lang),
+    getDictionary(lang, 'news'),
     getEhkEvents(),
   ]);
 

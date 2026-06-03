@@ -8,7 +8,7 @@ import { ExternalLink } from 'lucide-react';
 export default async function SocialScholarshipPage({
   params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'scholarships');
   const social = dictionary.scholarships.social;
 
     return (

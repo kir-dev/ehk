@@ -9,7 +9,7 @@ export default async function EducationInformationPage({
   params 
 }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang, 'international_education');
   const content = dictionary.international.education_information as EducationInformationData;
 
   const sections = [

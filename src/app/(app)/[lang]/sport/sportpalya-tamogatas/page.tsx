@@ -9,7 +9,7 @@ export default async function SportpalyaTamogatasPage({
   params,
 }: SportpalyaTamogatasPageProps) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);  
+  const dictionary = await getDictionary(lang, 'sport');  
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-2 md:px-4 py-8">

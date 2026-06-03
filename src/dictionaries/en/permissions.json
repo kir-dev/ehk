@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "title": "Permissions",
+    "description": "Permissions and requests managed by the University Students' Union.",
+    "search_placeholder": "Search for permissions...",
+    "no_results": "No results",
+    "no_permissions": "No permissions available at the moment."
+  }
+}

@@ -48,7 +48,7 @@ export default async function Home({
                   {/* Main news feed - first on mobile */}
                   <div className="mt-6">
                     <HomeNewsHeader />
-                    <NewsSection page={page} />
+                    <NewsSection page={page} basePath={`/${lang}`} />
                   </div>
 
                   {/* Sidebar: Important links + Calendar + MUSZAK */}
@@ -84,7 +84,7 @@ export default async function Home({
                 {/* Right column: Main news feed */}
                 <div className="lg:col-span-9 mt-6 min-w-0">
                   <HomeNewsHeader />
-                  <NewsSection page={page} />
+                  <NewsSection page={page} basePath={`/${lang}`} />
                 </div>
               </div>
             </div>

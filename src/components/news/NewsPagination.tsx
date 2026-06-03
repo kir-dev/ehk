@@ -55,12 +55,14 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   useEffect(() => {
     const pageParam = searchParams.get(queryKey);
 
+    const performScroll = () => {
+      const didScroll = scrollToNewsHeader();
+      if (didScroll) triggerReflow();
+    };
+
     const rafScroll = () => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          const didScroll = scrollToNewsHeader();
-          if (didScroll) triggerReflow();
-        });
+        requestAnimationFrame(performScroll);
       });
     };
 

@@ -16,9 +16,11 @@ export default async function RemindersPage({
             <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
                 <div className="container mx-auto px-2 md:px-4 py-8">
                     <PageHeader title={dictionary.reminders.title} />
-                    <Suspense fallback={<LoadingGrid />}>
-                        <RemindersGrid />
-                    </Suspense>
+                    <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-6 md:p-8">
+                        <Suspense fallback={<LoadingGrid />}>
+                            <RemindersGrid />
+                        </Suspense>
+                    </div>
                 </div>
             </div>
         </LanguageProvider>

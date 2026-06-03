@@ -10,7 +10,8 @@
     "loading": "Loading...",
     "questions": "Any questions?",
     "more_info": "More information",
-    "contact_aria_label": "Send email to info@bmeehk.hu"
+    "contact_aria_label": "Send email to info@bmeehk.hu",
+    "back": "Back"
   },
   "navigation": {
     "home": "Home",

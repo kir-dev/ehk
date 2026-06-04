@@ -22,11 +22,13 @@ export function ReminderCard({ reminder }: ReminderCardProps) {
     }
 
     return (
-        <FileCard
-            file={reminder.file}
-            title={reminder.displayText}
-            date={formatDate(reminder.date)}
-            actionType="view"
-        />
+        <div className="flex flex-col gap-2">
+            <span className="text-xs text-gray-500">{formatDate(reminder.date)}</span>
+            <FileCard
+                file={reminder.file}
+                title={reminder.displayText}
+                actionType="view"
+            />
+        </div>
     )
 }

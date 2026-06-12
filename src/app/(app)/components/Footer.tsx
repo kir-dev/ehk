@@ -104,7 +104,11 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                         </p>
                         <div className="flex flex-col gap-3 font-open-sans text-base text-[#1a1a1a] mt-2">
                             {universityPages.map((page) => {
-                                const title = lang === "EN" ? page.title_en : page.title_hu;
+                                const normalizedLang = lang?.toUpperCase();
+                                const title = (normalizedLang === "EN" ? page.title_en : page.title_hu)
+                                    || page.title_hu
+                                    || page.title_en
+                                    || t("Egyetemi oldal", "University page");
                                 return (
                                     <Link
                                         key={page.id}

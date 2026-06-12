@@ -28,6 +28,18 @@ export const UniversityPages: CollectionConfig = {
       type: "text",
       required: true,
       label: "URL",
+      validate: (val: string | null | undefined) => {
+        if (!val) return 'Az URL megadása kötelező.';
+        try {
+          const parsed = new URL(val);
+          if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+            return 'A linknek érvényes HTTP vagy HTTPS URL-nek kell lennie (pl. https://example.com).';
+          }
+          return true;
+        } catch {
+          return 'Érvénytelen URL formátum.';
+        }
+      },
     },
     {
       name: "order",

@@ -82,6 +82,7 @@ export interface Config {
     regulations: Regulation;
     help: Help;
     'payout-periods': PayoutPeriod;
+    'university-pages': UniversityPage;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -104,6 +105,7 @@ export interface Config {
     regulations: RegulationsSelect<false> | RegulationsSelect<true>;
     help: HelpSelect<false> | HelpSelect<true>;
     'payout-periods': PayoutPeriodsSelect<false> | PayoutPeriodsSelect<true>;
+    'university-pages': UniversityPagesSelect<false> | UniversityPagesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -711,6 +713,21 @@ export interface PayoutPeriod {
   createdAt: string;
 }
 /**
+ * Egyetemi oldalak linkjeinek kezelése a láblécben.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "university-pages".
+ */
+export interface UniversityPage {
+  id: number;
+  title_hu: string;
+  title_en: string;
+  url: string;
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -793,6 +810,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'payout-periods';
         value: number | PayoutPeriod;
+      } | null)
+    | ({
+        relationTo: 'university-pages';
+        value: number | UniversityPage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1153,6 +1174,18 @@ export interface PayoutPeriodsSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "university-pages_select".
+ */
+export interface UniversityPagesSelect<T extends boolean = true> {
+  title_hu?: T;
+  title_en?: T;
+  url?: T;
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
 }

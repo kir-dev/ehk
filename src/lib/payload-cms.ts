@@ -8,7 +8,8 @@ import {
     Permission,
     Regulation,
     Reminder,
-    Representative
+    Representative,
+    UniversityPage
 } from "@/payload-types";
 import config from "@payload-config";
 import { getPayload } from "payload";
@@ -201,4 +202,15 @@ export async function getEhkEvents() {
   });
 
   return events.docs as EhkEvent[];
+}
+
+export async function getUniversityPages() {
+  const payload = await getPayload({ config });
+  const result = await payload.find({
+    collection: "university-pages",
+    limit: 1000,
+    sort: "order",
+  });
+
+  return result.docs as UniversityPage[];
 }

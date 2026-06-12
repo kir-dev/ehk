@@ -19,6 +19,7 @@ import * as migration_20260222_200022_add_link_to_clubs from './20260222_200022_
 import * as migration_20260222_201957_simplify_clubs_image from './20260222_201957_simplify_clubs_image';
 import * as migration_20260414_110634_ehk_events_collection from './20260414_110634_ehk_events_collection';
 import * as migration_20260414_112338_ehk_events_links from './20260414_112338_ehk_events_links';
+import * as migration_20260612_161146 from './20260612_161146';
 
 export const migrations = [
   {
@@ -124,6 +125,11 @@ export const migrations = [
   {
     up: migration_20260414_112338_ehk_events_links.up,
     down: migration_20260414_112338_ehk_events_links.down,
-    name: '20260414_112338_ehk_events_links'
+    name: '20260414_112338_ehk_events_links',
+  },
+  {
+    up: migration_20260612_161146.up,
+    down: migration_20260612_161146.down,
+    name: '20260612_161146'
   },
 ];

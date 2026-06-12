@@ -1,5 +1,6 @@
 import Footer from "@/app/(app)/components/Footer";
 import Navbar from "@/app/(app)/components/navbar";
+import { getUniversityPages } from "@/lib/payload-cms";
 import { ContactBubble } from "@/components/common/ContactBubble";
 import { LanguageProvider } from "@/components/common/LanguageProvider";
 import { getDictionary } from "@/get-dictionary";
@@ -27,6 +28,7 @@ export default async function RootLayout({
   // Ensure valid lang or fallback (middleware should handle this but for safety)
   const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
   const dictionary = await getDictionary(validLang, 'common');
+  const universityPages = await getUniversityPages();
 
   return (
     <html lang={validLang}>
@@ -38,7 +40,7 @@ export default async function RootLayout({
               {children}
             </main>
           </div>
-          <Footer />
+          <Footer universityPages={universityPages} />
           <ContactBubble />
         </LanguageProvider>
       </body>

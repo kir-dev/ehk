@@ -13,16 +13,17 @@ import { getEvents, getEhkEvents, getNews } from '@/lib/payload-cms';
 import { LanguageProvider, Lang } from '@/components/common/LanguageProvider';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
+import { Event, EhkEvent } from '@/payload-types';
 
 export default async function Home({
   searchParams,
   params,
 }: {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
-  params: Promise<{ lang: string }>;
+  params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const currentLang = lang as Locale;
+  const currentLang = lang;
 
   const sp = await searchParams; // Next.js 15 dynamic API requires await
   const rawPageParam = sp?.page;
@@ -33,13 +34,15 @@ export default async function Home({
   // Active tab: 'news' | 'events'
   const activeTab = sp?.tab === 'events' ? 'events' : 'news';
 
-  const [heroImages, dictionary, events, ehkEvents, newsData] = await Promise.all([
+  const [heroImages, dictionary, newsData] = await Promise.all([
     getHeroImages(currentLang),
     getDictionary(currentLang, 'news'),
-    getEvents(),
-    getEhkEvents(),
     getNews({ limit: 1 }),
   ]);
+
+  const [events, ehkEvents] = activeTab === 'events'
+    ? await Promise.all([getEvents(), getEhkEvents()])
+    : [[] as Event[], [] as EhkEvent[]];
 
 
 

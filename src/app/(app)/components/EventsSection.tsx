@@ -3,7 +3,6 @@ import { EhkEvent, Event, Media } from "@/payload-types"
 import Calendar from "@/app/(app)/components/Calendar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { RichText } from "@payloadcms/richtext-lexical/react"
-import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { getSocialIcon, getSocialPriority, getSocialName } from "@/lib/social-utils"
@@ -90,36 +89,39 @@ export default function EventsSection({ lang, ehkEvents, calendarEvents, diction
                     </div>
                   )}
 
-                  {event.links && event.links.length > 0 && (
-                    <div className="pt-4 border-t border-slate-100">
-                      <h4 className="font-semibold text-gray-900 text-sm mb-3">
-                        {moreInfoText}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {[...event.links]
-                          .filter((link) => isValidUrl(link.url))
-                          .sort((a, b) => getSocialPriority(a.label) - getSocialPriority(b.label))
-                          .map((link, lIdx) => (
-                            <Button
-                              key={lIdx}
-                              variant="outline"
-                              size="sm"
-                              className="rounded-full gap-1.5 hover:bg-slate-100 hover:text-[#862633] transition-colors h-8 text-xs font-open-sans"
-                              asChild
-                            >
-                              <a
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                  {(() => {
+                    const validLinks = (event.links || []).filter((link) => isValidUrl(link.url))
+                    if (validLinks.length === 0) return null
+                    return (
+                      <div className="pt-4 border-t border-slate-100">
+                        <h4 className="font-semibold text-gray-900 text-sm mb-3">
+                          {moreInfoText}
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {[...validLinks]
+                            .sort((a, b) => getSocialPriority(a.label) - getSocialPriority(b.label))
+                            .map((link) => (
+                              <Button
+                                key={link.url}
+                                variant="outline"
+                                size="sm"
+                                className="rounded-full gap-1.5 hover:bg-slate-100 hover:text-[#862633] transition-colors h-8 text-xs font-open-sans"
+                                asChild
                               >
-                                {getSocialIcon(link.label)}
-                                {getSocialName(link.label, lang)}
-                              </a>
-                            </Button>
-                          ))}
+                                <a
+                                  href={link.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {getSocialIcon(link.label)}
+                                  {getSocialName(link.label, lang)}
+                                </a>
+                              </Button>
+                            ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )
+                  })()}
                 </CardContent>
               </Card>
             )

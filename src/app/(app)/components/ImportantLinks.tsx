@@ -1,19 +1,16 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Link2 } from "lucide-react"
+import React from "react"
 import Link from "next/link"
-import { useLanguage } from "@/components/common/LanguageProvider"
+import { ExternalLink } from "lucide-react"
+import { useTranslate } from "@/hooks/useTranslate"
 
 type Props = {
   className?: string
 }
 
-export default function ImportantLinks({ className }: Props) {
-  const { lang } = useLanguage()
-  const t = {
-    title: lang === "EN" ? "Important links" : "Fontos linkek",
-  } as const
+export default function ImportantLinks({ className }: Readonly<Props>) {
+  const { t } = useTranslate()
 
   const items = [
     { label: "Neptun", href: "https://neptun.bme.hu" },
@@ -22,34 +19,31 @@ export default function ImportantLinks({ className }: Props) {
   ] as const
 
   return (
-    <Card className={"overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow " + (className ?? "") }>
-      <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2 text-lg">
-          <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-red-50">
-            <Link2 className="w-4 h-4 text-[#862633]" />
-          </span>
-          <span className="text-gray-900">{t.title}</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <ul className="divide-y divide-gray-100">
-          {items.map((it) => (
-            <li key={it.href}>
-              <Link
-                href={it.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between py-2.5 px-2 rounded-md hover:bg-red-50/60 transition-colors"
-              >
-                <span className="text-sm text-gray-700 group-hover:text-[#862633] transition-colors font-medium">
-                  {it.label}
-                </span>
-                <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#862633] transition-colors" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
+    <div className={`bg-[#fffefc] border border-[#e9e2d6] p-4 rounded-lg w-full flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow ${className ?? ""}`}>
+      {/* Title block */}
+      <div className="flex items-center py-1">
+        <h3 className="font-open-sans font-semibold text-[13px] text-[#6e6660] tracking-[1.3px] uppercase">
+          {t("widgets.important_links_title", "FONTOS LINKEK")}
+        </h3>
+      </div>
+
+      {/* Grid list */}
+      <div className="flex flex-col w-full mt-1">
+        {items.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between py-2.5 text-[13px] font-semibold border-b border-[#e9e2d6] last:border-b-0 group font-open-sans transition-colors"
+          >
+            <span className="text-[#3d3d3d] group-hover:text-[#862633] transition-colors">
+              {item.label}
+            </span>
+            <ExternalLink className="w-4 h-4 text-[#9a9a9a] group-hover:text-[#862633] transition-colors shrink-0" />
+          </Link>
+        ))}
+      </div>
+    </div>
   )
 }

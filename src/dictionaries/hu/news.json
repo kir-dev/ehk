@@ -22,5 +22,18 @@
     "title": "Rendezvények",
     "description": "Az Egyetemi Hallgatói Képviselet és a hallgatói szervezetek által szervezett események és programok.",
     "no_results": "Jelenleg nincsenek elérhető rendezvények."
+  },
+  "widgets": {
+    "office_hours_title": "AZ IRODA FOGADÓIDEJE",
+    "important_links_title": "FONTOS LINKEK",
+    "study_period": "Szorgalmi időszakban",
+    "exam_period": "Vizsgaidőszakban",
+    "holidays": "Ünnepnapokon",
+    "closed": "zárva",
+    "muhely_title": "MŰHELY",
+    "muhely_desc": "Olvasd el a legfrissebb Műhely lapszámot!",
+    "muhely_btn": "Olvasom",
+    "filters": "Szűrők",
+    "fresh_news": "Friss hírek"
   }
 }

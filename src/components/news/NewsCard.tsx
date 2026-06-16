@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslate } from "@/hooks/useTranslate";
-import { getTagRoute, translateTag, cn } from "@/lib/utils";
+import { getTagRoute, translateTag } from "@/lib/utils";
 import { News } from "@/payload-types";
 import Link from "next/link";
 
@@ -19,22 +19,16 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
     const newsUrl = `/${lang.toLowerCase()}/hirek/${id}`
 
     return (
-        <div className="bg-white border border-[#e9e2d6] rounded-2xl p-5 flex flex-col h-full hover:shadow-md transition-shadow duration-300 relative group">
+        <div className="bg-[#fffefc] border border-[#e9e2d6] rounded-2xl p-4 flex flex-col gap-4 h-full hover:shadow-md transition-shadow duration-300 relative group">
             {/* Top tags section */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2">
                 {originalTags?.map((rawTag, index) => {
                     const href = getTagRoute(rawTag, lang)
                     const label = translateTag(rawTag, lang).toUpperCase()
-                    const isFirst = index === 0
 
                     const chip = (
                         <span
-                            className={cn(
-                                "px-3 py-1 rounded-full text-[10px] md:text-xs font-semibold tracking-wider transition-colors duration-200",
-                                isFirst
-                                    ? "bg-[#862633]/10 text-[#862633] group-hover:bg-[#862633]/20"
-                                    : "bg-[#e8e4e0]/60 text-[#3d3d3d] group-hover:bg-[#e8e4e0]/80"
-                            )}
+                            className="inline-flex items-center justify-center bg-[#ffe6e6] text-[#862633] border border-[#862633] px-2.5 py-1 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 hover:bg-[#ffe6e6]/80"
                         >
                             {label}
                         </span>
@@ -49,41 +43,49 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
                 })}
             </div>
 
-            {/* Date */}
-            <p className="text-[#9a9a9a] text-xs font-open-sans mb-2">
-                {new Date(date).toLocaleDateString(locale)}
-            </p>
+            {/* Date + Title container */}
+            <div className="flex flex-col gap-2 items-start w-full">
+                {/* Date */}
+                <p className="font-open-sans font-semibold text-[11px] text-[#6e6660]">
+                    {new Date(date).toLocaleDateString(locale)}
+                </p>
 
-            {/* Title */}
-            <h3 className="text-[#1a1a1a] text-lg md:text-xl font-playfair font-bold mb-3 leading-snug group-hover:text-[#862633] transition-colors duration-200">
-                <Link href={newsUrl}>
-                    {displayTitle}
-                </Link>
-            </h3>
+                {/* Title */}
+                <h3 className="font-playfair font-bold text-[22px] leading-[1.3] text-black w-full group-hover:text-[#862633] transition-colors duration-200">
+                    <Link href={newsUrl}>
+                        {displayTitle}
+                    </Link>
+                </h3>
+            </div>
 
             {/* Description */}
-            <p className="text-[#3d3d3d] text-sm font-open-sans leading-relaxed text-justify mb-6 flex-grow break-words">
+            <p className="font-open-sans font-normal leading-[1.6] text-sm text-black w-full flex-grow text-left break-words">
                 {shortText}
             </p>
 
+            {/* Divider line */}
+            <div className="w-full border-t border-[#e9e2d6] h-0" />
+
             {/* Footer read more */}
-            <div className="pt-4 border-t border-[#e8e4e0]/40 mt-auto">
-                <Link
-                    href={newsUrl}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#862633] hover:text-[#862633]/80 transition-colors group/link"
-                >
-                    <span>{t('news.read_more', 'Elolvasom')}</span>
+            <Link
+                href={newsUrl}
+                className="flex items-center justify-between w-full group/link"
+            >
+                <span className="font-open-sans font-semibold text-[14px] leading-[1.6] text-[#862633] whitespace-nowrap">
+                    {t('news.read_more', 'Elolvasom')}
+                </span>
+                <div className="flex flex-1 items-center justify-end">
                     <svg
-                        className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform duration-200"
+                        className="w-6 h-6 text-[#862633] transform group-hover/link:translate-x-1 transition-transform duration-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth="2.5"
+                        strokeWidth="1.5"
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </div>
     );
 }

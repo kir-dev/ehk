@@ -35,7 +35,11 @@ export default async function Home({
 
   // Active tab: 'news' | 'events'
   const activeTab = sp?.tab === 'events' ? 'events' : 'news';
-  const tagFilter = typeof sp?.tag === 'string' ? sp.tag : undefined;
+  const tagFilter = typeof sp?.tag === 'string'
+    ? sp.tag
+    : Array.isArray(sp?.tag)
+    ? sp.tag.filter(Boolean).join(',')
+    : undefined;
 
   const [heroImages, dictionary, newsData, ehkEventsAll, eventsAll] = await Promise.all([
     getHeroImages(currentLang),

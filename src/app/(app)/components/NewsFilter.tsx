@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslate } from "@/hooks/useTranslate";
 import { translateTag } from "@/lib/utils";
@@ -17,7 +17,12 @@ export default function NewsFilter({ basePath }: Readonly<NewsFilterProps>) {
   // Read active tag and filter panel open state from searchParams to support SSR/deep linking
   const activeTag = searchParams.get("tag") || undefined;
   const isFilterOpenParam = searchParams.get("showFilters") === "true";
-  const [isOpen, setIsOpen] = useState(isFilterOpenParam || !!activeTag);
+  const [isOpen, setIsOpen] = useState(isFilterOpenParam);
+
+  useEffect(() => {
+    const open = searchParams.get("showFilters") === "true";
+    setIsOpen(open);
+  }, [searchParams]);
 
   // standard tags list
   const filterTags = [

@@ -3,7 +3,7 @@
     "title": "Hírek",
     "no_results": "Nincsenek találatok",
     "no_news_category": "Ebben a kategóriában még nincsenek hírek.",
-    "read_more": "Tovább",
+    "read_more": "Elolvasom",
     "back_to_news": "Vissza a hírekhez",
     "published": "Publikálás dátuma",
     "reading_time": "Olvasási idő",
@@ -34,6 +34,7 @@
     "muhely_desc": "Olvasd el a legfrissebb Műhely lapszámot!",
     "muhely_btn": "Olvasom",
     "filters": "Szűrők",
+    "clear_filters": "Szűrők törlése",
     "fresh_news": "Friss hírek"
   }
 }

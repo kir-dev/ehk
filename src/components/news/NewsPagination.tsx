@@ -17,7 +17,16 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   const searchParams = useSearchParams();
   const shouldScrollRef = useRef(false);
 
-  const makePageHref = (p: number) => (p === 1 ? basePath : `${basePath}?${queryKey}=${p}`);
+  const makePageHref = (p: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (p === 1) {
+      params.delete(queryKey);
+    } else {
+      params.set(queryKey, p.toString());
+    }
+    const queryString = params.toString();
+    return queryString ? `${basePath}?${queryString}` : basePath;
+  };
 
   const isVisible = (el: Element | null) => {
     if (!el || !(el instanceof HTMLElement)) return false;
@@ -89,17 +98,17 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   if (totalPages <= 1) return null;
 
   return (
-    <nav className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-2 pb-4">
+    <nav className="flex flex-wrap items-center justify-center md:justify-end gap-2 md:gap-2.5 mt-8 pb-2">
       {/* Prev */}
       <Link
         href={makePageHref(Math.max(1, currentPage - 1))}
         onClick={(e) => currentPage > 1 && handlePageClick(e, Math.max(1, currentPage - 1))}
         aria-disabled={currentPage === 1}
         aria-label="Previous page"
-        className={`px-3 py-1.5 rounded border text-sm ${
+        className={`w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm ${
           currentPage === 1
-            ? 'pointer-events-none opacity-50 border-gray-200 text-gray-400'
-            : 'hover:border-[#862633] hover:text-[#862633] border-gray-300 text-gray-700'
+            ? 'pointer-events-none opacity-40 border-[#e9e2d6] text-gray-400'
+            : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
         }`}
       >
         <ChevronLeft className="w-4 h-4" />
@@ -114,10 +123,10 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
             key={p}
             href={makePageHref(p)}
             onClick={(e) => !isActive && handlePageClick(e, p)}
-            className={`px-3 py-1.5 rounded border text-sm ${
+            className={`w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm ${
               isActive
-                ? 'bg-[#862633] border-[#862633] text-white'
-                : 'border-gray-300 text-gray-700 hover:border-[#862633] hover:text-[#862633]'
+                ? 'bg-[#e8e4e0]/40 border-[#3d3d3d] text-[#1a1a1a] font-bold'
+                : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
             }`}
             aria-current={isActive ? 'page' : undefined}
           >
@@ -132,10 +141,10 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
         onClick={(e) => currentPage < totalPages && handlePageClick(e, Math.min(totalPages, currentPage + 1))}
         aria-disabled={currentPage === totalPages}
         aria-label="Next page"
-        className={`px-3 py-1.5 rounded border text-sm ${
+        className={`w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm ${
           currentPage === totalPages
-            ? 'pointer-events-none opacity-50 border-gray-200 text-gray-400'
-            : 'hover:border-[#862633] hover:text-[#862633] border-gray-300 text-gray-700'
+            ? 'pointer-events-none opacity-40 border-[#e9e2d6] text-gray-400'
+            : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
         }`}
       >
         <ChevronRight className="w-4 h-4" />

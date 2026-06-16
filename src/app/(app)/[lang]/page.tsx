@@ -8,6 +8,7 @@ import MuhelyWidget from '@/app/(app)/components/MuhelyWidget';
 import Switcher from '@/app/(app)/components/Switcher';
 import NewsSection from '@/app/(app)/components/NewsSection';
 import EventsSection from '@/app/(app)/components/EventsSection';
+import NewsFilter from '@/app/(app)/components/NewsFilter';
 import { getHeroImages } from '@/lib/get-hero-images';
 import { getEvents, getEhkEvents, getNews } from '@/lib/payload-cms';
 import { LanguageProvider, Lang } from '@/components/common/LanguageProvider';
@@ -34,6 +35,11 @@ export default async function Home({
 
   // Active tab: 'news' | 'events'
   const activeTab = sp?.tab === 'events' ? 'events' : 'news';
+  const tagFilter = typeof sp?.tag === 'string'
+    ? sp.tag
+    : Array.isArray(sp?.tag)
+    ? sp.tag.filter(Boolean).join(',')
+    : undefined;
 
   const [heroImages, dictionary, newsData, ehkEventsAll, eventsAll] = await Promise.all([
     getHeroImages(currentLang),
@@ -87,47 +93,44 @@ export default async function Home({
                       basePath={`/${lang}`}
                     />
 
-                    {/* Styled Filters Button */}
-                    <button className="flex items-center gap-2 border border-[#e8e4e0] bg-[#fffefc] px-4 py-2 rounded-full text-[#3d3d3d] text-sm font-semibold hover:bg-gray-50 transition-colors shadow-sm select-none cursor-pointer">
-                      <svg className="w-4 h-4 text-[#3d3d3d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-                      </svg>
-                      <span>{dictionary.widgets.filters}</span>
-                      <span className="bg-[#862633] text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
-                        2
-                      </span>
-                    </button>
+                    {activeTab === 'news' && (
+                      <NewsFilter basePath={`/${lang}`} />
+                    )}
                   </div>
 
                   {/* Active Tab Contents */}
                   {activeTab === 'news' ? (
                     <div className="flex flex-col w-full animate-in fade-in duration-300">
                       {/* Fresh News Header Block */}
-                      <div className="bg-[#862633] text-white py-4 px-6 md:px-8 rounded-lg mb-6 shadow-sm">
+                      <div className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
                         <h2 className="text-xl md:text-2xl font-playfair font-bold tracking-wide">
                           {dictionary.widgets.fresh_news}
                         </h2>
                       </div>
 
                       {/* Paginated News Grid */}
-                      <NewsSection page={page} basePath={`/${lang}`} />
+                      <div className="-mt-6 relative z-10">
+                        <NewsSection page={page} basePath={`/${lang}`} tag={tagFilter} dictionary={dictionary} />
+                      </div>
                     </div>
                   ) : (
                     <div className="flex flex-col w-full animate-in fade-in duration-300">
                       {/* Events Header Block */}
-                      <div className="bg-[#862633] text-white py-4 px-6 md:px-8 rounded-lg mb-6 shadow-sm">
+                      <div className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
                         <h2 className="text-xl md:text-2xl font-playfair font-bold tracking-wide">
                           {dictionary.rendezvenyek.title}
                         </h2>
                       </div>
 
                       {/* Events List and Calendar Grid */}
-                      <EventsSection
-                        lang={currentLang}
-                        ehkEvents={ehkEvents}
-                        calendarEvents={events}
-                        dictionary={dictionary}
-                      />
+                      <div className="-mt-6 relative z-10">
+                        <EventsSection
+                          lang={currentLang}
+                          ehkEvents={ehkEvents}
+                          calendarEvents={events}
+                          dictionary={dictionary}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>

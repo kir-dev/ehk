@@ -103,31 +103,35 @@ export default async function Home({
                   {activeTab === 'news' ? (
                     <div className="flex flex-col w-full animate-in fade-in duration-300">
                       {/* Fresh News Header Block */}
-                      <div className="bg-[#862633] text-white py-4 px-6 md:px-8 rounded-lg mb-6 shadow-sm">
+                      <div className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
                         <h2 className="text-xl md:text-2xl font-playfair font-bold tracking-wide">
                           {dictionary.widgets.fresh_news}
                         </h2>
                       </div>
 
                       {/* Paginated News Grid */}
-                      <NewsSection page={page} basePath={`/${lang}`} />
+                      <div className="-mt-6 relative z-10">
+                        <NewsSection page={page} basePath={`/${lang}`} />
+                      </div>
                     </div>
                   ) : (
                     <div className="flex flex-col w-full animate-in fade-in duration-300">
                       {/* Events Header Block */}
-                      <div className="bg-[#862633] text-white py-4 px-6 md:px-8 rounded-lg mb-6 shadow-sm">
+                      <div className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
                         <h2 className="text-xl md:text-2xl font-playfair font-bold tracking-wide">
                           {dictionary.rendezvenyek.title}
                         </h2>
                       </div>
 
                       {/* Events List and Calendar Grid */}
-                      <EventsSection
-                        lang={currentLang}
-                        ehkEvents={ehkEvents}
-                        calendarEvents={events}
-                        dictionary={dictionary}
-                      />
+                      <div className="-mt-6 relative z-10">
+                        <EventsSection
+                          lang={currentLang}
+                          ehkEvents={ehkEvents}
+                          calendarEvents={events}
+                          dictionary={dictionary}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>

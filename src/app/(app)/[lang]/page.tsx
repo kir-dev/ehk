@@ -13,7 +13,7 @@ import { getEvents, getEhkEvents, getNews } from '@/lib/payload-cms';
 import { LanguageProvider, Lang } from '@/components/common/LanguageProvider';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
-import { Event, EhkEvent } from '@/payload-types';
+
 
 export default async function Home({
   searchParams,
@@ -34,22 +34,22 @@ export default async function Home({
   // Active tab: 'news' | 'events'
   const activeTab = sp?.tab === 'events' ? 'events' : 'news';
 
-  const [heroImages, dictionary, newsData] = await Promise.all([
+  const [heroImages, dictionary, newsData, ehkEventsAll] = await Promise.all([
     getHeroImages(currentLang),
     getDictionary(currentLang, 'news'),
     getNews({ limit: 1 }),
+    getEhkEvents(),
   ]);
 
-  const [events, ehkEvents] = activeTab === 'events'
-    ? await Promise.all([getEvents(), getEhkEvents()])
-    : [[] as Event[], [] as EhkEvent[]];
+  const events = activeTab === 'events' ? await getEvents() : [];
+  const ehkEvents = activeTab === 'events' ? ehkEventsAll : [];
 
 
 
 
   return (
     <LanguageProvider defaultLang={lang.toUpperCase() as Lang} dictionary={dictionary}>
-      <div className="bg-gray-50 min-h-screen flex flex-col">
+      <div className="bg-[#fcfaf6] min-h-screen flex flex-col">
         {/* Hero */}
         <main className="grow">
           <section className="w-full">
@@ -63,7 +63,7 @@ export default async function Home({
             <div className="max-w-350 mx-auto">
               <div id="main-content-section" className="h-0" aria-hidden />
 
-              <div className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] gap-8 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] gap-8 items-start -mt-16 lg:-mt-24 relative z-10">
                 
                 {/* Left Column: Shared Sidebar on desktop, stacked at bottom on mobile */}
                 <aside className="flex flex-col gap-4 order-2 lg:order-1 w-full lg:max-w-60">
@@ -73,14 +73,16 @@ export default async function Home({
                 </aside>
 
                 {/* Right Column: Main Content area with Tabs */}
-                <div className="flex flex-col order-1 lg:order-2 min-w-0 w-full">
+                <div className="bg-[#fffefc] border border-[#e9e2d6] p-6 md:p-8 rounded-xl shadow-sm flex flex-col order-1 lg:order-2 min-w-0 w-full">
                   {/* Switcher & Filters row */}
                   <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
                     <Switcher
-                      lang={currentLang}
                       activeTab={activeTab}
                       newsCount={newsData.totalDocs}
-                      eventsCount={ehkEvents.length}
+                      eventsCount={ehkEventsAll.length}
+                      newsTitle={dictionary.news.title}
+                      eventsTitle={dictionary.rendezvenyek.title}
+                      basePath={`/${lang}`}
                     />
 
                     {/* Styled Filters Button */}

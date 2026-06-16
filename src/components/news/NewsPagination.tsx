@@ -17,7 +17,16 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   const searchParams = useSearchParams();
   const shouldScrollRef = useRef(false);
 
-  const makePageHref = (p: number) => (p === 1 ? basePath : `${basePath}?${queryKey}=${p}`);
+  const makePageHref = (p: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (p === 1) {
+      params.delete(queryKey);
+    } else {
+      params.set(queryKey, p.toString());
+    }
+    const queryString = params.toString();
+    return queryString ? `${basePath}?${queryString}` : basePath;
+  };
 
   const isVisible = (el: Element | null) => {
     if (!el || !(el instanceof HTMLElement)) return false;

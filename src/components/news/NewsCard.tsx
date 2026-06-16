@@ -1,15 +1,16 @@
 "use client"
 
 import { useTranslate } from "@/hooks/useTranslate";
-import { getTagRoute, translateTag } from "@/lib/utils";
+import { translateTag, cn } from "@/lib/utils";
 import { News } from "@/payload-types";
 import Link from "next/link";
 
 interface NewsCardProps {
   news: News;
+  activeTag?: string;
 }
 
-export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags } }: NewsCardProps) {
+export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags }, activeTag }: Readonly<NewsCardProps>) {
     const { t, lang } = useTranslate()
     const locale = lang === 'EN' ? 'en-US' : 'hu-HU'
 
@@ -23,22 +24,35 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
             {/* Top tags section */}
             <div className="flex flex-wrap gap-2">
                 {originalTags?.map((rawTag, index) => {
-                    const href = getTagRoute(rawTag, lang)
                     const label = translateTag(rawTag, lang).toUpperCase()
+                    const activeTagsList = activeTag ? activeTag.split(',').filter(Boolean) : []
+                    const isActive = activeTagsList.includes(rawTag)
+
+                    const nextTags = isActive
+                        ? activeTagsList.filter(t => t !== rawTag)
+                        : [...activeTagsList, rawTag]
+                    
+                    const nextTagParam = nextTags.join(',')
+                    const href = nextTagParam 
+                        ? `/${lang.toLowerCase()}?tab=news&tag=${encodeURIComponent(nextTagParam)}`
+                        : `/${lang.toLowerCase()}?tab=news`
 
                     const chip = (
                         <span
-                            className="inline-flex items-center justify-center bg-[#ffe6e6] text-[#862633] border border-[#862633] px-2.5 py-1 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 hover:bg-[#ffe6e6]/80"
+                            className={cn(
+                                "inline-flex items-center justify-center px-2.5 py-1 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 border",
+                                isActive
+                                    ? "bg-[#ffe6e6] text-[#862633] border-[#862633] hover:bg-[#ffe6e6]/80"
+                                    : "bg-transparent text-[#3d3d3d] border-[#3d3d3d] hover:bg-[#3d3d3d]/5"
+                            )}
                         >
                             {label}
                         </span>
                     )
-                    return href ? (
-                        <Link key={`${rawTag}-${index}`} href={href} className="focus:outline-none focus:ring-2 focus:ring-[#862633] rounded-full">
+                    return (
+                        <Link key={`${rawTag}-${index}`} href={href} scroll={false} className="focus:outline-none focus:ring-2 focus:ring-[#862633] rounded-full">
                             {chip}
                         </Link>
-                    ) : (
-                        <span key={`${rawTag}-${index}`}>{chip}</span>
                     )
                 })}
             </div>
@@ -59,7 +73,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
             </div>
 
             {/* Description */}
-            <p className="font-open-sans font-normal leading-[1.6] text-sm text-black w-full flex-grow text-left break-words">
+            <p className="font-open-sans font-normal leading-[1.6] text-sm text-black w-full grow text-left wrap-break-word">
                 {shortText}
             </p>
 

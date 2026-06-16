@@ -19,12 +19,14 @@ export async function getNews(options?: {
   page?: number;
   limit?: number;
   tag?: string;
- 
 }) {
   const payload = await getPayload({ config });
-  const where = options?.tag
-    ? { tags: { contains: options.tag } }
+  
+  const tagsList = options?.tag ? options.tag.split(',').filter(Boolean) : [];
+  const where = tagsList.length > 0
+    ? { or: tagsList.map(t => ({ tags: { contains: t } })) }
     : undefined;
+
   const result = await payload.find({
     collection: "news",
     sort: "-date",
@@ -212,5 +214,5 @@ export async function getUniversityPages() {
     sort: "order",
   });
 
-  return result.docs as UniversityPage[];
+  return result.docs;
 }

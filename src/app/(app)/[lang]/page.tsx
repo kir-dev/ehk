@@ -13,6 +13,7 @@ import { getEvents, getEhkEvents, getNews } from '@/lib/payload-cms';
 import { LanguageProvider, Lang } from '@/components/common/LanguageProvider';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
+import { Event } from '@/payload-types';
 
 
 export default async function Home({
@@ -34,14 +35,15 @@ export default async function Home({
   // Active tab: 'news' | 'events'
   const activeTab = sp?.tab === 'events' ? 'events' : 'news';
 
-  const [heroImages, dictionary, newsData, ehkEventsAll] = await Promise.all([
+  const [heroImages, dictionary, newsData, ehkEventsAll, eventsAll] = await Promise.all([
     getHeroImages(currentLang),
     getDictionary(currentLang, 'news'),
     getNews({ limit: 1 }),
     getEhkEvents(),
+    activeTab === 'events' ? getEvents() : Promise.resolve([] as Event[]),
   ]);
 
-  const events = activeTab === 'events' ? await getEvents() : [];
+  const events = eventsAll;
   const ehkEvents = activeTab === 'events' ? ehkEventsAll : [];
 
 

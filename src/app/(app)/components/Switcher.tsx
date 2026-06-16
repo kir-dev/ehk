@@ -32,14 +32,21 @@ export default function Switcher({
 
   // Measure and update sliding background position
   useEffect(() => {
-    const activeRef = activeTab === "news" ? newsRef.current : eventsRef.current
-    if (activeRef) {
-      setSliderStyle({
-        left: activeRef.offsetLeft,
-        width: activeRef.offsetWidth,
-        opacity: 1,
-      })
+    const updateSlider = () => {
+      const activeRef = activeTab === "news" ? newsRef.current : eventsRef.current
+      if (activeRef) {
+        setSliderStyle({
+          left: activeRef.offsetLeft,
+          width: activeRef.offsetWidth,
+          opacity: 1,
+        })
+      }
     }
+
+    updateSlider()
+
+    window.addEventListener("resize", updateSlider)
+    return () => window.removeEventListener("resize", updateSlider)
   }, [activeTab])
 
   // Track mount state to trigger transitions only after the initial paint

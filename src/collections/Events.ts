@@ -1,3 +1,4 @@
+import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
 import type { CollectionConfig } from "payload";
 
 export const Events: CollectionConfig = {
@@ -68,6 +69,71 @@ export const Events: CollectionConfig = {
         },
       ],
       required: true,
+    },
+    {
+      name: "location",
+      label: "Helyszín",
+      type: "group",
+      fields: [
+        {
+          name: "location_hu",
+          label: "Helyszín (magyar)",
+          type: "text",
+          required: false,
+        },
+        {
+          name: "location_en",
+          label: "Helyszín (angol)",
+          type: "text",
+          required: false,
+        },
+      ],
+      required: false,
+    },
+    {
+      name: "image",
+      label: "Borítókép",
+      type: "upload",
+      relationTo: "media",
+      required: false,
+    },
+    {
+      name: "detailedDescription",
+      label: "Részletes leírás",
+      type: "group",
+      fields: [
+        {
+          name: "description_hu",
+          label: "Részletes leírás (magyar)",
+          type: "richText",
+          required: false,
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+        {
+          name: "description_en",
+          label: "Részletes leírás (angol)",
+          type: "richText",
+          required: false,
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+      ],
+      required: false,
+    },
+    {
+      name: "facebookUrl",
+      label: "Facebook esemény link",
+      type: "text",
+      required: false,
     },
   ],
   hooks: {

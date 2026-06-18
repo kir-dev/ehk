@@ -502,6 +502,44 @@ export interface Event {
      */
     endDate: string;
   };
+  location?: {
+    location_hu?: string | null;
+    location_en?: string | null;
+  };
+  image?: (number | null) | Media;
+  detailedDescription?: {
+    description_hu?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    description_en?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  facebookUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1058,6 +1096,20 @@ export interface EventsSelect<T extends boolean = true> {
         startDate?: T;
         endDate?: T;
       };
+  location?:
+    | T
+    | {
+        location_hu?: T;
+        location_en?: T;
+      };
+  image?: T;
+  detailedDescription?:
+    | T
+    | {
+        description_hu?: T;
+        description_en?: T;
+      };
+  facebookUrl?: T;
   updatedAt?: T;
   createdAt?: T;
 }

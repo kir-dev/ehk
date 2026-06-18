@@ -20,6 +20,7 @@ import * as migration_20260222_201957_simplify_clubs_image from './20260222_2019
 import * as migration_20260414_110634_ehk_events_collection from './20260414_110634_ehk_events_collection';
 import * as migration_20260414_112338_ehk_events_links from './20260414_112338_ehk_events_links';
 import * as migration_20260612_161146 from './20260612_161146';
+import * as migration_20260618_102519 from './20260618_102519';
 
 export const migrations = [
   {
@@ -130,6 +131,11 @@ export const migrations = [
   {
     up: migration_20260612_161146.up,
     down: migration_20260612_161146.down,
-    name: '20260612_161146'
+    name: '20260612_161146',
+  },
+  {
+    up: migration_20260618_102519.up,
+    down: migration_20260618_102519.down,
+    name: '20260618_102519'
   },
 ];

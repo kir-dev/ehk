@@ -21,7 +21,15 @@
   "rendezvenyek": {
     "title": "Rendezvények",
     "description": "Az Egyetemi Hallgatói Képviselet és a hallgatói szervezetek által szervezett események és programok.",
-    "no_results": "Jelenleg nincsenek elérhető rendezvények."
+    "no_results": "Jelenleg nincsenek elérhető rendezvények.",
+    "this_week": "E HÉT",
+    "next_week": "JÖVŐ HÉT",
+    "time": "IDŐPONT",
+    "location": "HELYSZÍN",
+    "link": "LINK",
+    "description": "LEÍRÁS",
+    "share": "Megosztás",
+    "no_events": "Nincsenek események ezen a héten."
   },
   "widgets": {
     "office_hours_title": "AZ IRODA FOGADÓIDEJE",

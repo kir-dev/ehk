@@ -1,3 +1,4 @@
+import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
 import type { CollectionConfig } from "payload";
 
 export const Events: CollectionConfig = {
@@ -52,22 +53,97 @@ export const Events: CollectionConfig = {
       fields: [
         {
           name: "startDate",
-          label: "Kezdő dátum",
+          label: "Kezdő dátum és időpont",
           type: "date",
+          admin: {
+            date: {
+              pickerAppearance: "dayAndTime",
+              displayFormat: "yyyy-MM-dd HH:mm",
+            },
+          },
           required: true,
         },
         {
           name: "endDate",
-          label: "Záró dátum",
+          label: "Záró dátum és időpont",
           type: "date",
           required: true,
           admin: {
             description:
               "Ha egy napos esemény, akkor ugyanaz legyen mint a kezdő dátum",
+            date: {
+              pickerAppearance: "dayAndTime",
+              displayFormat: "yyyy-MM-dd HH:mm",
+            },
           },
         },
       ],
       required: true,
+    },
+    {
+      name: "location",
+      label: "Helyszín",
+      type: "group",
+      fields: [
+        {
+          name: "location_hu",
+          label: "Helyszín (magyar)",
+          type: "text",
+          required: false,
+        },
+        {
+          name: "location_en",
+          label: "Helyszín (angol)",
+          type: "text",
+          required: false,
+        },
+      ],
+      required: false,
+    },
+    {
+      name: "image",
+      label: "Borítókép",
+      type: "upload",
+      relationTo: "media",
+      required: false,
+    },
+    {
+      name: "detailedDescription",
+      label: "Részletes leírás",
+      type: "group",
+      fields: [
+        {
+          name: "description_hu",
+          label: "Részletes leírás (magyar)",
+          type: "richText",
+          required: false,
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+        {
+          name: "description_en",
+          label: "Részletes leírás (angol)",
+          type: "richText",
+          required: false,
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [
+              ...defaultFeatures,
+              FixedToolbarFeature(),
+            ],
+          }),
+        },
+      ],
+      required: false,
+    },
+    {
+      name: "facebookUrl",
+      label: "Facebook esemény link",
+      type: "text",
+      required: false,
     },
   ],
   hooks: {

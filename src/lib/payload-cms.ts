@@ -8,8 +8,7 @@ import {
     Permission,
     Regulation,
     Reminder,
-    Representative,
-    UniversityPage
+    Representative
 } from "@/payload-types";
 import config from "@payload-config";
 import { getPayload } from "payload";

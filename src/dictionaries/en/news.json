@@ -21,7 +21,15 @@
   "rendezvenyek": {
     "title": "Events",
     "description": "Events and programs organized by the University Students' Union and student organizations.",
-    "no_results": "There are currently no events available."
+    "no_results": "There are currently no events available.",
+    "this_week": "THIS WEEK",
+    "next_week": "NEXT WEEK",
+    "time": "TIME",
+    "location": "LOCATION",
+    "link": "LINK",
+    "description": "DESCRIPTION",
+    "share": "Share",
+    "no_events": "No events scheduled for this week."
   },
   "widgets": {
     "office_hours_title": "OFFICE HOURS",

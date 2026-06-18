@@ -7,16 +7,27 @@ import { getFileExtension } from "@/utils/file";
 import { Download, Eye } from "lucide-react";
 
 interface FileCardProps {
-  file?: number | Media | { url?: string; filename?: string };
+  file?: number | Media | { url?: string; filename?: string; filesize?: number };
   title: string;
+  secondaryText?: string;
   actionType?: "view" | "download";
   actionLabel?: string;
   className?: string;
 }
 
+const formatFileSize = (bytes?: number | null) => {
+  if (bytes === undefined || bytes === null || isNaN(bytes)) return null;
+  if (bytes === 0) return "0 B";
+  const k = 1024;
+  const sizes = ["B", "KB", "MB", "GB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
+};
+
 export default function FileCard({
   file,
   title,
+  secondaryText,
   actionType = "view",
   actionLabel,
   className,
@@ -26,27 +37,31 @@ export default function FileCard({
   // Helper to extract file info safely
   const getFileInfo = () => {
     if (!file || typeof file === "number") {
-      return { url: "#", ext: "file" };
+      return { url: "#", ext: "file", filesize: null };
     }
 
     // Check if it's likely a Media object (has id and filename)
     if ("id" in file && "filename" in file) {
+      const media = file as Media;
       return {
-        url: file.url || "#",
-        ext: getFileExtension(file as Media),
+        url: media.url || "#",
+        ext: getFileExtension(media),
+        filesize: media.filesize || null,
       };
     }
 
     // Fallback for simple object { url, filename }
-    const simpleFile = file as { url?: string; filename?: string };
+    const simpleFile = file as { url?: string; filename?: string; filesize?: number };
     return {
       url: simpleFile.url || "#",
       ext: simpleFile.filename?.split(".").pop()?.toLowerCase() || "file",
+      filesize: simpleFile.filesize || null,
     };
   };
 
-  const { url, ext } = getFileInfo();
+  const { url, ext, filesize } = getFileInfo();
   const hasFile = url !== "#";
+  const formattedSize = formatFileSize(filesize);
 
   const handleView = () => {
     if (!hasFile) return;
@@ -73,7 +88,7 @@ export default function FileCard({
   return (
     <div
       className={cn(
-        "group flex w-full items-center gap-2.5 rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 font-open-sans transition-colors duration-200 hover:border-[#d3afaf]",
+        "group flex w-full items-center justify-between gap-4 rounded-2xl border border-[#e9e2d6] bg-white p-4 font-open-sans transition-colors duration-200 hover:border-[#d3afaf]",
         className,
       )}
     >
@@ -82,10 +97,22 @@ export default function FileCard({
           {title}
         </h3>
 
-        <div className="flex flex-wrap items-center gap-2 text-xs">
-          <span className="rounded-full border border-[#e9e2d6] bg-[#f9f4f0] px-3 py-1 text-black whitespace-nowrap">
+        {secondaryText && (
+          <p className="text-xs text-[#6e6660] leading-normal break-words -mt-1">
+            {secondaryText}
+          </p>
+        )}
+
+        <div className="flex flex-wrap items-center gap-2 text-xs text-[#6e6660]">
+          <span className="rounded-full border border-[#e9e2d6] bg-[#f9f4f0] px-3 py-1 text-[11px] font-semibold text-black whitespace-nowrap uppercase">
             {ext}
           </span>
+          {formattedSize && (
+            <>
+              <span className="text-[#6e6660]">•</span>
+              <span>{formattedSize}</span>
+            </>
+          )}
         </div>
       </div>
 

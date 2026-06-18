@@ -2,7 +2,6 @@ export const dynamic = "force-dynamic";
 
 import RepresentativesGrid from '@/app/(app)/[lang]/kepviselok/components/RepresentativesGrid';
 import { LoadingRepresentativesGrid } from '@/components/common/LoadingSpinner';
-import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from '@/get-dictionary';
 import { Suspense } from 'react';
 import { LanguageProvider, Lang } from '@/components/common/LanguageProvider';
@@ -14,14 +13,16 @@ export default async function RepresentativesPage({
   
     return (
         <LanguageProvider defaultLang={(lang as string).toUpperCase() as Lang} dictionary={dictionary}>
-            <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-                <div className="container mx-auto px-2 md:px-4 py-8">
-                    <PageHeader title={dictionary.representatives.title} description={dictionary.representatives.description}/>
+            <main className="min-h-screen bg-[#f9f4f0] px-3 py-6 md:px-8 md:py-8">
+                <div className="mx-auto max-w-[1336px]">
                     <Suspense fallback={<LoadingRepresentativesGrid />}>
-                        <RepresentativesGrid />
+                        <RepresentativesGrid
+                            title={dictionary.representatives.title}
+                            description={dictionary.representatives.description}
+                        />
                     </Suspense>
                 </div>
-            </div>
+            </main>
         </LanguageProvider>
     )
 }

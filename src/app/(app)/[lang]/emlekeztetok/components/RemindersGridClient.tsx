@@ -1,92 +1,80 @@
 "use client"
 
-import { YearSection } from '@/app/(app)/[lang]/emlekeztetok/components/YearSection';
-import { EmptyState } from "@/components/common/EmptyState";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useTranslate } from "@/hooks/useTranslate";
-import { Reminder } from "@/payload-types";
+import { Fragment, useMemo, useState } from 'react'
+import { MonthAccordion } from '@/app/(app)/[lang]/emlekeztetok/components/MonthAccordion'
+import { useLanguage } from "@/components/common/LanguageProvider"
+import { EmptyState } from "@/components/common/EmptyState"
+import { useTranslate } from "@/hooks/useTranslate"
+import { cn, groupRemindersByYearAndMonth, MONTH_NAMES } from '@/lib/utils'
+import { Reminder } from "@/payload-types"
 
 interface RemindersGridClientProps {
-    remindersByYear: Record<string, Reminder[]>
+    reminders: Reminder[]
 }
 
-export default function RemindersGridClient({ remindersByYear }: RemindersGridClientProps) {
+const TYPES = ['EHK', 'EHDK'] as const
+type ReminderType = (typeof TYPES)[number]
+
+export default function RemindersGridClient({ reminders }: RemindersGridClientProps) {
     const { t } = useTranslate()
+    const { lang } = useLanguage()
+    const [activeType, setActiveType] = useState<ReminderType>('EHK')
 
-    // Filter reminders by type
-    const filterRemindersByType = (type: 'EHK' | 'EHDK') => {
-        const filtered: Record<string, Reminder[]> = {}
-        Object.keys(remindersByYear).forEach(year => {
-            const remindersOfType = remindersByYear[year].filter(reminder => reminder.type === type)
-            if (remindersOfType.length > 0) {
-                filtered[year] = remindersOfType
-            }
-        })
-        return filtered
-    }
+    const monthNames = MONTH_NAMES[lang] ?? MONTH_NAMES.HU
 
-    const ehkRemindersByYear = filterRemindersByType('EHK')
-    const ehdkRemindersByYear = filterRemindersByType('EHDK')
-
-    const ehkYears = Object.keys(ehkRemindersByYear).sort((a, b) => parseInt(b) - parseInt(a))
-    const ehdkYears = Object.keys(ehdkRemindersByYear).sort((a, b) => parseInt(b) - parseInt(a))
-
-
+    const yearGroups = useMemo(
+        () => groupRemindersByYearAndMonth(reminders.filter((r) => r.type === activeType)),
+        [reminders, activeType],
+    )
 
     return (
-        <Tabs defaultValue="ehk" className="w-full">
-            <TabsList className="inline-flex w-auto mb-8 bg-gray-100 border border-gray-200">
-                <TabsTrigger
-                    value="ehk"
-                    className="px-4 py-2 text-sm font-medium data-[state=active]:bg-[#862633] data-[state=active]:text-white data-[state=inactive]:text-gray-700 data-[state=inactive]:hover:text-[#862633] transition-colors"
-                >
-                    {t('reminders.tab_ehk')}
-                </TabsTrigger>
-                <TabsTrigger
-                    value="ehdk"
-                    className="px-4 py-2 text-sm font-medium data-[state=active]:bg-[#862633] data-[state=active]:text-white data-[state=inactive]:text-gray-700 data-[state=inactive]:hover:text-[#862633] transition-colors"
-                >
-                    {t('reminders.tab_ehdk')}
-                </TabsTrigger>
-            </TabsList>
+        <div className="flex flex-col gap-4">
+            {/* Capsule tab switcher (EHK / EHDK) */}
+            <div className="inline-flex w-fit items-center gap-1 rounded-full border border-[#e8e4e0] bg-[#fffefc] p-1 shadow-sm">
+                {TYPES.map((type) => (
+                    <button
+                        key={type}
+                        type="button"
+                        onClick={() => setActiveType(type)}
+                        aria-pressed={activeType === type}
+                        className={cn(
+                            "rounded-full px-4 py-2 font-open-sans text-sm select-none cursor-pointer transition-colors duration-200",
+                            activeType === type
+                                ? "bg-[#862633] font-bold text-white"
+                                : "font-normal text-[#3d3d3d] hover:bg-[#e8e4e0]/30 hover:text-[#862633]",
+                        )}
+                    >
+                        {t(`reminders.tab_${type.toLowerCase()}`)}
+                    </button>
+                ))}
+            </div>
 
-            <TabsContent value="ehk">
-                {ehkYears.length === 0 ? (
-                    <EmptyState
-                        title={t('reminders.no_ehk')}
-                        description={t('reminders.no_ehk_desc')}
-                    />
-                ) : (
-                    <div className="space-y-8">
-                        {ehkYears.map((year) => (
-                            <YearSection
-                                key={year}
-                                year={year}
-                                reminders={ehkRemindersByYear[year]}
-                            />
-                        ))}
-                    </div>
-                )}
-            </TabsContent>
+            {yearGroups.length === 0 ? (
+                <EmptyState
+                    title={t(activeType === 'EHK' ? 'reminders.no_ehk' : 'reminders.no_ehdk')}
+                    description={t(activeType === 'EHK' ? 'reminders.no_ehk_desc' : 'reminders.no_ehdk_desc')}
+                />
+            ) : (
+                <>
+                    {/* Divider */}
+                    <div className="h-px w-full bg-[#e9e2d6]" />
 
-            <TabsContent value="ehdk">
-                {ehdkYears.length === 0 ? (
-                    <EmptyState
-                        title={t('reminders.no_ehdk')}
-                        description={t('reminders.no_ehdk_desc')}
-                    />
-                ) : (
-                    <div className="space-y-8">
-                        {ehdkYears.map((year) => (
-                            <YearSection
-                                key={year}
-                                year={year}
-                                reminders={ehdkRemindersByYear[year]}
-                            />
-                        ))}
-                    </div>
-                )}
-            </TabsContent>
-        </Tabs>
+                    {yearGroups.map((yearGroup) => (
+                        <Fragment key={yearGroup.year}>
+                            <p className="font-open-sans font-bold text-sm text-[#9a9a9a]">
+                                {yearGroup.year}
+                            </p>
+                            {yearGroup.months.map((monthGroup) => (
+                                <MonthAccordion
+                                    key={monthGroup.month}
+                                    monthName={monthNames[monthGroup.month]}
+                                    reminders={monthGroup.reminders}
+                                />
+                            ))}
+                        </Fragment>
+                    ))}
+                </>
+            )}
+        </div>
     )
 }

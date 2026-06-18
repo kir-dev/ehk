@@ -23,21 +23,63 @@ export function renderFormattedText(
   });
 }
 
-export function groupRemindersByYear(reminders: Reminder[]): Record<string, Reminder[]> {
-  return reminders.reduce((acc, reminder) => {
-    const year = new Date(reminder.date).getFullYear().toString()
+// Localized month names, indexed 0 (January) - 11 (December)
+export const MONTH_NAMES: Record<'HU' | 'EN', string[]> = {
+  HU: [
+    'Január', 'Február', 'Március', 'Április', 'Május', 'Június',
+    'Július', 'Augusztus', 'Szeptember', 'Október', 'November', 'December',
+  ],
+  EN: [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ],
+}
 
-    if (!acc[year]) {
-      acc[year] = []
+export interface ReminderMonthGroup {
+  month: number // 0-11
+  reminders: Reminder[]
+}
+
+export interface ReminderYearGroup {
+  year: number
+  months: ReminderMonthGroup[]
+}
+
+/**
+ * Groups reminders into a Year > Month > Items hierarchy.
+ * Years and months are sorted newest-first, as are the reminders within each month.
+ */
+export function groupRemindersByYearAndMonth(reminders: Reminder[]): ReminderYearGroup[] {
+  const byYear = new Map<number, Map<number, Reminder[]>>()
+
+  for (const reminder of reminders) {
+    const date = new Date(reminder.date)
+    const year = date.getFullYear()
+    const month = date.getMonth()
+
+    if (!byYear.has(year)) {
+      byYear.set(year, new Map())
     }
+    const months = byYear.get(year)!
+    if (!months.has(month)) {
+      months.set(month, [])
+    }
+    months.get(month)!.push(reminder)
+  }
 
-    acc[year].push(reminder)
-
-    // Sort reminders within each year by date (newest first)
-    acc[year].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
-    return acc
-  }, {} as Record<string, Reminder[]>)
+  return Array.from(byYear.entries())
+    .sort(([a], [b]) => b - a)
+    .map(([year, months]) => ({
+      year,
+      months: Array.from(months.entries())
+        .sort(([a], [b]) => b - a)
+        .map(([month, items]) => ({
+          month,
+          reminders: items.sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          ),
+        })),
+    }))
 }
 
 // Tag translation mapping HU -> EN

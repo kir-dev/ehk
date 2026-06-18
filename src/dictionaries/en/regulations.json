@@ -19,8 +19,8 @@
   },
   "reminders": {
     "title": "Reminders",
-    "tab_ehk": "EHK Reminders",
-    "tab_ehdk": "EHDK Reminders",
+    "tab_ehk": "EHK",
+    "tab_ehdk": "EHDK",
     "no_ehk": "No EHK reminders",
     "no_ehk_desc": "There are currently no available EHK reminders.",
     "no_ehdk": "No EHDK reminders",

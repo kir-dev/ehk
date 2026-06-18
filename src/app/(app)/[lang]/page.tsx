@@ -10,11 +10,10 @@ import NewsSection from '@/app/(app)/components/NewsSection';
 import EventsSection from '@/app/(app)/components/EventsSection';
 import NewsFilter from '@/app/(app)/components/NewsFilter';
 import { getHeroImages } from '@/lib/get-hero-images';
-import { getEvents, getEhkEvents, getNews } from '@/lib/payload-cms';
+import { getEvents, getNews } from '@/lib/payload-cms';
 import { LanguageProvider, Lang } from '@/components/common/LanguageProvider';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
-import { Event } from '@/payload-types';
 
 
 export default async function Home({
@@ -41,16 +40,12 @@ export default async function Home({
     ? sp.tag.filter(Boolean).join(',')
     : undefined;
 
-  const [heroImages, dictionary, newsData, ehkEventsAll, eventsAll] = await Promise.all([
+  const [heroImages, dictionary, newsData, eventsAll] = await Promise.all([
     getHeroImages(currentLang),
     getDictionary(currentLang, 'news'),
     getNews({ limit: 1 }),
-    getEhkEvents(),
-    activeTab === 'events' ? getEvents() : Promise.resolve([] as Event[]),
+    getEvents(),
   ]);
-
-  const events = eventsAll;
-  const ehkEvents = activeTab === 'events' ? ehkEventsAll : [];
 
 
 
@@ -87,7 +82,7 @@ export default async function Home({
                     <Switcher
                       activeTab={activeTab}
                       newsCount={newsData.totalDocs}
-                      eventsCount={ehkEventsAll.length}
+                      eventsCount={eventsAll.length}
                       newsTitle={dictionary.news.title}
                       eventsTitle={dictionary.rendezvenyek.title}
                       basePath={`/${lang}`}
@@ -115,19 +110,11 @@ export default async function Home({
                     </div>
                   ) : (
                     <div className="flex flex-col w-full animate-in fade-in duration-300">
-                      {/* Events Header Block */}
-                      <div className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
-                        <h2 className="text-xl md:text-2xl font-playfair font-bold tracking-wide">
-                          {dictionary.rendezvenyek.title}
-                        </h2>
-                      </div>
-
                       {/* Events List and Calendar Grid */}
-                      <div className="-mt-6 relative z-10">
+                      <div className="relative z-10">
                         <EventsSection
                           lang={currentLang}
-                          ehkEvents={ehkEvents}
-                          calendarEvents={events}
+                          events={eventsAll}
                           dictionary={dictionary}
                         />
                       </div>

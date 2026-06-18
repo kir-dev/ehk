@@ -1,5 +1,5 @@
 export const NAVBAR_STYLES = {
-  header: 'w-full bg-ehk-navbar border-b border-ehk-navbar/30 relative z-[100] overflow-x-clip',
+  header: 'w-full bg-[#862633] border-b border-[#e9e2d6]/20 relative z-[100] overflow-x-clip',
   container: 'px-4 w-full',
   innerContainer: 'flex items-center h-20 w-full',
   
@@ -10,12 +10,13 @@ export const NAVBAR_STYLES = {
   },
   
   desktop: {
-    nav: 'hidden xlg:flex',
-    menuTrigger: 'text-white relative bg-ehk-navbar hover:text-gray-200 font-semibold text-base px-3 py-2.5 transition-all duration-200 hover:scale-105',
-    menuContent: 'absolute z-[100] bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg max-w-[calc(100vw-1rem)]',
-    menuContentInner: 'w-80 p-4',
-    menuLink: 'text-white relative hover:text-gray-200 font-semibold text-base px-3 py-2.5 block transition-all duration-200 hover:scale-105',
-    subMenuItem: 'block px-4 py-2.5 text-sm text-gray-800 hover:text-ehk-navbar hover:bg-gray-100 rounded-lg transition-all duration-200 hover:pl-5 font-medium'
+    nav: 'hidden xlg:flex items-center',
+    menuTrigger: 'group text-white font-semibold text-[13px] tracking-wide px-4 py-2.5 rounded-2xl bg-transparent border border-transparent hover:bg-white/20 hover:border-white/10 data-[state=open]:bg-white/30 data-[state=open]:border-[#e9e2d6] transition-all duration-200 flex items-center gap-1.5 focus:outline-none',
+    menuViewport: '!w-[calc(100vw-4rem)] max-w-[1336px] mx-auto bg-[#fffefc] border border-[#e9e2d6] border-t-0 rounded-b-2xl shadow-lg p-8 z-[100] !mt-0',
+    menuContent: 'w-full focus:outline-none',
+    menuContentInner: 'w-full',
+    menuLink: 'text-white font-semibold text-[13px] tracking-wide px-4 py-2.5 rounded-2xl bg-transparent border border-transparent hover:bg-white/20 hover:border-white/10 transition-all duration-200 block focus:outline-none',
+    subMenuItem: 'group flex flex-col p-4 rounded-xl hover:bg-[#f9f4f0] transition-all duration-200'
   },
   
   mobile: {
@@ -31,7 +32,7 @@ export const NAVBAR_STYLES = {
   
   actions: {
     container: 'flex items-center space-x-2 ml-2',
-    langToggle: 'bg-ehk-button text-white hover:bg-ehk-button/90 px-2 py-1 border border-ehk-button rounded-md font-semibold transition-all duration-200',
+    langToggle: 'bg-transparent text-white hover:bg-white/10 px-2.5 py-[5px] border-[0.5px] border-[#f9f4f0] rounded-[10px] font-semibold text-sm transition-all duration-200',
     searchButton: 'text-white hover:text-gray-200 transition-colors duration-200'
   }
 } as const

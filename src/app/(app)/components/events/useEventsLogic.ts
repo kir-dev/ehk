@@ -4,9 +4,8 @@ import {
   startOfWeek,
   endOfWeek,
   addWeeks,
-  isWithinInterval,
-  isSameDay,
   addDays,
+  endOfDay,
 } from "date-fns"
 import { TOTAL_WEEKS_COUNT, SLIDING_WINDOW_SIZE } from "./events.constants"
 import { WeekMetadata, Translations } from "./events.types"
@@ -17,6 +16,18 @@ interface UseEventsLogicProps {
   dictionary: Record<string, Record<string, string>>
 }
 
+const getEventInterval = (event: Event) => {
+  const start = new Date(event.date.startDate)
+  const end = new Date(event.date.endDate)
+
+  return start <= end ? { start, end } : { start: end, end: start }
+}
+
+const intervalsOverlap = (
+  first: { start: Date; end: Date },
+  second: { start: Date; end: Date }
+) => first.start <= second.end && first.end >= second.start
+
 export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps) {
   const t: Translations = useMemo(() => {
     const rendezvenyek = dictionary.rendezvenyek || {}
@@ -26,7 +37,7 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
       time: rendezvenyek.time || (lang === "hu" ? "IDŐPONT" : "TIME"),
       location: rendezvenyek.location || (lang === "hu" ? "HELYSZÍN" : "LOCATION"),
       link: rendezvenyek.link || (lang === "hu" ? "LINK" : "LINK"),
-      description: rendezvenyek.description || (lang === "hu" ? "LEÍRÁS" : "DESCRIPTION"),
+      description: rendezvenyek.description_label || (lang === "hu" ? "LEÍRÁS" : "DESCRIPTION"),
       share: rendezvenyek.share || (lang === "hu" ? "Megosztás" : "Share"),
       noEvents: rendezvenyek.no_events || (lang === "hu" ? "Nincsenek események ezen a héten." : "No events scheduled for this week."),
     }
@@ -76,19 +87,18 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
 
   // Group events by day for a given week range
   const getWeekEvents = useCallback((monday: Date, sunday: Date) => {
-    // Filter events starting in this week
     const weekInterval = { start: monday, end: sunday }
     const filtered = events.filter((e) => {
-      const eventStart = new Date(e.date.startDate)
-      return isWithinInterval(eventStart, weekInterval)
+      return intervalsOverlap(getEventInterval(e), weekInterval)
     })
 
     // Group by day of week (Monday to Sunday)
     const daysList = []
     for (let i = 0; i < 7; i++) {
       const currentDay = addDays(monday, i)
+      const dayInterval = { start: currentDay, end: endOfDay(currentDay) }
       const dayEvents = filtered
-        .filter((e) => isSameDay(new Date(e.date.startDate), currentDay))
+        .filter((e) => intervalsOverlap(getEventInterval(e), dayInterval))
         .sort((a, b) => new Date(a.date.startDate).getTime() - new Date(b.date.startDate).getTime())
 
       if (dayEvents.length > 0) {

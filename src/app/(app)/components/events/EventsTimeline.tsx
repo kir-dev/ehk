@@ -8,6 +8,7 @@ export function EventsTimeline({
   weeks,
   activeWeekIndex,
   timelineStartIdx,
+  startWeekIndex,
   onWeekClick,
   onShiftTimeline,
   t,
@@ -22,10 +23,10 @@ export function EventsTimeline({
       {/* Left Arrow */}
       <button
         onClick={() => onShiftTimeline("left")}
-        disabled={timelineStartIdx === 0}
+        disabled={timelineStartIdx === startWeekIndex}
         className={cn(
           "h-8 w-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors shrink-0",
-          timelineStartIdx === 0 && "opacity-30 cursor-not-allowed"
+          timelineStartIdx === startWeekIndex && "opacity-30 cursor-not-allowed"
         )}
         aria-label="Previous weeks"
       >
@@ -34,7 +35,7 @@ export function EventsTimeline({
 
       {/* Weeks Slider Container */}
       <div className="flex flex-1 gap-2 overflow-hidden justify-center items-center h-full">
-        {weeks.slice(timelineStartIdx, timelineStartIdx + 3).map((week) => {
+        {weeks.slice(timelineStartIdx - startWeekIndex, timelineStartIdx - startWeekIndex + 3).map((week) => {
           const isActive = activeWeekIndex === week.index
           const weekLabel = formatWeekRange(week.monday, week.sunday, lang)
           
@@ -70,10 +71,10 @@ export function EventsTimeline({
       {/* Right Arrow */}
       <button
         onClick={() => onShiftTimeline("right")}
-        disabled={timelineStartIdx >= totalWeeksCount - 3}
+        disabled={timelineStartIdx >= startWeekIndex + totalWeeksCount - 3}
         className={cn(
           "h-8 w-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors shrink-0",
-          timelineStartIdx >= totalWeeksCount - 3 && "opacity-30 cursor-not-allowed"
+          timelineStartIdx >= startWeekIndex + totalWeeksCount - 3 && "opacity-30 cursor-not-allowed"
         )}
         aria-label="Next weeks"
       >

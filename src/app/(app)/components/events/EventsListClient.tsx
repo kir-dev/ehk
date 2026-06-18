@@ -13,6 +13,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
     weeks,
     activeWeekIndex,
     timelineStartIdx,
+    startWeekIndex,
     expandedEventId,
     setExpandedEventId,
     copiedEventId,
@@ -33,6 +34,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
         weeks={weeks}
         activeWeekIndex={activeWeekIndex}
         timelineStartIdx={timelineStartIdx}
+        startWeekIndex={startWeekIndex}
         onWeekClick={handleWeekClick}
         onShiftTimeline={shiftTimeline}
         t={t}
@@ -44,8 +46,8 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
       <div 
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex flex-col w-full overflow-y-auto max-h-[650px] pr-2 scroll-smooth relative"
-        style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(134, 38, 51, 0.3) transparent" }}
+        className="flex flex-col w-full overflow-y-auto max-h-[650px] pr-2 relative"
+        style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(134, 38, 51, 0.3) transparent", overflowAnchor: "none" }}
       >
         {renderedWeekData.map((week) => {
           return (
@@ -59,7 +61,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
               className="scroll-mt-36"
             >
               {/* Divider if not first week */}
-              {week.index > 0 && <hr className="border-[#e9e2d6] my-6" />}
+              {week.index > startWeekIndex && <hr className="border-[#e9e2d6] my-6" />}
 
               {/* Weekly Header for visual separation */}
               <div className="text-[11px] font-bold text-[#9a9a9a] uppercase tracking-wider mb-4 font-open-sans px-2">

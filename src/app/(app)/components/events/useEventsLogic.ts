@@ -35,21 +35,25 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
   // Active expanded accordion item ID
   const [expandedEventId, setExpandedEventId] = useState<number | null>(null)
   
+  // Start week index (initially 0, can go negative when prepended)
+  const [startWeekIndex, setStartWeekIndex] = useState(0)
+
   // Total weeks count state (grows dynamically)
   const [totalWeeksCount, setTotalWeeksCount] = useState(TOTAL_WEEKS_COUNT)
   
   const baseDate = useMemo(() => new Date(), [])
   
-  // Generate the weeks metadata based on totalWeeksCount
+  // Generate the weeks metadata based on totalWeeksCount starting from startWeekIndex
   const weeks = useMemo(() => {
     const list: WeekMetadata[] = []
     for (let i = 0; i < totalWeeksCount; i++) {
-      const monday = startOfWeek(addWeeks(baseDate, i), { weekStartsOn: 1 })
+      const weekIdx = startWeekIndex + i
+      const monday = startOfWeek(addWeeks(baseDate, weekIdx), { weekStartsOn: 1 })
       const sunday = endOfWeek(monday, { weekStartsOn: 1 })
-      list.push({ monday, sunday, index: i })
+      list.push({ monday, sunday, index: weekIdx })
     }
     return list
-  }, [baseDate, totalWeeksCount])
+  }, [baseDate, startWeekIndex, totalWeeksCount])
 
   // Horizontal Timeline Carousel state (shows 3 weeks at a time)
   const [timelineStartIdx, setTimelineStartIdx] = useState(0)
@@ -64,6 +68,8 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
   
   // Track if scrolling is manual (to ignore scroll-spy updates during timeline clicks)
   const isManualScrolling = useRef(false)
+  // Track if the sliding window layout is shifting to ignore layout-induced scroll events
+  const isLayoutShifting = useRef(false)
   const [copiedEventId, setCopiedEventId] = useState<number | null>(null)
   const observerRefs = useRef<Record<string, HTMLDivElement | null>>({})
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -101,13 +107,22 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     setActiveWeekIndex(index)
     
     let currentTotal = totalWeeksCount
-    if (index >= totalWeeksCount - 3) {
+    let currentStart = startWeekIndex
+    
+    if (index >= startWeekIndex + totalWeeksCount - 3) {
       currentTotal = totalWeeksCount + 4
       setTotalWeeksCount(currentTotal)
     }
     
+    if (index <= startWeekIndex + 2) {
+      currentStart = startWeekIndex - 4
+      currentTotal = totalWeeksCount + 4
+      setStartWeekIndex(currentStart)
+      setTotalWeeksCount(currentTotal)
+    }
+    
     // Shift visible weeks window so that the clicked week index is in the visible range
-    const newStartIdx = Math.max(0, Math.min(currentTotal - SLIDING_WINDOW_SIZE, index - 1))
+    const newStartIdx = Math.max(currentStart, Math.min(currentStart + currentTotal - SLIDING_WINDOW_SIZE, index - 2))
     setVisibleWeeksStartIdx(newStartIdx)
 
     // Scroll to the week section
@@ -148,12 +163,16 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
 
   // Shift horizontal timeline view window
   const shiftTimeline = (direction: "left" | "right") => {
-    if (direction === "left" && timelineStartIdx > 0) {
+    if (direction === "left") {
+      if (timelineStartIdx <= startWeekIndex + 2) {
+        setStartWeekIndex((prev) => prev - 4)
+        setTotalWeeksCount((prev) => prev + 4)
+      }
       setTimelineStartIdx((prev) => prev - 1)
     } else if (direction === "right") {
-      if (timelineStartIdx < totalWeeksCount - 3) {
+      if (timelineStartIdx < startWeekIndex + totalWeeksCount - 3) {
         // If we are moving right and getting close to the end of the timeline, generate more weeks
-        if (timelineStartIdx >= totalWeeksCount - 5) {
+        if (timelineStartIdx >= startWeekIndex + totalWeeksCount - 5) {
           setTotalWeeksCount((prev) => prev + 4)
         }
         setTimelineStartIdx((prev) => prev + 1)
@@ -166,9 +185,9 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     if (activeWeekIndex < timelineStartIdx) {
       setTimelineStartIdx(activeWeekIndex)
     } else if (activeWeekIndex >= timelineStartIdx + 3) {
-      setTimelineStartIdx(Math.min(totalWeeksCount - 3, activeWeekIndex - 2))
+      setTimelineStartIdx(Math.min(startWeekIndex + totalWeeksCount - 3, activeWeekIndex - 2))
     }
-  }, [activeWeekIndex, timelineStartIdx, totalWeeksCount])
+  }, [activeWeekIndex, timelineStartIdx, startWeekIndex, totalWeeksCount])
 
   // Handle scroll events inside the events container
   const handleScroll = useCallback(() => {
@@ -176,7 +195,7 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     if (!container) return
 
     // 1. Scroll-spy: Highlight current active week in the timeline navigation
-    if (isManualScrolling.current) return
+    if (isManualScrolling.current || isLayoutShifting.current) return
 
     const elements = Object.entries(observerRefs.current)
       .map(([key, el]) => ({ key, el, index: Number(el?.getAttribute("data-week-idx")) }))
@@ -209,35 +228,50 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     if (bestWeekIdx !== -1) {
       setActiveWeekIndex(bestWeekIdx)
 
-      // If we are close to the end of currently generated weeks, append more weeks dynamically
       let currentTotal = totalWeeksCount
-      if (bestWeekIdx >= totalWeeksCount - 3) {
+      let currentStart = startWeekIndex
+
+      // If we are close to the end of currently generated weeks, append more weeks dynamically
+      if (bestWeekIdx >= startWeekIndex + totalWeeksCount - 3) {
         currentTotal = totalWeeksCount + 4
         setTotalWeeksCount(currentTotal)
       }
 
-      // 2. Sliding window check: if activeWeekIndex shifts, shift the visible weeks range!
-      if (bestWeekIdx > visibleWeeksStartIdx && visibleWeeksStartIdx < currentTotal - SLIDING_WINDOW_SIZE) {
+      // If we are close to the start of currently generated weeks, prepend more weeks dynamically
+      if (bestWeekIdx <= startWeekIndex + 2) {
+        currentStart = startWeekIndex - 4
+        currentTotal = totalWeeksCount + 4
+        setStartWeekIndex(currentStart)
+        setTotalWeeksCount(currentTotal)
+      }
+
+      // 2. Sliding window check: keep visibleWeeksStartIdx at bestWeekIdx - 2
+      const targetVisibleStart = bestWeekIdx - 2
+
+      if (visibleWeeksStartIdx < targetVisibleStart && visibleWeeksStartIdx < currentStart + currentTotal - SLIDING_WINDOW_SIZE) {
+        isLayoutShifting.current = true
         // Measure the height of the week we are about to remove at the top
         const el = document.getElementById(`week-section-${visibleWeeksStartIdx}`)
         if (el) {
           lastRemovedHeight.current = el.offsetHeight
         }
-        setVisibleWeeksStartIdx((prev) => Math.min(currentTotal - SLIDING_WINDOW_SIZE, prev + 1))
+        setVisibleWeeksStartIdx((prev) => Math.min(currentStart + currentTotal - SLIDING_WINDOW_SIZE, prev + 1))
       }
-      else if (bestWeekIdx < visibleWeeksStartIdx && visibleWeeksStartIdx > 0) {
-        setVisibleWeeksStartIdx((prev) => Math.max(0, prev - 1))
+      else if (visibleWeeksStartIdx > targetVisibleStart && visibleWeeksStartIdx > currentStart) {
+        isLayoutShifting.current = true
+        setVisibleWeeksStartIdx((prev) => Math.max(currentStart, prev - 1))
       }
     }
-  }, [visibleWeeksStartIdx, totalWeeksCount])
+  }, [visibleWeeksStartIdx, startWeekIndex, totalWeeksCount])
 
   // Pre-calculate grouped events for the 4 weeks in the sliding window
   const renderedWeekData = useMemo(() => {
-    return weeks.slice(visibleWeeksStartIdx, visibleWeeksStartIdx + SLIDING_WINDOW_SIZE).map((w) => ({
+    const sliceStart = visibleWeeksStartIdx - startWeekIndex
+    return weeks.slice(sliceStart, sliceStart + SLIDING_WINDOW_SIZE).map((w) => ({
       ...w,
       days: getWeekEvents(w.monday, w.sunday),
     }))
-  }, [weeks, visibleWeeksStartIdx, getWeekEvents])
+  }, [weeks, visibleWeeksStartIdx, startWeekIndex, getWeekEvents])
 
   // Sync scroll offset layout changes when sliding window shifts
   useLayoutEffect(() => {
@@ -257,6 +291,13 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
       container.scrollTop = container.scrollTop + addedHeight
     }
     prevStartIdx.current = visibleWeeksStartIdx
+
+    // Reset layout shifting flag after scroll events have fired
+    const timeoutId = setTimeout(() => {
+      isLayoutShifting.current = false
+    }, 100)
+
+    return () => clearTimeout(timeoutId)
   }, [visibleWeeksStartIdx])
 
   // Parse event query parameter on mount to expand and scroll to specific event
@@ -278,31 +319,40 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
             const diffInTime = eventDate.getTime() - startOfWeek(baseDate, { weekStartsOn: 1 }).getTime()
             const diffInWeeks = Math.floor(diffInTime / (7 * 24 * 60 * 60 * 1000))
             
-            if (diffInWeeks >= 0) {
-              const weekIdx = diffInWeeks
-              
-              // Grow totalWeeksCount if needed
-              if (weekIdx >= totalWeeksCount - 3) {
-                setTotalWeeksCount(weekIdx + 4)
-              }
-              
-              setActiveWeekIndex(weekIdx)
-              const newStartIdx = Math.max(0, Math.min(Math.max(totalWeeksCount, weekIdx + 4) - SLIDING_WINDOW_SIZE, weekIdx - 1))
-              setVisibleWeeksStartIdx(newStartIdx)
-              
-              // Wait for DOM rendering before scrolling
-              setTimeout(() => {
-                const target = document.getElementById(`week-section-${weekIdx}`)
-                const container = scrollContainerRef.current
-                if (container && target) {
-                  const targetOffset = target.offsetTop
-                  container.scrollTo({
-                    top: targetOffset,
-                    behavior: "smooth",
-                  })
-                }
-              }, 300)
+            let currentStart = startWeekIndex
+            let currentTotal = totalWeeksCount
+            
+            if (diffInWeeks < startWeekIndex) {
+              const needed = startWeekIndex - diffInWeeks
+              const prependChunks = Math.ceil(needed / 4) * 4
+              currentStart = startWeekIndex - prependChunks
+              currentTotal = totalWeeksCount + prependChunks
+              setStartWeekIndex(currentStart)
+              setTotalWeeksCount(currentTotal)
+            } else if (diffInWeeks >= startWeekIndex + totalWeeksCount - 3) {
+              const needed = diffInWeeks - (startWeekIndex + totalWeeksCount - 3)
+              const appendChunks = Math.ceil(needed / 4) * 4
+              currentTotal = totalWeeksCount + appendChunks
+              setTotalWeeksCount(currentTotal)
             }
+            
+            const weekIdx = diffInWeeks
+            setActiveWeekIndex(weekIdx)
+            const newStartIdx = Math.max(currentStart, Math.min(currentStart + currentTotal - SLIDING_WINDOW_SIZE, weekIdx - 2))
+            setVisibleWeeksStartIdx(newStartIdx)
+            
+            // Wait for DOM rendering before scrolling
+            setTimeout(() => {
+              const target = document.getElementById(`week-section-${weekIdx}`)
+              const container = scrollContainerRef.current
+              if (container && target) {
+                const targetOffset = target.offsetTop
+                container.scrollTo({
+                  top: targetOffset,
+                  behavior: "smooth",
+                })
+              }
+            }, 300)
           }
         }
       }
@@ -331,6 +381,7 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     weeks,
     activeWeekIndex,
     timelineStartIdx,
+    startWeekIndex,
     visibleWeeksStartIdx,
     expandedEventId,
     setExpandedEventId,

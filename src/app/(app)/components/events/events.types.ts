@@ -36,6 +36,7 @@ export interface EventsTimelineProps {
   weeks: WeekMetadata[]
   activeWeekIndex: number
   timelineStartIdx: number
+  startWeekIndex: number
   onWeekClick: (index: number) => void
   onShiftTimeline: (direction: "left" | "right") => void
   t: Translations

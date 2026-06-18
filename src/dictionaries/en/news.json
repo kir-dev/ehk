@@ -22,5 +22,19 @@
     "title": "Events",
     "description": "Events and programs organized by the University Students' Union and student organizations.",
     "no_results": "There are currently no events available."
+  },
+  "widgets": {
+    "office_hours_title": "OFFICE HOURS",
+    "important_links_title": "IMPORTANT LINKS",
+    "study_period": "During study period",
+    "exam_period": "During exam period",
+    "holidays": "On public holidays",
+    "closed": "closed",
+    "muhely_title": "MŰHELY",
+    "muhely_desc": "Read the latest issue of Műhely!",
+    "muhely_btn": "Read",
+    "filters": "Filters",
+    "clear_filters": "Clear filters",
+    "fresh_news": "Fresh news"
   }
 }

@@ -1,181 +1,138 @@
 "use client"
 
 import { useTranslate } from "@/hooks/useTranslate";
+import { UniversityPage } from "@/payload-types";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
-    const { t } = useTranslate()
+interface FooterProps {
+  universityPages?: UniversityPage[];
+}
+
+export default function Footer({ universityPages = [] }: FooterProps) {
+    const { t, lang } = useTranslate();
+
+    const representativeCards = [
+        { name: "ÉMK", url: "https://emkhk.bme.hu/" },
+        { name: "GPK", url: "https://ghk.bme.hu/" },
+        { name: "ÉPK", url: "http://epiteszhk.bme.hu/" },
+        { name: "VBK", url: "https://vegyeszhk.hu/" },
+        { name: "VIK", url: "https://vik.hk/" },
+        { name: "KJK", url: "http://kozlekhk.hu/" },
+        { name: "TTK", url: "https://ttkhk.bme.hu/" },
+        { name: "GTK", url: "http://gtkhk.hu/" },
+    ];
 
     return (
-        <footer className="bg-[#3E3D3D] text-white py-12 pb-4 px-6">
-            <div className="container mx-auto max-w-7xl">
-                <div className="flex flex-col lg:flex-row gap-8 mb-8">
+        <footer className="bg-[#fbf9f6] text-[#1a1a1a] border-t border-[#e9e2d6] py-8 font-open-sans">
+            <div className="container mx-auto">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+                    
                     {/* KAPCSOLAT Section */}
-                    <div className="flex-1 space-y-4">
-                        <h3 className="text-lg font-semibold mb-4">{t('footer.contact.title')}</h3>
-                        <div className="space-y-2 text-sm text-gray-300">
+                    <div className="flex-1 flex flex-col gap-4">
+                        <p className="font-open-sans font-bold text-xs text-[#9a9a9a] uppercase tracking-wider">
+                            {t('footer.contact.title')}
+                        </p>
+                        <div className="font-playfair font-bold text-[22px] text-[#1a1a1a] leading-tight mt-2">
                             <p>{t('footer.contact.university')}</p>
                             <p>{t('footer.contact.ehk')}</p>
-
-                            <div className="mt-4 space-y-1">
-                                <p>
-                                    <span className="text-gray-400">{t('footer.contact.address_label')}</span>{' '}
+                        </div>
+                        <div className="font-open-sans text-sm text-[#1a1a1a] mt-2 space-y-1">
+                            <p>{t('footer.contact.address_value') || "1111 Budapest, Műegyetem rkp. 7-9. R. ép. 2.07."}</p>
+                            <p>+36-1-463-3836</p>
+                        </div>
+                        <ul className="space-y-1.5 mt-2">
+                            {[
+                                "info@bmeehk.hu",
+                                "palyazat@bmeehk.hu",
+                                "kollegium@bmeehk.hu",
+                                "oktatas@bmeehk.hu",
+                                "szoc@bmeehk.hu"
+                            ].map((email) => (
+                                <li key={email} className="flex items-center gap-2 text-sm">
+                                    <span className="text-[#B2293B] font-bold text-lg leading-none select-none">•</span>
                                     <Link
-                                        href="https://maps.google.com/?q=1111+Budapest,+Műegyetem+rkp.+7-9"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-300 hover:text-white transition-colors"
+                                        href={`mailto:${email}`}
+                                        className="text-[#1a1a1a] hover:text-[#B2293B] hover:underline transition-colors duration-150"
                                     >
-                                        {t('footer.contact.address_value')}
+                                        {email}
                                     </Link>
-                                </p>
-                                <p>
-                                    <span className="text-gray-400">Tel:</span> +36-1-463-3836
-                                </p>
-                                <p>
-                                    <span className="text-gray-400">{t('footer.contact.emails_label')}</span>
-                                </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                                <ul className="ml-4 space-y-1">
-                                    <li>
-                                        <span className="text-gray-500">•</span>{' '}
-                                        <Link
-                                            href="mailto:info@bmeehk.hu"
-                                            className="text-gray-200 hover:text-white transition-colors"
-                                        >
-                                            info@bmeehk.hu
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <span className="text-gray-500">•</span>{' '}
-                                        <Link
-                                            href="mailto:palyazat@bmeehk.hu"
-                                            className="text-gray-200 hover:text-white transition-colors"
-                                        >
-                                            palyazat@bmeehk.hu
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <span className="text-gray-500">•</span>{' '}
-                                        <Link
-                                            href="mailto:kollegium@bmeehk.hu"
-                                            className="text-gray-200 hover:text-white transition-colors"
-                                        >
-                                            kollegium@bmeehk.hu
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <span className="text-gray-500">•</span>{' '}
-                                        <Link
-                                            href="mailto:oktatas@bmeehk.hu"
-                                            className="text-gray-200 hover:text-white transition-colors"
-                                        >
-                                            oktatas@bmeehk.hu
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <span className="text-gray-500">•</span>{' '}
-                                        <Link
-                                            href="mailto:szoc@bmeehk.hu"
-                                            className="text-gray-200 hover:text-white transition-colors"
-                                        >
-                                            szoc@bmeehk.hu
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
+                    {/* Divider 1 */}
+                    <div className="hidden lg:block w-px bg-[#e9e2d6] self-stretch" />
+                    <div className="lg:hidden h-px bg-[#e9e2d6] my-2" />
 
-                            <div className="mt-4">
-                                <p>
-                                    <span className="text-gray-400">{t('footer.contact.office_hours_label')}</span>
-                                </p>
-                                <div className="ml-2 mt-1 space-y-1">
-                                    <p>
-                                        <span className="text-gray-400">{t('footer.contact.study_period')}</span> {t('footer.contact.weekdays_10_14')}
-                                    </p>
-                                    <p>
-                                        <span className="text-gray-400">{t('footer.contact.exam_period')}</span> {t('footer.contact.weekdays_11_13')}
-                                    </p>
-                                </div>
-                            </div>
+                    {/* KARI HALLGATÓI KÉPVISELETEK Section */}
+                    <div className="flex-1 flex flex-col gap-4">
+                        <p className="font-open-sans font-bold text-xs text-[#9a9a9a] uppercase tracking-wider">
+                            {t('footer.faculty_representation.title')}
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full mt-2">
+                            {representativeCards.map((card) => (
+                                <Link
+                                    key={card.name}
+                                    href={card.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-[#f9f4f0] border border-[#e9e2d6] rounded-lg p-4 flex flex-col justify-between hover:bg-[#f2eae1] hover:border-[#dfd6c8] transition-all duration-200"
+                                >
+                                    <div className="flex justify-between items-center w-full">
+                                        <span className="font-open-sans font-bold text-base text-[#1a1a1a] tracking-tight">{card.name}</span>
+                                        <ExternalLink className="w-4 h-4 text-[#6e6660] shrink-0" />
+                                    </div>
+                                    <span className="font-open-sans text-xs text-[#6e6660] mt-1">
+                                        {t("Kari Hallgatói Képviselet", "Faculty Student Representation")}
+                                    </span>
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Divider */}
-                    <div className="hidden lg:block w-px bg-gray-600"></div>
-
-                    {/* KARI HALLGATÓI KÉPVISELETEK Section */}
-                    <div className="flex-1 space-y-4">
-                        <h3 className="text-lg font-semibold mb-4">{t('footer.faculty_representation.title')}</h3>
-                        <nav className="space-y-2">
-                            <Link href="https://emkhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.emk')}
-                            </Link>
-                            <Link href="https://ghk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.gpk')}
-                            </Link>
-                            <Link href="http://epiteszhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.epk')}
-                            </Link>
-                            <Link href="https://vegyeszhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.vbk')}
-                            </Link>
-                            <Link href="https://vik.hk/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.vik')}
-                            </Link>
-                            <Link href="http://kozlekhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.kjk')}
-                            </Link>
-                            <Link href="https://ttkhk.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.ttk')}
-                            </Link>
-                            <Link href="http://gtkhk.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.faculty_representation.gtk')}
-                            </Link>
-                        </nav>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="hidden lg:block w-px bg-gray-600"></div>
+                    {/* Divider 2 */}
+                    <div className="hidden lg:block w-px bg-[#e9e2d6] self-stretch" />
+                    <div className="lg:hidden h-px bg-[#e9e2d6] my-2" />
 
                     {/* EGYETEMI OLDALAK Section */}
-                    <div className="flex-1 space-y-4">
-                        <h3 className="text-lg font-semibold mb-4">{t('footer.university_pages.title')}</h3>
-                        <nav className="space-y-2">
-                            <Link href="https://bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                BME
-                            </Link>
-                            <Link href="https://telefon.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.university_pages.phonebook')}
-                            </Link>
-                            <Link href="https://www.hszi.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.university_pages.sales_directorate')}
-                            </Link>
-                            <Link href="https://kth.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.university_pages.academic_office')}
-                            </Link>
-                            <Link href="https://miszisz.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.university_pages.misz')}
-                            </Link>
-                            <Link href="https://www.szkene.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                {t('footer.university_pages.szkene')}
-                            </Link>
-                            <Link href="https://muhely.bme.hu/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
-                                MŰHELY Online
-                            </Link>
-                        </nav>
+                    <div className="flex-1 flex flex-col gap-4">
+                        <p className="font-open-sans font-bold text-xs text-[#9a9a9a] uppercase tracking-wider">
+                            {t('footer.university_pages.title')}
+                        </p>
+                        <div className="flex flex-col gap-3 font-open-sans text-base text-[#1a1a1a] mt-2">
+                            {universityPages.map((page) => {
+                                const normalizedLang = lang?.toUpperCase();
+                                const title = (normalizedLang === "EN" ? page.title_en : page.title_hu)
+                                    || page.title_hu
+                                    || page.title_en
+                                    || t("Egyetemi oldal", "University page");
+                                return (
+                                    <Link
+                                        key={page.id}
+                                        href={page.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline hover:text-[#B2293B] transition-colors duration-150"
+                                    >
+                                        {title}
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     </div>
+
                 </div>
 
-                {/* University Logo */}
-                <div className="flex flex-col justify-center items-center pt-8 gap-4">
-                    <Image src={"/bmelogo.png"} alt={t("footer.logo_alt")} width={100} height={100} className="h-16 w-auto" />
-                    <p className="text-xs text-gray-400">
-                        Made with 🤍 by <a href="https://kir-dev.hu" className="underline hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">Kir-Dev</a>
+                {/* Bottom section with Logo and Credits */}
+                <div className="flex flex-col justify-center items-center pt-8 border-t border-[#e9e2d6] mt-16 gap-4">
+                    <p className="text-xs text-[#6e6660]">
+                        Made with 🤍 by <a href="https://kir-dev.hu" className="underline hover:text-[#1a1a1a] transition-colors" target="_blank" rel="noopener noreferrer">Kir-Dev</a>
                     </p>
                 </div>
             </div>
         </footer>
-    )
+    );
 }

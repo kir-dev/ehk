@@ -24,6 +24,7 @@ import { Help } from "./collections/Help";
 import { Media } from "./collections/Media";
 import { PayoutPeriods } from "./collections/PayoutPeriods";
 import { Users } from "./collections/Users";
+import { UniversityPages } from "./collections/UniversityPages";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -55,6 +56,7 @@ export default buildConfig({
     Regulations,
     Help,
     PayoutPeriods,
+    UniversityPages,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

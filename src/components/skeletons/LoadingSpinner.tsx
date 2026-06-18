@@ -7,8 +7,8 @@ export function LoadingSpinner() {
   const t = (hu: string, en?: string) => (lang === "EN" ? en || hu : hu);
 
   return (
-    <div className="flex items-center justify-center py-12">
-      <div className="relative">
+    <div className="flex flex-col items-center justify-center min-h-[60vh] w-full py-12 grow" data-name="LoadingSpinner">
+      <div className="flex flex-col items-center justify-center">
         {/* Spinning circle */}
         <div className="w-12 h-12 border-4 border-gray-200 border-t-[#862633] rounded-full animate-spin"></div>
 

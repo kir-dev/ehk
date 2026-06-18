@@ -3,7 +3,6 @@
 import { useTranslate } from "@/hooks/useTranslate";
 import { UniversityPage } from "@/payload-types";
 import { ExternalLink } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface FooterProps {

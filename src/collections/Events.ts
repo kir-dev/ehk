@@ -53,18 +53,28 @@ export const Events: CollectionConfig = {
       fields: [
         {
           name: "startDate",
-          label: "Kezdő dátum",
+          label: "Kezdő dátum és időpont",
           type: "date",
+          admin: {
+            date: {
+              pickerAppearance: "dayAndTime",
+              displayFormat: "yyyy-MM-dd HH:mm",
+            },
+          },
           required: true,
         },
         {
           name: "endDate",
-          label: "Záró dátum",
+          label: "Záró dátum és időpont",
           type: "date",
           required: true,
           admin: {
             description:
               "Ha egy napos esemény, akkor ugyanaz legyen mint a kezdő dátum",
+            date: {
+              pickerAppearance: "dayAndTime",
+              displayFormat: "yyyy-MM-dd HH:mm",
+            },
           },
         },
       ],

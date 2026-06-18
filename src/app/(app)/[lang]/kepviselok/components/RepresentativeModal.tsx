@@ -42,7 +42,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
         <Dialog open={true} onOpenChange={(open) => !open && onCloseAction()}>
             <DialogContent
                 showCloseButton={false}
-                className="top-[7vh] max-h-[86vh] w-[min(90vw,1272px)] !max-w-[1272px] translate-y-0 gap-0 overflow-y-auto rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-0 shadow-[-4px_4px_8px_rgba(0,0,0,0.25)] sm:!max-w-[1272px]"
+                className="top-[calc(5rem+1rem)] max-h-[calc(100dvh-7rem)] w-[min(90vw,1272px)] !max-w-[1272px] translate-y-0 gap-0 overflow-y-auto rounded-2xl border-0 bg-[#fffefc] p-0 shadow-[-4px_4px_8px_rgba(0,0,0,0.25)] sm:!max-w-[1272px] md:top-[calc(5rem+2rem)] md:max-h-[calc(100dvh-9rem)]"
             >
                 <DialogTitle className="sr-only">{representative.name}</DialogTitle>
 

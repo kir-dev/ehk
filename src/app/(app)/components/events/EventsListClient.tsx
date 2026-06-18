@@ -1,11 +1,10 @@
 "use client"
 
-import React from "react"
-import { useEventsLogic } from "./useEventsLogic"
-import { EventsTimeline } from "./EventsTimeline"
 import { EventCard } from "./EventCard"
-import { formatWeekRange, DAYS_HU, DAYS_EN } from "./events.constants"
+import { DAYS_EN, DAYS_HU, formatWeekRange } from "./events.constants"
 import { EventsListClientProps } from "./events.types"
+import { EventsTimeline } from "./EventsTimeline"
+import { useEventsLogic } from "./useEventsLogic"
 
 export default function EventsListClient({ lang, events, dictionary }: Readonly<EventsListClientProps>) {
   const {
@@ -46,7 +45,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
       <div 
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex flex-col w-full overflow-y-auto max-h-[650px] pr-2 relative"
+        className="flex flex-col w-full overflow-y-auto max-h-162.5 pr-2 relative"
         style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(134, 38, 51, 0.3) transparent", overflowAnchor: "none" }}
       >
         {renderedWeekData.map((week) => {
@@ -86,7 +85,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
                         className="grid grid-cols-1 md:grid-cols-[108px_1fr] gap-4 md:gap-8 items-start w-full px-2"
                       >
                         {/* Day Column */}
-                        <div className="flex md:flex-col items-baseline md:items-center justify-start md:justify-center gap-2 md:gap-1 p-2 md:py-4 shrink-0 w-fit md:w-[108px]">
+                        <div className="flex md:flex-col items-baseline md:items-center justify-start md:justify-center gap-2 md:gap-1 p-2 md:py-4 shrink-0 w-fit md:w-27">
                           <span className="text-[11px] font-bold text-[#9a9a9a] tracking-wider uppercase">
                             {dayName}
                           </span>

@@ -49,6 +49,36 @@ export const Permissions: CollectionConfig = {
             }),
         },
         {
+            name: "submissionProcess_hu",
+            type: "richText",
+            required: false,
+            label: "Benyújtás menete (magyar)",
+            admin: {
+                description: "A \"BENYÚJTÁS MENETE\" szekció tartalma.",
+            },
+            editor: lexicalEditor({
+                features: ({ defaultFeatures }) => [
+                    ...defaultFeatures,
+                    FixedToolbarFeature(),
+                ]
+            }),
+        },
+        {
+            name: "submissionProcess_en",
+            type: "richText",
+            required: false,
+            label: "Benyújtás menete (angol)",
+            admin: {
+                description: "A \"BENYÚJTÁS MENETE\" szekció tartalma angolul.",
+            },
+            editor: lexicalEditor({
+                features: ({ defaultFeatures }) => [
+                    ...defaultFeatures,
+                    FixedToolbarFeature(),
+                ]
+            }),
+        },
+        {
             name: "displayText_hu",
             type: "text",
             required: false,
@@ -66,6 +96,15 @@ export const Permissions: CollectionConfig = {
             relationTo: "media",
             required: false,
             label: "Fájl",
+        },
+        {
+            name: "externalLink",
+            type: "text",
+            required: false,
+            label: "Külső link (űrlap URL)",
+            admin: {
+                description: "Külső webes űrlaphoz tartozó URL (pl. \"Rendezvénybejelentő űrlap\"). Ha meg van adva, a kártya ezt nyitja meg fájl helyett.",
+            },
         },
     ],
 };

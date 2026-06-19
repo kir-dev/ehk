@@ -4,14 +4,18 @@ import { useTranslate } from "@/hooks/useTranslate";
 import { cn } from "@/lib/utils";
 import type { Media } from "@/payload-types";
 import { getFileExtension } from "@/utils/file";
-import { Download, Eye } from "lucide-react";
+import { Download, ExternalLink, Eye } from "lucide-react";
 
 interface FileCardProps {
   file?: number | Media | { url?: string; filename?: string; filesize?: number };
+  /** External URL (e.g. an online form). When set, the card links here instead of a file. */
+  externalUrl?: string;
   title: string;
   secondaryText?: string;
-  actionType?: "view" | "download";
+  actionType?: "view" | "download" | "open";
   actionLabel?: string;
+  /** Overrides the extension badge text (e.g. "link" for external links). */
+  extensionLabel?: string;
   className?: string;
 }
 
@@ -26,18 +30,25 @@ const formatFileSize = (bytes?: number | null) => {
 
 export default function FileCard({
   file,
+  externalUrl,
   title,
   secondaryText,
   actionType = "view",
   actionLabel,
+  extensionLabel,
   className,
 }: FileCardProps) {
   const { t } = useTranslate();
 
   // Helper to extract file info safely
   const getFileInfo = () => {
+    // External link mode: link to a URL instead of an uploaded file (no size).
+    if (externalUrl) {
+      return { url: externalUrl, ext: extensionLabel || "link", filesize: null };
+    }
+
     if (!file || typeof file === "number") {
-      return { url: "#", ext: "file", filesize: null };
+      return { url: "#", ext: extensionLabel || "file", filesize: null };
     }
 
     // Check if it's likely a Media object (has id and filename)
@@ -45,7 +56,7 @@ export default function FileCard({
       const media = file as Media;
       return {
         url: media.url || "#",
-        ext: getFileExtension(media),
+        ext: extensionLabel || getFileExtension(media),
         filesize: media.filesize || null,
       };
     }
@@ -54,7 +65,7 @@ export default function FileCard({
     const simpleFile = file as { url?: string; filename?: string; filesize?: number };
     return {
       url: simpleFile.url || "#",
-      ext: simpleFile.filename?.split(".").pop()?.toLowerCase() || "file",
+      ext: extensionLabel || simpleFile.filename?.split(".").pop()?.toLowerCase() || "file",
       filesize: simpleFile.filesize || null,
     };
   };
@@ -68,11 +79,18 @@ export default function FileCard({
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
-  const Icon = actionType === "view" ? Eye : Download;
+  const Icon =
+    actionType === "download"
+      ? Download
+      : actionType === "open"
+        ? ExternalLink
+        : Eye;
   const defaultLabel =
-    actionType === "view"
-      ? t("Megtekintés", "View")
-      : t("Letöltés", "Download");
+    actionType === "download"
+      ? t("Letöltés", "Download")
+      : actionType === "open"
+        ? t("Megnyitás", "Open")
+        : t("Megtekintés", "View");
   const label = actionLabel || defaultLabel;
 
   const buttonClassName =
@@ -120,6 +138,19 @@ export default function FileCard({
         <a
           href={hasFile ? url : undefined}
           download
+          aria-disabled={!hasFile}
+          className={cn(
+            buttonClassName,
+            !hasFile && "pointer-events-none opacity-50",
+          )}
+        >
+          {buttonContent}
+        </a>
+      ) : actionType === "open" ? (
+        <a
+          href={hasFile ? url : undefined}
+          target="_blank"
+          rel="noopener noreferrer"
           aria-disabled={!hasFile}
           className={cn(
             buttonClassName,

@@ -3,42 +3,8 @@
     "academic": {
       "title": "Tanulmányi ösztöndíj",
       "intro": "A tanulmányi ösztöndíj az egyik legfontosabb tanulmányi alapú juttatás, amelyet azok a hallgatók kaphatnak, akik az előző aktív félévükben kiemelkedő tanulmányi eredményt értek el.",
-      "who": {
-        "title": "Kik kaphatnak tanulmányi ösztöndíjat?",
-        "items": [
-          "A juttatásra az Egyetem állami ösztöndíjas, teljes idejű képzésben részt vevő hallgatók jogosultak és a hallgatók legfeljebb 50%-a részesülhet belőle.",
-          "A támogatás egy tanulmányi félévre, azaz 5 hónapos időtartamra szól.",
-          "Az ösztöndíjra való jogosultság és az összegek meghatározása az előző lezárt aktív félév tanulmányi eredményei alapján történik. A félév szüneteltetése nem zár ki a pályázásból: ilyenkor az utolsó aktív félév eredményét veszik figyelembe.",
-          "Fontos, hogy az elsőéves hallgatók (alap- vagy osztatlan képzésben) az első megkezdett félévükben még nem kaphatnak ösztöndíjat.",
-          "A tanulmányi ösztöndíj párhuzamos hallgatói jogviszony esetén is külön-külön elnyerhető, de ugyanazon teljesítmény alapján csak egyszer adható."
-        ]
-      },
-      "calculation": {
-        "title": "Hogyan számítják az ösztöndíjat?",
-        "paragraphs": [
-          "A tanulmányi ösztöndíj alapja az ösztöndíjindex, amely az előző aktív félév teljesítménye alapján kerül kiszámításra.",
-          "Ez lehet: kreditindex vagy korrigált kreditindex, amely a kari szabályozástól függ.",
-          "A hallgatók teljesítményét úgynevezett Homogén Hallgatói Csoportokon belül (a továbbiakban: HHCS) hasonlítják össze, amelyek kialakulhatnak például évfolyamonként, szakonként vagy specializációnként."
-        ]
-      },
-      "decision": {
-        "title": "Ki dönt a tanulmányi ösztöndíjról?",
-        "paragraphs": [
-          "A Kari Hallgatói Képviseletek felelnek az ösztöndíj lebonyolításáért. Ők határozzák meg a pontos kari szabályokat, illetve hozzák meg az elsőfokú döntést.",
-          "Az eredményeket a HK a döntést követő 5 munkanapon belül közzéteszi a honlapján. A közzétett lista tartalmazza a HHCS-k ösztöndíjindexeit és az azokhoz tartozó összegeket."
-        ]
-      },
-      "tjsz": {
-        "title": "TJSZ ide vonatkozó passzusai",
-        "quotes": [
-          "Tanulmányi ösztöndíjban az Egyetem állami ösztöndíjas, teljes idejű képzésben részt vevő hallgatóinak legfeljebb 50%-a részesülhet, oly módon, hogy az egyes hallgatóknak megállapított tanulmányi ösztöndíj havi összegének el kell érnie a hallgatói normatíva 5%-ának megfelelő összeget.",
-          "A tanulmányi ösztöndíj odaítélésekor a hallgatókat Homogén Hallgatói Csoportokba kell sorolni. A besorolás egy adott félévre szól. A Homogén Hallgatói Csoportok kialakíthatóak szakonként, évfolyamonként, specializációnként, szakirányonként, mellékspecializációnként, modulonként, ismeretkörönként, ágazatonként, egyéb önálló tantervi egységenként vagy adott kredit mennyiséget teljesített csoportonként, illetve ezek kombinációjaként.",
-          "A tárgyfélévet megelőző félév, vagy félévek szünetelése a tanulmányi ösztöndíj jogosultságból nem kizáró ok. Ez esetben az utolsó aktív félév tanulmányi eredményét kell figyelembe venni.",
-          "A kari hallgatói képviselet a kari elosztás további elveit (beleértve a más felsőoktatási intézményből, illetve az Egyetemen belül más karról, szakról, képzési formából nappali tagozatra átvett, az előző félév(ek)ben külföldi részképzésen részt vett hallgató tanulmányi eredménye megállapításának módjáról), az eljárási szabályokat, határidejét az ösztöndíj odaítélését megelőző szorgalmi időszak kezdetéig meghatározza, és a KTB egyetértése után nyilvánosságra hozza honlapján.",
-          "A tanulmányi ösztöndíjat a kari hallgatói képviselet koordinálja, bírálja el, meghozza az elsőfokú döntést és ad róla tájékoztatást.",
-          "A tanulmányi ösztöndíj eredményét a kari hallgatói képviselet a döntést követő 5 munkanapon belül honlapján hozza nyilvánosságra. Az eredménynek tartalmaznia kell HHCS-nként az ösztöndíjindexet és a hozzá tartozó ösztöndíj összegét."
-        ]
-      }
+      "empty_title": "Jelenleg nincs megjeleníthető tartalom",
+      "empty_description": "A tanulmányi ösztöndíj szekciói hamarosan elérhetők lesznek."
     },
     "social": {
       "regular": {

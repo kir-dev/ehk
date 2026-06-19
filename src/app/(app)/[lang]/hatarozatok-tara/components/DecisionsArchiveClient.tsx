@@ -1,11 +1,11 @@
 "use client";
 
+import { EmptyState } from "@/components/common/EmptyState";
 import FileCard from "@/components/common/FileCard";
+import { useLanguage } from "@/components/common/LanguageProvider";
 import { PageHeader } from "@/components/common/PageHeader";
-import { Card, CardContent } from "@/components/ui/card";
 import { useTranslate } from "@/hooks/useTranslate";
 import type { Decision } from "@/payload-types";
-import { FileText } from "lucide-react";
 
 interface Props {
   decisions: Decision[];
@@ -13,42 +13,32 @@ interface Props {
 
 export default function DecisionsArchiveClient({ decisions }: Props) {
   const { t } = useTranslate();
+  const { lang } = useLanguage();
 
   return (
     <div className="container mx-auto px-2 md:px-4 py-8">
-      <PageHeader 
+      <PageHeader
         title={t("decisions.title")}
-        description={t("decisions.description")}
+        subtitle={t("decisions.description")}
       />
 
       <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-6 md:p-8">
         {decisions.length === 0 ? (
-          <Card>
-            <CardContent className="text-center py-12">
-              <div className="bg-gray-100 rounded-full w-16 h-12 flex items-center justify-center mx-auto mb-4">
-                <FileText className="h-8 w-8 text-gray-400" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {t("decisions.no_results")}
-              </h3>
-              <p className="text-gray-600">
-                {t("decisions.try_filtering")}
-              </p>
-            </CardContent>
-          </Card>
+          <EmptyState title={t("decisions.no_decisions_global")} />
         ) : (
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             {decisions.map((decision) => {
-              const title = t(decision.text_hu || decision.text_en || "", decision.text_en || decision.text_hu || "");
-              const secondary = decision.displayText;
-              
+              const title =
+                lang === "EN"
+                  ? decision.text_en || decision.text_hu
+                  : decision.text_hu || decision.text_en;
+
               return (
                 <FileCard
                   key={decision.id}
                   file={decision.file}
                   title={title}
-                  secondaryText={secondary}
-                  actionType="view" 
+                  actionType="view"
                 />
               );
             })}

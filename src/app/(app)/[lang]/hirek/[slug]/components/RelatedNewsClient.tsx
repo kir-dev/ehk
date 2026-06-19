@@ -12,11 +12,11 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
   const formatDate = (dateString: string) => {
     const d = new Date(dateString)
     if (lang === 'EN') {
-      return d.toLocaleDateString('en-US', { year: "numeric", month: "long", day: "numeric" })
+      return d.toLocaleDateString('en-US', { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
     }
-    const y = d.getFullYear()
-    const m = String(d.getMonth() + 1).padStart(2, '0')
-    const day = String(d.getDate()).padStart(2, '0')
+    const y = d.getUTCFullYear()
+    const m = String(d.getUTCMonth() + 1).padStart(2, '0')
+    const day = String(d.getUTCDate()).padStart(2, '0')
     return `${y}. ${m}. ${day}`
   }
 

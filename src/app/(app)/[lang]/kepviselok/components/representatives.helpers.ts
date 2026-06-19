@@ -75,7 +75,7 @@ export function getFileInfo(file?: number | Media) {
   return {
     url: file.url || null,
     extension,
-    filesize: file.filesize || null,
+    filesize: file.filesize ?? null,
   };
 }
 

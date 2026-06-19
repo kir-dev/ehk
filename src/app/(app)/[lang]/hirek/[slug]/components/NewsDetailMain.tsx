@@ -1,17 +1,12 @@
 "use client"
 
-import ShareButton from "@/app/(app)/[lang]/hirek/[slug]/components/ShareButton"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+import FileCard from "@/components/common/FileCard"
 import { useTranslate } from "@/hooks/useTranslate"
 import { translateTags } from "@/lib/utils"
 import { Media, News } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
-import { Calendar, Clock, Download, Share2, Tag } from "lucide-react"
-import { formatBytes, getReadingTimeFromRichText } from "../lib/news-utils"
-import { FileIcon } from "./FileIcon"
+import { ArrowLeft } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export interface NewsDetailMainProps {
   article: News
@@ -25,131 +20,94 @@ type NewsFileItem = {
 
 export function NewsDetailMain({ article }: NewsDetailMainProps) {
   const { t, lang } = useTranslate()
+  const router = useRouter()
 
   const title = lang === 'EN' && article.titleEng ? article.titleEng : article.title
-  const shortText = lang === 'EN' ? (article.shortDescription.text_en || article.shortDescription.text_hu) : article.shortDescription.text_hu
   const content = lang === 'EN' ? article.description.text_en : article.description.text_hu
   const displayTags = translateTags(article.tags as unknown as string[], lang)
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString(lang === 'EN' ? 'en-US' : 'hu-HU', {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })
+    const d = new Date(dateString)
+    if (lang === 'EN') {
+      return d.toLocaleDateString('en-US', { year: "numeric", month: "long", day: "numeric" })
+    }
+    const y = d.getFullYear()
+    const m = String(d.getMonth() + 1).padStart(2, '0')
+    const day = String(d.getDate()).padStart(2, '0')
+    return `${y}. ${m}. ${day}`
   }
 
+  const files = (article.files as unknown as NewsFileItem[]) ?? []
+
   return (
-    <Card className="mb-6">
-      <CardContent className="p-4 md:p-8">
-        {/* Header */}
-        <div className="mb-4 md:mb-6">
-          <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4 text-[#862633]" />
-              <span>{formatDate(article.date)}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4 text-[#862633]" />
-              <span>{getReadingTimeFromRichText(content)} {t('news.min_read')}</span>
-            </div>
-          </div>
+    <article className="flex flex-col font-open-sans">
+      {/* Back navigation */}
+      <div className="flex items-center bg-[#fffefc] border-t border-x border-[#e9e2d6] rounded-t-2xl px-5 py-4 md:px-8">
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className="group inline-flex items-center gap-2 bg-[#862633] hover:bg-[#9e2d3e] text-white border border-[#e9e2d6] rounded-full px-4 py-2 transition-colors duration-200 active:scale-95 cursor-pointer"
+        >
+          <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" />
+          <span className="font-bold text-sm leading-none">{t('news.back')}</span>
+        </button>
+      </div>
 
-          <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 leading-tight">{title}</h1>
-
-          <p className="text-base md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-6">{shortText}</p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
+      {/* Dark red header block */}
+      <header className="flex flex-col gap-3 md:gap-4 bg-[#862633] border-x border-[#e9e2d6] px-5 py-6 md:px-8 md:py-8 text-white">
+        {displayTags.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2">
             {displayTags.map((tag, index) => (
-              <Badge
-                key={index}
-                variant="outline"
-                className="flex items-center gap-1 border-[#862633] text-[#862633] text-xs md:text-sm hover:bg-red-50"
+              <span
+                key={`${tag}-${index}`}
+                className="inline-flex items-center justify-center rounded-2xl border border-[#e9e2d6] bg-white px-2.5 py-1 text-[13px] font-semibold uppercase text-[#862633]"
               >
-                <Tag className="w-3 h-3" />
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
+        )}
 
-          {/* Share */}
-          <div className="flex justify-start md:justify-end">
-            <ShareButton
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2 bg-transparent hover:border-[#862633] hover:text-[#862633]"
-              title={title}
-              text={shortText}
-            >
-              <Share2 className="w-4 h-4" />
-              {t('news.share')}
-            </ShareButton>
-          </div>
-        </div>
+        <h1 className="font-playfair font-bold text-[26px] md:text-[32px] leading-tight text-white break-words">
+          {title}
+        </h1>
 
-        <Separator className="mb-6 md:mb-8" />
+        <p className="text-sm md:text-base font-semibold text-[#fffefc]">{formatDate(article.date)}</p>
+      </header>
 
-        {/* Content */}
-        <div className="prose prose-sm md:prose-lg max-w-none text-gray-700 leading-relaxed richtext">
+      {/* Content + attached files */}
+      <div className="flex flex-col gap-6 bg-[#fffefc] border-b border-x border-[#e9e2d6] rounded-b-2xl px-5 py-6 md:px-8 md:py-8">
+        <div className="richtext prose prose-sm md:prose-base max-w-none font-open-sans text-sm text-black leading-relaxed">
           <RichText data={content} />
         </div>
 
-        {/* Files */}
-        {article.files && article.files.length > 0 && (
+        {files.length > 0 && (
           <>
-            <Separator className="my-6 md:my-8" />
-            <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 flex items-center gap-2">
-                <Download className="w-5 h-5" />
+            <hr className="border-t border-[#e9e2d6]" />
+            <section className="flex flex-col gap-4">
+              <h2 className="text-[13px] font-semibold uppercase tracking-[1.3px] text-[#6e6660]">
                 {t('news.attachments')}
-              </h3>
-              <div className="grid gap-3">
-                {((article.files as unknown) as NewsFileItem[]).map((item) => {
+              </h2>
+              <div className="flex flex-col gap-4">
+                {files.map((item) => {
                   const media = typeof item.file === 'object' ? item.file : null
-                  const name: string = media?.filename ?? (lang === 'EN' ? 'File' : 'Fájl')
-                  const mime = media?.mimeType ?? undefined
-                  const size = formatBytes(media?.filesize)
-                  const url = media?.url ?? undefined
-                  const key = item.id ?? media?.id ?? `${name}-${url}`
+                  const name = media?.filename ?? t('news.file')
                   const hasDesc = !!(item.description && item.description.trim().length > 0)
-                  const titleVal = hasDesc ? item.description! : name
+                  const key = item.id ?? media?.id ?? `${name}`
                   return (
-                    <div
+                    <FileCard
                       key={key}
-                      className="flex items-center justify-between gap-3 bg-gray-50 hover:bg-gray-100 p-3 md:p-4 rounded-lg transition-colors border border-gray-200 overflow-hidden"
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="flex-shrink-0"><FileIcon type={mime} /></div>
-                        <div className="min-w-0">
-                          <h4 className="font-medium text-gray-900 text-sm md:text-base truncate">{titleVal}</h4>
-                          <p className="text-xs md:text-sm text-gray-500 truncate">
-                            {size ? size : null}
-                            {hasDesc ? (size ? ' · ' : '') + name : null}
-                          </p>
-                        </div>
-                      </div>
-                      {url && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="shrink-0 hover:bg-white hover:border-[#862633] hover:text-[#862633] bg-transparent"
-                          asChild
-                        >
-                          <a href={url} download>
-                            <Download className="w-4 h-4 mr-2" />
-                            {t('common.download')}
-                          </a>
-                        </Button>
-                      )}
-                    </div>
+                      file={media ?? undefined}
+                      title={hasDesc ? item.description! : name}
+                      actionType="view"
+                    />
                   )
                 })}
               </div>
-            </div>
+            </section>
           </>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </article>
   )
 }

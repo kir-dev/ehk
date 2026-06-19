@@ -434,6 +434,14 @@ export interface News {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Opcionális. A híret kísérő kapcsolattartó képviselő (név, pozíció és alapértelmezett e-mail cím az Elérhetőségek dobozhoz).
+   */
+  representative?: (number | null) | Representative;
+  /**
+   * Opcionális. Közvetlen kapcsolattartó e-mail cím, a képviselő mellett vagy helyett megjeleníthető.
+   */
+  contactEmail?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1039,6 +1047,8 @@ export interface NewsSelect<T extends boolean = true> {
         description?: T;
         id?: T;
       };
+  representative?: T;
+  contactEmail?: T;
   updatedAt?: T;
   createdAt?: T;
 }

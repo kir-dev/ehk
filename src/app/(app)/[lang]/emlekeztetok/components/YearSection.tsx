@@ -1,10 +1,9 @@
 "use client"
 
-import { Calendar, ChevronDown, ChevronUp } from 'lucide-react'
-import { useState } from 'react'
+import { Calendar } from 'lucide-react'
 import { ReminderCard } from '@/app/(app)/[lang]/emlekeztetok/components/ReminderCard'
-import { Button } from '@/components/ui/button'
-import {Reminder} from "@/payload-types";
+import { AccordionItem } from '@/components/common/Accordion'
+import { Reminder } from "@/payload-types";
 import { useLanguage } from "@/components/common/LanguageProvider";
 
 interface YearSectionProps {
@@ -13,7 +12,6 @@ interface YearSectionProps {
 }
 
 export function YearSection({ year, reminders }: YearSectionProps) {
-    const [isExpanded, setIsExpanded] = useState(false)
     const { lang } = useLanguage()
 
     const countLabel = lang === 'EN'
@@ -21,41 +19,33 @@ export function YearSection({ year, reminders }: YearSectionProps) {
         : `${reminders.length} emlékeztető`
 
     return (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="bg-gradient-to-r from-red-50 to-rose-50 border-b border-gray-200">
-                <Button
-                    variant="ghost"
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="w-full justify-between p-6 h-auto hover:bg-red-100/60"
-                >
-                    <div className="flex items-center gap-3">
-                        <div className="bg-red-100 p-2 rounded-full">
-                            <Calendar className="h-5 w-5 text-[#862633]" />
-                        </div>
-                        <div className="text-left">
-                            <h2 className="text-2xl font-bold text-gray-900">{year}</h2>
-                            <p className="text-sm text-gray-600">
-                                {countLabel}
-                            </p>
-                        </div>
-                    </div>
-                    {isExpanded ? (
-                        <ChevronUp className="h-5 w-5 text-gray-500" />
-                    ) : (
-                        <ChevronDown className="h-5 w-5 text-gray-500" />
-                    )}
-                </Button>
+        <AccordionItem
+            headingLevel={2}
+            title={
+                <span className="flex min-w-0 items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f9f4f0] transition-colors group-hover:bg-[#f4e8e7] motion-reduce:transition-none">
+                        <Calendar className="h-5 w-5 text-[#862633]" aria-hidden="true" />
+                    </span>
+                    <span className="flex min-w-0 flex-col">
+                        <span className="text-xl font-bold leading-tight text-[#1a1a1a] transition-colors group-hover:text-[#862633] md:text-2xl motion-reduce:transition-none">
+                            {year}
+                        </span>
+                        <span className="mt-1 text-sm font-normal leading-normal text-[#6e6660]">
+                            {countLabel}
+                        </span>
+                    </span>
+                </span>
+            }
+            buttonClassName="px-4 py-4 md:px-6 md:py-5"
+            headerClassName="font-normal"
+            contentClassName="px-4 pb-4 md:px-6 md:pb-6"
+            className="bg-white"
+        >
+            <div className="flex flex-col gap-4">
+                {reminders.map((reminder) => (
+                    <ReminderCard key={reminder.id} reminder={reminder} />
+                ))}
             </div>
-
-            {isExpanded && (
-                <div className="p-6">
-                    <div className="flex flex-col gap-4">
-                        {reminders.map((reminder) => (
-                            <ReminderCard key={reminder.id} reminder={reminder} />
-                        ))}
-                    </div>
-                </div>
-            )}
-        </div>
+        </AccordionItem>
     )
 }

@@ -24,6 +24,8 @@ import * as migration_20260618_102519 from './20260618_102519';
 import * as migration_20260619_105937_add_news_representative_and_contact_email from './20260619_105937_add_news_representative_and_contact_email';
 import * as migration_20260619_141957_add_permissions_submission_and_external_link from './20260619_141957_add_permissions_submission_and_external_link';
 import * as migration_20260619_173736_academic_scholarship_faq from './20260619_173736_academic_scholarship_faq';
+import * as migration_20260620_123301 from './20260620_123301';
+import * as migration_20260620_151905_ehk_scholarships from './20260620_151905_ehk_scholarships';
 
 export const migrations = [
   {
@@ -154,6 +156,16 @@ export const migrations = [
   {
     up: migration_20260619_173736_academic_scholarship_faq.up,
     down: migration_20260619_173736_academic_scholarship_faq.down,
-    name: '20260619_173736_academic_scholarship_faq'
+    name: '20260619_173736_academic_scholarship_faq',
+  },
+  {
+    up: migration_20260620_123301.up,
+    down: migration_20260620_123301.down,
+    name: '20260620_123301',
+  },
+  {
+    up: migration_20260620_151905_ehk_scholarships.up,
+    down: migration_20260620_151905_ehk_scholarships.down,
+    name: '20260620_151905_ehk_scholarships',
   },
 ];

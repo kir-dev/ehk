@@ -1,116 +1,107 @@
 "use client"
 
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import { useTranslate } from "@/hooks/useTranslate"
-import { Media, Representative } from "@/payload-types"
-import { Building2, FileText, Mail } from 'lucide-react'
+import { cn } from "@/lib/utils"
+import { Representative } from "@/payload-types"
+import { ArrowRight, Mail } from 'lucide-react'
 import Image from 'next/image'
+import {
+    facultyStyles,
+    getPrimaryPosition,
+    getRepresentativeInitials,
+    getRepresentativePicture,
+} from './representatives.helpers'
 
 interface RepresentativeCardProps {
     representative: Representative
     onClickAction: () => void
 }
 
-type RepWithPic = Representative & { picture?: number | Media | null }
-
-export function RepresentativeCard({ representative, onClickAction }: RepresentativeCardProps) {
-    const facultyColors = {
-        'ÉMK': 'bg-red-100 text-red-800',
-        'GPK': 'bg-blue-100 text-blue-800',
-        'ÉPK': 'bg-green-100 text-green-800',
-        'VBK': 'bg-purple-100 text-purple-800',
-        'VIK': 'bg-orange-100 text-orange-800',
-        'GTK': 'bg-pink-100 text-pink-800',
-        'TTK': 'bg-indigo-100 text-indigo-800',
-        'KJK': 'bg-yellow-100 text-yellow-800',
-    } as const
-
+export function RepresentativeCard({ representative, onClickAction }: Readonly<RepresentativeCardProps>) {
     const { t, lang } = useTranslate()
-    const primaryPos = representative.position?.[0]
-    const positionText = lang === 'EN'
-        ? (primaryPos?.position_en || primaryPos?.position_hu)
-        : (primaryPos?.position_hu || primaryPos?.position_en)
-
-    const detailsLabel = t('representatives.view_details')
-
-    const rep = representative as RepWithPic
-    const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
-    const pictureUrl = media?.url || null
+    const positionText = getPrimaryPosition(representative, lang)
+    const detailsLabel = lang === "EN" ? t('representatives.view_details') : "Részletek"
+    const picture = getRepresentativePicture(representative)
 
     return (
-        <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer" onClick={onClickAction}>
-            <CardContent className="p-4 md:p-6 h-full flex flex-col">
-                <div className="flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-4 md:gap-0 flex-1">
-                    <div className="relative mb-0 md:mb-4 shrink-0">
-                        <div className="w-28 h-28 md:w-48 md:h-48 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                            {pictureUrl ? (
-                                <Image
-                                    src={pictureUrl}
-                                    alt={representative.name}
-                                    width={192}
-                                    height={192}
-                                    className="w-full h-full object-cover"
-                                />
-                            ) : (
-                                <div className="text-3xl md:text-5xl font-semibold text-gray-600">
-                                    {representative.name.split(' ').map(n => n[0]).join('')}
-                                </div>
-                            )}
-                        </div>
+        <article
+            role="button"
+            tabIndex={0}
+            onClick={onClickAction}
+            onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault()
+                    onClickAction()
+                }
+            }}
+            className="group relative min-h-[31.6rem] cursor-pointer pt-16 focus-visible:outline-none"
+            aria-label={`${detailsLabel}: ${representative.name}`}
+        >
+            <div className="absolute left-1/2 top-0 z-10 h-74 w-[min(70%,16.45rem)] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+                {picture.url ? (
+                    <Image
+                        src={picture.url}
+                        alt={picture.alt}
+                        fill
+                        sizes="(min-width: 1280px) 263px, (min-width: 768px) 32vw, 70vw"
+                        className="object-cover"
+                    />
+                ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-[#f9f4f0] text-[#862633]">
+                        <span className="font-playfair text-5xl font-bold">
+                            {getRepresentativeInitials(representative.name)}
+                        </span>
                     </div>
+                )}
+            </div>
 
-                    <div className="flex-1">
-                        <h3 className="font-semibold text-base md:text-lg text-gray-900 mb-1.5 md:mb-2 group-hover:text-[#862633] transition-colors truncate md:whitespace-normal">
-                            {representative.name}
-                        </h3>
+            {representative.faculty && (
+                <span
+                    className={cn(
+                        "absolute left-1/2 top-[17.35rem] z-20 -translate-x-1/2 rounded-lg border-2 px-4 py-2 font-open-sans text-[15px] font-bold leading-none shadow-sm",
+                        facultyStyles[representative.faculty],
+                    )}
+                >
+                    {representative.faculty}
+                </span>
+            )}
 
-                        {positionText && (
-                            <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">
-                                {positionText}
-                            </p>
-                        )}
+            <div className="flex min-h-[28.3rem] flex-col items-center justify-between overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#fffefc] px-8 pb-8 pt-[16.6rem] transition-shadow duration-200 group-hover:shadow-[-4px_4px_8px_rgba(0,0,0,0.25)] group-focus-visible:shadow-[-4px_4px_8px_rgba(0,0,0,0.25)]">
+                <div className="flex w-full flex-col items-center gap-2 text-center">
+                    <h2 className="font-playfair text-[22px] font-bold uppercase leading-[1.3] text-[#1a1a1a]">
+                        {representative.name}
+                    </h2>
 
-                        {representative.faculty && (
-                            <Badge className={`${facultyColors[representative.faculty as keyof typeof facultyColors] || 'bg-gray-100 text-gray-800'} mb-2 md:mb-3 text-xs md:text-sm px-2 py-0.5`}>
-                                <Building2 className="w-3 h-3 mr-1" />
-                                {representative.faculty}
-                            </Badge>
-                        )}
+                    {positionText && (
+                        <p className="font-playfair text-base font-semibold leading-[1.4] text-[#1a1a1a]">
+                            {positionText}
+                        </p>
+                    )}
 
-                        {representative.emails && representative.emails.length > 0 && (
-                            <div className="flex flex-col gap-1 mb-2 md:mb-3">
-                                {representative.emails.map((emailObj, index) => (
-                                    <a
-                                        key={index}
-                                        href={`mailto:${emailObj.email}`}
-                                        className="text-xs md:text-sm text-gray-600 hover:text-[#862633] flex items-center justify-start md:justify-center gap-1 transition-colors"
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        <Mail size={14} />
-                                        {emailObj.email}
-                                    </a>
-                                ))}
-                            </div>
-                        )}
-
-                        <div className="hidden md:flex items-center justify-center gap-4 text-sm text-gray-500 mb-4">
-                            {representative.files && representative.files.length > 0 && (
-                                <div className="flex items-center">
-                                    <FileText className="w-4 h-4 mr-1" />
-                                    <span>{representative.files.length}</span>
-                                </div>
-                            )}
+                    {representative.emails && representative.emails.length > 0 && (
+                        <div className="flex flex-col items-center gap-1">
+                            {representative.emails.map((emailObj, index) => (
+                                <a
+                                    key={`${emailObj.email}-${index}`}
+                                    href={`mailto:${emailObj.email}`}
+                                    className="inline-flex items-center justify-center gap-1 font-open-sans text-[13px] font-semibold leading-none text-black transition-colors hover:text-[#862633] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2"
+                                    onClick={(event) => event.stopPropagation()}
+                                >
+                                    <Mail className="h-3.75 w-3.75 shrink-0" />
+                                    <span>{emailObj.email}</span>
+                                </a>
+                            ))}
                         </div>
+                    )}
+                </div>
+
+                <div className="w-full border-t border-[#e9e2d6] pt-4">
+                    <div className="flex h-5.5 items-center justify-between gap-4 font-open-sans text-sm font-semibold leading-[1.6] text-[#862633]">
+                        <span>{detailsLabel}</span>
+                        <ArrowRight className="h-6 w-6 shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1" />
                     </div>
                 </div>
-                <div className="mt-3 md:mt-auto w-full">
-                    <Button variant="outline" size="sm" className="w-full group-hover:bg-red-200 group-hover:border-[#862633] group-hover:text-[#862633] hover:border-[#862633] hover:text-[#862633] focus-visible:ring-[#862633]">
-                        {detailsLabel}
-                    </Button>
-                </div>
-            </CardContent>
-        </Card>
+            </div>
+        </article>
     )
 }

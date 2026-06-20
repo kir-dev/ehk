@@ -1,165 +1,241 @@
 'use client'
 
-import FileCard from '@/components/common/FileCard'
-import { Badge } from '@/components/ui/badge'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import { Separator } from '@/components/ui/separator'
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { useTranslate } from "@/hooks/useTranslate"
-import { Media, Representative } from "@/payload-types"
+import { cn } from "@/lib/utils"
+import { Representative } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
-import { Building2, Download, Mail, User } from "lucide-react"
+import { ArrowLeft, Eye, Mail } from "lucide-react"
 import Image from "next/image"
+import {
+    facultyStyles,
+    formatFileSize,
+    getFileInfo,
+    getPositionText,
+    getPrimaryPosition,
+    getRepresentativeInitials,
+    getRepresentativePicture,
+} from './representatives.helpers'
 
 interface RepresentativeModalProps {
     representative: Representative
     onCloseAction: () => void
 }
 
-type RepWithPic = Representative & { picture?: number | Media | null }
-
-export function RepresentativeModal({ representative, onCloseAction }: RepresentativeModalProps) {
-    const facultyColors = {
-        'ÉMK': 'bg-red-100 text-red-800',
-        'GPK': 'bg-blue-100 text-blue-800',
-        'ÉPK': 'bg-green-100 text-green-800',
-        'VBK': 'bg-purple-100 text-purple-800',
-        'VIK': 'bg-orange-100 text-orange-800',
-        'GTK': 'bg-pink-100 text-pink-800',
-        'TTK': 'bg-indigo-100 text-indigo-800',
-        'KJK': 'bg-yellow-100 text-yellow-800',
-    }
-
+export function RepresentativeModal({ representative, onCloseAction }: Readonly<RepresentativeModalProps>) {
     const { lang, t } = useTranslate()
-    const firstPos = representative.position?.[0]
-    const headerPosition = lang === 'EN'
-        ? (firstPos?.position_en || firstPos?.position_hu)
-        : (firstPos?.position_hu || firstPos?.position_en)
+    const headerPosition = getPrimaryPosition(representative, lang)
 
-    const getPosText = (pos: NonNullable<Representative['position']>[number]) =>
-        lang === 'EN' ? (pos.position_en || pos.position_hu) : (pos.position_hu || pos.position_en)
-
-    // Localized labels
     const labels = {
+        back: t("Vissza", "Back"),
         positions: t('representatives.positions'),
-        contacts: t('representatives.contacts'),
         intro: t('representatives.intro'),
         reports: t('representatives.reports'),
         open: t('representatives.open'),
-        unavailable: t('representatives.unavailable'),
     } as const
 
     const introData = lang === 'EN' ? representative.introduction.text_en : representative.introduction.text_hu
-
-    const rep = representative as RepWithPic
-    const media = rep.picture && typeof rep.picture === 'object' ? (rep.picture as Media) : null
-    const pictureUrl = media?.url || undefined
+    const picture = getRepresentativePicture(representative)
+    const primaryEmail = representative.emails?.[0]?.email
 
     return (
-        <Dialog open={true} onOpenChange={onCloseAction}>
-            <DialogContent className="w-[85vw] !max-w-none max-h-[90vh] overflow-y-auto">
-                <DialogHeader>
-                    <DialogTitle className="flex items-center gap-3">
-                        <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                            {pictureUrl ? (
+        <Dialog open={true} onOpenChange={(open) => !open && onCloseAction()}>
+            <DialogContent
+                showCloseButton={false}
+                className="top-24 max-h-[calc(100dvh-7rem)] w-[min(90vw,1272px)] max-w-318! translate-y-0 gap-0 overflow-y-auto rounded-2xl border-0 bg-[#fffefc] p-0 shadow-[-4px_4px_8px_rgba(0,0,0,0.25)] sm:max-w-318! md:top-28 md:max-h-[calc(100dvh-9rem)]"
+            >
+                <DialogTitle className="sr-only">{representative.name}</DialogTitle>
+
+                <div className="flex h-18 items-center border-b border-[#e9e2d6] bg-[#fffefc] px-4 py-4 md:px-8">
+                    <button
+                        type="button"
+                        onClick={onCloseAction}
+                        className="group inline-flex items-center gap-2 rounded-full border border-[#e9e2d6] bg-[#862633] px-4 py-2 font-open-sans text-sm font-bold leading-[1.6] text-white transition-colors duration-200 hover:bg-[#9e2d3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffefc]"
+                    >
+                        <ArrowLeft className="h-5 w-5 shrink-0 transition-transform group-hover:-translate-x-0.5" />
+                        <span>{labels.back}</span>
+                    </button>
+                </div>
+
+                <div className="flex flex-col gap-8 p-4 md:p-8">
+                    <div className="block md:hidden">
+                        <div className="relative mx-auto h-78 max-w-[17.4rem] overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+                            {picture.url ? (
                                 <Image
-                                    src={pictureUrl}
-                                    alt={representative.name}
-                                    width={128}
-                                    height={128}
-                                    className="w-full h-full object-cover"
+                                    src={picture.url}
+                                    alt={picture.alt}
+                                    fill
+                                    sizes="278px"
+                                    className="object-cover"
                                 />
                             ) : (
-                                <User className="w-12 h-12 text-gray-600" />
+                                <div className="flex h-full w-full items-center justify-center text-[#862633]">
+                                    <span className="font-playfair text-5xl font-bold">
+                                        {getRepresentativeInitials(representative.name)}
+                                    </span>
+                                </div>
                             )}
                         </div>
-                        <div>
-                            <h2 className="text-2xl font-bold">{representative.name}</h2>
+
+                        <div className="mt-4 rounded-2xl bg-[#862633] p-6 text-[#f9f4f0]">
+                            <h2 className="font-playfair text-[32px] font-bold uppercase leading-[1.2] text-white">
+                                {representative.name}
+                            </h2>
                             {headerPosition && (
-                                <p className="text-sm text-gray-600 font-normal">
+                                <p className="mt-2 font-playfair text-[22px] font-bold leading-[1.3]">
                                     {headerPosition}
                                 </p>
                             )}
+                            {primaryEmail && (
+                                <a
+                                    href={`mailto:${primaryEmail}`}
+                                    className="mt-4 inline-flex items-center gap-1 font-open-sans text-sm font-semibold leading-[1.6] transition-colors hover:text-white"
+                                >
+                                    <Mail className="h-4 w-4" />
+                                    {primaryEmail}
+                                </a>
+                            )}
                         </div>
-                    </DialogTitle>
-                </DialogHeader>
 
-                <div className="space-y-6">
-                    {representative.faculty && (
-                        <div className="flex items-center gap-2">
-                            <Badge className={facultyColors[representative.faculty as keyof typeof facultyColors] || 'bg-gray-100 text-gray-800'}>
-                                <Building2 className="w-4 h-4 mr-2" />
+                        {representative.faculty && (
+                            <span
+                                className={cn(
+                                    "mx-auto -mt-5 flex w-fit rounded-lg border-2 px-4 py-2 font-open-sans text-[15px] font-bold leading-none shadow-sm",
+                                    facultyStyles[representative.faculty],
+                                )}
+                            >
                                 {representative.faculty}
-                            </Badge>
+                            </span>
+                        )}
+                    </div>
+
+                    <div className="relative hidden min-h-78.25 md:block">
+                        <div className="absolute left-0 top-0 h-78.25 w-69.5 overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+                            {picture.url ? (
+                                <Image
+                                    src={picture.url}
+                                    alt={picture.alt}
+                                    fill
+                                    sizes="278px"
+                                    className="object-cover"
+                                />
+                            ) : (
+                                <div className="flex h-full w-full items-center justify-center text-[#862633]">
+                                    <span className="font-playfair text-5xl font-bold">
+                                        {getRepresentativeInitials(representative.name)}
+                                    </span>
+                                </div>
+                            )}
                         </div>
-                    )}
 
-                    {representative.position && representative.position.length > 1 && (
-                        <div>
-                            <h3 className="font-semibold text-lg mb-3">{labels.positions}</h3>
-                            <div className="space-y-2">
-                                {representative.position.map((pos, index) => (
-                                    <div key={index} className="bg-gray-50 p-3 rounded-lg">
-                                        <p className="font-medium">{getPosText(pos)}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    {representative.emails && representative.emails.length > 0 && (
-                        <div>
-                            <h3 className="font-semibold text-lg mb-3 flex items-center">
-                                <Mail className="w-5 h-5 mr-2" />
-                                {labels.contacts}
-                            </h3>
-                            <div className="space-y-2">
-                                {representative.emails.map((emailObj, index) => (
-                                    <a
-                                        key={index}
-                                        href={`mailto:${emailObj.email}`}
-                                        className="block bg-blue-50 hover:bg-blue-100 p-3 rounded-lg transition-colors"
-                                    >
-                                        <span className="text-blue-600 hover:text-blue-800">
-                                            {emailObj.email}
-                                        </span>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    <Separator />
-
-                    <div>
-                        <h3 className="font-semibold text-lg mb-3">{labels.intro}</h3>
-                        <div className="text-gray-700 leading-relaxed richtext">
-                            <RichText data={introData} />
+                        <div className="ml-69.5 mt-18 min-h-38.5 rounded-r-2xl border-y border-r border-[#e9e2d6] bg-[#862633] p-8 text-[#f9f4f0]">
+                            <h2 className="font-playfair text-[32px] font-bold uppercase leading-[1.2] text-white">
+                                {representative.name}
+                            </h2>
+                            {headerPosition && (
+                                <p className="mt-1 font-playfair text-[22px] font-bold leading-[1.3]">
+                                    {headerPosition}
+                                </p>
+                            )}
+                            {primaryEmail && (
+                                <a
+                                    href={`mailto:${primaryEmail}`}
+                                    className="mt-3 inline-flex items-center gap-1 font-open-sans text-sm font-semibold leading-[1.6] transition-colors hover:text-white"
+                                >
+                                    <Mail className="h-4 w-4" />
+                                    {primaryEmail}
+                                </a>
+                            )}
+                            {representative.faculty && (
+                                <span
+                                    className={cn(
+                                        "mt-3 flex w-fit rounded-lg border-2 px-4 py-2 font-open-sans text-[15px] font-bold leading-none shadow-sm",
+                                        facultyStyles[representative.faculty],
+                                    )}
+                                >
+                                    {representative.faculty}
+                                </span>
+                            )}
                         </div>
                     </div>
 
-                    {representative.files && representative.files.length > 0 && (
-                        <>
-                            <Separator />
-                            <div>
-                                <h3 className="font-semibold text-lg mb-3 flex items-center">
-                                    <Download className="w-5 h-5 mr-2" />
-                                    {labels.reports}
-                                </h3>
-                                <div className="grid gap-3">
-                                    {representative.files.map((fileObj, index) => {
-                                        const fileTitle = lang === 'EN' ? (fileObj.title_en || fileObj.title_hu) : (fileObj.title_hu || fileObj.title_en)
-                                        return (
-                                            <FileCard
-                                                key={index}
-                                                file={fileObj.file || undefined}
-                                                title={fileTitle || 'Dokumentum'}
-                                                actionType="view"
-                                            />
-                                        );
-                                    })}
-                                </div>
+                    {representative.position && representative.position.length > 1 && (
+                        <section className="flex flex-col gap-4">
+                            <h3 className="font-open-sans text-[11px] font-semibold uppercase leading-none text-[#9a9a9a]">
+                                {labels.positions}
+                            </h3>
+                            <div className="grid gap-3 md:grid-cols-2">
+                                {representative.position.map((position, index) => (
+                                    <p
+                                        key={position.id || index}
+                                        className="rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 font-playfair text-base font-semibold leading-[1.4] text-[#1a1a1a]"
+                                    >
+                                        {getPositionText(position, lang)}
+                                    </p>
+                                ))}
                             </div>
-                        </>
+                        </section>
+                    )}
+
+                    <section className="flex flex-col gap-4">
+                        <h3 className="font-open-sans text-[11px] font-semibold uppercase leading-none text-[#9a9a9a]">
+                            {labels.intro}
+                        </h3>
+                        <div className="richtext rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 font-open-sans text-sm leading-[1.6] text-[#3d3d3d]">
+                            <RichText data={introData} />
+                        </div>
+                    </section>
+
+                    {representative.files && representative.files.length > 0 && (
+                        <section className="flex flex-col gap-4">
+                            <h3 className="font-open-sans text-[11px] font-semibold uppercase leading-none text-[#9a9a9a]">
+                                {labels.reports}
+                            </h3>
+                            <div className="grid gap-4 md:grid-cols-3">
+                                {representative.files.map((fileObj, index) => {
+                                    const fileTitle = lang === 'EN'
+                                        ? (fileObj.title_en || fileObj.title_hu)
+                                        : (fileObj.title_hu || fileObj.title_en)
+                                    const fileInfo = getFileInfo(fileObj.file)
+                                    const fileSize = formatFileSize(fileInfo.filesize)
+
+                                    return (
+                                        <a
+                                            key={fileObj.id || index}
+                                            href={fileInfo.url || undefined}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            aria-disabled={!fileInfo.url}
+                                            className={cn(
+                                                "group/report flex min-h-18 items-center justify-between gap-4 rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 transition-colors duration-200 hover:border-[#d3afaf] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2",
+                                                !fileInfo.url && "pointer-events-none opacity-60",
+                                            )}
+                                        >
+                                            <div className="min-w-0">
+                                                <p className="font-open-sans text-sm leading-[1.6] text-[#1a1a1a]">
+                                                    {fileTitle || "Dokumentum"}
+                                                </p>
+                                                <div className="mt-2 flex flex-wrap items-center gap-2 font-open-sans text-xs text-[#6e6660]">
+                                                    <span className="rounded-full border border-[#e9e2d6] bg-[#f9f4f0] px-3 py-1 text-[11px] font-semibold uppercase text-[#862633]">
+                                                        {fileInfo.extension}
+                                                    </span>
+                                                    {fileSize && (
+                                                        <>
+                                                            <span>-</span>
+                                                            <span>{fileSize}</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#e9e2d6] text-[#6e6660] transition-colors group-hover/report:border-[#d3afaf] group-hover/report:text-[#862633]">
+                                                <Eye className="h-4 w-4" />
+                                                <span className="sr-only">{labels.open}</span>
+                                            </span>
+                                        </a>
+                                    )
+                                })}
+                            </div>
+                        </section>
                     )}
                 </div>
             </DialogContent>

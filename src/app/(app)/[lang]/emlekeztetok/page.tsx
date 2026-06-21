@@ -13,8 +13,8 @@ export default async function RemindersPage({
   const dictionary = await getDictionary(lang as 'hu' | 'en', 'regulations');
     return (
         <LanguageProvider defaultLang={(lang as string).toUpperCase() as 'HU' | 'EN'} dictionary={dictionary}>
-            <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-                <div className="container mx-auto px-2 md:px-4 py-8">
+            <main className="min-h-screen bg-[#f9f4f0] px-3 py-6 md:px-8 md:py-8">
+                <div className="mx-auto max-w-[1336px]">
                     <PageHeader title={dictionary.reminders.title} />
                     <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-6 md:p-8">
                         <Suspense fallback={<LoadingGrid />}>
@@ -22,7 +22,7 @@ export default async function RemindersPage({
                         </Suspense>
                     </div>
                 </div>
-            </div>
+            </main>
         </LanguageProvider>
     )
 }

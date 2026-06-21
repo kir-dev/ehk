@@ -11,7 +11,7 @@ interface MonthAccordionProps {
     reminders: Reminder[]
 }
 
-export function MonthAccordion({ monthName, reminders }: MonthAccordionProps) {
+export function MonthAccordion({ monthName, reminders }: Readonly<MonthAccordionProps>) {
     const [isExpanded, setIsExpanded] = useState(false)
 
     return (
@@ -26,7 +26,7 @@ export function MonthAccordion({ monthName, reminders }: MonthAccordionProps) {
                     <span className="font-open-sans font-bold text-base text-[#1a1a1a]">
                         {monthName}
                     </span>
-                    <span className="inline-flex min-w-[18px] items-center justify-center rounded-full bg-[#e8e4e0]/60 px-1.5 py-0.5 font-open-sans text-[11px] font-semibold text-[#1a1a1a] leading-none">
+                    <span className="inline-flex min-w-4.5 items-center justify-center rounded-full bg-[#e8e4e0]/60 px-1.5 py-0.5 font-open-sans text-[11px] font-semibold text-[#1a1a1a] leading-none">
                         {reminders.length}
                     </span>
                 </div>

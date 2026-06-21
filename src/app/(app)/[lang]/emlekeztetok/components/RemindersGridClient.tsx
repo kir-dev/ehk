@@ -1,12 +1,12 @@
 "use client"
 
-import { Fragment, useMemo, useState } from 'react'
 import { MonthAccordion } from '@/app/(app)/[lang]/emlekeztetok/components/MonthAccordion'
-import { useLanguage } from "@/components/common/LanguageProvider"
 import { EmptyState } from "@/components/common/EmptyState"
+import { useLanguage } from "@/components/common/LanguageProvider"
 import { useTranslate } from "@/hooks/useTranslate"
 import { cn, groupRemindersByYearAndMonth, MONTH_NAMES } from '@/lib/utils'
 import { Reminder } from "@/payload-types"
+import { Fragment, useMemo, useState } from 'react'
 
 interface RemindersGridClientProps {
     reminders: Reminder[]
@@ -15,7 +15,7 @@ interface RemindersGridClientProps {
 const TYPES = ['EHK', 'EHDK'] as const
 type ReminderType = (typeof TYPES)[number]
 
-export default function RemindersGridClient({ reminders }: RemindersGridClientProps) {
+export default function RemindersGridClient({ reminders }: Readonly<RemindersGridClientProps>) {
     const { t } = useTranslate()
     const { lang } = useLanguage()
     const [activeType, setActiveType] = useState<ReminderType>('EHK')

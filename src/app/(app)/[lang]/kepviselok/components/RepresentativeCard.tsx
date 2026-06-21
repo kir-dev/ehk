@@ -29,6 +29,8 @@ export function RepresentativeCard({ representative, onClickAction }: Readonly<R
             tabIndex={0}
             onClick={onClickAction}
             onKeyDown={(event) => {
+                // Ignore key events bubbling up from nested interactive elements (e.g. the email link)
+                if (event.target !== event.currentTarget) return
                 if (event.key === "Enter" || event.key === " ") {
                     event.preventDefault()
                     onClickAction()

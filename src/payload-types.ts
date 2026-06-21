@@ -434,6 +434,14 @@ export interface News {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Opcionális. A híret kísérő kapcsolattartó képviselő (név, pozíció és alapértelmezett e-mail cím az Elérhetőségek dobozhoz).
+   */
+  representative?: (number | null) | Representative;
+  /**
+   * Opcionális. Közvetlen kapcsolattartó e-mail cím, a képviselő mellett vagy helyett megjeleníthető.
+   */
+  contactEmail?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -640,9 +648,49 @@ export interface Permission {
     };
     [k: string]: unknown;
   };
+  /**
+   * A "BENYÚJTÁS MENETE" szekció tartalma.
+   */
+  submissionProcess_hu?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * A "BENYÚJTÁS MENETE" szekció tartalma angolul.
+   */
+  submissionProcess_en?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   displayText_hu?: string | null;
   displayText_en?: string | null;
   file?: (number | null) | Media;
+  /**
+   * Külső webes űrlaphoz tartozó URL (pl. "Rendezvénybejelentő űrlap"). Ha meg van adva, a kártya ezt nyitja meg fájl helyett.
+   */
+  externalLink?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1039,6 +1087,8 @@ export interface NewsSelect<T extends boolean = true> {
         description?: T;
         id?: T;
       };
+  representative?: T;
+  contactEmail?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1151,9 +1201,12 @@ export interface PermissionsSelect<T extends boolean = true> {
   name_en?: T;
   text_hu?: T;
   text_en?: T;
+  submissionProcess_hu?: T;
+  submissionProcess_en?: T;
   displayText_hu?: T;
   displayText_en?: T;
   file?: T;
+  externalLink?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -75,12 +75,12 @@ export function getFileInfo(file?: number | Media) {
   return {
     url: file.url || null,
     extension,
-    filesize: file.filesize || null,
+    filesize: file.filesize ?? null,
   };
 }
 
 export function formatFileSize(bytes?: number | null) {
-  if (bytes === undefined || bytes === null || Number.isNaN(bytes)) {
+  if (bytes === undefined || bytes === null || Number.isNaN(bytes) || bytes < 0) {
     return null;
   }
 

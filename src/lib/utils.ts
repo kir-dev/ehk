@@ -134,3 +134,14 @@ export function getTagRoute(tag: string, lang: 'HU' | 'EN'): string | null {
       return null
   }
 }
+
+export function formatDate(dateString: string, lang: 'HU' | 'EN'): string {
+  const d = new Date(dateString)
+  if (lang === 'EN') {
+    return d.toLocaleDateString('en-US', { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+  }
+  const y = d.getUTCFullYear()
+  const m = String(d.getUTCMonth() + 1).padStart(2, '0')
+  const day = String(d.getUTCDate()).padStart(2, '0')
+  return `${y}. ${m}. ${day}`
+}

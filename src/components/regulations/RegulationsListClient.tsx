@@ -1,12 +1,11 @@
 "use client"
 
+import { EmptyState } from "@/components/common/EmptyState"
 import FileCard from "@/components/common/FileCard"
-import { Card, CardContent } from "@/components/ui/card"
 import { useTranslate } from "@/hooks/useTranslate"
 import type { Regulation } from "@/payload-types"
 import { isMedia } from "@/utils/isMedia"
 import { RichText } from "@payloadcms/richtext-lexical/react"
-import { FileText } from "lucide-react"
 
 interface Props {
   regulations: Regulation[]
@@ -16,50 +15,43 @@ export default function RegulationsListClient({ regulations }: Props) {
   const { t, lang } = useTranslate()
 
   return (
-    <div className="container mx-auto px-2 lg:px-4 py-8">
+    <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-4 md:p-8">
       {regulations.length === 0 ? (
-        <Card>
-          <CardContent className="text-center py-12">
-            <div className="bg-gray-100 rounded-full w-16 h-12 flex items-center justify-center mx-auto mb-4">
-              <FileText className="h-8 w-8 text-gray-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('regulations.no_results')}</h3>
-            <p className="text-gray-600">{t('regulations.no_regulations')}</p>
-          </CardContent>
-        </Card>
+        <EmptyState
+          title={t("regulations.no_results")}
+          description={t("regulations.no_regulations")}
+        />
       ) : (
-        <div className="space-y-4">
-          {regulations.map((r0) => {
-            const r = r0 as Regulation
-            const title = lang === 'EN' ? (r.name_en || r.name_hu) : (r.name_hu || r.name_en)
-            const description = lang === 'EN' ? (r.text_en || r.text_hu) : (r.text_hu || r.text_en)
-            const href = r.file && isMedia(r.file) ? (r.file.url || "#") : undefined
-            const ext = r.file && isMedia(r.file) ? (r.file.filename?.split(".").pop()?.toLowerCase() || "file") : undefined
-            const disp = lang === 'EN' ? (r.displayText_en || r.displayText_hu) : (r.displayText_hu || r.displayText_en)
-            
+        <div className="flex flex-col gap-4">
+          {regulations.map((r) => {
+            const title = lang === "EN" ? r.name_en || r.name_hu : r.name_hu || r.name_en
+            const description = lang === "EN" ? r.text_en || r.text_hu : r.text_hu || r.text_en
+            const media = r.file && isMedia(r.file) ? r.file : undefined
+            const ext = media?.filename?.split(".").pop()?.toLowerCase()
+            const disp = lang === "EN" ? r.displayText_en || r.displayText_hu : r.displayText_hu || r.displayText_en
+
             return (
-              <Card key={r.id} className="group hover:shadow-md transition-all duration-300">
-                <CardContent className="p-3 md:p-6">
-                  <div className="flex flex-col gap-2 md:gap-3">
-                    <div>
-                      <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-                        {title}
-                      </h3>
-                    </div>
-                    <div className="prose max-w-none text-gray-700 richtext">
-                      <RichText data={description} />
-                    </div>
-                    {href && (
-                      <FileCard
-                        file={r.file || undefined}
-                        title={disp || ext || 'file'}
-                        actionType="view"
-                        className="mt-1"
-                      />
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+              <article
+                key={r.id}
+                className="flex flex-col gap-3 md:gap-4 rounded-2xl border border-[#e9e2d6] bg-white p-4 md:p-6"
+              >
+                <h2 className="font-playfair font-semibold text-base md:text-lg leading-[1.4] text-[#1a1a1a] break-words">
+                  {title}
+                </h2>
+
+                <div className="richtext font-open-sans text-sm leading-[1.6] text-[#3d3d3d] max-w-none">
+                  <RichText data={description} />
+                </div>
+
+                {media && (
+                  <FileCard
+                    file={media}
+                    title={disp || ext || "file"}
+                    actionType="view"
+                    className="mt-1"
+                  />
+                )}
+              </article>
             )
           })}
         </div>

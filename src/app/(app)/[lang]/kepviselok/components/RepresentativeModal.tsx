@@ -213,7 +213,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Readonly<
                                         >
                                             <div className="min-w-0">
                                                 <p className="font-open-sans text-sm leading-[1.6] text-[#1a1a1a]">
-                                                    {fileTitle || "Dokumentum"}
+                                                    {fileTitle || t("Dokumentum", "Document")}
                                                 </p>
                                                 <div className="mt-2 flex flex-wrap items-center gap-2 font-open-sans text-xs text-[#6e6660]">
                                                     <span className="rounded-full border border-[#e9e2d6] bg-[#f9f4f0] px-3 py-1 text-[11px] font-semibold uppercase text-[#862633]">

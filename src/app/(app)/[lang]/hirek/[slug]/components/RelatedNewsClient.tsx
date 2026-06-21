@@ -1,78 +1,63 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useTranslate } from "@/hooks/useTranslate"
-import { getTagRoute, translateTag } from "@/lib/utils"
+import { translateTag, formatDate } from "@/lib/utils"
 import { News } from "@/payload-types"
-import { ArrowRight, Calendar } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[] }) {
   const { t, lang } = useTranslate()
-  const locale = lang === 'EN' ? 'en-US' : 'hu-HU'
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString(locale, {
-      month: "short",
-      day: "numeric",
-    })
-  }
 
   if (!relatedArticles || relatedArticles.length === 0) return null
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-lg">{t('news.related_news')}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-6 pt-0">
-        <div className="space-y-4">
-          {relatedArticles.map((article) => (
-            <div key={article.id} className="border-b border-gray-100 last:border-b-0 pb-4 last:pb-0">
-              <div className="group block">
-                <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    <span>{formatDate(article.date)}</span>
+    <section className="flex flex-col gap-4 bg-[#fffefc] border border-[#e9e2d6] rounded-2xl p-4 font-open-sans">
+      <h2 className="text-[13px] font-semibold uppercase tracking-[1.3px] text-[#6e6660]">
+        {t('news.related_news')}
+      </h2>
+
+      <div className="flex flex-col gap-4">
+        {relatedArticles.map((article) => {
+          const title = lang === 'EN' && article.titleEng ? article.titleEng : article.title
+          const tags = (article.tags as unknown as string[])?.slice(0, 2) ?? []
+          return (
+            <div
+              key={article.id}
+              className="group flex flex-col gap-4 border border-[#e9e2d6] rounded-2xl p-4 transition-colors hover:border-[#d3afaf]"
+            >
+              <div className="flex flex-col gap-2">
+                <div className="flex items-start justify-between gap-2">
+                  <span className="text-[11px] font-semibold text-[#6e6660]">{formatDate(article.date, lang as 'HU' | 'EN')}</span>
+                  <div className="flex flex-wrap justify-end gap-1">
+                    {tags.map((rawTag, index) => (
+                      <span
+                        key={`${rawTag}-${index}`}
+                        className="inline-flex items-center justify-center rounded-full border border-[#3d3d3d] bg-white px-1.5 py-0.5 text-[8px] leading-none text-[#3d3d3d] uppercase"
+                      >
+                        {translateTag(rawTag, lang)}
+                      </span>
+                    ))}
                   </div>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </div>
-                <Link href={`/hirek/${article.id}`} className="group/title block">
-                  <h4 className="font-medium text-sm text-gray-900 group-hover/title:text-ehk-dark-red transition-colors mb-2 line-clamp-2">
-                    {lang === 'EN' && article.titleEng ? article.titleEng : article.title}
-                  </h4>
-                </Link>
-                <div className="flex flex-wrap gap-1">
-                  {(article.tags as unknown as string[])?.slice(0, 2).map((rawTag, index) => {
-                    const href = getTagRoute(rawTag, lang)
-                    const label = translateTag(rawTag, lang)
-                    const badge = (
-                      <Badge variant="outline" className="text-xs">
-                        {label}
-                      </Badge>
-                    )
-                    return href ? (
-                      <Link key={`${rawTag}-${index}`} href={href} className="focus:outline-none focus:ring-2 focus:ring-ehk-dark-red rounded">
-                        {badge}
-                      </Link>
-                    ) : (
-                      <span key={`${rawTag}-${index}`}>{badge}</span>
-                    )
-                  })}
-                </div>
+                <h3 className="font-playfair font-semibold text-sm leading-snug text-black">
+                  {title}
+                </h3>
               </div>
+
+              <hr className="border-t border-[#e9e2d6]" />
+
+              <Link
+                href={`/hirek/${article.id}`}
+                className="inline-flex items-center justify-between gap-4 text-xs font-bold text-[#862633]"
+              >
+                <span>{t('news.read_more')}</span>
+                <ArrowRight className="size-4.5 shrink-0 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
-          ))}
-        </div>
-        <Button variant="outline" size="sm" className="w-full mt-4 bg-transparent hover:border-ehk-dark-red hover:text-ehk-dark-red" asChild>
-          <Link href="/">
-            {t('news.view_all_news')}
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+          )
+        })}
+      </div>
+    </section>
   )
 }

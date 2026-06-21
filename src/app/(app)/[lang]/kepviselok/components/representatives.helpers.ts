@@ -80,7 +80,7 @@ export function getFileInfo(file?: number | Media) {
 }
 
 export function formatFileSize(bytes?: number | null) {
-  if (bytes === undefined || bytes === null || Number.isNaN(bytes)) {
+  if (bytes === undefined || bytes === null || Number.isNaN(bytes) || bytes < 0) {
     return null;
   }
 

@@ -105,6 +105,18 @@ export const Permissions: CollectionConfig = {
             admin: {
                 description: "Külső webes űrlaphoz tartozó URL (pl. \"Rendezvénybejelentő űrlap\"). Ha meg van adva, a kártya ezt nyitja meg fájl helyett.",
             },
+            validate: (val: string | null | undefined) => {
+                if (!val) return true; // Optional field
+                try {
+                    const parsed = new URL(val);
+                    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+                        return 'A linknek érvényes HTTP vagy HTTPS URL-nek kell lennie (pl. https://example.com).';
+                    }
+                    return true;
+                } catch {
+                    return 'Érvénytelen URL formátum.';
+                }
+            },
         },
     ],
 };

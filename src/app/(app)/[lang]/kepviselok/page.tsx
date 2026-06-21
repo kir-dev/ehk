@@ -14,7 +14,7 @@ export default async function RepresentativesPage({
     return (
         <LanguageProvider defaultLang={(lang as string).toUpperCase() as Lang} dictionary={dictionary}>
             <main className="min-h-screen bg-[#f9f4f0] px-3 py-6 md:px-8 md:py-8">
-                <div className="mx-auto max-w-[1336px]">
+                <div className="mx-auto max-w-334">
                     <Suspense fallback={<LoadingRepresentativesGrid />}>
                         <RepresentativesGrid
                             title={dictionary.representatives.title}

@@ -27,7 +27,7 @@
     "time": "TIME",
     "location": "LOCATION",
     "link": "LINK",
-    "description": "DESCRIPTION",
+    "description_label": "DESCRIPTION",
     "share": "Share",
     "no_events": "No events scheduled for this week."
   },

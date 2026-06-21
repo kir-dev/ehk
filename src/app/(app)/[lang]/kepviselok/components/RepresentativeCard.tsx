@@ -17,7 +17,7 @@ interface RepresentativeCardProps {
     onClickAction: () => void
 }
 
-export function RepresentativeCard({ representative, onClickAction }: RepresentativeCardProps) {
+export function RepresentativeCard({ representative, onClickAction }: Readonly<RepresentativeCardProps>) {
     const { t, lang } = useTranslate()
     const positionText = getPrimaryPosition(representative, lang)
     const detailsLabel = lang === "EN" ? t('representatives.view_details') : "Részletek"
@@ -37,7 +37,7 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
             className="group relative min-h-[31.6rem] cursor-pointer pt-16 focus-visible:outline-none"
             aria-label={`${detailsLabel}: ${representative.name}`}
         >
-            <div className="absolute left-1/2 top-0 z-10 h-[18.5rem] w-[min(70%,16.45rem)] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+            <div className="absolute left-1/2 top-0 z-10 h-74 w-[min(70%,16.45rem)] -translate-x-1/2 overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
                 {picture.url ? (
                     <Image
                         src={picture.url}
@@ -87,7 +87,7 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
                                     className="inline-flex items-center justify-center gap-1 font-open-sans text-[13px] font-semibold leading-none text-black transition-colors hover:text-[#862633] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2"
                                     onClick={(event) => event.stopPropagation()}
                                 >
-                                    <Mail className="h-[15px] w-[15px] shrink-0" />
+                                    <Mail className="h-3.75 w-3.75 shrink-0" />
                                     <span>{emailObj.email}</span>
                                 </a>
                             ))}
@@ -96,7 +96,7 @@ export function RepresentativeCard({ representative, onClickAction }: Representa
                 </div>
 
                 <div className="w-full border-t border-[#e9e2d6] pt-4">
-                    <div className="flex h-[22px] items-center justify-between gap-4 font-open-sans text-sm font-semibold leading-[1.6] text-[#862633]">
+                    <div className="flex h-5.5 items-center justify-between gap-4 font-open-sans text-sm font-semibold leading-[1.6] text-[#862633]">
                         <span>{detailsLabel}</span>
                         <ArrowRight className="h-6 w-6 shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1" />
                     </div>

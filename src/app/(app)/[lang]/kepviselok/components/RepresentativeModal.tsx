@@ -22,7 +22,7 @@ interface RepresentativeModalProps {
     onCloseAction: () => void
 }
 
-export function RepresentativeModal({ representative, onCloseAction }: RepresentativeModalProps) {
+export function RepresentativeModal({ representative, onCloseAction }: Readonly<RepresentativeModalProps>) {
     const { lang, t } = useTranslate()
     const headerPosition = getPrimaryPosition(representative, lang)
 
@@ -42,11 +42,11 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
         <Dialog open={true} onOpenChange={(open) => !open && onCloseAction()}>
             <DialogContent
                 showCloseButton={false}
-                className="top-[calc(5rem+1rem)] max-h-[calc(100dvh-7rem)] w-[min(90vw,1272px)] !max-w-[1272px] translate-y-0 gap-0 overflow-y-auto rounded-2xl border-0 bg-[#fffefc] p-0 shadow-[-4px_4px_8px_rgba(0,0,0,0.25)] sm:!max-w-[1272px] md:top-[calc(5rem+2rem)] md:max-h-[calc(100dvh-9rem)]"
+                className="top-24 max-h-[calc(100dvh-7rem)] w-[min(90vw,1272px)] max-w-318! translate-y-0 gap-0 overflow-y-auto rounded-2xl border-0 bg-[#fffefc] p-0 shadow-[-4px_4px_8px_rgba(0,0,0,0.25)] sm:max-w-318! md:top-28 md:max-h-[calc(100dvh-9rem)]"
             >
                 <DialogTitle className="sr-only">{representative.name}</DialogTitle>
 
-                <div className="flex h-[72px] items-center border-b border-[#e9e2d6] bg-[#fffefc] px-4 py-4 md:px-8">
+                <div className="flex h-18 items-center border-b border-[#e9e2d6] bg-[#fffefc] px-4 py-4 md:px-8">
                     <button
                         type="button"
                         onClick={onCloseAction}
@@ -59,7 +59,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
 
                 <div className="flex flex-col gap-8 p-4 md:p-8">
                     <div className="block md:hidden">
-                        <div className="relative mx-auto h-[19.5rem] max-w-[17.4rem] overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+                        <div className="relative mx-auto h-78 max-w-[17.4rem] overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
                             {picture.url ? (
                                 <Image
                                     src={picture.url}
@@ -109,8 +109,8 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
                         )}
                     </div>
 
-                    <div className="relative hidden min-h-[313px] md:block">
-                        <div className="absolute left-0 top-0 h-[313px] w-[278px] overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+                    <div className="relative hidden min-h-78.25 md:block">
+                        <div className="absolute left-0 top-0 h-78.25 w-69.5 overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#f9f4f0] shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
                             {picture.url ? (
                                 <Image
                                     src={picture.url}
@@ -128,7 +128,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
                             )}
                         </div>
 
-                        <div className="ml-[278px] mt-[72px] min-h-[154px] rounded-r-2xl border-y border-r border-[#e9e2d6] bg-[#862633] p-8 text-[#f9f4f0]">
+                        <div className="ml-69.5 mt-18 min-h-38.5 rounded-r-2xl border-y border-r border-[#e9e2d6] bg-[#862633] p-8 text-[#f9f4f0]">
                             <h2 className="font-playfair text-[32px] font-bold uppercase leading-[1.2] text-white">
                                 {representative.name}
                             </h2>
@@ -207,7 +207,7 @@ export function RepresentativeModal({ representative, onCloseAction }: Represent
                                             rel="noreferrer"
                                             aria-disabled={!fileInfo.url}
                                             className={cn(
-                                                "group/report flex min-h-[72px] items-center justify-between gap-4 rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 transition-colors duration-200 hover:border-[#d3afaf] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2",
+                                                "group/report flex min-h-18 items-center justify-between gap-4 rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 transition-colors duration-200 hover:border-[#d3afaf] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2",
                                                 !fileInfo.url && "pointer-events-none opacity-60",
                                             )}
                                         >

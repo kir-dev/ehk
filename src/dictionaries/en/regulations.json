@@ -7,7 +7,7 @@
     "no_regulations": "No regulations available at the moment."
   },
   "decisions": {
-    "title": "Decisions Archive",
+    "title": "Decisions",
     "description": "Archive of decisions made by the University Students' Union.",
     "select_year": "Select Year",
     "view_all": "All Decisions",

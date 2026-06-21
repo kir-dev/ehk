@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { LoadingRegulationsGrid } from "@/components/common/LoadingSpinner";
 import { PageHeader } from "@/components/common/PageHeader";
 import RegulationsList from "@/components/regulations/RegulationsList";

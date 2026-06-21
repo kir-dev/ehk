@@ -14,11 +14,11 @@ export default function RepresentativesGridClient({
     representatives,
     title,
     description,
-}: {
+}: Readonly<{
     representatives: Representative[];
     title: string;
     description?: string;
-}) {
+}>) {
     const { t } = useTranslate()
     const router = useRouter()
     const [selectedRepresentative, setSelectedRepresentative] = useState<Representative | null>(null);
@@ -55,9 +55,9 @@ export default function RepresentativesGridClient({
                     <span>{t("Vissza", "Back")}</span>
                 </button>
 
-                <label className="relative w-full sm:w-[244px]">
+                <label className="relative w-full sm:w-61">
                     <span className="sr-only">{t('representatives.search_placeholder')}</span>
-                    <Search className="pointer-events-none absolute left-3 top-1/2 h-[13px] w-[13px] -translate-y-1/2 text-[#6e6660]" />
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-3.25 w-3.25 -translate-y-1/2 text-[#6e6660]" />
                     <Input
                         placeholder={t('representatives.search_placeholder')}
                         className="h-8 rounded-full border-[#e9e2d6] bg-[#fffefc] pl-8 pr-3 font-open-sans text-xs text-[#3d3d3d] shadow-none placeholder:text-[#6e6660] focus-visible:ring-[#862633] focus-visible:ring-offset-0"
@@ -80,7 +80,7 @@ export default function RepresentativesGridClient({
 
             <div className="bg-[#fffefc] px-4 py-8 md:px-8 md:py-10">
                 {filteredRepresentatives.length > 0 ? (
-                    <div className="mx-auto grid max-w-[1272px] grid-cols-1 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 xl:grid-cols-3 xl:gap-x-[50px]">
+                    <div className="mx-auto grid max-w-318 grid-cols-1 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 xl:grid-cols-3 xl:gap-x-12.5">
                         {filteredRepresentatives.map((representative) => (
                             <RepresentativeCard
                                 key={representative.id}
@@ -90,7 +90,7 @@ export default function RepresentativesGridClient({
                         ))}
                     </div>
                 ) : (
-                    <div className="mx-auto flex max-w-[1272px] flex-col items-center justify-center rounded-2xl border border-dashed border-[#e9e2d6] bg-[#fffefc] px-6 py-20 text-center">
+                    <div className="mx-auto flex max-w-318 flex-col items-center justify-center rounded-2xl border border-dashed border-[#e9e2d6] bg-[#fffefc] px-6 py-20 text-center">
                         <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#e9e2d6] bg-[#f9f4f0]">
                             <User className="h-8 w-8 text-[#9a9a9a]" />
                         </div>

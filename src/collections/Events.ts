@@ -1,6 +1,28 @@
 import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
 import type { CollectionConfig } from "payload";
 
+const validateFacebookUrl = (val: string | null | undefined) => {
+  if (!val) return true;
+
+  try {
+    const parsed = new URL(val.trim());
+    const hostname = parsed.hostname.toLowerCase();
+    const isFacebookHost = hostname === "facebook.com" || hostname.endsWith(".facebook.com");
+
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+      return "A Facebook esemény linknek érvényes HTTP vagy HTTPS URL-nek kell lennie.";
+    }
+
+    if (!isFacebookHost) {
+      return "A Facebook esemény linknek facebook.com domainre kell mutatnia.";
+    }
+
+    return true;
+  } catch {
+    return "Érvénytelen Facebook esemény link formátum.";
+  }
+};
+
 export const Events: CollectionConfig = {
   slug: "events",
   labels: {
@@ -144,6 +166,7 @@ export const Events: CollectionConfig = {
       label: "Facebook esemény link",
       type: "text",
       required: false,
+      validate: validateFacebookUrl,
     },
   ],
   hooks: {

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useId } from "react"
 import { Event, Media } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 import Image from "next/image"
@@ -16,6 +16,16 @@ interface EventCardProps {
   t: Translations
 }
 
+function isValidUrl(url: string | null | undefined): boolean {
+  if (!url) return false
+  try {
+    const parsed = new URL(url)
+    return parsed.protocol === "http:" || parsed.protocol === "https:"
+  } catch {
+    return false
+  }
+}
+
 export function EventCard({
   event,
   lang,
@@ -29,6 +39,8 @@ export function EventCard({
   const eventLoc = lang === "hu" ? event.location?.location_hu : event.location?.location_en
   const eventDesc = lang === "hu" ? event.detailedDescription?.description_hu : event.detailedDescription?.description_en
   const eventImg = event.image as Media | undefined
+  const contentId = useId()
+  const facebookUrl = isValidUrl(event.facebookUrl) ? event.facebookUrl : null
 
   // Extract formatted start time
   const startDt = new Date(event.date.startDate)
@@ -40,52 +52,56 @@ export function EventCard({
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* Collapsed Header Bar */}
-      <div
+      <button
+        type="button"
         onClick={onToggle}
+        aria-expanded={isExpanded}
+        aria-controls={contentId}
         className={cn(
-          "bg-[#fffefc] border border-[#e9e2d6] shadow-sm hover:shadow transition-shadow flex items-center pl-1 pr-6 py-4 cursor-pointer select-none",
+          "w-full bg-[#fffefc] border border-[#e9e2d6] shadow-sm hover:shadow transition-shadow flex items-center pl-1 pr-6 py-4 cursor-pointer select-none text-left",
           isExpanded ? "rounded-t-lg" : "rounded-lg"
         )}
       >
         {/* Accent Line */}
-        <div className="w-1 h-10 bg-[#862633] rounded-full mr-4 shrink-0" />
+        <span className="w-1 h-10 bg-[#862633] rounded-full mr-4 shrink-0" aria-hidden="true" />
 
         {/* Info details */}
-        <div className="flex flex-1 flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 min-w-0">
+        <span className="flex flex-1 flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 min-w-0">
           <span className="font-open-sans font-bold text-[16px] text-[#1a1a1a] shrink-0 sm:w-16">
             {timeStr}
           </span>
-          <div className="flex-1 min-w-0">
-            <h3 className="font-open-sans font-bold text-[16px] text-[#1a1a1a] truncate">
+          <span className="flex-1 min-w-0">
+            <span className="block font-open-sans font-bold text-[16px] text-[#1a1a1a] truncate">
               {eventTitle}
-            </h3>
+            </span>
             {eventLoc && (
-              <div className="flex items-center gap-1 text-[13px] text-[#9a9a9a] mt-0.5 sm:hidden">
+              <span className="flex items-center gap-1 text-[13px] text-[#9a9a9a] mt-0.5 sm:hidden">
                 <MapPin className="h-3.5 w-3.5 shrink-0" />
                 <span className="truncate">{eventLoc}</span>
-              </div>
+              </span>
             )}
-          </div>
+          </span>
           {eventLoc && (
-            <div className="hidden sm:flex items-center gap-1.5 text-[13px] text-[#9a9a9a] max-w-[250px] shrink-0 mr-4">
+            <span className="hidden sm:flex items-center gap-1.5 text-[13px] text-[#9a9a9a] max-w-[250px] shrink-0 mr-4">
               <MapPin className="h-3.5 w-3.5 shrink-0 text-[#862633]/70" />
               <span className="truncate">{eventLoc}</span>
-            </div>
+            </span>
           )}
-        </div>
+        </span>
 
         {/* Arrow Toggle */}
-        <div className="text-[#862633] shrink-0 ml-4">
+        <span className="text-[#862633] shrink-0 ml-4">
           {isExpanded ? (
             <ChevronUp className="h-5 w-5" />
           ) : (
             <ChevronDown className="h-5 w-5" />
           )}
-        </div>
-      </div>
+        </span>
+      </button>
 
       {/* Accordion Collapsible Detail Drawer */}
       <div
+        id={contentId}
         className={cn(
           "grid transition-all duration-300 ease-in-out border-b border-l border-r border-[#e9e2d6] bg-[#fffefc] rounded-b-lg overflow-hidden",
           isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 border-none pointer-events-none"
@@ -136,9 +152,9 @@ export function EventCard({
                 </span>
                 <div className="flex flex-wrap gap-2 items-center">
                   {/* Facebook Event Link */}
-                  {event.facebookUrl && (
+                  {facebookUrl && (
                     <a
-                      href={event.facebookUrl}
+                      href={facebookUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#3b589f] hover:bg-[#2d4373] text-white flex gap-1.5 items-center px-3 py-1 rounded-full text-[11px] font-bold font-open-sans transition-colors cursor-pointer w-fit"

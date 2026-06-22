@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { EmptyState } from "@/components/common/EmptyState";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";

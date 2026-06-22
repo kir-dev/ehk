@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { LanguageProvider, Lang } from "@/components/common/LanguageProvider";

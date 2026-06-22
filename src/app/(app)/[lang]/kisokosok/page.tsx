@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import HelpPageContent from "@/app/(app)/[lang]/kisokosok/components/HelpPageContent";
 import { LoadingHelpPageGrid } from "@/app/(app)/[lang]/kisokosok/components/skeletons/LoadingHelpPageGrid";
 import { PageHeader } from "@/components/common/PageHeader";

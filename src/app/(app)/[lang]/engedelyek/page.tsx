@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 export default async function PermissionsPage({
   params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang as "hu" | "en", "permissions");
+  const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
+  const dictionary = await getDictionary(validLang, "permissions");
 
   return (
-    <LanguageProvider defaultLang={(lang as string).toUpperCase() as "HU" | "EN"} dictionary={dictionary}>
+    <LanguageProvider defaultLang={validLang.toUpperCase() as "HU" | "EN"} dictionary={dictionary}>
       <div className="min-h-screen bg-gray-50">
         <Suspense fallback={<LoadingPermissionsGrid />}>
           {/* Server component fetching and rendering (renders its own PageHeader) */}

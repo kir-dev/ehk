@@ -1,24 +1,13 @@
 "use client"
 
 import { useTranslate } from "@/hooks/useTranslate"
-import { translateTag } from "@/lib/utils"
+import { translateTag, formatDate } from "@/lib/utils"
 import { News } from "@/payload-types"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[] }) {
   const { t, lang } = useTranslate()
-
-  const formatDate = (dateString: string) => {
-    const d = new Date(dateString)
-    if (lang === 'EN') {
-      return d.toLocaleDateString('en-US', { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
-    }
-    const y = d.getUTCFullYear()
-    const m = String(d.getUTCMonth() + 1).padStart(2, '0')
-    const day = String(d.getUTCDate()).padStart(2, '0')
-    return `${y}. ${m}. ${day}`
-  }
 
   if (!relatedArticles || relatedArticles.length === 0) return null
 
@@ -39,7 +28,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
             >
               <div className="flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-[11px] font-semibold text-[#6e6660]">{formatDate(article.date)}</span>
+                  <span className="text-[11px] font-semibold text-[#6e6660]">{formatDate(article.date, lang as 'HU' | 'EN')}</span>
                   <div className="flex flex-wrap justify-end gap-1">
                     {tags.map((rawTag, index) => (
                       <span
@@ -63,7 +52,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
                 className="inline-flex items-center justify-between gap-4 text-xs font-bold text-[#862633]"
               >
                 <span>{t('news.read_more')}</span>
-                <ArrowRight className="size-[18px] shrink-0 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-4.5 shrink-0 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           )

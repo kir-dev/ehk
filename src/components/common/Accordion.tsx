@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
-import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import * as React from "react";
 
 type AccordionHeadingLevel = 2 | 3 | 4 | 5 | 6;
 
@@ -46,7 +46,7 @@ export function AccordionItem({
   headerClassName,
   contentClassName,
   iconClassName,
-}: AccordionItemProps) {
+}: Readonly<AccordionItemProps>) {
   const isControlled = open !== undefined;
   const [internalOpen, setInternalOpen] = React.useState(defaultOpen);
   const isOpen = isControlled ? open : internalOpen;
@@ -149,7 +149,7 @@ export interface AccordionProps {
  * Convenience wrapper that renders a list of {@link AccordionItem}s.
  * Pass `single` to make the group behave like an exclusive accordion.
  */
-export function Accordion({ items, single = false, className }: AccordionProps) {
+export function Accordion({ items, single = false, className }: Readonly<AccordionProps>) {
   const initial = single
     ? items.find((i) => i.defaultOpen)?.id ?? null
     : null;

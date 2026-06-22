@@ -17,7 +17,7 @@ interface LanguageEducationContentProps {
 
 export default function LanguageEducationContent({
   content,
-}: LanguageEducationContentProps) {
+}: Readonly<LanguageEducationContentProps>) {
   return (
     <div className="flex flex-col lg:flex-row lg:items-start gap-6">
       {/* Left column: page header + large image */}

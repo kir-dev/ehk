@@ -77,7 +77,8 @@ export async function getDecisions() {
   const payload = await getPayload({ config });
   const decisions = await payload.find({
     collection: "decisions",
-    limit: 1000 });
+    limit: 1000,
+    depth: 1 });
 
   return decisions.docs as Decision[];
 }

@@ -29,7 +29,7 @@
     "time": "IDŐPONT",
     "location": "HELYSZÍN",
     "link": "LINK",
-    "description": "LEÍRÁS",
+    "description_label": "LEÍRÁS",
     "share": "Megosztás",
     "no_events": "Nincsenek események ezen a héten."
   },

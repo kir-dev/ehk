@@ -9,16 +9,22 @@ interface MobileMenuItemProps {
   onNavigate: () => void
 }
 
-export function MobileMenuItem({ item, onNavigate }: MobileMenuItemProps) {
+export function MobileMenuItem({ item, onNavigate }: Readonly<MobileMenuItemProps>) {
   return (
     <div className="space-y-2">
-      <Link
-        href={item.href}
-        className={NAVBAR_STYLES.mobile.menuItem}
-        onClick={onNavigate}
-      >
-        {item.title}
-      </Link>
+      {item.items.length > 0 ? (
+        <span className={NAVBAR_STYLES.mobile.menuItem}>
+          {item.title}
+        </span>
+      ) : (
+        <Link
+          href={item.href}
+          className={NAVBAR_STYLES.mobile.menuItem}
+          onClick={onNavigate}
+        >
+          {item.title}
+        </Link>
+      )}
       {item.items.length > 0 && (
         <div className={NAVBAR_STYLES.mobile.subItemsContainer}>
           {item.items.map((subItem) => (

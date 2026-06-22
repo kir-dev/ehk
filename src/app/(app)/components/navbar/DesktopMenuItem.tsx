@@ -11,7 +11,7 @@ interface DesktopMenuItemProps {
   onNavigate: (href: string) => void
 }
 
-export function DesktopMenuItem({ item, onNavigate }: DesktopMenuItemProps) {
+export function DesktopMenuItem({ item }: Readonly<DesktopMenuItemProps>) {
   const hasSubItems = item.items.length > 0
   
   if (hasSubItems) {
@@ -19,9 +19,6 @@ export function DesktopMenuItem({ item, onNavigate }: DesktopMenuItemProps) {
       <NavigationMenuPrimitive.Item value={item.title}>
         <NavigationMenuPrimitive.Trigger
           className={NAVBAR_STYLES.desktop.menuTrigger}
-          onClick={() => {
-            if (item.href) onNavigate(item.href)
-          }}
         >
           {item.title}
           <ChevronDownIcon

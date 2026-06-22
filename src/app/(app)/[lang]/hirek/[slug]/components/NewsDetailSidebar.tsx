@@ -29,7 +29,7 @@ export function NewsDetailSidebar({ article }: NewsDetailSidebarProps) {
   const repEmail = representative?.emails?.[0]?.email ?? null
 
   return (
-    <section className="flex flex-col gap-2 bg-[#fffefc] border-y border-r border-[#e9e2d6] border-l-4 border-l-[#862633] rounded-r-2xl p-4 font-open-sans">
+    <section className="flex flex-col gap-2 bg-[#fffefc] border-y border-r border-[#e9e2d6] rounded-2xl p-4 font-open-sans">
       <h2 className="text-[13px] font-semibold uppercase tracking-[1.3px] text-[#6e6660]">
         {t('news.contacts')}
       </h2>

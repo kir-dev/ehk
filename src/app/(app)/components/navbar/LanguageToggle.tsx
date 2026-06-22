@@ -12,6 +12,7 @@ export function LanguageToggle({ lang, onToggle }: LanguageToggleProps) {
   
   return (
     <button
+      type="button"
       onClick={onToggle}
       className={NAVBAR_STYLES.actions.langToggle}
       aria-label={i18n.langToggle}

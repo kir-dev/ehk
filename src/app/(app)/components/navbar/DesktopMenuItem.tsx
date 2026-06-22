@@ -11,7 +11,7 @@ interface DesktopMenuItemProps {
   onNavigate: (href: string) => void
 }
 
-export function DesktopMenuItem({ item }: Readonly<DesktopMenuItemProps>) {
+export function DesktopMenuItem({ item, onNavigate }: Readonly<DesktopMenuItemProps>) {
   const hasSubItems = item.items.length > 0
   
   if (hasSubItems) {
@@ -36,6 +36,7 @@ export function DesktopMenuItem({ item }: Readonly<DesktopMenuItemProps>) {
                     target={subItem.targetBlank ? "_blank" : undefined}
                     rel={subItem.targetBlank ? "noopener noreferrer" : undefined}
                     className={NAVBAR_STYLES.desktop.subMenuItem}
+                    onClick={() => onNavigate(subItem.href)}
                   >
                     <span className="text-sm font-bold text-neutral-900 mb-1 flex items-center gap-1.5 group-hover:text-[#862633] transition-colors duration-200">
                       {subItem.label}
@@ -66,6 +67,7 @@ export function DesktopMenuItem({ item }: Readonly<DesktopMenuItemProps>) {
           target={item.targetBlank ? "_blank" : undefined}
           rel={item.targetBlank ? "noopener noreferrer" : undefined}
           className={NAVBAR_STYLES.desktop.menuLink}
+          onClick={() => onNavigate(item.href)}
         >
           {item.title}
         </Link>

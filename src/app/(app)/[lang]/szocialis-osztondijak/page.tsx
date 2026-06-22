@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { EmptyState } from "@/components/common/EmptyState";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -95,8 +97,6 @@ export default async function SocialScholarshipPage({
               links={links}
               isEn={isEn}
               title={social.sidebar_title}
-              mueperDescription={social.sidebar_mueper_description}
-              eszbDescription={social.sidebar_eszb_description}
             />
           )}
         </div>
@@ -167,14 +167,10 @@ function ImportantLinksSidebar({
   links,
   isEn,
   title,
-  mueperDescription,
-  eszbDescription,
 }: {
   links: SidebarLink[];
   isEn: boolean;
   title: string;
-  mueperDescription: string;
-  eszbDescription: string;
 }) {
   return (
     <aside className="rounded-2xl border border-[#e9e2d6] bg-[#fffefc] p-4 shadow-sm lg:sticky lg:top-24">
@@ -183,12 +179,12 @@ function ImportantLinksSidebar({
       </h2>
       <div className="mt-3 space-y-4">
         {links.map((link, index) => {
-          const label = getLocalizedTitle(link, isEn);
-          const description = getSidebarDescription(
-            label,
-            mueperDescription,
-            eszbDescription,
-          );
+          const label = isEn
+            ? link.title_en || link.title_hu
+            : link.title_hu || link.title_en;
+          const description = isEn
+            ? link.description_en || link.description_hu
+            : link.description_hu || link.description_en;
 
           return (
             <div key={link.id ?? `${label}-${index}`} className="space-y-2">
@@ -212,22 +208,4 @@ function ImportantLinksSidebar({
       </div>
     </aside>
   );
-}
-
-function getSidebarDescription(
-  label: string,
-  mueperDescription: string,
-  eszbDescription: string,
-) {
-  const normalized = label.toLocaleLowerCase("hu-HU");
-
-  if (normalized.includes("műeper") || normalized.includes("mueper")) {
-    return mueperDescription;
-  }
-
-  if (normalized.includes("eszb")) {
-    return eszbDescription;
-  }
-
-  return "";
 }

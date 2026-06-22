@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { DecisionsArchive } from "@/app/(app)/[lang]/hatarozatok-tara/components/DecisionsArchive";
 import { LoadingDecisionsGrid } from "@/components/common/LoadingSpinner";
 import { Suspense } from "react";

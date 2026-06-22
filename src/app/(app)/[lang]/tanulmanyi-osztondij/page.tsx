@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import StudyScholarshipContent from "@/app/(app)/[lang]/tanulmanyi-osztondij/components/StudyScholarshipContent";
 import { LoadingRegulationsGrid } from "@/components/common/LoadingSpinner";
 import { PageHeader } from "@/components/common/PageHeader";

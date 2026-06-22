@@ -1,5 +1,5 @@
 import HelpPageContent from "@/app/(app)/[lang]/kisokosok/components/HelpPageContent";
-import { LoadingHelpPageContent } from "@/components/common/LoadingSpinner";
+import { LoadingHelpPageGrid } from "@/app/(app)/[lang]/kisokosok/components/skeletons/LoadingHelpPageGrid";
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
@@ -13,10 +13,10 @@ export default async function HelpPage({
   
   return (
     <LanguageProvider defaultLang={lang.toUpperCase() as Lang} dictionary={dictionary}>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="min-h-screen bg-[#f9f4f0]">
         <div className="container mx-auto px-2 md:px-4 py-8">
           <PageHeader title={dictionary.knowledge_base.title} />
-          <Suspense fallback={<LoadingHelpPageContent />}>
+          <Suspense fallback={<LoadingHelpPageGrid />}>
             <HelpPageContent />
           </Suspense>
         </div>

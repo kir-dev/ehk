@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { NewsDetail } from "@/app/(app)/[lang]/hirek/[slug]/components/NewsDetail"
 import { notFound } from "next/navigation"
 import { getNewsById } from "@/lib/payload-cms";

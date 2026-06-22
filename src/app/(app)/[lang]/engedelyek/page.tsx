@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import PermissionsList from "@/app/(app)/[lang]/engedelyek/components/PermissionsList";
 import { LanguageProvider } from "@/components/common/LanguageProvider";
 import { LoadingPermissionsGrid } from "@/app/(app)/[lang]/engedelyek/components/skeletons/LoadingPermissionsGrid";

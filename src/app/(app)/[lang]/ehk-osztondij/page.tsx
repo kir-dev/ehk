@@ -1,13 +1,12 @@
+import { Accordion, AccordionEntry } from "@/components/common/Accordion";
+import { EmptyState } from "@/components/common/EmptyState";
 import { PageHeader } from "@/components/common/PageHeader";
-import { Card, CardContent } from "@/components/ui/card";
 import { getDictionary } from "@/get-dictionary";
-import { Locale } from "@/i18n-config";
-import { ReactNode } from "react";
+import { i18n, Locale } from "@/i18n-config";
+import { getEhkScholarships } from "@/lib/payload-cms";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 
-interface EHKScholarshipItem {
-  title: string;
-  paragraphs: string[];
-}
+export const dynamic = "force-dynamic";
 
 export default async function EHKScholarshipPage({
   params,
@@ -15,44 +14,46 @@ export default async function EHKScholarshipPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang, 'scholarships');
+  const validLang = i18n.locales.includes(lang) ? lang : i18n.defaultLocale;
+  const isEn = validLang === "en";
+  const dictionary = await getDictionary(validLang, "scholarships");
+  const scholarships = await getEhkScholarships();
+  const content = dictionary.scholarships.ehk;
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-2 md:px-4 py-8">
-        <PageHeader title={dictionary.scholarships.ehk.title} />{" "}
-        <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
-          {(dictionary.scholarships.ehk.items as EHKScholarshipItem[]).map((item) => (
-            <Card
-              key={item.title}
-              className="group hover:shadow-md transition-all duration-300"
-            >
-              <CardContent className="p-3 md:p-6">
-                <div className="flex flex-col gap-2 md:gap-3">
-                  <div className="flex flex-col gap-2 md:gap-3">
-                    <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-                      {item.title}
-                    </h3>
-                    <div className="space-y-2">
-                      {item.paragraphs.map((para, i) => (
-                        <Paragraph key={i}>{para}</Paragraph>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+  const entries: AccordionEntry[] = scholarships.map((item, index) => {
+    const header = isEn
+      ? item.title_en || item.title_hu
+      : item.title_hu || item.title_en;
+    const richTextContent = isEn
+      ? item.content_en || item.content_hu
+      : item.content_hu || item.content_en;
+
+    return {
+      id: String(item.id ?? index),
+      header,
+      content: (
+        <div className="richtext max-w-none font-open-sans text-sm leading-[1.6] text-[#3d3d3d] md:text-base">
+          <RichText data={richTextContent} />
         </div>
-      </div>
-    </div>
-  );
-}
+      ),
+    };
+  });
 
-function Paragraph({ children }: { children: ReactNode }) {
   return (
-    <div className="prose max-w-none text-gray-700 richtext">
-      <p>{children}</p>
+    <div className="min-h-screen bg-[#f9f4f0]">
+      <div className="mx-auto w-full max-w-[1400px] px-4 py-8 md:px-8">
+        <PageHeader title={content.title} />
+        <section className="rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8">
+          {entries.length === 0 ? (
+            <EmptyState
+              title={content.empty_title}
+              description={content.empty_description}
+            />
+          ) : (
+            <Accordion items={entries} />
+          )}
+        </section>
+      </div>
     </div>
   );
 }

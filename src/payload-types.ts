@@ -78,6 +78,7 @@ export interface Config {
     decisions: Decision;
     events: Event;
     'ehk-events': EhkEvent;
+    'ehk-scholarships': EhkScholarship;
     permissions: Permission;
     regulations: Regulation;
     help: Help;
@@ -101,6 +102,7 @@ export interface Config {
     decisions: DecisionsSelect<false> | DecisionsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
     'ehk-events': EhkEventsSelect<false> | EhkEventsSelect<true>;
+    'ehk-scholarships': EhkScholarshipsSelect<false> | EhkScholarshipsSelect<true>;
     permissions: PermissionsSelect<false> | PermissionsSelect<true>;
     regulations: RegulationsSelect<false> | RegulationsSelect<true>;
     help: HelpSelect<false> | HelpSelect<true>;
@@ -117,9 +119,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     'academic-scholarship-faq': AcademicScholarshipFaq;
+    'social-scholarships-faq': SocialScholarshipsFaq;
   };
   globalsSelect: {
     'academic-scholarship-faq': AcademicScholarshipFaqSelect<false> | AcademicScholarshipFaqSelect<true>;
+    'social-scholarships-faq': SocialScholarshipsFaqSelect<false> | SocialScholarshipsFaqSelect<true>;
   };
   locale: null;
   widgets: {
@@ -613,6 +617,53 @@ export interface EhkEvent {
   createdAt: string;
 }
 /**
+ * Az EHK ösztöndíjak oldal lenyíló szekcióinak szerkeszthető tartalma.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ehk-scholarships".
+ */
+export interface EhkScholarship {
+  id: number;
+  title_hu: string;
+  title_en: string;
+  content_hu: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  content_en: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Megjelenítési sorrend. A kisebb szám jelenik meg előbb.
+   */
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Engedélyek kezelése.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -884,6 +935,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'ehk-events';
         value: number | EhkEvent;
+      } | null)
+    | ({
+        relationTo: 'ehk-scholarships';
+        value: number | EhkScholarship;
       } | null)
     | ({
         relationTo: 'permissions';
@@ -1198,6 +1253,19 @@ export interface EhkEventsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ehk-scholarships_select".
+ */
+export interface EhkScholarshipsSelect<T extends boolean = true> {
+  title_hu?: T;
+  title_en?: T;
+  content_hu?: T;
+  content_en?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "permissions_select".
  */
 export interface PermissionsSelect<T extends boolean = true> {
@@ -1387,6 +1455,95 @@ export interface AcademicScholarshipFaq {
   createdAt?: string | null;
 }
 /**
+ * A Szociális ösztöndíj oldal kártyáinak és fontos linkjeinek szerkeszthető tartalma.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "social-scholarships-faq".
+ */
+export interface SocialScholarshipsFaq {
+  id: number;
+  scholarshipTypes?:
+    | {
+        title_hu: string;
+        title_en: string;
+        targetAudience_hu: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        targetAudience_en: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        description_hu: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        description_en: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        actionLink: string;
+        id?: string | null;
+      }[]
+    | null;
+  sidebarLinks?:
+    | {
+        title_hu: string;
+        title_en: string;
+        description_hu: string;
+        description_en: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "academic-scholarship-faq_select".
  */
@@ -1398,6 +1555,37 @@ export interface AcademicScholarshipFaqSelect<T extends boolean = true> {
         header_en?: T;
         content_hu?: T;
         content_en?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "social-scholarships-faq_select".
+ */
+export interface SocialScholarshipsFaqSelect<T extends boolean = true> {
+  scholarshipTypes?:
+    | T
+    | {
+        title_hu?: T;
+        title_en?: T;
+        targetAudience_hu?: T;
+        targetAudience_en?: T;
+        description_hu?: T;
+        description_en?: T;
+        actionLink?: T;
+        id?: T;
+      };
+  sidebarLinks?:
+    | T
+    | {
+        title_hu?: T;
+        title_en?: T;
+        description_hu?: T;
+        description_en?: T;
+        url?: T;
         id?: T;
       };
   updatedAt?: T;

@@ -2,7 +2,7 @@
 
 import { useTranslate } from "@/hooks/useTranslate"
 import { News, Representative } from "@/payload-types"
-import { Mail } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 export interface NewsDetailSidebarProps {
   article: News
@@ -29,7 +29,7 @@ export function NewsDetailSidebar({ article }: NewsDetailSidebarProps) {
   const repEmail = representative?.emails?.[0]?.email ?? null
 
   return (
-    <section className="flex flex-col gap-2 bg-[#fffefc] border border-[#e9e2d6] rounded-2xl p-4 font-open-sans">
+    <section className="flex flex-col gap-2 bg-[#fffefc] border-y border-r border-[#e9e2d6] border-l-4 border-l-[#862633] rounded-r-2xl p-4 font-open-sans">
       <h2 className="text-[13px] font-semibold uppercase tracking-[1.3px] text-[#6e6660]">
         {t('news.contacts')}
       </h2>
@@ -41,7 +41,7 @@ export function NewsDetailSidebar({ article }: NewsDetailSidebarProps) {
               <span className="text-[13px] font-semibold text-[#3d3d3d]">{representative.name}</span>
               {positionText && (
                 <>
-                  <span className="size-[5px] rounded-full bg-[#6e6660]" />
+                  <span className="size-1.25 rounded-full bg-[#862633]" />
                   <span className="text-sm text-[#3d3d3d]">{positionText}</span>
                 </>
               )}
@@ -52,7 +52,7 @@ export function NewsDetailSidebar({ article }: NewsDetailSidebarProps) {
                 className="inline-flex items-center gap-2 text-[11px] font-semibold text-[#3d3d3d] hover:text-[#862633] transition-colors w-fit"
               >
                 <span>{repEmail}</span>
-                <Mail className="size-3 shrink-0" />
+                <ExternalLink className="size-2.5 shrink-0" />
               </a>
             )}
           </div>
@@ -67,7 +67,6 @@ export function NewsDetailSidebar({ article }: NewsDetailSidebarProps) {
               className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#3d3d3d] hover:text-[#862633] transition-colors w-fit"
             >
               <span>{contactEmail}</span>
-              <Mail className="size-3 shrink-0" />
             </a>
           </div>
         )}

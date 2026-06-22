@@ -112,6 +112,18 @@ export const SocialScholarshipsFAQ: GlobalConfig = {
           label: "Cím (angol)",
         },
         {
+          name: "description_hu",
+          type: "text",
+          required: true,
+          label: "Leírás a gomb felett (magyar)",
+        },
+        {
+          name: "description_en",
+          type: "text",
+          required: true,
+          label: "Leírás a gomb felett (angol)",
+        },
+        {
           name: "url",
           type: "text",
           required: true,

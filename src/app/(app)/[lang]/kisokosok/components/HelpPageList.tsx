@@ -9,7 +9,7 @@ interface HelpPageListProps {
   help: Help[];
 }
 
-export default function HelpPageList({ help }: HelpPageListProps) {
+export default function HelpPageList({ help }: Readonly<HelpPageListProps>) {
   const { t, lang } = useTranslate();
 
   return (
@@ -35,10 +35,10 @@ export default function HelpPageList({ help }: HelpPageListProps) {
                 className="flex flex-col gap-4 rounded-2xl border border-[#e9e2d6] bg-white p-4"
               >
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-playfair font-semibold text-base leading-[1.4] text-black break-words">
+                  <h2 className="font-playfair font-semibold text-base leading-[1.4] text-black wrap-break-word">
                     {title}
                   </h2>
-                  <p className="font-open-sans text-sm leading-[1.6] text-black break-words">
+                  <p className="font-open-sans text-sm leading-[1.6] text-black wrap-break-word">
                     {description}
                   </p>
                 </div>

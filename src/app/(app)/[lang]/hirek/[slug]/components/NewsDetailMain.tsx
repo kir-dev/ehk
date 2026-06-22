@@ -2,7 +2,7 @@
 
 import FileCard from "@/components/common/FileCard"
 import { useTranslate } from "@/hooks/useTranslate"
-import { translateTags } from "@/lib/utils"
+import { translateTags, formatDate } from "@/lib/utils"
 import { Media, News } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 import { ArrowLeft } from "lucide-react"
@@ -25,17 +25,6 @@ export function NewsDetailMain({ article }: NewsDetailMainProps) {
   const title = lang === 'EN' && article.titleEng ? article.titleEng : article.title
   const content = lang === 'EN' ? article.description.text_en : article.description.text_hu
   const displayTags = translateTags(article.tags as unknown as string[], lang)
-
-  const formatDate = (dateString: string) => {
-    const d = new Date(dateString)
-    if (lang === 'EN') {
-      return d.toLocaleDateString('en-US', { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
-    }
-    const y = d.getUTCFullYear()
-    const m = String(d.getUTCMonth() + 1).padStart(2, '0')
-    const day = String(d.getUTCDate()).padStart(2, '0')
-    return `${y}. ${m}. ${day}`
-  }
 
   const files = (article.files as unknown as NewsFileItem[]) ?? []
 
@@ -68,11 +57,11 @@ export function NewsDetailMain({ article }: NewsDetailMainProps) {
           </div>
         )}
 
-        <h1 className="font-playfair font-bold text-[26px] md:text-[32px] leading-tight text-white break-words">
+        <h1 className="font-playfair font-bold text-[26px] md:text-[32px] leading-tight text-white wrap-break-word">
           {title}
         </h1>
 
-        <p className="text-sm md:text-base font-semibold text-[#fffefc]">{formatDate(article.date)}</p>
+        <p className="text-sm md:text-base font-semibold text-[#fffefc]">{formatDate(article.date, lang as 'HU' | 'EN')}</p>
       </header>
 
       {/* Content + attached files */}

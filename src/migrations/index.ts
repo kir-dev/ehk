@@ -23,6 +23,7 @@ import * as migration_20260612_161146 from './20260612_161146';
 import * as migration_20260618_102519 from './20260618_102519';
 import * as migration_20260619_105937_add_news_representative_and_contact_email from './20260619_105937_add_news_representative_and_contact_email';
 import * as migration_20260619_141957_add_permissions_submission_and_external_link from './20260619_141957_add_permissions_submission_and_external_link';
+import * as migration_20260619_173736_academic_scholarship_faq from './20260619_173736_academic_scholarship_faq';
 
 export const migrations = [
   {
@@ -148,6 +149,11 @@ export const migrations = [
   {
     up: migration_20260619_141957_add_permissions_submission_and_external_link.up,
     down: migration_20260619_141957_add_permissions_submission_and_external_link.down,
-    name: '20260619_141957_add_permissions_submission_and_external_link'
+    name: '20260619_141957_add_permissions_submission_and_external_link',
+  },
+  {
+    up: migration_20260619_173736_academic_scholarship_faq.up,
+    down: migration_20260619_173736_academic_scholarship_faq.down,
+    name: '20260619_173736_academic_scholarship_faq'
   },
 ];

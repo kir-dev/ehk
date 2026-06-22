@@ -1,4 +1,5 @@
 import {
+    AcademicScholarshipFaq,
     Club,
     Decision,
     Event,
@@ -215,4 +216,13 @@ export async function getUniversityPages() {
   });
 
   return result.docs;
+}
+
+export async function getAcademicScholarshipFAQ(): Promise<AcademicScholarshipFaq["accordionItems"]> {
+  const payload = await getPayload({ config });
+  const global = await payload.findGlobal({
+    slug: "academic-scholarship-faq",
+  });
+
+  return global.accordionItems ?? [];
 }

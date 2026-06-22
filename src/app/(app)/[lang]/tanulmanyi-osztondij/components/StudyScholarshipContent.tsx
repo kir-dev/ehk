@@ -1,133 +1,49 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Quote } from "lucide-react";
-import { ReactNode } from "react";
+import { Accordion, AccordionEntry } from "@/components/common/Accordion";
+import { EmptyState } from "@/components/common/EmptyState";
+import { getAcademicScholarshipFAQ } from "@/lib/payload-cms";
+import { Locale } from "@/i18n-config";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 
-interface AcademicScholarshipContent {
-  title: string;
-  intro: string;
-  who: {
-    title: string;
-    items: string[];
-  };
-  calculation: {
-    title: string;
-    paragraphs: string[];
-  };
-  decision: {
-    title: string;
-    paragraphs: string[];
-  };
-  tjsz: {
-    title: string;
-    quotes: string[];
-  };
+interface StudyScholarshipContentProps {
+  lang: Locale;
+  emptyTitle: string;
+  emptyDescription: string;
 }
 
-export default function StudyScholarshipContent({ content }: { content: AcademicScholarshipContent }) {
+export default async function StudyScholarshipContent({
+  lang,
+  emptyTitle,
+  emptyDescription,
+}: StudyScholarshipContentProps) {
+  const items = await getAcademicScholarshipFAQ();
+  const isEn = lang === "en";
+
+  const entries: AccordionEntry[] = (items ?? []).map((item, index) => {
+    const header = isEn
+      ? item.header_en || item.header_hu
+      : item.header_hu || item.header_en;
+    const content = isEn
+      ? item.content_en || item.content_hu
+      : item.content_hu || item.content_en;
+
+    return {
+      id: item.id ?? String(index),
+      header,
+      content: (
+        <div className="richtext study-scholarship-richtext font-open-sans text-sm md:text-base leading-[1.6] text-[#3d3d3d] max-w-none">
+          <RichText data={content} />
+        </div>
+      ),
+    };
+  });
+
   return (
-    <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
-      {/* Intro Card */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-             <div className="flex flex-col gap-2 md:gap-3">
-              <Paragraph>
-                {content.intro}
-              </Paragraph>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Who can receive */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <div className="flex flex-col gap-2 md:gap-3">
-              <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-                {content.who.title}
-              </h3>
-              <div className="prose max-w-none text-gray-700">
-                <ul className="list-disc pl-5 space-y-2">
-                  {content.who.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* How calculated */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-             <div className="flex flex-col gap-2 md:gap-3">
-              <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-                {content.calculation.title}
-              </h3>
-              <div className="space-y-2">
-                {content.calculation.paragraphs.map((para, i) => (
-                  <Paragraph key={i}>{para}</Paragraph>
-                ))}
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Who decides */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-             <div className="flex flex-col gap-2 md:gap-3">
-              <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-                 {content.decision.title}
-              </h3>
-              {content.decision.paragraphs.map((para, i) => (
-                  <Paragraph key={i}>{para}</Paragraph>
-                ))}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* TJSZ Passages */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-             <div className="flex flex-col gap-2 md:gap-3">
-              <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-                 {content.tjsz.title}
-              </h3>
-              
-              <div className="grid gap-4 mt-2">
-                {content.tjsz.quotes.map((quote, i) => (
-                  <RuleQuote key={i}>{quote}</RuleQuote>
-                ))}
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+    <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-4 md:p-8">
+      {entries.length === 0 ? (
+        <EmptyState title={emptyTitle} description={emptyDescription} />
+      ) : (
+        <Accordion items={entries} />
+      )}
     </div>
   );
-}
-
-function Paragraph({children} : {children:ReactNode}){
-  return(
-    <div className="prose max-w-none text-gray-700 richtext">
-      <p>{children}</p>
-    </div>
-  );
-}
-
-function RuleQuote({children} : {children:ReactNode}) {
-  return (
-    <blockquote className="border-l-4 border-[#862633]/30 bg-gray-50 p-4 rounded-r-lg text-gray-700 italic text-sm md:text-base relative overflow-hidden">
-      <Quote className="absolute top-2 right-2 w-8 h-8 text-[#862633]/5 rotate-180" />
-      {children}
-    </blockquote>
-  )
 }

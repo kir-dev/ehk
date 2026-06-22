@@ -25,6 +25,7 @@ import { Media } from "./collections/Media";
 import { PayoutPeriods } from "./collections/PayoutPeriods";
 import { Users } from "./collections/Users";
 import { UniversityPages } from "./collections/UniversityPages";
+import { AcademicScholarshipFAQ } from "./globals/AcademicScholarshipFAQ";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -58,6 +59,7 @@ export default buildConfig({
     PayoutPeriods,
     UniversityPages,
   ],
+  globals: [AcademicScholarshipFAQ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

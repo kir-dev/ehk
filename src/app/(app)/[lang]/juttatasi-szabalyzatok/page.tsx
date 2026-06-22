@@ -1,10 +1,12 @@
+export const dynamic = "force-dynamic";
+
 import { LoadingRegulationsGrid } from "@/components/common/LoadingSpinner";
 import { PageHeader } from "@/components/common/PageHeader";
 import RegulationsList from "@/components/regulations/RegulationsList";
-import { getDictionary } from "@/get-dictionary";
-import { i18n } from "@/i18n-config";
 import { getBenefitRegulations } from "@/lib/payload-cms";
 import { Suspense } from "react";
+import { getDictionary } from "@/get-dictionary";
+import { i18n } from "@/i18n-config";
 import { LanguageProvider, Lang } from "@/components/common/LanguageProvider";
 
 export default async function RegulationsPage({
@@ -13,16 +15,16 @@ export default async function RegulationsPage({
   const validLang = i18n.locales.includes(lang as 'hu' | 'en') ? lang as "hu" | "en" : i18n.defaultLocale;
   const dictionary = await getDictionary(validLang, 'regulations');
 
-    return (
-        <LanguageProvider defaultLang={validLang.toUpperCase() as Lang} dictionary={dictionary}>
-            <div className="min-h-screen bg-gray-50">
-                <div className="container mx-auto px-2 md:px-4 py-8">
-                    <PageHeader title={dictionary.regulations.title_benefits} />
-                    <Suspense fallback={<LoadingRegulationsGrid />}>
-                        <RegulationsList loader={getBenefitRegulations} />
-                    </Suspense>
-                </div>
-            </div>
-        </LanguageProvider>
-    )
+  return (
+    <LanguageProvider defaultLang={validLang.toUpperCase() as Lang} dictionary={dictionary}>
+      <div className="min-h-screen bg-[#f9f4f0]">
+        <div className="container mx-auto px-2 md:px-4 py-8">
+          <PageHeader title={dictionary.regulations.title_benefits} />
+          <Suspense fallback={<LoadingRegulationsGrid />}>
+            <RegulationsList loader={getBenefitRegulations} />
+          </Suspense>
+        </div>
+      </div>
+    </LanguageProvider>
+  );
 }

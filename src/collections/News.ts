@@ -125,5 +125,26 @@ export const News: CollectionConfig = {
                 },
             ],
         },
+        {
+            name: "representative",
+            label: "Kapcsolattartó képviselő",
+            type: "relationship",
+            relationTo: "representatives",
+            required: false,
+            admin: {
+                description:
+                    "Opcionális. A híret kísérő kapcsolattartó képviselő (név, pozíció és alapértelmezett e-mail cím az Elérhetőségek dobozhoz).",
+            },
+        },
+        {
+            name: "contactEmail",
+            label: "Kapcsolattartó e-mail cím",
+            type: "email",
+            required: false,
+            admin: {
+                description:
+                    "Opcionális. Közvetlen kapcsolattartó e-mail cím, a képviselő mellett vagy helyett megjeleníthető.",
+            },
+        },
     ],
 }

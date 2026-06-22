@@ -1,14 +1,17 @@
 import {
+    AcademicScholarshipFaq,
     Club,
     Decision,
     Event,
     EhkEvent,
+    EhkScholarship,
     Help,
     News,
     Permission,
     Regulation,
     Reminder,
-    Representative
+    Representative,
+    SocialScholarshipsFaq
 } from "@/payload-types";
 import config from "@payload-config";
 import { getPayload } from "payload";
@@ -76,7 +79,8 @@ export async function getDecisions() {
   const payload = await getPayload({ config });
   const decisions = await payload.find({
     collection: "decisions",
-    limit: 1000 });
+    limit: 1000,
+    depth: 1 });
 
   return decisions.docs as Decision[];
 }
@@ -205,6 +209,17 @@ export async function getEhkEvents() {
   return events.docs as EhkEvent[];
 }
 
+export async function getEhkScholarships() {
+  const payload = await getPayload({ config });
+  const scholarships = await payload.find({
+    collection: "ehk-scholarships",
+    limit: 1000,
+    sort: "order",
+  });
+
+  return scholarships.docs as EhkScholarship[];
+}
+
 export async function getUniversityPages() {
   const payload = await getPayload({ config });
   const result = await payload.find({
@@ -214,4 +229,28 @@ export async function getUniversityPages() {
   });
 
   return result.docs;
+}
+
+export async function getAcademicScholarshipFAQ(): Promise<AcademicScholarshipFaq["accordionItems"]> {
+  const payload = await getPayload({ config });
+  const global = await payload.findGlobal({
+    slug: "academic-scholarship-faq",
+  });
+
+  return global.accordionItems ?? [];
+}
+
+export async function getSocialScholarshipsFAQ(): Promise<{
+  scholarshipTypes: SocialScholarshipsFaq["scholarshipTypes"];
+  sidebarLinks: SocialScholarshipsFaq["sidebarLinks"];
+}> {
+  const payload = await getPayload({ config });
+  const global = await payload.findGlobal({
+    slug: "social-scholarships-faq",
+  });
+
+  return {
+    scholarshipTypes: global.scholarshipTypes ?? [],
+    sidebarLinks: global.sidebarLinks ?? [],
+  };
 }

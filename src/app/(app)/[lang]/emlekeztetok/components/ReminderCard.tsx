@@ -7,7 +7,7 @@ interface ReminderCardProps {
     reminder: Reminder
 }
 
-export function ReminderCard({ reminder }: ReminderCardProps) {
+export function ReminderCard({ reminder }: Readonly<ReminderCardProps>) {
     const formatDate = (dateString: string) => {
         const date = new Date(dateString)
         const month = String(date.getMonth() + 1).padStart(2, '0')

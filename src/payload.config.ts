@@ -11,6 +11,7 @@ import { Clubs } from "@/collections/Clubs";
 import { Decisions } from "@/collections/Decisions";
 import { Events } from "@/collections/Events";
 import { EhkEvents } from "@/collections/EhkEvents";
+import { EhkScholarships } from "@/collections/EhkScholarships";
 import { HeroImages } from "@/collections/HeroImages";
 import { MuszakPaper } from "@/collections/MuszakPaper";
 import { News } from "@/collections/News";
@@ -25,6 +26,8 @@ import { Media } from "./collections/Media";
 import { PayoutPeriods } from "./collections/PayoutPeriods";
 import { Users } from "./collections/Users";
 import { UniversityPages } from "./collections/UniversityPages";
+import { AcademicScholarshipFAQ } from "./globals/AcademicScholarshipFAQ";
+import { SocialScholarshipsFAQ } from "./globals/SocialScholarshipsFAQ";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -52,12 +55,14 @@ export default buildConfig({
     Decisions,
     Events,
     EhkEvents,
+    EhkScholarships,
     Permissions,
     Regulations,
     Help,
     PayoutPeriods,
     UniversityPages,
   ],
+  globals: [AcademicScholarshipFAQ, SocialScholarshipsFAQ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

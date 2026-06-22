@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { LoadingRegulationsGrid } from "@/components/common/LoadingSpinner";
 import { PageHeader } from "@/components/common/PageHeader";
 import RegulationsList from "@/components/regulations/RegulationsList";
@@ -15,7 +17,7 @@ export default async function RegulationsPage({
 
   return (
     <LanguageProvider defaultLang={validLang.toUpperCase() as Lang} dictionary={dictionary}>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-[#f9f4f0]">
         <div className="container mx-auto px-2 md:px-4 py-8">
           <PageHeader title={dictionary.regulations.title_academic} />
           <Suspense fallback={<LoadingRegulationsGrid />}>

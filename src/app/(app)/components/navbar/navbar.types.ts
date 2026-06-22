@@ -9,6 +9,7 @@ export interface NavigationSubItem {
   label: string
   href: string
   targetBlank: boolean
+  subtitle?: string
 }
 
 export type LocaleUppercase = 'EN' | 'HU'

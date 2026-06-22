@@ -1534,6 +1534,8 @@ export interface SocialScholarshipsFaq {
     | {
         title_hu: string;
         title_en: string;
+        description_hu: string;
+        description_en: string;
         url: string;
         id?: string | null;
       }[]
@@ -1581,6 +1583,8 @@ export interface SocialScholarshipsFaqSelect<T extends boolean = true> {
     | {
         title_hu?: T;
         title_en?: T;
+        description_hu?: T;
+        description_en?: T;
         url?: T;
         id?: T;
       };

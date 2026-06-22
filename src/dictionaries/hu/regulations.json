@@ -19,8 +19,8 @@
   },
   "reminders": {
     "title": "Emlékeztetők",
-    "tab_ehk": "EHK Emlékeztetők",
-    "tab_ehdk": "EHDK Emlékeztetők",
+    "tab_ehk": "EHK",
+    "tab_ehdk": "EHDK",
     "no_ehk": "Nincsenek EHK emlékeztetők",
     "no_ehk_desc": "Jelenleg nincsenek elérhető EHK emlékeztetők.",
     "no_ehdk": "Nincsenek EHDK emlékeztetők",

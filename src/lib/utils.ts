@@ -98,6 +98,9 @@ export const TAG_TRANSLATIONS: Record<string, string> = {
   'Tájékoztatás': 'Information',
   'Kiemelt hír': 'Featured',
   'International': 'International',
+  'TDK ösztöndíj': 'TDK Scholarship',
+  'Sportpálya pályázat': 'Sports Field Subsidy Application',
+  'Sportpálya igénylés': 'Sports Field Lease Request',
 }
 
 export function translateTag(tag: string, lang: 'HU' | 'EN'): string {

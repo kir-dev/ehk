@@ -45,6 +45,8 @@
     "muhely_btn": "Read",
     "filters": "Filters",
     "clear_filters": "Clear filters",
-    "fresh_news": "Fresh news"
+    "fresh_news": "Fresh news",
+    "category_filter": "CATEGORY",
+    "sport_filter": "SPORTS"
   }
 }

@@ -11,7 +11,7 @@ export const NAVBAR_STYLES = {
   
   desktop: {
     nav: 'hidden xlg:flex items-center',
-    menuTrigger: 'group text-white font-semibold text-[13px] tracking-wide px-4 py-2.5 rounded-2xl bg-transparent border border-transparent hover:bg-white/20 hover:border-white/10 data-[state=open]:bg-white/30 data-[state=open]:border-[#e9e2d6] transition-all duration-200 flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50',
+    menuTrigger: 'group text-white font-semibold text-[13px] tracking-wide px-4 py-2.5 rounded-2xl bg-transparent border border-transparent hover:bg-white/20 hover:border-white/10 data-[state=open]:bg-white/20 data-[state=open]:border-white/10 transition-all duration-200 flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50',
     menuViewport: '!w-[calc(100vw-4rem)] max-w-[1336px] mx-auto bg-[#fffefc] border border-[#e9e2d6] border-t-0 rounded-b-2xl shadow-lg z-[100] !mt-0',
     menuContent: 'w-full p-8 focus:outline-none',
     menuContentInner: 'w-full',

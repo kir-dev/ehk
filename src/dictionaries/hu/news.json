@@ -45,6 +45,8 @@
     "muhely_btn": "Olvasom",
     "filters": "Szűrők",
     "clear_filters": "Szűrők törlése",
-    "fresh_news": "Friss hírek"
+    "fresh_news": "Friss hírek",
+    "category_filter": "KATEGÓRIA",
+    "sport_filter": "SPORT"
   }
 }

@@ -434,6 +434,9 @@ export interface News {
     | 'Tájékoztatás'
     | 'Kiemelt hír'
     | 'International'
+    | 'TDK ösztöndíj'
+    | 'Sportpálya pályázat'
+    | 'Sportpálya igénylés'
   )[];
   files?:
     | {

@@ -40,6 +40,7 @@ export default function NewsFilter({
 
   return (
     <div className="contents">
+      {/* Filters Toggle Button */}
       <button
         type="button"
         onClick={onToggleOpen}
@@ -72,6 +73,7 @@ export default function NewsFilter({
         )}
       </button>
 
+      {/* Expanded Tag Panel - spans 100% width thanks to contents parent wrapping */}
       {isOpen && (
         <div className="w-full flex flex-wrap gap-2 p-4 bg-[#fffefc] border border-[#e9e2d6] rounded-xl shadow-sm animate-in fade-in slide-in-from-top-2 duration-200 order-3 mt-2">
           {filterTags.map((tag) => {

@@ -9,16 +9,19 @@ import type { NavigationItem } from "./navbar.types"
 interface DesktopMenuItemProps {
   item: NavigationItem
   onNavigate: (href: string) => void
+  onTriggerClick?: (title: string) => void
+  isClickLocked?: boolean
 }
 
-export function DesktopMenuItem({ item, onNavigate }: Readonly<DesktopMenuItemProps>) {
+export function DesktopMenuItem({ item, onNavigate, onTriggerClick, isClickLocked }: Readonly<DesktopMenuItemProps>) {
   const hasSubItems = item.items.length > 0
-  
+
   if (hasSubItems) {
     return (
       <NavigationMenuPrimitive.Item value={item.title}>
         <NavigationMenuPrimitive.Trigger
-          className={NAVBAR_STYLES.desktop.menuTrigger}
+          className={`${NAVBAR_STYLES.desktop.menuTrigger}${isClickLocked ? " !bg-white !border-transparent !text-[#862633]" : ""}`}
+          onClick={() => onTriggerClick?.(item.title)}
         >
           {item.title}
           <ChevronDownIcon

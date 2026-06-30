@@ -8,11 +8,12 @@ import { useEffect, useRef } from "react";
 interface NewsPaginationProps {
   currentPage: number;
   totalPages: number;
-  basePath?: string; // defaults to '/'
-  queryKey?: string; // defaults to 'page'
+  basePath?: string;
+  queryKey?: string;
+  onPageChange?: (page: number) => void;
 }
 
-export default function NewsPagination({ currentPage, totalPages, basePath = "/", queryKey = "page" }: NewsPaginationProps) {
+export default function NewsPagination({ currentPage, totalPages, basePath = "/", queryKey = "page", onPageChange }: NewsPaginationProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const shouldScrollRef = useRef(false);
@@ -37,14 +38,12 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   };
 
   const scrollToNewsHeader = () => {
-    // Find all headers and pick the first visible one (handles mobile/desktop duplicates)
     const headers = Array.from(document.querySelectorAll('[data-hirek-header="true"]')) as HTMLElement[];
     const target = headers.find(isVisible);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return true;
     }
-    // Fallback to anchor if present
     const anchor = document.getElementById('hirek-section');
     if (anchor) {
       anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -54,7 +53,6 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   };
 
   const triggerReflow = () => {
-    // Force a layout reflow and notify components that rely on resize listeners
     document.body.getBoundingClientRect();
     requestAnimationFrame(() => {
       window.dispatchEvent(new Event('resize'));
@@ -62,6 +60,8 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
   };
 
   useEffect(() => {
+    if (onPageChange) return; // scroll handled by parent in callback mode
+
     const pageParam = searchParams.get(queryKey);
 
     const performScroll = () => {
@@ -75,14 +75,12 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
       });
     };
 
-    // Scroll after navigation click
     if (shouldScrollRef.current) {
       rafScroll();
       shouldScrollRef.current = false;
       return;
     }
 
-    // Also handle direct loads or back/forward when page param exists and not first page
     if (pageParam && pageParam !== '1') {
       rafScroll();
       return;
@@ -97,15 +95,70 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
 
   if (totalPages <= 1) return null;
 
+  const btnBase = "w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm";
+
+  if (onPageChange) {
+    return (
+      <nav className="flex flex-wrap items-center justify-center md:justify-end gap-2 md:gap-2.5 mt-8 pb-2">
+        <button
+          type="button"
+          onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+          disabled={currentPage === 1}
+          aria-label="Previous page"
+          className={`${btnBase} ${
+            currentPage === 1
+              ? 'opacity-40 border-[#e9e2d6] text-gray-400 cursor-not-allowed'
+              : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
+          }`}
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
+        {Array.from({ length: totalPages }).map((_, i) => {
+          const p = i + 1;
+          const isActive = p === currentPage;
+          return (
+            <button
+              key={p}
+              type="button"
+              onClick={() => !isActive && onPageChange(p)}
+              aria-current={isActive ? 'page' : undefined}
+              className={`${btnBase} ${
+                isActive
+                  ? 'bg-[#e8e4e0]/40 border-[#3d3d3d] text-[#1a1a1a] font-bold cursor-default'
+                  : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
+              }`}
+            >
+              {p}
+            </button>
+          );
+        })}
+
+        <button
+          type="button"
+          onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+          disabled={currentPage === totalPages}
+          aria-label="Next page"
+          className={`${btnBase} ${
+            currentPage === totalPages
+              ? 'opacity-40 border-[#e9e2d6] text-gray-400 cursor-not-allowed'
+              : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
+          }`}
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </nav>
+    );
+  }
+
   return (
     <nav className="flex flex-wrap items-center justify-center md:justify-end gap-2 md:gap-2.5 mt-8 pb-2">
-      {/* Prev */}
       <Link
         href={makePageHref(Math.max(1, currentPage - 1))}
         onClick={(e) => currentPage > 1 && handlePageClick(e, Math.max(1, currentPage - 1))}
         aria-disabled={currentPage === 1}
         aria-label="Previous page"
-        className={`w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm ${
+        className={`${btnBase} ${
           currentPage === 1
             ? 'pointer-events-none opacity-40 border-[#e9e2d6] text-gray-400'
             : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
@@ -114,7 +167,6 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
         <ChevronLeft className="w-4 h-4" />
       </Link>
 
-      {/* Page numbers */}
       {Array.from({ length: totalPages }).map((_, i) => {
         const p = i + 1;
         const isActive = p === currentPage;
@@ -123,7 +175,7 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
             key={p}
             href={makePageHref(p)}
             onClick={(e) => !isActive && handlePageClick(e, p)}
-            className={`w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm ${
+            className={`${btnBase} ${
               isActive
                 ? 'bg-[#e8e4e0]/40 border-[#3d3d3d] text-[#1a1a1a] font-bold'
                 : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'
@@ -135,13 +187,12 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
         );
       })}
 
-      {/* Next */}
       <Link
         href={makePageHref(Math.min(totalPages, currentPage + 1))}
         onClick={(e) => currentPage < totalPages && handlePageClick(e, Math.min(totalPages, currentPage + 1))}
         aria-disabled={currentPage === totalPages}
         aria-label="Next page"
-        className={`w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm ${
+        className={`${btnBase} ${
           currentPage === totalPages
             ? 'pointer-events-none opacity-40 border-[#e9e2d6] text-gray-400'
             : 'border-[#e9e2d6] bg-white text-[#3d3d3d] hover:border-[#862633] hover:text-[#862633]'

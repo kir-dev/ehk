@@ -86,7 +86,7 @@ export function PageHeader({
 
         {/* Optional Subtitle */}
         {displaySubtitle && (
-          <p className="font-playfair font-semibold text-[15px] md:text-[16px] leading-[1.4] text-[#f9f4f0]/90 max-w-3xl">
+          <p className="font-playfair font-semibold text-[15px] md:text-[16px] leading-[1.4] text-[#f9f4f0]/90 w-full">
             {displaySubtitle}
           </p>
         )}

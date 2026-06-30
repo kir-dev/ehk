@@ -94,10 +94,31 @@ export const Clubs: CollectionConfig = {
     },
     {
       name: 'image',
-      label: 'Kép',
+      label: 'Borítókép',
       type: 'upload',
       relationTo: 'media',
       required: false,
+      admin: {
+        description: 'A klub kártyáján megjelenő nagy borítókép',
+      },
+    },
+    {
+      name: 'gallery',
+      label: 'Galéria',
+      type: 'array',
+      required: false,
+      admin: {
+        description: 'Képek a galéria karuszelhez',
+      },
+      fields: [
+        {
+          name: 'image',
+          label: 'Kép',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+      ],
     },
     {
       name: 'order',

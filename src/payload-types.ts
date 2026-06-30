@@ -258,7 +258,19 @@ export interface Club {
       [k: string]: unknown;
     } | null;
   };
+  /**
+   * A klub kártyáján megjelenő nagy borítókép
+   */
   image?: (number | null) | Media;
+  /**
+   * Képek a galéria karuszelhez
+   */
+  gallery?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Megjelenítési sorrend (pl. 1 az első)
    */
@@ -1047,6 +1059,12 @@ export interface ClubsSelect<T extends boolean = true> {
         text_en?: T;
       };
   image?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   order?: T;
   link?: T;
   updatedAt?: T;

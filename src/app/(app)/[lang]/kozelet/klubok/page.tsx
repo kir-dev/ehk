@@ -1,28 +1,13 @@
 export const dynamic = "force-dynamic";
 
 import { PageHeader } from "@/components/common/PageHeader";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getClubs } from "@/lib/payload-cms";
 import { Club, Media } from "@/payload-types";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
-import { RichText } from "@payloadcms/richtext-lexical/react";
-import { Clock, ExternalLink, MapPin } from "lucide-react";
-import Image from "next/image";
+import { ClubCard } from "./components/ClubCard";
 import { ClubsEmptyState } from "./components/ClubsEmptyState";
-import { LanguageProvider, Lang } from "@/components/common/LanguageProvider";
-
-function isValidUrl(url: string | null | undefined): boolean {
-  if (!url) return false;
-  try {
-    const parsed = new URL(url);
-    return parsed.protocol === "http:" || parsed.protocol === "https:";
-  } catch {
-    return false;
-  }
-}
 
 export default async function KlubokPage({
   params,
@@ -30,131 +15,81 @@ export default async function KlubokPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  
-  // async-parallel: Parallelize data fetching
-  const [commonDict, pageDict, clubs] = await Promise.all([
-    getDictionary(lang, 'common'),
-    getDictionary(lang, 'clubs'),
+
+  const [pageDict, clubs] = await Promise.all([
+    getDictionary(lang, "clubs"),
     getClubs(),
   ]);
 
-  const title = pageDict.clubs.title;
+  const d = pageDict.clubs;
 
-  // js-early-exit: Handle empty state with an early return
+  const labels = {
+    nyitas: d.nyitas,
+    helyszin: d.helyszin,
+    link: d.link,
+    leiras: d.leiras,
+    gallery: d.gallery,
+    prev_image: d.prev_image,
+    next_image: d.next_image,
+  };
+
   if (clubs.length === 0) {
     return (
-      <LanguageProvider defaultLang={lang.toUpperCase() as Lang} dictionary={pageDict}>
-        <div className="min-h-screen">
-          <div className="container mx-auto px-2 md:px-4 py-8">
-            <PageHeader title={title} />
-            <ClubsEmptyState title={pageDict.clubs.no_results} />
-          </div>
+      <div className="min-h-screen bg-[#f9f4f0]">
+        <div className="container mx-auto px-2 md:px-4 py-8">
+          <PageHeader title={d.title} subtitle={d.description} />
+          <ClubsEmptyState title={d.no_results} />
         </div>
-      </LanguageProvider>
+      </div>
     );
   }
 
   return (
-    <LanguageProvider defaultLang={lang.toUpperCase() as Lang} dictionary={pageDict}>
-      <div className="min-h-screen">
-        <div className="container mx-auto px-2 md:px-4 py-8">
-          <PageHeader title={title} />
+    <div className="min-h-screen bg-[#f9f4f0]">
+      <div className="container mx-auto px-2 md:px-4 py-8">
+        <PageHeader title={d.title} subtitle={d.description} />
 
-          <Card className="mx-auto mb-12 bg-white/50 backdrop-blur-sm border-slate-200/60 shadow-sm">
-            <CardContent>
-              <p className="text-gray-700 leading-relaxed text-center text-lg">
-                {pageDict.clubs.description}
-              </p>
-            </CardContent>
-          </Card>
+        <div className="bg-[#fffefc] border-b border-x border-[#e9e2d6] rounded-bl-2xl rounded-br-2xl p-6 md:p-8 flex flex-col gap-6">
+          {clubs.map((club: Club) => {
+            const coverImage =
+              typeof club.image === "object" && club.image !== null
+                ? (club.image as Media)
+                : null;
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
-            {clubs.map((club: Club) => {
-              // Safe check for the populated relation (it might occasionally be an ID or null)
-              const coverImage = typeof club.image === "object" && club.image !== null ? (club.image as Media) : null;
-              const openingHoursData = club.openingHours?.[`text_${lang}`];
-              const descriptionData = club.description?.[`text_${lang}`];
+            const openingHours = club.openingHours?.[`text_${lang}`] as
+              | SerializedEditorState
+              | null
+              | undefined;
 
-              const cardContent = (
-                <Card className="group overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow bg-white">
-                  {coverImage?.url ? (
-                    <div className="relative h-48 w-full bg-slate-100">
-                      <Image
-                        src={coverImage.url || ""}
-                        alt={coverImage.alt || club.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative h-48 w-full bg-slate-100 flex items-center justify-center">
-                      <span className="text-muted-foreground">{commonDict.common.loading}</span>
-                    </div>
-                  )}
+            const description = club.description?.[`text_${lang}`] as
+              | SerializedEditorState
+              | null
+              | undefined;
 
-                  <CardHeader>
-                    <div className="flex justify-between items-start gap-2">
-                      <CardTitle className="text-2xl group-hover:text-ehk-dark-red transition-colors">
-                        {club.title}
-                      </CardTitle>
-                      {club.link && isValidUrl(club.link) ? (
-                        <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-ehk-dark-red transition-colors shrink-0 mt-1" />
-                      ) : null}
-                    </div>
-                    
-                    {club.location || openingHoursData ? (
-                      <CardDescription className="flex flex-col gap-2 mt-2">
-                        {club.location ? (
-                          <span className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4" />
-                            {club.location}
-                          </span>
-                        ) : null}
-                        {openingHoursData ? (
-                          <div className="flex items-start gap-2">
-                            <Clock className="h-4 w-4 mt-0.5 shrink-0" />
-                            <div className="prose prose-sm max-w-none dark:prose-invert leading-tight">
-                              <RichText data={openingHoursData as unknown as SerializedEditorState} />
-                            </div>
-                          </div>
-                        ) : null}
-                      </CardDescription>
-                    ) : null}
-                  </CardHeader>
+            const galleryImages = (club.gallery ?? [])
+              .map((item) =>
+                typeof item.image === "object" && item.image !== null
+                  ? (item.image as Media)
+                  : null
+              )
+              .filter((img): img is Media => img !== null && !!img.url);
 
-                  <CardContent className="flex-1 text-muted-foreground">
-                    {descriptionData ? (
-                      <>
-                        <Separator className="mb-4" />
-                        <div className="prose dark:prose-invert prose-sm max-w-none">
-                          <RichText data={descriptionData as unknown as SerializedEditorState} />
-                        </div>
-                      </>
-                    ) : null}
-                  </CardContent>
-                </Card>
-              );
-
-              return (
-                <div key={club.id} className="h-full">
-                  {club.link && isValidUrl(club.link) ? (
-                    <a 
-                      href={club.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="block h-full"
-                    >
-                      {cardContent}
-                    </a>
-                  ) : (
-                    cardContent
-                  )}
-                </div>
-              );
-            })}
-          </div>
+            return (
+              <ClubCard
+                key={club.id}
+                title={club.title}
+                coverImage={coverImage}
+                openingHours={openingHours}
+                location={club.location}
+                link={club.link}
+                description={description}
+                galleryImages={galleryImages}
+                labels={labels}
+              />
+            );
+          })}
         </div>
       </div>
-    </LanguageProvider>
+    </div>
   );
 }

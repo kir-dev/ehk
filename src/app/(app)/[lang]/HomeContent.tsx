@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useTransition, useCallback } from "react"
+import { useState, useTransition, useCallback, useRef } from "react"
 import Switcher from "@/app/(app)/components/Switcher"
 import NewsFilter from "@/app/(app)/components/NewsFilter"
 import EventsSection from "@/app/(app)/components/EventsSection"
@@ -32,6 +32,7 @@ export default function HomeContent({
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [newsData, setNewsData] = useState<NewsResult>(initialNewsData)
   const [isPending, startTransition] = useTransition()
+  const requestIdRef = useRef(0)
 
   const scrollToNewsSection = useCallback(() => {
     requestAnimationFrame(() => {
@@ -52,9 +53,12 @@ export default function HomeContent({
 
   const refreshNews = useCallback(
     (page: number, tags: string[]) => {
+      const requestId = ++requestIdRef.current
       startTransition(async () => {
         const data = await fetchNewsAction(page, tags)
-        setNewsData(data)
+        if (requestId === requestIdRef.current) {
+          setNewsData(data)
+        }
       })
     },
     []
@@ -115,7 +119,7 @@ export default function HomeContent({
             isPending ? " opacity-50 pointer-events-none" : ""
           }`}
         >
-          <div className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
+          <div data-hirek-header="true" className="bg-[#862633] text-white pt-5 pb-10 px-6 md:px-8 -mx-6 md:-mx-8 relative z-0">
             <h2 className="text-xl md:text-2xl font-playfair font-bold tracking-wide">
               {dictionary.widgets?.fresh_news}
             </h2>

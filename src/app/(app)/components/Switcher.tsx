@@ -46,7 +46,7 @@ export default function Switcher({
 
     window.addEventListener("resize", updateSlider)
     return () => window.removeEventListener("resize", updateSlider)
-  }, [activeTab])
+  }, [activeTab, newsCount, eventsCount])
 
   // Track mount state to trigger transitions only after the initial paint
   useEffect(() => {

@@ -8,9 +8,10 @@ import Link from "next/link";
 interface NewsCardProps {
   news: News;
   activeTag?: string;
+  onTagClick?: (tag: string) => void;
 }
 
-export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags }, activeTag }: Readonly<NewsCardProps>) {
+export default function NewsCard({ news: { id, title, titleEng, shortDescription, date, tags }, activeTag, onTagClick }: Readonly<NewsCardProps>) {
     const { t, lang } = useTranslate()
     const locale = lang === 'EN' ? 'en-US' : 'hu-HU'
 
@@ -37,21 +38,27 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
                         ? `/${lang.toLowerCase()}?tab=news&tag=${encodeURIComponent(nextTagParam)}`
                         : `/${lang.toLowerCase()}?tab=news`
 
-                    const chip = (
-                        <span
-                            className={cn(
-                                "inline-flex items-center justify-center px-2.5 py-1 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 border",
-                                isActive
-                                    ? "bg-[#ffe6e6] text-[#862633] border-[#862633] hover:bg-[#ffe6e6]/80"
-                                    : "bg-transparent text-[#3d3d3d] border-[#3d3d3d] hover:bg-[#3d3d3d]/5"
-                            )}
-                        >
-                            {label}
-                        </span>
+                    const chipClass = cn(
+                        "inline-flex items-center justify-center px-2.5 py-1 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 border",
+                        isActive
+                            ? "bg-[#ffe6e6] text-[#862633] border-[#862633] hover:bg-[#ffe6e6]/80"
+                            : "bg-transparent text-[#3d3d3d] border-[#3d3d3d] hover:bg-[#3d3d3d]/5"
                     )
+                    if (onTagClick) {
+                        return (
+                            <button
+                                key={`${rawTag}-${index}`}
+                                type="button"
+                                onClick={() => onTagClick(rawTag)}
+                                className={`${chipClass} focus:outline-none focus:ring-2 focus:ring-[#862633]`}
+                            >
+                                {label}
+                            </button>
+                        )
+                    }
                     return (
                         <Link key={`${rawTag}-${index}`} href={href} scroll={false} className="focus:outline-none focus:ring-2 focus:ring-[#862633] rounded-full">
-                            {chip}
+                            <span className={chipClass}>{label}</span>
                         </Link>
                     )
                 })}

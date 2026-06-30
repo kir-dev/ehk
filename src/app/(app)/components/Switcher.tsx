@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useRef, useState, useEffect } from "react"
-import Link from "next/link"
 import { cn } from "@/lib/utils"
 
 type Props = {
@@ -10,7 +9,7 @@ type Props = {
   eventsCount: number
   newsTitle: string
   eventsTitle: string
-  basePath: string
+  onTabChange: (tab: "news" | "events") => void
 }
 
 export default function Switcher({
@@ -19,10 +18,10 @@ export default function Switcher({
   eventsCount,
   newsTitle,
   eventsTitle,
-  basePath,
+  onTabChange,
 }: Readonly<Props>) {
-  const newsRef = useRef<HTMLAnchorElement>(null)
-  const eventsRef = useRef<HTMLAnchorElement>(null)
+  const newsRef = useRef<HTMLButtonElement>(null)
+  const eventsRef = useRef<HTMLButtonElement>(null)
   const [sliderStyle, setSliderStyle] = useState<React.CSSProperties>({
     left: 4,
     width: 0,
@@ -72,10 +71,10 @@ export default function Switcher({
       />
 
       {/* News Tab */}
-      <Link
+      <button
         ref={newsRef}
-        href={`${basePath}?tab=news`}
-        scroll={false}
+        type="button"
+        onClick={() => onTabChange("news")}
         className={cn(
           "flex gap-2.5 items-center justify-center px-4 py-2 rounded-full font-open-sans relative z-10 select-none cursor-pointer",
           activeTab === "news"
@@ -94,13 +93,13 @@ export default function Switcher({
         >
           {newsCount}
         </span>
-      </Link>
+      </button>
 
       {/* Events Tab */}
-      <Link
+      <button
         ref={eventsRef}
-        href={`${basePath}?tab=events`}
-        scroll={false}
+        type="button"
+        onClick={() => onTabChange("events")}
         className={cn(
           "flex gap-2.5 items-center justify-center px-4 py-2 rounded-full font-open-sans relative z-10 select-none cursor-pointer",
           activeTab === "events"
@@ -119,7 +118,7 @@ export default function Switcher({
         >
           {eventsCount}
         </span>
-      </Link>
+      </button>
     </div>
   )
 }

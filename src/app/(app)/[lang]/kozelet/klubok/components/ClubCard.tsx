@@ -11,6 +11,8 @@ interface ClubCardLabels {
   link: string;
   leiras: string;
   gallery: string;
+  prev_image: string;
+  next_image: string;
 }
 
 interface ClubCardProps {
@@ -27,8 +29,9 @@ interface ClubCardProps {
 function getLinkMeta(url: string): { label: string; isFacebook: boolean } {
   try {
     const parsed = new URL(url);
-    const isFacebook = parsed.hostname.includes("facebook.com");
-    const label = isFacebook ? "Facebook" : parsed.hostname.replace("www.", "");
+    const h = parsed.hostname;
+    const isFacebook = h === "facebook.com" || h.endsWith(".facebook.com");
+    const label = isFacebook ? "Facebook" : h.replace("www.", "");
     return { label, isFacebook };
   } catch {
     return { label: url, isFacebook: false };
@@ -63,7 +66,6 @@ export function ClubCard({
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 1200px"
-            priority
           />
         ) : null}
       </div>
@@ -122,7 +124,12 @@ export function ClubCard({
 
         {/* GALÉRIA */}
         {galleryImages.length > 0 ? (
-          <ClubGallery images={galleryImages} label={labels.gallery} />
+          <ClubGallery
+            images={galleryImages}
+            label={labels.gallery}
+            prevLabel={labels.prev_image}
+            nextLabel={labels.next_image}
+          />
         ) : null}
       </div>
     </div>

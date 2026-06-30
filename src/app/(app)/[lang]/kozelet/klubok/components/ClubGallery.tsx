@@ -9,9 +9,11 @@ import { cn } from "@/lib/utils";
 interface ClubGalleryProps {
   images: Media[];
   label: string;
+  prevLabel: string;
+  nextLabel: string;
 }
 
-export function ClubGallery({ images, label }: ClubGalleryProps) {
+export function ClubGallery({ images, label, prevLabel, nextLabel }: ClubGalleryProps) {
   const [startIndex, setStartIndex] = useState(0);
   const VISIBLE_DESKTOP = 3;
 
@@ -32,7 +34,7 @@ export function ClubGallery({ images, label }: ClubGalleryProps) {
             "shrink-0 text-[#1a1a1a] transition-opacity rounded-full",
             !canPrev && "opacity-20 cursor-not-allowed"
           )}
-          aria-label="Előző kép"
+          aria-label={prevLabel}
         >
           <ChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
         </button>
@@ -71,7 +73,7 @@ export function ClubGallery({ images, label }: ClubGalleryProps) {
             "shrink-0 text-[#1a1a1a] transition-opacity rounded-full",
             !canNext && "opacity-20 cursor-not-allowed"
           )}
-          aria-label="Következő kép"
+          aria-label={nextLabel}
         >
           <ChevronRight className="w-8 h-8 md:w-12 md:h-12" />
         </button>

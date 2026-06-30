@@ -21,7 +21,7 @@ export default function Loading() {
               <div className="bg-[#fffefc] border-t border-x border-[#e9e2d6] px-8 py-4 rounded-tl-lg rounded-tr-lg h-[77px]" />
               <div className="h-[200px] md:h-[312px] border-x border-[#e9e2d6] bg-gray-200" />
               <div className="bg-[#fffefc] border border-[#e9e2d6] px-8 py-4 rounded-bl-lg rounded-br-lg flex flex-col gap-6">
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1 h-16 bg-gray-100 rounded" />
                   <div className="flex-1 h-16 bg-gray-100 rounded" />
                   <div className="flex-1 h-16 bg-gray-100 rounded" />

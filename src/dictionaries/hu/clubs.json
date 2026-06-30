@@ -6,10 +6,12 @@
     "location": "Helyszín:",
     "opening_hours": "Nyitvatartás:",
     "no_results": "Jelenleg nincsenek aktív klubok",
-    "nyitas": "NYITÁS",
+    "nyitas": "NYITVATARTÁS",
     "helyszin": "HELYSZÍN",
     "link": "LINK",
     "leiras": "LEÍRÁS",
-    "gallery": "GALÉRIA"
+    "gallery": "GALÉRIA",
+    "prev_image": "Előző kép",
+    "next_image": "Következő kép"
   }
 }

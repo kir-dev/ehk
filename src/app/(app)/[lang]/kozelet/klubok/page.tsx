@@ -29,6 +29,8 @@ export default async function KlubokPage({
     link: d.link,
     leiras: d.leiras,
     gallery: d.gallery,
+    prev_image: d.prev_image,
+    next_image: d.next_image,
   };
 
   if (clubs.length === 0) {
@@ -70,7 +72,7 @@ export default async function KlubokPage({
                   ? (item.image as Media)
                   : null
               )
-              .filter((img): img is Media => img !== null);
+              .filter((img): img is Media => img !== null && !!img.url);
 
             return (
               <ClubCard

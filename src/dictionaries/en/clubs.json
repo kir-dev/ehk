@@ -10,6 +10,8 @@
     "helyszin": "LOCATION",
     "link": "LINK",
     "leiras": "DESCRIPTION",
-    "gallery": "GALLERY"
+    "gallery": "GALLERY",
+    "prev_image": "Previous image",
+    "next_image": "Next image"
   }
 }

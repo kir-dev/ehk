@@ -42,9 +42,12 @@
   },
   "payouts": {
     "title": "Kifizetési információk",
+    "subtitle": "Az ösztöndíjak kifizetési időpontjai a {title} tanévben",
     "intro_text": "Az ösztöndíjak kifizetési időpontjai a {title} tanévben az alábbiak szerint alakulnak:",
     "autumn_semester": "Kifizetési időpontok {title} ősz",
     "spring_semester": "Kifizetési időpontok {title} tavasz",
+    "autumn_tab": "ŐSZ",
+    "spring_tab": "TAVASZ",
     "table_header_name": "Elnevezés",
     "table_header_date": "Kifizetési időpont",
     "important_todo_title": "Fontos teendők a kifizetés előtt",

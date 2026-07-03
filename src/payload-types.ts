@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     clubs: Club;
+    dormitories: Dormitory;
     media: Media;
     representatives: Representative;
     reminders: Reminder;
@@ -93,6 +94,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     clubs: ClubsSelect<false> | ClubsSelect<true>;
+    dormitories: DormitoriesSelect<false> | DormitoriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
     reminders: RemindersSelect<false> | RemindersSelect<true>;
@@ -300,6 +302,28 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * A kollégium bemutató oldalon megjelenő kollégiumok kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dormitories".
+ */
+export interface Dormitory {
+  id: number;
+  name: string;
+  /**
+   * Útvonalhoz használt azonosító, pl. baross, sch.
+   */
+  slug: string;
+  coverImage: number | Media;
+  /**
+   * Opcionális külső oldal, ahová a Részletek gomb navigál.
+   */
+  externalLink?: string | null;
+  order: number;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * Képviselők adatainak kezelése. Beszámolók feltöltése.
@@ -916,6 +940,10 @@ export interface PayloadLockedDocument {
         value: number | Club;
       } | null)
     | ({
+        relationTo: 'dormitories';
+        value: number | Dormitory;
+      } | null)
+    | ({
         relationTo: 'media';
         value: number | Media;
       } | null)
@@ -1067,6 +1095,19 @@ export interface ClubsSelect<T extends boolean = true> {
       };
   order?: T;
   link?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dormitories_select".
+ */
+export interface DormitoriesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  coverImage?: T;
+  externalLink?: T;
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
 }

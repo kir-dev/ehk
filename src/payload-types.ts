@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     clubs: Club;
+    dormitories: Dormitory;
     media: Media;
     representatives: Representative;
     reminders: Reminder;
@@ -93,6 +94,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     clubs: ClubsSelect<false> | ClubsSelect<true>;
+    dormitories: DormitoriesSelect<false> | DormitoriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     representatives: RepresentativesSelect<false> | RepresentativesSelect<true>;
     reminders: RemindersSelect<false> | RemindersSelect<true>;
@@ -300,6 +302,82 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * A kollégium bemutató oldalon megjelenő kollégiumok kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dormitories".
+ */
+export interface Dormitory {
+  id: number;
+  name: string;
+  /**
+   * Útvonalhoz használt azonosító, pl. baross, sch.
+   */
+  slug: string;
+  coverImage: number | Media;
+  /**
+   * Opcionális külső oldal, ahová a Részletek gomb navigál.
+   */
+  externalLink?: string | null;
+  description_hu?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  description_en?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  capacity?: number | null;
+  address_hu?: string | null;
+  address_en?: string | null;
+  /**
+   * Opcionális Google Maps vagy térkép link a címhez.
+   */
+  mapUrl?: string | null;
+  roomInfo_hu?: string | null;
+  roomInfo_en?: string | null;
+  targetAudience_hu?: string | null;
+  targetAudience_en?: string | null;
+  gallery?:
+    | {
+        categoryName_hu: string;
+        categoryName_en?: string | null;
+        images?:
+          | {
+              image: number | Media;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  order: number;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * Képviselők adatainak kezelése. Beszámolók feltöltése.
@@ -916,6 +994,10 @@ export interface PayloadLockedDocument {
         value: number | Club;
       } | null)
     | ({
+        relationTo: 'dormitories';
+        value: number | Dormitory;
+      } | null)
+    | ({
         relationTo: 'media';
         value: number | Media;
       } | null)
@@ -1067,6 +1149,42 @@ export interface ClubsSelect<T extends boolean = true> {
       };
   order?: T;
   link?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dormitories_select".
+ */
+export interface DormitoriesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  coverImage?: T;
+  externalLink?: T;
+  description_hu?: T;
+  description_en?: T;
+  capacity?: T;
+  address_hu?: T;
+  address_en?: T;
+  mapUrl?: T;
+  roomInfo_hu?: T;
+  roomInfo_en?: T;
+  targetAudience_hu?: T;
+  targetAudience_en?: T;
+  gallery?:
+    | T
+    | {
+        categoryName_hu?: T;
+        categoryName_en?: T;
+        images?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
 }

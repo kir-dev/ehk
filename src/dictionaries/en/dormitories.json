@@ -14,7 +14,9 @@
       "contacts_p2": "For general inquiries, feel free to contact us at ",
       "contacts_p3": ".",
       "dormitory": "Dormitory",
-      "introduction": "Dormitory introduction"
+      "introduction": "Dormitory overview",
+      "details": "Details",
+      "no_results": "There are currently no dormitories to display."
     }
   }
 }

@@ -1,4 +1,7 @@
-import { OrganizationCard } from "@/components/common/OrganizationCard";
+import {
+  OrganizationCard,
+  type OrganizationCardProps,
+} from "@/components/common/OrganizationCard";
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
@@ -10,10 +13,43 @@ type Organization = {
   social_title: string;
   social_links: { label: string; url: string }[];
   images?: string[];
+  stats?: OrganizationCardProps["stats"];
+  events?: OrganizationCardProps["events"];
+  activities?: OrganizationCardProps["activities"];
+  departments?: OrganizationCardProps["departments"];
+  target_audience?: OrganizationCardProps["targetAudience"];
+  targetAudience?: OrganizationCardProps["targetAudience"];
+  join_url?: string;
+  joinUrl?: string;
+  join_text?: string;
+  joinText?: string;
 };
 
 function getContactLabel(label: string) {
   return label.replace(/:$/, "");
+}
+
+function getOrganizationCardProps(
+  organization: Organization,
+  locale: Locale,
+): OrganizationCardProps {
+  return {
+    name: organization.title,
+    stats: organization.stats,
+    presentation: organization.description,
+    events: organization.events,
+    activities: organization.activities,
+    departments: organization.departments,
+    targetAudience:
+      organization.targetAudience ?? organization.target_audience,
+    socialLinks: organization.social_links,
+    galleryImages: organization.images,
+    imageBasePath: "/ontevekenykorok",
+    joinUrl: organization.joinUrl ?? organization.join_url,
+    joinText: organization.joinText ?? organization.join_text,
+    labels: { contacts: getContactLabel(organization.social_title) },
+    locale,
+  };
 }
 
 export default async function OntevekenyKorokPage({
@@ -35,16 +71,10 @@ export default async function OntevekenyKorokPage({
         <PageHeader title={data.title} />
 
         <div className="space-y-12">
-          {data.korok.map((kor: Organization) => (
+          {(data.korok as Organization[]).map((kor) => (
             <OrganizationCard
               key={kor.id}
-              name={kor.title}
-              presentation={kor.description}
-              socialLinks={kor.social_links}
-              galleryImages={kor.images}
-              imageBasePath="/ontevekenykorok"
-              labels={{ contacts: getContactLabel(kor.social_title) }}
-              locale={lang}
+              {...getOrganizationCardProps(kor, lang)}
             />
           ))}
         </div>

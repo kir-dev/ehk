@@ -3,12 +3,10 @@ import React from "react";
 import {
   ArrowRight,
   CalendarDays,
-  CircleDot,
   MapPin,
   Users,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n-config";
 import { cn } from "@/lib/utils";
 import {
@@ -53,6 +51,7 @@ type OrganizationCardLabels = {
   targetAudience: string;
   contacts: string;
   gallery: string;
+  join: string;
 };
 
 export type OrganizationCardProps = {
@@ -83,6 +82,7 @@ const defaultLabels = (locale: Locale): OrganizationCardLabels =>
         targetAudience: "Kinek ajánljuk?",
         contacts: "Elérhetőségek",
         gallery: "Galéria",
+        join: "Csatlakozom!",
       }
     : {
         presentation: "Presentation",
@@ -92,6 +92,7 @@ const defaultLabels = (locale: Locale): OrganizationCardLabels =>
         targetAudience: "Who is it for?",
         contacts: "Contact",
         gallery: "Gallery",
+        join: "Join us",
       };
 
 function renderTextContent(content: TextContent) {
@@ -135,18 +136,30 @@ function getImageAlt(
   return `${organizationName} - ${index + 1}`;
 }
 
+function getStatLabel(label: string) {
+  return label.replace(/:$/, "");
+}
+
 function Section({
   title,
   children,
   className,
+  bordered = true,
 }: Readonly<{
   title: string;
   children: React.ReactNode;
   className?: string;
+  bordered?: boolean;
 }>) {
   return (
-    <section className={cn("space-y-4", className)}>
-      <h3 className="text-xs font-bold uppercase tracking-normal text-[#862633]">
+    <section
+      className={cn(
+        "space-y-4",
+        bordered && "border-t border-border pt-6 md:pt-7",
+        className,
+      )}
+    >
+      <h3 className="text-xs font-bold uppercase tracking-normal text-ehk-dark-red">
         {title}
       </h3>
       {children}
@@ -172,6 +185,7 @@ export function OrganizationCard({
   className,
 }: Readonly<OrganizationCardProps>) {
   const sectionLabels = { ...defaultLabels(locale), ...labels };
+  const ctaText = joinText ?? sectionLabels.join;
   const sortedSocialLinks = socialLinks
     ? [...socialLinks].sort(
         (a, b) => getSocialPriority(a.label) - getSocialPriority(b.label),
@@ -185,32 +199,32 @@ export function OrganizationCard({
   const hasTargetAudience = Boolean(targetAudience);
   const hasSocialLinks = sortedSocialLinks.length > 0;
   const hasGallery = Boolean(galleryImages?.length);
-  const hasJoinCta = Boolean(joinUrl && joinText);
+  const hasJoinCta = Boolean(joinUrl);
 
   return (
     <article
       className={cn(
-        "overflow-hidden rounded-lg border border-[#eadfe1] bg-white shadow-sm transition-shadow duration-200 hover:shadow-md",
+        "overflow-hidden rounded-lg border border-border bg-white shadow-sm",
         className,
       )}
     >
-      <div className="border-b border-[#eadfe1] bg-[#fbf8f7] px-5 py-5 sm:px-7">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <h2 className="font-playfair text-2xl font-semibold leading-tight text-[#24201f] sm:text-3xl">
+      <div className="px-5 pb-5 pt-6 sm:px-7 md:px-8 md:pb-6 md:pt-7">
+        <div className="space-y-3">
+          <h2 className="font-playfair text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
             {name}
           </h2>
 
           {hasStats && (
-            <dl className="grid gap-3 sm:grid-cols-3 lg:min-w-[360px]">
+            <dl className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-0">
               {stats?.map((stat) => (
                 <div
                   key={`${stat.label}-${stat.value}`}
-                  className="rounded-md border border-[#eadfe1] bg-white px-4 py-3"
+                  className="flex items-center gap-2 sm:after:mx-4 sm:after:h-1 sm:after:w-1 sm:after:rounded-full sm:after:bg-ehk-light-red sm:last:after:hidden"
                 >
-                  <dt className="text-[11px] font-semibold uppercase tracking-normal text-[#7b7170]">
-                    {stat.label}
+                  <dt className="font-semibold text-muted-foreground">
+                    {getStatLabel(stat.label)}:
                   </dt>
-                  <dd className="mt-1 text-sm font-bold text-[#862633]">
+                  <dd className="font-semibold text-foreground">
                     {stat.value}
                   </dd>
                 </div>
@@ -220,10 +234,10 @@ export function OrganizationCard({
         </div>
       </div>
 
-      <div className="space-y-8 px-5 py-6 sm:px-7">
+      <div className="space-y-7 px-5 pb-7 sm:px-7 md:px-8 md:pb-8">
         {presentation && (
-          <Section title={sectionLabels.presentation}>
-            <div className="richtext text-sm leading-7 text-[#4b4545] sm:text-base">
+          <Section title={sectionLabels.presentation} bordered={false}>
+            <div className="richtext text-sm leading-7 text-foreground/85 sm:text-base">
               {renderTextContent(presentation)}
             </div>
           </Section>
@@ -234,17 +248,17 @@ export function OrganizationCard({
             <div className="grid gap-3 md:grid-cols-2">
               {events?.map((event) => {
                 const eventContent = (
-                  <div className="h-full rounded-md border border-[#eadfe1] bg-[#fbf8f7] p-4 transition-colors hover:border-[#d7b8be]">
-                    <h4 className="font-semibold text-[#24201f]">
+                  <div className="h-full rounded-lg border border-border bg-muted/35 p-4 transition-colors hover:border-ehk-light-red/40 hover:bg-white">
+                    <h4 className="font-semibold text-foreground">
                       {event.title}
                     </h4>
                     {event.description && (
-                      <p className="mt-2 text-sm leading-6 text-[#625a59]">
+                      <p className="mt-2 text-sm leading-6 text-muted-foreground">
                         {parseFormattedText(event.description)}
                       </p>
                     )}
                     {(event.date || event.location) && (
-                      <div className="mt-3 flex flex-col gap-2 text-xs text-[#7b7170] sm:flex-row sm:flex-wrap">
+                      <div className="mt-3 flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:flex-wrap">
                         {event.date && (
                           <span className="inline-flex items-center gap-1.5">
                             <CalendarDays className="h-3.5 w-3.5" />
@@ -268,6 +282,7 @@ export function OrganizationCard({
                     href={event.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block h-full"
                   >
                     {eventContent}
                   </a>
@@ -281,15 +296,12 @@ export function OrganizationCard({
 
         {hasActivities && (
           <Section title={sectionLabels.activities}>
-            <ul className="flex flex-col gap-2 text-sm font-medium text-[#34302f] sm:flex-row sm:flex-wrap sm:items-center">
+            <ul className="flex flex-col gap-2 text-sm font-semibold text-foreground sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-0">
               {activities?.map((activity, index) => (
                 <li
                   key={`${activity}-${index}`}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 sm:after:mx-4 sm:after:h-1 sm:after:w-1 sm:after:rounded-full sm:after:bg-ehk-light-red sm:last:after:hidden"
                 >
-                  {index > 0 && (
-                    <CircleDot className="hidden h-3 w-3 text-[#b2293b] sm:block" />
-                  )}
                   <span>{activity}</span>
                 </li>
               ))}
@@ -303,7 +315,7 @@ export function OrganizationCard({
               {departments?.map((department) => (
                 <li
                   key={department}
-                  className="rounded-full border border-[#eadfe1] bg-[#fbf8f7] px-3 py-1.5 text-sm font-medium text-[#34302f]"
+                  className="rounded-full border border-ehk-light-red/20 bg-ehk-light-red/5 px-3.5 py-1.5 text-sm font-semibold text-foreground"
                 >
                   {department}
                 </li>
@@ -314,27 +326,27 @@ export function OrganizationCard({
 
         {hasTargetAudience && (
           <Section title={sectionLabels.targetAudience}>
-            <div className="rounded-md border border-[#eadfe1] bg-[#fbf8f7] p-4 text-sm leading-7 text-[#4b4545] sm:text-base">
-              <div className="richtext">{renderTextContent(targetAudience)}</div>
+            <div className="richtext text-sm leading-7 text-foreground/85 sm:text-base">
+              {renderTextContent(targetAudience)}
             </div>
           </Section>
         )}
 
         {hasSocialLinks && (
           <Section title={sectionLabels.contacts}>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5">
               {sortedSocialLinks.map((link) => (
-                <Button
+                <a
                   key={`${link.label}-${link.url}`}
-                  variant="outline"
-                  className="h-10 rounded-full border-[#eadfe1] bg-white px-4 text-[#34302f] hover:border-[#d7b8be] hover:bg-[#fbf8f7] hover:text-[#862633]"
-                  asChild
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={getSocialName(link.label, locale)}
+                  title={getSocialName(link.label, locale)}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-md text-foreground transition-colors hover:bg-ehk-light-red/5 hover:text-ehk-dark-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ehk-dark-red"
                 >
-                  <a href={link.url} target="_blank" rel="noopener noreferrer">
-                    {getSocialIcon(link.label)}
-                    {getSocialName(link.label, locale)}
-                  </a>
-                </Button>
+                  {getSocialIcon(link.label, "h-5 w-5")}
+                </a>
               ))}
             </div>
           </Section>
@@ -342,18 +354,18 @@ export function OrganizationCard({
 
         {hasGallery && (
           <Section title={sectionLabels.gallery}>
-            <div className="-mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-2 sm:-mx-7 sm:px-7">
+            <div className="-mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-2 sm:-mx-7 sm:px-7 md:-mx-8 md:px-8">
               {galleryImages?.map((image, index) => (
                 <div
                   key={`${resolveImageSrc(image, imageBasePath)}-${index}`}
-                  className="relative aspect-[4/3] w-[min(78vw,320px)] shrink-0 snap-start overflow-hidden rounded-md border border-[#eadfe1] bg-[#f7f3f1] sm:w-80"
+                  className="relative aspect-[4/3] w-[min(78vw,320px)] shrink-0 snap-start overflow-hidden rounded-lg border border-border bg-muted sm:w-80"
                 >
                   <Image
                     src={resolveImageSrc(image, imageBasePath)}
                     alt={getImageAlt(image, name, index)}
                     fill
                     sizes="(max-width: 640px) 78vw, 320px"
-                    className="object-contain p-3"
+                    className="object-cover"
                   />
                 </div>
               ))}
@@ -367,11 +379,11 @@ export function OrganizationCard({
           href={joinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center justify-between gap-4 bg-[#862633] px-5 py-4 text-white transition-colors hover:bg-[#721f2b] sm:px-7"
+          className="group flex items-center justify-between gap-4 bg-ehk-dark-red px-5 py-4 text-white transition-colors hover:bg-ehk-light-red sm:px-7 md:px-8"
         >
           <span className="inline-flex items-center gap-2 text-sm font-semibold sm:text-base">
             <Users className="h-4 w-4" />
-            {joinText}
+            {ctaText}
           </span>
           <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </a>

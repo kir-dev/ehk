@@ -6,6 +6,7 @@ import {
   Youtube,
   Globe,
   Link as LinkIcon,
+  Mail,
   MessageCircle
 } from "lucide-react";
 import { Locale } from "@/i18n-config";
@@ -37,6 +38,7 @@ export function getSocialIcon(label: string) {
   if (l === 'x' || l.includes('twitter')) return <XSocialIcon className="h-4 w-4" />;
   if (l.includes('linktr.ee')) return <LinkIcon className="h-4 w-4" />;
   if (l.includes('threads')) return <MessageCircle className="h-4 w-4" />;
+  if (l.includes('@') || l.includes('email') || l.includes('e-mail')) return <Mail className="h-4 w-4" />;
   if (l.includes('weblap') || l.includes('web') || l.includes('honlap') || l.includes('mvk.bme.hu') || l.includes('.hu') || l.includes('.eu') || l.includes('.com') || l.includes('.org')) return <Globe className="h-4 w-4" />;
   return <ExternalLink className="h-4 w-4" />;
 }
@@ -52,7 +54,8 @@ export function getSocialPriority(label: string) {
   if (l.includes('tiktok')) return 7;
   if (l.includes('threads')) return 8;
   if (l.includes('linktr.ee')) return 9;
-  return 10;
+  if (l.includes('@') || l.includes('email') || l.includes('e-mail')) return 10;
+  return 11;
 }
 
 export function getSocialName(label: string, lang: Locale = 'hu') {
@@ -67,6 +70,7 @@ export function getSocialName(label: string, lang: Locale = 'hu') {
   if (l === 'x' || l.includes('twitter')) return 'X (Twitter)';
   if (l.includes('linktr.ee')) return 'Linktree';
   if (l.includes('threads')) return 'Threads';
+  if (l.includes('@') || l.includes('email') || l.includes('e-mail')) return 'Email';
   if (l.includes('weblap') || l.includes('web') || l.includes('honlap') || l.includes('mvk.bme.hu') || l.includes('.hu') || l.includes('.eu') || l.includes('.com') || l.includes('.org')) return lang === 'hu' ? 'Weblap' : 'Website';
   return label;
 }

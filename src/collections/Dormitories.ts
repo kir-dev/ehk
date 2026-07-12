@@ -14,6 +14,14 @@ const validateOptionalUrl = (val: string | null | undefined) => {
   }
 };
 
+const validateSlug = (val: string | null | undefined) => {
+  if (!val) return true;
+
+  return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(val)
+    ? true
+    : "A slug csak kisbetűket, számokat és elválasztó kötőjeleket tartalmazhat.";
+};
+
 export const Dormitories: CollectionConfig = {
   slug: "dormitories",
   labels: {
@@ -41,6 +49,7 @@ export const Dormitories: CollectionConfig = {
       type: "text",
       required: true,
       unique: true,
+      validate: validateSlug,
       admin: {
         description: "Útvonalhoz használt azonosító, pl. baross, sch.",
       },
@@ -50,7 +59,7 @@ export const Dormitories: CollectionConfig = {
       label: "Borítókép",
       type: "upload",
       relationTo: "media",
-      required: true,
+      required: false,
     },
     {
       name: "externalLink",

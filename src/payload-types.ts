@@ -316,7 +316,7 @@ export interface Dormitory {
    * Útvonalhoz használt azonosító, pl. baross, sch.
    */
   slug: string;
-  coverImage: number | Media;
+  coverImage?: (number | null) | Media;
   /**
    * Opcionális külső oldal, ahová a Részletek gomb navigál.
    */

@@ -42,9 +42,12 @@
   },
   "payouts": {
     "title": "Payout Information",
+    "subtitle": "The scholarship payout dates for the {title} academic year",
     "intro_text": "The scholarship payout dates for the {title} academic year are as follows:",
     "autumn_semester": "Payout dates {title} Autumn",
     "spring_semester": "Payout dates {title} Spring",
+    "autumn_tab": "AUTUMN",
+    "spring_tab": "SPRING",
     "table_header_name": "Month",
     "table_header_date": "Payout Date",
     "important_todo_title": "Important To-Dos Before Payout",

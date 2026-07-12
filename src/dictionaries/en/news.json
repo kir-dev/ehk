@@ -29,7 +29,11 @@
     "time": "TIME",
     "location": "LOCATION",
     "link": "LINK",
+    "links_label": "LINKS",
     "description_label": "DESCRIPTION",
+    "gallery": "GALLERY",
+    "prev_image": "Previous image",
+    "next_image": "Next image",
     "share": "Share",
     "no_events": "No events scheduled for this week."
   },

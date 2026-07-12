@@ -51,11 +51,23 @@ export const EhkEvents: CollectionConfig = {
       ],
     },
     {
-      name: 'images',
-      label: 'Képek',
+      name: 'coverImage',
+      label: 'Borítókép',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      admin: {
+        description: 'A rendezvény kártyáján megjelenő nagy borítókép',
+      },
+    },
+    {
+      name: 'gallery',
+      label: 'Galéria',
       type: 'array',
-      required: true,
-      minRows: 1,
+      required: false,
+      admin: {
+        description: 'Képek a galéria karuszelhez',
+      },
       fields: [
         {
           name: 'image',

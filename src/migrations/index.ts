@@ -26,6 +26,7 @@ import * as migration_20260619_141957_add_permissions_submission_and_external_li
 import * as migration_20260619_173736_academic_scholarship_faq from './20260619_173736_academic_scholarship_faq';
 import * as migration_20260620_123301 from './20260620_123301';
 import * as migration_20260620_151905_ehk_scholarships from './20260620_151905_ehk_scholarships';
+import * as migration_20260701_000000_ehk_events_cover_and_gallery from './20260701_000000_ehk_events_cover_and_gallery';
 
 export const migrations = [
   {
@@ -167,5 +168,10 @@ export const migrations = [
     up: migration_20260620_151905_ehk_scholarships.up,
     down: migration_20260620_151905_ehk_scholarships.down,
     name: '20260620_151905_ehk_scholarships',
+  },
+  {
+    up: migration_20260701_000000_ehk_events_cover_and_gallery.up,
+    down: migration_20260701_000000_ehk_events_cover_and_gallery.down,
+    name: '20260701_000000_ehk_events_cover_and_gallery',
   },
 ];

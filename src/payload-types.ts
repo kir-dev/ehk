@@ -613,10 +613,19 @@ export interface EhkEvent {
       [k: string]: unknown;
     };
   };
-  images: {
-    image: number | Media;
-    id?: string | null;
-  }[];
+  /**
+   * A rendezvény kártyáján megjelenő nagy borítókép
+   */
+  coverImage?: (number | null) | Media;
+  /**
+   * Képek a galéria karuszelhez
+   */
+  gallery?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
   order?: number | null;
   /**
    * Eseményhez tartozó weboldal, Facebook, vagy más hivatkozások.
@@ -1255,7 +1264,8 @@ export interface EhkEventsSelect<T extends boolean = true> {
         text_hu?: T;
         text_en?: T;
       };
-  images?:
+  coverImage?: T;
+  gallery?:
     | T
     | {
         image?: T;

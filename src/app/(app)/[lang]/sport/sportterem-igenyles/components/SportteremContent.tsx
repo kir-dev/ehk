@@ -5,199 +5,133 @@ import { parseFormattedText } from '@/utils/parseFormattedText';
 interface SportteremContentData {
   title: string;
   description: string;
-  facilities: { 
-    title: string; 
-    items: string[] 
-  };
-  conditions: { 
-    title: string; 
-    description: string 
-  };
-  process: { 
-    title: string; 
-    description: string; 
-    warning: string 
-  };
-  requiredData: { 
-    title: string; 
-    intro: string; 
-    items: string[] 
-  };
-  selection: { 
-    title: string; 
-    intro: string; 
-    items: string[]; 
-    warning: string 
-  };
-  usage: { 
+  facilities: {
     title: string;
-    items: string[] 
+    items: string[];
   };
-  costs: { 
-    title: string; 
-    description: string; 
-    items: string[] 
+  conditions: {
+    title: string;
+    description: string;
   };
-  contact: { 
-    title: string; 
-    description: string 
+  process: {
+    title: string;
+    description: string;
+    warning: string;
+  };
+  requiredData: {
+    title: string;
+    intro: string;
+    items: string[];
+  };
+  selection: {
+    title: string;
+    intro: string;
+    items: string[];
+    warning: string;
+  };
+  usage: {
+    title: string;
+    items: string[];
+  };
+  costs: {
+    title: string;
+    description: string;
+    items: string[];
+  };
+  contact: {
+    title: string;
+    description: string;
   };
   footer: string;
 }
 
-
 export default function SportteremContent({ content }: { content: SportteremContentData }) {
   return (
-    <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
+    <div className="flex flex-col gap-4 rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8">
+      <SectionCard title={content.facilities.title}>
+        <TextList items={content.facilities.items} />
+      </SectionCard>
 
-      {/* Introduction */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <Paragraph>
-            {parseFormattedText(content.description)}
-            </Paragraph>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.conditions.title}>
+        <Paragraph>{parseFormattedText(content.conditions.description)}</Paragraph>
+      </SectionCard>
 
-      {/* Facilities */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.facilities.title}
-            </h3>
-            <div className="space-y-2 text-gray-700">
-              <ul className="list-disc pl-5 space-y-2">
-                {content.facilities.items.map((item, i) => (
-                <li key={i}>{parseFormattedText(item)}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.process.title}>
+        <Paragraph>{parseFormattedText(content.process.description)}</Paragraph>
+        <WarningBox>{parseFormattedText(content.process.warning)}</WarningBox>
+      </SectionCard>
 
-      {/* Conditions */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.conditions.title}
-            </h3>
-            <Paragraph>{parseFormattedText(content.conditions.description)}</Paragraph>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.requiredData.title}>
+        <Paragraph>{parseFormattedText(content.requiredData.intro)}</Paragraph>
+        <TextList items={content.requiredData.items} />
+      </SectionCard>
 
-      {/* Process & Deadlines */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.process.title}
-            </h3>
-            <Paragraph>{parseFormattedText(content.process.description)}</Paragraph>
-            <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
-              {parseFormattedText(content.process.warning)}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.selection.title}>
+        <Paragraph>{parseFormattedText(content.selection.intro)}</Paragraph>
+        <TextList items={content.selection.items} />
+        <WarningBox>{parseFormattedText(content.selection.warning)}</WarningBox>
+      </SectionCard>
 
-      {/* Required Data */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.requiredData.title}
-            </h3>
-            <p>{parseFormattedText(content.requiredData.intro)}</p>
-            <ul className="list-disc pl-5 space-y-1">
-              {content.requiredData.items.map((item, i) => (
-                <li key={i}>{parseFormattedText(item)}</li>
-              ))}
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.usage.title}>
+        <TextList items={content.usage.items} />
+      </SectionCard>
 
-      {/* Selection Criteria */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.selection.title}
-            </h3>
-            <p>{parseFormattedText(content.selection.intro)}</p>
-            <ul className="list-disc pl-5 space-y-1">
-              {content.selection.items.map((item, i) => (
-                <li key={i}>{parseFormattedText(item)}</li>
-              ))}
-            </ul>
-            <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm font-semibold">
-              {parseFormattedText(content.selection.warning)}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.costs.title}>
+        <Paragraph>{parseFormattedText(content.costs.description)}</Paragraph>
+        <TextList items={content.costs.items} />
+      </SectionCard>
 
-      {/* Rules & usage */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.usage.title}
-            </h3>
-            <ul className="list-disc pl-5 space-y-1">
-              {content.usage.items.map((item, i) => (
-                <li key={i}>{parseFormattedText(item)}</li>
-              ))}
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
+      <SectionCard title={content.contact.title}>
+        <Paragraph>{parseFormattedText(content.contact.description)}</Paragraph>
+      </SectionCard>
 
-      {/* Costs */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.costs.title}
-            </h3>
-            <Paragraph>{parseFormattedText(content.costs.description)}</Paragraph>
-            <ul className="list-disc pl-5 space-y-1">
-              {content.costs.items.map((item, i) => (
-                <li key={i}>{parseFormattedText(item)}</li>
-              ))}
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Kapcsolattartás */}
-      <Card className="group hover:shadow-md transition-all duration-300">
-        <CardContent className="p-3 md:p-6">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <h3 className="font-bold text-xl leading-tight text-gray-900 group-hover:text-[#862633] transition-colors">
-              {content.contact.title}
-            </h3>
-            <Paragraph>{parseFormattedText(content.contact.description)}</Paragraph>
-          </div>
-        </CardContent>
-      </Card>
-
-      <p className="text-center text-sm text-gray-400 italic mt-4">{parseFormattedText(content.footer)}</p>
-
+      <p className="px-2 text-center font-open-sans text-sm italic leading-[1.6] text-[#6e6660]">
+        {parseFormattedText(content.footer)}
+      </p>
     </div>
   );
-};
+}
+
+function SectionCard({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <Card className="rounded-2xl border-[#e9e2d6] bg-white py-0 shadow-none">
+      <CardContent className="flex flex-col gap-4 p-4">
+        <h2 className="font-playfair text-base font-semibold leading-[1.4] text-black">
+          {title}
+        </h2>
+        <div className="h-px w-full bg-[#e9e2d6]" />
+        <div className="flex flex-col gap-4 font-open-sans text-sm leading-[1.6] text-black">
+          {children}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 function Paragraph({ children }: { children: ReactNode }) {
   return (
-    <div className="prose max-w-none text-gray-700 richtext">
-      <p>{children}</p>
+    <p className="richtext max-w-none">{children}</p>
+  );
+}
+
+function TextList({ items, ordered = false }: { items: string[]; ordered?: boolean }) {
+  const ListTag = ordered ? 'ol' : 'ul';
+
+  return (
+    <ListTag className={`${ordered ? 'list-decimal' : 'list-disc'} space-y-2 pl-5 marker:text-[#862633]`}>
+      {items.map((item, index) => (
+        <li key={`${item}-${index}`} className="pl-1">
+          {parseFormattedText(item)}
+        </li>
+      ))}
+    </ListTag>
+  );
+}
+
+function WarningBox({ children }: { children: ReactNode }) {
+  return (
+    <div className="richtext rounded-2xl border border-[#d3afaf] bg-[#ffe6e6] px-4 py-2 font-open-sans text-sm leading-[1.6] text-[#6b0f1a]">
+      {children}
     </div>
   );
 }

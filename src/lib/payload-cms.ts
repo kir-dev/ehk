@@ -2,6 +2,7 @@ import {
     AcademicScholarshipFaq,
     Club,
     Decision,
+    Dormitory,
     Event,
     EhkEvent,
     EhkScholarship,
@@ -126,6 +127,34 @@ export async function getDormitoryRegulations() {
     depth: 1,
     where: { type: { equals: "dormitory" } } });
   return regulations.docs as Regulation[];
+}
+
+export async function getDormitories() {
+  const payload = await getPayload({ config });
+  const dormitories = await payload.find({
+    collection: "dormitories",
+    limit: 1000,
+    sort: "order",
+    depth: 1,
+  });
+
+  return dormitories.docs as Dormitory[];
+}
+
+export async function getDormitoryBySlug(slug: string) {
+  const payload = await getPayload({ config });
+  const dormitory = await payload.find({
+    collection: "dormitories",
+    depth: 2,
+    limit: 1,
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+  });
+
+  return dormitory.docs[0] as Dormitory | undefined;
 }
 
 export async function getNewsById(id: number) {

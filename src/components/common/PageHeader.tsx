@@ -7,8 +7,8 @@ import { ArrowLeft } from "lucide-react";
 
 export interface PageHeaderProps {
   title: string;
-  subtitle?: string;
-  description?: string; // fallback for subtitle (backward compatibility)
+  subtitle?: React.ReactNode;
+  description?: React.ReactNode; // fallback for subtitle (backward compatibility)
   tags?: string[];
   onBack?: () => void;
   backHref?: string;

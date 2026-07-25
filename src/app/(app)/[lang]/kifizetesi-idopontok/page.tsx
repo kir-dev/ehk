@@ -1,11 +1,10 @@
 export const dynamic = "force-dynamic";
 
 import { PageHeader } from "@/components/common/PageHeader";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { getActivePayoutPeriod } from "@/lib/payload-cms";
-import { PayoutTable } from "./components/PayoutTable";
+import { PayoutDates } from "./components/PayoutDates";
 
 export default async function PayoutInfoPage({
   params,
@@ -13,78 +12,84 @@ export default async function PayoutInfoPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang, 'scholarships');
+  const dictionary = await getDictionary(lang, "scholarships");
   const payoutPeriod = await getActivePayoutPeriod();
-
-  if (!payoutPeriod) {
-    return (
-      <div className="container mx-auto py-10 px-4">
-        <PageHeader title={dictionary.payouts.title} />
-        <p className="text-center text-muted-foreground mt-8">
-          {dictionary.payouts.no_active_period}
-        </p>
-      </div>
-    );
-  }
-
-  const { title, autumnSemester, springSemester } = payoutPeriod;
+  const t = dictionary.payouts;
 
   return (
-    <div className="container mx-auto py-10 px-4">
-      <PageHeader title={dictionary.payouts.title} />
-
-      <div className="mx-auto space-y-10">
-        <p className="text-lg text-center">
-          {dictionary.payouts.intro_text.replace("{title}", title)}
-        </p>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          <PayoutTable
-            title={dictionary.payouts.autumn_semester.replace("{title}", title)}
-            payouts={autumnSemester?.payouts}
-            lang={lang}
-          />
-          <PayoutTable
-            title={dictionary.payouts.spring_semester.replace("{title}", title)}
-            payouts={springSemester?.payouts}
-            lang={lang}
-          />
-        </div>
-
-        <p className="text-center text-muted-foreground italic">
-          {dictionary.payouts.check_mueper}
-        </p>
-
-        <div className="space-y-6">
-          {/* Important Info Section */}
-          <Card className="border-ehk-dark-red">
-            <CardHeader>
-              <CardTitle className="text-ehk-dark-red flex items-center gap-2">
-                {dictionary.payouts.important_todo_title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>{dictionary.payouts.important_todo_p1}</p>
-              <p className="font-medium text-foreground">
-                {dictionary.payouts.important_todo_p2}
+    <div className="bg-[#f9f4f0] w-full">
+      <div className="container mx-auto px-4 py-8 md:px-8">
+        {!payoutPeriod ? (
+          <div className="flex flex-col">
+            <PageHeader title={t.title} />
+            <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-8">
+              <p className="text-center font-open-sans text-[#9a9a9a]">
+                {t.no_active_period}
               </p>
-              <p>{dictionary.payouts.important_todo_p3}</p>
-              <div className="bg-ehk-dark-red/5 p-4 rounded-lg border border-ehk-dark-red/20 text-ehk-dark-red text-sm mt-2">
-                {dictionary.payouts.important_todo_p4}
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col">
+            <PageHeader
+              title={t.title}
+              subtitle={t.subtitle.replace("{title}", payoutPeriod.title)}
+            />
 
-          {/* Wrong Transfer / Termination Info Section */}
-          <Card>
-            <CardHeader>
-              <CardTitle>{dictionary.payouts.wrong_transfer_title}</CardTitle>
-            </CardHeader>
-            <CardContent className="text-muted-foreground leading-relaxed">
-              <p>{dictionary.payouts.wrong_transfer_p1}</p>
-            </CardContent>
-          </Card>
-        </div>
+            {/* Content card */}
+            <div className="bg-[#fffefc] border-x border-b border-[#e9e2d6] rounded-b-2xl p-4 md:p-8">
+              <div className="flex flex-col lg:flex-row gap-4">
+                {/* Left column — instructional cards */}
+                <div className="flex-1 flex flex-col gap-4">
+                  {/* Important to-dos */}
+                  <div className="flex flex-col gap-4 border border-[#e9e2d6] rounded-2xl p-4">
+                    <p className="font-open-sans font-semibold text-[13px] uppercase text-[#a82030]">
+                      {t.important_todo_title}
+                    </p>
+                    <p className="font-open-sans text-[14px] leading-[1.6] text-[#3d3d3d]">
+                      {t.important_todo_p1}
+                    </p>
+                    <p className="font-open-sans font-semibold text-[13px] text-[#3d3d3d]">
+                      {t.important_todo_p2}
+                    </p>
+                    <p className="font-open-sans text-[14px] leading-[1.6] text-[#3d3d3d]">
+                      {t.important_todo_p3}
+                    </p>
+                    {/* Warning box */}
+                    <div className="bg-[#f9f4f0] border border-[#862633] rounded-2xl px-4 py-2">
+                      <p className="font-open-sans text-[14px] leading-[1.6] text-[#6b0f1a]">
+                        {t.important_todo_p4}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Wrong transfer / termination */}
+                  <div className="flex flex-col gap-4 border border-[#e9e2d6] rounded-2xl p-4">
+                    <p className="font-open-sans font-semibold text-[13px] uppercase text-[#a82030]">
+                      {t.wrong_transfer_title}
+                    </p>
+                    <p className="font-open-sans text-[14px] leading-[1.6] text-[#3d3d3d]">
+                      {t.wrong_transfer_p1}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right column — payout dates */}
+                <div className="flex-1 flex flex-col gap-4">
+                  <PayoutDates
+                    autumnPayouts={payoutPeriod.autumnSemester?.payouts}
+                    springPayouts={payoutPeriod.springSemester?.payouts}
+                    lang={lang}
+                    autumnLabel={t.autumn_tab}
+                    springLabel={t.spring_tab}
+                  />
+                  <p className="font-open-sans font-semibold text-[11px] leading-[1.6] text-[#9a9a9a]">
+                    {t.check_mueper}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

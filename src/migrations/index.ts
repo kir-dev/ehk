@@ -27,6 +27,8 @@ import * as migration_20260619_173736_academic_scholarship_faq from './20260619_
 import * as migration_20260620_123301 from './20260620_123301';
 import * as migration_20260620_151905_ehk_scholarships from './20260620_151905_ehk_scholarships';
 import * as migration_20260701_000000_ehk_events_cover_and_gallery from './20260701_000000_ehk_events_cover_and_gallery';
+import * as migration_20260703_140815_dormitories_collection from './20260703_140815_dormitories_collection';
+import * as migration_20260703_143300_extend_dormitories_details from './20260703_143300_extend_dormitories_details';
 
 export const migrations = [
   {
@@ -173,5 +175,15 @@ export const migrations = [
     up: migration_20260701_000000_ehk_events_cover_and_gallery.up,
     down: migration_20260701_000000_ehk_events_cover_and_gallery.down,
     name: '20260701_000000_ehk_events_cover_and_gallery',
+  },
+  {
+    up: migration_20260703_140815_dormitories_collection.up,
+    down: migration_20260703_140815_dormitories_collection.down,
+    name: '20260703_140815_dormitories_collection',
+  },
+  {
+    up: migration_20260703_143300_extend_dormitories_details.up,
+    down: migration_20260703_143300_extend_dormitories_details.down,
+    name: '20260703_143300_extend_dormitories_details',
   },
 ];

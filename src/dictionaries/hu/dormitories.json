@@ -14,7 +14,9 @@
       "contacts_p2": "Általános ügyekben forduljatok bátran hozzánk az ",
       "contacts_p3": " elérhetőségen.",
       "dormitory": "Kollégium",
-      "introduction": "Kollégium bemutatók"
+      "introduction": "Kollégiumok bemutatója",
+      "details": "Részletek",
+      "no_results": "Jelenleg nincs megjeleníthető kollégium."
     }
   }
 }

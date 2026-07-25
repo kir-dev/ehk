@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 
 import { Clubs } from "@/collections/Clubs";
 import { Decisions } from "@/collections/Decisions";
+import { Dormitories } from "@/collections/Dormitories";
 import { Events } from "@/collections/Events";
 import { EhkEvents } from "@/collections/EhkEvents";
 import { EhkScholarships } from "@/collections/EhkScholarships";
@@ -46,6 +47,7 @@ export default buildConfig({
   collections: [
     Users,
     Clubs,
+    Dormitories,
     Media,
     Representatives,
     Reminders,
@@ -69,7 +71,7 @@ export default buildConfig({
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: postgresAdapter({
-    // push: false,
+    push: false,
     pool: {
       connectionString:
         process.env.DATABASE_URI ?? process.env.DATABASE_URL ?? "",

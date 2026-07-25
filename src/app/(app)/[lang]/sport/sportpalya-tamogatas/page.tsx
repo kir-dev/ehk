@@ -17,7 +17,7 @@ export default async function SportpalyaTamogatasPage({
 
   return (
     <div className="min-h-screen bg-[#f9f4f0]">
-      <div className="container mx-auto max-w-5xl px-3 py-6 md:px-8 md:py-8">
+      <div className="container mx-auto px-2 md:px-4 py-8">
         <PageHeader
           title={content.title}
           subtitle={parseFormattedText(content.description)}

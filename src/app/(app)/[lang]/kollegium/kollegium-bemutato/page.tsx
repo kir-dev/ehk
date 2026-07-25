@@ -32,9 +32,7 @@ export default async function DormitoriesOverviewPage({
         name: dormitory.name,
         slug: dormitory.slug,
         imageSrc: coverImage.url,
-        href:
-          dormitory.externalLink ||
-          `/${lang}/kollegium/kollegium-bemutato/${dormitory.slug}`,
+        href: `/${lang}/kollegium/kollegium-bemutato/${dormitory.slug}`,
       };
     })
     .filter((card): card is { name: string; slug: string; imageSrc: string; href: string } => card !== null);

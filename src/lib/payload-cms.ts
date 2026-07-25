@@ -141,6 +141,22 @@ export async function getDormitories() {
   return dormitories.docs as Dormitory[];
 }
 
+export async function getDormitoryBySlug(slug: string) {
+  const payload = await getPayload({ config });
+  const dormitory = await payload.find({
+    collection: "dormitories",
+    depth: 2,
+    limit: 1,
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+  });
+
+  return dormitory.docs[0] as Dormitory | undefined;
+}
+
 export async function getNewsById(id: number) {
   const payload = await getPayload({ config });
   const news = await payload.find({

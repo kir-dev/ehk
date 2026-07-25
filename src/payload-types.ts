@@ -321,6 +321,60 @@ export interface Dormitory {
    * Opcionális külső oldal, ahová a Részletek gomb navigál.
    */
   externalLink?: string | null;
+  description_hu?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  description_en?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  capacity?: number | null;
+  address_hu?: string | null;
+  address_en?: string | null;
+  /**
+   * Opcionális Google Maps vagy térkép link a címhez.
+   */
+  mapUrl?: string | null;
+  roomInfo_hu?: string | null;
+  roomInfo_en?: string | null;
+  targetAudience_hu?: string | null;
+  targetAudience_en?: string | null;
+  gallery?:
+    | {
+        categoryName_hu: string;
+        categoryName_en?: string | null;
+        images?:
+          | {
+              image: number | Media;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
   order: number;
   updatedAt: string;
   createdAt: string;
@@ -1107,6 +1161,29 @@ export interface DormitoriesSelect<T extends boolean = true> {
   slug?: T;
   coverImage?: T;
   externalLink?: T;
+  description_hu?: T;
+  description_en?: T;
+  capacity?: T;
+  address_hu?: T;
+  address_en?: T;
+  mapUrl?: T;
+  roomInfo_hu?: T;
+  roomInfo_en?: T;
+  targetAudience_hu?: T;
+  targetAudience_en?: T;
+  gallery?:
+    | T
+    | {
+        categoryName_hu?: T;
+        categoryName_en?: T;
+        images?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
+        id?: T;
+      };
   order?: T;
   updatedAt?: T;
   createdAt?: T;

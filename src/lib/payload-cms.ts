@@ -13,6 +13,7 @@ import {
     Regulation,
     Reminder,
     Representative,
+    SpecializedCollege,
     SocialScholarshipsFaq
 } from "@/payload-types";
 import config from "@payload-config";
@@ -225,6 +226,20 @@ export async function getClubs() {
   });
 
   return clubs.docs as Club[];
+}
+
+export async function getSpecializedColleges(): Promise<
+  SpecializedCollege[]
+> {
+  const payload = await getPayload({ config });
+  const colleges = await payload.find({
+    collection: "specialized-colleges",
+    limit: 1000,
+    sort: "order",
+    depth: 1,
+  });
+
+  return colleges.docs as SpecializedCollege[];
 }
 
 export async function getEhkEvents() {

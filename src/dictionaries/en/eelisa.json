@@ -3,28 +3,17 @@
     "eelisa": {
       "title": "EELISA",
       "what_is_it": {
-        "title": "What is EELISA?",
-        "description": "EELISA (European Engineering Learning Innovation and Science Alliance) is an alliance of nine European universities, involving engineering, technical, and broader educational institutions from eight countries. The initiative aims to jointly rethink what it means to be a European engineer today – training professionals who contribute to shaping the future not only with their technical knowledge but also with their social responsibility and broad perspective. By connecting engineering, scientific, and humanities fields, EELISA is working to create a more inclusive, sustainable, and digital Europe."
+        "title": "What is EELISA?"
       },
       "partners": {
-        "title": "Partner Universities:",
-        "items": [
-          "Universidad Politécnica de Madrid (UPM)",
-          "École des Ponts ParisTech (ÉPP)",
-          "Friedrich Alexander Universität Erlangen Nürnberg (FAU)",
-          "Istanbul Technical University (ITU)",
-          "Scuola Normale Superiore di Pisa (SNS)",
-          "Sant'Anna School of Advanced Studies (SSSA)",
-          "University Politechnica of Bucharest (UPB)",
-          "Paris Sciences et Lettres (PSL)",
-          "ZHAW Zürcher Hochschule für Angewandte Wissenschaften (ZHAW)"
-        ]
+        "title": "Partner Universities"
       },
       "how_to_apply": {
         "title": "How to apply?",
         "steps": [
           {
-            "description": "Find a program you like and check if you are eligible for the scholarship! Links to current program opportunities:",
+            "description": "Find a program you like and check if you are eligible for the scholarship!",
+            "links_title": "Links to current program opportunities:",
             "links": [
               {
                 "label": "EELISA News & Events",
@@ -37,17 +26,17 @@
             ]
           },
           {
-            "description": "Wait for feedback on your application!",
-            "links": []
-          },
-          {
             "description": "Submit your BME EELISA scholarship application here!",
             "links": [
               {
                 "label": "BME EELISA scholarship application",
-                "url": "https://regisztracio.bme.hu/eelisa-activity-hallgatoi-osztondij-jelentkezes-2025-osz"
+                "url": "https://regisztracio.bme.hu"
               }
             ]
+          },
+          {
+            "description": "Wait for feedback on your application!",
+            "links": []
           },
           {
             "description": "Enjoy the journey!",
@@ -55,15 +44,10 @@
           }
         ]
       },
-      "current_opportunities": {
-        "title": "Current program opportunities",
-        "link": "https://eelisa.eu/news-events/"
-      },
-      "call_for_applications": {
-        "title": "The call for applications is available here!",
-        "link": "https://eelisa.bme.hu/wp-content/uploads/2025/10/Act-hallg-oszt-paly-2025-szeptember.pdf"
-      },
-      "contact": "If you have any questions, feel free to contact us at international@bmeehk.hu or eelisa@bme.hu!"
+      "sidebar": {
+        "links_title": "Current",
+        "contacts_title": "Contacts"
+      }
     }
   }
 }

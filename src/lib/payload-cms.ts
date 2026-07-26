@@ -3,6 +3,7 @@ import {
     Club,
     Decision,
     Dormitory,
+    EelisaPage,
     Event,
     EhkEvent,
     EhkScholarship,
@@ -282,4 +283,12 @@ export async function getSocialScholarshipsFAQ(): Promise<{
     scholarshipTypes: global.scholarshipTypes ?? [],
     sidebarLinks: global.sidebarLinks ?? [],
   };
+}
+
+export async function getEelisaPage(): Promise<EelisaPage> {
+  const payload = await getPayload({ config });
+
+  return payload.findGlobal({
+    slug: "eelisa-page",
+  });
 }

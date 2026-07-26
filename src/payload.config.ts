@@ -8,6 +8,7 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 import { Clubs } from "@/collections/Clubs";
+import { CompetitiveTeams } from "@/collections/CompetitiveTeams";
 import { Decisions } from "@/collections/Decisions";
 import { Dormitories } from "@/collections/Dormitories";
 import { Events } from "@/collections/Events";
@@ -66,6 +67,7 @@ export default buildConfig({
     PayoutPeriods,
     UniversityPages,
     SpecializedColleges,
+    CompetitiveTeams,
   ],
   globals: [AcademicScholarshipFAQ, SocialScholarshipsFAQ, EelisaPage],
   editor: lexicalEditor(),

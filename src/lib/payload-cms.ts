@@ -1,6 +1,7 @@
 import {
     AcademicScholarshipFaq,
     Club,
+    CompetitiveTeam,
     Decision,
     Dormitory,
     EelisaPage,
@@ -240,6 +241,18 @@ export async function getSpecializedColleges(): Promise<
   });
 
   return colleges.docs as SpecializedCollege[];
+}
+
+export async function getCompetitiveTeams(): Promise<CompetitiveTeam[]> {
+  const payload = await getPayload({ config });
+  const teams = await payload.find({
+    collection: "competitive-teams",
+    limit: 1000,
+    sort: "order",
+    depth: 1,
+  });
+
+  return teams.docs as CompetitiveTeam[];
 }
 
 export async function getEhkEvents() {

@@ -3,28 +3,17 @@
     "eelisa": {
       "title": "EELISA",
       "what_is_it": {
-        "title": "Mi is az az EELISA?",
-        "description": "Az EELISA (European Engineering Learning Innovation and Science Alliance) egy kilenc európai egyetemet összefogó szövetség, amelyben mérnöki, műszaki és szélesebb képzési profilú intézmények vesznek részt nyolc országból. A kezdeményezés célja, hogy közösen újragondolja, mit jelent ma európai mérnöknek lenni – olyan szakembert képezve, aki nemcsak technikai tudásával, hanem társadalmi felelősségvállalásával és széles látókörével is hozzájárul a jövő alakításához. Az EELISA a mérnöki, a tudományos és a humán területek összekapcsolásával egy befogadóbb, fenntarthatóbb és digitálisabb Európa megteremtésén dolgozik."
+        "title": "Mi is az az EELISA?"
       },
       "partners": {
-        "title": "Partneregyetemek:",
-        "items": [
-          "Universidad Politécnica de Madrid (UPM)",
-          "École des Ponts ParisTech (ÉPP)",
-          "Friedrich Alexander Universität Erlangen Nürnberg (FAU)",
-          "Istanbul Technical University (ITU)",
-          "Scuola Normale Superiore di Pisa (SNS)",
-          "Sant'Anna School of Advanced Studies (SSSA)",
-          "University Politechnica of Bucharest (UPB)",
-          "Paris Sciences et Lettres (PSL)",
-          "ZHAW Zürcher Hochschule für Angewandte Wissenschaften (ZHAW)"
-        ]
+        "title": "Partneregyetemek"
       },
       "how_to_apply": {
         "title": "Hogyan tudsz jelentkezni?",
         "steps": [
           {
-            "description": "Találj egy számodra szimpatikus programot és ellenőrizd le, hogy jogosult vagy-e az ösztöndíjra! Linkek az aktuális programlehetőségekhez:",
+            "description": "Találj egy számodra szimpatikus programot és ellenőrizd le, hogy jogosult vagy-e az ösztöndíjra!",
+            "links_title": "Linkek az aktuális programlehetőségekhez:",
             "links": [
               {
                 "label": "EELISA News & Events",
@@ -37,17 +26,17 @@
             ]
           },
           {
-            "description": "Várj a jelentkezésed visszajelzésére!",
-            "links": []
-          },
-          {
             "description": "Add le a BME EELISA ösztöndíjat itt!",
             "links": [
               {
                 "label": "Jelentkezés a BME EELISA ösztöndíjra",
-                "url": "https://regisztracio.bme.hu/eelisa-activity-hallgatoi-osztondij-jelentkezes-2025-osz"
+                "url": "https://regisztracio.bme.hu"
               }
             ]
+          },
+          {
+            "description": "Várj a jelentkezésed visszajelzésére!",
+            "links": []
           },
           {
             "description": "Élvezd az utazást!",
@@ -55,15 +44,10 @@
           }
         ]
       },
-      "current_opportunities": {
-        "title": "Aktuális programlehetőségek",
-        "link": "https://eelisa.eu/news-events/"
-      },
-      "call_for_applications": {
-        "title": "A pályázati felhívás itt érhető el!",
-        "link": "https://eelisa.bme.hu/wp-content/uploads/2025/10/Act-hallg-oszt-paly-2025-szeptember.pdf"
-      },
-      "contact": "Ha van bármilyen kérdésed keress minket bátran az international@bmeehk.hu vagy az eelisa@bme.hu email címen!"
+      "sidebar": {
+        "links_title": "Aktuális",
+        "contacts_title": "Elérhetőségek"
+      }
     }
   }
 }

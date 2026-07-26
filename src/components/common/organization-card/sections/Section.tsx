@@ -6,24 +6,16 @@ type SectionProps = Readonly<{
   title: string;
   children: React.ReactNode;
   className?: string;
-  bordered?: boolean;
 }>;
 
 export function Section({
   title,
   children,
   className,
-  bordered = true,
 }: SectionProps) {
   return (
-    <section
-      className={cn(
-        "space-y-4",
-        bordered && "border-t border-border pt-6 md:pt-7",
-        className,
-      )}
-    >
-      <h3 className="text-xs font-bold uppercase tracking-normal text-ehk-dark-red">
+    <section className={cn("space-y-2", className)}>
+      <h3 className="font-open-sans text-sm font-bold uppercase leading-[1.6] tracking-normal text-[#9a9a9a]">
         {title}
       </h3>
       {children}

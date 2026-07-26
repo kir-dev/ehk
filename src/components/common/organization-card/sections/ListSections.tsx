@@ -13,7 +13,7 @@ export function InlineListSection({
 
   return (
     <Section title={title}>
-      <ul className="flex flex-col gap-2 text-sm font-semibold text-foreground sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-0">
+      <ul className="flex flex-col gap-2 font-open-sans text-sm font-normal leading-[1.6] text-black sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-0">
         {items.map((item, index) => (
           <li
             key={`${item}-${index}`}
@@ -44,7 +44,7 @@ export function DepartmentsSection({
         {departments.map((department) => (
           <li
             key={department}
-            className="rounded-full border border-ehk-light-red/20 bg-ehk-light-red/5 px-3.5 py-1.5 text-sm font-semibold text-foreground"
+            className="rounded-full border border-[#e9e2d6] bg-[#f9f4f0] px-3.5 py-1.5 font-open-sans text-sm font-semibold text-black"
           >
             {department}
           </li>

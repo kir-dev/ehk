@@ -31,7 +31,7 @@ export function ContactsSection({
               rel="noopener noreferrer"
               aria-label={socialName}
               title={socialName}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-md text-foreground transition-colors hover:bg-ehk-light-red/5 hover:text-ehk-dark-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ehk-dark-red"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-ehk-light-red text-white transition-colors hover:bg-ehk-dark-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ehk-dark-red"
             >
               {getSocialIcon(link.label, "h-5 w-5")}
             </a>

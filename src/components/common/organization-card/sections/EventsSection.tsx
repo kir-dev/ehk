@@ -7,10 +7,12 @@ import { Section } from "./Section";
 
 function EventCard({ event }: Readonly<{ event: OrganizationEvent }>) {
   return (
-    <div className="h-full rounded-lg border border-border bg-muted/35 p-4 transition-colors hover:border-ehk-light-red/40 hover:bg-white">
-      <h4 className="font-semibold text-foreground">{event.title}</h4>
+    <div className="h-full rounded-2xl border border-border bg-[#f9f4f0] px-6 py-4 transition-colors hover:border-ehk-light-red/40 hover:bg-white">
+      <h4 className="font-playfair text-base font-semibold leading-[1.4] text-black">
+        {event.title}
+      </h4>
       {event.description && (
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        <p className="mt-2 font-open-sans text-xs leading-[1.5] text-black">
           {parseFormattedText(event.description)}
         </p>
       )}
@@ -47,7 +49,7 @@ export function EventsSection({
 
   return (
     <Section title={title}>
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="flex flex-wrap gap-4">
         {events.map((event) =>
           event.href ? (
             <a
@@ -55,12 +57,12 @@ export function EventsSection({
               href={event.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block h-full"
+              className="block h-full max-w-full"
             >
               <EventCard event={event} />
             </a>
           ) : (
-            <div key={event.title}>
+            <div key={event.title} className="max-w-full">
               <EventCard event={event} />
             </div>
           ),

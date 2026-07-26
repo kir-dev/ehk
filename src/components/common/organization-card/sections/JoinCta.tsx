@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Users } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export function JoinCta({
   href,
@@ -13,17 +13,16 @@ export function JoinCta({
   }
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex items-center justify-between gap-4 bg-ehk-dark-red px-5 py-4 text-white transition-colors hover:bg-ehk-light-red sm:px-7 md:px-8"
-    >
-      <span className="inline-flex items-center gap-2 text-sm font-semibold sm:text-base">
-        <Users className="h-4 w-4" />
+    <footer className="flex justify-end border-t border-border bg-[#fffefc] p-4">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex items-center gap-2 rounded-2xl border border-border bg-ehk-dark-red px-4 py-2 font-open-sans text-sm font-semibold leading-[1.5] text-white transition-colors hover:bg-ehk-light-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ehk-dark-red"
+      >
         {children}
-      </span>
-      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-    </a>
+        <ExternalLink className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      </a>
+    </footer>
   );
 }

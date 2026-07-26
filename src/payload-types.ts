@@ -85,6 +85,7 @@ export interface Config {
     help: Help;
     'payout-periods': PayoutPeriod;
     'university-pages': UniversityPage;
+    'specialized-colleges': SpecializedCollege;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -110,6 +111,7 @@ export interface Config {
     help: HelpSelect<false> | HelpSelect<true>;
     'payout-periods': PayoutPeriodsSelect<false> | PayoutPeriodsSelect<true>;
     'university-pages': UniversityPagesSelect<false> | UniversityPagesSelect<true>;
+    'specialized-colleges': SpecializedCollegesSelect<false> | SpecializedCollegesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -973,6 +975,121 @@ export interface UniversityPage {
   createdAt: string;
 }
 /**
+ * A Közélet / Szakkollégiumok oldalon megjelenő szervezetek kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "specialized-colleges".
+ */
+export interface SpecializedCollege {
+  id: number;
+  name: string;
+  stats?: {
+    foundedYear?: number | null;
+    membersCount?: string | null;
+    faculties?: string | null;
+  };
+  presentation_hu: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  presentation_en: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  events?:
+    | {
+        eventName_hu: string;
+        eventName_en: string;
+        frequency_hu?: string | null;
+        frequency_en?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  activities?:
+    | {
+        text_hu: string;
+        text_en: string;
+        id?: string | null;
+      }[]
+    | null;
+  departments?:
+    | {
+        text_hu: string;
+        text_en: string;
+        id?: string | null;
+      }[]
+    | null;
+  targetAudience_hu?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  targetAudience_en?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  contacts?: {
+    websiteUrl?: string | null;
+    facebookUrl?: string | null;
+    instagramUrl?: string | null;
+    linkedinUrl?: string | null;
+    youtubeUrl?: string | null;
+  };
+  gallery?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  joinUrl?: string | null;
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -1067,6 +1184,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'university-pages';
         value: number | UniversityPage;
+      } | null)
+    | ({
+        relationTo: 'specialized-colleges';
+        value: number | SpecializedCollege;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1513,6 +1634,66 @@ export interface UniversityPagesSelect<T extends boolean = true> {
   title_hu?: T;
   title_en?: T;
   url?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "specialized-colleges_select".
+ */
+export interface SpecializedCollegesSelect<T extends boolean = true> {
+  name?: T;
+  stats?:
+    | T
+    | {
+        foundedYear?: T;
+        membersCount?: T;
+        faculties?: T;
+      };
+  presentation_hu?: T;
+  presentation_en?: T;
+  events?:
+    | T
+    | {
+        eventName_hu?: T;
+        eventName_en?: T;
+        frequency_hu?: T;
+        frequency_en?: T;
+        id?: T;
+      };
+  activities?:
+    | T
+    | {
+        text_hu?: T;
+        text_en?: T;
+        id?: T;
+      };
+  departments?:
+    | T
+    | {
+        text_hu?: T;
+        text_en?: T;
+        id?: T;
+      };
+  targetAudience_hu?: T;
+  targetAudience_en?: T;
+  contacts?:
+    | T
+    | {
+        websiteUrl?: T;
+        facebookUrl?: T;
+        instagramUrl?: T;
+        linkedinUrl?: T;
+        youtubeUrl?: T;
+      };
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  joinUrl?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

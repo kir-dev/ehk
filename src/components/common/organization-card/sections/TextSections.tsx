@@ -14,8 +14,8 @@ export function PresentationSection({
   }
 
   return (
-    <Section title={title} bordered={false}>
-      <div className="richtext text-sm leading-7 text-foreground/85 sm:text-base">
+    <Section title={title}>
+      <div className="richtext font-open-sans text-sm leading-[1.6] text-black">
         {renderTextContent(content)}
       </div>
     </Section>
@@ -35,7 +35,7 @@ export function RichTextSection({
 
   return (
     <Section title={title}>
-      <div className="richtext text-sm leading-7 text-foreground/85 sm:text-base">
+      <div className="richtext font-open-sans text-sm leading-[1.6] text-black">
         {renderTextContent(content)}
       </div>
     </Section>

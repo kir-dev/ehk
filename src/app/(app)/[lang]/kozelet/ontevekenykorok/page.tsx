@@ -1,83 +1,38 @@
-import {
-  OrganizationCard,
-  type OrganizationCardProps,
-} from "@/components/common/OrganizationCard";
+export const dynamic = "force-dynamic";
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
-import { Locale } from "@/i18n-config";
+import { i18n, type Locale } from "@/i18n-config";
+import { getStudentClubs } from "@/lib/payload-cms";
+import { notFound } from "next/navigation";
 
-type Organization = {
-  id: string;
-  title: string;
-  description: string[];
-  social_title: string;
-  social_links: { label: string; url: string }[];
-  images?: string[];
-  stats?: OrganizationCardProps["stats"];
-  events?: OrganizationCardProps["events"];
-  activities?: OrganizationCardProps["activities"];
-  departments?: OrganizationCardProps["departments"];
-  target_audience?: OrganizationCardProps["targetAudience"];
-  targetAudience?: OrganizationCardProps["targetAudience"];
-  join_url?: string;
-  joinUrl?: string;
-  join_text?: string;
-  joinText?: string;
-};
+import { StudentClubCard } from "./StudentClubCard";
 
-function getContactLabel(label: string) {
-  return label.replace(/:$/, "");
-}
-
-function getOrganizationCardProps(
-  organization: Organization,
-  locale: Locale,
-): OrganizationCardProps {
-  return {
-    name: organization.title,
-    stats: organization.stats,
-    presentation: organization.description,
-    events: organization.events,
-    activities: organization.activities,
-    departments: organization.departments,
-    targetAudience:
-      organization.targetAudience ?? organization.target_audience,
-    socialLinks: organization.social_links,
-    galleryImages: organization.images,
-    imageBasePath: "/ontevekenykorok",
-    joinUrl: organization.joinUrl ?? organization.join_url,
-    joinText: organization.joinText ?? organization.join_text,
-    labels: { contacts: getContactLabel(organization.social_title) },
-    locale,
-  };
-}
-
-export default async function OntevekenyKorokPage({
+export default async function StudentClubsPage({
   params,
-}: {
-  params: Promise<{ lang: Locale }>;
-}) {
+}: Readonly<{ params: Promise<{ lang: Locale }> }>) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang, "ontevekeny_korok");
-  const data = dictionary.ontevekeny_korok;
+  const locale = i18n.locales.includes(lang) ? lang : i18n.defaultLocale;
+  const [dictionary, clubs] = await Promise.all([
+    getDictionary(locale, "ontevekeny_korok"),
+    getStudentClubs(),
+  ]);
+  const content = dictionary.ontevekeny_korok;
 
-  if (!data) {
-    return null;
+  if (!content) {
+    notFound();
   }
 
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-2 py-8 md:px-4">
-        <PageHeader title={data.title} />
+    <div className="min-h-screen bg-[#f9f4f0]">
+      <div className="mx-auto w-full max-w-[1400px] px-4 py-8 md:px-8">
+        <PageHeader title={content.title} subtitle={content.subtitle} />
 
-        <div className="space-y-12">
-          {(data.korok as Organization[]).map((kor) => (
-            <OrganizationCard
-              key={kor.id}
-              {...getOrganizationCardProps(kor, lang)}
-            />
+        <main className="space-y-4 rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8">
+          {clubs.map((club) => (
+            <StudentClubCard key={club.id} club={club} locale={locale} />
           ))}
-        </div>
+        </main>
       </div>
     </div>
   );

@@ -52,6 +52,7 @@ export type OrganizationCardProps = {
   galleryImages?: readonly OrganizationGalleryImage[];
   imageBasePath?: string;
   joinUrl?: string;
+  joinPrompt?: TextContent;
   joinText?: string;
   labels?: Partial<OrganizationCardLabels>;
   locale?: Locale;

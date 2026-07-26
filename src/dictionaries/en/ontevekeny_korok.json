@@ -1,6 +1,7 @@
 {
   "ontevekeny_korok": {
-    "title": "Student Clubs Introduction",
+    "title": "Student Clubs",
+    "subtitle": "Discover BME's diverse student communities and find the club where your interests can become shared experiences and lasting value.",
     "korok": [
       {
         "id": "bme_aerospace",

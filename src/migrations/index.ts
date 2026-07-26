@@ -31,6 +31,7 @@ import * as migration_20260703_140815_dormitories_collection from './20260703_14
 import * as migration_20260703_143300_extend_dormitories_details from './20260703_143300_extend_dormitories_details';
 import * as migration_20260726_182500_eelisa_page from './20260726_182500_eelisa_page';
 import * as migration_20260726_193000_specialized_colleges_collection from './20260726_193000_specialized_colleges_collection';
+import * as migration_20260726_203000_competitive_teams_collection from './20260726_203000_competitive_teams_collection';
 
 export const migrations = [
   {
@@ -197,5 +198,10 @@ export const migrations = [
     up: migration_20260726_193000_specialized_colleges_collection.up,
     down: migration_20260726_193000_specialized_colleges_collection.down,
     name: '20260726_193000_specialized_colleges_collection',
+  },
+  {
+    up: migration_20260726_203000_competitive_teams_collection.up,
+    down: migration_20260726_203000_competitive_teams_collection.down,
+    name: '20260726_203000_competitive_teams_collection',
   },
 ];

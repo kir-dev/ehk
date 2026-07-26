@@ -122,10 +122,12 @@ export interface Config {
   globals: {
     'academic-scholarship-faq': AcademicScholarshipFaq;
     'social-scholarships-faq': SocialScholarshipsFaq;
+    'eelisa-page': EelisaPage;
   };
   globalsSelect: {
     'academic-scholarship-faq': AcademicScholarshipFaqSelect<false> | AcademicScholarshipFaqSelect<true>;
     'social-scholarships-faq': SocialScholarshipsFaqSelect<false> | SocialScholarshipsFaqSelect<true>;
+    'eelisa-page': EelisaPageSelect<false> | EelisaPageSelect<true>;
   };
   locale: null;
   widgets: {
@@ -1693,6 +1695,69 @@ export interface SocialScholarshipsFaq {
   createdAt?: string | null;
 }
 /**
+ * Az EELISA oldal leírása, partneregyetemei, fontos linkjei és elérhetőségei.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "eelisa-page".
+ */
+export interface EelisaPage {
+  id: number;
+  description_hu: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  description_en: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  partnerUniversities?:
+    | {
+        name: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  sidebarLinks?:
+    | {
+        label_hu: string;
+        label_en: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  sidebarContacts?:
+    | {
+        label: string;
+        email: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "academic-scholarship-faq_select".
  */
@@ -1735,6 +1800,39 @@ export interface SocialScholarshipsFaqSelect<T extends boolean = true> {
         description_hu?: T;
         description_en?: T;
         url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "eelisa-page_select".
+ */
+export interface EelisaPageSelect<T extends boolean = true> {
+  description_hu?: T;
+  description_en?: T;
+  partnerUniversities?:
+    | T
+    | {
+        name?: T;
+        url?: T;
+        id?: T;
+      };
+  sidebarLinks?:
+    | T
+    | {
+        label_hu?: T;
+        label_en?: T;
+        url?: T;
+        id?: T;
+      };
+  sidebarContacts?:
+    | T
+    | {
+        label?: T;
+        email?: T;
         id?: T;
       };
   updatedAt?: T;

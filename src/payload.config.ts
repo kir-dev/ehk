@@ -28,6 +28,7 @@ import { PayoutPeriods } from "./collections/PayoutPeriods";
 import { Users } from "./collections/Users";
 import { UniversityPages } from "./collections/UniversityPages";
 import { AcademicScholarshipFAQ } from "./globals/AcademicScholarshipFAQ";
+import { EelisaPage } from "./globals/EelisaPage";
 import { SocialScholarshipsFAQ } from "./globals/SocialScholarshipsFAQ";
 
 const filename = fileURLToPath(import.meta.url);
@@ -64,7 +65,7 @@ export default buildConfig({
     PayoutPeriods,
     UniversityPages,
   ],
-  globals: [AcademicScholarshipFAQ, SocialScholarshipsFAQ],
+  globals: [AcademicScholarshipFAQ, SocialScholarshipsFAQ, EelisaPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

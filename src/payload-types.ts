@@ -87,6 +87,7 @@ export interface Config {
     'university-pages': UniversityPage;
     'specialized-colleges': SpecializedCollege;
     'competitive-teams': CompetitiveTeam;
+    'student-clubs': StudentClub;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -114,6 +115,7 @@ export interface Config {
     'university-pages': UniversityPagesSelect<false> | UniversityPagesSelect<true>;
     'specialized-colleges': SpecializedCollegesSelect<false> | SpecializedCollegesSelect<true>;
     'competitive-teams': CompetitiveTeamsSelect<false> | CompetitiveTeamsSelect<true>;
+    'student-clubs': StudentClubsSelect<false> | StudentClubsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -1207,6 +1209,103 @@ export interface CompetitiveTeam {
   createdAt: string;
 }
 /**
+ * A Közélet / Öntevékeny körök oldalon megjelenő közösségek kezelése.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "student-clubs".
+ */
+export interface StudentClub {
+  id: number;
+  name: string;
+  presentation_hu: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  presentation_en: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  activities?:
+    | {
+        text_hu: string;
+        text_en: string;
+        id?: string | null;
+      }[]
+    | null;
+  targetAudience_hu?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  targetAudience_en?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  contacts?: {
+    websiteUrl?: string | null;
+    facebookUrl?: string | null;
+    instagramUrl?: string | null;
+    linkedinUrl?: string | null;
+    youtubeUrl?: string | null;
+    email?: string | null;
+  };
+  gallery?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  joinText_hu?: string | null;
+  joinText_en?: string | null;
+  joinUrl?: string | null;
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -1309,6 +1408,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'competitive-teams';
         value: number | CompetitiveTeam;
+      } | null)
+    | ({
+        relationTo: 'student-clubs';
+        value: number | StudentClub;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1874,6 +1977,46 @@ export interface CompetitiveTeamsSelect<T extends boolean = true> {
         image?: T;
         id?: T;
       };
+  joinUrl?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "student-clubs_select".
+ */
+export interface StudentClubsSelect<T extends boolean = true> {
+  name?: T;
+  presentation_hu?: T;
+  presentation_en?: T;
+  activities?:
+    | T
+    | {
+        text_hu?: T;
+        text_en?: T;
+        id?: T;
+      };
+  targetAudience_hu?: T;
+  targetAudience_en?: T;
+  contacts?:
+    | T
+    | {
+        websiteUrl?: T;
+        facebookUrl?: T;
+        instagramUrl?: T;
+        linkedinUrl?: T;
+        youtubeUrl?: T;
+        email?: T;
+      };
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  joinText_hu?: T;
+  joinText_en?: T;
   joinUrl?: T;
   order?: T;
   updatedAt?: T;

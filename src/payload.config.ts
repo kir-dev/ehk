@@ -22,6 +22,7 @@ import { Regulations } from "@/collections/Regulations";
 import { Reminders } from "@/collections/Reminders";
 import { Representatives } from "@/collections/Representatives";
 import { SpecializedColleges } from "@/collections/SpecializedColleges";
+import { StudentClubs } from "@/collections/StudentClubs";
 import { en } from "@payloadcms/translations/languages/en";
 import { hu } from "@payloadcms/translations/languages/hu";
 import { Help } from "./collections/Help";
@@ -68,6 +69,7 @@ export default buildConfig({
     UniversityPages,
     SpecializedColleges,
     CompetitiveTeams,
+    StudentClubs,
   ],
   globals: [AcademicScholarshipFAQ, SocialScholarshipsFAQ, EelisaPage],
   editor: lexicalEditor(),

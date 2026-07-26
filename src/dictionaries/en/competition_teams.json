@@ -1,6 +1,7 @@
 {
   "competition_teams": {
-    "title": "Competitive Teams Introduction",
+    "title": "Competitive Teams",
+    "subtitle": "Meet BME's student competition teams, where academic knowledge becomes hands-on experience through real engineering challenges.",
     "mvk": {
       "title": "MVK",
       "description": [

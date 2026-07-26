@@ -1,6 +1,7 @@
 {
   "competition_teams": {
-    "title": "Versenycsapatok bemutatkozó",
+    "title": "Versenycsapatok",
+    "subtitle": "Ismerd meg a BME hallgatói versenycsapatait, ahol az elméleti tudás valódi mérnöki kihívásokban válik gyakorlattá.",
     "mvk": {
       "title": "MVK",
       "description": [

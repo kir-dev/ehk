@@ -80,7 +80,7 @@ export function PageHeader({
         )}
 
         {/* Title */}
-        <h1 className="font-playfair font-bold text-3xl md:text-[32px] leading-tight tracking-normal text-white uppercase break-words w-full">
+        <h1 className="font-playfair font-bold text-3xl md:text-[32px] leading-tight tracking-normal text-white break-words w-full">
           {title}
         </h1>
 

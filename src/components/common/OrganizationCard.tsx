@@ -50,13 +50,13 @@ export function OrganizationCard({
   return (
     <article
       className={cn(
-        "overflow-hidden rounded-lg border border-border bg-white shadow-sm",
+        "overflow-hidden rounded-2xl border border-border bg-[#fffefc]",
         className,
       )}
     >
       <OrganizationCardHeader name={name} stats={stats} />
 
-      <div className="space-y-7 px-5 pb-7 sm:px-7 md:px-8 md:pb-8">
+      <div className="space-y-4 p-4">
         <PresentationSection
           title={sectionLabels.presentation}
           content={presentation}
@@ -84,6 +84,7 @@ export function OrganizationCard({
           images={galleryImages}
           imageBasePath={imageBasePath}
           organizationName={name}
+          locale={locale}
         />
       </div>
 

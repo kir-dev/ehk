@@ -34,6 +34,8 @@ import * as migration_20260726_193000_specialized_colleges_collection from './20
 import * as migration_20260726_203000_competitive_teams_collection from './20260726_203000_competitive_teams_collection';
 import * as migration_20260726_204000_fix_frt_url from './20260726_204000_fix_frt_url';
 import * as migration_20260726_210000_student_clubs_collection from './20260726_210000_student_clubs_collection';
+import * as migration_20260727_100000_repair_dormitories_schema from './20260727_100000_repair_dormitories_schema';
+import * as migration_20260727_104500_seed_dormitories from './20260727_104500_seed_dormitories';
 
 export const migrations = [
   {
@@ -215,5 +217,15 @@ export const migrations = [
     up: migration_20260726_210000_student_clubs_collection.up,
     down: migration_20260726_210000_student_clubs_collection.down,
     name: '20260726_210000_student_clubs_collection',
+  },
+  {
+    up: migration_20260727_100000_repair_dormitories_schema.up,
+    down: migration_20260727_100000_repair_dormitories_schema.down,
+    name: '20260727_100000_repair_dormitories_schema',
+  },
+  {
+    up: migration_20260727_104500_seed_dormitories.up,
+    down: migration_20260727_104500_seed_dormitories.down,
+    name: '20260727_104500_seed_dormitories',
   },
 ];

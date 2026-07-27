@@ -1,6 +1,7 @@
 {
   "ontevekeny_korok": {
-    "title": "Öntevékeny körök bemutatkozó",
+    "title": "Öntevékeny körök",
+    "subtitle": "Fedezd fel a BME sokszínű hallgatói közösségeit, és találd meg azt a kört, ahol az érdeklődésedből közös élmény és érték születik.",
     "korok": [
       {
         "id": "bme_aerospace",

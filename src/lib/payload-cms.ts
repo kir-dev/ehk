@@ -15,6 +15,7 @@ import {
     Reminder,
     Representative,
     SpecializedCollege,
+    StudentClub,
     SocialScholarshipsFaq
 } from "@/payload-types";
 import config from "@payload-config";
@@ -253,6 +254,18 @@ export async function getCompetitiveTeams(): Promise<CompetitiveTeam[]> {
   });
 
   return teams.docs as CompetitiveTeam[];
+}
+
+export async function getStudentClubs(): Promise<StudentClub[]> {
+  const payload = await getPayload({ config });
+  const clubs = await payload.find({
+    collection: "student-clubs",
+    limit: 1000,
+    sort: "order",
+    depth: 1,
+  });
+
+  return clubs.docs as StudentClub[];
 }
 
 export async function getEhkEvents() {

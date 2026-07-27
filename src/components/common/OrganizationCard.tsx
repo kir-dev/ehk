@@ -35,6 +35,7 @@ export function OrganizationCard({
   galleryImages,
   imageBasePath = "",
   joinUrl,
+  joinPrompt,
   joinText,
   labels,
   locale = "hu",
@@ -88,7 +89,9 @@ export function OrganizationCard({
         />
       </div>
 
-      <JoinCta href={joinUrl}>{joinText ?? sectionLabels.join}</JoinCta>
+      <JoinCta href={joinUrl} prompt={joinPrompt}>
+        {joinText ?? sectionLabels.join}
+      </JoinCta>
     </article>
   );
 }

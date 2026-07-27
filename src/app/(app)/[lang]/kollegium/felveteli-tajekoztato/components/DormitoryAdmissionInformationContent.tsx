@@ -1,93 +1,60 @@
-"use client";
+import Link from "next/link";
 
-import {PostBlock} from "@/components/common/PageBlock";
-import  DormitoryCardsComtainer  from "./DormitoryCardsContainer";
-import  StudentUnionCardsComtainer  from "./StudentUnionCardsContainer";
+import type { Locale } from "@/i18n-config";
 
-export interface DormitoryAdmissionInformationContent {
-    admission_information: {
-        title: string,
-        capacity: string,
-        capacity_p1: string,
-        capacity_p2: string,
-        application: string,
-        application_p1: string,
-        application_p2: string,
-        application_p3: string,
-        contacts: string,
-        contacts_p1: string,
-        contacts_p2: string,
-        contacts_p3: string,
-        dormitory: string
-    },
-    faculties: {
-        ÉMK: string,
-        GPK: string,
-        ÉPK: string,
-        VBK: string,
-        VIK: string,
-        GTK: string,
-        TTK: string,
-        KJK: string
-    }
+import type { AdmissionInformation } from "../admissionInformation.types";
 
+interface DormitoryAdmissionInformationContentProps {
+  content: AdmissionInformation;
+  locale: Locale;
 }
 
+const inlineLinkClassName =
+  "font-semibold text-black underline decoration-1 underline-offset-2 transition-colors hover:text-ehk-dark-red";
 
-export default function DormitoryAdmissionInformationContent({ content }: Readonly<{ content: DormitoryAdmissionInformationContent }>) {
-    const admission_information = content.admission_information;
+export default function DormitoryAdmissionInformationContent({
+  content,
+  locale,
+}: Readonly<DormitoryAdmissionInformationContentProps>) {
   return (
-    <div className="flex flex-col gap-4 md:gap-6 lg:px-4 px-2 py-8">
-        <PostBlock>                
-            <h3 className="font-bold text-xl leading-tight text-gray-900">
-                {admission_information.capacity}
-            </h3>
-            <p className="text-gray-700 text-lg richtext text-justify">
-                {admission_information.capacity_p1}
-            </p>
-            <div>
-                <DormitoryCardsComtainer dormitory={admission_information.dormitory} linkOrRoute="link"/>
-            </div>
-            <p className="text-gray-700 text-lg richtext text-justify">
-                {admission_information.capacity_p2}
-            </p>
-        </PostBlock>
-        <PostBlock>
-            <h3 className="font-bold text-xl leading-tight text-gray-900">
-                {admission_information.application}
-            </h3>
-            <p className="text-gray-700 text-lg richtext text-justify">
-                {admission_information.application_p1}
-            </p>
-            <p className="text-gray-700 text-lg richtext text-justify">
-                {admission_information.application_p2}                
-                <a href="http://kefir.bme.hu" target="_blank"  rel="noopener noreferrer" className="font-bold text-lg leading-tight text-gray-900 hover:text-[#862633] transition-colors inline">
-                    KEFIR
-                </a>
-                {admission_information.application_p3}
-            </p>
-                
-        </PostBlock>
-        <PostBlock>    
-            <h3 className="font-bold text-xl leading-tight text-gray-900">
-                {admission_information.contacts}
-            </h3>
-            <p className="text-gray-700 text-lg richtext text-justify">
-                {admission_information.contacts_p1}
-            </p>
-            <div>
-                
-                <StudentUnionCardsComtainer content={content}/>
-            </div>
-            <p className="text-gray-700 text-lg richtext text-justify">
-                {admission_information.contacts_p2}
-                {<a href="mailto:info@bmeehk.hu" target="_blank"  rel="noopener noreferrer" className="font-bold text-lg leading-tight text-gray-900 hover:text-[#862633] transition-colors inline">
-                    info@bmeehk.hu
-                </a>}
-                {admission_information.contacts_p3}
-            </p>            
-      </PostBlock>
-    </div>
-    
-  )}
+    <div className="rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8 xl:min-h-[606px]">
+      <section className="flex flex-col gap-4 rounded-2xl border border-[#e9e2d6] p-4">
+        <h2 className="font-playfair text-base font-semibold leading-[1.4] text-black">
+          {content.application}
+        </h2>
 
+        <div className="h-px w-full bg-[#e9e2d6]" />
+
+        <div className="flex flex-col gap-2 font-open-sans text-sm leading-[1.6] text-black">
+          <p>{content.capacity_p2}</p>
+
+          <p>
+            {content.introduction_p1}
+            <Link
+              className={inlineLinkClassName}
+              href={`/${locale}/kollegium/kollegium-bemutato`}
+            >
+              {content.introduction_link}
+            </Link>
+            {content.introduction_p2}
+          </p>
+
+          <p>
+            {content.application_p2}
+            <a
+              className={inlineLinkClassName}
+              href="https://kefir.bme.hu/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              KEFIR
+            </a>
+            {content.application_p3}
+          </p>
+
+          <p>{content.application_p1}</p>
+        </div>
+      </section>
+    </div>
+  );
+}

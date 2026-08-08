@@ -16,7 +16,7 @@ export type Namespace =
   | 'competition_teams'
   | 'advanced_colleges'
   | 'clubs'
-  | 'international_general'
+  | 'international_getting_started'
   | 'international_education'
   | 'international_application'
   | 'international_dormitory'
@@ -40,7 +40,7 @@ export type DictionaryMap = {
   competition_teams: typeof import('./dictionaries/hu/competition_teams.json');
   advanced_colleges: typeof import('./dictionaries/hu/advanced_colleges.json');
   clubs: typeof import('./dictionaries/hu/clubs.json');
-  international_general: typeof import('./dictionaries/hu/international_general.json');
+  international_getting_started: typeof import('./dictionaries/hu/international_getting_started.json');
   international_education: typeof import('./dictionaries/hu/international_education.json');
   international_application: typeof import('./dictionaries/hu/international_application.json');
   international_dormitory: typeof import('./dictionaries/hu/international_dormitory.json');
@@ -72,7 +72,7 @@ const loaders: Record<Locale, { [K in Namespace]: () => Promise<DictionaryMap[K]
     competition_teams: () => load<'competition_teams'>(import('./dictionaries/hu/competition_teams.json')),
     advanced_colleges: () => load<'advanced_colleges'>(import('./dictionaries/hu/advanced_colleges.json')),
     clubs: () => load<'clubs'>(import('./dictionaries/hu/clubs.json')),
-    international_general: () => load<'international_general'>(import('./dictionaries/hu/international_general.json')),
+    international_getting_started: () => load<'international_getting_started'>(import('./dictionaries/hu/international_getting_started.json')),
     international_education: () => load<'international_education'>(import('./dictionaries/hu/international_education.json')),
     international_application: () => load<'international_application'>(import('./dictionaries/hu/international_application.json')),
     international_dormitory: () => load<'international_dormitory'>(import('./dictionaries/hu/international_dormitory.json')),
@@ -96,7 +96,7 @@ const loaders: Record<Locale, { [K in Namespace]: () => Promise<DictionaryMap[K]
     competition_teams: () => load<'competition_teams'>(import('./dictionaries/en/competition_teams.json')),
     advanced_colleges: () => load<'advanced_colleges'>(import('./dictionaries/en/advanced_colleges.json')),
     clubs: () => load<'clubs'>(import('./dictionaries/en/clubs.json')),
-    international_general: () => load<'international_general'>(import('./dictionaries/en/international_general.json')),
+    international_getting_started: () => load<'international_getting_started'>(import('./dictionaries/en/international_getting_started.json')),
     international_education: () => load<'international_education'>(import('./dictionaries/en/international_education.json')),
     international_application: () => load<'international_application'>(import('./dictionaries/en/international_application.json')),
     international_dormitory: () => load<'international_dormitory'>(import('./dictionaries/en/international_dormitory.json')),

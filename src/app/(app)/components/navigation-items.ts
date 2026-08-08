@@ -251,9 +251,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           targetBlank: false,
         },
         {
-          label: t("Általános információk", "General Information"),
-          subtitle: t("Hasznos tudnivalók a budapesti életről és tanulásról", "Useful information about living and studying in Budapest"),
-          href: link("/international/general-information"),
+          label: t("Kezdő lépések", "Getting Started"),
+          subtitle: t("Jelentkezés, beiratkozás és a Magyarországra költözés tudnivalói", "Application, enrollment, and moving to Hungary"),
+          href: link("/international/getting-started"),
           targetBlank: false,
         },
         {

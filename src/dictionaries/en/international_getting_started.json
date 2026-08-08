@@ -1,0 +1,135 @@
+{
+  "international": {
+    "getting_started": {
+      "title": "GETTING STARTED",
+      "important_links": "Important links",
+      "sidebar_links": [
+        { "label": "Neptun", "link": "neptun" },
+        { "label": "Academic Services Centre (KTH)", "link": "kth" },
+        { "label": "Department of International Relations", "link": "nki" }
+      ],
+      "sections": [
+        {
+          "title": "Application and admission",
+          "groups": [
+            {
+              "label": "Admission and Study Opportunities",
+              "items": [
+                {
+                  "text": "Bachelor's (BSc), Master's (MSc), and Doctoral (PhD) programs in English"
+                },
+                {
+                  "text": "Exchange programs (mobility programs — see our ",
+                  "link": "mobility",
+                  "link_label": "Mobility & Exchange page",
+                  "suffix": ")"
+                },
+                {
+                  "text": "Both scholarship-based and self-financed (tuition-paying) options"
+                }
+              ]
+            },
+            {
+              "label": "Application and Enrollment",
+              "items": [
+                {
+                  "text": "Applications are submitted online; for example, for the 2025/26 academic year, applications are accepted between April 1 and May 31."
+                },
+                {
+                  "text": "Detailed descriptions of the enrollment process and required documents can be found on the website of the Academic Services Centre (ASC/KTH)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Before the semester starts",
+          "groups": [
+            {
+              "label": "Neptun and Registration",
+              "items": [
+                {
+                  "text": "With your admission letter, you receive a 6-character unique identifier (your Neptun code) and an initial password. Through Neptun, you can enroll for the semester, register for subjects, view your personal timetable, and sign up for exams."
+                }
+              ],
+              "actions": [{ "label": "Neptun guides", "link": "neptun_guides" }]
+            },
+            {
+              "label": "Enrollment",
+              "items": [
+                {
+                  "text": "Upload the necessary documents to Neptun as described in the enrollment newsletter. This will be followed by an in-person registration, where your documents will be checked."
+                }
+              ],
+              "actions": [{ "label": "Newsletter", "link": "newsletter" }]
+            },
+            {
+              "label": "BME Directory (eduID) and O365",
+              "items": [
+                {
+                  "text": "Every student is automatically assigned a directory ID, which can be found on the directory administration page after logging in with your Neptun login credentials."
+                },
+                {
+                  "text": "On the same admin page, you can also request access to Office 365 (O365), which gives you: University Wi-Fi, Microsoft Teams, OneDrive and other O365 services."
+                },
+                {
+                  "emphasis": "To register:",
+                  "text": "log in to the BME Directory Administration Page with your Neptun login details, select \"Set up user account for Microsoft Office 365,\" choose your O365 username, tick \"Yes\" under \"Request O365 access,\" and save."
+                },
+                {
+                  "text": "Note: Microsoft has renamed O365 to M365, but most university pages still refer to it as O365."
+                }
+              ]
+            },
+            {
+              "label": "Moodle",
+              "items": [
+                {
+                  "text": "You can find courses in two ways: by browsing based on language, department, and course name, or from the left-hand navigation menu, where only your own registered courses are listed — making them quick and easy to access."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Moving to Hungary",
+          "groups": [
+            {
+              "label": "Getting to BME from the Airport",
+              "items": [
+                {
+                  "text": "Bus 100E runs every 10 minutes from Liszt Ferenc Airport. Take the bus to Kálvin tér. From there, take metro line 4 towards Kelenföld, or trams 47 or 49 to the stop \"Szent Gellért tér – Műegyetem.\" You can already see Building K from there."
+                },
+                {
+                  "text": "For buses 100E and 200E, a special airport ticket is required, which can be bought on the buses, at the airport, or in the BudapestGO app. Download the BudapestGO app to conveniently buy a pass."
+                }
+              ],
+              "actions": [{ "label": "BudapestGO app", "link": "budapest_go" }]
+            },
+            {
+              "label": "Residence Permit",
+              "text": "To stay and study in Hungary you are required to obtain a residence permit. It can take quite a long time, so you should start as early as possible.",
+              "actions": [
+                { "label": "More information", "link": "residence_permit" }
+              ]
+            },
+            {
+              "label": "TAJ Card / Private Health Insurance",
+              "text": "Scholarship holders (SH, SCYP, Diaspora) are entitled to free healthcare in Hungary once they have a TAJ card; fee-paying students can also obtain one, but only against a monthly contribution. Your TAJ number is also required to work legally in Hungary.",
+              "actions": [{ "label": "More information", "link": "taj_card" }]
+            },
+            {
+              "label": "Student ID Card",
+              "text": "Hungarian higher education students can get a free student ID card, which is required to prove your student status and is also needed to buy discounted public transport passes in Budapest.",
+              "actions": [{ "label": "More information", "link": "student_id" }]
+            },
+            {
+              "label": "Hungarian Bank Account",
+              "text": "Opening a Hungarian bank account is needed for receiving scholarships, paying tuition, and other transfers."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

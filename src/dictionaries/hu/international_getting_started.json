@@ -1,0 +1,135 @@
+{
+  "international": {
+    "getting_started": {
+      "title": "KEZDŐ LÉPÉSEK",
+      "important_links": "Fontos linkek",
+      "sidebar_links": [
+        { "label": "Neptun", "link": "neptun" },
+        { "label": "Központi Tanulmányi Hivatal (KTH)", "link": "kth" },
+        { "label": "Nemzetközi Kapcsolatok Igazgatósága", "link": "nki" }
+      ],
+      "sections": [
+        {
+          "title": "Jelentkezés és felvételi",
+          "groups": [
+            {
+              "label": "Felvételi és tanulmányi lehetőségek",
+              "items": [
+                {
+                  "text": "Alapképzési (BSc), mesterképzési (MSc) és doktori (PhD) programok angol nyelven"
+                },
+                {
+                  "text": "Csereprogramok (mobilitási programok – lásd a ",
+                  "link": "mobility",
+                  "link_label": "Mobilitási programok oldalt",
+                  "suffix": ")"
+                },
+                {
+                  "text": "Ösztöndíjas és önköltséges (tandíjfizetős) lehetőségek egyaránt"
+                }
+              ]
+            },
+            {
+              "label": "Jelentkezés és beiratkozás",
+              "items": [
+                {
+                  "text": "A jelentkezés online történik; a 2025/26-os tanévben például április 1. és május 31. között lehet jelentkezni."
+                },
+                {
+                  "text": "A beiratkozás menetéről és a szükséges dokumentumokról részletes leírás található a Központi Tanulmányi Hivatal (KTH) honlapján."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "A szemeszter kezdete előtt",
+          "groups": [
+            {
+              "label": "Neptun és regisztráció",
+              "items": [
+                {
+                  "text": "A felvételi értesítéssel együtt kapsz egy 6 karakteres egyedi azonosítót (a Neptun-kódodat) és egy kezdeti jelszót. A Neptunban tudsz beiratkozni a félévre, tárgyakat felvenni, megnézni az órarendedet és vizsgára jelentkezni."
+                }
+              ],
+              "actions": [{ "label": "Neptun útmutatók", "link": "neptun_guides" }]
+            },
+            {
+              "label": "Beiratkozás",
+              "items": [
+                {
+                  "text": "Töltsd fel a szükséges dokumentumokat a Neptunba a beiratkozási hírlevélben leírtak szerint. Ezt egy személyes regisztráció követi, ahol ellenőrzik a dokumentumaidat."
+                }
+              ],
+              "actions": [{ "label": "Hírlevél", "link": "newsletter" }]
+            },
+            {
+              "label": "BME Címtár (eduID) és O365",
+              "items": [
+                {
+                  "text": "Minden hallgató automatikusan kap egy címtári azonosítót, amelyet a címtár adminisztrációs oldalán találsz meg, miután bejelentkeztél a Neptun-belépési adataiddal."
+                },
+                {
+                  "text": "Ugyanezen az oldalon igényelhetsz hozzáférést az Office 365-höz (O365), amellyel eléred az egyetemi Wi-Fit, a Microsoft Teamst, a OneDrive-ot és a további O365-szolgáltatásokat."
+                },
+                {
+                  "emphasis": "A regisztrációhoz:",
+                  "text": "jelentkezz be a BME Címtár adminisztrációs oldalára a Neptun-belépési adataiddal, válaszd a „Microsoft Office 365 felhasználói fiók beállítása” menüpontot, add meg az O365-felhasználónevedet, jelöld be az „Igen” választ az „O365 hozzáférés igénylése” kérdésnél, majd mentsd el."
+                },
+                {
+                  "text": "Megjegyzés: a Microsoft az O365-öt M365-re nevezte át, de a legtöbb egyetemi oldal továbbra is O365-ként hivatkozik rá."
+                }
+              ]
+            },
+            {
+              "label": "Moodle",
+              "items": [
+                {
+                  "text": "A kurzusokat kétféleképpen találod meg: nyelv, tanszék és kurzusnév szerint böngészve, vagy a bal oldali navigációs menüből, ahol csak a saját felvett kurzusaid jelennek meg – így gyorsan és egyszerűen eléred őket."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Költözés Magyarországra",
+          "groups": [
+            {
+              "label": "Hogyan juss el a reptérről a BME-re",
+              "items": [
+                {
+                  "text": "A 100E busz 10 percenként indul a Liszt Ferenc repülőtérről. Utazz vele a Kálvin térig, onnan a 4-es metróval Kelenföld irányába, vagy a 47-es, illetve 49-es villamossal a „Szent Gellért tér – Műegyetem” megállóig. Innen már látod a K épületet."
+                },
+                {
+                  "text": "A 100E és 200E buszokra külön reptéri jegy szükséges, amelyet a buszon, a repülőtéren vagy a BudapestGO alkalmazásban tudsz megvásárolni. Töltsd le a BudapestGO appot, hogy kényelmesen bérletet vehess."
+                }
+              ],
+              "actions": [{ "label": "BudapestGO app", "link": "budapest_go" }]
+            },
+            {
+              "label": "Tartózkodási engedély",
+              "text": "A magyarországi tartózkodáshoz és tanuláshoz tartózkodási engedélyt kell szerezned. Az ügyintézés hosszú ideig tarthat, ezért érdemes minél korábban elkezdeni.",
+              "actions": [
+                { "label": "További információ", "link": "residence_permit" }
+              ]
+            },
+            {
+              "label": "TAJ-kártya / magán-egészségbiztosítás",
+              "text": "Az ösztöndíjas hallgatók (SH, SCYP, Diaspora) TAJ-kártyával ingyenes egészségügyi ellátásra jogosultak Magyarországon; az önköltséges hallgatók is igényelhetnek TAJ-kártyát, de csak havi hozzájárulás ellenében. A TAJ-számod a magyarországi legális munkavállaláshoz is szükséges.",
+              "actions": [{ "label": "További információ", "link": "taj_card" }]
+            },
+            {
+              "label": "Diákigazolvány",
+              "text": "A magyar felsőoktatásban tanulók ingyenes diákigazolványt igényelhetnek, amely a hallgatói jogviszony igazolásához, valamint a kedvezményes budapesti bérletek megvásárlásához szükséges.",
+              "actions": [{ "label": "További információ", "link": "student_id" }]
+            },
+            {
+              "label": "Magyar bankszámla",
+              "text": "Magyar bankszámla nyitása szükséges az ösztöndíjak fogadásához, a tandíj befizetéséhez és az egyéb átutalásokhoz."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

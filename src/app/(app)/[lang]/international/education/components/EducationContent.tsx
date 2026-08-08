@@ -1,9 +1,9 @@
+import { ContentBlocks } from "@/components/common/ContentBlocks";
 import { ExternalActionLink } from "@/components/common/ExternalActionLink";
 import { SectionCard } from "@/components/common/SectionCard";
 
 import { EDUCATION_LINKS } from "../education.constants";
 import type { EducationSection } from "../education.types";
-import { ContentBlocks } from "./ContentBlocks";
 
 interface EducationContentProps {
   sections: EducationSection[];

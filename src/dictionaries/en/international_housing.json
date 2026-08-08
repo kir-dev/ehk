@@ -1,0 +1,108 @@
+{
+  "international": {
+    "housing": {
+      "title": "HOUSING",
+      "important_links": "Important link",
+      "links": [{ "label": "KEFIR", "link": "kefir" }],
+      "faq": [
+        {
+          "id": "eligibility",
+          "question": "Who is eligible to apply?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Any student who establishes a student status with BME and registers for an active semester is eligible to apply for a dormitory place."
+            }
+          ]
+        },
+        {
+          "id": "dormitories",
+          "question": "Which dormitories can you apply to?",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "Óbudai Diák Hotel — for Stipendium Hungaricum and Diaspora scholarship holders"
+                },
+                {
+                  "text": "Martos Kollégium — for SCYP (Scholarship for Christian Young People) holders"
+                },
+                {
+                  "text": "BME dormitories — fee-paying students can apply for accommodation in 7 dormitories, each assigned to a different faculty"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "frequency",
+          "question": "How often do you need to apply?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dormitory places must be applied for each semester individually — a granted place is valid only for one semester. Applications are organized separately for the autumn and spring semesters, as well as for the summer period (July–August)."
+            }
+          ]
+        },
+        {
+          "id": "admission",
+          "question": "How is admission determined?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dormitory places are allocated based on a competitive application process."
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "First-year students (establishing their first student status at BME): ranking is based on both academic performance (admission score) and social circumstances."
+                },
+                {
+                  "text": "Upper-year students: ranking is based on academic performance, social circumstances, and community activities carried out for the benefit of university life."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "steps",
+          "question": "Steps to apply",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "text": "Submit your application through the Unified Dormitory Admission and Information System (KEFIR) at kefir.bme.hu. Log in using your Directory ID, which you can create with your Neptun code."
+                },
+                {
+                  "text": "Complete your profile on the KEFIR platform, then open the appropriate dormitory application form for the current autumn semester, and carefully fill in the required fields. Be mindful of the application deadline listed on the website."
+                },
+                {
+                  "text": "Applications can only be submitted during the specified period — late submissions will not be accepted. Only students who have successfully submitted their application will be considered for a dormitory place."
+                },
+                {
+                  "text": "By submitting the dormitory application, you officially express your request for accommodation."
+                },
+                { "text": "What happens next depends on your status:" }
+              ]
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "Stipendium Hungaricum / Diaspora scholarship holders → accommodated in the Óbuda Diák Hotel."
+                },
+                {
+                  "text": "Fee-paying students → applications are evaluated by the Dormitory Representative of the Students' Union."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

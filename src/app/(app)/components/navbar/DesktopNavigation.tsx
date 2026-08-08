@@ -12,10 +12,9 @@ import type { NavigationItem } from "./navbar.types"
 
 interface DesktopNavigationProps {
   items: NavigationItem[]
-  onNavigate: (href: string) => void
 }
 
-export function DesktopNavigation({ items, onNavigate }: DesktopNavigationProps) {
+export function DesktopNavigation({ items }: DesktopNavigationProps) {
   const [activeValue, setActiveValue] = useState<string>("")
   const [clickLockedValue, setClickLockedValue] = useState<string>("")
   const clickLockedRef = useRef<string>("")
@@ -43,13 +42,6 @@ export function DesktopNavigation({ items, onNavigate }: DesktopNavigationProps)
     }
   }
 
-  const handleNavigate = (href: string) => {
-    clickLockedRef.current = ""
-    setClickLockedValue("")
-    setActiveValue("")
-    onNavigate(href)
-  }
-
   const handleClose = () => {
     clickLockedRef.current = ""
     setClickLockedValue("")
@@ -69,7 +61,7 @@ export function DesktopNavigation({ items, onNavigate }: DesktopNavigationProps)
             <DesktopMenuItem
               key={item.title}
               item={item}
-              onNavigate={handleNavigate}
+              onNavigate={handleClose}
               onTriggerClick={handleTriggerClick}
               isClickLocked={clickLockedValue === item.title}
             />

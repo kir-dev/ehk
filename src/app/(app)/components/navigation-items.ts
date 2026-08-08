@@ -55,7 +55,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         {
           label: t("ESZB honlap", "ESZB website"),
           subtitle: t("Egyetemi Szociális Bizottság hivatalos oldala", "Official website of the University Social Committee"),
-          href: "https://ehk.bme.hu/eszb",
+          href: "http://ehk.bme.hu/eszb",
           targetBlank: true,
         },
         {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ExternalActionLink } from "@/components/common/ExternalActionLink";
 import type { Locale } from "@/i18n-config";
 
 import { GETTING_STARTED_LINKS } from "../gettingStarted.constants";
@@ -7,7 +8,6 @@ import type {
   GettingStartedGroup,
   GettingStartedListItem,
 } from "../gettingStarted.types";
-import { ExternalActionLink } from "./ExternalActionLink";
 
 interface InfoGroupProps {
   group: GettingStartedGroup;

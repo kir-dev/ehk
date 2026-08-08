@@ -1,6 +1,7 @@
+import { ExternalActionLink } from "@/components/common/ExternalActionLink";
+
 import { GETTING_STARTED_LINKS } from "../gettingStarted.constants";
 import type { GettingStartedAction } from "../gettingStarted.types";
-import { ExternalActionLink } from "./ExternalActionLink";
 
 interface ImportantLinksSidebarProps {
   title: string;

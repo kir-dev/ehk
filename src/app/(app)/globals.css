@@ -217,11 +217,17 @@
 .richtext blockquote {
   position: relative;
   margin: 1rem 0 0 0;
-  padding: 1rem 1.25rem;
-  border-left: 4px solid color-mix(in oklab, var(--ehk-dark-red) 30%, transparent);
-  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1rem;
+  border: 1px solid #e9e2d6;
+  border-radius: 1rem;
   background-color: #f9f4f0;
+  background-image: url("/quote-mark.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  background-size: 25.95px 19px;
   color: #3d3d3d;
+  font-size: 0.875rem;
+  line-height: 1.6;
   font-style: italic;
 }
 .richtext blockquote:first-child {

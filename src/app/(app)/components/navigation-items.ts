@@ -55,8 +55,8 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         {
           label: t("ESZB honlap", "ESZB website"),
           subtitle: t("Egyetemi Szociális Bizottság hivatalos oldala", "Official website of the University Social Committee"),
-          href: "#",
-          targetBlank: false,
+          href: "http://ehk.bme.hu/eszb",
+          targetBlank: true,
         },
         {
           label: t("EDK honlap", "EDK website"),
@@ -150,12 +150,6 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           href: "https://mueper.bme.hu",
           targetBlank: true,
         },
-        {
-          label: t("Esélyegyenlőség", "Equal opportunities"),
-          subtitle: t("Támogatások fogyatékkal élő vagy hátrányos helyzetű hallgatóknak", "Support for students with disabilities or disadvantages"),
-          href: "#",
-          targetBlank: false,
-        },
       ],
     },
     {
@@ -178,7 +172,7 @@ export function getNavigationItems(lang: string): NavigationItem[] {
         {
           label: t("Szabályzatok", "Regulations"),
           subtitle: t("Kollégiumi házirendek és működési szabályzatok", "Dormitory house rules and operating regulations"),
-          href: link("/kollegium-szabalyzatok"),
+          href: link("/kollegium/kollegium-szabalyzatok"),
           targetBlank: false,
         },
         {

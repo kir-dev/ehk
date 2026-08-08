@@ -55,7 +55,7 @@ export default function RepresentativesGridClient({
                     <span>{t("Vissza", "Back")}</span>
                 </button>
 
-                <label className="relative w-full sm:w-61">
+                <label className="relative w-full sm:w-72">
                     <span className="sr-only">{t('representatives.search_placeholder')}</span>
                     <Search className="pointer-events-none absolute left-3 top-1/2 h-3.25 w-3.25 -translate-y-1/2 text-[#6e6660]" />
                     <Input

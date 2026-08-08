@@ -17,7 +17,7 @@ export default async function PayoutInfoPage({
   const t = dictionary.payouts;
 
   return (
-    <div className="bg-[#f9f4f0] w-full">
+    <div className="min-h-screen bg-[#f9f4f0] w-full">
       <div className="container mx-auto px-4 py-8 md:px-8">
         {!payoutPeriod ? (
           <div className="flex flex-col">

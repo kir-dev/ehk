@@ -13,7 +13,6 @@ export default function Navbar() {
     lang,
     navigationItems,
     handleLangToggle,
-    handleNavigate,
     mobileMenuOpen,
     setMobileMenuOpen
   } = useNavbarLogic()
@@ -25,10 +24,7 @@ export default function Navbar() {
           <NavbarLogo lang={lang} />
           
           <div className="flex flex-1 items-center justify-end">
-            <DesktopNavigation 
-              items={navigationItems}
-              onNavigate={handleNavigate}
-            />
+            <DesktopNavigation items={navigationItems} />
             
             <div className={NAVBAR_STYLES.actions.container}>
               <LanguageToggle 

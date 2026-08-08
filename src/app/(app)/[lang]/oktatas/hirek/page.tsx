@@ -19,7 +19,7 @@ export default async function OktatasNewsPage({
 
   return (
     <LanguageProvider defaultLang={lang.toUpperCase() as Lang} dictionary={dictionary}>
-    <div className="bg-gray-50 min-h-screen flex flex-col">
+    <div className="bg-[#f9f4f0] min-h-screen flex flex-col">
       <main className="grow">
         <section className="px-4">
           <div className="max-w-7xl mx-auto">

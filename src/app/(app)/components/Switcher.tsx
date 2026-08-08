@@ -5,8 +5,6 @@ import { cn } from "@/lib/utils"
 
 type Props = {
   activeTab: "news" | "events"
-  newsCount: number
-  eventsCount: number
   newsTitle: string
   eventsTitle: string
   onTabChange: (tab: "news" | "events") => void
@@ -14,8 +12,6 @@ type Props = {
 
 export default function Switcher({
   activeTab,
-  newsCount,
-  eventsCount,
   newsTitle,
   eventsTitle,
   onTabChange,
@@ -46,7 +42,7 @@ export default function Switcher({
 
     window.addEventListener("resize", updateSlider)
     return () => window.removeEventListener("resize", updateSlider)
-  }, [activeTab, newsCount, eventsCount])
+  }, [activeTab, newsTitle, eventsTitle])
 
   // Track mount state to trigger transitions only after the initial paint
   useEffect(() => {
@@ -83,16 +79,6 @@ export default function Switcher({
         )}
       >
         <span className="text-sm">{newsTitle}</span>
-        <span
-          className={cn(
-            "rounded-full px-1.5 py-0.5 text-[10px] font-semibold min-w-5 text-center leading-none flex items-center justify-center transition-colors duration-300",
-            activeTab === "news"
-              ? "bg-white/20 text-white"
-              : "bg-[#e8e4e0]/60 text-[#3d3d3d]"
-          )}
-        >
-          {newsCount}
-        </span>
       </button>
 
       {/* Events Tab */}
@@ -108,16 +94,6 @@ export default function Switcher({
         )}
       >
         <span className="text-sm">{eventsTitle}</span>
-        <span
-          className={cn(
-            "rounded-full px-1.5 py-0.5 text-[10px] font-semibold min-w-5 text-center leading-none flex items-center justify-center transition-colors duration-300",
-            activeTab === "events"
-              ? "bg-white/20 text-white"
-              : "bg-[#e8e4e0]/60 text-[#3d3d3d]"
-          )}
-        >
-          {eventsCount}
-        </span>
       </button>
     </div>
   )

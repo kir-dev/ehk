@@ -31,15 +31,10 @@ export function useNavbarLogic(): NavbarLogicReturn {
     toggleLang()
   }, [lang, pathname, router, toggleLang])
   
-  const handleNavigate = useCallback((href: string) => {
-    router.push(href)
-  }, [router])
-  
   return {
     lang,
     navigationItems,
     handleLangToggle,
-    handleNavigate,
     mobileMenuOpen,
     setMobileMenuOpen
   }

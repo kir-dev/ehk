@@ -19,7 +19,6 @@ export interface NavbarLogicReturn {
   lang: LocaleUppercase
   navigationItems: NavigationItem[]
   handleLangToggle: () => void
-  handleNavigate: (href: string) => void
   mobileMenuOpen: boolean
   setMobileMenuOpen: (open: boolean) => void
 }

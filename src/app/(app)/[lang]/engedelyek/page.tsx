@@ -19,7 +19,7 @@ export default async function PermissionsPage({
 
   return (
     <LanguageProvider defaultLang={validLang.toUpperCase() as "HU" | "EN"} dictionary={dictionary}>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-[#f9f4f0]">
         <Suspense fallback={<LoadingPermissionsGrid />}>
           {/* Server component fetching and rendering (renders its own PageHeader) */}
           <PermissionsList />

@@ -1,9 +1,10 @@
 import { Accordion, AccordionEntry } from "@/components/common/Accordion";
 import { EmptyState } from "@/components/common/EmptyState";
+import { ImportantLinksSidebar } from "@/components/common/ImportantLinksSidebar";
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { i18n, Locale } from "@/i18n-config";
-import { getEhkScholarships } from "@/lib/payload-cms";
+import { getEhkScholarships, getSocialScholarshipsFAQ } from "@/lib/payload-cms";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +19,9 @@ export default async function EHKScholarshipPage({
   const isEn = validLang === "en";
   const dictionary = await getDictionary(validLang, "scholarships");
   const scholarships = await getEhkScholarships();
+  const { sidebarLinks } = await getSocialScholarshipsFAQ();
   const content = dictionary.scholarships.ehk;
+  const links = sidebarLinks ?? [];
 
   const entries: AccordionEntry[] = scholarships.map((item, index) => {
     const header = isEn
@@ -42,17 +45,29 @@ export default async function EHKScholarshipPage({
   return (
     <div className="min-h-screen bg-[#f9f4f0]">
       <div className="mx-auto w-full max-w-[1400px] px-4 py-8 md:px-8">
-        <PageHeader title={content.title} />
-        <section className="rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8">
-          {entries.length === 0 ? (
-            <EmptyState
-              title={content.empty_title}
-              description={content.empty_description}
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_343px] lg:items-start">
+          <main className="min-w-0">
+            <PageHeader title={content.title} />
+            <section className="rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8">
+              {entries.length === 0 ? (
+                <EmptyState
+                  title={content.empty_title}
+                  description={content.empty_description}
+                />
+              ) : (
+                <Accordion items={entries} />
+              )}
+            </section>
+          </main>
+
+          {links.length > 0 && (
+            <ImportantLinksSidebar
+              links={links}
+              isEn={isEn}
+              title={dictionary.scholarships.social.sidebar_title}
             />
-          ) : (
-            <Accordion items={entries} />
           )}
-        </section>
+        </div>
       </div>
     </div>
   );

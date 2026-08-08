@@ -14,7 +14,7 @@ export default async function DecisionsPage({
 
   return (
     <LanguageProvider defaultLang={lang.toUpperCase() as Lang} dictionary={dictionary}>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-[#f9f4f0]">
         <Suspense fallback={<LoadingDecisionsGrid />}>
           <DecisionsArchive />
         </Suspense>

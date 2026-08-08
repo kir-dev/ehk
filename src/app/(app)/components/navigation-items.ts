@@ -257,6 +257,12 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           targetBlank: false,
         },
         {
+          label: t("Ösztöndíjak", "Scholarships"),
+          subtitle: t("Egyetemi és kari ösztöndíjak, tanulmányi és szociális támogatás", "University and faculty scholarships, academic and social support"),
+          href: link("/international/scholarships"),
+          targetBlank: false,
+        },
+        {
           label: t("Kollégium", "Housing"),
           subtitle: t("Kollégiumi pályázás, jogosultság és a felvétel menete", "Dormitory application, eligibility, and the admission process"),
           href: link("/international/housing"),

@@ -25,11 +25,15 @@ export default async function HousingPage({
           </main>
 
           <LinksSidebar
-            links={content.links.map((link) => ({
-              href: HOUSING_LINKS[link.link],
-              label: link.label,
-            }))}
-            title={content.important_links}
+            groups={[
+              {
+                links: content.links.map((link) => ({
+                  href: HOUSING_LINKS[link.link],
+                  label: link.label,
+                })),
+                title: content.important_links,
+              },
+            ]}
           />
         </div>
       </div>

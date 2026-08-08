@@ -1,0 +1,90 @@
+{
+  "international": {
+    "scholarships": {
+      "title": "ÖSZTÖNDÍJAK",
+      "intro": "A legtöbb ösztöndíjra online, a MŰEPER (Műegyetemi Egységes Pályázati és Elbírálási Rendszer) felületén lehet pályázni. A feltételek karonként eltérhetnek – a részleteket az egyes ösztöndíjaknál találod.",
+      "important_links": "Fontos linkek",
+      "contact_title": "Kapcsolat",
+      "links": [
+        { "label": "MŰEPER", "link": "mueper" },
+        { "label": "Egyetemi Szociális Bizottság (ESZB)", "link": "eszb" }
+      ],
+      "contact_links": [
+        { "label": "palyazat@bmeehk.hu", "link": "grants_email" }
+      ],
+      "sections": [
+        {
+          "title": "Egyetemi szintű ösztöndíjak",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "emphasis": "Egyetemi BME Ösztöndíj",
+                  "text": "– Az adott félévben a legkiemelkedőbb szakmai és tudományos teljesítményt nyújtó hallgatókat díjazza. Aktív, nappali tagozatos alap-, mester- és osztatlan képzésben részt vevő hallgatók pályázhatnak kiemelkedő tanulmányi, szakmai és tudományos tevékenységgel."
+                },
+                {
+                  "emphasis": "Jó Tanuló, Jó Sportoló",
+                  "text": "– Azok pályázhatnak, akiknek az elmúlt két félévben legalább 3,00 volt az ösztöndíjindexük, vagy eredményt értek el elismert sportversenyeken (olimpia, világ- és Európa-bajnokság, UNIVERSIADE, MEFOB, országos és területi versenyek, és további megmérettetések)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Kari szintű ösztöndíjak",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A pályázati feltételek karonként eltérhetnek, a részletekért fordulj a kari hallgatói képviseletedhez."
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "emphasis": "Közéleti ösztöndíj",
+                  "text": "– Azoknak a hallgatóknak, akik a kari hallgatói képviselet munkáját segítő közéleti tevékenységet végeznek. (ÉMK, GPK, VBK, VIK, ÉPK, GTK)"
+                },
+                {
+                  "emphasis": "Közösségi ösztöndíj",
+                  "text": "– Az öntevékeny körökben, külsős bizottságokban vagy rendezvényszervezőként végzett kiemelkedő közösségi munkáért. (GPK, VBK, ÉPK, GTK, KJK, TTK)"
+                },
+                {
+                  "emphasis": "Hallgatók az oktatásért ösztöndíj",
+                  "text": "– Azoknak a hallgatóknak, akik a karukon korrepetálási tevékenységet végeznek. (VBK, ÉPK, VIK, GTK)"
+                },
+                {
+                  "emphasis": "Kari BME ösztöndíj",
+                  "text": "– Kiemelkedő kari szintű szakmai, tudományos, tanulmányi vagy nyelvi teljesítményért. (VBK, GPK, ÉPK, VIK, KJK, GTK)"
+                },
+                {
+                  "emphasis": "Sportösztöndíj",
+                  "text": "– Azoknak a hallgatóknak, akik a tanulmányaik mellett kiemelkedő sporteredményeket érnek el. (GPK, VIK)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Tanulmányi ösztöndíj",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Teljesítményalapú juttatás azoknak a hallgatóknak, akik az előző aktív félévben kiemelkedő tanulmányi eredményt értek el, a homogén hallgatói csoporton (HHCS) belüli ösztöndíjindex alapján. Az ösztöndíjat a kari hallgatói képviselet kezeli, az eredményeket a döntéstől számított 5 munkanapon belül teszi közzé."
+            }
+          ]
+        },
+        {
+          "title": "Rendszeres szociális ösztöndíj",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Államilag támogatott vagy állami ösztöndíjas, nappali tagozatos hallgatóknak, a szociális helyzet alapján. Ösztöndíjanként csak egy pályázat adható be hallgatónként. A pályázat a MŰEPER-en keresztül nyújtható be a pályázati időszakban."
+            }
+          ],
+          "actions": [{ "label": "Kapcsolat", "link": "social_email" }]
+        }
+      ]
+    }
+  }
+}

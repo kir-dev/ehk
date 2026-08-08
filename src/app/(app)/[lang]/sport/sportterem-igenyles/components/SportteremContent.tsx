@@ -94,7 +94,7 @@ export default function SportteremContent({ content }: { content: SportteremCont
 
 function SectionCard({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <Card className="rounded-2xl border-[#e9e2d6] bg-white py-0 shadow-none">
+    <Card className="rounded-2xl border-[#e9e2d6] bg-transparent py-0 shadow-none">
       <CardContent className="flex flex-col gap-4 p-4">
         <h2 className="font-playfair text-base font-semibold leading-[1.4] text-black">
           {title}

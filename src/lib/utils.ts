@@ -112,8 +112,8 @@ export function translateTags(tags: string[] = [], lang: 'HU' | 'EN'): string[] 
   return tags.map((t) => translateTag(t, lang))
 }
 
-// Map known tags to their section routes (HU paths), with EN variant for International
-export function getTagRoute(tag: string, lang: 'HU' | 'EN'): string | null {
+// Map known tags to their section routes (HU paths)
+export function getTagRoute(tag: string): string | null {
   switch (tag) {
     case 'EHK':
       return '/szervezet/hirek'
@@ -126,13 +126,11 @@ export function getTagRoute(tag: string, lang: 'HU' | 'EN'): string | null {
     case 'Sport':
       return '/sport/hirek'
     case 'Külügy':
-      return lang === 'EN' ? '/international/hirek' : '/kulugy/hirek'
+      return '/kulugy/hirek'
     case 'Közélet':
       return '/kozelet/hirek'
     case 'Tájékoztatás':
       return '/golyaknak/hirek'
-    case 'International':
-      return '/international/hirek'
     default:
       return null
   }

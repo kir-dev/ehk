@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ExternalActionLink } from "@/components/common/ExternalActionLink";
+import { ActionLink } from "@/components/common/ActionLink";
 import type { Locale } from "@/i18n-config";
 
 import { GETTING_STARTED_LINKS } from "../gettingStarted.constants";
@@ -59,7 +59,7 @@ export function InfoGroup({ group, locale }: Readonly<InfoGroupProps>) {
         {group.text && <p>{group.text}</p>}
 
         {group.actions?.map((action) => (
-          <ExternalActionLink
+          <ActionLink
             href={GETTING_STARTED_LINKS[action.link]}
             key={action.link}
             label={action.label}

@@ -275,9 +275,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           targetBlank: false,
         },
         {
-          label: t("Mobilitási programok", "Mobility Programs"),
-          subtitle: t("Erasmus+ és egyéb csereprogram hallgatói lehetőségek", "Erasmus+ and exchange student opportunities"),
-          href: link("/international/mobility-programs"),
+          label: t("Mobilitás és csereprogramok", "Mobility and Exchange"),
+          subtitle: t("Erasmus+, EELISA, ATHENS, CEEPUS és külföldi szakmai gyakorlatok", "Erasmus+, EELISA, ATHENS, CEEPUS, and internships abroad"),
+          href: link("/international/mobility"),
           targetBlank: false,
         },
       ],

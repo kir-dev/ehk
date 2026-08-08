@@ -95,8 +95,6 @@ export default function HomeContent({
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <Switcher
           activeTab={activeTab}
-          newsCount={newsData.totalDocs}
-          eventsCount={eventsAll.length}
           newsTitle={dictionary.news?.title ?? "Hírek"}
           eventsTitle={dictionary.rendezvenyek?.title ?? "Rendezvények"}
           onTabChange={setActiveTab}

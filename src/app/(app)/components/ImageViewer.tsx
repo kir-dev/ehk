@@ -84,14 +84,17 @@ export default function ImageViewer({ images = [] }: ImageViewerProps) {
                     </div>
                 </div>
 
-                {/* Dot Indicators */}
-                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex">
+                {/* Dot Indicators — each dot carries a 44px tap target, so a large
+                    hero set can outgrow a narrow viewport. Span the full width and
+                    scroll instead; "safe center" keeps the first dot reachable
+                    rather than centring the overflow out of view. */}
+                <div className="absolute inset-x-0 bottom-1 flex overflow-x-auto [justify-content:safe_center] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     {images.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={cn(
-                                "w-3 h-3 box-content p-4 bg-clip-content rounded-full transition-all duration-200 hover:scale-110",
+                                "w-3 h-3 shrink-0 box-content p-4 bg-clip-content rounded-full transition-all duration-200 hover:scale-110",
                                 index === currentIndex ? "bg-white shadow-lg" : "bg-white/50 hover:bg-white/70",
                             )}
                             aria-label={t(`Ugrás a(z) ${index + 1}. képre`, `Go to image ${index + 1}`)}

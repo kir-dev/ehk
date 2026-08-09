@@ -84,7 +84,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                                         <span className="font-open-sans font-bold text-base text-[#1a1a1a] tracking-tight">{card.name}</span>
                                         <ExternalLink className="w-4 h-4 text-[#6e6660] shrink-0" />
                                     </div>
-                                    <span className="hidden sm:block font-open-sans text-xs text-[#6e6660] mt-1">
+                                    <span className="sr-only sm:not-sr-only sm:block font-open-sans text-xs text-[#6e6660] sm:mt-1">
                                         {t("Kari Hallgatói Képviselet", "Faculty Student Representation")}
                                     </span>
                                 </Link>

@@ -33,7 +33,7 @@ export function RelatedNewsClient({ relatedArticles }: { relatedArticles: News[]
                     {tags.map((rawTag, index) => (
                       <span
                         key={`${rawTag}-${index}`}
-                        className="inline-flex items-center justify-center rounded-full border border-[#3d3d3d] bg-white px-2 py-1 text-[11px] md:text-[10px] leading-none text-[#3d3d3d] uppercase"
+                        className="inline-flex items-center justify-center rounded-full border border-[#3d3d3d] bg-white px-2 py-1 text-[11px] leading-none text-[#3d3d3d] uppercase"
                       >
                         {translateTag(rawTag, lang)}
                       </span>

@@ -7,7 +7,15 @@ import {
   addDays,
   endOfDay,
 } from "date-fns"
-import { TOTAL_WEEKS_COUNT, SLIDING_WINDOW_SIZE } from "./events.constants"
+import {
+  TOTAL_WEEKS_COUNT,
+  SLIDING_WINDOW_SIZE,
+  SCROLL_SPY_OFFSET_IN_CONTAINER,
+  SCROLL_SPY_OFFSET_IN_VIEWPORT,
+  VISIBLE_WEEKS_IN_TIMELINE,
+  VISIBLE_WEEKS_IN_TIMELINE_MOBILE,
+  TIMELINE_MOBILE_BREAKPOINT,
+} from "./events.constants"
 import { WeekMetadata, Translations } from "./events.types"
 
 interface UseEventsLogicProps {
@@ -66,8 +74,22 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     return list
   }, [baseDate, startWeekIndex, totalWeeksCount])
 
-  // Horizontal Timeline Carousel state (shows 3 weeks at a time)
+  // Horizontal Timeline Carousel state (shows 3 weeks at a time, 2 below sm)
   const [timelineStartIdx, setTimelineStartIdx] = useState(0)
+
+  // The timeline renders fewer buttons on narrow screens, so the window size has
+  // to follow suit — otherwise the active week can land on a button that is not
+  // rendered and no pill appears selected.
+  const [visibleWeeks, setVisibleWeeks] = useState(VISIBLE_WEEKS_IN_TIMELINE)
+  useEffect(() => {
+    const query = window.matchMedia(TIMELINE_MOBILE_BREAKPOINT)
+    const sync = () =>
+      setVisibleWeeks(query.matches ? VISIBLE_WEEKS_IN_TIMELINE : VISIBLE_WEEKS_IN_TIMELINE_MOBILE)
+
+    sync()
+    query.addEventListener("change", sync)
+    return () => query.removeEventListener("change", sync)
+  }, [])
   
   // Current active week index highlighted (0 to 7+)
   const [activeWeekIndex, setActiveWeekIndex] = useState(0)
@@ -150,9 +172,8 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
           })
         } else {
           // Scroll the global window to the week section
-          const headerOffset = 140
           const elementPosition = target.getBoundingClientRect().top
-          const offsetPosition = elementPosition + window.scrollY - headerOffset
+          const offsetPosition = elementPosition + window.scrollY - SCROLL_SPY_OFFSET_IN_VIEWPORT
           
           window.scrollTo({
             top: offsetPosition,
@@ -180,7 +201,7 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
       }
       setTimelineStartIdx((prev) => prev - 1)
     } else if (direction === "right") {
-      if (timelineStartIdx < startWeekIndex + totalWeeksCount - 3) {
+      if (timelineStartIdx < startWeekIndex + totalWeeksCount - visibleWeeks) {
         // If we are moving right and getting close to the end of the timeline, generate more weeks
         if (timelineStartIdx >= startWeekIndex + totalWeeksCount - 5) {
           setTotalWeeksCount((prev) => prev + 4)
@@ -194,10 +215,12 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
   useEffect(() => {
     if (activeWeekIndex < timelineStartIdx) {
       setTimelineStartIdx(activeWeekIndex)
-    } else if (activeWeekIndex >= timelineStartIdx + 3) {
-      setTimelineStartIdx(Math.min(startWeekIndex + totalWeeksCount - 3, activeWeekIndex - 2))
+    } else if (activeWeekIndex >= timelineStartIdx + visibleWeeks) {
+      setTimelineStartIdx(
+        Math.min(startWeekIndex + totalWeeksCount - visibleWeeks, activeWeekIndex - (visibleWeeks - 1)),
+      )
     }
-  }, [activeWeekIndex, timelineStartIdx, startWeekIndex, totalWeeksCount])
+  }, [activeWeekIndex, timelineStartIdx, startWeekIndex, totalWeeksCount, visibleWeeks])
 
   // Handle scroll events inside the events container
   const handleScroll = useCallback(() => {
@@ -213,9 +236,13 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
 
     let bestWeekIdx = -1
     let minDistance = Infinity
-    
-    // Offset target line (e.g. 40px) inside the scroll container
-    const targetScrollTop = container.scrollTop + 40
+
+    // Below md the container has no max-height, so the page scrolls instead of
+    // the container. Express the target line in container coordinates either way,
+    // since offsetTop is measured against the (position: relative) container.
+    const targetScrollTop = container.scrollHeight > container.clientHeight
+      ? container.scrollTop + SCROLL_SPY_OFFSET_IN_CONTAINER
+      : SCROLL_SPY_OFFSET_IN_VIEWPORT - container.getBoundingClientRect().top
 
     for (const { el, index } of elements) {
       if (!el) continue
@@ -274,6 +301,20 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     }
   }, [visibleWeeksStartIdx, startWeekIndex, totalWeeksCount])
 
+  // When the container is not scrollable (mobile), its onScroll never fires, so
+  // the page scroll has to drive the scroll-spy and the sliding window instead.
+  useEffect(() => {
+    const onWindowScroll = () => {
+      const container = scrollContainerRef.current
+      if (!container) return
+      if (container.scrollHeight > container.clientHeight) return
+      handleScroll()
+    }
+
+    window.addEventListener("scroll", onWindowScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onWindowScroll)
+  }, [handleScroll])
+
   // Pre-calculate grouped events for the 4 weeks in the sliding window
   const renderedWeekData = useMemo(() => {
     const sliceStart = visibleWeeksStartIdx - startWeekIndex
@@ -289,16 +330,26 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     if (!container) return
 
     const diff = visibleWeeksStartIdx - prevStartIdx.current
+    // Mobile scrolls the page, so compensate there instead of on the container.
+    const isContainerScrollable = container.scrollHeight > container.clientHeight
 
     if (diff > 0) {
-      container.scrollTop = Math.max(0, container.scrollTop - lastRemovedHeight.current)
+      if (isContainerScrollable) {
+        container.scrollTop = Math.max(0, container.scrollTop - lastRemovedHeight.current)
+      } else {
+        window.scrollBy(0, -lastRemovedHeight.current)
+      }
     } else if (diff < 0) {
       let addedHeight = 0
       for (let i = visibleWeeksStartIdx; i < prevStartIdx.current; i++) {
         const el = document.getElementById(`week-section-${i}`)
         if (el) addedHeight += el.offsetHeight
       }
-      container.scrollTop = container.scrollTop + addedHeight
+      if (isContainerScrollable) {
+        container.scrollTop = container.scrollTop + addedHeight
+      } else {
+        window.scrollBy(0, addedHeight)
+      }
     }
     prevStartIdx.current = visibleWeeksStartIdx
 
@@ -356,11 +407,15 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
               const target = document.getElementById(`week-section-${weekIdx}`)
               const container = scrollContainerRef.current
               if (container && target) {
-                const targetOffset = target.offsetTop
-                container.scrollTo({
-                  top: targetOffset,
-                  behavior: "smooth",
-                })
+                if (container.scrollHeight > container.clientHeight) {
+                  container.scrollTo({ top: target.offsetTop, behavior: "smooth" })
+                } else {
+                  // Mobile: the page scrolls, not the container.
+                  window.scrollTo({
+                    top: target.getBoundingClientRect().top + window.scrollY - SCROLL_SPY_OFFSET_IN_VIEWPORT,
+                    behavior: "smooth",
+                  })
+                }
               }
             }, 300)
           }
@@ -404,5 +459,6 @@ export function useEventsLogic({ lang, events, dictionary }: UseEventsLogicProps
     handleShare,
     handleScroll,
     totalWeeksCount,
+    visibleWeeks,
   }
 }

@@ -95,7 +95,7 @@ export default function NewsPagination({ currentPage, totalPages, basePath = "/"
 
   if (totalPages <= 1) return null;
 
-  const btnBase = "w-9 h-9 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm";
+  const btnBase = "w-11 h-11 flex items-center justify-center rounded-lg border text-sm transition-colors duration-200 shadow-sm";
 
   if (onPageChange) {
     return (

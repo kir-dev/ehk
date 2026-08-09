@@ -42,4 +42,5 @@ export interface EventsTimelineProps {
   t: Translations
   lang: "hu" | "en"
   totalWeeksCount: number
+  visibleWeeks: number
 }

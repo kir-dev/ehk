@@ -57,7 +57,7 @@ export default async function Home({
             <div className="max-w-350 mx-auto">
               <div id="main-content-section" className="h-0" aria-hidden />
 
-              <div className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] gap-8 items-start -mt-16 lg:-mt-24 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] gap-8 items-start mt-0 lg:-mt-24 relative z-10">
 
                 <aside className="flex flex-col gap-4 order-2 lg:order-1 w-full lg:max-w-60">
                   <OfficeHours />

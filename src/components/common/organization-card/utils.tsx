@@ -19,6 +19,7 @@ const labelsByLocale: Record<Locale, OrganizationCardLabels> = {
     contacts: "Elérhetőségek",
     gallery: "Galéria",
     join: "Csatlakozom!",
+    details: "Részletek",
   },
   en: {
     presentation: "Presentation",
@@ -29,6 +30,7 @@ const labelsByLocale: Record<Locale, OrganizationCardLabels> = {
     contacts: "Contact",
     gallery: "Gallery",
     join: "Join us",
+    details: "Details",
   },
 };
 

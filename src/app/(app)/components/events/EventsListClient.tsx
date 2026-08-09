@@ -24,6 +24,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
     handleShare,
     handleScroll,
     totalWeeksCount,
+    visibleWeeks,
   } = useEventsLogic({ lang, events, dictionary })
 
   return (
@@ -39,13 +40,14 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
         t={t}
         lang={lang}
         totalWeeksCount={totalWeeksCount}
+        visibleWeeks={visibleWeeks}
       />
 
       {/* Vertical Scroll View of Day-Grouped Events */}
       <div 
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex flex-col w-full overflow-y-auto max-h-162.5 pr-2 relative"
+        className="flex flex-col w-full md:overflow-y-auto md:max-h-162.5 md:pr-2 relative"
         style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(134, 38, 51, 0.3) transparent", overflowAnchor: "none" }}
       >
         {renderedWeekData.map((week) => {

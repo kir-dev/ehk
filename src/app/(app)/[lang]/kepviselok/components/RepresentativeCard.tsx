@@ -81,12 +81,12 @@ export function RepresentativeCard({ representative, onClickAction }: Readonly<R
                     )}
 
                     {representative.emails && representative.emails.length > 0 && (
-                        <div className="flex flex-col items-center gap-1">
+                        <div className="flex flex-col items-center">
                             {representative.emails.map((emailObj, index) => (
                                 <a
                                     key={`${emailObj.email}-${index}`}
                                     href={`mailto:${emailObj.email}`}
-                                    className="inline-flex items-center justify-center gap-1 font-open-sans text-[13px] font-semibold leading-none text-black transition-colors hover:text-[#862633] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2"
+                                    className="inline-flex min-h-11 items-center justify-center gap-1 font-open-sans text-[13px] font-semibold leading-none text-black transition-colors hover:text-[#862633] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2"
                                     onClick={(event) => event.stopPropagation()}
                                 >
                                     <Mail className="h-3.75 w-3.75 shrink-0" />

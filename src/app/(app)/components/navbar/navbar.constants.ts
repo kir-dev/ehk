@@ -20,19 +20,19 @@ export const NAVBAR_STYLES = {
   },
   
   mobile: {
-    trigger: 'xlg:hidden text-white hover:text-gray-200 transition-colors duration-200',
+    trigger: 'xlg:hidden size-11 text-white hover:text-gray-200 transition-colors duration-200',
     sheet: 'w-80 px-0 py-0 sm:px-2 sm:py-2',
     container: 'flex h-full flex-col min-h-0',
     header: 'px-4 py-4 border-b',
     nav: 'space-y-4 p-4 pt-2 pb-6',
     menuItem: 'font-semibold text-gray-900 text-base border-b-2 border-gray-200 pb-2 block hover:text-ehk-navbar hover:border-ehk-navbar transition-all duration-200',
-    subItemsContainer: 'space-y-1 pl-4',
-    subMenuItem: 'block text-sm text-gray-600 hover:text-ehk-navbar py-1.5 transition-all duration-200 hover:pl-2 font-medium'
+    subItemsContainer: 'pl-4',
+    subMenuItem: 'flex min-h-11 items-center text-sm text-gray-600 hover:text-ehk-navbar py-2.5 transition-all duration-200 hover:pl-2 font-medium'
   },
   
   actions: {
     container: 'flex items-center space-x-2 ml-2',
-    langToggle: 'bg-transparent text-white hover:bg-white/10 px-2.5 py-[5px] border-[0.5px] border-[#f9f4f0] rounded-[10px] font-semibold text-sm transition-all duration-200',
+    langToggle: 'inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent text-white hover:bg-white/10 px-3 py-2 border-[0.5px] border-[#f9f4f0] rounded-[10px] font-semibold text-sm transition-all duration-200',
     searchButton: 'text-white hover:text-gray-200 transition-colors duration-200'
   }
 } as const

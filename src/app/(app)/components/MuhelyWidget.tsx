@@ -30,7 +30,7 @@ export default function MuhelyWidget({ className }: Readonly<Props>) {
         href="https://muhely.bme.hu/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-[#fbe4d3] hover:bg-[#f5cfb5] text-[#6b0f1a] font-open-sans font-semibold text-[13px] px-4 py-1.5 rounded-full w-fit transition-all duration-300 mt-2 block shadow-sm hover:shadow-md"
+        className="bg-[#fbe4d3] hover:bg-[#f5cfb5] text-[#6b0f1a] font-open-sans font-semibold text-[13px] px-4 py-2.5 rounded-full w-fit transition-all duration-300 mt-2 inline-flex min-h-11 items-center shadow-sm hover:shadow-md"
       >
         {t("widgets.muhely_btn", "Olvasom")}
       </Link>

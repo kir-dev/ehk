@@ -84,7 +84,7 @@ export default function NewsFilter({
                 key={tag}
                 type="button"
                 onClick={() => onTagClick(tag)}
-                className={`inline-flex items-center justify-center px-2.5 py-1 rounded-full text-sm font-open-sans font-normal transition-colors duration-200 select-none cursor-pointer border ${
+                className={`inline-flex min-h-11 items-center justify-center px-3 py-2 rounded-full text-sm font-open-sans font-normal transition-colors duration-200 select-none cursor-pointer border ${
                   isActive
                     ? "bg-[#ffe6e6] text-[#862633] border-[#862633] hover:bg-[#ffe6e6]/80"
                     : "bg-transparent text-[#3d3d3d] border-[#3d3d3d] hover:bg-[#3d3d3d]/5"

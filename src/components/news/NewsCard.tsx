@@ -39,7 +39,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
                         : `/${lang.toLowerCase()}?tab=news`
 
                     const chipClass = cn(
-                        "inline-flex items-center justify-center px-2.5 py-1 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 border",
+                        "inline-flex min-h-11 items-center justify-center px-3 py-2 rounded-full text-sm font-open-sans font-normal whitespace-nowrap transition-colors duration-200 border",
                         isActive
                             ? "bg-[#ffe6e6] text-[#862633] border-[#862633] hover:bg-[#ffe6e6]/80"
                             : "bg-transparent text-[#3d3d3d] border-[#3d3d3d] hover:bg-[#3d3d3d]/5"
@@ -73,7 +73,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
 
                 {/* Title */}
                 <h3 className="font-playfair font-bold text-[22px] leading-[1.3] text-black w-full group-hover:text-[#862633] transition-colors duration-200">
-                    <Link href={newsUrl}>
+                    <Link href={newsUrl} className="flex min-h-11 items-center">
                         {displayTitle}
                     </Link>
                 </h3>
@@ -90,7 +90,7 @@ export default function NewsCard({ news: { id, title, titleEng, shortDescription
             {/* Footer read more */}
             <Link
                 href={newsUrl}
-                className="flex items-center justify-between w-full group/link"
+                className="flex min-h-11 items-center justify-between w-full group/link"
             >
                 <span className="font-open-sans font-semibold text-[14px] leading-[1.6] text-[#862633] whitespace-nowrap">
                     {t('news.read_more', 'Elolvasom')}

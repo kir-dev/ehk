@@ -38,6 +38,8 @@ export type OrganizationCardLabels = {
   contacts: string;
   gallery: string;
   join: string;
+  /** Trigger of the mobile-only accordion that collapses every section. */
+  details: string;
 };
 
 export type OrganizationCardProps = {

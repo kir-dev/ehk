@@ -1,9 +1,10 @@
+import { LinksSidebar } from "@/components/common/LinksSidebar";
 import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { i18n, type Locale } from "@/i18n-config";
 
 import { GettingStartedContent } from "./components/GettingStartedContent";
-import { ImportantLinksSidebar } from "./components/ImportantLinksSidebar";
+import { GETTING_STARTED_LINKS } from "./gettingStarted.constants";
 import type { GettingStarted } from "./gettingStarted.types";
 
 export default async function GettingStartedPage({
@@ -30,8 +31,11 @@ export default async function GettingStartedPage({
             />
           </main>
 
-          <ImportantLinksSidebar
-            links={content.sidebar_links}
+          <LinksSidebar
+            links={content.sidebar_links.map((link) => ({
+              href: GETTING_STARTED_LINKS[link.link],
+              label: link.label,
+            }))}
             title={content.important_links}
           />
         </div>

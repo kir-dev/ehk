@@ -1,0 +1,110 @@
+{
+  "international": {
+    "housing": {
+      "title": "KOLLÉGIUM",
+      "important_links": "Fontos link",
+      "links": [{ "label": "KEFIR", "link": "kefir" }],
+      "faq": [
+        {
+          "id": "eligibility",
+          "question": "Ki pályázhat?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Minden hallgató pályázhat kollégiumi férőhelyre, aki hallgatói jogviszonyt létesít a BME-vel és aktív félévre iratkozik be."
+            }
+          ]
+        },
+        {
+          "id": "dormitories",
+          "question": "Mely kollégiumokba lehet pályázni?",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "Óbudai Diák Hotel — a Stipendium Hungaricum és a Diaspora ösztöndíjasok számára"
+                },
+                {
+                  "text": "Martos Kollégium — az SCYP (Scholarship for Christian Young People) ösztöndíjasok számára"
+                },
+                {
+                  "text": "BME-kollégiumok — az önköltséges hallgatók 7 kollégiumba pályázhatnak, amelyek mindegyike egy-egy karhoz tartozik"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "frequency",
+          "question": "Milyen gyakran kell pályázni?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A kollégiumi férőhelyre minden félévben külön kell pályázni — az elnyert hely csak egy félévre érvényes. A pályázatokat külön írják ki az őszi és a tavaszi félévre, valamint a nyári időszakra (július–augusztus)."
+            }
+          ]
+        },
+        {
+          "id": "admission",
+          "question": "Hogyan dől el a felvétel?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A kollégiumi férőhelyeket pályázati rangsor alapján osztják el."
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "Elsőéves hallgatók (akik első hallgatói jogviszonyukat létesítik a BME-n): a rangsor a tanulmányi teljesítmény (felvételi pontszám) és a szociális helyzet alapján alakul."
+                },
+                {
+                  "text": "Felsőbbéves hallgatók: a rangsor a tanulmányi teljesítmény, a szociális helyzet és az egyetemi közösségért végzett közéleti tevékenység alapján alakul."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "steps",
+          "question": "A pályázás lépései",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "text": "Add be a pályázatodat az Egységes Kollégiumi Felvételi és Információs Rendszerben (KEFIR) a kefir.bme.hu címen. A belépéshez a címtári azonosítódat használd, amelyet a Neptun-kódoddal tudsz létrehozni."
+                },
+                {
+                  "text": "Töltsd ki a profilodat a KEFIR felületén, majd nyisd meg az aktuális őszi félévre vonatkozó kollégiumi pályázati űrlapot, és gondosan töltsd ki a kért mezőket. Figyelj a honlapon feltüntetett pályázati határidőre."
+                },
+                {
+                  "text": "A pályázat csak a megadott időszakban adható be — a késedelmes beadásokat nem fogadják el. Kollégiumi férőhelyre csak azok a hallgatók kerülnek elbírálásra, akik sikeresen beadták a pályázatukat."
+                },
+                {
+                  "text": "A kollégiumi pályázat beadásával hivatalosan is jelzed a szálláshelyigényedet."
+                },
+                {
+                  "text": "A folytatás a jogállásodtól függ:"
+                }
+              ]
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "Stipendium Hungaricum / Diaspora ösztöndíjasok → az Óbudai Diák Hotelben kapnak elhelyezést."
+                },
+                {
+                  "text": "Önköltséges hallgatók → a pályázatokat az EHK kollégiumi referense bírálja el."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

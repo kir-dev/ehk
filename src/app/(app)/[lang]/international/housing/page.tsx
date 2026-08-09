@@ -3,18 +3,17 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { getDictionary } from "@/get-dictionary";
 import { i18n, type Locale } from "@/i18n-config";
 
-import { EducationContent } from "./components/EducationContent";
-import { EDUCATION_LINKS } from "./education.constants";
-import type { Education } from "./education.types";
+import { HousingContent } from "./components/HousingContent";
+import { HOUSING_LINKS } from "./housing.constants";
+import type { Housing } from "./housing.types";
 
-export default async function EducationPage({
+export default async function HousingPage({
   params,
 }: Readonly<{ params: Promise<{ lang: Locale }> }>) {
   const { lang } = await params;
   const locale = i18n.locales.includes(lang) ? lang : i18n.defaultLocale;
-  const dictionary = await getDictionary(locale, "international_education");
-  const content = dictionary.international.education as unknown as Education;
-  const { action, text } = content.sidebar;
+  const dictionary = await getDictionary(locale, "international_housing");
+  const content = dictionary.international.housing as unknown as Housing;
 
   return (
     <div className="min-h-screen bg-[#f9f4f0]">
@@ -22,14 +21,15 @@ export default async function EducationPage({
         <div className="grid items-start xl:grid-cols-[minmax(0,1fr)_minmax(300px,343px)]">
           <main className="min-w-0">
             <PageHeader title={content.title} />
-            <EducationContent sections={content.sections} />
+            <HousingContent faq={content.faq} />
           </main>
 
           <LinksSidebar
-            description={text}
-            links={[
-              { href: EDUCATION_LINKS[action.link], label: action.label },
-            ]}
+            links={content.links.map((link) => ({
+              href: HOUSING_LINKS[link.link],
+              label: link.label,
+            }))}
+            title={content.important_links}
           />
         </div>
       </div>

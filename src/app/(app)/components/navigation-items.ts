@@ -269,9 +269,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           targetBlank: false,
         },
         {
-          label: t("Kollégiumi információk", "Dormitory Information"),
-          subtitle: t("Kollégiumi elhelyezés és szobafoglalási tudnivalók", "Dormitory application and accommodation details"),
-          href: link("/international/dormitory-information"),
+          label: t("Kollégium", "Housing"),
+          subtitle: t("Kollégiumi pályázás, jogosultság és a felvétel menete", "Dormitory application, eligibility, and the admission process"),
+          href: link("/international/housing"),
           targetBlank: false,
         },
         {

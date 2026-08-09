@@ -19,7 +19,7 @@ export type Namespace =
   | 'international_getting_started'
   | 'international_education'
   | 'international_application'
-  | 'international_dormitory'
+  | 'international_housing'
   | 'international_mobility'
   | 'erasmus'
   | 'eelisa'
@@ -43,7 +43,7 @@ export type DictionaryMap = {
   international_getting_started: typeof import('./dictionaries/hu/international_getting_started.json');
   international_education: typeof import('./dictionaries/hu/international_education.json');
   international_application: typeof import('./dictionaries/hu/international_application.json');
-  international_dormitory: typeof import('./dictionaries/hu/international_dormitory.json');
+  international_housing: typeof import('./dictionaries/hu/international_housing.json');
   international_mobility: typeof import('./dictionaries/hu/international_mobility.json');
   erasmus: typeof import('./dictionaries/hu/erasmus.json');
   eelisa: typeof import('./dictionaries/hu/eelisa.json');
@@ -75,7 +75,7 @@ const loaders: Record<Locale, { [K in Namespace]: () => Promise<DictionaryMap[K]
     international_getting_started: () => load<'international_getting_started'>(import('./dictionaries/hu/international_getting_started.json')),
     international_education: () => load<'international_education'>(import('./dictionaries/hu/international_education.json')),
     international_application: () => load<'international_application'>(import('./dictionaries/hu/international_application.json')),
-    international_dormitory: () => load<'international_dormitory'>(import('./dictionaries/hu/international_dormitory.json')),
+    international_housing: () => load<'international_housing'>(import('./dictionaries/hu/international_housing.json')),
     international_mobility: () => load<'international_mobility'>(import('./dictionaries/hu/international_mobility.json')),
     erasmus: () => load<'erasmus'>(import('./dictionaries/hu/erasmus.json')),
     eelisa: () => load<'eelisa'>(import('./dictionaries/hu/eelisa.json')),
@@ -99,7 +99,7 @@ const loaders: Record<Locale, { [K in Namespace]: () => Promise<DictionaryMap[K]
     international_getting_started: () => load<'international_getting_started'>(import('./dictionaries/en/international_getting_started.json')),
     international_education: () => load<'international_education'>(import('./dictionaries/en/international_education.json')),
     international_application: () => load<'international_application'>(import('./dictionaries/en/international_application.json')),
-    international_dormitory: () => load<'international_dormitory'>(import('./dictionaries/en/international_dormitory.json')),
+    international_housing: () => load<'international_housing'>(import('./dictionaries/en/international_housing.json')),
     international_mobility: () => load<'international_mobility'>(import('./dictionaries/en/international_mobility.json')),
     erasmus: () => load<'erasmus'>(import('./dictionaries/en/erasmus.json')),
     eelisa: () => load<'eelisa'>(import('./dictionaries/en/eelisa.json')),

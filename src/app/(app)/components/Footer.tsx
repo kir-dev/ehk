@@ -24,8 +24,8 @@ export default function Footer({ universityPages = [] }: FooterProps) {
     ];
 
     return (
-        <footer className="bg-[#fbf9f6] text-[#1a1a1a] border-t border-[#e9e2d6] py-8 font-open-sans">
-            <div className="container mx-auto">
+        <footer className="bg-[#fbf9f6] text-[#1a1a1a] border-t border-[#e9e2d6] pt-8 pb-28 md:pb-8 font-open-sans">
+            <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
                     
                     {/* KAPCSOLAT Section */}
@@ -41,7 +41,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                             <p>{t('footer.contact.address_value') || "1111 Budapest, Műegyetem rkp. 7-9. R. ép. 2.07."}</p>
                             <p>+36-1-463-3836</p>
                         </div>
-                        <ul className="space-y-1.5 mt-2">
+                        <ul className="mt-2">
                             {[
                                 "info@bmeehk.hu",
                                 "palyazat@bmeehk.hu",
@@ -53,7 +53,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                                     <span className="text-[#B2293B] font-bold text-lg leading-none select-none">•</span>
                                     <Link
                                         href={`mailto:${email}`}
-                                        className="text-[#1a1a1a] hover:text-[#B2293B] hover:underline transition-colors duration-150"
+                                        className="flex min-h-11 items-center text-[#1a1a1a] hover:text-[#B2293B] hover:underline transition-colors duration-150"
                                     >
                                         {email}
                                     </Link>
@@ -71,7 +71,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                         <p className="font-open-sans font-bold text-xs text-[#9a9a9a] uppercase tracking-wider">
                             {t('footer.faculty_representation.title')}
                         </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full mt-2">
+                        <div className="grid grid-cols-2 gap-2 w-full mt-2">
                             {representativeCards.map((card) => (
                                 <Link
                                     key={card.name}
@@ -84,7 +84,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                                         <span className="font-open-sans font-bold text-base text-[#1a1a1a] tracking-tight">{card.name}</span>
                                         <ExternalLink className="w-4 h-4 text-[#6e6660] shrink-0" />
                                     </div>
-                                    <span className="font-open-sans text-xs text-[#6e6660] mt-1">
+                                    <span className="hidden sm:block font-open-sans text-xs text-[#6e6660] mt-1">
                                         {t("Kari Hallgatói Képviselet", "Faculty Student Representation")}
                                     </span>
                                 </Link>
@@ -101,7 +101,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                         <p className="font-open-sans font-bold text-xs text-[#9a9a9a] uppercase tracking-wider">
                             {t('footer.university_pages.title')}
                         </p>
-                        <div className="flex flex-col gap-3 font-open-sans text-base text-[#1a1a1a] mt-2">
+                        <div className="flex flex-col font-open-sans text-base text-[#1a1a1a] mt-2">
                             {universityPages.map((page) => {
                                 const normalizedLang = lang?.toUpperCase();
                                 const title = (normalizedLang === "EN" ? page.title_en : page.title_hu)
@@ -114,7 +114,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                                         href={page.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hover:underline hover:text-[#B2293B] transition-colors duration-150"
+                                        className="flex min-h-11 items-center hover:underline hover:text-[#B2293B] transition-colors duration-150"
                                     >
                                         {title}
                                     </Link>
@@ -128,7 +128,7 @@ export default function Footer({ universityPages = [] }: FooterProps) {
                 {/* Bottom section with Logo and Credits */}
                 <div className="flex flex-col justify-center items-center pt-8 border-t border-[#e9e2d6] mt-16 gap-4">
                     <p className="text-xs text-[#6e6660]">
-                        Made with 🤍 by <a href="https://kir-dev.hu" className="underline hover:text-[#1a1a1a] transition-colors" target="_blank" rel="noopener noreferrer">Kir-Dev</a>
+                        Made with 🤍 by <a href="https://kir-dev.hu" className="inline-flex min-h-11 items-center px-2 underline hover:text-[#1a1a1a] transition-colors" target="_blank" rel="noopener noreferrer">Kir-Dev</a>
                     </p>
                 </div>
             </div>

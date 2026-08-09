@@ -14,6 +14,7 @@ export function EventsTimeline({
   t,
   lang,
   totalWeeksCount,
+  visibleWeeks,
 }: Readonly<EventsTimelineProps>) {
   return (
     <div 
@@ -35,7 +36,7 @@ export function EventsTimeline({
 
       {/* Weeks Slider Container */}
       <div className="flex flex-1 gap-1 sm:gap-2 min-w-0 justify-center items-stretch">
-        {weeks.slice(timelineStartIdx - startWeekIndex, timelineStartIdx - startWeekIndex + 3).map((week, position) => {
+        {weeks.slice(timelineStartIdx - startWeekIndex, timelineStartIdx - startWeekIndex + visibleWeeks).map((week) => {
           const isActive = activeWeekIndex === week.index
           const weekLabel = formatWeekRange(week.monday, week.sunday, lang)
 
@@ -49,9 +50,7 @@ export function EventsTimeline({
               key={week.index}
               onClick={() => onWeekClick(week.index)}
               className={cn(
-                "flex-1 flex-col justify-center items-center min-h-11 py-1 px-2 rounded-lg font-open-sans border border-solid transition-all duration-200 cursor-pointer min-w-0 max-w-[280px]",
-                // Only two weeks fit legibly on narrow screens; a third would wrap and clip.
-                position === 2 ? "hidden sm:flex" : "flex",
+                "flex flex-1 flex-col justify-center items-center min-h-11 py-1 px-2 rounded-lg font-open-sans border border-solid transition-all duration-200 cursor-pointer min-w-0 max-w-[280px]",
                 isActive
                   ? "bg-white/10 border-[#d3afaf] text-white font-bold"
                   : "bg-[#fffefc] border-[#d3afaf] text-[#6e6660] hover:bg-white/95 font-semibold"
@@ -73,10 +72,10 @@ export function EventsTimeline({
       {/* Right Arrow */}
       <button
         onClick={() => onShiftTimeline("right")}
-        disabled={timelineStartIdx >= startWeekIndex + totalWeeksCount - 3}
+        disabled={timelineStartIdx >= startWeekIndex + totalWeeksCount - visibleWeeks}
         className={cn(
           "h-11 w-11 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors shrink-0",
-          timelineStartIdx >= startWeekIndex + totalWeeksCount - 3 && "opacity-30 cursor-not-allowed"
+          timelineStartIdx >= startWeekIndex + totalWeeksCount - visibleWeeks && "opacity-30 cursor-not-allowed"
         )}
         aria-label="Next weeks"
       >

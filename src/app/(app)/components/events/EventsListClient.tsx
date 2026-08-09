@@ -24,6 +24,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
     handleShare,
     handleScroll,
     totalWeeksCount,
+    visibleWeeks,
   } = useEventsLogic({ lang, events, dictionary })
 
   return (
@@ -39,6 +40,7 @@ export default function EventsListClient({ lang, events, dictionary }: Readonly<
         t={t}
         lang={lang}
         totalWeeksCount={totalWeeksCount}
+        visibleWeeks={visibleWeeks}
       />
 
       {/* Vertical Scroll View of Day-Grouped Events */}

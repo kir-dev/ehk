@@ -257,9 +257,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           targetBlank: false,
         },
         {
-          label: t("Oktatási információk", "Education Information"),
-          subtitle: t("Tanulmányi naptár, kurzusok és tanulmányi útmutató", "Academic calendar, courses, and educational guidelines"),
-          href: link("/international/education-information"),
+          label: t("Oktatás", "Education"),
+          subtitle: t("Tárgyfelvétel, félévrend, kérvények és TDK", "Course registration, semester structure, requests, and TDK"),
+          href: link("/international/education"),
           targetBlank: false,
         },
         {

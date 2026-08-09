@@ -241,15 +241,9 @@ export function getNavigationItems(lang: string): NavigationItem[] {
     },
     {
       title: "INTERNATIONAL",
-      href: link("/international/hirek"),
+      href: link("/international/getting-started"),
       targetBlank: false,
       items: [
-        {
-          label: t("Hírek", "News"),
-          subtitle: t("Friss nemzetközi hallgatói hírek és információk", "Latest news and announcements for international students"),
-          href: link("/international/hirek"),
-          targetBlank: false,
-        },
         {
           label: t("Kezdő lépések", "Getting Started"),
           subtitle: t("Jelentkezés, beiratkozás és a Magyarországra költözés tudnivalói", "Application, enrollment, and moving to Hungary"),
@@ -260,12 +254,6 @@ export function getNavigationItems(lang: string): NavigationItem[] {
           label: t("Oktatás", "Education"),
           subtitle: t("Tárgyfelvétel, félévrend, kérvények és TDK", "Course registration, semester structure, requests, and TDK"),
           href: link("/international/education"),
-          targetBlank: false,
-        },
-        {
-          label: t("Jelentkezési információk", "Application Information"),
-          subtitle: t("Felvételi eljárás és vízumügyintézési tájékoztató", "Admission process and visa application guide"),
-          href: link("/international/application-information"),
           targetBlank: false,
         },
         {

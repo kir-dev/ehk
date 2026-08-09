@@ -26,9 +26,13 @@ export default async function EducationPage({
           </main>
 
           <LinksSidebar
-            description={text}
-            links={[
-              { href: EDUCATION_LINKS[action.link], label: action.label },
+            groups={[
+              {
+                description: text,
+                links: [
+                  { href: EDUCATION_LINKS[action.link], label: action.label },
+                ],
+              },
             ]}
           />
         </div>

@@ -1,0 +1,90 @@
+{
+  "international": {
+    "scholarships": {
+      "title": "SCHOLARSHIPS",
+      "intro": "Applications for most scholarships are submitted online via MŰEPER (Unified Application and Evaluation System). Requirements may vary by faculty — see below for details on specific scholarships.",
+      "important_links": "Important links",
+      "contact_title": "Contact",
+      "links": [
+        { "label": "MŰEPER", "link": "mueper" },
+        { "label": "University Social Committee (ESZB)", "link": "eszb" }
+      ],
+      "contact_links": [
+        { "label": "palyazat@bmeehk.hu", "link": "grants_email" }
+      ],
+      "sections": [
+        {
+          "title": "University-level scholarships",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "emphasis": "University BME Scholarship",
+                  "text": "(Egyetemi BME Ösztöndíj) – Rewards students who achieved the most professional and scientific merit in the specified semester. Open to active full-time students in undergraduate, master's, or undivided programs with outstanding academic, professional, and scientific activities."
+                },
+                {
+                  "emphasis": "Good Student, Good Athlete",
+                  "text": "(Jó Tanuló, Jó Sportoló) – For applicants with a scholarship index of at least 3.00 in the last two semesters, or who achieved results in recognized sports competitions (Olympics, World/European Championships, UNIVERSIADE, MEFOB, national/regional competitions, and more)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Faculty-level scholarships",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Application requirements may differ by faculty, consult your Faculty Student Council for details."
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "emphasis": "Public Life Scholarship",
+                  "text": "(Közéleti ösztöndíj) – For students carrying out community activities that contribute to the Faculty Student Union's work. (ÉMK, GPK, VBK, VIK, ÉPK, GTK)"
+                },
+                {
+                  "emphasis": "Community Scholarship",
+                  "text": "(Közösségi ösztöndíj) – For outstanding community work within Student Organizations, external committees, or as event organizers. (GPK, VBK, ÉPK, GTK, KJK, TTK)"
+                },
+                {
+                  "emphasis": "Students for Education Scholarship",
+                  "text": "(Hallgatók az oktatásért ösztöndíj) – For students carrying out tutoring activities at their faculty. (VBK, ÉPK, VIK, GTK)"
+                },
+                {
+                  "emphasis": "Faculty BME Scholarship",
+                  "text": "(Kari BME ösztöndíj) – For outstanding professional, scientific, academic, or language achievements at the faculty level. (VBK, GPK, ÉPK, VIK, KJK, GTK)"
+                },
+                {
+                  "emphasis": "Sports Scholarship",
+                  "text": "(Sportösztöndíj) – For students with outstanding sports results alongside their studies. (GPK, VIK)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Academic scholarship",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A merit-based grant awarded to students with outstanding academic results in the previous active semester, based on the scholarship index within your Homogeneous Student Group (HHCS). The Faculty Student Union administers this scholarship and publishes results within 5 working days of the decision."
+            }
+          ]
+        },
+        {
+          "title": "Regular social scholarship",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "For full-time students in state-funded or state scholarship-supported programs, based on social circumstances. Only one application per student is allowed per scholarship. Submitted via MŰEPER during the application period."
+            }
+          ],
+          "actions": [{ "label": "Contact", "link": "social_email" }]
+        }
+      ]
+    }
+  }
+}

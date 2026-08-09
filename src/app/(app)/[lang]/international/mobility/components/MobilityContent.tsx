@@ -1,17 +1,24 @@
 import { ActionLink } from "@/components/common/ActionLink";
 import { ContentBlocks } from "@/components/common/ContentBlocks";
 import { SectionCard } from "@/components/common/SectionCard";
+import type { Locale } from "@/i18n-config";
 
-import { EDUCATION_LINKS } from "../education.constants";
-import type { EducationSection } from "../education.types";
+import { MOBILITY_LINKS } from "../mobility.constants";
+import type { MobilitySection } from "../mobility.types";
 
-interface EducationContentProps {
-  sections: EducationSection[];
+interface MobilityContentProps {
+  sections: MobilitySection[];
+  locale: Locale;
 }
 
-export function EducationContent({
+/** Site-relative targets need the locale prefix, absolute URLs stay as they are. */
+const resolveHref = (href: string, locale: Locale) =>
+  href.startsWith("/") ? `/${locale}${href}` : href;
+
+export function MobilityContent({
   sections,
-}: Readonly<EducationContentProps>) {
+  locale,
+}: Readonly<MobilityContentProps>) {
   return (
     <div className="flex flex-col gap-4 rounded-b-2xl border-x border-b border-[#e9e2d6] bg-[#fffefc] p-4 md:p-8">
       {sections.map((section) => (
@@ -22,7 +29,7 @@ export function EducationContent({
             {section.actions?.map((action) => (
               <ActionLink
                 className="w-fit"
-                href={EDUCATION_LINKS[action.link]}
+                href={resolveHref(MOBILITY_LINKS[action.link], locale)}
                 key={action.link}
                 label={action.label}
               />
@@ -34,4 +41,4 @@ export function EducationContent({
   );
 }
 
-export default EducationContent;
+export default MobilityContent;

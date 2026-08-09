@@ -1,4 +1,4 @@
-import { ExternalActionLink } from "@/components/common/ExternalActionLink";
+import { ActionLink } from "@/components/common/ActionLink";
 
 export interface SidebarActionLink {
   label: string;
@@ -38,7 +38,7 @@ export function LinksSidebar({
 
       <div className="flex flex-col items-start gap-2">
         {links.map((link) => (
-          <ExternalActionLink
+          <ActionLink
             className="max-w-full"
             href={link.href}
             key={link.href}

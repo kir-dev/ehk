@@ -6,7 +6,7 @@ import type { GettingStartedLinkKey } from "./gettingStarted.types";
  * else is opened in a new tab.
  */
 export const GETTING_STARTED_LINKS: Record<GettingStartedLinkKey, string> = {
-  mobility: "/international/mobility-programs",
+  mobility: "/international/mobility",
   neptun: "https://neptun.bme.hu/hallgatoi/login.aspx",
   neptun_guides: "https://kth.bme.hu/en/for-students/about-neptun",
   newsletter: "https://www.kth.bme.hu/en/news/2318/",

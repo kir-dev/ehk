@@ -34,6 +34,8 @@ import { AcademicScholarshipFAQ } from "./globals/AcademicScholarshipFAQ";
 import { EelisaPage } from "./globals/EelisaPage";
 import { SocialScholarshipsFAQ } from "./globals/SocialScholarshipsFAQ";
 
+import { migrations } from "./migrations";
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -84,6 +86,7 @@ export default buildConfig({
         process.env.DATABASE_URI ?? process.env.DATABASE_URL ?? "",
     },
     migrationDir: "./src/migrations",
+    prodMigrations: migrations, // Apply migrations on startup in prod https://payloadcms.com/docs/database/migrations#running-migrations-in-production
   }),
   sharp,
   plugins: [

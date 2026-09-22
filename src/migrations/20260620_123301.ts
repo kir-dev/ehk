@@ -126,11 +126,15 @@ const sidebarLinks = [
   {
     title_hu: 'MŰEPER',
     title_en: 'MŰEPER',
+    description_hu: 'Egységes Pályázati és Értékelési Rendszer',
+    description_en: 'Unified Application and Evaluation System',
     url: 'https://mueper.bme.hu',
   },
   {
     title_hu: 'ESZB',
     title_en: 'ESZB',
+    description_hu: 'Egyetemi Szociális Bizottság',
+    description_en: 'University Social Committee',
     url: 'https://ehk.bme.hu/eszb',
   },
 ]
@@ -156,6 +160,8 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"id" varchar PRIMARY KEY NOT NULL,
   	"title_hu" varchar NOT NULL,
   	"title_en" varchar NOT NULL,
+  	"description_hu" varchar NOT NULL,
+  	"description_en" varchar NOT NULL,
   	"url" varchar NOT NULL
   );
   

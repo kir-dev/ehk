@@ -1,12 +1,8 @@
-name: Migrate DB and Deploy
+name: Deploy
 
 on:
   push:
     branches: [ main ]
-
-concurrency:
-  group: migrate-and-deploy-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   build-and-push:
@@ -18,14 +14,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      # Generate Docker tags, labels and annotations
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository_owner }}/ehk
+          images: ghcr.io/${{ github.repository_owner }}/startsch
           tags: |
+            # Tag the Docker image using a version created from the GitHub action run number.
+            # Using the Git hash as the tag does not work because Renovate does not know how to find the latest version.
+            # Using just :latest with a @sha256:IMAGE_HASH does not work as digest updates do not add a GitHub diff link to the Renovate PR for some reason.
             type=raw,value=v0.0.${{ github.run_number }}
+
+            # Add latest tag
             type=raw,value=latest
+
+            # Tag with Git commit hash
             type=sha,format=long
 
       - name: Log in to the Container registry
@@ -42,42 +46,18 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          # Apply the generated metadata
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  migrate:
-    name: Run Payload migrations
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'yarn'
-
-      - name: Install deps
-        run: yarn install --frozen-lockfile
-
-      - name: Run migrations (non-interactive, prod)
-        env:
-          NODE_ENV: production
-          DATABASE_URI: ${{ secrets.DATABASE_URI }}
-          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
-        run: yarn payload migrate
-
-  deploy:
-    name: Trigger Vercel deploy
-    needs: migrate
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Fire Vercel Deploy Hook
-        run: curl -sS -X POST "$VERCEL_DEPLOY_HOOK_URL"
-        env:
-          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+      # Renovate needs a Git tag to show a GitHub diff link
+      - name: Create Git tag
+        run: |
+          TAG_NAME="v0.0.${{ github.run_number }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag "$TAG_NAME"
+          git push origin "$TAG_NAME"

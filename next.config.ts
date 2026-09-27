@@ -6,6 +6,7 @@ const mediaEndpoint = process.env.S3_ENDPOINT
   : null;
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   images: {
     remotePatterns: mediaEndpoint
       ? [

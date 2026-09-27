@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository_owner }}/startsch
+          images: ghcr.io/${{ github.repository_owner }}/ehk
           tags: |
             # Tag the Docker image using a version created from the GitHub action run number.
             # Using the Git hash as the tag does not work because Renovate does not know how to find the latest version.

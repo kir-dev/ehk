@@ -10,6 +10,7 @@ jobs:
     name: Build and push Docker image
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       packages: write
     steps:
       - name: Checkout

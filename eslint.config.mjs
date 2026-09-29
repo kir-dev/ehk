@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     ignores: [
       'src/migrations/**',
+      'src/scripts/**',
       '.next/**',
       'node_modules/**'
     ],

@@ -1,5 +1,7 @@
 import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
+import newsRedirects from "./src/lib/legacy-news-redirects.json";
+import { EXACT, PREFIX, prefixToNextSource } from "./src/lib/legacy-redirects";
 
 const mediaEndpoint = process.env.S3_ENDPOINT
   ? new URL(process.env.S3_ENDPOINT)
@@ -21,6 +23,11 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["lucide-react"],
+  },
+  async redirects() {
+    const exact = Object.entries(EXACT).map(([source, destination]) => ({ source, destination, permanent: true }));
+    const prefix = PREFIX.map(([p, destination]) => ({ source: prefixToNextSource(p), destination, permanent: true }));
+    return [...exact, ...prefix, ...newsRedirects];
   },
   turbopack: {
     resolveAlias: {

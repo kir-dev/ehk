@@ -29,12 +29,6 @@ export function getNavigationItems(lang: string): NavigationItem[] {
       targetBlank: false,
       items: [
         {
-          label: t("ADMIN", "ADMIN"),
-          subtitle: t("Adminisztrátori felület és tartalomkezelés", "Administrator panel and content management"),
-          href: "/admin",
-          targetBlank: true,
-        },
-        {
           label: t("Képviselők", "Representatives"),
           subtitle: t("Ismerd meg a képviselőtestület tagjait", "Meet the members of the representative body"),
           href: link("/kepviselok"),

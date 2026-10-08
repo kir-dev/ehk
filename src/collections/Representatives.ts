@@ -13,6 +13,7 @@ export const Representatives: CollectionConfig = {
   admin: {
     description: "Képviselők adatainak kezelése. Beszámolók feltöltése.",
     useAsTitle: "name",
+    defaultColumns: ["name", "faculty", "resigned", "order"],
   },
   fields: [
     {
@@ -133,6 +134,16 @@ export const Representatives: CollectionConfig = {
           value: "KJK",
         },
       ],
+    },
+    {
+      name: "resigned",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Lemondott",
+      admin: {
+        description:
+          "A lemondott képviselők nem kártyán, hanem csak névvel jelennek meg a lista alján.",
+      },
     },
     {
       name: "order",

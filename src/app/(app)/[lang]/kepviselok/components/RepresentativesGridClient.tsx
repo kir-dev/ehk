@@ -3,6 +3,7 @@
 import { RepresentativeCard } from '@/app/(app)/[lang]/kepviselok/components/RepresentativeCard';
 import { RepresentativeModal } from '@/app/(app)/[lang]/kepviselok/components/RepresentativeModal';
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import { useTranslate } from "@/hooks/useTranslate";
 import { Representative } from '@/payload-types';
 import { normalizeString } from "@/utils/normalizeString";
@@ -43,6 +44,9 @@ export default function RepresentativesGridClient({
         setFilteredRepresentatives(results);
     }, [searchQuery, representatives, t]);
 
+    const activeRepresentatives = filteredRepresentatives.filter(rep => !rep.resigned);
+    const resignedRepresentatives = filteredRepresentatives.filter(rep => rep.resigned);
+
     return (
         <section className="overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#fffefc]">
             <div className="flex flex-col gap-4 border-x border-t border-[#e9e2d6] bg-[#fffefc] px-4 py-4 sm:flex-row sm:items-center sm:justify-between md:px-8">
@@ -79,9 +83,9 @@ export default function RepresentativesGridClient({
             </header>
 
             <div className="bg-[#fffefc] px-4 py-8 md:px-8 md:py-10">
-                {filteredRepresentatives.length > 0 ? (
+                {activeRepresentatives.length > 0 && (
                     <div className="mx-auto grid max-w-318 grid-cols-1 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 xl:grid-cols-3 xl:gap-x-12.5">
-                        {filteredRepresentatives.map((representative) => (
+                        {activeRepresentatives.map((representative) => (
                             <RepresentativeCard
                                 key={representative.id}
                                 representative={representative}
@@ -89,7 +93,22 @@ export default function RepresentativesGridClient({
                             />
                         ))}
                     </div>
-                ) : (
+                )}
+
+                {resignedRepresentatives.length > 0 && (
+                    <section className={cn("mx-auto max-w-318", activeRepresentatives.length > 0 && "mt-12 border-t border-[#e9e2d6] pt-8 md:mt-16")}>
+                        <h2 className="font-open-sans text-[11px] font-semibold uppercase leading-none text-[#9a9a9a]">
+                            {t('representatives.resigned_title')}
+                        </h2>
+                        <ul className="mt-4 grid grid-cols-1 gap-x-8 gap-y-2 font-open-sans text-sm leading-[1.6] text-[#3d3d3d] sm:grid-cols-2 xl:grid-cols-3">
+                            {resignedRepresentatives.map((representative) => (
+                                <li key={representative.id}>{representative.name}</li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
+
+                {filteredRepresentatives.length === 0 && (
                     <div className="mx-auto flex max-w-318 flex-col items-center justify-center rounded-2xl border border-dashed border-[#e9e2d6] bg-[#fffefc] px-6 py-20 text-center">
                         <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#e9e2d6] bg-[#f9f4f0]">
                             <User className="h-8 w-8 text-[#9a9a9a]" />

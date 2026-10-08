@@ -39,6 +39,7 @@ import * as migration_20260727_104500_seed_dormitories from './20260727_104500_s
 import * as migration_20261008_120000_add_representatives_resigned from './20261008_120000_add_representatives_resigned';
 import * as migration_20261008_180000_rename_representatives_resigned_to_former from './20261008_180000_rename_representatives_resigned_to_former';
 import * as migration_20261008_181000_mark_former_representatives from './20261008_181000_mark_former_representatives';
+import * as migration_20261008_182000_delete_duplicate_representatives from './20261008_182000_delete_duplicate_representatives';
 
 export const migrations = [
   {
@@ -245,5 +246,10 @@ export const migrations = [
     up: migration_20261008_181000_mark_former_representatives.up,
     down: migration_20261008_181000_mark_former_representatives.down,
     name: '20261008_181000_mark_former_representatives',
+  },
+  {
+    up: migration_20261008_182000_delete_duplicate_representatives.up,
+    down: migration_20261008_182000_delete_duplicate_representatives.down,
+    name: '20261008_182000_delete_duplicate_representatives',
   },
 ];

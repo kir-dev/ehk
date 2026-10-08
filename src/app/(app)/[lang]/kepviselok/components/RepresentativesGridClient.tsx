@@ -44,8 +44,8 @@ export default function RepresentativesGridClient({
         setFilteredRepresentatives(results);
     }, [searchQuery, representatives, t]);
 
-    const activeRepresentatives = filteredRepresentatives.filter(rep => !rep.resigned);
-    const resignedRepresentatives = filteredRepresentatives.filter(rep => rep.resigned);
+    const activeRepresentatives = filteredRepresentatives.filter(rep => !rep.former);
+    const formerRepresentatives = filteredRepresentatives.filter(rep => rep.former);
 
     return (
         <section className="overflow-hidden rounded-2xl border border-[#e9e2d6] bg-[#fffefc]">
@@ -95,14 +95,22 @@ export default function RepresentativesGridClient({
                     </div>
                 )}
 
-                {resignedRepresentatives.length > 0 && (
+                {formerRepresentatives.length > 0 && (
                     <section className={cn("mx-auto max-w-318", activeRepresentatives.length > 0 && "mt-12 border-t border-[#e9e2d6] pt-8 md:mt-16")}>
                         <h2 className="font-open-sans text-[11px] font-semibold uppercase leading-none text-[#9a9a9a]">
-                            {t('representatives.resigned_title')}
+                            {t('representatives.former_title')}
                         </h2>
                         <ul className="mt-4 grid grid-cols-1 gap-x-8 gap-y-2 font-open-sans text-sm leading-[1.6] text-[#3d3d3d] sm:grid-cols-2 xl:grid-cols-3">
-                            {resignedRepresentatives.map((representative) => (
-                                <li key={representative.id}>{representative.name}</li>
+                            {formerRepresentatives.map((representative) => (
+                                <li key={representative.id}>
+                                    <button
+                                        type="button"
+                                        onClick={() => setSelectedRepresentative(representative)}
+                                        className="text-left underline-offset-4 transition-colors hover:text-[#862633] hover:underline focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#862633] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffefc]"
+                                    >
+                                        {representative.name}
+                                    </button>
+                                </li>
                             ))}
                         </ul>
                     </section>

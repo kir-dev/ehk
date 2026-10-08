@@ -444,9 +444,9 @@ export interface Representative {
   };
   faculty?: ('ÉMK' | 'GPK' | 'ÉPK' | 'VBK' | 'VIK' | 'GTK' | 'TTK' | 'KJK') | null;
   /**
-   * A lemondott képviselők nem kártyán, hanem csak névvel jelennek meg a lista alján.
+   * A volt képviselők nem kártyán, hanem csak névvel jelennek meg a lista alján.
    */
-  resigned?: boolean | null;
+  former?: boolean | null;
   order?: number | null;
   files?:
     | {
@@ -1593,7 +1593,7 @@ export interface RepresentativesSelect<T extends boolean = true> {
         text_en?: T;
       };
   faculty?: T;
-  resigned?: T;
+  former?: T;
   order?: T;
   files?:
     | T

@@ -36,6 +36,7 @@ import * as migration_20260726_204000_fix_frt_url from './20260726_204000_fix_fr
 import * as migration_20260726_210000_student_clubs_collection from './20260726_210000_student_clubs_collection';
 import * as migration_20260727_100000_repair_dormitories_schema from './20260727_100000_repair_dormitories_schema';
 import * as migration_20260727_104500_seed_dormitories from './20260727_104500_seed_dormitories';
+import * as migration_20261008_120000_add_representatives_resigned from './20261008_120000_add_representatives_resigned';
 
 export const migrations = [
   {
@@ -227,5 +228,10 @@ export const migrations = [
     up: migration_20260727_104500_seed_dormitories.up,
     down: migration_20260727_104500_seed_dormitories.down,
     name: '20260727_104500_seed_dormitories',
+  },
+  {
+    up: migration_20261008_120000_add_representatives_resigned.up,
+    down: migration_20261008_120000_add_representatives_resigned.down,
+    name: '20261008_120000_add_representatives_resigned',
   },
 ];

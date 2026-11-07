@@ -5,7 +5,7 @@
 # Migrations are applied at runtime by Payload via `prodMigrations`
 # (see https://payloadcms.com/docs/database/migrations#running-migrations-in-production).
 
-FROM node:22-bookworm-slim AS base
+FROM node:24-bookworm-slim AS base
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 
